@@ -1,0 +1,9 @@
+.menu {
+    min-height: 2.8rem; /* no way to control min height in Tachyons */
+    max-height: 0; /* hide menu completely when burger unchecked */
+    transition: max-height 0.5s; /* show/hide menu transition */
+  }
+  /* when checkbox is checked, display menu (sibling element) */
+  #burger:checked ~ .menu {
+    max-height: 100%;
+  }
