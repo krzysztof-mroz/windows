@@ -3,7 +3,7 @@ import "tachyons";
 function StartPage() {
   return (
     <div>
-      <div className="bg-black-50 tc fw9 pb2 pt2">Nav Bar</div>
+      <div className="bg-black-50 tc fw9 pb2 pt2">Nav Bar 2</div>
       <div className="mh2 mh4-ns mh6-l mw9">
         <div className="pa4 tc">Icons, logo, hotline</div>
         <div className="tc bg-black-20 pa6 br3 ma2">IMAGE</div>
