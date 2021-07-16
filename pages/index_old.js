@@ -1,26 +1,60 @@
 import "tachyons";
 
-import styles from "./styles.module.css";
 
+
+//
+import styles from "./styles.moduleold.css";
+
+
+//<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+//
 
 
 function StartPage() {
 
+  function toggleNavbar() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+  }
 
   return (
     <div>
 
 
 
-      <div className="bg-black-50 tc fw9 pb2 pt2">
-      <div class="dtc v-mid tr pa3">
-          <a class="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >How it Works</a> 
-          <a class="f6 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="/" >Pricing</a> 
-          <a class="f6 fw4 hover-white no-underline white-70 dn dib-l pv2 ph3" href="/" >About</a> 
-          <a class="f6 fw4 hover-white no-underline white-70 dn dib-l pv2 ph3" href="/" >Careers</a> 
-          <a class="f6 fw4 hover-white no-underline white-70 dib ml2 pv2 ph3 ba" href="/" >Sign Up</a> 
-        </div>
-        </div>
+
+
+
+
+
+<div className={styles["topnav"]}>
+  <a href="#home" className={styles.active} >Logo</a>
+ 
+  <div id="myLinks">
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+  </div>
+  
+  <a href="javascript:void(0);" className={styles.icon} onClick={toggleNavbar}>
+    <div className="dn-l">
+      <div className={styles.hamburger}></div>
+      <div className={styles.hamburger}></div>
+      <div className={styles.hamburger}></div>
+    </div>
+  </a>
+</div>
+
+
+
+
+
+
+      <div className="bg-black-50 tc fw9 pb2 pt2">Nav Bar 2</div>
       <div className="mh2 mh4-ns mh6-l mw9">
         <div className="pa4 tc">Icons, logo, hotline</div>
         <div className="tc bg-black-20 pa6 br3 ma2">IMAGE</div>
@@ -86,7 +120,14 @@ function StartPage() {
   );
 
 
+
+
+
+  
 }
+
+
+
 
 
 
