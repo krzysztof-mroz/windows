@@ -10,7 +10,7 @@ import ActionDiv from "../components/ui/actiondiv";
 function StartPage() {
   return (
     <div className="w-90 w-100-l center">
-      <div className="bg-black-80 fw9 pv1 dt w-100 nawierzch">
+      <div className="bg-black-80 fw9 pv1 tl dt w-100 nawierzch">
         <div className="dtc v-mid tc pa1">
           <Link href="/">
             <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
@@ -59,11 +59,11 @@ function StartPage() {
       <div className="flex flex-wrap justify-center">
         <div className="mh2 mh4-ns mh6-l mw9 ">
           <div className="flex flex-wrap justify-center mb2 w-100">
-            <div className="flex flex-wrap justify-around fl w-100">
+            <div className="flex flex-wrap justify-around fl">
 
               
-              <div className="w-100 w-25-l fl  tc m1 ">
-                <img className="mt1" src="./pics/logo-PF-3.png"></img>
+              <div className="w-100 w-25-l  tc m1 ">
+                <img className="mt1" src="./pics/logo-PF-5.png"></img>
               </div>
 
               <div className="w-100 w-50-l  fl  tc mv1 ">
@@ -73,7 +73,7 @@ function StartPage() {
                 <img className="mv2 " src="./pics/ikona_gwarancja.png"></img>
               </div>
 
-              <div className="w-100 w-25-l fl  tc  mt4 red f3 f4-l w3-text-purple">
+              <div className="w-100 w-25-l fl tc  mt4 red f3 f4-l w3-text-purple">
                 <b> 0800 44 700 99</b>
               </div>
 
