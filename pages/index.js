@@ -11,9 +11,9 @@ function StartPage() {
   
 
   return (
-    <div>
-      <div className="bg-black-50 tc fw9 pb2 pt2">
-        <div class="dtc v-mid tc pa3">
+    <div className="">
+      <div className="bg-black-80 tc fw9 pv1">
+        <div class="dtc-l v-mid tc pa3">
           <Link href="/">
             <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
               Polniche-Fenster.Com
@@ -64,7 +64,7 @@ function StartPage() {
                 <img className="mt4" src="./pics/pf-logo.png"></img>
               </div>
               
-              <div className="w-100 w-30-l fl  tc ma2 ">
+              <div className="w-100 w-50-m w-30-l  fl  tc ma2 ">
               <img className="mv2 mh1" src="./pics/ikona_metrowka.png"></img>
               <img className="mv2 mh1" src="./pics/ikona_auto.png"></img>
               <img className="mv2 mh1" src="./pics/ikona_klucz.png"></img>
