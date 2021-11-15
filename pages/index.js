@@ -11,8 +11,8 @@ function StartPage() {
   
 
   return (
-    <div className="justify-center w-100">
-      <div className="bg-black-80 tc fw9 pv1">
+    <div className="mw">
+      <div className="bg-black-80 tc fw9 pv1 mw">
         <div class="dtc-l v-mid tc pa3">
           <Link href="/">
             <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
