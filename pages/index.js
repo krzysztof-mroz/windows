@@ -11,7 +11,7 @@ function StartPage() {
   
 
   return (
-    <div className="">
+    <div className="justify-center">
       <div className="bg-black-80 tc fw9 pv1">
         <div class="dtc-l v-mid tc pa3">
           <Link href="/">
