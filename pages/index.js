@@ -13,7 +13,7 @@ function StartPage() {
   return (
     <div>
       <div className="bg-black-50 tc fw9 pb2 pt2">
-        <div class="dtc-l v-mid tc pa3">
+        <div class="dtc v-mid tc pa3">
           <Link href="/">
             <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
               Polniche-Fenster.Com
@@ -64,6 +64,13 @@ function StartPage() {
                 <img className="mt4" src="./pics/pf-logo.png"></img>
               </div>
               
+              <div className="w-100 w-30-l fl  tc ma2 ">
+              <img className="mv2 mh1" src="./pics/ikona_metrowka.png"></img>
+              <img className="mv2 mh1" src="./pics/ikona_auto.png"></img>
+              <img className="mv2 mh1" src="./pics/ikona_klucz.png"></img>
+              <img className="mv2 mh1" src="./pics/ikona_gwarancja.png"></img>
+            </div>
+
               <div className="w-100 w-30-l fl  tc ma2 mt4 red f3 w3-text-purple">
                 <b> 0 800 44 700 99</b>
               </div>
@@ -88,7 +95,7 @@ function StartPage() {
           <div className="tc  br3 ma2 w3-display-container w3-text-blue-grey">
             <img id="profilDuzy" src="./pics/ct_70_classic_3d.jpg"></img>
             
-            <div class="w3-display-topmiddle w3-container"><h2 id="tekstProfilu">Schüco CT 70 Classic</h2><p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p></div>
+            <div class="dn db-l w3-display-topmiddle w3-container"><h2 id="tekstProfilu">Schüco CT 70 Classic</h2><p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p></div>
           </div>
 
           <ProfileStrip />
@@ -108,12 +115,7 @@ function StartPage() {
 
           <ActionDiv />
 
-          <div className="w-100 fl  tc ma2 ">
-              <img className="mv2 mh1" src="./pics/ikona_metrowka.png"></img>
-              <img className="mv2 mh1" src="./pics/ikona_auto.png"></img>
-              <img className="mv2 mh1" src="./pics/ikona_klucz.png"></img>
-              <img className="mv2 mh1" src="./pics/ikona_gwarancja.png"></img>
-            </div>
+          
 
           <div className="flex flex-wrap justify-center mb5 w-100"></div>
 
