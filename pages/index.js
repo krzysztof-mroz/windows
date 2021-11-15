@@ -12,8 +12,8 @@ function StartPage() {
 
   return (
     <div className="mw">
-      <div className="bg-black-80 tc fw9 pv1 mw">
-        <div class="dtc-l v-mid tc pa3">
+      <div className="bg-black-80 tc fw9 pv1 vh-100 dt w-100 bg-dark-pink">
+        <div class="dtc-l v-mid tc pa1">
           <Link href="/">
             <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
               Polniche-Fenster.Com
