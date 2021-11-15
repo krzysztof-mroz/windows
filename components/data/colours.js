@@ -72,7 +72,7 @@ const FARBEN = [
   {
     name: "cremeweiß",
     alt: "cremeweiß",
-    src: "./pics/farben/cremeweiss.png",
+    src: "./pics/farben/creme_weiss.png",
     s: 3,
     k: 2,
   },
