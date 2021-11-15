@@ -53,7 +53,20 @@ a {
   opacity: 1;
 }
 
-/*.mySlides {display:none;}
+.nawierzch {
+  
+  z-index: 6;
+  
+}
+
+
+.navbar {
+  overflow: hidden;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+}
+
 
 /* W3.CSS 4.15 December 2020 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
