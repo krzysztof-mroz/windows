@@ -11,7 +11,7 @@ function StartPage() {
   
 
   return (
-    <div className="justify-center">
+    <div className="justify-center w-100">
       <div className="bg-black-80 tc fw9 pv1">
         <div class="dtc-l v-mid tc pa3">
           <Link href="/">
@@ -64,7 +64,7 @@ function StartPage() {
                 <img className="mt4" src="./pics/pf-logo.png"></img>
               </div>
               
-              <div className="w-100 w-50-m w-30-l  fl  tc ma2 ">
+              <div className="w-100 w-30-l  fl  tc ma2 ">
               <img className="mv2 mh1" src="./pics/ikona_metrowka.png"></img>
               <img className="mv2 mh1" src="./pics/ikona_auto.png"></img>
               <img className="mv2 mh1" src="./pics/ikona_klucz.png"></img>
