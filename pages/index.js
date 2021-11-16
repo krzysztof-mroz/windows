@@ -63,7 +63,7 @@ function StartPage() {
 
               
               <div className="w-100 w-25-l  tc m1 ">
-                <img className="mt1" src="./pics/logo-PF-5.png"></img>
+                <img className="mt1" src="./pics/PF-logo.png"></img>
               </div>
 
               <div className="w-100 w-50-l  fl  tc mv1 ">
@@ -73,7 +73,7 @@ function StartPage() {
                 <img className="mv2 " src="./pics/ikona_gwarancja.png"></img>
               </div>
 
-              <div className="w-100 w-25-l fl tc  mt4 red f3 f4-l w3-text-purple">
+              <div className="w-100 w-25-l fl tc  mt4 f3 f4-l w3-text-orange">
                 <b> 0800 44 700 99</b>
               </div>
 

@@ -9,7 +9,7 @@ function actiondiv() {
         <img src="./pics/laptop.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-purple w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -23,7 +23,7 @@ function actiondiv() {
         <img src="./pics/messband.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-purple w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -36,7 +36,7 @@ function actiondiv() {
         <img src="./pics/toolbox.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-purple w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -48,7 +48,7 @@ function actiondiv() {
         <img src="./pics/door.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-purple w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -62,7 +62,7 @@ function actiondiv() {
         <img src="./pics/rollladen.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-purple w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -75,7 +75,7 @@ function actiondiv() {
         <img src="./pics/raffstore.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-purple w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"

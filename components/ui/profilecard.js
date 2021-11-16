@@ -25,7 +25,7 @@ function ProfileCard(props) {
         <h4 className="ma2">{profil.alt}</h4>
         <p className="f6 ma2 gray">{profil.desc}</p>
       </div>
-      <button className="w3-button w3-border w3-border-purple w3-sand mb3" type="submit" data-toggle="tooltip" data-placement="top" title="Nachricht abschicken">mehr</button>
+      <button className="w3-button w3-border w3-border-orange w3-sand mb3" type="submit" data-toggle="tooltip" data-placement="top" title="Nachricht abschicken">mehr</button>
     </div>
   );
 }
