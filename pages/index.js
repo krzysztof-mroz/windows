@@ -63,7 +63,7 @@ function StartPage() {
 
               
               <div className="w-100 w-25-l  tc m1 ">
-                <img className="mt1" src="./pics/PF-logo.png"></img>
+                <img className="mt1" src="./pics/pflogo.png"></img>
               </div>
 
               <div className="w-100 w-50-l  fl  tc mv1 ">
