@@ -12,7 +12,7 @@ const PROFILE = [
         prices: [52, 58, 67, 78, 83],
         idSlide: "ct70classic",
         picSlide: "./pics/ct_70_classic_3d.jpg",
-        ikonka: "../pics/ct_70_classic.jpg",
+        ikonka: "../pics/ct_70_classic_orange.jpg",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
     },
 
@@ -29,7 +29,7 @@ const PROFILE = [
         prices: [52, 58, 67, 78, 83],
         idSlide: "ct70rondo",
         picSlide: "./pics/ct_70_rondo_3d.jpg",
-        ikonka: "../pics/ct_70_rondo.jpg",
+        ikonka: "../pics/ct_70_rondo_orange.jpg",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
     },
 
@@ -46,7 +46,7 @@ const PROFILE = [
         prices: [90, 96, 105, 116, 122],
         idSlide: "living",
         picSlide: "./pics/living_3d.jpg",
-        ikonka: "../pics/living.jpg",
+        ikonka: "../pics/living_orange.jpg",
         komoryProfilu: "7 Kammer, 3 Dichtungen, 82 mm Tiefe",
     },
     

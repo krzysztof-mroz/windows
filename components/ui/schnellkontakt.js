@@ -4,7 +4,7 @@ function Schnellkontakt(props) {
     
     <div className="ba w-100  fl  tc mv1  b--moon-gray">
       <form className="" name="Kurzformular" action="../versand_kurznachricht.php" method="post">
-      <div className="w3-container w3-orange">
+      <div className="w3-container ">
       <p>
         <b>Schnellkontakt:</b>
       </p>
