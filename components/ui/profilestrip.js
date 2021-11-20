@@ -9,7 +9,7 @@ function profileStrip() {
   return (
     <div className="flex flex-wrap justify-center fl w-100 mv2">
 
-      <p className="mr2 mt4"> <b>Bitte Profil wählen:</b></p>
+      <p className="mr2 mt4"> <b>Profil wählen:</b></p>
       {profiles.map((profile) => (
         <div className="tooltip">
           <img
