@@ -1,6 +1,5 @@
-import { useRef } from "react";
+import { useRef} from "react";
 import "tachyons";
-import "tachyons-svg";
 import Link from "next/link";
 import ColourStrip from "../components/ui/colourstrip";
 import ProfileStrip from "../components/ui/profilestrip";
@@ -10,8 +9,14 @@ import WarumDiv from "../components/ui/warumdiv";
 import ActionDiv from "../components/ui/actiondiv";
 import React, { Suspense } from "react";
 
-//<mesh geometry={new BoxBufferGeometry} material={new MeshLambertMaterial}>
+
+
+
+ //<mesh geometry={new BoxBufferGeometry} material={new MeshLambertMaterial}>
 function StartPage() {
+  
+  
+
   return (
     <div className="w-90 w-100-l center">
       <div className="bg-black-80 fw9 pv1 tl dt w-100 nawierzch">
@@ -88,48 +93,16 @@ function StartPage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-around mb3 w-100">
-            
+          <div className="tc  br3 ma2 w3-display-container w3-text-blue-grey">
+            <img id="profilDuzy" src="./pics/ct_70_classic_3d.jpg"></img>
 
-            <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
-              <div className="justify-end">
-                <img
-                  className="mv2 mh2"
-                  style={{ position: "relative", width: 20, height: 20 }}
-                  src="./pics/svg/bild_red.svg"
-                ></img>
-                <img
-                  className="mv2 mh2"
-                  style={{ position: "relative", width: 20, height: 20 }}
-                  src="./pics/svg/3d_grey.svg"
-                ></img>
-                <img
-                  className="mv2 mh2"
-                  style={{ position: "relative", width: 20, height: 20 }}
-                  src="./pics/svg/film_grey.svg"
-                ></img>
-              </div>
-              <img id="profilDuzy" src="./pics/ct_70_classic_3d.jpg"></img>
-              <div className="flex flex-wrap justify-start">
-                
-
-              <ProfileStrip />
-              </div>
-            </div>
-            <div className="flex flex-wrap justify-center mv1  fl w-100 w-25-l ba b--moon-gray">
-            <div className="tc  br3 ma2 w3-display-container w3-text-blue-grey">
             <div class="dn db-l w3-display-topmiddle w3-container">
               <h2 id="tekstProfilu">Schüco CT 70 Classic</h2>
               <p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p>
             </div>
           </div>
-            </div>
-            
-          </div>
 
-         
-
-          
+          <ProfileStrip />
 
           <ColourStrip />
 
@@ -205,6 +178,7 @@ function StartPage() {
                 </Link>
               </p>
             </div>
+            
           </div>
         </div>
       </div>

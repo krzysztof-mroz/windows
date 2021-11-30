@@ -12,8 +12,9 @@ const PROFILE = [
         prices: [52, 58, 67, 78, 83],
         idSlide: "ct70classic",
         picSlide: "./pics/ct_70_classic_3d.jpg",
-        ikonka: "../pics/ct_70_classic_orange.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
+        last: false,
     },
 
     {
@@ -29,8 +30,9 @@ const PROFILE = [
         prices: [52, 58, 67, 78, 83],
         idSlide: "ct70rondo",
         picSlide: "./pics/ct_70_rondo_3d.jpg",
-        ikonka: "../pics/ct_70_rondo_orange.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
+        last: false,
     },
 
     {
@@ -46,8 +48,9 @@ const PROFILE = [
         prices: [90, 96, 105, 116, 122],
         idSlide: "living",
         picSlide: "./pics/living_3d.jpg",
-        ikonka: "../pics/living_orange.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "7 Kammer, 3 Dichtungen, 82 mm Tiefe",
+        last: true,
     },
     
     {
@@ -63,8 +66,9 @@ const PROFILE = [
         prices: [43, 49, 58],
         idSlide: "k70",
         picSlide: "./pics/k_70_3d.jpg",
-        ikonka: "../pics/k_70_green.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
+        last: false,
     },
 
     {
@@ -80,8 +84,9 @@ const PROFILE = [
         prices: [44, 51, 62],
         idSlide: "k76ad",
         picSlide: "./pics/k_76_ad_3d.jpg",
-        ikonka: "../pics/k_76_ad_green.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 76 mm Tiefe",
+        last: false,
     },
 
     {
@@ -97,8 +102,9 @@ const PROFILE = [
         prices: [46, 56, 67],
         idSlide: "k76md",
         picSlide: "./pics/k_76_md_3d.jpg",
-        ikonka: "../pics/k_76_md_green.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "6 Kammer, 3 Dichtungen, 76 mm Tiefe",
+        last: false,
     },
 
     {
@@ -114,8 +120,9 @@ const PROFILE = [
         prices: [67, 78, 92],
         idSlide: "k88",
         picSlide: "./pics/k_88_3d.jpg",
-        ikonka: "../pics/k_88_green.jpg",
+        ikonka: "../pics/svg/profileicon",
         komoryProfilu: "7 Kammer, 3 Dichtungen, 88 mm Tiefe",
+        last: true,
     },
 
     {
@@ -131,8 +138,9 @@ const PROFILE = [
         prices: [105, 116, 125],
         idSlide: "pe68",
         picSlide: "./pics/pe_68_3d.jpg",
-        ikonka: "../pics/pe_68.jpg",
+        ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 68 mm Einbautiefe",
+        last: false,
     },
     {
         id: "pic_profil_ponzio_78",
@@ -147,8 +155,81 @@ const PROFILE = [
         prices: [116, 128, 139],
         idSlide: "pe78n",
         picSlide: "./pics/pe_78n_3d.jpg",
-        ikonka: "../pics/pe_78n.jpg",
+        ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 78 mm Einbautiefe, Thermische Trennung",
+        last: true,
+    },
+
+    {
+        id: "pic_profil_mb_70",
+        idcolor: "mb_70_color", 
+        idcena: "mb_70_cena",
+        idmwst: "mb_70_mwst",
+        src: "../../pics/profile/pe78n_f.png",
+        alt: "Aluptof MB 70 HI",
+        desc: "Aluminium 3 gedämte Kammer, 70 mm Tiefe. Mehrkammer-thermische Trennung, Uf ab 1,2 W/m2K",
+        brand: "a",
+        material: "a",
+        prices: [148, 175, 189],
+        idSlide: "mb70",
+        picSlide: "./pics/mb_70_3d.jpg",
+        ikonka: "../pics/svg/profileiconalu",
+        komoryProfilu: "3 Kammer, 70 mm Einbautiefe, Thermische Trennung",
+        last: false,
+    },
+    
+    {
+        id: "pic_profil_mb_86",
+        idcolor: "mb_86_color", 
+        idcena: "mb_86_cena",
+        idmwst: "mb_86_mwst",
+        src: "../../pics/profile/pe78n_f.png",
+        alt: "Aluprof MB 86 SI",
+        desc: "Aluminium 3 gedämte Kammer, 86 mm Tiefe. Mehrkammer-thermische Trennung, Uf ab 1,0 W/m2K",
+        brand: "a",
+        material: "a",
+        prices: [165, 187, 211],
+        idSlide: "mb86",
+        picSlide: "./pics/mb_86_3d.jpg",
+        ikonka: "../pics/svg/profileiconalu",
+        komoryProfilu: "3 Kammer, 86 mm Einbautiefe, Thermische Trennung",
+        last: true,
+    },
+
+    {
+        id: "pic_profil_aws_75",
+        idcolor: "aws_75_color", 
+        idcena: "aws_75_cena",
+        idmwst: "aws_75_mwst",
+        src: "../../pics/profile/pe78n_f.png",
+        alt: "Scüco AWS 75",
+        desc: "Aluminium 3 gedämte Kammer, 75 mm Tiefe. Mehrkammer-thermische Trennung, Uf ab 1,2 W/m2K",
+        brand: "sa",
+        material: "a",
+        prices: [160, 188, 203],
+        idSlide: "aws75",
+        picSlide: "./pics/aws_75_3d.jpg",
+        ikonka: "../pics/svg/profileiconalu",
+        komoryProfilu: "3 Kammer, 75 mm Einbautiefe, Thermische Trennung",
+        last: false,
+    },
+    
+    {
+        id: "pic_profil_aws_90",
+        idcolor: "aws_90_color", 
+        idcena: "aws_90_cena",
+        idmwst: "aws_90_mwst",
+        src: "../../pics/profile/pe78n_f.png",
+        alt: "Scüco AWS 90",
+        desc: "Aluminium 3 gedämte Kammer, 90 mm Tiefe. Mehrkammer-thermische Trennung, Uf ab 1,0 W/m2K",
+        brand: "sa",
+        material: "a",
+        prices: [185, 17, 242],
+        idSlide: "aws90",
+        picSlide: "./pics/aws_90_3d.jpg",
+        ikonka: "../pics/svg/profileiconalu",
+        komoryProfilu: "3 Kammer, 90 mm Einbautiefe, Thermische Trennung",
+        last: false,
     },
 
   ];
