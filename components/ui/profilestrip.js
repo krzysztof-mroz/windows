@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getAllProfiles } from "../data/profiles";
 
-function profileStrip() {
+function profileStrip(props) {
   const profiles = getAllProfiles();
   const [activeProfile, setActiveProfile] = useState("Schüco CT 70 Classic");
 
@@ -49,6 +49,7 @@ function ffd (ev) {
     $id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    props.onProfileChange(profiles[nrprofila].alt);
 
 }
 
@@ -65,6 +66,7 @@ function back (ev) {
     $id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    props.onProfileChange(profiles[nrprofila].alt);
 
 }
 
@@ -82,6 +84,12 @@ function back (ev) {
     $id("profilDuzy").src = ev.target.title;
     $id("tekstProfilu").innerText = ev.target.alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+
+    props.onProfileChange(ev.target.alt);
+
+    
+
+
   }
 
   function $id(id) {
