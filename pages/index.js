@@ -310,7 +310,7 @@ function StartPage() {
                   src="./pics/ct_70_classic_3d.jpg"
                 ></img>
 
-                <div style={{ position: "relative", width: 800, height: 500 }} className={mainWindow == "3d" ? "db" : "dn"}>
+                <div style={{ position: "relative", height: 478 }} className={mainWindow == "3d" ? "db" : "dn"}>
                   <Canvas
                     shadows
                     dpr={[1, 2]}
