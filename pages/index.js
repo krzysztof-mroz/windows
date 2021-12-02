@@ -310,7 +310,7 @@ function StartPage() {
                   src="./pics/ct_70_classic_3d.jpg"
                 ></img>
 
-                <div style={{ position: "relative", height: 478 }} className={mainWindow == "3d" ? "db" : "dn"}>
+                <div style={  { position: "relative", height: 478 }} className={mainWindow == "3d" ? "db" : "dn"}>
                   <Canvas
                     shadows
                     dpr={[1, 2]}
@@ -350,6 +350,7 @@ function StartPage() {
                 <div class="dn db-l w3-display-topmiddle w3-container">
                   <h2 id="tekstProfilu">Schüco CT 70 Classic</h2>
                   <p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p>
+                 
                 </div>
               </div>
             </div>
