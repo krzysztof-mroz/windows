@@ -3,7 +3,7 @@ import "tachyons";
 import "tachyons-svg";
 import Link from "next/link";
 import ColourStrip from "../components/ui/colourstrip";
-import {Ct70Classic, Ct70Rondo, Living, K70} from "../components/ui/models";
+import {Ct70Classic, Ct70Rondo, Living, K70, K76Ad, K76Md, K88} from "../components/ui/models";
 import ProfileStrip from "../components/ui/profilestrip";
 import ProfileCards from "../components/ui/profilecards";
 import Schnellkontakt from "../components/ui/schnellkontakt";
@@ -160,10 +160,13 @@ function StartPage() {
                     
                   >
                     <Suspense fallback={null}>
-                      {activeProfile=="Schüco CT 70 Classic"? <Ct70Classic  /> : null}
-                      {activeProfile=="Schüco CT 70 Rondo"? <Ct70Rondo  /> : null}
-                      {activeProfile=="Schüco Living MD"? <Living  /> : null}
-                      {activeProfile=="Kömmerling 70 AD"? <K70  /> : null}
+                      {activeProfile=="Schüco CT 70 Classic"? <Ct70Classic rotation-y={Math.PI * (1.15)} /> : null}
+                      {activeProfile=="Schüco CT 70 Rondo"? <Ct70Rondo  rotation-y={Math.PI * (1.15)}/> : null}
+                      {activeProfile=="Schüco Living MD"? <Living  rotation-y={Math.PI * (1.15)}/> : null}
+                      {activeProfile=="Kömmerling 70 AD"? <K70  rotation-y={Math.PI * (1.15)}/> : null}
+                      {activeProfile=="Kömmerling 76 AD"? <K76Ad  rotation-y={Math.PI * (1.15)}/> : null}
+                      {activeProfile=="Kömmerling 76 MD"? <K76Md  rotation-y={Math.PI * (1.15)}/> : null}
+                      {activeProfile=="Kömmerling 88 MD"? <K88 rotation-y={Math.PI * (1.15)}/> : null}
                       <Environment preset="warehouse" />
                       <ContactShadows
                         rotation-x={Math.PI / 2}

@@ -1,6 +1,6 @@
 import { proxy, useSnapshot } from "valtio";
 import { useRef } from "react";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+
 import {useGLTF, useTexture } from "@react-three/drei";
 
 const state = proxy({
@@ -194,6 +194,7 @@ const state = proxy({
         <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[0.03, 1.62, -1.82]} material-color={snap.items.glas}/>
       </group>
     )
+    
   }
   
   export function Ct70Rondo({ ...props }) {
@@ -245,7 +246,7 @@ const state = proxy({
           position={[1.9, -1.07, 1.05]}
           material-color={snap.items.pvc}
         />
-        <mesh geometry={nodes.profile.geometry} material={nodes.profile.material} position={[0.03, -1.73, 1.71]}  material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.profile.geometry} scale={[1, 1 ,1]} material={nodes.profile.material} position={[0.03, -1.73, 1.71]}  material-color={snap.items.pvc}/>
         <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.4, -0.94, 0.92]}  material-color={snap.items.gasketgrey}/>
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.25, 0.22, -0.24]}  material-color={snap.items.kantet}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.2, 0.09, -0.11]}  material-color={snap.items.gasket}/>
@@ -275,7 +276,7 @@ const state = proxy({
           position={[-1.54, -1.38, 1.69]}
           material-color={snap.items.pvc}
         />
-        <mesh geometry={nodes.glasleiste.geometry} material={nodes.glasleiste.material} position={[-0.66, -0.87, 1.18]} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.glasleiste.geometry}  material={nodes.glasleiste.material} position={[-0.66, -0.87, 1.18]} material-color={snap.items.pvc}/>
         <mesh geometry={nodes.gasket1.geometry} material={nodes.gasket1.material} position={[0.32, -0.42, 0.73]} material-color={snap.items.gasketgrey}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.28, -0.17, 0.49]} material-color={snap.items.red}/>
         <mesh geometry={nodes.sash_iron.geometry} material={nodes.sash_iron.material} position={[-0.03, -1.55, 1.86]} material-color={snap.items.steel}/>
@@ -283,6 +284,96 @@ const state = proxy({
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.18, 0.31, 0]} material-color={snap.items.kantet}/>
         <mesh geometry={nodes.hardware1.geometry} material={nodes.hardware1.material} position={[-0.58, -1.31, 1.62]} material-color={snap.items.hardware}/>
         <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[0.16, 1.55, -1.86]} material-color={snap.items.glas}/>
+      </group>
+    )
+  }
+
+  export function K76Ad({ ...props }) {
+    const group = useRef()
+    const snap = useSnapshot(state);
+    const { nodes, materials } = useGLTF('/k76ad.glb')
+    return (
+      <group ref={group} {...props} dispose={null}>
+        <mesh
+          geometry={nodes.color_outside.geometry}
+          material={nodes.color_outside.material}
+          position={[1.67, -1.08, 1.15]}
+          material-color={snap.items.pvc}
+        />
+        <mesh
+          geometry={nodes.color_inside.geometry}
+          material={nodes.color_inside.material}
+          position={[-1.67, -0.86, 0.93]}
+          material-color={snap.items.pvc}
+        />
+        <mesh geometry={nodes.profile.geometry} material={nodes.profile.material} position={[0.21, -2.15, 2.21]} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[0.06, -1.54, 1.61]} material-color={snap.items.steel}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.27, -0.74, 0.81]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.45, 0, 0.06]} material-color={snap.items.red}/>
+        <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.21, 0.37, -0.31]} material-color={snap.items.gasket}/>
+        <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.25, 0.52, -0.45]} material-color={snap.items.kantet}/>
+        <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-0.65, -1.11, 1.18]} material-color={snap.items.hardware}/>
+        <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[0, 2.15, -2.21]} material-color={snap.items.glas}/>
+      </group>
+    )
+  }
+
+  export function K76Md({ ...props }) {
+    const group = useRef()
+    const snap = useSnapshot(state);
+    const { nodes, materials } = useGLTF('/k76md.glb')
+    return (
+      <group ref={group} {...props} dispose={null}>
+        <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[0.08, 1.81, -1.87]} material-color={snap.items.glas}/>
+        <mesh
+          geometry={nodes.color_inside.geometry}
+          material={nodes.color_inside.material}
+          position={[-1.63, -1.51, 1.58]}
+          material-color={snap.items.pvc}
+        />
+        <mesh
+          geometry={nodes.color_outside.geometry}
+          material={nodes.color_outside.material}
+          position={[1.63, -1.4, 1.48]}
+          material-color={snap.items.pvc}
+        />
+        <mesh geometry={nodes.profile.geometry} material={nodes.profile.material} position={[-0.14, -1.76, 1.83]} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-0.1, -1.81, 1.87]} material-color={snap.items.steel}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.3, -1.08, 1.15]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.49, -0.34, 0.41]} material-color={snap.items.red}/>
+        <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.24, 0.03, 0.05]} material-color={snap.items.gasket}/>
+        <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.28, 0.18, -0.1]} material-color={snap.items.kantet}/>
+        <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-0.7, -1.45, 1.53]} material-color={snap.items.hardware}/>
+      </group>
+    )
+  }
+
+  export function K88({ ...props }) {
+    const group = useRef()
+    const snap = useSnapshot(state);
+    const { nodes, materials } = useGLTF('/k88.glb')
+    return (
+      <group ref={group} {...props} dispose={null}>
+        <mesh
+          geometry={nodes.color_outside.geometry}
+          material={nodes.color_outside.material}
+          position={[1.9, -2.11, 1.5]}
+          material-color={snap.items.pvc}
+        />
+        <mesh
+          geometry={nodes.color_inside.geometry}
+          material={nodes.color_inside.material}
+          position={[-1.9, -1.93, 1.32]}
+          material-color={snap.items.pvc}
+        />
+        <mesh geometry={nodes.profile.geometry} material={nodes.profile.material} position={[-0.4, -2.03, 1.41]} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-0.3, -2.52, 1.89]} material-color={snap.items.steel}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.4, -1.75, 1.12]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.54, -0.98, 0.36]} material-color={snap.items.red}/>
+        <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.34, -0.61, -0.01]} material-color={snap.items.gasket}/>
+        <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.4, -0.46, -0.16]} material-color={snap.items.kantet}/>
+        <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-0.79, -1.95, 1.33]} material-color={snap.items.hardware}/>
+        <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[-0.34, 2.52, -1.89]} material-color={snap.items.glas}/>
       </group>
     )
   }
