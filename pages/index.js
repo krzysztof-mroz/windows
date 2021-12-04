@@ -3,7 +3,7 @@ import "tachyons";
 import "tachyons-svg";
 import Link from "next/link";
 import ColourStrip from "../components/ui/colourstrip";
-import {Ct70Classic, Ct70Rondo, Living, K70, K76Ad, K76Md, K88} from "../components/ui/models";
+import {Ct70Classic, Ct70Rondo, Living, K70, K76Ad, K76Md, K88, Pe68, Pe78N, Mb70, Mb86, Aws75, Aws90} from "../components/ui/models";
 import ProfileStrip from "../components/ui/profilestrip";
 import ProfileCards from "../components/ui/profilecards";
 import Schnellkontakt from "../components/ui/schnellkontakt";
@@ -160,13 +160,19 @@ function StartPage() {
                     
                   >
                     <Suspense fallback={null}>
-                      {activeProfile=="Schüco CT 70 Classic"? <Ct70Classic rotation-y={Math.PI * (1.15)} /> : null}
-                      {activeProfile=="Schüco CT 70 Rondo"? <Ct70Rondo  rotation-y={Math.PI * (1.15)}/> : null}
-                      {activeProfile=="Schüco Living MD"? <Living  rotation-y={Math.PI * (1.15)}/> : null}
-                      {activeProfile=="Kömmerling 70 AD"? <K70  rotation-y={Math.PI * (1.15)}/> : null}
-                      {activeProfile=="Kömmerling 76 AD"? <K76Ad  rotation-y={Math.PI * (1.15)}/> : null}
-                      {activeProfile=="Kömmerling 76 MD"? <K76Md  rotation-y={Math.PI * (1.15)}/> : null}
-                      {activeProfile=="Kömmerling 88 MD"? <K88 rotation-y={Math.PI * (1.15)}/> : null}
+                      {activeProfile=="Schüco CT 70 Classic"? <Ct70Classic rotation-y={Math.PI * (1.33)} /> : null}
+                      {activeProfile=="Schüco CT 70 Rondo"? <Ct70Rondo  rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Schüco Living MD"? <Living  rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Kömmerling 70 AD"? <K70  rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Kömmerling 76 AD"? <K76Ad  rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Kömmerling 76 MD"? <K76Md  rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Kömmerling 88 MD"? <K88 rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Ponzio PE 68N"? <Pe68 rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Ponzio PE 78N"? <Pe78N rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Aluprof MB 70 HI"? <Mb70 rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Aluprof MB 86 SI"? <Mb86 rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Schüco AWS 75"? <Aws75 rotation-y={Math.PI * (1.33)}/> : null}
+                      {activeProfile=="Schüco AWS 90"? <Aws90 rotation-y={Math.PI * (1.33)}/> : null}
                       <Environment preset="warehouse" />
                       <ContactShadows
                         rotation-x={Math.PI / 2}
