@@ -49,6 +49,8 @@ function ffd (ev) {
     $id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
 
 }
@@ -66,6 +68,7 @@ function back (ev) {
     $id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
 
 }
@@ -84,7 +87,7 @@ function back (ev) {
     $id("profilDuzy").src = ev.target.title;
     $id("tekstProfilu").innerText = ev.target.alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
-
+    $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(ev.target.alt);
 
     

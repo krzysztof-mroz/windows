@@ -15,6 +15,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
         last: false,
+        section: "./pics/sections/ct70classic.png"
     },
 
     {
@@ -33,6 +34,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
         last: false,
+        section: "./pics/sections/ct70rondo.png"
     },
 
     {
@@ -51,6 +53,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "7 Kammer, 3 Dichtungen, 82 mm Tiefe",
         last: true,
+        section: "./pics/sections/living.png"
     },
     
     {
@@ -69,6 +72,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 70 mm Tiefe",
         last: false,
+        section: "./pics/sections/k70.png"
     },
 
     {
@@ -87,6 +91,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "5 Kammer, 2 Dichtungen, 76 mm Tiefe",
         last: false,
+        section: "./pics/sections/k76ad.png"
     },
 
     {
@@ -105,6 +110,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "6 Kammer, 3 Dichtungen, 76 mm Tiefe",
         last: false,
+        section: "./pics/sections/k76md.png"
     },
 
     {
@@ -123,6 +129,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "7 Kammer, 3 Dichtungen, 88 mm Tiefe",
         last: true,
+        section: "./pics/sections/k88.png"
     },
 
     {
@@ -141,6 +148,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 68 mm Einbautiefe",
         last: false,
+        section: "./pics/sections/pe68.png"
     },
     {
         id: "pic_profil_ponzio_78",
@@ -158,6 +166,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 78 mm Einbautiefe, Thermische Trennung",
         last: true,
+        section: "./pics/sections/pe78.png"
     },
 
     {
@@ -176,6 +185,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 70 mm Einbautiefe, Thermische Trennung",
         last: false,
+        section: "./pics/sections/mb70.png"
     },
     
     {
@@ -194,6 +204,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 86 mm Einbautiefe, Thermische Trennung",
         last: true,
+        section: "./pics/sections/mb86.png"
     },
 
     {
@@ -212,6 +223,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 75 mm Einbautiefe, Thermische Trennung",
         last: false,
+        section: "./pics/sections/aws75.png"
     },
     
     {
@@ -230,6 +242,7 @@ const PROFILE = [
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 90 mm Einbautiefe, Thermische Trennung",
         last: false,
+        section: "./pics/sections/aws90.png"
     },
 
   ];

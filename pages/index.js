@@ -1,9 +1,22 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import "tachyons";
-import "tachyons-svg";
 import Link from "next/link";
 import ColourStrip from "../components/ui/colourstrip";
-import {Ct70Classic, Ct70Rondo, Living, K70, K76Ad, K76Md, K88, Pe68, Pe78N, Mb70, Mb86, Aws75, Aws90} from "../components/ui/models";
+import {
+  Ct70Classic,
+  Ct70Rondo,
+  Living,
+  K70,
+  K76Ad,
+  K76Md,
+  K88,
+  Pe68,
+  Pe78N,
+  Mb70,
+  Mb86,
+  Aws75,
+  Aws90,
+} from "../components/ui/models";
 import ProfileStrip from "../components/ui/profilestrip";
 import ProfileCards from "../components/ui/profilecards";
 import Schnellkontakt from "../components/ui/schnellkontakt";
@@ -19,22 +32,22 @@ import {
 } from "@react-three/drei";
 import { proxy, useSnapshot } from "valtio";
 
-
-
 function StartPage() {
   const [mainWindow, setMainWindow] = useState("pic");
   const [activeProfile, setActiveProfile] = useState("Schüco CT 70 Classic");
-  
 
-  
+  const Background = (props) => {
+    const texture = useTexture("./pics/spring_texture.jpg");
+    return <primitive attach="background" object={texture} />;
+  };
 
   function profileChangeHandler(newProfile) {
     setActiveProfile(newProfile);
-  };
+  }
 
   return (
     <div className="w-90 w-100-l center">
-      <div className="bg-black-80 fw9 pv1 tl dt w-100 nawierzch">
+      <div className="bg-black-80 fw9 pv1 tl dt w-100">
         <div className="dtc v-mid tc pa1">
           <Link href="/">
             <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
@@ -152,40 +165,64 @@ function StartPage() {
                   src="./pics/ct_70_classic_3d.jpg"
                 ></img>
 
-                <div style={  { position: "relative", height: 478 }} className={mainWindow == "3d" ? "db" : "dn"}>
+                <div
+                  style={{ position: "relative", height: 478 }}
+                  className={mainWindow == "3d" ? "db" : "dn"}
+                >
                   <Canvas
                     shadows
                     dpr={[1, 2]}
                     camera={{ position: [16, 16, 16], fov: 50 }}
-                    
                   >
                     <Suspense fallback={null}>
-                      {activeProfile=="Schüco CT 70 Classic"? <Ct70Classic rotation-y={Math.PI * (1.33)} /> : null}
-                      {activeProfile=="Schüco CT 70 Rondo"? <Ct70Rondo  rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Schüco Living MD"? <Living  rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Kömmerling 70 AD"? <K70  rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Kömmerling 76 AD"? <K76Ad  rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Kömmerling 76 MD"? <K76Md  rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Kömmerling 88 MD"? <K88 rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Ponzio PE 68N"? <Pe68 rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Ponzio PE 78N"? <Pe78N rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Aluprof MB 70 HI"? <Mb70 rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Aluprof MB 86 SI"? <Mb86 rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Schüco AWS 75"? <Aws75 rotation-y={Math.PI * (1.33)}/> : null}
-                      {activeProfile=="Schüco AWS 90"? <Aws90 rotation-y={Math.PI * (1.33)}/> : null}
-                      <Environment preset="warehouse" />
-                      <ContactShadows
-                        rotation-x={Math.PI / 2}
-                        position={[0, -0.8, 0]}
-                        opacity={0.25}
-                        width={10}
-                        height={10}
-                        blur={1.5}
-                        far={0.8}
-                      />
+                      <Background />
+                    </Suspense>
+
+                    <Suspense fallback={null}>
+                      {activeProfile == "Schüco CT 70 Classic" ? (
+                        <Ct70Classic rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Schüco CT 70 Rondo" ? (
+                        <Ct70Rondo rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Schüco Living MD" ? (
+                        <Living rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Kömmerling 70 AD" ? (
+                        <K70 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Kömmerling 76 AD" ? (
+                        <K76Ad rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Kömmerling 76 MD" ? (
+                        <K76Md rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Kömmerling 88 MD" ? (
+                        <K88 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Ponzio PE 68N" ? (
+                        <Pe68 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Ponzio PE 78N" ? (
+                        <Pe78N rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Aluprof MB 70 HI" ? (
+                        <Mb70 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Aluprof MB 86 SI" ? (
+                        <Mb86 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Schüco AWS 75" ? (
+                        <Aws75 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      {activeProfile == "Schüco AWS 90" ? (
+                        <Aws90 rotation-y={Math.PI * 1.33} />
+                      ) : null}
+                      <Environment preset="park" />
+                     
                     </Suspense>
                     <OrbitControls
-                      minPolarAngle={Math.PI  * 0.45}
+                      minPolarAngle={Math.PI * 0.45}
                       maxPolarAngle={Math.PI * 0.55}
                       enableZoom={false}
                       enablePan={false}
@@ -198,13 +235,16 @@ function StartPage() {
                 <ProfileStrip onProfileChange={profileChangeHandler} />
               </div>
             </div>
-            <div className="flex flex-wrap justify-center mv1  fl w-100 w-25-l ba b--moon-gray">
-              <div className="tc  br3 ma2 w3-display-container w3-text-blue-grey">
-                <div class="dn db-l w3-display-topmiddle w3-container">
-                  <h2 id="tekstProfilu">Schüco CT 70 Classic</h2>
-                  <p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p>
-                 
-                </div>
+            <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
+              <div className="tc  br3 ma2">
+                <div class="dn db-l w3-display-topmiddle w3-container"></div>
+                <h2 id="tekstProfilu">Schüco CT 70 Classic</h2>
+                <p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p>
+
+                <img
+                  id="sectionPic"
+                  src="./pics/sections/ct70classic.png"
+                ></img>
               </div>
             </div>
           </div>
