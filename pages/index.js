@@ -33,8 +33,8 @@ import {
 import { proxy, useSnapshot } from "valtio";
 
 function StartPage() {
-  const [mainWindow, setMainWindow] = useState("pic");
-  const [activeProfile, setActiveProfile] = useState("Schüco CT 70 Classic");
+  const [mainWindow, setMainWindow] = useState("3d");
+  const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
 
   const Background = (props) => {
     const texture = useTexture("./pics/spring_texture.jpg");
@@ -238,8 +238,8 @@ function StartPage() {
             <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="tc  br3 ma2">
                 <div class="dn db-l w3-display-topmiddle w3-container"></div>
-                <h2 id="tekstProfilu">Schüco CT 70 Classic</h2>
-                <p id="komoryProfilu">5 Kammer, 2 Dichtungen, 70 mm Tiefe</p>
+                <h2 id="tekstProfilu">Kömmerling 88 MD</h2>
+                <p id="komoryProfilu">7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte klassische Optik</p>
 
                 <img
                   id="sectionPic"

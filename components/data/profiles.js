@@ -195,7 +195,7 @@ const PROFILE = [
         idmwst: "mb_86_mwst",
         src: "../../pics/profile/pe78n_f.png",
         alt: "Aluprof MB 86 SI",
-        desc: "Aluminium 3 gedämte Kammer, 86 mm Tiefe. Mehrkammer-thermische Trennung, Uf ab 1,0 W/m2K",
+        desc: "Aluminium 3 gedämte Kammer, 77 mm Tiefe. Mehrkammer-thermische Trennung, Uf ab 1,0 W/m2K",
         brand: "a",
         material: "a",
         prices: [165, 187, 211],

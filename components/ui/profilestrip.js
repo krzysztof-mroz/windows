@@ -3,7 +3,7 @@ import { getAllProfiles } from "../data/profiles";
 
 function profileStrip(props) {
   const profiles = getAllProfiles();
-  const [activeProfile, setActiveProfile] = useState("Schüco CT 70 Classic");
+  const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
 
   return (
     <div className="flex flex-wrap justify-center fl w-100 mv2">
@@ -48,8 +48,7 @@ function ffd (ev) {
 
     $id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
-    $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
-    $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
 
@@ -67,7 +66,7 @@ function back (ev) {
 
     $id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
-    $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
 
@@ -86,7 +85,7 @@ function back (ev) {
 
     $id("profilDuzy").src = ev.target.title;
     $id("tekstProfilu").innerText = ev.target.alt;
-    $id("komoryProfilu").innerText = profiles[nrprofila].komoryProfilu;
+    $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(ev.target.alt);
 
