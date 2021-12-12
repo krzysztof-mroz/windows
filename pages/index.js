@@ -243,7 +243,7 @@ function StartPage() {
 
                 <img
                   id="sectionPic"
-                  src="./pics/sections/ct70classic.png"
+                  src="./pics/sections/k88.png"
                 ></img>
               </div>
             </div>

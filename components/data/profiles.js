@@ -202,7 +202,7 @@ const PROFILE = [
         idSlide: "mb86",
         picSlide: "./pics/mb_86_3d.jpg",
         ikonka: "../pics/svg/profileiconalu",
-        komoryProfilu: "3 Kammer, 86 mm Einbautiefe, Thermische Trennung",
+        komoryProfilu: "3 Kammer, 77 mm Einbautiefe, Thermische Trennung",
         last: true,
         section: "./pics/sections/mb86.png"
     },
