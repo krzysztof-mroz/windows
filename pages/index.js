@@ -98,14 +98,14 @@ function StartPage() {
           <div className="flex flex-wrap justify-left mb2 w-100">
             <div className="flex flex-wrap justify-around fl">
               <div className="w-100 w-25-l  tc  ">
-                <img className="mt1 mr5" src="./pics/logo_PF.png"></img>
+                <img className="mt1 mh3" src="./pics/logo_PF.png"></img>
               </div>
 
               <div className="w-100 w-50-l  fl  tc mv1 ">
-                <img className="mt5 mr2 " src="./pics/ikona_metrowka.png"></img>
-                <img className="mt5 mr2" src="./pics/ikona_auto.png"></img>
-                <img className="mt5 mr2" src="./pics/ikona_klucz.png"></img>
-                <img className="mt5 mr5 " src="./pics/ikona_gwarancja.png"></img>
+                <img className="mt5 mr1 " src="./pics/ikona_metrowka.png"></img>
+                <img className="mt5 mr1" src="./pics/ikona_auto.png"></img>
+                <img className="mt5 mr1" src="./pics/ikona_klucz.png"></img>
+                <img className="mt5 mr3 " src="./pics/ikona_gwarancja.png"></img>
               </div>
 
               <div className="w-100 w-25-l fl tc  mt2 f3 f4-l w3-text-orange">
