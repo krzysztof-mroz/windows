@@ -133,7 +133,7 @@ function StartPage() {
           <div className="pv3 tc">
             <div className="flex flex-wrap justify-center w-100">
               
-              <h3 className="fl ma1 w-100 tc w3-text-red dn">
+              <h3 className="fl ma1 w-100 tc w3-text-red ">
                 DIESE SEITE BEFINDET SICH IM AUFBAU! <a className="w3-text-black" href = "mailto: info@polnische-fenster.com"> Kontakt: info@polnische-fenster.com</a>
               </h3>
             </div>
