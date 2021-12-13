@@ -113,7 +113,7 @@ function StartPage() {
 
               
 
-              <div className="w-100 w-25-l fl tc mt3  f5 w3-text-orange ">
+              <div className="w-100 w-25-l fl tc tl-l mt3  f5 w3-text-orange ">
                 <div className="w-100 mv1">
                 <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/anruf.svg" />
                 <p className="dib">0800 44 700 99</p>
