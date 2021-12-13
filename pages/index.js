@@ -95,32 +95,45 @@ function StartPage() {
 
       <div className="flex flex-wrap justify-center">
         <div className="mh2 mh4-ns mh6-l mw9 ">
-          <div className="flex flex-wrap justify-left mb2 w-100">
-            <div className="flex flex-wrap justify-around fl">
-              <div className="w-100 w-25-l  tc  ">
-                <img className="mt1 mh3" src="./pics/logo_PF.png"></img>
+          <div className="flex flex-wrap justify-around mb2 w-100">
+            
+           
+              <div className="w-100 w-20-l  tc mv1 mr3">
+                <img className="mt1" src="./pics/logo_PF.png"></img>
               </div>
 
-              <div className="w-100 w-50-l  fl  tc mv1 ">
-                <img className="mt5 mr1 " src="./pics/ikona_metrowka.png"></img>
-                <img className="mt5 mr1" src="./pics/ikona_auto.png"></img>
-                <img className="mt5 mr1" src="./pics/ikona_klucz.png"></img>
-                <img className="mt5 mr3 " src="./pics/ikona_gwarancja.png"></img>
+              <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
+                <img className="mt4 mr1 " src="./pics/ikonki_rund.png"></img>
+
+                <h3 className="fl ma1 mt3 w-100 tc">
+                Kunststoff und Aluminium Fenster aus Polen
+              </h3>
               </div>
 
-              <div className="w-100 w-25-l fl tc  mt2 f3 f4-l w3-text-orange">
-                <b> 0800 44 700 99</b>
+              
+
+              <div className="w-100 w-25-l fl tc mt3  f5 w3-text-orange ">
+                <div className="w-100 mv1">
+                <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/anruf.svg" />
+                <p className="dib">0800 44 700 99</p>
+                </div>
+                <div className="w-100 mv1">
+                <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/briefumschlag.svg" />
+                <a href = "mailto: info@polnische-fenster.com">info@polnische-fenster.com</a>
+                </div>
+                <div className="w-100v1 m">
+                <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/whatsapp.svg" />
+                <a href="https://wa.me/4915737448021" target="_blank">+4915737448021</a>
+                </div>
               </div>
-            </div>
+            
           </div>
 
           <div className="pv3 tc">
             <div className="flex flex-wrap justify-center w-100">
-              <h2 className="fl ma1 w-100 tc">
-                Kunststoff und Aluminium Fenster aus Polen
-              </h2>
+              
               <h3 className="fl ma1 w-100 tc w3-text-red">
-                DIESE SEITE BEFINDET SICH IM AUFBAU! <span className="w3-text-black">Kontakt: info@polnische-fenster.com</span>
+                DIESE SEITE BEFINDET SICH IM AUFBAU! <a className="w3-text-black" href = "mailto: info@polnische-fenster.com"> Kontakt: info@polnische-fenster.com</a>
               </h3>
             </div>
           </div>
