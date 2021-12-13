@@ -1,7 +1,8 @@
 import { proxy, useSnapshot } from "valtio";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import {useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
+import { useFrame } from "react-three-fiber";
 
 const state = proxy({
     current: null,
@@ -23,14 +24,14 @@ const state = proxy({
     },
   });
 
-  
-
 
   
+  const rotateRate = 0;
 
   export function Ct70Classic({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/ct70classic.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -79,6 +80,7 @@ const state = proxy({
   export function Ct70Rondo({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/ct70rondo.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -114,7 +116,7 @@ const state = proxy({
   export function Living({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
-    
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/living.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -150,6 +152,7 @@ const state = proxy({
   export function K70({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/k70.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -185,6 +188,7 @@ const state = proxy({
   export function K76Ad({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/k76ad.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -221,6 +225,7 @@ const state = proxy({
   export function K76Md({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/k76md.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -256,6 +261,7 @@ const state = proxy({
   export function K88({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/k88.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -291,6 +297,7 @@ const state = proxy({
   export function Pe68({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/pe68.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -325,6 +332,7 @@ const state = proxy({
   export function Pe78N({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/pe78n.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -359,6 +367,7 @@ const state = proxy({
   export function Mb70({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/mb70.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -397,6 +406,7 @@ const state = proxy({
   export function Mb86({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/mb86.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -435,6 +445,7 @@ const state = proxy({
   export function Aws75({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/aws75.glb')
     return (
       <group ref={group} {...props} dispose={null}>
@@ -474,6 +485,7 @@ const state = proxy({
   export function Aws90({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/aws90.glb')
     return (
       <group ref={group} {...props} dispose={null}>
