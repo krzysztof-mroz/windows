@@ -154,7 +154,7 @@ function StartPage() {
                   onMouseDown={changeMainWindow}
                 ></img>
                 <img
-                  className="mv2 mh2"
+                  className="mv2 mh2 mh4 "
                   style={{ position: "relative", width: 20, height: 20 }}
                   src={
                     mainWindow === "3d"
