@@ -99,7 +99,8 @@ function StartPage() {
             
            
               <div className="w-100 w-20-l  tc mv1 mr3">
-                <img className="mt1" src="./pics/logo_PF.png"></img>
+                <img className="mt1 dib" src="./pics/logo_PF.png"></img>
+               
               </div>
 
               <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
@@ -121,7 +122,7 @@ function StartPage() {
                 <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/briefumschlag.svg" />
                 <a href = "mailto: info@polnische-fenster.com">info@polnische-fenster.com</a>
                 </div>
-                <div className="w-100v1 m">
+                <div className="w-100 mv3">
                 <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/whatsapp.svg" />
                 <a href="https://wa.me/4915737448021" target="_blank">+4915737448021</a>
                 </div>
@@ -132,7 +133,7 @@ function StartPage() {
           <div className="pv3 tc">
             <div className="flex flex-wrap justify-center w-100">
               
-              <h3 className="fl ma1 w-100 tc w3-text-red">
+              <h3 className="fl ma1 w-100 tc w3-text-red dn">
                 DIESE SEITE BEFINDET SICH IM AUFBAU! <a className="w3-text-black" href = "mailto: info@polnische-fenster.com"> Kontakt: info@polnische-fenster.com</a>
               </h3>
             </div>
