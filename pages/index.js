@@ -98,7 +98,7 @@ function StartPage() {
           <div className="flex flex-wrap justify-around mb2 w-100">
             
            
-              <div className="w-100 w-20-l  tc mv1 mr3">
+              <div className="w-100 w-20-l  tc mv1">
                 <img className="mt1 dib" src="./pics/logo_PF.png"></img>
                
               </div>
@@ -133,7 +133,7 @@ function StartPage() {
           <div className="pv3 tc">
             <div className="flex flex-wrap justify-center w-100">
               
-              <h3 className="fl ma1 w-100 tc w3-text-red ">
+              <h3 className="fl ma1 w-100 tc w3-text-red">
                 DIESE SEITE BEFINDET SICH IM AUFBAU! <a className="w3-text-black" href = "mailto: info@polnische-fenster.com"> Kontakt: info@polnische-fenster.com</a>
               </h3>
             </div>
