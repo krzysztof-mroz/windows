@@ -180,7 +180,7 @@ function StartPage() {
                 <img
                   id="profilDuzy"
                   className={mainWindow == "pic" ? "db" : "dn"}
-                  src="./pics/ct_70_classic_3d.jpg"
+                  src="./pics/k_88_3d.jpg"
                 ></img>
 
                 <div
