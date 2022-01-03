@@ -203,9 +203,9 @@ function StartPage() {
 
                 <div
                   //style={{ position: "relative", height: 478 }}
-                  className={mainWindow == "film" ? "db w-90 justify-center" : "dn"}
+                  className={mainWindow == "film" ? "db w-100 justify-center" : "dn"}
                 >
-                  <video className="" id="video" style={{ maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
+                  <video className="" id="video" style={{position: "relative", width: "100%", maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
                     
                     
                     <source id="source" src="./movies/k88.mp4" type="video/mp4" />
