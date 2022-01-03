@@ -471,7 +471,7 @@ const state = proxy({
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[0.86, -0.57, -0.06]} material-color={snap.items.kantet}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[0.82, -0.68, 0.05]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-0.86, -2.11, 1.48]} material-color={snap.items.hardware}/>
-        <mesh geometry={nodes.insulation.geometry} material={nodes.insulation.material} position={[0.47, -2.61, 1.98]} material-color={snap.items.blockgasket}/>
+        <mesh geometry={nodes.insulation.geometry} material={nodes.insulation.material} position={[0.47, -2.61, 1.98]} material-color={snap.items.insulation}/>
         <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[0.82, 2.61, -1.98]} material-roughness={0.25}
         material-clearcoat={1}
         material-reflectivity={1}
