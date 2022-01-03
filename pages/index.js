@@ -203,9 +203,9 @@ function StartPage() {
 
                 <div
                   //style={{ position: "relative", height: 478 }}
-                  className={mainWindow == "film" ? "db" : "dn"}
+                  className={mainWindow == "film" ? "db w-90 justify-center" : "dn"}
                 >
-                  <video id="video" style={{ position: "relative", width: "100%", maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
+                  <video className="" id="video" style={{ maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
                     
                     
                     <source id="source" src="./movies/k88.mp4" type="video/mp4" />
@@ -259,10 +259,10 @@ function StartPage() {
                       {activeProfile == "Aluprof MB 86 SI" ? (
                         <Mb86 rotation-y={Math.PI * 1.33} />
                       ) : null}
-                      {activeProfile == "Schüco AWS 75" ? (
+                      {activeProfile == "Schüco AWS 75 SI" ? (
                         <Aws75 rotation-y={Math.PI * 1.33} />
                       ) : null}
-                      {activeProfile == "Schüco AWS 90" ? (
+                      {activeProfile == "Schüco AWS 90 SI" ? (
                         <Aws90 rotation-y={Math.PI * 1.33} />
                       ) : null}
                       <Environment preset="park" />
