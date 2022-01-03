@@ -35,6 +35,7 @@ function profileStrip(props) {
     </div>
   );
 
+  
 
 function ffd (ev) {
   var nrprofila = 0;
@@ -51,6 +52,9 @@ function ffd (ev) {
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
+    if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
+
+
 
 }
 
@@ -69,6 +73,7 @@ function back (ev) {
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
+    if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
 
 }
 
@@ -88,14 +93,24 @@ function back (ev) {
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(ev.target.alt);
-
-    
-
+    changeVideo (profiles[nrprofila].movie, props.mWindow);
 
   }
 
   function $id(id) {
     return document.getElementById(id);
+  }
+
+  function changeVideo (movie, mWindow) {
+    var video = $id('video');
+    var source = $id('source');
+    video.pause();
+    source.setAttribute('src', movie);
+    video.appendChild(source);
+    video.load();
+    if (mWindow == "film") video.play();
+    
+    
   }
 }
 

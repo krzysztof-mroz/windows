@@ -44,6 +44,8 @@ function StartPage() {
 
   function profileChangeHandler(newProfile) {
     setActiveProfile(newProfile);
+
+
   }
 
   return (
@@ -96,45 +98,61 @@ function StartPage() {
       <div className="flex flex-wrap justify-center">
         <div className="mh2 mh4-ns mh6-l mw9 ">
           <div className="flex flex-wrap justify-around mb2 w-100">
-            
-           
-              <div className="w-100 w-20-l  tc mv1">
-                <img className="mt1 dib" src="./pics/logo_PF.png"></img>
-               
-              </div>
+            <div className="w-100 w-20-l  tc mv1">
+              <img className="mt1 dib" src="./pics/logo_PF.png"></img>
+            </div>
 
-              <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
-                <img className="mt4 mr1 " src="./pics/ikonki_rund.png"></img>
+            <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
+              <img className="mt4 mr1 " src="./pics/ikonki_rund.png"></img>
 
-                <h3 className="fl ma1 mt3 w-100 tc">
+              <h3 className="fl ma1 mt3 w-100 tc">
                 Kunststoff und Aluminium Fenster aus Polen
               </h3>
-              </div>
+            </div>
 
-              
-
-              <div className="w-100 w-25-l fl tc tl-l mt3  f5 w3-text-orange ">
-                <div className="w-100 mv1">
-                <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/anruf.svg" />
+            <div className="w-100 w-25-l fl tc tl-l mt3  f5 w3-text-orange ">
+              <div className="w-100 mv1">
+                <img
+                  className="dib mr2"
+                  style={{ position: "relative", width: 25, height: 25 }}
+                  src="./pics/svg/anruf.svg"
+                />
                 <p className="dib">0800 44 700 99</p>
-                </div>
-                <div className="w-100 mv1">
-                <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/briefumschlag.svg" />
-                <a href = "mailto: info@polnische-fenster.com">info@polnische-fenster.com</a>
-                </div>
-                <div className="w-100 mv3">
-                <img className="dib mr2" style={{ position: "relative", width: 25, height: 25 }} src="./pics/svg/whatsapp.svg" />
-                <a href="https://wa.me/4915737448021" target="_blank">+4915737448021</a>
-                </div>
               </div>
-            
+              <div className="w-100 mv1">
+                <img
+                  className="dib mr2"
+                  style={{ position: "relative", width: 25, height: 25 }}
+                  src="./pics/svg/briefumschlag.svg"
+                />
+                <a href="mailto: info@polnische-fenster.com">
+                  info@polnische-fenster.com
+                </a>
+              </div>
+              <div className="w-100 mv3">
+                <img
+                  className="dib mr2"
+                  style={{ position: "relative", width: 25, height: 25 }}
+                  src="./pics/svg/whatsapp.svg"
+                />
+                <a href="https://wa.me/4915737448021" target="_blank">
+                  +4915737448021
+                </a>
+              </div>
+            </div>
           </div>
 
           <div className="pv3 tc">
             <div className="flex flex-wrap justify-center w-100">
-              
               <h3 className="fl ma1 w-100 tc w3-text-red">
-                DIESE SEITE BEFINDET SICH IM AUFBAU! <a className="w3-text-black" href = "mailto: info@polnische-fenster.com"> Kontakt: info@polnische-fenster.com</a>
+                DIESE SEITE BEFINDET SICH IM AUFBAU!{" "}
+                <a
+                  className="w3-text-black"
+                  href="mailto: info@polnische-fenster.com"
+                >
+                  {" "}
+                  Kontakt: info@polnische-fenster.com
+                </a>
               </h3>
             </div>
           </div>
@@ -182,6 +200,17 @@ function StartPage() {
                   className={mainWindow == "pic" ? "db" : "dn"}
                   src="./pics/k_88_3d.jpg"
                 ></img>
+
+                <div
+                  //style={{ position: "relative", height: 478 }}
+                  className={mainWindow == "film" ? "db" : "dn"}
+                >
+                  <video id="video" style={{ position: "relative", width: "100%", maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
+                    
+                    
+                    <source id="source" src="./movies/k88.mp4" type="video/mp4" />
+                  </video>
+                </div>
 
                 <div
                   style={{ position: "relative", height: 478 }}
@@ -237,7 +266,6 @@ function StartPage() {
                         <Aws90 rotation-y={Math.PI * 1.33} />
                       ) : null}
                       <Environment preset="park" />
-                     
                     </Suspense>
                     <OrbitControls
                       minPolarAngle={Math.PI * 0.45}
@@ -250,19 +278,19 @@ function StartPage() {
               </div>
 
               <div className="flex flex-wrap justify-start">
-                <ProfileStrip onProfileChange={profileChangeHandler} />
+                <ProfileStrip mWindow={mainWindow} onProfileChange={profileChangeHandler} />
               </div>
             </div>
             <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="tc  br3 ma2">
                 <div class="dn db-l w3-display-topmiddle w3-container"></div>
                 <h2 id="tekstProfilu">Kömmerling 88 MD</h2>
-                <p id="komoryProfilu">7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte klassische Optik</p>
+                <p id="komoryProfilu">
+                  7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte
+                  klassische Optik
+                </p>
 
-                <img
-                  id="sectionPic"
-                  src="./pics/sections/k88.png"
-                ></img>
+                <img id="sectionPic" src="./pics/sections/k88.png"></img>
               </div>
             </div>
           </div>
@@ -349,7 +377,8 @@ function StartPage() {
 
   function changeMainWindow(ev) {
     setMainWindow(ev.target.title);
-    console.log(ev.target.title);
+    document.getElementById('video').pause();
+   
   }
 }
 
