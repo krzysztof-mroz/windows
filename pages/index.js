@@ -291,7 +291,7 @@ function StartPage() {
                     <OrbitControls
                       minPolarAngle={Math.PI * 0.45}
                       maxPolarAngle={Math.PI * 0.55}
-                      enableZoom={true}
+                      enableZoom={false}
                       enablePan={false}
                       
                     />
