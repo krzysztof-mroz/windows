@@ -31,10 +31,28 @@ import {
   useTexture,
 } from "@react-three/drei";
 import { proxy, useSnapshot } from "valtio";
+import { getAllColours } from "../components/data/colours";
 
 function StartPage() {
   const [mainWindow, setMainWindow] = useState("3d");
   const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
+  const [colorInside, setColorInside] = useState("weiss");
+  const [colorOutside, setColorOutside] = useState("weiss2");
+
+  const farben = getAllColours();
+
+  var nrKolorkuZew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == colorOutside) {
+      nrKolorkuZew = farben.indexOf(kolorek);
+    }
+  }
+  var nrKolorkuWew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == colorInside) {
+      nrKolorkuWew = farben.indexOf(kolorek);
+    }
+  }
 
   const Background = (props) => {
     const texture = useTexture("./pics/spring_texture.jpg");
@@ -44,8 +62,6 @@ function StartPage() {
 
   function profileChangeHandler(newProfile) {
     setActiveProfile(newProfile);
-
-
   }
 
   return (
@@ -202,7 +218,7 @@ function StartPage() {
                 ></img>
 
                 <div
-                  //style={{ position: "relative", height: 478 }}
+                  
                   className={mainWindow == "film" ? "db w-100 flex flex-wrap justify-center" : "dn"}
                 >
                   <video className="" id="video" style={{position: "relative", width: "100%", maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
@@ -221,31 +237,35 @@ function StartPage() {
                     dpr={[1, 2]}
                     camera={{ position: [16, 16, 16], fov: 50 }}
                   >
+                     
+                    <spotLight intensity={farben[nrKolorkuWew].light_inside} angle={0.1} penumbra={1} position={[20, 15, -300]} castShadow />
+                    <spotLight intensity={farben[nrKolorkuZew].light_outside} angle={0.1} penumbra={1} position={[20, 100, 300]} castShadow />
+                    
                     <Suspense fallback={null}>
                       <Background />
                     </Suspense>
 
                     <Suspense fallback={null}>
                       {activeProfile == "Schüco CT 70 Classic" ? (
-                        <Ct70Classic rotation-y={Math.PI * 1.33} />
+                        <Ct70Classic rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside} />
                       ) : null}
                       {activeProfile == "Schüco CT 70 Rondo" ? (
-                        <Ct70Rondo rotation-y={Math.PI * 1.33} />
+                        <Ct70Rondo rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
                       ) : null}
                       {activeProfile == "Schüco Living MD" ? (
-                        <Living rotation-y={Math.PI * 1.33} />
+                        <Living rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
                       ) : null}
                       {activeProfile == "Kömmerling 70 AD" ? (
-                        <K70 rotation-y={Math.PI * 1.33} />
+                        <K70 rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
                       ) : null}
                       {activeProfile == "Kömmerling 76 AD" ? (
-                        <K76Ad rotation-y={Math.PI * 1.33} />
+                        <K76Ad rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
                       ) : null}
                       {activeProfile == "Kömmerling 76 MD" ? (
-                        <K76Md rotation-y={Math.PI * 1.33} />
+                        <K76Md rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
                       ) : null}
                       {activeProfile == "Kömmerling 88 MD" ? (
-                        <K88 rotation-y={Math.PI * 1.33} />
+                        <K88 rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
                       ) : null}
                       {activeProfile == "Ponzio PE 68N" ? (
                         <Pe68 rotation-y={Math.PI * 1.33} />
@@ -265,13 +285,15 @@ function StartPage() {
                       {activeProfile == "Schüco AWS 90 SI" ? (
                         <Aws90 rotation-y={Math.PI * 1.33} />
                       ) : null}
-                      <Environment preset="park" />
+                      <Environment preset="park"/>
+                      <ambientLight intensity={0.5} />
                     </Suspense>
                     <OrbitControls
                       minPolarAngle={Math.PI * 0.45}
                       maxPolarAngle={Math.PI * 0.55}
-                      enableZoom={false}
+                      enableZoom={true}
                       enablePan={false}
+                      
                     />
                   </Canvas>
                 </div>
@@ -295,18 +317,21 @@ function StartPage() {
             </div>
           </div>
 
-          <ColourStrip />
+          <ColourStrip onColorChange={changeColorOutside} />
+          <ColourStrip onColorChange={changeColorInside} />
 
           <div className="flex flex-wrap justify-around mb3 w-100">
-            <div className="flex flex-wrap justify-center  fl w-100 w-30-l">
-              <Schnellkontakt />
-            </div>
+          
 
-            <ProfileCards />
+            {/*<ProfileCards />*/}
           </div>
           <WarumDiv />
 
           <ActionDiv />
+
+          <div className="flex flex-wrap justify-center  fl w-90">
+              <Schnellkontakt />
+            </div>
 
           <div className="flex flex-wrap justify-center mb5 w-100"></div>
 
@@ -380,6 +405,17 @@ function StartPage() {
     document.getElementById('video').pause();
    
   }
+
+  function changeColorInside(newColor) {
+    setColorInside(newColor);
+    
+  }
+
+  function changeColorOutside(newColor) {
+    setColorOutside(newColor);
+    
+  }
+
 }
 
 export default StartPage;
