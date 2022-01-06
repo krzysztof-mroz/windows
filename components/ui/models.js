@@ -98,7 +98,6 @@ const state = proxy({
     }
     const textureInside = useTexture(farben[nrKolorkuWew].texture)
     const textureOutside = useTexture(farben[nrKolorkuZew].texture)
-
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/ct70Rondo.glb')
     return (
