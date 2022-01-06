@@ -1,14 +1,19 @@
 import { getAllColours } from "../data/colours";
 import { useState } from "react";
-import { getAllProfiles } from "../data/profiles";
+
 
 function colorStrip(props) {
   const farben = getAllColours();
-  const profiles = getAllProfiles();
   const [activeColour, setActiveColour] = useState("weiß");
 
   return (
-    <div className="flex flex-wrap justify-center fl w-100 mv2">
+    <div 
+    className={
+      props.showColors === true
+        ? "flex flex-wrap justify-center fl w-100 mv2"
+        : "dn"
+    }
+    >
       {farben.map((farbe) => (
         <div className="tooltip">
           <img

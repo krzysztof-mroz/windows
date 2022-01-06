@@ -7,7 +7,7 @@ function profileStrip(props) {
 
   return (
     <div className="flex flex-wrap justify-center fl w-100 mv2">
-<img className="mv2 mr5 mr4-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
+<img className="mv2 mr5 mr4-l dim" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
 
       {profiles.map((profile) => (
         <div className="tooltip">
@@ -16,8 +16,8 @@ function profileStrip(props) {
             alt={profile.alt}
             className={
               profile.last
-                ? "mv1 mv2-l mr1 mr4-l dn db-l"
-                : "mv1 mv2-l mr1 mr2-l dn db-l"
+                ? "mv1 mv2-l mr1 mr4-l dn db-l dim"
+                : "mv1 mv2-l mr1 mr2-l dn db-l dim"
             }
             style={{ position: "relative", width: 25, height: 25 }}
             src={activeProfile === profile.alt
@@ -31,7 +31,7 @@ function profileStrip(props) {
           <span class="tooltiptext">{profile.alt}</span>
         </div>
       ))}
-      <img className="mv2 ml5 ml4-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
+      <img className="mv2 ml5 ml4-l dim" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
     </div>
   );
 

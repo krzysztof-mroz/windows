@@ -18,7 +18,6 @@ import {
   Aws90,
 } from "../components/ui/models";
 import ProfileStrip from "../components/ui/profilestrip";
-import ProfileCards from "../components/ui/profilecards";
 import Schnellkontakt from "../components/ui/schnellkontakt";
 import WarumDiv from "../components/ui/warumdiv";
 import ActionDiv from "../components/ui/actiondiv";
@@ -37,7 +36,10 @@ function StartPage() {
   const [mainWindow, setMainWindow] = useState("3d");
   const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
   const [colorInside, setColorInside] = useState("weiss");
-  const [colorOutside, setColorOutside] = useState("weiss2");
+  const [colorOutside, setColorOutside] = useState("weiss");
+  const [showColors, setShowColors] = useState(false);
+  const [bothSidesColor, setBothSidesColor] = useState(false)
+  
 
   const farben = getAllColours();
 
@@ -176,39 +178,76 @@ function StartPage() {
           <div className="flex flex-wrap justify-around mb3 w-100">
             <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
               <div className="justify-end">
-                <img
-                  className="mv2 mh2"
-                  style={{ position: "relative", width: 20, height: 20 }}
-                  src={
-                    mainWindow === "pic"
-                      ? "./pics/svg/bild_red.svg"
-                      : "./pics/svg/bild_grey.svg"
-                  }
+                <button
                   title="pic"
-                  onMouseDown={changeMainWindow}
-                ></img>
-                <img
-                  className="mv2 mh4 "
-                  style={{ position: "relative", width: 20, height: 20 }}
-                  src={
-                    mainWindow === "3d"
-                      ? "./pics/svg/3d_red.svg"
-                      : "./pics/svg/3d_grey.svg"
+                  className={
+                    mainWindow === "pic"
+                      ? "f6 link dim ba ph2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 mh2 mt2 mb2 dib near-black"
                   }
+                  onMouseDown={changeMainWindow}
+                >
+                  {" "}
+                  Bild
+                  <img
+                    className="mv2 mh2"
+                    style={{ position: "relative", width: 20, height: 20 }}
+                    src={
+                      mainWindow === "pic"
+                        ? "./pics/svg/bild_red.svg"
+                        : "./pics/svg/bild_grey.svg"
+                    }
+                    title="pic"
+                  ></img>
+                </button>
+
+                <button
                   title="3d"
-                  onMouseDown={changeMainWindow}
-                ></img>
-                <img
-                  className="mv2 mh2"
-                  style={{ position: "relative", width: 20, height: 20 }}
-                  src={
-                    mainWindow === "film"
-                      ? "./pics/svg/film_red.svg"
-                      : "./pics/svg/film_grey.svg"
+                  className={
+                    mainWindow === "3d"
+                      ? "f6 link dim ba ph2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 mh2 mt2 mb2 dib near-black"
                   }
-                  title="film"
                   onMouseDown={changeMainWindow}
-                ></img>
+                >
+                  {" "}
+                  3d
+                  <img
+                    className="mv2 mh2"
+                    style={{ position: "relative", width: 20, height: 20 }}
+                    src={
+                      mainWindow === "3d"
+                        ? "./pics/svg/3d_red.svg"
+                        : "./pics/svg/3d_grey.svg"
+                    }
+                    title="3d"
+                  ></img>
+                </button>
+
+                <button
+                  title="film"
+                  className={
+                    mainWindow === "film"
+                      ? "f6 link dim ba ph2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 mh2 mt2 mb2 dib near-black"
+                  }
+                  onMouseDown={changeMainWindow}
+                >
+                  {" "}
+                  Film
+                  <img
+                    className="mv2 mh2"
+                    style={{ position: "relative", width: 20, height: 20 }}
+                    src={
+                      mainWindow === "film"
+                        ? "./pics/svg/film_red.svg"
+                        : "./pics/svg/film_grey.svg"
+                    }
+                    title="film"
+                  ></img>
+                </button>
+
+               
               </div>
               <div className="w-90">
                 <img
@@ -218,13 +257,30 @@ function StartPage() {
                 ></img>
 
                 <div
-                  
-                  className={mainWindow == "film" ? "db w-100 flex flex-wrap justify-center" : "dn"}
+                  className={
+                    mainWindow == "film"
+                      ? "db w-100 flex flex-wrap justify-center"
+                      : "dn"
+                  }
                 >
-                  <video className="" id="video" style={{position: "relative", width: "100%", maxWidth: 720, height: "auto"}} controls preload="none" poster="./movies/movie_poster.png">
-                    
-                    
-                    <source id="source" src="./movies/k88.mp4" type="video/mp4" />
+                  <video
+                    className=""
+                    id="video"
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      maxWidth: 720,
+                      height: "auto",
+                    }}
+                    controls
+                    preload="none"
+                    poster="./movies/movie_poster.png"
+                  >
+                    <source
+                      id="source"
+                      src="./movies/k88.mp4"
+                      type="video/mp4"
+                    />
                   </video>
                 </div>
 
@@ -237,35 +293,74 @@ function StartPage() {
                     dpr={[1, 2]}
                     camera={{ position: [16, 16, 16], fov: 50 }}
                   >
-                     
-                    <spotLight intensity={farben[nrKolorkuWew].light_inside} angle={0.1} penumbra={1} position={[20, 15, -300]} castShadow />
-                    <spotLight intensity={farben[nrKolorkuZew].light_outside} angle={0.1} penumbra={1} position={[20, 100, 300]} castShadow />
-                    
+                    <spotLight
+                      intensity={farben[nrKolorkuWew].light_inside}
+                      angle={0.1}
+                      penumbra={1}
+                      position={[20, 15, -300]}
+                      castShadow
+                    />
+                    <spotLight
+                      intensity={farben[nrKolorkuZew].light_outside}
+                      angle={0.1}
+                      penumbra={1}
+                      position={[20, 100, 300]}
+                      castShadow
+                    />
+
                     <Suspense fallback={null}>
                       <Background />
                     </Suspense>
 
                     <Suspense fallback={null}>
                       {activeProfile == "Schüco CT 70 Classic" ? (
-                        <Ct70Classic rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside} />
+                        <Ct70Classic
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Schüco CT 70 Rondo" ? (
-                        <Ct70Rondo rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
+                        <Ct70Rondo
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Schüco Living MD" ? (
-                        <Living rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
+                        <Living
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Kömmerling 70 AD" ? (
-                        <K70 rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
+                        <K70
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Kömmerling 76 AD" ? (
-                        <K76Ad rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
+                        <K76Ad
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Kömmerling 76 MD" ? (
-                        <K76Md rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
+                        <K76Md
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Kömmerling 88 MD" ? (
-                        <K88 rotation-y={Math.PI * 1.33} colorInside={colorInside} colorOutside={colorOutside}/>
+                        <K88
+                          rotation-y={Math.PI * 1.33}
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                        />
                       ) : null}
                       {activeProfile == "Ponzio PE 68N" ? (
                         <Pe68 rotation-y={Math.PI * 1.33} />
@@ -285,7 +380,7 @@ function StartPage() {
                       {activeProfile == "Schüco AWS 90 SI" ? (
                         <Aws90 rotation-y={Math.PI * 1.33} />
                       ) : null}
-                      <Environment preset="park"/>
+                      <Environment preset="park" />
                       <ambientLight intensity={0.5} />
                     </Suspense>
                     <OrbitControls
@@ -293,16 +388,64 @@ function StartPage() {
                       maxPolarAngle={Math.PI * 0.55}
                       enableZoom={false}
                       enablePan={false}
-                      
                     />
                   </Canvas>
                 </div>
               </div>
 
               <div className="flex flex-wrap justify-start">
-                <ProfileStrip mWindow={mainWindow} onProfileChange={profileChangeHandler} />
+                <ProfileStrip
+                  mWindow={mainWindow}
+                  onProfileChange={profileChangeHandler}
+                />
               </div>
-              <ColourStrip onColorChange={changeColorOutside} />
+              <div className="flex flex-wrap justify-center w-90">
+              <button
+                  className={
+                    mainWindow === "3d"
+                      ? "f6 link dim ba ph5 pv2 mh4 mt2 mb2 dib near-black"
+                      : "dn"
+                  }
+                  onMouseDown={onShowColors}
+                >
+                  {" "}
+                  {showColors === false ? "Farben anzeigen" : "Farben ausblenden"}
+                 
+                </button>
+                </div>
+
+                <div className="flex flex-wrap justify-center w-90">
+              <button
+                  className={
+                    showColors === true
+                      ? 
+                        bothSidesColor === false 
+                          ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                          : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"           
+                      : "dn"
+                  }
+                  onMouseDown={oneSideColor}
+                >
+                  {" "}
+                 Farbe nur außen
+                </button>
+
+                <button
+                  className={
+                    showColors === true
+                      ? bothSidesColor === true
+                      ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"     
+                      : "dn"
+                  }
+                  onMouseDown={bothSides}
+                >
+                  {" "}
+                 Farbe beidseitig
+                </button>
+                </div>
+
+              <ColourStrip showColors={showColors} onColorChange={changeColor} />
             </div>
             <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="tc  br3 ma2">
@@ -322,8 +465,6 @@ function StartPage() {
           <ColourStrip onColorChange={changeColorInside} />*/}
 
           <div className="flex flex-wrap justify-around mb3 w-100">
-          
-
             {/*<ProfileCards />*/}
           </div>
           <WarumDiv />
@@ -331,8 +472,8 @@ function StartPage() {
           <ActionDiv />
 
           <div className="flex flex-wrap justify-center  fl w-90">
-              <Schnellkontakt />
-            </div>
+            <Schnellkontakt />
+          </div>
 
           <div className="flex flex-wrap justify-center mb5 w-100"></div>
 
@@ -401,22 +542,45 @@ function StartPage() {
     </div>
   );
 
+
+  function oneSideColor () {
+    setBothSidesColor(false);
+    setColorInside("weiss");
+    setColorOutside(colorOutside);
+  }
+
+  function bothSides () {
+    setBothSidesColor(true);
+    setColorInside(colorOutside);
+    setColorOutside(colorOutside);
+  }
+
+  function onShowColors () {
+    if (showColors === false) {
+      setShowColors(true);
+    } else {
+      setShowColors(false);
+    }   
+  }
+
   function changeMainWindow(ev) {
     setMainWindow(ev.target.title);
-    document.getElementById('video').pause();
-   
+    document.getElementById("video").pause();
   }
 
   function changeColorInside(newColor) {
     setColorInside(newColor);
-    
   }
 
-  function changeColorOutside(newColor) {
-    setColorOutside(newColor);
-    
+  function changeColor(newColor) {
+    if (bothSidesColor === true) {
+      setColorInside(newColor);
+      setColorOutside(newColor);
+    } else {
+      setColorOutside(newColor);
+      setColorInside("weiss");
+    }
   }
-
 }
 
 export default StartPage;
