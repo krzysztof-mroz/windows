@@ -188,7 +188,7 @@ function StartPage() {
                   onMouseDown={changeMainWindow}
                 ></img>
                 <img
-                  className="mv2 mh2 mh4 "
+                  className="mv2 mh4 "
                   style={{ position: "relative", width: 20, height: 20 }}
                   src={
                     mainWindow === "3d"
@@ -302,6 +302,7 @@ function StartPage() {
               <div className="flex flex-wrap justify-start">
                 <ProfileStrip mWindow={mainWindow} onProfileChange={profileChangeHandler} />
               </div>
+              <ColourStrip onColorChange={changeColorOutside} />
             </div>
             <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="tc  br3 ma2">
@@ -317,8 +318,8 @@ function StartPage() {
             </div>
           </div>
 
-          <ColourStrip onColorChange={changeColorOutside} />
-          <ColourStrip onColorChange={changeColorInside} />
+          {/*<ColourStrip onColorChange={changeColorOutside} />
+          <ColourStrip onColorChange={changeColorInside} />*/}
 
           <div className="flex flex-wrap justify-around mb3 w-100">
           
