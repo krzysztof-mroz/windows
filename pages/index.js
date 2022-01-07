@@ -345,6 +345,7 @@ function StartPage() {
                 <ColourStrip
                 onColorChange={changeColor}
                 gasketChange={checkGasket}
+                
               />
               
             </div>
