@@ -400,10 +400,10 @@ function StartPage() {
 
           </div>
 
-          <div className="flex flex-wrap justify-center mb1 w-100"></div>
+         
 
-          <div className="flex flex-wrap justify-center  w-90 pa2 ml4 fl tc  ">
-            <div className="w-100 ba b--moon-gray mb4 pa2">
+          <div className="flex flex-wrap justify-center  w-100 pa2 tc  ">
+            <div className="w-100 ba b--moon-gray pa2">
               <img className="mh4" src="./pics/logos/logo_profine.png"></img>
               <img className="mh4" src="./pics/logos/logo_aluprof.png"></img>
               <img className="mh4" src="./pics/logos/logo_ponzio.png"></img>
