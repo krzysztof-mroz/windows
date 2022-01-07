@@ -314,7 +314,7 @@ function StartPage() {
             <div className=" mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="flex flex-wrap justify-center">
                 <div className="flex flex-wrap justify-center w-100 mb1">
-                  <p className="ba b--moon-gray pa2">Profilauswahl</p>
+                  <p className="dn db-l ba b--moon-gray pa2">Profilauswahl</p>
                   <ProfileStrip onProfileChange={profileChangeHandler} />
                   <div className="w-90 tc">
                   <h4

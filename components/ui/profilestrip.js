@@ -6,8 +6,9 @@ function profileStrip(props) {
   const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
 
   return (
-    <div className="flex flex-wrap justify-center fl w-100 mb1 mh5">
-<img className="mv2 mr5 mr4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
+    <div className="flex flex-wrap justify-center fl w-100 mb1 mh5 v-mid">
+<img className="mt4 mr4 mr4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
+<p className="db mt3 dn-l ba b--moon-gray pa2">Profilauswahl</p>
 
       {profiles.map((profile) => (
         <div className="tooltip">
@@ -31,7 +32,7 @@ function profileStrip(props) {
           <span class="tooltiptext">{profile.alt}</span>
         </div>
       ))}
-      <img className="mv2 ml5 ml4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
+      <img className="mt4 ml4 ml4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
     </div>
   );
 
