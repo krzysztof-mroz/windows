@@ -1,9 +1,9 @@
 function warumdiv() {
   return (
-    <div className="flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1  ">
-      <div className="w-100 ba b--moon-gray mb4">
+    <div className="flex flex-wrap justify-around  w-100 pa2 fl tc mb1  ">
+     {/* <div className="w-100 ba b--moon-gray mb4">
         <h4>Warum Polnische-Fenster.com</h4>{" "}
-      </div>
+  </div>*/}
 
       <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
         <img src="./pics/ikona_markenware.png"></img>

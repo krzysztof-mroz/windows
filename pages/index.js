@@ -33,7 +33,6 @@ import { proxy, useSnapshot } from "valtio";
 import { getAllColours } from "../components/data/colours";
 
 function StartPage() {
- 
   const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
   const [colorInside, setColorInside] = useState("weiss");
   const [colorOutside, setColorOutside] = useState("weiss");
@@ -64,31 +63,34 @@ function StartPage() {
 
   function profileChangeHandler(newProfile) {
     setActiveProfile(newProfile);
-    if (newProfile == "Ponzio PE 68N" || newProfile == "Ponzio PE 78N" || newProfile == "Aluprof MB 70 HI" || newProfile == "Aluprof MB 86 SI" || newProfile == "Schüco AWS 75 SI" || newProfile == "Schüco AWS 90 SI") {
-      setAluProfile(true)
+    if (
+      newProfile == "Ponzio PE 68N" ||
+      newProfile == "Ponzio PE 78N" ||
+      newProfile == "Aluprof MB 70 HI" ||
+      newProfile == "Aluprof MB 86 SI" ||
+      newProfile == "Schüco AWS 75 SI" ||
+      newProfile == "Schüco AWS 90 SI"
+    ) {
+      setAluProfile(true);
     } else {
-      setAluProfile(false)
+      setAluProfile(false);
     }
   }
 
   return (
     <div className="w-90 w-100-l center">
       <div className=" fw9 pv1 tl dt w-100">
-        <div className="dtc v-mid tc pa1" >
+        <div className="dtc v-mid tc pa1">
           <Link href="/">
             <a className="f6 fw8 bold dim no-underline  db dib-l pv2 ph3">
               Polniche-Fenster.Com
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
-              Start
-            </a>
+            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">Start</a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
-              Fenster
-            </a>
+            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">Fenster</a>
           </Link>
           <Link href="/">
             <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
@@ -106,9 +108,7 @@ function StartPage() {
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
-              Kontakt
-            </a>
+            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">Kontakt</a>
           </Link>
           <Link href="/">
             <a className="f6 fw4 dim no-underline db dib ml2 pv2 ph3 ba">
@@ -182,28 +182,36 @@ function StartPage() {
 
           <div className="flex flex-wrap justify-around mb3 w-100">
             <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
-             
-            
-                
-
-                <div className="db mb4 flex flex-wrap justify-center" >
-
-                    <p className="ba b--moon-gray pa2">3d Visualisierung - bitte berühren</p>
-                  <div style={{ position: "relative", height: 478 }} className="w-90">
+              <div className="db mb4 flex flex-wrap justify-center">
+                <p className="ba b--moon-gray pa2">
+                  3d Visualisierung - bitte berühren
+                </p>
+                <div
+                  style={{ position: "relative", height: 478 }}
+                  className="w-90"
+                >
                   <Canvas
                     shadows
                     dpr={[1, 2]}
                     camera={{ position: [16, 16, 16], fov: 50 }}
                   >
                     <spotLight
-                      intensity={aluProfile === false ? farben[nrKolorkuWew].light_inside : 0.1}
+                      intensity={
+                        aluProfile === false
+                          ? farben[nrKolorkuWew].light_inside
+                          : 0.1
+                      }
                       angle={0.1}
                       penumbra={1}
                       position={[20, 15, -300]}
                       castShadow
                     />
                     <spotLight
-                      intensity={aluProfile === false ? farben[nrKolorkuZew].light_outside : 0.1}
+                      intensity={
+                        aluProfile === false
+                          ? farben[nrKolorkuZew].light_outside
+                          : 0.1
+                      }
                       angle={0.1}
                       penumbra={1}
                       position={[20, 100, 300]}
@@ -299,42 +307,50 @@ function StartPage() {
                       enablePan={false}
                     />
                   </Canvas>
-                  </div>
-                
+                </div>
               </div>
-
-              
-              
-              
             </div>
 
             <div className=" mv1  fl w-100 w-30-l ba b--moon-gray">
-                
-                <div className="flex flex-wrap justify-center">
-
+              <div className="flex flex-wrap justify-center">
                 <div className="flex flex-wrap justify-center w-100 mb1">
                   <p className="ba b--moon-gray pa2">Profilauswahl</p>
-                <ProfileStrip  onProfileChange={profileChangeHandler} />
-                <h4 id="nazwaProfilu" className="ba b--moon-gray pa2 mb2 mb4-l">Kömmerling 88 MD</h4>
-              </div>
+                  <ProfileStrip onProfileChange={profileChangeHandler} />
+                  <div className="w-90 tc">
+                  <h4
+                    id="nazwaProfilu"
+                    className="ba b--moon-gray pa2"
+                  >
+                    Kömmerling 88 MD
+                  </h4>
+                  </div>
+                  <div className="w-90 tc">
+                  <p
+                    id="nazwaKoloru"
+                    className="ba b--moon-gray pa2 mb2 mb4-l"
+                  >
+                    weiß
+                  </p>
+                  </div>
+
+                </div>
                 <button
                   className={
                     bothSidesColor === false
-                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
-                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"  
+                      ? "w3-button w3-border w3-border-red w3-deep-orange mv3 mh2"
+                      : "w3-button w3-border w3-border-orange w3-sand mv3 mh2"
                   }
                   onMouseDown={oneSideColor}
                 >
                   {" "}
-                  Farbe nur außen
+                  Farbe außen
                 </button>
-
 
                 <button
                   className={
                     bothSidesColor === true
-                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
-                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"
+                    ? "w3-button w3-border w3-border-red w3-deep-orange mv3 mh2"
+                    : "w3-button w3-border w3-border-orange w3-sand mv3 mh2"
                   }
                   onMouseDown={bothSides}
                 >
@@ -343,43 +359,49 @@ function StartPage() {
                 </button>
 
                 <ColourStrip
-                onColorChange={changeColor}
-                gasketChange={checkGasket}
-                
-              />
-              
-            </div>
+                  onColorChange={changeColor}
+                  gasketChange={checkGasket}
+                />
+              </div>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center mb3 w-100 ba b--moon-gray pa4" >
-          <h2 className="w-100 tc" id="tekstProfilu">Kömmerling 88 MD</h2>
-                <p className="w-100 tc" id="komoryProfilu">
-                  7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte
-                  klassische Optik
-                </p>
+          <div className="flex flex-wrap justify-around mb1 w-100">
 
-                <img style={{maxWidth: 400}}  className="w-100 tc" id="sectionPic" src="./pics/sections/k88.png"></img>
+            <div className="flex flex-wrap justify-center mv1 fl w-100 w-30-l ba b--moon-gray pa4">
+              <h2 className="w-100 tc" id="tekstProfilu">
+                Kömmerling 88 MD
+              </h2>
+              <p className="w-100 tc" id="komoryProfilu">
+                7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte
+                klassische Optik. Fenster Uw ab 0,8 W/(m²·K), Glas Ug ab 0,5
+                W/(m²·K).
+              </p>
+              <img
+                style={{ maxWidth: 400 }}
+                className="w-100 tc"
+                id="sectionPic"
+                src="./pics/sections/k88.png"
+              ></img>
             </div>
 
+            <div className=" mv1  fl w-100 w-two-thirds-l ba b--moon-gray pa4">
+              <Schnellkontakt />
+            </div>
 
-
-
-          <div className="flex flex-wrap justify-around mb3 w-100">
-           
           </div>
+
+         
+
+          <div className="flex flex-wrap justify-around mb3 w-100"></div>
           <WarumDiv />
 
           <ActionDiv />
 
-          <div className="flex flex-wrap justify-center  fl w-90">
-            <Schnellkontakt />
-          </div>
+          <div className="flex flex-wrap justify-center mb1 w-100"></div>
 
-          <div className="flex flex-wrap justify-center mb5 w-100"></div>
-
-          <div className="flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1  ">
-            <div className="w-100 ba b--moon-gray mb4">
+          <div className="flex flex-wrap justify-center  w-90 pa2 ml4 fl tc  ">
+            <div className="w-100 ba b--moon-gray mb4 pa2">
               <img className="mh4" src="./pics/logos/logo_profine.png"></img>
               <img className="mh4" src="./pics/logos/logo_aluprof.png"></img>
               <img className="mh4" src="./pics/logos/logo_ponzio.png"></img>
@@ -444,7 +466,11 @@ function StartPage() {
   );
 
   function checkGasket(hasBlacGasket) {
-    if (bothSidesColor ===true ) { setBlackGasket(hasBlacGasket)} else { setBlackGasket(false)}
+    if (bothSidesColor === true) {
+      setBlackGasket(hasBlacGasket);
+    } else {
+      setBlackGasket(false);
+    }
   }
 
   function oneSideColor() {

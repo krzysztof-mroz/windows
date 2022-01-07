@@ -42,6 +42,7 @@ function colorStrip(props) {
     setActiveColour(ev.target.alt);
     props.onColorChange(ev.target.name);
     props.gasketChange(farben[nrkolorku].blackGasket)
+    $id("nazwaKoloru").innerText = farben[nrkolorku].alt;
 
     
   }

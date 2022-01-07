@@ -1,15 +1,15 @@
 function actiondiv() {
   return (
-    <div className="flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1  ">
-      <div className="w-100 ba b--moon-gray mb4">
+    <div className="flex flex-wrap justify-around  w-100 pa2 fl tc mb1  ">
+      {/*<div className="w-100 ba b--moon-gray mb4">
         <h4>Wie geht es weiter?</h4>{" "}
-      </div>
+  </div>*/}
 
       <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
         <img src="./pics/laptop.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -23,7 +23,7 @@ function actiondiv() {
         <img src="./pics/messband.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -36,7 +36,7 @@ function actiondiv() {
         <img src="./pics/toolbox.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -48,7 +48,7 @@ function actiondiv() {
         <img src="./pics/door.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -62,7 +62,7 @@ function actiondiv() {
         <img src="./pics/rollladen.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
@@ -75,7 +75,7 @@ function actiondiv() {
         <img src="./pics/raffstore.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
