@@ -119,7 +119,7 @@ const FARBEN = [
     texture: "../../colors/quarzgrau.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    blackGasket: true,
+    blackGasket: false,
     core: "white",
   },
   {

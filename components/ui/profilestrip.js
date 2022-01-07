@@ -7,7 +7,7 @@ function profileStrip(props) {
 
   return (
     <div className="flex flex-wrap justify-center fl w-100 mv2">
-<img className="mv2 mr5 mr4-l dim" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
+<img className="mv2 mr5 mr4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
 
       {profiles.map((profile) => (
         <div className="tooltip">
@@ -31,7 +31,7 @@ function profileStrip(props) {
           <span class="tooltiptext">{profile.alt}</span>
         </div>
       ))}
-      <img className="mv2 ml5 ml4-l dim" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
+      <img className="mv2 ml5 ml4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
     </div>
   );
 
@@ -47,12 +47,12 @@ function ffd (ev) {
     }
     setActiveProfile(profiles[nrprofila].alt);
 
-    $id("profilDuzy").src = profiles[nrprofila].picSlide;
+    //$id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
-    if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
+    //if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
 
 
 
@@ -68,12 +68,12 @@ function back (ev) {
     }
     setActiveProfile(profiles[nrprofila].alt);
 
-    $id("profilDuzy").src = profiles[nrprofila].picSlide;
+    //$id("profilDuzy").src = profiles[nrprofila].picSlide;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
-    if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
+    //if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
 
 }
 
@@ -88,12 +88,12 @@ function back (ev) {
 
     setActiveProfile(ev.target.alt);
 
-    $id("profilDuzy").src = ev.target.title;
+    //$id("profilDuzy").src = ev.target.title;
     $id("tekstProfilu").innerText = ev.target.alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(ev.target.alt);
-    changeVideo (profiles[nrprofila].movie, props.mWindow);
+    //changeVideo (profiles[nrprofila].movie, props.mWindow);
 
   }
 

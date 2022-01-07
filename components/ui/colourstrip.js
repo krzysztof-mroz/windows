@@ -8,11 +8,8 @@ function colorStrip(props) {
 
   return (
     <div 
-    className={
-      props.showColors === true
-        ? "flex flex-wrap justify-center fl w-100 mv2"
-        : "dn"
-    }
+    className="flex flex-wrap justify-center fl w-100 mv2"
+     
     >
       {farben.map((farbe) => (
         <div className="tooltip">

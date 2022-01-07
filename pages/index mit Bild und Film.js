@@ -33,10 +33,11 @@ import { proxy, useSnapshot } from "valtio";
 import { getAllColours } from "../components/data/colours";
 
 function StartPage() {
- 
+  const [mainWindow, setMainWindow] = useState("3d");
   const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
   const [colorInside, setColorInside] = useState("weiss");
   const [colorOutside, setColorOutside] = useState("weiss");
+  const [showColors, setShowColors] = useState(false);
   const [bothSidesColor, setBothSidesColor] = useState(false);
   const [blackGasket, setBlackGasket] = useState(false);
   const [aluProfile, setAluProfile] = useState(false);
@@ -183,18 +184,113 @@ function StartPage() {
           <div className="flex flex-wrap justify-around mb3 w-100">
             <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
               <div className="justify-end">
-                
-               
+                <button
+                  title="pic"
+                  className={
+                    mainWindow === "pic"
+                      ? "f6 link dim ba ph2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 mh2 mt2 mb2 dib near-black"
+                  }
+                  onMouseDown={changeMainWindow}
+                >
+                  {" "}
+                  Bild
+                  <img
+                    className="mv2 mh2"
+                    style={{ position: "relative", width: 20, height: 20 }}
+                    src={
+                      mainWindow === "pic"
+                        ? "./pics/svg/bild_red.svg"
+                        : "./pics/svg/bild_grey.svg"
+                    }
+                    title="pic"
+                  ></img>
+                </button>
 
-                
+                <button
+                  title="3d"
+                  className={
+                    mainWindow === "3d"
+                      ? "f6 link dim ba ph2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 mh2 mt2 mb2 dib near-black"
+                  }
+                  onMouseDown={changeMainWindow}
+                >
+                  {" "}
+                  3d
+                  <img
+                    className="mv2 mh2"
+                    style={{ position: "relative", width: 20, height: 20 }}
+                    src={
+                      mainWindow === "3d"
+                        ? "./pics/svg/3d_red.svg"
+                        : "./pics/svg/3d_grey.svg"
+                    }
+                    title="3d"
+                  ></img>
+                </button>
+
+                <button
+                  title="film"
+                  className={
+                    mainWindow === "film"
+                      ? "f6 link dim ba ph2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                      : "f6 link dim ba ph2 mh2 mt2 mb2 dib near-black"
+                  }
+                  onMouseDown={changeMainWindow}
+                >
+                  {" "}
+                  Film
+                  <img
+                    className="mv2 mh2"
+                    style={{ position: "relative", width: 20, height: 20 }}
+                    src={
+                      mainWindow === "film"
+                        ? "./pics/svg/film_red.svg"
+                        : "./pics/svg/film_grey.svg"
+                    }
+                    title="film"
+                  ></img>
+                </button>
               </div>
               <div  className="w-90">
-                
-                
+                <img
+                  id="profilDuzy"
+                  className={mainWindow == "pic" ? "db" : "dn"}
+                  src="./pics/k_88_3d.jpg"
+                ></img>
+
+                <div
+                  className={
+                    mainWindow == "film"
+                      ? "db w-100 flex flex-wrap justify-center"
+                      : "dn"
+                  }
+                >
+                  <video
+                    className=""
+                    id="video"
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      maxWidth: 720,
+                      height: "auto",
+                    }}
+                    controls
+                    preload="none"
+                    poster="./movies/movie_poster.png"
+                  >
+                    <source
+                      id="source"
+                      src="./movies/k88.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
 
                 <div
                   style={{ position: "relative", height: 478 }}
-                  className="db mv4 "
+                  className={mainWindow == "3d" ? "db" : "dn"}
                 >
                   <Canvas
                     shadows
@@ -308,59 +404,33 @@ function StartPage() {
                 </div>
               </div>
 
-              
-              
-              
-            </div>
-
-            <div className=" mv1  fl w-100 w-30-l ba b--moon-gray">
-                
-                <div className="flex flex-wrap justify-center">
-
-                <div className="flex flex-wrap justify-center w-100 mb3">
-                  <p>Profilauswahl:</p>
-                <ProfileStrip  onProfileChange={profileChangeHandler} />
+              <div className="flex flex-wrap justify-start">
+                <ProfileStrip
+                  mWindow={mainWindow}
+                  onProfileChange={profileChangeHandler}
+                />
               </div>
+              <div className="flex flex-wrap justify-center w-90">
                 <button
                   className={
-                    bothSidesColor === false
-                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
-                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"  
+                    mainWindow === "3d"
+                      ? "f6 link dim ba ph5 pv2 mh4 mt2 mb2 dib near-black"
+                      : "dn"
                   }
-                  onMouseDown={oneSideColor}
+                  onMouseDown={onShowColors}
                 >
                   {" "}
-                  Farbe nur außen
+                  {showColors === false
+                    ? "Farben anzeigen"
+                    : "Farben ausblenden"}
                 </button>
+              </div>
 
-
-                <button
-                  className={
-                    bothSidesColor === true
-                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
-                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"
-                  }
-                  onMouseDown={bothSides}
-                >
-                  {" "}
-                  Farbe beidseitig
-                </button>
-
-                <ColourStrip
-                onColorChange={changeColor}
-                gasketChange={checkGasket}
-              />
               
             </div>
-            </div>
-          </div>
 
-          <div className = "flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1 ">
-            <div className="w-100 ba b--moon-gray mb4">
-         
-
-
-            <div className="tc  br3 ma2">
+            <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
+              <div className="tc  br3 ma2">
                 <div class="dn db-l w3-display-topmiddle w3-container"></div>
                 <h2 id="tekstProfilu">Kömmerling 88 MD</h2>
                 <p id="komoryProfilu">
@@ -370,13 +440,60 @@ function StartPage() {
 
                 <img id="sectionPic" src="./pics/sections/k88.png"></img>
               </div>
-             
             </div>
           </div>
 
+          <div 
+          
+          className = {showColors === true 
+          ?  "flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1  "
+          : "dn"
+          }
+         >
+            <div className="w-100 ba b--moon-gray mb4">
+            <div className="flex flex-wrap justify-center w-90">
+                <button
+                  className={
+                    showColors === true
+                      ? bothSidesColor === false
+                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"
+                      : "dn"
+                  }
+                  onMouseDown={oneSideColor}
+                >
+                  {" "}
+                  Farbe nur außen
+                </button>
+
+                <button
+                  className={
+                    showColors === true
+                      ? bothSidesColor === true
+                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"
+                      : "dn"
+                  }
+                  onMouseDown={bothSides}
+                >
+                  {" "}
+                  Farbe beidseitig
+                </button>
+              </div>
+
+              <ColourStrip
+                showColors={showColors}
+                onColorChange={changeColor}
+                gasketChange={checkGasket}
+              />
+            </div>
+          </div>
+
+          {/*<ColourStrip onColorChange={changeColorOutside} />
+          <ColourStrip onColorChange={changeColorInside} />*/}
 
           <div className="flex flex-wrap justify-around mb3 w-100">
-           
+            {/*<ProfileCards />*/}
           </div>
           <WarumDiv />
 
@@ -471,9 +588,18 @@ function StartPage() {
     setBlackGasket(farben[nrKolorkuZew].blackGasket);
   }
 
-  
+  function onShowColors() {
+    if (showColors === false) {
+      setShowColors(true);
+    } else {
+      setShowColors(false);
+    }
+  }
 
-  
+  function changeMainWindow(ev) {
+    setMainWindow(ev.target.title);
+    document.getElementById("video").pause();
+  }
 
   function changeColorInside(newColor) {
     setColorInside(newColor);
