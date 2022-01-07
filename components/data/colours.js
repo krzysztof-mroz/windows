@@ -8,7 +8,7 @@ const FARBEN = [
     texture: "../../colors/white.jpg",
     light_inside: 0.1,
     light_outside: 0.1,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
     
 
@@ -22,7 +22,7 @@ const FARBEN = [
     texture: "../../colors/anthrazitgrau.jpg",
     light_inside: 1.6,
     light_outside: 1.6,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -34,7 +34,7 @@ const FARBEN = [
     texture: "../../colors/anthrazitgrau_glatt.jpg",
     light_inside: 1.6,
     light_outside: 1.6,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -46,7 +46,7 @@ const FARBEN = [
     texture: "../../colors/db_703.jpg",
     light_inside: 0.7,
     light_outside: 0.7,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -58,7 +58,7 @@ const FARBEN = [
     texture: "../../colors/metbrush-anthrazitgrau.jpg",
     light_inside: 1,
     light_outside: 1,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -70,7 +70,7 @@ const FARBEN = [
     texture: "../../colors/black_ulti_matt.jpg",
     light_inside: 1.8,
     light_outside: 1.8,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -82,7 +82,7 @@ const FARBEN = [
     texture: "../../colors/anthrazitgrau_ulti_matt.jpg",
     light_inside: 1.8,
     light_outside: 1.8,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -94,7 +94,7 @@ const FARBEN = [
     texture: "../../colors/umbragrau_glatt.jpg",
     light_inside: 1.8,
     light_outside: 1.8,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -106,7 +106,7 @@ const FARBEN = [
     texture: "../../colors/basaltgrau.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
 
@@ -119,7 +119,7 @@ const FARBEN = [
     texture: "../../colors/quarzgrau.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -131,7 +131,7 @@ const FARBEN = [
     texture: "../../colors/quarzgrau-sftn-matt.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -143,7 +143,7 @@ const FARBEN = [
     texture: "../../colors/metbrush-quarzgrau.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
   {
@@ -155,7 +155,7 @@ const FARBEN = [
     texture: "../../colors/metbrush-silver.jpg",
     light_inside: 0.3,
     light_outside: 0.3,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
   {
@@ -167,7 +167,7 @@ const FARBEN = [
     texture: "../../colors/betongrau.jpg",
     light_inside: 0.7,
     light_outside: 0.7,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
   {
@@ -179,7 +179,7 @@ const FARBEN = [
     texture: "../../colors/achatgrau.jpg",
     light_inside: 0.7,
     light_outside: 0.7,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
 
@@ -192,7 +192,7 @@ const FARBEN = [
     texture: "../../colors/lichtgrau.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
 
@@ -205,7 +205,7 @@ const FARBEN = [
     texture: "../../colors/alugebuerstet.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
 
@@ -218,7 +218,7 @@ const FARBEN = [
     texture: "../../colors/schiefergrau_glatt.jpg",
     light_inside: 1.6,
     light_outside: 1.6,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
 
@@ -231,7 +231,7 @@ const FARBEN = [
     texture: "../../colors/silbergrau.jpg",
     light_inside: 1,
     light_outside: 1,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
 
@@ -244,7 +244,7 @@ const FARBEN = [
     texture: "../../colors/signalgrau_glatt.jpg",
     light_inside: 1,
     light_outside: 1,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
   {
@@ -256,7 +256,7 @@ const FARBEN = [
     texture: "../../colors/metbrush_platin.jpg",
     light_inside: 0.8,
     light_outside: 0.8,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
 
@@ -269,7 +269,7 @@ const FARBEN = [
     texture: "../../colors/cremeweiss.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   },
 
@@ -282,7 +282,7 @@ const FARBEN = [
     texture: "../../colors/reinweiss.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: false,
     core: "white",
   }, 
   {
@@ -294,7 +294,7 @@ const FARBEN = [
     texture: "../../colors/goldenoak.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -306,7 +306,7 @@ const FARBEN = [
     texture: "../../colors/mahagoni.jpg",
     light_inside: 1.6,
     light_outside: 1.6,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
 
@@ -319,7 +319,7 @@ const FARBEN = [
     texture: "../../colors/nussbaum.jpg",
     light_inside: 1.8,
     light_outside: 1.8,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -331,7 +331,7 @@ const FARBEN = [
     texture: "../../colors/rustic-cherry.jpg",
     light_inside: 1.4,
     light_outside: 1.4,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -343,7 +343,7 @@ const FARBEN = [
     texture: "../../colors/black-cherry.jpg",
     light_inside: 1.4,
     light_outside: 1.4,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -355,7 +355,7 @@ const FARBEN = [
     texture: "../../colors/eiche_dunkel.jpg",
     light_inside: 1.4,
     light_outside: 1.4,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -367,7 +367,7 @@ const FARBEN = [
     texture: "../../colors/eiche_natur.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -379,7 +379,7 @@ const FARBEN = [
     texture: "../../colors/irish-oak.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -391,7 +391,7 @@ const FARBEN = [
     texture: "../../colors/oregon.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -403,7 +403,7 @@ const FARBEN = [
     texture: "../../colors/bergkiefer.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -415,7 +415,7 @@ const FARBEN = [
     texture: "../../colors/winchester.jpg",
     light_inside: 0.5,
     light_outside: 0.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -439,7 +439,7 @@ const FARBEN = [
     texture: "../../colors/braunmaron.jpg",
     light_inside: 1.5,
     light_outside: 1.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -451,7 +451,7 @@ const FARBEN = [
     texture: "../../colors/schockobraun.jpg",
     light_inside: 1.5,
     light_outside: 1.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -463,7 +463,7 @@ const FARBEN = [
     texture: "../../colors/schwarzbraun.jpg",
     light_inside: 1.5,
     light_outside: 1.5,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -475,7 +475,7 @@ const FARBEN = [
     texture: "../../colors/brillantblau.jpg",
     light_inside: 1,
     light_outside: 1,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -487,7 +487,7 @@ const FARBEN = [
     texture: "../../colors/stahlblau.jpg",
     light_inside: 1.8,
     light_outside: 1.8,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -499,7 +499,7 @@ const FARBEN = [
     texture: "../../colors/moosgruen.jpg",
     light_inside: 1.7,
     light_outside: 1.7,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -511,7 +511,7 @@ const FARBEN = [
     texture: "../../colors/tannengruen.jpg",
     light_inside: 1.8,
     light_outside: 1.8,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
   {
@@ -523,7 +523,7 @@ const FARBEN = [
     texture: "../../colors/weinrot.jpg",
     light_inside: 1.3,
     light_outside: 1.3,
-    gasket: "grey",
+    blackGasket: true,
     core: "white",
   },
 ];

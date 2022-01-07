@@ -65,7 +65,7 @@ const state = proxy({
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.31, 0.42, -0.22]  } material-color={snap.items.kantet}/>
         <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-0.5, -1.3, 1.5]} material-color={snap.items.hardware}/>
         <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[0.11, -1.62, 1.82]} material-color={snap.items.steel}/>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.12, -0.56, 0.76]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.12, -0.56, 0.76]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.27, -0.1, 0.3]} material-color={snap.items.red}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.24, 0.24, -0.04]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[0.03, 1.62, -1.82]} 
@@ -108,7 +108,7 @@ const state = proxy({
           <mesh geometry={nodes['profile-color_outside'].geometry} material={nodes['profile-color_outside'].material} material-map={textureOutside}/>
         </group>
         <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-0.52, -1.32, 1.51]} material-color={snap.items.hardware}/>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.06, -0.59, 0.78]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.06, -0.59, 0.78]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.33, 0.44, -0.25]} material-color={snap.items.kantet}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.26, 0.26, -0.07]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.28, -0.08, 0.27]} material-color={snap.items.red}/>
@@ -149,7 +149,7 @@ const state = proxy({
           <mesh geometry={nodes['profile-color_inside'].geometry} material={nodes['profile-color_inside'].material} material-map={textureInside}/>
           <mesh geometry={nodes['profile-color_outside'].geometry} material={nodes['profile-color_outside'].material} material-map={textureOutside}/>
         </group>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.4, -0.94, 0.92]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.4, -0.94, 0.92]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.25, 0.22, -0.24]} material-color={snap.items.kantet}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.2, 0.09, -0.11]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.23, -0.26, 0.24]} material-color={snap.items.red}/>
@@ -193,7 +193,7 @@ const state = proxy({
           <mesh geometry={nodes['profile-color_inside'].geometry} material={nodes['profile-color_inside'].material} material-map={textureInside}/>
           <mesh geometry={nodes['profile-color_outside'].geometry} material={nodes['profile-color_outside'].material} material-map={textureOutside}/>
         </group>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.32, -0.42, 0.73]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.32, -0.42, 0.73]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.28, -0.17, 0.49]} material-color={snap.items.red}/>
         <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-0.03, -1.55, 1.86]} material-color={snap.items.steel}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.12, 0.15, 0.17]} material-color={snap.items.gasket}/>
@@ -238,7 +238,7 @@ const state = proxy({
           <mesh geometry={nodes['profile-color_outside'].geometry} material={nodes['profile-color_outside'].material} material-map={textureOutside}/>
         </group>
         <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[0.06, -1.37, 1.6]} material-color={snap.items.steel}/>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.27, -0.57, 0.8]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.27, -0.57, 0.8]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.45, 0.17, 0.05]} material-color={snap.items.red}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.21, 0.55, -0.31]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.25, 0.69, -0.46]} material-color={snap.items.kantet}/>
@@ -282,7 +282,7 @@ const state = proxy({
           <mesh geometry={nodes['profile-color_outside'].geometry} material={nodes['profile-color_outside'].material} material-map={textureOutside}/>
         </group>
         <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-0.1, -1.81, 1.87]} material-color={snap.items.steel}/>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.3, -1.08, 1.15]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.3, -1.08, 1.15]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.49, -0.34, 0.41]} material-color={snap.items.red}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.24, 0.03, 0.05]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.28, 0.18, -0.1]} material-color={snap.items.kantet}/>
@@ -327,7 +327,7 @@ const state = proxy({
           <mesh geometry={nodes['profile-color_inside'].geometry} material={nodes['profile-color_inside'].material} material-map={textureInside} />
         </group>
         <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-0.3, -2.5, 1.81]} material-color={snap.items.steel}/>
-        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.4, -1.73, 1.04]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.4, -1.73, 1.04]} material-color={props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey}/>
         <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-0.54, -0.96, 0.28]} material-color={snap.items.red}/>
         <mesh geometry={nodes.kanteB.geometry} material={nodes.kanteB.material} position={[-0.35, -0.6, -0.09]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.kanteT.geometry} material={nodes.kanteT.material} position={[-0.41, -0.45, -0.24]} material-color={snap.items.kantet}/>

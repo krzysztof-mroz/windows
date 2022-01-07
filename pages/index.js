@@ -38,8 +38,9 @@ function StartPage() {
   const [colorInside, setColorInside] = useState("weiss");
   const [colorOutside, setColorOutside] = useState("weiss");
   const [showColors, setShowColors] = useState(false);
-  const [bothSidesColor, setBothSidesColor] = useState(false)
-  
+  const [bothSidesColor, setBothSidesColor] = useState(false);
+  const [blackGasket, setBlackGasket] = useState(false);
+  const [aluProfile, setAluProfile] = useState(false);
 
   const farben = getAllColours();
 
@@ -64,6 +65,11 @@ function StartPage() {
 
   function profileChangeHandler(newProfile) {
     setActiveProfile(newProfile);
+    if (newProfile == "Ponzio PE 68N" || newProfile == "Ponzio PE 78N" || newProfile == "Aluprof MB 70 HI" || newProfile == "Aluprof MB 86 SI" || newProfile == "Schüco AWS 75 SI" || newProfile == "Schüco AWS 90 SI") {
+      setAluProfile(true)
+    } else {
+      setAluProfile(false)
+    }
   }
 
   return (
@@ -246,8 +252,6 @@ function StartPage() {
                     title="film"
                   ></img>
                 </button>
-
-               
               </div>
               <div className="w-90">
                 <img
@@ -294,14 +298,14 @@ function StartPage() {
                     camera={{ position: [16, 16, 16], fov: 50 }}
                   >
                     <spotLight
-                      intensity={farben[nrKolorkuWew].light_inside}
+                      intensity={aluProfile === false ? farben[nrKolorkuWew].light_inside : 0.1}
                       angle={0.1}
                       penumbra={1}
                       position={[20, 15, -300]}
                       castShadow
                     />
                     <spotLight
-                      intensity={farben[nrKolorkuZew].light_outside}
+                      intensity={aluProfile === false ? farben[nrKolorkuZew].light_outside : 0.1}
                       angle={0.1}
                       penumbra={1}
                       position={[20, 100, 300]}
@@ -318,6 +322,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Schüco CT 70 Rondo" ? (
@@ -325,6 +330,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Schüco Living MD" ? (
@@ -332,6 +338,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Kömmerling 70 AD" ? (
@@ -339,6 +346,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Kömmerling 76 AD" ? (
@@ -346,6 +354,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Kömmerling 76 MD" ? (
@@ -353,6 +362,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Kömmerling 88 MD" ? (
@@ -360,6 +370,7 @@ function StartPage() {
                           rotation-y={Math.PI * 1.33}
                           colorInside={colorInside}
                           colorOutside={colorOutside}
+                          blackGasket={blackGasket}
                         />
                       ) : null}
                       {activeProfile == "Ponzio PE 68N" ? (
@@ -400,7 +411,7 @@ function StartPage() {
                 />
               </div>
               <div className="flex flex-wrap justify-center w-90">
-              <button
+                <button
                   className={
                     mainWindow === "3d"
                       ? "f6 link dim ba ph5 pv2 mh4 mt2 mb2 dib near-black"
@@ -409,44 +420,15 @@ function StartPage() {
                   onMouseDown={onShowColors}
                 >
                   {" "}
-                  {showColors === false ? "Farben anzeigen" : "Farben ausblenden"}
-                 
+                  {showColors === false
+                    ? "Farben anzeigen"
+                    : "Farben ausblenden"}
                 </button>
-                </div>
+              </div>
 
-                <div className="flex flex-wrap justify-center w-90">
-              <button
-                  className={
-                    showColors === true
-                      ? 
-                        bothSidesColor === false 
-                          ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
-                          : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"           
-                      : "dn"
-                  }
-                  onMouseDown={oneSideColor}
-                >
-                  {" "}
-                 Farbe nur außen
-                </button>
-
-                <button
-                  className={
-                    showColors === true
-                      ? bothSidesColor === true
-                      ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
-                      : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"     
-                      : "dn"
-                  }
-                  onMouseDown={bothSides}
-                >
-                  {" "}
-                 Farbe beidseitig
-                </button>
-                </div>
-
-              <ColourStrip showColors={showColors} onColorChange={changeColor} />
+              
             </div>
+
             <div className="flex flex-wrap justify-center mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="tc  br3 ma2">
                 <div class="dn db-l w3-display-topmiddle w3-container"></div>
@@ -458,6 +440,52 @@ function StartPage() {
 
                 <img id="sectionPic" src="./pics/sections/k88.png"></img>
               </div>
+            </div>
+          </div>
+
+          <div 
+          
+          className = {showColors === true 
+          ?  "flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1  "
+          : "dn"
+          }
+         >
+            <div className="w-100 ba b--moon-gray mb4">
+            <div className="flex flex-wrap justify-center w-90">
+                <button
+                  className={
+                    showColors === true
+                      ? bothSidesColor === false
+                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"
+                      : "dn"
+                  }
+                  onMouseDown={oneSideColor}
+                >
+                  {" "}
+                  Farbe nur außen
+                </button>
+
+                <button
+                  className={
+                    showColors === true
+                      ? bothSidesColor === true
+                        ? "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib b--dark-red dark-red"
+                        : "f6 link dim ba ph2 pv2 mh2 mt2 mb2 dib near-black"
+                      : "dn"
+                  }
+                  onMouseDown={bothSides}
+                >
+                  {" "}
+                  Farbe beidseitig
+                </button>
+              </div>
+
+              <ColourStrip
+                showColors={showColors}
+                onColorChange={changeColor}
+                gasketChange={checkGasket}
+              />
             </div>
           </div>
 
@@ -542,25 +570,30 @@ function StartPage() {
     </div>
   );
 
+  function checkGasket(hasBlacGasket) {
+    if (bothSidesColor ===true ) { setBlackGasket(hasBlacGasket)} else { setBlackGasket(false)}
+  }
 
-  function oneSideColor () {
+  function oneSideColor() {
     setBothSidesColor(false);
     setColorInside("weiss");
     setColorOutside(colorOutside);
+    setBlackGasket(false);
   }
 
-  function bothSides () {
+  function bothSides() {
     setBothSidesColor(true);
     setColorInside(colorOutside);
     setColorOutside(colorOutside);
+    setBlackGasket(farben[nrKolorkuZew].blackGasket);
   }
 
-  function onShowColors () {
+  function onShowColors() {
     if (showColors === false) {
       setShowColors(true);
     } else {
       setShowColors(false);
-    }   
+    }
   }
 
   function changeMainWindow(ev) {
