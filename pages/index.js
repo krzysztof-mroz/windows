@@ -73,45 +73,45 @@ function StartPage() {
 
   return (
     <div className="w-90 w-100-l center">
-      <div className="bg-black-80 fw9 pv1 tl dt w-100">
-        <div className="dtc v-mid tc pa1">
+      <div className=" fw9 pv1 tl dt w-100">
+        <div className="dtc v-mid tc pa1" >
           <Link href="/">
-            <a className="f6 fw8 bold hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw8 bold dim no-underline  db dib-l pv2 ph3">
               Polniche-Fenster.Com
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
               Start
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
               Fenster
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
               Haustüren
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
               Beschattung
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
               Wie funktioniert es
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
               Kontakt
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 hover-white no-underline white-70 db dib ml2 pv2 ph3 ba">
+            <a className="f6 fw4 dim no-underline db dib ml2 pv2 ph3 ba">
               Sign Up
             </a>
           </Link>
@@ -165,7 +165,7 @@ function StartPage() {
             </div>
           </div>
 
-          <div className="pv3 tc">
+          <div className="pv3 tc dn">
             <div className="flex flex-wrap justify-center w-100">
               <h3 className="fl ma1 w-100 tc w3-text-red">
                 DIESE SEITE BEFINDET SICH IM AUFBAU!{" "}
@@ -182,20 +182,14 @@ function StartPage() {
 
           <div className="flex flex-wrap justify-around mb3 w-100">
             <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
-              <div className="justify-end">
-                
-               
-
-                
-              </div>
-              <div  className="w-90">
-                
+             
+            
                 
 
-                <div
-                  style={{ position: "relative", height: 478 }}
-                  className="db mv4 "
-                >
+                <div className="db mb4 flex flex-wrap justify-center" >
+
+                    <p className="ba b--moon-gray pa2">3d Visualisierung - bitte berühren</p>
+                  <div style={{ position: "relative", height: 478 }} className="w-90">
                   <Canvas
                     shadows
                     dpr={[1, 2]}
@@ -305,7 +299,8 @@ function StartPage() {
                       enablePan={false}
                     />
                   </Canvas>
-                </div>
+                  </div>
+                
               </div>
 
               
@@ -317,10 +312,10 @@ function StartPage() {
                 
                 <div className="flex flex-wrap justify-center">
 
-                <div className="flex flex-wrap justify-center w-100 mb3">
-                  <p>Profilauswahl:</p>
+                <div className="flex flex-wrap justify-center w-100 mb1">
+                  <p className="ba b--moon-gray pa2">Profilauswahl</p>
                 <ProfileStrip  onProfileChange={profileChangeHandler} />
-                <h4 id="nazwaProfilu">Kömmerling 88 MD</h4>
+                <h4 id="nazwaProfilu" className="ba b--moon-gray pa2 mb2 mb4-l">Kömmerling 88 MD</h4>
               </div>
                 <button
                   className={
@@ -356,24 +351,17 @@ function StartPage() {
             </div>
           </div>
 
-          <div className = "flex flex-wrap justify-center  w-90 pa2 ml4 fl tc mb1 ">
-            <div className="w-100 ba b--moon-gray mb4">
-         
-
-
-            <div className="tc  br3 ma2">
-                <div class="dn db-l w3-display-topmiddle w3-container"></div>
-                <h2 id="tekstProfilu">Kömmerling 88 MD</h2>
-                <p id="komoryProfilu">
+          <div className="flex flex-wrap justify-center mb3 w-100 ba b--moon-gray pa4" >
+          <h2 className="w-100 tc" id="tekstProfilu">Kömmerling 88 MD</h2>
+                <p className="w-100 tc" id="komoryProfilu">
                   7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte
                   klassische Optik
                 </p>
 
-                <img id="sectionPic" src="./pics/sections/k88.png"></img>
-              </div>
-             
+                <img style={{maxWidth: 400}}  className="w-100 tc" id="sectionPic" src="./pics/sections/k88.png"></img>
             </div>
-          </div>
+
+
 
 
           <div className="flex flex-wrap justify-around mb3 w-100">
@@ -471,10 +459,6 @@ function StartPage() {
     setColorOutside(colorOutside);
     setBlackGasket(farben[nrKolorkuZew].blackGasket);
   }
-
-  
-
-  
 
   function changeColorInside(newColor) {
     setColorInside(newColor);
