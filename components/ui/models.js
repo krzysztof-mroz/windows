@@ -99,7 +99,7 @@ const state = proxy({
     const textureInside = useTexture(farben[nrKolorkuWew].texture)
     const textureOutside = useTexture(farben[nrKolorkuZew].texture)
     useFrame((state) => {group.current.rotation.y += rotateRate})
-    const { nodes, materials } = useGLTF('/ct70Rondo.glb')
+    const { nodes, materials } = useGLTF('/ct70rondo.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[-0.75, -0.77, 0.96]}>
@@ -118,7 +118,7 @@ const state = proxy({
         material-reflectivity={1}
         material-transparent
         material-opacity={0.92}
-        
+
         material-transmission={0}/>
 
       </group>
