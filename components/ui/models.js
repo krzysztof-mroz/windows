@@ -120,6 +120,7 @@ const state = proxy({
         material-opacity={0.92}
         material-transmission={0}/>
       </group>
+      
     )
   }
   
