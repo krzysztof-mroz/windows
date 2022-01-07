@@ -1,6 +1,6 @@
 function actiondiv() {
   return (
-    <div className="flex flex-wrap justify-around  w-100 pa2 fl tc mb1  ">
+    <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
       {/*<div className="w-100 ba b--moon-gray mb4">
         <h4>Wie geht es weiter?</h4>{" "}
   </div>*/}

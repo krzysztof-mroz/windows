@@ -183,7 +183,7 @@ function StartPage() {
           <div className="flex flex-wrap justify-around mb3 w-100">
             <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
               <div className="db mb4 flex flex-wrap justify-center">
-                <p className="ba b--moon-gray pa2">
+                <p className="ba b--moon-gray pa2 silver">
                   3d Visualisierung - bitte berühren
                 </p>
                 <div
@@ -314,7 +314,7 @@ function StartPage() {
             <div className=" mv1  fl w-100 w-30-l ba b--moon-gray">
               <div className="flex flex-wrap justify-center">
                 <div className="flex flex-wrap justify-center w-100 mb1">
-                  <p className="dn db-l ba b--moon-gray pa2">Profilauswahl</p>
+                  <p className="dn db-l ba b--moon-gray pa2 silver">Profilauswahl</p>
                   <ProfileStrip onProfileChange={profileChangeHandler} />
                   <div className="w-90 tc">
                   <h4
@@ -385,7 +385,7 @@ function StartPage() {
               ></img>
             </div>
 
-            <div className=" mv1  fl w-100 w-two-thirds-l ba b--moon-gray pa4">
+            <div className="flex flex-wrap justify-around mv1 tc fl w-100 w-two-thirds-l ba b--moon-gray pa4">
               <Schnellkontakt />
             </div>
 
@@ -393,10 +393,12 @@ function StartPage() {
 
          
 
-          <div className="flex flex-wrap justify-around mb3 w-100"></div>
+          <div className="flex flex-wrap justify-around mb3 w-100">
           <WarumDiv />
 
           <ActionDiv />
+
+          </div>
 
           <div className="flex flex-wrap justify-center mb1 w-100"></div>
 

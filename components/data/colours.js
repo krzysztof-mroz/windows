@@ -15,7 +15,7 @@ const FARBEN = [
   },
   {
     name: "anthrazitgrau",
-    alt: "anthrazitgaru",
+    alt: "anthrazitgrau",
     src: "../pics/farben/anthrazitgrau.png",
     s: 1,
     k: 1,

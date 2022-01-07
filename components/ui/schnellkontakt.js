@@ -2,16 +2,16 @@ function Schnellkontakt(props) {
   
   return (
     
-    <div className=" w-100  fl  tc mh3">
+    <div className="w-90 fl ">
       <form className="" name="Kurzformular" action="../versand_kurznachricht.php" method="post">
-      <div className="w3-container ">
+      <div className="">
       <p>
         <b>Schnellkontakt:</b>
       </p>
       </div>
       
       <textarea
-        className="w3-input w3-border mh3 mv4 w-90 mh3 w3-sand w3-border-orange"
+        className="w3-input w3-border mv4  w3-sand w3-border-orange"
         name="inputMessage"
         id="inputMessage"
         rows="9"
@@ -20,7 +20,7 @@ function Schnellkontakt(props) {
       <div className="mv3">
         
         <input
-          className="w3-input w3-border mh3 mb4 w-90 w3-sand w3-border-orange"
+          className="w3-input w3-border  mb4 w3-sand w3-border-orange"
           type="text"
           name="inputEmail"
           id="inputEmail"
