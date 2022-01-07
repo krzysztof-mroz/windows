@@ -118,9 +118,11 @@ const state = proxy({
         material-reflectivity={1}
         material-transparent
         material-opacity={0.92}
+        
         material-transmission={0}/>
+
       </group>
-      
+
     )
   }
   
