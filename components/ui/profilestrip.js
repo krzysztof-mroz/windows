@@ -48,6 +48,7 @@ function ffd (ev) {
     setActiveProfile(profiles[nrprofila].alt);
 
     //$id("profilDuzy").src = profiles[nrprofila].picSlide;
+    $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
@@ -69,6 +70,7 @@ function back (ev) {
     setActiveProfile(profiles[nrprofila].alt);
 
     //$id("profilDuzy").src = profiles[nrprofila].picSlide;
+    $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
     $id("tekstProfilu").innerText = profiles[nrprofila].alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;
@@ -89,6 +91,7 @@ function back (ev) {
     setActiveProfile(ev.target.alt);
 
     //$id("profilDuzy").src = ev.target.title;
+    $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
     $id("tekstProfilu").innerText = ev.target.alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
     $id("sectionPic").src = profiles[nrprofila].section;

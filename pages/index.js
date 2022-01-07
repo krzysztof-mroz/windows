@@ -320,6 +320,7 @@ function StartPage() {
                 <div className="flex flex-wrap justify-center w-100 mb3">
                   <p>Profilauswahl:</p>
                 <ProfileStrip  onProfileChange={profileChangeHandler} />
+                <h4 id="nazwaProfilu">Kömmerling 88 MD</h4>
               </div>
                 <button
                   className={
