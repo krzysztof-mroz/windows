@@ -1,5 +1,6 @@
 const FARBEN = [
   {
+    id: "k1",
     name: "weiss",
     alt: "weiß",
     src: "./pics/farben/white.jpg",
@@ -10,10 +11,12 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
     
 
   },
   {
+    id: "k2",
     name: "anthrazitgrau",
     alt: "anthrazitgrau",
     src: "../pics/farben/anthrazitgrau.png",
@@ -24,8 +27,10 @@ const FARBEN = [
     light_outside: 1.6,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k3",
     name: "anthrazitgrau-glatt",
     alt: "anthrazitgrau glatt",
     src: "../pics/farben/anthrazitgrau_glatt.png",
@@ -36,8 +41,10 @@ const FARBEN = [
     light_outside: 1.6,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k4",
     name: "Alux-DB-703",
     alt: "Alux DB 703",
     src: "../pics/farben/db_703.png",
@@ -48,8 +55,10 @@ const FARBEN = [
     light_outside: 0.7,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k5",
     name: "Metbrush-Anthrazitgrau",
     alt: "Metbrush Anthrazitgrau",
     src: "../pics/farben/metbrush_anthrazitgrau.png",
@@ -60,8 +69,10 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k6",
     name: "Black-Ulti-Matt",
     alt: "Schwarz Ulti Matt",
     src: "../pics/farben/black_ulti_matt.png",
@@ -72,8 +83,10 @@ const FARBEN = [
     light_outside: 1.8,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k7",
     name: "Anthrazitgrau-Ulti-Matt",
     alt: "Anthrazitgrau Ulti Matt",
     src: "../pics/farben/anthrazitgrau_ulti_matt.png",
@@ -84,8 +97,10 @@ const FARBEN = [
     light_outside: 1.8,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k8",
     name: "umbragrau-glatt",
     alt: "umbragrau glatt",
     src: "../pics/farben/umbragrau_glatt.jpg",
@@ -96,8 +111,10 @@ const FARBEN = [
     light_outside: 1.8,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k9",
     name: "basaltgrau",
     alt: "basaltgrau",
     src: "./pics/farben/basaltgrau.png",
@@ -108,9 +125,11 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k10",
     name: "quarzgrau",
     alt: "quarzgrau",
     src: "./pics/farben/quarzgrau.png",
@@ -121,8 +140,10 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k11",
     name: "quarzgrau-sftn-matt",
     alt: "quarzgrau SFTN matt",
     src: "./pics/farben/quarzgrau_sftn_matt.png",
@@ -133,8 +154,10 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k12",
     name: "metbrush-quarzgrau",
     alt: "metbrush quarzgrau",
     src: "./pics/farben/metbrush-quarzgrau.png",
@@ -145,8 +168,10 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k13",
     name: "metbrush-silver",
     alt: "metbrush silver",
     src: "./pics/farben/metbrush-silver.png",
@@ -157,8 +182,10 @@ const FARBEN = [
     light_outside: 0.3,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k14",
     name: "betongrau",
     alt: "betongrau",
     src: "./pics/farben/betongrau.png",
@@ -169,8 +196,10 @@ const FARBEN = [
     light_outside: 0.7,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k15",
     name: "achatgrau",
     alt: "achatgrau",
     src: "./pics/farben/achatgrau.png",
@@ -181,9 +210,11 @@ const FARBEN = [
     light_outside: 0.7,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k16",
     name: "lichtgrau",
     alt: "lichtgrau",
     src: "./pics/farben/lichtgrau.png",
@@ -194,9 +225,11 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k17",
     name: "alu-gebuerstet",
     alt: "Alu gebürstet",
     src: "./pics/farben/alugebuerstet.png",
@@ -207,9 +240,11 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k18",
     name: "schiefergrau-glatt",
     alt: "schiefergrau glatt",
     src: "./pics/farben/schiefergrau.png",
@@ -220,9 +255,11 @@ const FARBEN = [
     light_outside: 1.6,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k19",
     name: "silbergrau",
     alt: "silbergrau",
     src: "./pics/farben/silbergrau.png",
@@ -233,9 +270,11 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k20",
     name: "signalgrau-glatt",
     alt: "signalgrau glatt",
     src: "./pics/farben/signalgrau.png",
@@ -246,8 +285,10 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k21",
     name: "metbrush-platin",
     alt: "metbrush platin",
     src: "./pics/farben/metbrush_platin.png",
@@ -258,9 +299,11 @@ const FARBEN = [
     light_outside: 0.8,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k22",
     name: "cremeweiß",
     alt: "cremeweiß",
     src: "./pics/farben/cremeweiss.png",
@@ -271,9 +314,11 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k23",
     name: "reinweiß",
     alt: "reinweiß",
     src: "./pics/farben/reinweiss.png",
@@ -284,8 +329,10 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: false,
     core: "white",
+    materialAlu: false,
   }, 
   {
+    id: "k24",
     name: "golden-oak",
     alt: "goldene Eiche",
     src: "./pics/farben/goldenoak.png",
@@ -296,8 +343,10 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k25",
     name: "mahagoni",
     alt: "Mahagoni",
     src: "./pics/farben/mahagoni.png",
@@ -308,9 +357,11 @@ const FARBEN = [
     light_outside: 1.6,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
 
   {
+    id: "k26",
     name: "nussbaum",
     alt: "Nußbaum",
     src: "./pics/farben/nussbaum.png",
@@ -321,8 +372,10 @@ const FARBEN = [
     light_outside: 1.8,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k27",
     name: "rustic-cherry",
     alt: "Rustic Cherry",
     src: "./pics/farben/rustic-cherry.png",
@@ -333,8 +386,10 @@ const FARBEN = [
     light_outside: 1.4,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k28",
     name: "black-cherry",
     alt: "Black Cherry",
     src: "./pics/farben/black-cherry.png",
@@ -345,8 +400,10 @@ const FARBEN = [
     light_outside: 1.4,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k29",
     name: "eiche-dunkel",
     alt: "Eiche dunkel",
     src: "./pics/farben/eiche_dunkel.png",
@@ -357,8 +414,10 @@ const FARBEN = [
     light_outside: 1.4,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k30",
     name: "eiche-natur",
     alt: "Eiche Natur",
     src: "./pics/farben/eiche-natur.png",
@@ -369,8 +428,10 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k31",
     name: "irish-oak",
     alt: "Irish Oak",
     src: "./pics/farben/irish-oak.png",
@@ -381,8 +442,10 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k32",
     name: "oregon",
     alt: "Oregon",
     src: "./pics/farben/oregon.png",
@@ -393,8 +456,10 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k33",
     name: "bergkiefer",
     alt: "Bergkiefer",
     src: "./pics/farben/bergkiefer.png",
@@ -405,8 +470,10 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k34",
     name: "winchester",
     alt: "Winchester",
     src: "./pics/farben/winchester.jpg",
@@ -417,8 +484,10 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k35",
     name: "douglasie",
     alt: "Douglasie",
     src: "./pics/farben/douglasie.png",
@@ -429,8 +498,10 @@ const FARBEN = [
     light_outside: 1,
     gasket: "grey",
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k36",
     name: "braunmaron",
     alt: "braunmaron",
     src: "./pics/farben/braunmaron.png",
@@ -441,8 +512,10 @@ const FARBEN = [
     light_outside: 1.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k37",
     name: "schockobraun",
     alt: "schockobraun",
     src: "./pics/farben/schockobraun.png",
@@ -453,8 +526,10 @@ const FARBEN = [
     light_outside: 1.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k38",
     name: "schwarzbraun",
     alt: "schwarzbraun",
     src: "./pics/farben/schwarzbraun.png",
@@ -465,8 +540,10 @@ const FARBEN = [
     light_outside: 1.5,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k39",
     name: "brillantblau",
     alt: "brillantblau",
     src: "./pics/farben/brillantblau.png",
@@ -477,8 +554,10 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k40",
     name: "stahlblau",
     alt: "stahlblau",
     src: "./pics/farben/stahlblau.png",
@@ -489,8 +568,10 @@ const FARBEN = [
     light_outside: 1.8,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k41",
     name: "moosgruen",
     alt: "moosgrün",
     src: "./pics/farben/moosgruen.png",
@@ -501,8 +582,10 @@ const FARBEN = [
     light_outside: 1.7,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k42",
     name: "tannengruen",
     alt: "tannengrün",
     src: "./pics/farben/tannengruen.png",
@@ -513,8 +596,10 @@ const FARBEN = [
     light_outside: 1.8,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
   },
   {
+    id: "k43",
     name: "weinrot",
     alt: "weinrot",
     src: "./pics/farben/weinrot.png",
@@ -525,6 +610,29 @@ const FARBEN = [
     light_outside: 1.3,
     blackGasket: true,
     core: "white",
+    materialAlu: false,
+  },
+  {
+    id: "a1",
+    name: "alu",
+    alt: "Aluminium",
+    src: "./pics/farben/alu.png",
+    color: "#e7e7e9",
+    light_inside: 0,
+    light_outside: 0,
+    blackGasket: true,
+    materialAlu: true,
+  },
+  {
+    id: "a2",
+    name: "anthrazitgrau_alu",
+    alt: "anthrazitgrau",
+    src: "./pics/farben/anthrazitgrau_glatt.jpg",
+    color: "#383E42",
+    light_inside: 0,
+    light_outside: 0,
+    blackGasket: true,
+    materialAlu: true,
   },
 ];
 

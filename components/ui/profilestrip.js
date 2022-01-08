@@ -7,18 +7,18 @@ function profileStrip(props) {
 
   return (
     <div className="flex flex-wrap justify-center fl w-100 mb1 mh5 v-mid">
-<img className="mt4 mr4 mr4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
-<p className="db mt3 dn-l ba b--moon-gray pa2">Profilauswahl</p>
+<img className="mt4 mr4 mr4-l dim dn dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/back.svg" onMouseDown={back} />
+<p className="dn mt3 dn-l ba b--moon-gray pa2">Profilauswahl</p>
 
       {profiles.map((profile) => (
-        <div className="tooltip">
+        <div className="tooltip" key={profile.id}>
           <img
             name={profile.idSlide}
             alt={profile.alt}
             className={
               profile.last
-                ? "mv1 mv2-l mr2-l dn db-l dim"
-                : "mv1 mv2-l mr1-l dn db-l dim"
+                ? "mv1 mv2-l mr4 mr2-l  db-l dim"
+                : "mv1 mv2-l mr2 mr1-l  db-l dim"
             }
             style={{ position: "relative", width: 25, height: 25 }}
             src={activeProfile === profile.alt
@@ -29,10 +29,10 @@ function profileStrip(props) {
             title={profile.picSlide}
             onMouseDown={zmien_profil}
           ></img>
-          <span class="tooltiptext">{profile.alt}</span>
+          <span className="tooltiptext">{profile.alt}</span>
         </div>
       ))}
-      <img className="mt4 ml4 ml4-l dim db dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
+      <img className="mt4 ml4 ml4-l dim dn dn-l" style={{ position: "relative", width: 25, height: 25 }} src="../pics/svg/ffd.svg" onMouseDown={ffd} />
     </div>
   );
 
@@ -55,9 +55,6 @@ function ffd (ev) {
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
     //if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
-
-
-
 }
 
 function back (ev) {
@@ -77,7 +74,6 @@ function back (ev) {
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(profiles[nrprofila].alt);
     //if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
-
 }
 
 
@@ -98,7 +94,6 @@ function back (ev) {
     $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(ev.target.alt);
     //changeVideo (profiles[nrprofila].movie, props.mWindow);
-
   }
 
   function $id(id) {

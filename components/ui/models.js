@@ -2,7 +2,7 @@ import { proxy, useSnapshot } from "valtio";
 import { useRef, useState } from "react";
 import {useGLTF, useTexture } from "@react-three/drei";
 import * as THREE from "three";
-import { useFrame } from "react-three-fiber";
+import { useFrame } from "@react-three/fiber";
 import { getAllColours } from "../data/colours";
 
 const state = proxy({
@@ -351,14 +351,28 @@ const state = proxy({
   export function Pe68({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    var nrKolorkuZew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorOutside) {
+        nrKolorkuZew = farben.indexOf(kolorek);
+      }
+    }
+    var nrKolorkuWew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorInside) {
+        nrKolorkuWew = farben.indexOf(kolorek);
+      }
+    }
+    const colorInside = farben[nrKolorkuWew].color
+    const colorOutside = farben[nrKolorkuZew].color
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/pe68.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[0.37, -0.58, 1.48]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={snap.items.aluminium}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.26, -0.24, 1.11]} material-color={snap.items.gasket}/>
         <mesh
@@ -386,14 +400,28 @@ const state = proxy({
   export function Pe78N({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    var nrKolorkuZew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorOutside) {
+        nrKolorkuZew = farben.indexOf(kolorek);
+      }
+    }
+    var nrKolorkuWew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorInside) {
+        nrKolorkuWew = farben.indexOf(kolorek);
+      }
+    }
+    const colorInside = farben[nrKolorkuWew].color
+    const colorOutside = farben[nrKolorkuZew].color
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/pe78n.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[0.32, -2.15, 1.55]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={snap.items.aluminium}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.23, -1.71, 1.09]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.main_gasket.geometry} material={nodes.main_gasket.material} position={[0.7, -2.43, 1.8]} material-color={snap.items.gasket}/>
@@ -421,14 +449,28 @@ const state = proxy({
   export function Mb70({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    var nrKolorkuZew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorOutside) {
+        nrKolorkuZew = farben.indexOf(kolorek);
+      }
+    }
+    var nrKolorkuWew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorInside) {
+        nrKolorkuWew = farben.indexOf(kolorek);
+      }
+    }
+    const colorInside = farben[nrKolorkuWew].color
+    const colorOutside = farben[nrKolorkuZew].color
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/mb70.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[-0.49, -1.84, 1.26]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={snap.items.aluminium}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[-0.45, -1.28, 0.64]} material-color={snap.items.gasket}/>
         <mesh
@@ -460,14 +502,28 @@ const state = proxy({
   export function Mb86({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    var nrKolorkuZew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorOutside) {
+        nrKolorkuZew = farben.indexOf(kolorek);
+      }
+    }
+    var nrKolorkuWew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorInside) {
+        nrKolorkuWew = farben.indexOf(kolorek);
+      }
+    }
+    const colorInside = farben[nrKolorkuWew].color
+    const colorOutside = farben[nrKolorkuZew].color
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/mb86.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[0.23, -1.75, 1.19]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={snap.items.aluminium}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[-0.42, -1.16, 0.54]} material-color={snap.items.gasket}/>
         <mesh
@@ -499,14 +555,28 @@ const state = proxy({
   export function Aws75({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    var nrKolorkuZew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorOutside) {
+        nrKolorkuZew = farben.indexOf(kolorek);
+      }
+    }
+    var nrKolorkuWew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorInside) {
+        nrKolorkuWew = farben.indexOf(kolorek);
+      }
+    }
+    const colorInside = farben[nrKolorkuWew].color
+    const colorOutside = farben[nrKolorkuZew].color
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/aws75.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[0.15, -1.98, 1.4]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={snap.items.aluminium}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.26, -1.25, 0.63]} material-color={snap.items.gasket}/>
         <mesh
@@ -539,14 +609,28 @@ const state = proxy({
   export function Aws90({ ...props }) {
     const group = useRef()
     const snap = useSnapshot(state);
+    var nrKolorkuZew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorOutside) {
+        nrKolorkuZew = farben.indexOf(kolorek);
+      }
+    }
+    var nrKolorkuWew = 0;
+    for (const kolorek of farben) {
+      if (kolorek.name == props.colorInside) {
+        nrKolorkuWew = farben.indexOf(kolorek);
+      }
+    }
+    const colorInside = farben[nrKolorkuWew].color
+    const colorOutside = farben[nrKolorkuZew].color
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/aws90.glb')
     return (
       <group ref={group} {...props} dispose={null}>
         <group position={[-0.16, -1.89, 1.33]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={snap.items.aluminium}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.36, -1.27, 0.63]} material-color={snap.items.gasket}/>
         <mesh

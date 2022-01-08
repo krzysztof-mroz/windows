@@ -31,15 +31,17 @@ import {
 } from "@react-three/drei";
 import { proxy, useSnapshot } from "valtio";
 import { getAllColours } from "../components/data/colours";
+import colorStrip from "../components/ui/colourstrip";
 
 function StartPage() {
   const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
   const [colorInside, setColorInside] = useState("weiss");
   const [colorOutside, setColorOutside] = useState("weiss");
-  const [bothSidesColor, setBothSidesColor] = useState(false);
+  const [bothSidesColor, setBothSidesColor] = useState(true);
   const [blackGasket, setBlackGasket] = useState(false);
   const [aluProfile, setAluProfile] = useState(false);
   const [showHint, setShowHint] = useState(true);
+ 
 
   const farben = getAllColours();
 
@@ -62,21 +64,7 @@ function StartPage() {
     return <primitive attach="background" object={texture} />;
   };
 
-  function profileChangeHandler(newProfile) {
-    setActiveProfile(newProfile);
-    if (
-      newProfile == "Ponzio PE 68N" ||
-      newProfile == "Ponzio PE 78N" ||
-      newProfile == "Aluprof MB 70 HI" ||
-      newProfile == "Aluprof MB 86 SI" ||
-      newProfile == "Schüco AWS 75 SI" ||
-      newProfile == "Schüco AWS 90 SI"
-    ) {
-      setAluProfile(true);
-    } else {
-      setAluProfile(false);
-    }
-  }
+ 
 
   return (
     <div className=" w-100-l">
@@ -245,22 +233,14 @@ function StartPage() {
                    
                   >
                     <spotLight
-                      intensity={
-                        aluProfile === false
-                          ? farben[nrKolorkuWew].light_inside
-                          : 0.1
-                      }
+                      intensity={farben[nrKolorkuWew].light_inside}
                       angle={0.1}
                       penumbra={1}
                       position={[20, 15, -300]}
                       castShadow
                     />
                     <spotLight
-                      intensity={
-                        aluProfile === false
-                          ? farben[nrKolorkuZew].light_outside
-                          : 0.1
-                      }
+                      intensity={farben[nrKolorkuZew].light_outside}
                       angle={0.1}
                       penumbra={1}
                       position={[20, 100, 300]}
@@ -329,22 +309,42 @@ function StartPage() {
                         />
                       ) : null}
                       {activeProfile == "Ponzio PE 68N" ? (
-                        <Pe68 rotation-y={Math.PI * 1.33} />
+                        <Pe68 
+                          rotation-y={Math.PI * 1.33} 
+                          colorInside={colorInside}
+                          colorOutside={colorOutside}
+                          blackGasket={blackGasket}
+                        />
                       ) : null}
                       {activeProfile == "Ponzio PE 78N" ? (
-                        <Pe78N rotation-y={Math.PI * 1.33} />
+                        <Pe78N rotation-y={Math.PI * 1.33} 
+                        colorInside={colorInside}
+                          colorOutside={colorOutside}
+                          blackGasket={blackGasket}/>
                       ) : null}
                       {activeProfile == "Aluprof MB 70 HI" ? (
-                        <Mb70 rotation-y={Math.PI * 1.33} />
+                        <Mb70 rotation-y={Math.PI * 1.33} 
+                        colorInside={colorInside}
+                          colorOutside={colorOutside}
+                          blackGasket={blackGasket}/>
                       ) : null}
                       {activeProfile == "Aluprof MB 86 SI" ? (
-                        <Mb86 rotation-y={Math.PI * 1.33} />
+                        <Mb86 rotation-y={Math.PI * 1.33} 
+                        colorInside={colorInside}
+                          colorOutside={colorOutside}
+                          blackGasket={blackGasket}/>
                       ) : null}
                       {activeProfile == "Schüco AWS 75 SI" ? (
-                        <Aws75 rotation-y={Math.PI * 1.33} />
+                        <Aws75 rotation-y={Math.PI * 1.33} 
+                        colorInside={colorInside}
+                          colorOutside={colorOutside}
+                          blackGasket={blackGasket}/>
                       ) : null}
                       {activeProfile == "Schüco AWS 90 SI" ? (
-                        <Aws90 rotation-y={Math.PI * 1.33} />
+                        <Aws90 rotation-y={Math.PI * 1.33} 
+                        colorInside={colorInside}
+                          colorOutside={colorOutside}
+                          blackGasket={blackGasket}/>
                       ) : null}
                       <Environment preset="park" />
                       <ambientLight intensity={0.5} />
@@ -410,6 +410,8 @@ function StartPage() {
                 <ColourStrip
                   onColorChange={changeColor}
                   gasketChange={checkGasket}
+                  ifAlu={aluProfile}
+                  aktywnyKolor={colorOutside}
                 />
               </div>
             </div>
@@ -524,6 +526,34 @@ function StartPage() {
    
   
   }
+  function profileChangeHandler(newProfile) {
+    setActiveProfile(newProfile);
+    if (
+      newProfile == "Ponzio PE 68N" ||
+      newProfile == "Ponzio PE 78N" ||
+      newProfile == "Aluprof MB 70 HI" ||
+      newProfile == "Aluprof MB 86 SI" ||
+      newProfile == "Schüco AWS 75 SI" ||
+      newProfile == "Schüco AWS 90 SI"
+    ) {
+
+      if (aluProfile === false) {
+        setAluProfile(true);
+        setColorInside("alu");
+        setColorOutside("alu");
+      }
+      
+    } else {
+
+      if (aluProfile === true)
+      setAluProfile(false);
+      setColorInside("weiss");
+      setColorOutside("weiss");
+      setBlackGasket(false);
+      
+
+    }
+  }
 
   function checkGasket(hasBlacGasket) {
     if (bothSidesColor === true) {
@@ -536,14 +566,13 @@ function StartPage() {
   function oneSideColor() {
     setBothSidesColor(false);
     setColorInside("weiss");
-    setColorOutside(colorOutside);
+    if(aluProfile==true) {setColorInside("alu");}
     setBlackGasket(false);
   }
 
   function bothSides() {
     setBothSidesColor(true);
     setColorInside(colorOutside);
-    setColorOutside(colorOutside);
     setBlackGasket(farben[nrKolorkuZew].blackGasket);
   }
 
