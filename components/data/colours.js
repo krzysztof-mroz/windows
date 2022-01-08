@@ -634,6 +634,18 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
   },
+  {
+    id: "a3",
+    name: "weiss_alu",
+    alt: "weiß",
+    src: "./pics/farben/white.jpg",
+    color: "#FFFFFF",
+    light_inside: 0,
+    light_outside: 0,
+    blackGasket: true,
+    materialAlu: true,
+  },
+  
 ];
 
 export function getAllColours() {
