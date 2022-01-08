@@ -20,7 +20,7 @@ function profileStrip(props) {
                 ? "mv1 mv2-l mr3 mr2-l dim"
                 : "mv1 mv2-l mr1 mr1-l dim"
             }
-            style={{ position: "relative", width: 28, height: 28 }}
+            style={{ position: "relative", width: 29, height: 29 }}
             src={activeProfile === profile.alt
               ? profile.ikonka + "_red.svg"
               : profile.ikonka + "_grey.svg"
