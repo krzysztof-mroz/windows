@@ -225,7 +225,7 @@ function StartPage() {
           </div>
 
           <div className="flex flex-wrap justify-around mb3 w-100">
-            <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
+            <div className="flex flex-wrap justify-center mv1 fl w-100 w-50-l ba b--moon-gray">
               <div className="db mb4 flex flex-wrap justify-center">
                 <p className={showHint === true 
                 ? "ba b--moon-gray pa2 silver"
@@ -360,10 +360,10 @@ function StartPage() {
               </div>
             </div>
 
-            <div className=" mv1  fl w-100 w-30-l ba b--moon-gray">
+            <div className=" fl w-100 w-50-l b--moon-gray ph3">
               <div className="flex flex-wrap justify-center">
-                <div className="flex flex-wrap justify-center w-100 mb1">
-                  <p className="dn db-l ba b--moon-gray pa2 silver">Profilauswahl</p>
+                <div className="flex flex-wrap justify-center w-100">
+                  <p className="dn db-l ba b--moon-gray pa2 silver">Profil- und Farbauswahl</p>
                   <ProfileStrip onProfileChange={profileChangeHandler} />
                   <div className="w-90 tc">
                   <h4
@@ -376,7 +376,7 @@ function StartPage() {
                   <div className="w-90 tc">
                   <p
                     id="nazwaKoloru"
-                    className="ba b--moon-gray pa2 mb2 mb4-l"
+                    className="ba b--moon-gray pa2 mb1"
                   >
                     weiß
                   </p>

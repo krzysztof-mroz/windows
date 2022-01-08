@@ -54,7 +54,7 @@ const PROFILE = [
         picSlide: "./pics/living_3d.jpg",
         ikonka: "../pics/svg/profileicon",
         komoryProfilu: "7 Kammer, 3 Dichtungen, 82 mm Tiefe",
-        last: true,
+        last: false,
         section: "./pics/sections/living.png",
         movie: "./movies/living.mp4"
     },
@@ -173,7 +173,7 @@ const PROFILE = [
         picSlide: "./pics/pe_78n_3d.jpg",
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 78 mm Einbautiefe, Thermische Trennung",
-        last: true,
+        last: false,
         section: "./pics/sections/pe78.png",
         movie: "./movies/pe78.mp4"
     },
@@ -213,7 +213,7 @@ const PROFILE = [
         picSlide: "./pics/mb_86_3d.jpg",
         ikonka: "../pics/svg/profileiconalu",
         komoryProfilu: "3 Kammer, 77 mm Einbautiefe, Thermische Trennung",
-        last: true,
+        last: false,
         section: "./pics/sections/mb86.png",
         movie: "./movies/mb86.mp4"
     },

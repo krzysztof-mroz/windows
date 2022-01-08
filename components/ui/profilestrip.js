@@ -17,8 +17,8 @@ function profileStrip(props) {
             alt={profile.alt}
             className={
               profile.last
-                ? "mv1 mv2-l mr1 mr4-l dn db-l dim"
-                : "mv1 mv2-l mr1 mr2-l dn db-l dim"
+                ? "mv1 mv2-l mr2-l dn db-l dim"
+                : "mv1 mv2-l mr1-l dn db-l dim"
             }
             style={{ position: "relative", width: 25, height: 25 }}
             src={activeProfile === profile.alt
