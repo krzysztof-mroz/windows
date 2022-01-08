@@ -362,8 +362,8 @@ function StartPage() {
 
             <div className=" fl w-100 w-50-l b--moon-gray ph3">
               <div className="flex flex-wrap justify-center">
-                <div className="flex flex-wrap justify-center w-100">
-                  <p className="dn db-l ba b--moon-gray pa2 silver">Profil- und Farbauswahl</p>
+                
+                  <p className=" ba b--moon-gray pa2 silver">Profil- und Farbauswahl</p>
                   <ProfileStrip onProfileChange={profileChangeHandler} />
                   <div className="w-90 tc">
                   <h4
@@ -382,7 +382,7 @@ function StartPage() {
                   </p>
                   </div>
 
-                </div>
+                
                 <button
                   className={
                     bothSidesColor === false
