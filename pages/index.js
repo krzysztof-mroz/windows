@@ -39,6 +39,7 @@ function StartPage() {
   const [bothSidesColor, setBothSidesColor] = useState(false);
   const [blackGasket, setBlackGasket] = useState(false);
   const [aluProfile, setAluProfile] = useState(false);
+  const [showHint, setShowHint] = useState(true);
 
   const farben = getAllColours();
 
@@ -79,12 +80,14 @@ function StartPage() {
 
   return (
     <div className="w-90 w-100-l center">
-      <div className=" fw9 pv1 tl dt w-100">
+      <div className="fw9 pv1 tl dt w-100">
         <div className="dtc v-mid tc pa1">
+          <div className="dn db-l">
           <Link href="/">
             <a className="f6 fw8 bold dim no-underline  db dib-l pv2 ph3">
               Polniche-Fenster.Com
             </a>
+
           </Link>
           <Link href="/">
             <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">Start</a>
@@ -115,6 +118,47 @@ function StartPage() {
               Sign Up
             </a>
           </Link>
+          </div>
+
+
+
+        {/* MOBILE MENU */}
+
+          <div className="dn-l">
+         
+          <Link href="/">
+            <a className="f6 fw4 dim no-underline   pv2 ph3"> <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/home.svg"></img></a>
+          </Link>
+          <Link href="/">
+            <a className=" dim no-underline pv2 ph3">    
+              <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/window.svg"></img>
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="f6 fw4 dim no-underline  pv2 ph3">
+            <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/door.svg"></img>
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="f6 fw4 dim no-underline  pv2 ph3">
+            <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/shutter.svg"></img>
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="f6 fw4 dim no-underline  pv2 ph3">
+            <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/howitworks.svg"></img>
+            </a>
+          </Link>
+          <Link href="/">
+            <a className="f6 fw4 dim no-underline  pv2 ph3"><img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/contact.svg"></img></a>
+          </Link>
+          <Link href="/">
+            <a className="f6 fw4 dim no-underline  ml2 pv2 ph3">
+            <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/login.svg"></img>
+            </a>
+          </Link>
+          </div>
+
         </div>
       </div>
 
@@ -183,17 +227,22 @@ function StartPage() {
           <div className="flex flex-wrap justify-around mb3 w-100">
             <div className="flex flex-wrap justify-center mv1 fl w-100 w-two-thirds-l ba b--moon-gray">
               <div className="db mb4 flex flex-wrap justify-center">
-                <p className="ba b--moon-gray pa2 silver">
+                <p className={showHint === true 
+                ? "ba b--moon-gray pa2 silver"
+                : "dn"
+              }>
                   3d Visualisierung - bitte berühren
                 </p>
                 <div
                   style={{ position: "relative", height: 478 }}
                   className="w-90"
+                  //onMouseDown={hideHint}
                 >
                   <Canvas
                     shadows
                     dpr={[1, 2]}
                     camera={{ position: [16, 16, 16], fov: 50 }}
+                   
                   >
                     <spotLight
                       intensity={
@@ -466,6 +515,15 @@ function StartPage() {
       </div>
     </div>
   );
+
+  function hideHint() {
+  
+    if (showHint === true) {
+      setShowHint(false);
+    }
+   
+  
+  }
 
   function checkGasket(hasBlacGasket) {
     if (bothSidesColor === true) {
