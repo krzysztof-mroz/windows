@@ -81,8 +81,8 @@ function StartPage() {
   return (
     <div className="w-90 w-100-l center">
       <div className="fw9 pv1 tl dt w-100">
-        <div className="dtc v-mid tc pa1">
-          <div className="dn db-l">
+        <div className="dtc v-mid tc pa1" style={{overflow: "hidden", position: "fixed", top: 0, width: "100%", marginBottom: "70px", zIndex: 999, height: "50px", backgroundColor: "#FFFFFF" }}>
+          <div  className="dn db-l">
           <Link href="/">
             <a className="f6 fw8 bold dim no-underline  db dib-l pv2 ph3">
               Polniche-Fenster.Com
@@ -127,33 +127,33 @@ function StartPage() {
           <div className="dn-l">
          
           <Link href="/">
-            <a className="f6 fw4 dim no-underline   pv2 pb3 pr3"> <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/home.svg"></img></a>
+            <a className="f6 fw4 dim no-underline   pv2 pb4 pr2"> <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/home.svg"></img></a>
           </Link>
           <Link href="/">
-            <a className=" dim no-underline pv2 pb3 ph3">    
+            <a className=" dim no-underline pv2 pb4 ph2">    
               <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/window.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb3 ph3">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/door.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb3 ph3">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/shutter.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb3 ph3">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/howitworks.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb3 ph3"><img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/contact.svg"></img></a>
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2"><img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/contact.svg"></img></a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  ml2 pv2 pb3 pl3">
+            <a className="f6 fw4 dim no-underline  ml2 pv4 pb3 pl2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/login.svg"></img>
             </a>
           </Link>
@@ -162,7 +162,7 @@ function StartPage() {
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center">
+      <div className="flex flex-wrap justify-center" style={{marginTop: "60px"}}>
         <div className="mh2 mh4-ns mh6-l mw9 ">
           <div className="flex flex-wrap justify-around mb2 w-100">
             <div className="w-100 w-20-l  tc mv1">
