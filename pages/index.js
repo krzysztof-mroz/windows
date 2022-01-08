@@ -79,7 +79,7 @@ function StartPage() {
   }
 
   return (
-    <div className="w-90 w-100-l center">
+    <div className=" w-100-l">
       <div className="fw9 pv1 tl dt w-100">
         <div className="dtc v-mid tc pa1" style={{overflow: "hidden", position: "fixed", top: 0, width: "100%", marginBottom: "70px", zIndex: 999, height: "50px", backgroundColor: "#FFFFFF" }}>
           <div  className="dn db-l mt2-l">
