@@ -153,7 +153,7 @@ function StartPage() {
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2"><img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/contact.svg"></img></a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  ml2 pv4 pb3 pl2">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 pl2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/login.svg"></img>
             </a>
           </Link>
