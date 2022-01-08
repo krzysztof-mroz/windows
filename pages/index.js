@@ -127,33 +127,33 @@ function StartPage() {
           <div className="dn-l">
          
           <Link href="/">
-            <a className="f6 fw4 dim no-underline   pv2 pb4 pr3"> <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/home.svg"></img></a>
+            <a className="f6 fw4 dim no-underline   pv2 pb4 pr2"> <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/home.svg"></img></a>
           </Link>
           <Link href="/">
-            <a className=" dim no-underline pv2 pb4 ph3">    
+            <a className=" dim no-underline pv2 pb4 ph2">    
               <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/window.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb4 ph3">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/door.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb4 ph3">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/shutter.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb4 ph3">
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/howitworks.svg"></img>
             </a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  pv2 pb4 ph3"><img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/contact.svg"></img></a>
+            <a className="f6 fw4 dim no-underline  pv2 pb4 ph2"><img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/contact.svg"></img></a>
           </Link>
           <Link href="/">
-            <a className="f6 fw4 dim no-underline  ml2 pv4 pb3 pl3">
+            <a className="f6 fw4 dim no-underline  ml2 pv4 pb3 pl2">
             <img style={{ position: "relative", width: 30, height: 30 }} src="./pics/svg/login.svg"></img>
             </a>
           </Link>
