@@ -371,8 +371,8 @@ const state = proxy({
       <group ref={group} {...props} dispose={null}>
         <group position={[0.37, -0.58, 1.48]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={nodes.gaskets.material} position={[0.26, -0.24, 1.11]} material-color={snap.items.gasket}/>
         <mesh
@@ -420,8 +420,8 @@ const state = proxy({
       <group ref={group} {...props} dispose={null}>
         <group position={[0.32, -2.15, 1.55]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.23, -1.71, 1.09]} material-color={snap.items.gasket}/>
         <mesh geometry={nodes.main_gasket.geometry} material={nodes.main_gasket.material} position={[0.7, -2.43, 1.8]} material-color={snap.items.gasket}/>
@@ -469,8 +469,8 @@ const state = proxy({
       <group ref={group} {...props} dispose={null}>
         <group position={[-0.49, -1.84, 1.26]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[-0.45, -1.28, 0.64]} material-color={snap.items.gasket}/>
         <mesh
@@ -522,8 +522,8 @@ const state = proxy({
       <group ref={group} {...props} dispose={null}>
         <group position={[0.23, -1.75, 1.19]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[-0.42, -1.16, 0.54]} material-color={snap.items.gasket}/>
         <mesh
@@ -575,8 +575,8 @@ const state = proxy({
       <group ref={group} {...props} dispose={null}>
         <group position={[0.15, -1.98, 1.4]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.26, -1.25, 0.63]} material-color={snap.items.gasket}/>
         <mesh
@@ -629,8 +629,8 @@ const state = proxy({
       <group ref={group} {...props} dispose={null}>
         <group position={[-0.16, -1.89, 1.33]}>
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
-          <mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-color={colorOutside}/>
-          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-color={colorInside}/>
+          <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
         </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.36, -1.27, 0.63]} material-color={snap.items.gasket}/>
         <mesh
