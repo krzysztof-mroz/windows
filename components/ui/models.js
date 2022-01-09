@@ -1109,6 +1109,7 @@ export function Aws90({ ...props }) {
         material-map={textureOutside}
          material-color={colorOutside}
          material-roughnessMap={aluRoughnessOutside}/>
+         
       </group>
       <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.36, -1.27, 0.63]} material-color={snap.items.gasket}/>
       <mesh
