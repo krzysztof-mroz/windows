@@ -243,7 +243,7 @@ function StartPage() {
                       intensity={farben[nrKolorkuZew].light_outside}
                       angle={0.1}
                       penumbra={1}
-                      position={[20, 100, 300]}
+                      position={[20, 15, 300]}
                       castShadow
                     />
 
@@ -566,7 +566,7 @@ function StartPage() {
   function oneSideColor() {
     setBothSidesColor(false);
     setColorInside("weiss");
-    if(aluProfile==true) {setColorInside("alu");}
+    if(aluProfile==true) {setColorInside("weiss_alu");}
     setBlackGasket(false);
   }
 
