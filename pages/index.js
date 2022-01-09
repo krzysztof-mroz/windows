@@ -539,8 +539,8 @@ function StartPage() {
 
       if (aluProfile === false) {
         setAluProfile(true);
-        setColorInside("alu");
-        setColorOutside("alu");
+        setColorInside("weiss_9016");
+        setColorOutside("weiss_9016");
       }
       
     } else {
@@ -566,7 +566,7 @@ function StartPage() {
   function oneSideColor() {
     setBothSidesColor(false);
     setColorInside("weiss");
-    if(aluProfile==true) {setColorInside("weiss_alu");}
+    if(aluProfile==true) {setColorInside("weiss_9016");}
     setBlackGasket(false);
   }
 
@@ -587,6 +587,7 @@ function StartPage() {
     } else {
       setColorOutside(newColor);
       setColorInside("weiss");
+      if(aluProfile==true) {setColorInside("weiss_9016");}
     }
   }
 }

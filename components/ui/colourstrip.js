@@ -20,10 +20,6 @@ function colorStrip(props) {
     $id("nazwaKoloru").innerText = farben[nrKolorkuZew].alt;
 }, [props.aktywnyKolor]);
 
-
-
-  console.log (props.aktywnyKolor);
-
   
   
   function filterColors(color) {
