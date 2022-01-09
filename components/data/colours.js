@@ -623,8 +623,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+
 
     
   },
@@ -639,8 +639,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+ 
 
   },
   {
@@ -654,8 +654,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+ 
 
   },
   {
@@ -669,8 +669,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness2.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+  
 
   },
   {
@@ -684,8 +684,7 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
 
   },
   {
@@ -699,8 +698,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: true,
+    texture: "../../colors/white.jpg",
+  
   },
   {
     id: "a6", 
@@ -713,8 +712,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+ 
 
   },
   {
@@ -728,8 +727,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
 
   },
   {
@@ -743,8 +742,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
 
   },
   {
@@ -758,8 +757,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
 
   },
   {
@@ -773,8 +772,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
 
   },
   {
@@ -788,8 +787,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
 
   },
   {
@@ -803,8 +802,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
   },
   {
     id: "a12", 
@@ -817,8 +816,8 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
+    texture: "../../colors/white.jpg",
+    
 
   },
   {
@@ -832,9 +831,20 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
     roughness: "./colors/alu_roughness3.jpg",
-    texture: "../../colors/bergkiefer.jpg",
-    useTexture: false,
-
+    texture: "../../colors/white.jpg",
+  },
+  {
+    id: "a14",
+    name: "golden-oak-alu",
+    alt: "goldene Eiche Alu",
+    src: "./pics/farben/goldenoak.png",
+    texture: "../../colors/goldenoak.jpg",
+    color: "#ffffff",
+    light_inside: 0.7,
+    light_outside: 0.7,
+    blackGasket: true,
+    materialAlu: true,
+    roughness: "./colors/alu_roughness3.jpg",
   },
   
 ];
