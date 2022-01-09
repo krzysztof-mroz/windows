@@ -623,6 +623,10 @@ const state = proxy({
     }
     const colorInside = farben[nrKolorkuWew].color
     const colorOutside = farben[nrKolorkuZew].color
+
+   // const textureInside = useTexture(farben[nrKolorkuWew].texture)
+   // const textureOutside = useTexture(farben[nrKolorkuZew].texture)
+
     useFrame((state) => {group.current.rotation.y += rotateRate})
     const { nodes, materials } = useGLTF('/aws90.glb')
     return (
@@ -631,7 +635,10 @@ const state = proxy({
           <mesh geometry={nodes['profile-Aluminium'].geometry} material={materials.Aluminium} material-color={snap.items.aluminium}/>
           <mesh geometry={nodes['profile-color_outside'].geometry} material={colorOutside == "#FFFFFF" ? nodes.kanteT.material : materials['color outside']} material-color={colorOutside}/>
           <mesh geometry={nodes['profile-color_inside'].geometry} material={colorInside == "#FFFFFF" ? nodes.kanteT.material : materials['color inside']} material-color={colorInside}/>
-        </group>
+    
+          {/*<mesh geometry={nodes['profile-color_outside'].geometry} material={materials['color outside']} material-map={textureOutside}/>
+          <mesh geometry={nodes['profile-color_inside'].geometry} material={materials['color inside']} material-map={textureInside}/>*/}
+          </group>
         <mesh geometry={nodes.gaskets.geometry} material={materials['Rubber - Black']} position={[0.36, -1.27, 0.63]} material-color={snap.items.gasket}/>
         <mesh
           geometry={nodes.main_gasket.geometry}

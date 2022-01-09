@@ -766,6 +766,17 @@ const FARBEN = [
     blackGasket: true,
     materialAlu: true,
   },
+  {
+    id: "a13", 
+    name: "tiefschwarz",
+    alt: "Tiefschwarz RAL 9005",
+    src: "./pics/farben/tiefschwarz.png",
+    color: "#0e0e10",
+    light_inside: 0.3,
+    light_outside: 0.3,
+    blackGasket: true,
+    materialAlu: true,
+  },
   
 ];
 
