@@ -899,7 +899,7 @@ const FARBEN = [
     roughness: "./colors/alu_roughness3.jpg",
   },
   {
-    id: "a103",
+    id: "a103b",
     name: "inox-optic-plus-pulver",
     alt: "Inox Optic Plus Pulver",
     src: "./pics/farben/inox-optic-plus-pulver.png",
