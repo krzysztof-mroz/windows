@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 import "tachyons";
+import Head from 'next/head';
+
 
 import Description from "../components/ui/description";
 import HeaderDiv from "../components/ui/headerdiv";
@@ -10,7 +12,19 @@ import Visualisation from "../components/ui/visualisation";
 
 function StartPage() {
   return (
+
+
     <Fragment>
+      <Head>
+        <title>Polnische Fenster aus Kunststoff und Aluminium</title>
+        <meta name='description'
+              content='Schüco, Kömmerling, Ponzio und Aluprof Fenster aus Polen mit Montage. 3d Visualisierung'
+        />
+         <meta name='keywords'
+              content='fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator'
+        />
+      
+      </Head>
       <HeaderDiv />
       <Visualisation />
       <Description />
