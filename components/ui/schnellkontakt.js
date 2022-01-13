@@ -1,9 +1,30 @@
+import {useRef} from 'react';
+
+
+
 function Schnellkontakt(props) {
+
+  const contactRef = useRef();
+  const messageRef = useRef();
+
+  function submitFormHandler(event) {
+    event.preventDefault();
+    const inputEmail = contactRef.current.value;
+    const inputMessage = messageRef.current.value;
+
+    const messageBody = {inputEmail: inputEmail, inputMessage: inputMessage};
+
+    fetch('https://www.bausimplex.com/versand_kurznachricht.php', {
+      method: 'POST',
+      body: messageBody
+    })
+    .then((data) => console.log(data));
+  }
   
   return (
     
     <div className="w-90 fl ">
-      <form className="" name="Kurzformular" action="../versand_kurznachricht.php" method="post">
+      <form className="" name="Kurzformular" onSubmit={submitFormHandler} method="post">
       <div className="">
       <p>
         <b>Schnellkontakt:</b>
@@ -11,6 +32,7 @@ function Schnellkontakt(props) {
       </div>
       
       <textarea
+        ref = {messageRef}
         className="w3-input w3-border mv4  w3-sand w3-border-orange"
         name="inputMessage"
         id="inputMessage"
@@ -20,6 +42,7 @@ function Schnellkontakt(props) {
       <div className="mv3">
         
         <input
+          ref = {contactRef}
           className="w3-input w3-border  mb4 w3-sand w3-border-orange"
           type="text"
           name="inputEmail"
@@ -39,5 +62,4 @@ function Schnellkontakt(props) {
     </div>
   );
 }
-
 export default Schnellkontakt;
