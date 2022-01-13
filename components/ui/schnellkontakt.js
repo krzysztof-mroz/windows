@@ -7,16 +7,17 @@ function Schnellkontakt(props) {
   const contactRef = useRef();
   const messageRef = useRef();
 
-  function submitFormHandler(event) {
+  async function submitFormHandler(event) {
     event.preventDefault();
     const inputEmail = contactRef.current.value;
     const inputMessage = messageRef.current.value;
 
     const messageBody = {inputEmail: inputEmail, inputMessage: inputMessage};
 
-    fetch('https://www.bausimplex.com/versand_kurznachricht.php', {
+    await fetch('https://www.bausimplex.com/versand_next.php', {
       method: 'POST',
-      body: messageBody,
+      body: JSON.stringify(messageBody),
+      headers: {'Content-Type': 'application/json'},
       mode: 'no-cors'
     })
     .then((data) => console.log(data));
@@ -25,7 +26,7 @@ function Schnellkontakt(props) {
   return (
     
     <div className="w-90 fl ">
-      <form className="" name="Kurzformular" onSubmit={submitFormHandler} method="post">
+      <form className="" name="Kurzformular" onSubmit={submitFormHandler}>
       <div className="">
       <p>
         <b>Schnellkontakt:</b>
