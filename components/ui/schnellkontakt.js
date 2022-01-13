@@ -16,7 +16,8 @@ function Schnellkontakt(props) {
 
     fetch('https://www.bausimplex.com/versand_kurznachricht.php', {
       method: 'POST',
-      body: messageBody
+      body: messageBody,
+      mode: 'no-cors'
     })
     .then((data) => console.log(data));
   }
