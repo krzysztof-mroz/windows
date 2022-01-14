@@ -10,8 +10,6 @@ import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
 
 
-
-
 function StartPage() {
     
   
