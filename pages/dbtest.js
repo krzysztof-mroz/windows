@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import "tachyons";
 import Head from 'next/head';
-import {sql_query} from "./lib/db"
+//import {sql_query} from "./lib/db"
 
 
 import Description from "../components/ui/description";
@@ -58,7 +58,7 @@ function DbTest(props) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   try {
       const results = await sql_query('SELECT * FROM test');
      
@@ -74,6 +74,5 @@ export async function getServerSideProps(context) {
   }
 
 }
-
 
 export default DbTest;
