@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import "tachyons";
 import Head from 'next/head';
+import {sql_query} from "./lib/db"
 
 
 import Description from "../components/ui/description";
@@ -11,17 +12,24 @@ import Visualisation from "../components/ui/visualisation";
 
 
 
-function StartPage() {
+
+
+function StartPage(props) {
+
+  const {posts} =props;
+    console.log(posts);
 
   
-  async function tescik() {
-    const res = await fetch("http://localhost:3000/api/sqltest");
-    const posts = await res.json();
+
+
+  //async function tescik() {
+    //const res = await fetch("http://localhost:3000/api/sqltest");
+    //const posts = await res.json();
  
-  console.log (posts);
-  }
+  //console.log (posts);
+  //}
   
-  tescik();
+  //tescik();
   return (
 
 
@@ -51,5 +59,23 @@ function StartPage() {
     </Fragment>
   );
 }
+
+export async function getServerSideProps(context) {
+  try {
+      const results = await sql_query('SELECT * FROM test');
+     
+      const posts = JSON.parse(JSON.stringify(results))
+
+      
+          return {
+          props: {posts} 
+      };
+      
+  } catch(e) {
+    return {props: {posts:false}} 
+  }
+
+}
+
 
 export default StartPage;
