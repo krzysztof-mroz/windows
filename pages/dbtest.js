@@ -15,9 +15,14 @@ import Visualisation from "../components/ui/visualisation";
 function StartPage() {
 
   
+  async function tescik() {
+    const res = await fetch("http://localhost:3000/api/sqltest");
+    const posts = await res.json();
+ 
+  console.log (posts);
+  }
   
-  
-  
+  tescik();
   return (
 
 

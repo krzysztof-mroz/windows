@@ -1,0 +1,16 @@
+import {sql_query} from "../lib/db"
+
+const handler = async (_, res) => {
+    try {
+        const result = await sql_query(
+            'SELECT * FROM test'
+          );
+        return res.json(results);
+        
+    } catch(e) {
+        res.status(500).json({message: e.message});
+    }
+};
+
+
+export default handler;
