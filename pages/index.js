@@ -20,7 +20,7 @@ function StartPage() {
 
     <Fragment>
       <Head>
-        <title>Polnische Fenster aus Kunststoff und Aluminium</title>
+        <title>Polnische Fenster Kunststoff und Aluminium</title>
         <meta name='description'
               content='Schüco, Kömmerling, Ponzio und Aluprof Fenster aus Polen mit Montage. 3d Visualisierung'
         />
