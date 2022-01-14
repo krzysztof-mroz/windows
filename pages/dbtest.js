@@ -12,9 +12,7 @@ import Visualisation from "../components/ui/visualisation";
 
 
 
-
-
-function StartPage(props) {
+function DbTest(props) {
 
   const {posts} =props;
     console.log(posts);
@@ -78,4 +76,4 @@ export async function getServerSideProps(context) {
 }
 
 
-export default StartPage;
+export default DbTest;
