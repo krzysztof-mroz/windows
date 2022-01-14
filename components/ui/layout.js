@@ -1,13 +1,13 @@
 import { Fragment } from "react";
 
-//import NaviBar from "./navibar";
-//import FooterDiv from "./footerdiv";
+import NaviBar from "./navibar";
+import FooterDiv from "./footerdiv";
 
 function Layout(props) {
   return (
     <Fragment>
       <div className=" w-100-l">
-        {/*<NaviBar />*/}
+        <NaviBar />
 
         <div
           className="flex flex-wrap justify-center mh2 mh6-l mw9"
@@ -15,7 +15,7 @@ function Layout(props) {
         >
           <main>{props.children}</main>
 
-          {/* <FooterDiv />*/}
+          <FooterDiv />
         </div>
       </div>
     </Fragment>

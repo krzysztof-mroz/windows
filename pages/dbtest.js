@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import "tachyons";
 import Head from 'next/head';
-//import {sql_query} from "./lib/db"
+import {sql_query} from "./lib/db"
 
 
 import Description from "../components/ui/description";
