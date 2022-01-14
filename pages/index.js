@@ -27,8 +27,6 @@ function StartPage() {
          <meta name='keywords'
               content='fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator'
         />
-      
-
       </Head>
       <HeaderDiv />
       <Visualisation />

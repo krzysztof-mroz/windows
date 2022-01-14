@@ -11,9 +11,6 @@ import Visualisation from "../components/ui/visualisation";
 
 
 
-
-
-
 function StartPage() {
 
   
@@ -28,7 +25,7 @@ function StartPage() {
   return (
 
 
-    
+
     <Fragment>
       <Head>
         <title>Polnische Fenster aus Kunststoff und Aluminium</title>
