@@ -14,14 +14,28 @@ function Schnellkontakt(props) {
 
     const messageBody = {inputEmail: inputEmail, inputMessage: inputMessage};
 
-    await fetch('https://www.bausimplex.com/versand_next.php', {
+    
+    fetch('/api/sendmail', {
       method: 'POST',
-      body: JSON.stringify(messageBody),
-      headers: {'Content-Type': 'application/json'},
-      mode: 'no-cors'
-    })
-    .then((data) => console.log(data));
+      body: JSON.stringify( {messageBody: messageBody }),
+      headers: {
+          'Content-Type': 'application/json',
+      }
+   }).then(response => response.json())
+   .then((data) => {
+     $id("sendResponse").innerText = data.message;
+     $id("sendResponse").className="f4 red";
+     if (data.message == "Ihre Nachricht wurde geschickt. Danke schön.") {
+      contactRef.current.value = ""
+      messageRef.current.value = ""
+     }
+     
+    }
+   
+   );
+   
   }
+  
   
   return (
     
@@ -54,6 +68,7 @@ function Schnellkontakt(props) {
         ></input>
         <p className="f7 gray">Ihre Daten werden nicht weitergeleitet.</p>
         <button className="w3-button w3-border w3-border-orange w3-sand" type="submit" data-toggle="tooltip" data-placement="top" title="Nachricht abschicken">Senden</button>
+        <p className="f5 gray" id="sendResponse">Wir freuen uns auf Ihre Nachricht.</p>
       </div>
       </form>
       <hr className="w-90"></hr>
@@ -63,5 +78,8 @@ function Schnellkontakt(props) {
       <hr className="w-90"></hr>
     </div>
   );
+  function $id(id) {
+    return document.getElementById(id);
+  }
 }
 export default Schnellkontakt;

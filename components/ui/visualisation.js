@@ -273,10 +273,12 @@ function visualisation(props) {
                 setColorOutside("weiss_9016");
               }
             } else {
-              if (aluProfile === true) setAluProfile(false);
-              setColorInside("weiss");
-              setColorOutside("weiss");
-              setBlackGasket(false);
+              if (aluProfile === true) {
+                setAluProfile(false);
+                setColorInside("weiss");
+                setColorOutside("weiss");
+                setBlackGasket(false);
+              }
             }
           }
         
