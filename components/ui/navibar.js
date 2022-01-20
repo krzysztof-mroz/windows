@@ -25,30 +25,30 @@ function navibar() {
           <Link href="/">
             <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">Start</a>
           </Link>
-          <Link href="/">
+          <Link href="/fenster">
             <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">Fenster</a>
           </Link>
-          <Link href="/">
+          <Link href="/tueren">
             <a className="f6 fw4 dim no-underline   db dib-l pv2 ph3">
               Haustüren
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/beschattung">
             <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
               Beschattung
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/howworking">
             <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
               Wie funktioniert es
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/kontakt">
             <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">Kontakt</a>
           </Link>
-          <Link href="/">
+          {/*<Link href="/">
             <a className="f6 fw4 dim no-underline db dib pv2 ph3">Sign Up</a>
-          </Link>
+      </Link>*/}
         </div>
 
         {/* MOBILE MENU */}
@@ -63,7 +63,7 @@ function navibar() {
               ></img>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/fenster">
             <a className=" dim no-underline pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
@@ -71,7 +71,7 @@ function navibar() {
               ></img>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/tueren">
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
@@ -79,7 +79,7 @@ function navibar() {
               ></img>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/beschattung">
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
@@ -87,7 +87,7 @@ function navibar() {
               ></img>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/howworking">
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
@@ -95,7 +95,7 @@ function navibar() {
               ></img>
             </a>
           </Link>
-          <Link href="/">
+          <Link href="/kontakt">
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
@@ -103,14 +103,14 @@ function navibar() {
               ></img>
             </a>
           </Link>
-          <Link href="/">
+          {/*<Link href="/">
             <a className="f6 fw4 dim no-underline  pv2 pb4 pl2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
                 src="./pics/svg/login.svg"
               ></img>
             </a>
-          </Link>
+      </Link>*/}
         </div>
       </div>
     </div>

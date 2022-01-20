@@ -32,10 +32,6 @@ function StartPage() {
       <WarumDiv />
       <ActionDiv />
 
-      <dev>
-
-      </dev>
-
     </Fragment>
   );
 }

@@ -35,14 +35,14 @@ function footer() {
           <div className="w-100 w-30-l  ma2 pa3">
             <h5 className="gray">Produkte</h5>
             <p className="gray f6">
-              <Link href="/">
+              <Link href="/fenster">
                 <a className="f6 fw4 no-underline db   ph3">Fenster</a>
               </Link>
-              <Link href="/">
-                <a className="f6 fw4 no-underline  db  ph3">Türen</a>
+              <Link href="/tueren">
+                <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
               </Link>
-              <Link href="/">
-                <a className="f6 fw4 no-underline  db  ph3">Rollläden</a>
+              <Link href="/beschattung">
+                <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
               </Link>
             </p>
           </div>
@@ -75,6 +75,9 @@ function footer() {
               </Link>
               <Link href="/">
                 <a className="f6 fw4 no-underline  db  ph3">Über die Firma</a>
+              </Link>
+              <Link href="/kontakt">
+                <a className="f6 fw4 no-underline  db  ph3">Kontakt</a>
               </Link>
             </p>
           </div>
