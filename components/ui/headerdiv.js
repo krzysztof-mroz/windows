@@ -1,4 +1,7 @@
-function header() {
+function header(props) {
+
+  const { title } = props;
+
     return (
 
         <div className="flex flex-wrap justify-around mb2 w-100">
@@ -12,7 +15,7 @@ function header() {
         <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
           <img className="mt4 mr1 " src="./pics/ikonki_rund.png"></img>
           <h3 className="fl ma1 mt3 w-100 tc">
-            Kunststoff und Aluminium Fenster aus Polen
+            { title }
           </h3>
         </div>
 

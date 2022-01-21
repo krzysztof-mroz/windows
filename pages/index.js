@@ -26,7 +26,7 @@ function StartPage() {
               content='fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator'
         />
       </Head>
-      <HeaderDiv />
+      <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
       <Visualisation />
       <Description />
       <WarumDiv />
