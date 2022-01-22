@@ -41,7 +41,8 @@ function fensterdiv() {
         </p>
       </div>
       
-      <div className="dn db-l w-100 w-30-l ba  b--moon-gray ma2 pa3"> 
+      <div className="dn db-l w-100 w-30-l b--moon-gray ma2 pa3"> 
+      <img src="./pics/icons/childwindowfeather.png"></img>
       </div>
       
       <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoPonzio}>

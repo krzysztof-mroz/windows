@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+//import 'tachyons';
 
 import NaviBar from "./navibar";
 import FooterDiv from "./footerdiv";
