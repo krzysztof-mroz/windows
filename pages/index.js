@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-import "tachyons";
 import Head from 'next/head';
 
 

@@ -16,8 +16,8 @@ function description() {
       W/(m²·K).
     </p>
     <img
-      style={{ maxWidth: 400 }}
-      className="w-100 tc"
+      style={{maxWidth: 350, maxHeight: 350 }}
+      
       id="sectionPic"
       src="./pics/sections/k88.png"
     ></img>

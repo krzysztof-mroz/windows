@@ -1,13 +1,31 @@
+import { useRouter } from 'next/router';
+
+
+
 function fensterdiv() {
 
-  function clickHandler(e) {
-    console.log(e.target.title)
+  const router = useRouter();
+
+  function gotoSchuecoPvc(e) {
+    router.push("./schuecopvc")
+  }
+  function gotoKoemmerling(e) {
+    
+  }
+  function gotoPonzio(e) {
+    
+  }
+  function gotoAluprof(e) {
+    
+  }
+  function gotoSchuecoAlu(e) {
+    
   }
 
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
 
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" title="schuecopvc" onMouseDown={clickHandler}>
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoSchuecoPvc}>
         <img src="./pics/icons/livingfeather.png"></img>
         <h5>Schüco Kunststoff Fenster</h5>
         <p className="gray f6">
@@ -15,7 +33,7 @@ function fensterdiv() {
         </p>
       </div>
 
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim">
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoKoemmerling}>
         <img src="./pics/icons/k88feather.png"></img>
         <h5>Kömmerling Kunststoff Fenster</h5>
         <p className="gray f6">
@@ -23,24 +41,24 @@ function fensterdiv() {
         </p>
       </div>
       
-      <div className="dn db-l w-100 w-30-l  b--moon-gray ma2 pa3"> 
+      <div className="dn db-l w-100 w-30-l ba  b--moon-gray ma2 pa3"> 
       </div>
       
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim">
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoPonzio}>
         <img src="./pics/icons/pe78feather.png"></img>
         <h5>Ponzio Aluminium Fenster</h5>
         <p className="gray f6">
           Aluminium Fenster zum vernünftigen Preis mit 3 Dichtungen und mit thermischer Trennung.
         </p>
       </div>
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim">
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim"  onMouseDown={gotoAluprof}>
         <img src="./pics/icons/mb86feather.png"></img>
         <h5>Aluprof Aluminium Fenster</h5>
         <p className="gray f6">
           Aluminium Fenster mit geringer Profilhöhe und hoher Gestaltungsfreiheit. 
         </p>
       </div>
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim">
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoSchuecoAlu}>
         <img src="./pics/icons/aws90feather.png"></img>
         <h5>Schüco Aluminium Fenster</h5>
         <p className="gray f6">
