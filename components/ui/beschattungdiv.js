@@ -21,8 +21,7 @@ function beschattungdiv() {
         <img src="./pics/icons/rollo.png"></img>
         <h5>Rollläden</h5>
         <p className="gray f6">
-          Kunststofffüllungen für Haustüren. Für Haustüren mit Kömmerling
-          Profil.
+          
         </p>
       </div>
 
@@ -32,10 +31,10 @@ function beschattungdiv() {
         className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim"
         onMouseDown={gotoPerito}
       >
-        <img src="./pics/icons/perito.jpg"></img>
+        <img src="./pics/icons/per.jpg"></img>
         <h5>Raffstoren</h5>
         <p className="gray f6">
-          Kunststofffüllungen für Haustüren. Für Haustüren mit Schüco Profil.
+         
         </p>
       </div>
 
@@ -43,11 +42,10 @@ function beschattungdiv() {
         className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim"
         onMouseDown={gotoVeynaAlu}
       >
-        <img src="./pics/icons/veynaalu.png"></img>
+        <img src="./pics/icons/veyna.png"></img>
         <h5>Screens</h5>
         <p className="gray f6">
-          Aluminium Füllungen für Haustüren. Als Einsatzfüllungen und
-          flügelüberdeckend. Für Ponzio Aluminium Haustüren.
+          
         </p>
       </div>
       
