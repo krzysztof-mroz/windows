@@ -24,7 +24,7 @@ function StartPage() {
          <meta name='keywords'
               content='fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator'
         />
-       
+        <link rel="shortcut icon" href="./favicon.ico" />
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
       <Visualisation />
