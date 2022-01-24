@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import HeaderDiv from "../components/ui/headerdiv";
+import SchuecoPvcDiv from "../components/ui/schuecopvcdiv";
 import Head from 'next/head';
 
 function SchuecoPvc() {
@@ -17,6 +18,9 @@ function SchuecoPvc() {
         />
       </Head>
       <HeaderDiv title="Schüco Kunststoff Fenster"/>
+
+      <SchuecoPvcDiv />
+
     </Fragment>
   );
 }

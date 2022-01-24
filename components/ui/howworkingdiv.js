@@ -87,7 +87,7 @@ function howworkingdiv() {
         <img style={{ position: "relative", width: 100, height: 100 }} src="./pics/svg/kalender.svg"></img>
         <h5>Lieferzeit abwarten</h5>
         <p className="gray f6">
-          Na ja, jetzt muss man geduldig abwarten. Beachten Sie unsere Lieferzeiten bei dem bestellten Profil. 
+          Na ja, jetzt muss man geduldig abwarten. Beachten Sie bitte unsere Lieferzeiten bei dem bestellten Profil. 
         </p>
       </div>
       <div className="w-100 w-30-l ba b--moon-gray ma2 pa3" >
