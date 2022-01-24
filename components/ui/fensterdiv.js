@@ -10,7 +10,7 @@ function fensterdiv() {
     router.push("./schuecopvc")
   }
   function gotoKoemmerling(e) {
-    
+    router.push("./koemmerling")
   }
   function gotoPonzio(e) {
     
