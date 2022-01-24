@@ -16,10 +16,10 @@ function fensterdiv() {
     router.push("./ponzio")
   }
   function gotoAluprof(e) {
-    
+    router.push("./aluprof")
   }
   function gotoSchuecoAlu(e) {
-    
+    router.push("./schuecoalu")
   }
 
   return (

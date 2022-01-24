@@ -7,7 +7,7 @@ function Ponzio() {
   return (
     <Fragment>
       <Head>
-        <title>Kömmerling Fenster aus Kunststoff</title>
+        <title>Ponzio Fenster aus Aluminium</title>
         <meta
           name="description"
           content="Aluminium Fenster Ponzio aus Polen"
