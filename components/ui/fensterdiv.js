@@ -13,7 +13,7 @@ function fensterdiv() {
     router.push("./koemmerling")
   }
   function gotoPonzio(e) {
-    
+    router.push("./ponzio")
   }
   function gotoAluprof(e) {
     
