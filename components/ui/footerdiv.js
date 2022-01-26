@@ -38,11 +38,32 @@ function footer() {
               <Link href="/fenster">
                 <a className="f6 fw4 no-underline db   ph3">Fenster</a>
               </Link>
+              <Link href="/schuecopvc">
+                <a className="f6 fw4 no-underline db   ph3">Schüco Kunststoff Fenster</a>
+              </Link>
+              <Link href="/koemmerling">
+                <a className="f6 fw4 no-underline db   ph3">Kömmerling Kunststoff Fenster</a>
+              </Link>
+              <Link href="/ponzio">
+                <a className="f6 fw4 no-underline db   ph3">Ponzio Aluminium Fenster</a>
+              </Link>
+              <Link href="/aluprof">
+                <a className="f6 fw4 no-underline db   ph3">Aluprof Aluminium Fenster</a>
+              </Link>
+              <Link href="/schuecoalu">
+                <a className="f6 fw4 no-underline db   ph3">Schüco Aluminium Fenster</a>
+              </Link>
               <Link href="/tueren">
                 <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
               </Link>
               <Link href="/beschattung">
                 <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
+              </Link>
+              <Link href="/rolllaeden">
+                <a className="f6 fw4 no-underline  db  ph3">Rollläden</a>
+              </Link>
+              <Link href="/raffstoren">
+                <a className="f6 fw4 no-underline  db  ph3">Raffstoren</a>
               </Link>
             </p>
           </div>
