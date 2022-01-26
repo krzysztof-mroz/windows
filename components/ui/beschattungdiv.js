@@ -7,7 +7,9 @@ function beschattungdiv() {
   function gotoRollos(e) {
     router.push("./rolllaeden")
   }
-  function gotoRaf(e) {}
+  function gotoRaf(e) {
+    router.push("./raffstoren")
+  }
   function gotoScreen(e) {}
 
   return (
