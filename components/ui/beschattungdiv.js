@@ -3,10 +3,10 @@ import { useRouter } from "next/router";
 function beschattungdiv() {
   const router = useRouter();
 
-  function gotoVeyna(e) {
-    // router.push("./schuecopvc")
+  
+  function gotoRollos(e) {
+    router.push("./rolllaeden")
   }
-  function gotoRollos(e) {}
   function gotoRaf(e) {}
   function gotoScreen(e) {}
 

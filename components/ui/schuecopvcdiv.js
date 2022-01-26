@@ -6,7 +6,7 @@ function schuecopvcdiv() {
           <img src="./pics/ct_70_classic_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Schüco Corona CT 70 Classic, 5 Kammer</h5>
+          <h5 className="gray">Schüco Corona CT 70 Classic, 5 Kammer</h5>
           <p className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 70mm,</li>
@@ -51,7 +51,7 @@ function schuecopvcdiv() {
           <img src="./pics/ct_70_rondo_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Schüco Corona CT 70 Rondo, 5 Kammer</h5>
+          <h5 className="gray">Schüco Corona CT 70 Rondo, 5 Kammer</h5>
           <p className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 70mm,</li>
@@ -99,7 +99,7 @@ function schuecopvcdiv() {
           <img src="./pics/living_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Schüco Living MD, 7 Kammer</h5>
+          <h5 className="gray">Schüco Living MD, 7 Kammer</h5>
           <p className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 82mm,</li>

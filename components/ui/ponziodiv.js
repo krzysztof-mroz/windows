@@ -6,7 +6,7 @@ function ponziodiv() {
           <img src="./pics/pe_68_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Ponzio PE 68 N</h5>
+          <h5 className="gray">Ponzio PE 68 N</h5>
           <p className="gray f6 tl">
           <ul><li>Das Ponzio PE 68 Fenster Dreikammerprofilsystem mit der Euro-Nut und Beschlagnut, die in Fenstern und Balkontüren aus Kunststoff- oder Holzprofilen zum Einsatz kommt. Die Profilbautiefe der Rahmen beträgt 68 mm und Flügel 76 mm. 
 Die breitere thermische Trennung 32 mm und Zwei-Komponenten-Zentraldichtung garantieren die Einhaltung der thermischen Spitzenparameter. </li>
@@ -36,7 +36,7 @@ Das System erlaubt eine Vielfalt an Beschlägen anzuwenden und vereinfacht ihre 
           <img src="./pics/pe_78n_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Ponzio PE 78N</h5>
+          <h5 className="gray">Ponzio PE 78N</h5>
           <p className="gray f6 tl">
           <ul><li>Das System PE 78 N ist ein Dreikammerprofilsystem welches mit Euronut oder Kunststoff-Beschlagnut erhältlich ist. Es ist für Fensterkonstruktionen mit hohen Wärmedämmansprüchen bestimmt. Die Profilbautiefe der Rahmen beträgt 78 mm und die der Flügel 86 mm. Die profilierte thermische Trennung hat hat eine Breite von 42 mm.</li><li>
 Das System ermöglicht den Einsatz verschiedenster Markenbeschläge und ermöglicht deren leichte Montage.

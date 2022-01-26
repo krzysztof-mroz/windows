@@ -6,7 +6,7 @@ function aluprofdiv() {
           <img src="./pics/mb_70_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Aluprof MB 70 HI</h5>
+          <h5 className="gray">Aluprof MB 70 HI</h5>
           <p className="gray f6 tl">
           Modernes Aluminiumsystem zur Ausführung von wärme- und schallgedämmten architektonischen Bauteilen in der Außenbebauung, wie z.B. Fenster, Türen, Windfänge, Schaufenster, 3D-Konstruktionen.
           </p>
@@ -31,7 +31,7 @@ function aluprofdiv() {
           <img src="./pics/mb_86_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Aluprof MB 86 SI</h5>
+          <h5 className="gray">Aluprof MB 86 SI</h5>
           <p className="gray f6 tl">
           
           Die neue Fenster- und Türenserie MB-86 wurde entwickelt, um die zunehmend strengeren gesetzlichen Auflagen und die Nachfrage nach energiesparenderen Konstruktionen bei neuen Fenstern und Türen zu erfüllen.

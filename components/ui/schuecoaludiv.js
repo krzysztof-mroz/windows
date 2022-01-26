@@ -6,7 +6,7 @@ function schuecoaludiv() {
           <img src="./pics/aws_75_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Schüco AWS 75 SI</h5>
+          <h5 className="gray">Schüco AWS 75 SI</h5>
           <p className="gray f6 tl">
           <ul>
 					   <li>Einbautiefe von 75 mm</li>
@@ -49,7 +49,7 @@ function schuecoaludiv() {
           <img src="./pics/aws_90_3d.jpg"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5>Schüco AWS 90 SI</h5>
+          <h5 className="gray">Schüco AWS 90 SI</h5>
           <p className="gray f6 tl">
           
           <ul>
