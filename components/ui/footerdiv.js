@@ -65,6 +65,9 @@ function footer() {
               <Link href="/raffstoren">
                 <a className="f6 fw4 no-underline  db  ph3">Raffstoren</a>
               </Link>
+              <Link href="/screenrolls">
+                <a className="f6 fw4 no-underline  db  ph3">Screen Rolls</a>
+              </Link>
             </p>
           </div>
 

@@ -10,7 +10,9 @@ function beschattungdiv() {
   function gotoRaf(e) {
     router.push("./raffstoren")
   }
-  function gotoScreen(e) {}
+  function gotoScreen(e) {
+    router.push("./screenrolls")
+  }
 
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
