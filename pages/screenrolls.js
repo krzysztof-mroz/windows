@@ -9,17 +9,17 @@ function Screenrolls() {
     return (
         <Fragment>
       <Head>
-        <title>Raffstoren mit C80 oder Z90 Aluminium Lamellen</title>
+        <title>Screen Roll Rollläden</title>
         <meta
           name="description"
-          content="Aluminium Außen Raffstoren aus Polen."
+          content="Screen Roll Rollläden aus Polen."
         />
         <meta
           name="keywords"
-          content="raffstoren, c80, z90"
+          content="screen roll, rollläden, material rollläden"
         />
       </Head>
-      <HeaderDiv title="Raffstoren mit Aluminium Lamellen"/>
+      <HeaderDiv title="Screen Roll Rollläden"/>
       <ScreenDiv />
     </Fragment>
     )

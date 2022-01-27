@@ -22,6 +22,7 @@ function screendiv() {
              <li>UV Strahlen um 98% reduziert</li>	 
              <li>Temperaturbeständigkeit -40 bis 80 Grad Celsius</li>
              <li>Hohe Maßstabilität</li>
+             <li>Maximale Maße 5000 x 4000 mm</li>
 				  </ul>
           </p> 
         </div>
