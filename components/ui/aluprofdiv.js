@@ -8,7 +8,18 @@ function aluprofdiv() {
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Aluprof MB 70 HI</h5>
           <p className="gray f6 tl">
-          Modernes Aluminiumsystem zur Ausführung von wärme- und schallgedämmten architektonischen Bauteilen in der Außenbebauung, wie z.B. Fenster, Türen, Windfänge, Schaufenster, 3D-Konstruktionen.
+          <ul>
+            <li>Wärmedämmung UW von 1,5 W(m2K)</li>
+            <li>Dreikammerprofil System</li>
+            <li>Einbautiefe beträgt 70 mm (Blendrahmen) und 79 mm (Flügel) </li>
+            <li>profilierte Isolierstege in Omegaform mit der Breite von 34 mm aus dem mit Glasfasern verstärkten Polyamid</li>
+            <li>Einsatz der Verglasung mit der Dicke von 21 mm bis 57 mm möglich</li>
+            <li>Breite Farbpalette mit Standard-Farbtönen</li>
+            <li>Dichtungen aus dem 2K-Kunstkautschuk EPDM hergestellt</li>
+            <li>Für Fenster, Türen, Windfänge, Schaufenster und 3D-Konstruktionen gut geeignet.</li>
+            <li>Eindruck einer einheitlichen Oberfläche von außen</li>
+           
+            </ul>
           </p>
         </div>
 
@@ -33,8 +44,20 @@ function aluprofdiv() {
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Aluprof MB 86 SI</h5>
           <p className="gray f6 tl">
-          
-          Die neue Fenster- und Türenserie MB-86 wurde entwickelt, um die zunehmend strengeren gesetzlichen Auflagen und die Nachfrage nach energiesparenderen Konstruktionen bei neuen Fenstern und Türen zu erfüllen.
+
+            <ul>
+            <li>Wärmedämmung UW von 0,72 W(m2K)</li>
+            <li>Bestens geeignet für energiesparenderen Konstruktionen</li>
+            <li>In den Varianten ST, SI und AERO vefügbar</li>
+            <li>Verwendet Kombination aus Silica-Aerogel und nicht gewobener Glasfaserfüllung</li>
+            <li>Außergewöhnlich hohe Steifigkeit</li>
+            <li>Größere und schwerere Fenster möglich.</li>
+            <li>Neu geformte, hoch wärmedämmende thermische Trennungen.</li>
+            <li>Mitteldichtung aus mehreren Komponenten</li>
+            <li>Verglasung bis zu 67,5 mm Stärke.</li>
+            <li>Geeignet für eine Vielzahl von Beschlägen, einschließlich verdeckt liegender Bänder.</li>
+            <li>Schalldämmung: Klasse C5</li>
+            </ul>
           </p>
         </div>
 
