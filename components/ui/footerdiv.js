@@ -8,27 +8,27 @@ function footer() {
           <div className="w-100 ba b--moon-gray pa2">
             <img
               className="mh4 mb4 mv1-l ph3 db dib-l center"
-              src="./pics/logos/logo_profine.png"
+              src="/pics/logos/logo_profine.png"
             ></img>
             <img
               className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="./pics/logos/logo_aluprof.png"
+              src="/pics/logos/logo_aluprof.png"
             ></img>
             <img
               className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="./pics/logos/logo_ponzio.png"
+              src="/pics/logos/logo_ponzio.png"
             ></img>
             <img
               className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="./pics/logos/logo_winkhaus.png"
+              src="/pics/logos/logo_winkhaus.png"
             ></img>
             <img
               className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="./pics/logos/logo_hoppe.png"
+              src="/pics/logos/logo_hoppe.png"
             ></img>
             <img
               className="mh4 mt4 mv1-l ph3 db dib-l center"
-              src="./pics/logos/logo_saint_gobain.png"
+              src="/pics/logos/logo_saint_gobain.png"
             ></img>
           </div>
 
