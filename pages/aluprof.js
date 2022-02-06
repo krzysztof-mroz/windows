@@ -14,7 +14,7 @@ function Aluprof() {
         />
         <meta
           name="keywords"
-          content="fenster, alumiiumfenster, fenster aus polen, alufenster, aluprof, fenster konfigurator"
+          content="fenster, aluminiumfenster, fenster aus polen, alufenster, aluprof, fenster konfigurator"
         />
       </Head>
       <HeaderDiv title="Aluprof Aluminium Fenster"/>
