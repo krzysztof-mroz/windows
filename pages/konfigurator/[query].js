@@ -18,5 +18,4 @@ function konfigurator() {
     )
 }
 
-
 export default konfigurator;

@@ -1,4 +1,17 @@
+import { useRouter } from "next/router";
+
 function actiondiv() {
+  const router = useRouter();
+  function gotoRollos(e) {
+    router.push("./rolllaeden")
+  }
+  function gotoRaf(e) {
+    router.push("./raffstoren")
+  }
+  function gotoDoor(e) {
+    router.push("./tueren")
+  }
+
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
       {/*<div className="w-100 ba b--moon-gray mb4">
@@ -53,6 +66,7 @@ function actiondiv() {
           data-toggle="tooltip"
           data-placement="top"
           title="Nachricht abschicken"
+          onMouseDown={gotoDoor}
         >
           Haustüren Aluminium, PVC
         </button>
@@ -66,6 +80,7 @@ function actiondiv() {
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
+          onMouseDown={gotoRollos}
         >
           Beschattung mit Rollläden
         </button>
@@ -79,6 +94,7 @@ function actiondiv() {
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
+          onMouseDown={gotoRaf}
         >
           Beschattung mit Raffstoren
         </button>
