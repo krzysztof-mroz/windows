@@ -7,7 +7,7 @@ import FooterDiv from "./footerdiv";
 function Layout(props) {
   return (
     <Fragment>
-      <div className="flex flex-wrap justify-center w-100-l">
+      <div className="flex flex-wrap justify-center w-100">
         <NaviBar />
 
         <div

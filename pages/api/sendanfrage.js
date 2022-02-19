@@ -1,26 +1,26 @@
 async function handler (req, res) {
     if (req.method === 'POST') {
         
-    const messageBody = req.body.messageBody;
+    const anfrageBody = req.body.anfrageBody;
 
-    if (!messageBody.inputEmail || messageBody.inputEmail == "") { 
+    if (!anfrageBody.email || anfrageBody.email == "") { 
       res.status(422).json({message: 'Bitte Kontaktdaten nicht vergessen'});
       return;
       }
 
-      if (!messageBody.inputMessage || messageBody.inputMessage == "") { 
+      if (!anfrageBody.message || anfrageBody.message == "") { 
         res.status(422).json({message: 'Bitte Ihre Nachricht nicht vergessen'});
         return;
         }
 
 
-      await fetch('https://www.gebolt.de/versand_next.php', {
+      await fetch('https://www.gebolt.de/versand_anfrage.php', {
       method: 'POST',
-      body: JSON.stringify(messageBody),
+      body: JSON.stringify(anfrageBody),
       headers: {'Content-Type': 'application/json'},
       mode: 'no-cors'
     })
-    .then((data) => res.status(201).json({message: "Ihre Nachricht wurde geschickt. Danke schön."}));
+    .then((data) => res.status(201).json({message: "Ihre Anfrage wurde geschickt. Danke schön."}));
         
         }
     }

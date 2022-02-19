@@ -8,12 +8,12 @@ function header(props) {
 
         {/* LOGO */}
         <div className="w-100 w-20-l  tc mv1">
-          <img className="mt1 dib" src="./pics/logo_PF.png"></img>
+          <img className="mt1 dib" src="/pics/logo_PF.png"></img>
         </div>
 
          {/* IKONKI I TYTUL STRONY */}
         <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
-          <img className="mt4 mr1 " src="./pics/ikonki_rund.png"></img>
+          <img className="mt4 mr1 " src="/pics/ikonki_rund.png"></img>
           <h3 className="fl ma1 mt3 w-100 tc">
             { title }
           </h3>
@@ -25,7 +25,7 @@ function header(props) {
             <img
               className="dib mr2"
               style={{ position: "relative", width: 25, height: 25 }}
-              src="./pics/svg/anruf.svg"
+              src="/pics/svg/anruf.svg"
             />
             <p className="dib">0800 44 700 99</p>
           </div>
@@ -33,7 +33,7 @@ function header(props) {
             <img
               className="dib mr2"
               style={{ position: "relative", width: 25, height: 25 }}
-              src="./pics/svg/briefumschlag.svg"
+              src="/pics/svg/briefumschlag.svg"
             />
             <a href="mailto: info@polnische-fenster.com">
               info@polnische-fenster.com
@@ -43,7 +43,7 @@ function header(props) {
             <img
               className="dib mr2"
               style={{ position: "relative", width: 25, height: 25 }}
-              src="./pics/svg/whatsapp.svg"
+              src="/pics/svg/whatsapp.svg"
             />
             <a href="https://wa.me/4915737448021" target="_blank">
               +4915737448021

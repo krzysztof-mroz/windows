@@ -59,7 +59,7 @@ function navibar() {
               {" "}
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/home.svg"
+                src="/pics/svg/home.svg"
               ></img>
             </a>
           </Link>
@@ -67,7 +67,7 @@ function navibar() {
             <a className=" dim no-underline pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/window.svg"
+                src="/pics/svg/window.svg"
               ></img>
             </a>
           </Link>
@@ -75,7 +75,7 @@ function navibar() {
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/door.svg"
+                src="/pics/svg/door.svg"
               ></img>
             </a>
           </Link>
@@ -83,7 +83,7 @@ function navibar() {
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/shutter.svg"
+                src="/pics/svg/shutter.svg"
               ></img>
             </a>
           </Link>
@@ -91,7 +91,7 @@ function navibar() {
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/howitworks.svg"
+                src="/pics/svg/howitworks.svg"
               ></img>
             </a>
           </Link>
@@ -99,7 +99,7 @@ function navibar() {
             <a className="f6 fw4 dim no-underline  pv2 pb4 ph2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/contact.svg"
+                src="/pics/svg/contact.svg"
               ></img>
             </a>
           </Link>
@@ -107,7 +107,7 @@ function navibar() {
             <a className="f6 fw4 dim no-underline  pv2 pb4 pl2">
               <img
                 style={{ position: "relative", width: 30, height: 30 }}
-                src="./pics/svg/login.svg"
+                src="/pics/svg/login.svg"
               ></img>
             </a>
       </Link>*/}
