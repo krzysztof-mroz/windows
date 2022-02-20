@@ -73,8 +73,10 @@ function anfragediv() {
         if (data.field) {$id(data.field).className='black f6 w3-input w3-border mv2 w3-orange w3-border-red'}
         if (data.message == "Ihre Anfrage wurde geschickt. Danke schön.") {
           $id("sendResponse").className = "f4 green ba";
-          //profilRef.current.value = "";
-          //messageRef.current.value = "";
+          nameRef.current.value = "";
+          ortRef.current.value = "";
+          emailRef.current.value = "";
+          messageRef.current.value = "";
         }
       });
   }
