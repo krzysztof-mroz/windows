@@ -22,6 +22,7 @@ function Schnellkontakt(props) {
         $id("sendResponse").innerText = data.message;
         $id("sendResponse").className = "f4 red ba";
         if (data.message == "Ihre Nachricht wurde geschickt. Danke schön.") {
+          $id("sendResponse").className = "f4 green ba";
           contactRef.current.value = "";
           messageRef.current.value = "";
         }

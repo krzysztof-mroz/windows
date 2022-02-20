@@ -11,16 +11,21 @@ async function handler (req, res) {
       if (!messageBody.inputMessage || messageBody.inputMessage == "") { 
         res.status(422).json({message: 'Bitte Ihre Nachricht nicht vergessen'});
         return;
-        }
+      }
 
-
-      await fetch('https://www.gebolt.de/versand_next.php', {
-      method: 'POST',
-      body: JSON.stringify(messageBody),
-      headers: {'Content-Type': 'application/json'},
-      mode: 'no-cors'
+      try {
+        await fetch('https://www.gebolt.de/versand_next.php', {
+        method: 'POST',
+        body: JSON.stringify(messageBody),
+        headers: {'Content-Type': 'application/json'},
+        mode: 'no-cors'
     })
     .then((data) => res.status(201).json({message: "Ihre Nachricht wurde geschickt. Danke schön."}));
+      } catch(error) {
+        res.status(500).json({message: 'Ihre Nachricht wurde nicht geschick, bitte später versuchen'});
+      }
+      
+   
         
         }
     }
