@@ -73,7 +73,7 @@ function footer() {
               </Link>
             </p>
           </div>
-          
+
 
           <div className="w-100 w-30-l  ma2 pa3">
             <h5 className="gray">Dienstleistungen</h5>
@@ -108,6 +108,9 @@ function footer() {
                 <a className="f6 fw4 no-underline  db  ph3">Kontakt</a>
               </Link>
             </p>
+          </div>
+          <div className="tl w-100">
+            <p className="gray f7">© 2022. Alle Abbildungen, Texte und 3d Modelle sind urheberrechtlich geschützt. Unberechtigte Benutztng ist nicht erlaubt. Bei Interesse für die Benutzng der 3d Modelle und Abbildungen bitten wir um Kontakt. </p>
           </div>
         </div>
         );
