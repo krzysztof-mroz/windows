@@ -73,6 +73,7 @@ function footer() {
               </Link>
             </p>
           </div>
+          
 
           <div className="w-100 w-30-l  ma2 pa3">
             <h5 className="gray">Dienstleistungen</h5>
