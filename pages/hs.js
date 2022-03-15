@@ -29,8 +29,22 @@ function StartPage() {
       <HSVisualisation />
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
-        <div className="w-100 w-50-l">
-          
+        <div className="w-100 w-40-l mt1 mt5-l">
+        <h5 className="gray">Schüco Living Slide</h5>
+          <p className="gray f6 tl">
+        <ul>
+					   <li>Das innovative Hebeschiebesystem Schüco LivIngSlide ist mit einer 82 mm Grundbautiefe des Flügelrahmens auf Basis der Schüco LivIng Systemmaße konstruiert. Die einheitlichen Systemmaße gewährleisten eine einfache, flexible Planung und Ausführung von Anschlusssituationen.</li>
+					   <li>EPDM Dichtungen im Standard, RC2 Ausführung möglich</li>
+					   <li>3 fache Verglasungen bis Ug=0,5 W/m2K möglich</li>
+					   <li>Großelemente mit Flügelgewichten bis 400 kg möglich.</li>
+					    <li>Attraktive Optik. Das flächenbündige Design vermeidet sonst übliche Spaltmaße am Festteil und realisiert eine moderne Linienführung bei gleichzeitig leichter Reinigung. </li>
+					    <li>Zargenbautiefe von 194 mm.</li>
+					    <li>Besonders flache Bodenschwelle für bequemes Herein- und Herausgehen.</li>
+					   <li>Verschiedene Farbvarianten.</li>
+             <li>Weitere Informationen gerne auf Anfrage.</li>
+				  </ul>
+          </p>
+        
         </div>
         <div className="w-100 w-40-l ba b--moon-gray pa4 silver">
           <img  src="HS_LS_concrete_goldenoak_logo_500.jpg"></img>
