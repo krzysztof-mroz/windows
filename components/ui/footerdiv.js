@@ -53,6 +53,9 @@ function footer() {
               <Link href="/schuecoalu">
                 <a className="f6 fw4 no-underline db   ph3">Schüco Aluminium Fenster</a>
               </Link>
+              <Link href="/hs">
+                <a className="f6 fw4 no-underline db   ph3">Schüco Hebe Schiebe Tür</a>
+              </Link>
               <Link href="/tueren">
                 <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
               </Link>
