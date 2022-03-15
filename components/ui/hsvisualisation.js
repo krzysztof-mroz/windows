@@ -58,7 +58,7 @@ function hsvisualisation(props) {
                 <Canvas
                   shadows
                   dpr={[1, 2]}
-                  camera={{ position: [45, 45, 45], fov: 50 }}
+                  camera={{ position: [48, 48, 48], fov: 50 }}
                 >
                   <spotLight
                     intensity={farben[nrKolorkuWew].light_inside}
@@ -111,7 +111,7 @@ function hsvisualisation(props) {
               
               {/* hint */}
               <p className=" ba b--moon-gray pa2 silver">
-                Profil- und Farbauswahl
+                bitte Farbe wählen
               </p>
 
             
