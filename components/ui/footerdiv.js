@@ -59,6 +59,18 @@ function footer() {
               <Link href="/tueren">
                 <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
               </Link>
+              <Link href="/products/ct70nt">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Nebeneingangstür</a>
+              </Link>
+              <Link href="/products/ct70ht">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Haustür</a>
+              </Link>
+              <Link href="/products/livingnt">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco Living Nebeneingangstür</a>
+              </Link>
+              <Link href="/products/livinght">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco Living Haustür</a>
+              </Link>
               <Link href="/beschattung">
                 <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
               </Link>

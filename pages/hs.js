@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Description from "../components/ui/description";
 import HeaderDiv from "../components/ui/headerdiv";
 
-import HSVisualisation from "../components/ui/hsvisualisation"
+import ProductVisualisation from "../components/ui/productvisualisation"
 
 
 function StartPage() {
@@ -26,13 +26,13 @@ function StartPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Schüco Hebe Schiebe Türen" />
-      <HSVisualisation />
+      <ProductVisualisation product="hsls" camera="48,48,48"/>
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
         <div className="w-100 w-40-l mt1 mt5-l">
         <h5 className="gray">Schüco Living Slide</h5>
-          <p className="gray f6 tl">
-        <ul>
+         
+        <ul className="gray f6 tl">
 					   <li>Das innovative Hebeschiebesystem Schüco LivIngSlide ist mit einer 82 mm Grundbautiefe des Flügelrahmens auf Basis der Schüco LivIng Systemmaße konstruiert. Die einheitlichen Systemmaße gewährleisten eine einfache, flexible Planung und Ausführung von Anschlusssituationen.</li>
 					   <li>EPDM Dichtungen im Standard, RC2 Ausführung möglich</li>
 					   <li>3 fache Verglasungen bis Ug=0,5 W/m2K möglich</li>
@@ -43,11 +43,11 @@ function StartPage() {
 					   <li>Verschiedene Farbvarianten.</li>
              <li>Weitere Informationen gerne auf Anfrage.</li>
 				  </ul>
-          </p>
+        
         
         </div>
         <div className="w-100 w-40-l ba b--moon-gray pa4 silver">
-          <img  src="HS_LS_concrete_goldenoak_logo_500.jpg"></img>
+          <img  src="/HS_LS_concrete_goldenoak_logo_500.jpg"></img>
         </div>
       </div>
 

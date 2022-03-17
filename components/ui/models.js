@@ -313,55 +313,7 @@ export function Living({ ...props }) {
   );
 }
 
-export function HsLs({ ...props }) {
-  const group = useRef()
-  const snap = useSnapshot(state);
-  var nrKolorkuZew = 0;
-  for (const kolorek of farben) {
-    if (kolorek.name == props.colorOutside) {
-      nrKolorkuZew = farben.indexOf(kolorek);
-    }
-  }
-  var nrKolorkuWew = 0;
-  for (const kolorek of farben) {
-    if (kolorek.name == props.colorInside) {
-      nrKolorkuWew = farben.indexOf(kolorek);
-    }
-  }
-  const textureInside = useTexture(farben[nrKolorkuWew].texture);
-  const textureOutside = useTexture(farben[nrKolorkuZew].texture);
-  useFrame((state) => {
-    group.current.rotation.y += rotateRate;
-  });
-  const { nodes, materials } = useGLTF('/hs_ls.glb')
-  return (
-    <group ref={group} {...props} dispose={null}>
-      <group position={[-2.62, 2.44, 0]}>
-        <mesh geometry={nodes['pvc-PVC'].geometry} material={nodes['pvc-PVC'].material} material-color={snap.items.pvc}/>
-        <mesh geometry={nodes['pvc-inside_color'].geometry} material={nodes['pvc-inside_color'].material} material-map={textureInside}/>
-        <mesh geometry={nodes['pvc-outside_color'].geometry} material={nodes['pvc-outside_color'].material} material-map={textureOutside}/>
-      </group>
-      <mesh geometry={nodes.kante_t.geometry} material={nodes.kante_t.material} position={[-2.63, -1.37, 0]} material-color={snap.items.kantet}/>
-      <mesh geometry={nodes.kante_b.geometry} material={nodes.kante_b.material} position={[-2.62, -1.37, 0]}  material-color={snap.items.gasket}/>
-      <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[-2.63, -1.37, 0]} 
-        material-roughness={0.25}
-        material-clearcoat={1}
-        material-reflectivity={1}
-        material-transparent
-        material-opacity={0.92}
-        material-transmission={0}/>
-      <mesh geometry={nodes.connector.geometry} material={nodes.connector.material} position={[-2.64, 16.08, 0]} material-color={snap.items.connector}/>
-      <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-2.33, 2.75, 0]}  material-color={snap.items.steel}/>
-      <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[-2.67, -2.6, 0]}  material-color={snap.items.aluminium} material-roughness={0.4}/>
-      <mesh geometry={nodes.grey_pvc.geometry} material={materials.grey_pvc} position={[2.95, -16.08, 0]} material-color={snap.items.greypvc}/>
-      <mesh geometry={nodes.insulation.geometry} material={nodes.insulation.material} position={[-2.64, 16.08, 0]} material-color={snap.items.blockgasket}/>
-      <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[-2.95, -2.15, 0]} 
-      material-color={
-          props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey
-        }/>
-    </group>
-  )
-}
+
 
 export function K70({ ...props }) {
   const group = useRef();

@@ -1,13 +1,12 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
-import {HsLs} from "./models";
-import ProfileStrip from "./profilestrip";
+import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt} from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
 
 
-function hsvisualisation(props) {
+function productvisualisation({...props}) {
 
    
     const [colorInside, setColorInside] = useState("weiss");
@@ -32,7 +31,7 @@ function hsvisualisation(props) {
   }
 
   const Background = (props) => {
-    const texture = useTexture("./pics/spring_texture.jpg");
+    const texture = useTexture("/pics/spring_texture.jpg");
     return <primitive attach="background" object={texture} />;
   };
 
@@ -58,7 +57,7 @@ function hsvisualisation(props) {
                 <Canvas
                   shadows
                   dpr={[1, 2]}
-                  camera={{ position: [48, 48, 48], fov: 50 }}
+                  camera={{ position: props.camera.split(','), fov: 50 }}
                 >
                   <spotLight
                     intensity={farben[nrKolorkuWew].light_inside}
@@ -80,13 +79,54 @@ function hsvisualisation(props) {
                   </Suspense>
 
                   <Suspense fallback={null}>
+
+                  {props.product == "livinght" && (
+                      <LivingHt
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}
+
+                     {props.product == "livingnt" && (
+                      <LivingNt
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}
                    
+                  {props.product == "ct70nt" && (
+                      <Ct70Nt
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}
+
+                  {props.product == "ct70ht" && (
+                      <Ct70Ht
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}
+
+                  {props.product == "hsls" && (
                       <HsLs
                         rotation-y={Math.PI * 1.33}
                         colorInside={colorInside}
                         colorOutside={colorOutside}
                         blackGasket={blackGasket}
                       />
+                    )}
+
+
+                      
                     
                     
                     <Environment preset="park" />
@@ -119,7 +159,7 @@ function hsvisualisation(props) {
               {/* nazwa profilu */}
               <div className="w-90 tc">
                 <h4 id="nazwaProfilu" className="ba b--moon-gray pa2">
-                  Schüco Hebe Schiebe Living Slide
+                  {props.productName}
                 </h4>
               </div>
 
@@ -228,4 +268,4 @@ function hsvisualisation(props) {
           }
 }
 
-export default hsvisualisation;
+export default productvisualisation;
