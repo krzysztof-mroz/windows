@@ -23,7 +23,7 @@ function StartPage() {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
-    
+    <Visualisation />
       <WarumDiv />
     <ActionDiv />
   </Fragment>
