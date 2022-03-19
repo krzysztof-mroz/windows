@@ -12,25 +12,20 @@ import ProductVisualisation from "../components/ui/productvisualisation";
 function StartPage() {
   return (
     <Fragment>
-      <Head>
-        <title>Polnische Fenster Kunststoff und Aluminium</title>
-        <meta
-          name="description"
-          content="Schüco, Kömmerling, Ponzio und Aluprof Fenster aus Polen mit Montage. 3d Visualisierung"
-        />
-        <meta
-          name="keywords"
-          content="fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <HeaderDiv title="Schüco Hebe Schiebe Türen" />
-      <Visualisation />
+    <Head>
+      <title>Polnische Fenster Kunststoff und Aluminium</title>
+      <meta name='description'
+            content='Schüco, Kömmerling, Ponzio und Aluprof Fenster aus Polen mit Montage. 3d Visualisierung'
+      />
+       <meta name='keywords'
+            content='fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator'
+      />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
+    
 
-<Description />
-      <WarumDiv />
-      <ActionDiv />
-    </Fragment>
+  </Fragment>
   );
 }
 
