@@ -3,7 +3,7 @@ import Schnellkontakt from "./schnellkontakt";
 function description() {
     return (
 
-  <div className="flex flex-wrap justify-around mb1 ml2 w-100">
+  <div className="flex flex-wrap justify-around mb1 ml3 w-100">
          
   {/* opis profilu */}
   <div className="flex flex-wrap justify-center mv1 fl w-100 w-30-l  b--moon-gray pa4">
