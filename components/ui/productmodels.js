@@ -176,7 +176,7 @@ export function Ct70Nt({ ...props }) {
       <mesh geometry={nodes.brush.geometry} material={materials.brush} position={[-4.59, -11.23, -0.01]} material-color={snap.items.brush}/>
       <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[-6.04, -11.88, -0.01]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[5.76, -6.47, 0.01]} material-color={
-          props.blackGasket === false ? snap.items.gasket : snap.items.gasketgrey
+          props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey
         }/>
       <mesh
         geometry={nodes.brush_base.geometry}
@@ -227,11 +227,7 @@ export function Ct70Nt2({ ...props }) {
   const { nodes, materials } = useGLTF('/ct70_nt.glb')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[3.83, -6.52, -0.01]}>
-        <mesh geometry={nodes['pvc-PVC'].geometry} material={nodes['pvc-PVC'].material} material-color={snap.items.pvc}/>
-        <mesh geometry={nodes['pvc-inside_color'].geometry} material={nodes['pvc-inside_color'].material} material-map={textureInside}/>
-        <mesh geometry={nodes['pvc-outside_color'].geometry} material={nodes['pvc-outside_color'].material} material-map={textureOutside}/>
-      </group>
+     
       <mesh geometry={nodes.brush.geometry} material={materials.brush} position={[7.77, -12.06, 0]} material-color={snap.items.brush}/>
       <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[4.04, -6.46, 0.01]} 
       material-color={
