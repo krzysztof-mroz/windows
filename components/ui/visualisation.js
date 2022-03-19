@@ -40,7 +40,7 @@ function visualisation(props) {
     return (
 
         
-        <div className="flex flex-wrap justify-around mb3 ml3 ml-0-l w-90 w-100-l">
+        <div className="flex flex-wrap justify-around mb3 ml4 w-90 w-100-l">
 
            {/* wizualizacja */}
           <div className="db mb4 flex flex-wrap justify-center mv1 pb3 fl w-100 w-50-l ba b--moon-gray">     

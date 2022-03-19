@@ -30,7 +30,7 @@ function Schnellkontakt(props) {
   }
 
   return (
-    <div className="w-90 fl ">
+    <div className="w-90 fl">
       <form className="" name="Kurzformular" onSubmit={submitFormHandler}>
         <div className="">
           <p>
