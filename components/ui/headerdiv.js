@@ -4,7 +4,7 @@ function header(props) {
 
     return (
 
-        <div className="flex flex-wrap justify-around mb2 w-90 w-100-l">
+        <div className="flex flex-wrap justify-around mb2 w-100">
 
         {/* LOGO */}
         <div className="w-100 w-20-l  tc mv1">
