@@ -1,14 +1,12 @@
 import { Fragment } from "react";
 import Head from 'next/head';
 
-
-import Description from "../components/ui/description";
 import HeaderDiv from "../components/ui/headerdiv";
 
 import ProductVisualisation from "../components/ui/productvisualisation"
 
 
-function StartPage() {
+function Hs() {
     
   
   return (
@@ -57,4 +55,4 @@ function StartPage() {
   );
 }
 
-export default StartPage;
+export default Hs;

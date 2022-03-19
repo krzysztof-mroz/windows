@@ -16,12 +16,12 @@ function actiondiv() {
   }
 
   return (
-    <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ml3">
+    <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3">
       {/*<div className="w-100 ba b--moon-gray mb4">
         <h4>Wie geht es weiter?</h4>{" "}
     </div>*/}
 
-      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
         <img src="./pics/laptop.png"></img>
 
         <button
