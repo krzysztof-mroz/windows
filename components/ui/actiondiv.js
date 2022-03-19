@@ -16,7 +16,7 @@ function actiondiv() {
   }
 
   return (
-    <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ml3">
+    <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ml2">
       {/*<div className="w-100 ba b--moon-gray mb4">
         <h4>Wie geht es weiter?</h4>{" "}
     </div>*/}
@@ -53,7 +53,7 @@ function actiondiv() {
         <img src="./pics/toolbox.png"></img>
 
         <button
-          className="w3-button w3-border w3-border-orange w3-sand mv3 w-80 mt5"
+          className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
