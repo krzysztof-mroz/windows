@@ -46,7 +46,7 @@ function StartPage() {
         
         
         </div>
-        <div className="w-100 w-40-l ba b--moon-gray pa2 silver">
+        <div className="w-100 w-40-l b--moon-gray pa2 silver">
           <img  src="/HS_LS_concrete_goldenoak_logo_500.jpg"></img>
         </div>
       </div>

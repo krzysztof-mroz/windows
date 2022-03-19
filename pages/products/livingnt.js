@@ -40,7 +40,7 @@ function LivingNt() {
         
         
         </div>
-        <div className="w-100 w-60-l ba b--moon-gray pa2 silver">
+        <div className="w-100 w-60-l b--moon-gray pa2 silver">
           <img  src="/living_nt_anthr.jpg"></img>
         </div>
       </div>

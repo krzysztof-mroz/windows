@@ -5,7 +5,7 @@ function warumdiv() {
         <h4>Warum Polnische-Fenster.com</h4>{" "}
   </div>*/}
 
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
         <img src="./pics/ikona_markenware.png"></img>
         <h5>Nur Markenware</h5>
         <p className="gray f6">
@@ -15,7 +15,7 @@ function warumdiv() {
         </p>
       </div>
 
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
         <img src="./pics/ikona_idea.png"></img>
         <h5>Kompetente Beratung</h5>
         <p className="gray f6">
@@ -24,7 +24,7 @@ function warumdiv() {
           Kundenwünsche.
         </p>
       </div>
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
         <img src="./pics/ikona_aufmass.png"></img>
         <h5>Aufmaß vor Ort</h5>
         <p className="gray f6">
@@ -33,7 +33,7 @@ function warumdiv() {
           Bauleiter.
         </p>
       </div>
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
         <img src="./pics/ikona_transport.png"></img>
         <h5>Schnelle Lieferung</h5>
         <p className="gray f6">
@@ -42,7 +42,7 @@ function warumdiv() {
           Holzgestellen nach Absprache.
         </p>
       </div>
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
         <img src="./pics/ikona_montage.png"></img>
         <h5>Montage nach RAL</h5>
         <p className="gray f6">
@@ -51,7 +51,7 @@ function warumdiv() {
           anfragen.
         </p>
       </div>
-      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
         <img src="./pics/ikona_garantie.png"></img>
         <h5>5 Jahre Garantie</h5>
         <p className="gray f6">

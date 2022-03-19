@@ -1,6 +1,6 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
-import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt, Ct70Nt2} from "./productmodels";
+import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt} from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
@@ -44,7 +44,7 @@ function productvisualisation({...props}) {
         <div className="flex flex-wrap justify-around mb3 w-100">
 
            {/* wizualizacja */}
-          <div className="db mb4 flex flex-wrap justify-center mv1 pb3 fl w-100 w-50-l ba b--moon-gray">     
+          <div className="db mb4 flex flex-wrap justify-center mv1 pb3 fl w-100 w-50-l b--moon-gray">     
 
               {/* hint */}
               <p className="ba b--moon-gray pa2 silver">
@@ -110,15 +110,7 @@ function productvisualisation({...props}) {
                       />
                     )}
 
-                  {props.product == "ct70nt2" && (
-                      <Ct70Nt2
-                        rotation-y={Math.PI * 1.33}
-                        colorInside={colorInside}
-                        colorOutside={colorOutside}
-                        blackGasket={blackGasket}
-                      />
-                    )}
-
+                  
 
                   {props.product == "ct70ht" && (
                       <Ct70Ht
