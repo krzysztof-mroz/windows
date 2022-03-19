@@ -1,6 +1,6 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
-import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt} from "./productmodels";
+import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt, Ct70Nt2} from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
@@ -109,6 +109,16 @@ function productvisualisation({...props}) {
                         blackGasket={blackGasket}
                       />
                     )}
+
+                  {props.product == "ct70nt2" && (
+                      <Ct70Nt2
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}
+
 
                   {props.product == "ct70ht" && (
                       <Ct70Ht

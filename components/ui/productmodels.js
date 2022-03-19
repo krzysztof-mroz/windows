@@ -202,6 +202,66 @@ export function Ct70Nt({ ...props }) {
   )
 }
 
+export function Ct70Nt2({ ...props }) {
+  const group = useRef()
+  const snap = useSnapshot(state);
+
+  var nrKolorkuZew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == props.colorOutside) {
+      nrKolorkuZew = farben.indexOf(kolorek);
+    }
+  }
+  var nrKolorkuWew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == props.colorInside) {
+      nrKolorkuWew = farben.indexOf(kolorek);
+    }
+  }
+  const textureInside = useTexture(farben[nrKolorkuWew].texture);
+  const textureOutside = useTexture(farben[nrKolorkuZew].texture);
+
+  useFrame((state) => {
+    group.current.rotation.y += rotateRate;
+  });
+  const { nodes, materials } = useGLTF('/ct70_nt.glb')
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <group position={[3.83, -6.52, -0.01]}>
+        <mesh geometry={nodes['pvc-PVC'].geometry} material={nodes['pvc-PVC'].material} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes['pvc-inside_color'].geometry} material={nodes['pvc-inside_color'].material} material-map={textureInside}/>
+        <mesh geometry={nodes['pvc-outside_color'].geometry} material={nodes['pvc-outside_color'].material} material-map={textureOutside}/>
+      </group>
+      <mesh geometry={nodes.brush.geometry} material={materials.brush} position={[7.77, -12.06, 0]} material-color={snap.items.brush}/>
+      <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[4.04, -6.46, 0.01]} 
+      material-color={
+          props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey
+        }/>
+      <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[-7.77, -12.72, -0.01]} material-color={snap.items.aluminium} material-roughness={0.4}/>
+      <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[3.68, 1.72, -0.01]} 
+        material-roughness={0.25}
+        material-clearcoat={1}
+        material-reflectivity={1}
+        material-transparent
+        material-opacity={0.92}
+        material-transmission={0}
+        material-side={THREE.DoubleSide}/>
+      <mesh
+        geometry={nodes.brush_base.geometry}
+        material={materials['Rubber - Black']}
+        position={[-6.3, -11.74, -0.01]    
+        }
+        material-color={snap.items.gasket}
+      />
+      <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[4.37, -7.62, -0.01]} material-color={snap.items.steel}/>
+      <mesh geometry={nodes.plastic.geometry} material={nodes.plastic.material} position={[4.02, -2.76, -0.01]} material-color={snap.items.red}/>
+      <mesh geometry={nodes.kantet.geometry} material={nodes.kantet.material} position={[3.69, -1.47, -0.01]} material-color={snap.items.kantet}/>
+      <mesh geometry={nodes.kanteb.geometry} material={nodes.kanteb.material} position={[3.67, -1.96, -0.01]} material-color={snap.items.gasket}/>
+     
+    </group>
+  )
+}
+
 export function Ct70Ht({ ...props }) {
   const group = useRef()
   const snap = useSnapshot(state);

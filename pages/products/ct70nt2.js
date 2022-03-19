@@ -5,7 +5,7 @@ import HeaderDiv from "../../components/ui/headerdiv";
 import ProductVisualisation from "../../components/ui/productvisualisation"
 
 
-function Ct70Ht() {
+function Ct70Nt2() {
     
   
   return (
@@ -23,7 +23,7 @@ function Ct70Ht() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Schüco CT 70 Haustür" />
-      <ProductVisualisation product="ct70nt" camera="35,35,35" productName="Schüco CT 70 Haustür"  />
+      <ProductVisualisation product="ct70nt2" camera="35,35,35" productName="Schüco CT 70 Haustür"  />
    
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
@@ -50,4 +50,4 @@ function Ct70Ht() {
   );
 }
 
-export default Ct70Ht;
+export default Ct70Nt2;
