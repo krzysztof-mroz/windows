@@ -23,7 +23,7 @@ function Ct70Ht() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Schüco CT 70 Haustür" />
-      <ProductVisualisation product="ct70ht" camera="35,35,35" productName="Schüco CT 70 Haustür"  />
+      <ProductVisualisation product="ct70nt" camera="35,35,35" productName="Schüco CT 70 Haustür"  />
    
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
