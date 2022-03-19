@@ -24,6 +24,7 @@ function StartPage() {
     </Head>
     <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
     <Visualisation />
+    <Description />
       <WarumDiv />
     <ActionDiv />
   </Fragment>

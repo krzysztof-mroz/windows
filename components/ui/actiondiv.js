@@ -36,7 +36,7 @@ function actiondiv() {
         </button>
       </div>
 
-      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
         <img src="./pics/messband.png"></img>
 
         <button
@@ -49,7 +49,7 @@ function actiondiv() {
         </button>
       </div>
 
-      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
         <img src="./pics/toolbox.png"></img>
 
         <button
@@ -61,7 +61,7 @@ function actiondiv() {
           Montage nach RAL
         </button>
       </div>
-      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
         <img src="./pics/door.png"></img>
 
         <button
@@ -76,7 +76,7 @@ function actiondiv() {
         </button>
       </div>
 
-      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
         <img src="./pics/rollladen.png"></img>
 
         <button
@@ -90,7 +90,7 @@ function actiondiv() {
         </button>
       </div>
 
-      <div className="w-100 w-30-l  b--moon-gray ma2 pa3">
+      <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
         <img src="./pics/raffstore.png"></img>
 
         <button

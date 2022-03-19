@@ -16,7 +16,7 @@ function description() {
       W/(m²·K).
     </p>
     <img
-      style={{maxWidth: 350, maxHeight: 350 }}
+      // style={{maxWidth: 350, maxHeight: 350 }}
       
       id="sectionPic"
       src="./pics/sections/k88.png"
