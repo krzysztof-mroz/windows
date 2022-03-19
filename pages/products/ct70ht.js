@@ -39,7 +39,7 @@ function Ct70Ht() {
         
         
         </div>
-        <div className="w-100 w-60-l ba b--moon-gray pa4 silver">
+        <div className="w-100 w-60-l ba b--moon-gray pa2 silver">
           <img  src="/ct70_ht_db703.jpg"></img>
         </div>
       </div>

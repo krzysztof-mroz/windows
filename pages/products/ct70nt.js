@@ -40,7 +40,7 @@ function Ct70Nt() {
         
         
         </div>
-        <div className="w-100 w-60-l ba b--moon-gray pa4 silver">
+        <div className="w-100 w-60-l ba b--moon-gray pa2 silver">
           <img  src="/ct70_nt_moosgruen.jpg"></img>
         </div>
       </div>

@@ -26,7 +26,7 @@ function StartPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Schüco Hebe Schiebe Türen" />
-      <ProductVisualisation product="hsls" camera="48,48,48"/>
+      <ProductVisualisation product="hsls" camera="48,48,48" productName="HS Schüco Living Slide"/>
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
         <div className="w-100 w-40-l mt1 mt5-l">
@@ -46,7 +46,7 @@ function StartPage() {
         
         
         </div>
-        <div className="w-100 w-40-l ba b--moon-gray pa4 silver">
+        <div className="w-100 w-40-l ba b--moon-gray pa2 silver">
           <img  src="/HS_LS_concrete_goldenoak_logo_500.jpg"></img>
         </div>
       </div>

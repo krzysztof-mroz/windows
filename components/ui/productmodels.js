@@ -143,6 +143,7 @@ export function LivingHt({ ...props }) {
 export function Ct70Nt({ ...props }) {
   const group = useRef()
   const snap = useSnapshot(state);
+  
 
   var nrKolorkuZew = 0;
   for (const kolorek of farben) {
@@ -162,6 +163,8 @@ export function Ct70Nt({ ...props }) {
   useFrame((state) => {
     group.current.rotation.y += rotateRate;
   });
+
+  //console.log("model: " + props.blackGasket)
   const { nodes, materials } = useGLTF('/ct70_nt.glb')
   return (
     <group ref={group} {...props} dispose={null}>
@@ -173,7 +176,7 @@ export function Ct70Nt({ ...props }) {
       <mesh geometry={nodes.brush.geometry} material={materials.brush} position={[-4.59, -11.23, -0.01]} material-color={snap.items.brush}/>
       <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[-6.04, -11.88, -0.01]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[5.76, -6.47, 0.01]} material-color={
-          props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey
+          props.blackGasket === false ? snap.items.gasket : snap.items.gasketgrey
         }/>
       <mesh
         geometry={nodes.brush_base.geometry}

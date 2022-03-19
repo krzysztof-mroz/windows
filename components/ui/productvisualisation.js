@@ -17,6 +17,8 @@ function productvisualisation({...props}) {
 
     const farben = getAllColours();
 
+    //console.log(blackGasket)
+
   var nrKolorkuZew = 0;
   for (const kolorek of farben) {
     if (kolorek.name == colorOutside) {
@@ -96,7 +98,8 @@ function productvisualisation({...props}) {
                         colorOutside={colorOutside}
                         blackGasket={blackGasket}
                       />
-                    )}
+                    )
+                    }
                    
                   {props.product == "ct70nt" && (
                       <Ct70Nt
@@ -227,9 +230,9 @@ function productvisualisation({...props}) {
             }
           }
         
-          function checkGasket(hasBlacGasket) {
+          function checkGasket(hasBlackGasket) {
             if (bothSidesColor === true) {
-              setBlackGasket(hasBlacGasket);
+              setBlackGasket(hasBlackGasket);
             } else {
               setBlackGasket(false);
             }
