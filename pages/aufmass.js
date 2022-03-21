@@ -31,5 +31,4 @@ function Aufmass() {
     </Fragment>
   );
 }
-
 export default Aufmass;
