@@ -310,7 +310,7 @@ export function HsLs({ ...props }) {
       <mesh geometry={nodes.connector.geometry} material={nodes.connector.material} position={[-2.64, 16.08, 0]} material-color={snap.items.connector}/>
       <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-2.33, 2.75, 0]}  material-color={snap.items.steel}/>
       <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[-2.67, -2.6, 0]}  material-color={snap.items.aluminium} material-roughness={0.4}/>
-      <mesh geometry={nodes.grey_pvc.geometry} material={materials.grey_pvc} position={[2.95, -16.08, 0]} material-color={snap.items.greypvc}/>
+      <mesh geometry={nodes.grey_pvc.geometry} material={nodes.alu.material} position={[2.95, -16.08, 0]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       <mesh geometry={nodes.insulation.geometry} material={nodes.insulation.material} position={[-2.64, 16.08, 0]} material-color={snap.items.blockgasket}/>
       <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[-2.95, -2.15, 0]} 
       material-color={
