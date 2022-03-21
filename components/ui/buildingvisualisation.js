@@ -113,8 +113,8 @@ function buildingvisualisation({...props}) {
                     <ambientLight intensity={0.5} />
                   </Suspense>
                   <OrbitControls
-                    minPolarAngle={Math.PI * 0.45}
-                    maxPolarAngle={Math.PI * 0.55}
+                    //minPolarAngle={Math.PI * 0.45}
+                    //maxPolarAngle={Math.PI * 0.55}
                     enableZoom={true}
                     enablePan={true}
                   />
@@ -122,6 +122,7 @@ function buildingvisualisation({...props}) {
               </div>
             
           </div>
+          
 
           {/* parametry */}
           <div className=" fl w-100 w-50-l b--moon-gray ph3">

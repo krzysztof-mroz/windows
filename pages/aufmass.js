@@ -26,7 +26,6 @@ function Aufmass() {
       <HeaderDiv title="Wie messe ich meine Fenster?" />
       <BuildingVisualisation product="wall" camera="220,220,220" productName="Aufmass"/>
       
-   
      
      
     </Fragment>

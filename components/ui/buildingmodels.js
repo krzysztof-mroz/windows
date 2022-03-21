@@ -134,7 +134,6 @@ export function Wall({ ...props }) {
    
   ]
 
-
 }
 
 export function Wall1({ ...props }) {
