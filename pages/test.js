@@ -6,9 +6,9 @@ import HeaderDiv from "../components/ui/headerdiv";
 import BuildingVisualisation from "../components/ui/buildingvisualisation"
 
 
-function Aufmass() {
+function Test() {
     
-  const side = process.browser ? 'client' : 'server'
+  
   return (
 
 
@@ -24,13 +24,11 @@ function Aufmass() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Wie messe ich meine Fenster?" />
-      <div>currently on {side}  - side</div>
-      <BuildingVisualisation product="wall" camera="220,220,220" productName="Aufmass"/>
-      
+      <BuildingVisualisation product="band" camera="100,100,100" productName="Test"/>
       
      
      
     </Fragment>
   );
 }
-export default Aufmass;
+export default Test;

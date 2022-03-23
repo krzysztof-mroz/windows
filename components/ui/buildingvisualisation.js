@@ -1,6 +1,6 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
-import {LivingNt, Wall} from "./buildingmodels";
+import {LivingNt, Wall, Band} from "./buildingmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
@@ -52,7 +52,7 @@ function buildingvisualisation({...props}) {
               </p>
 
               {/* canvas */}
-              <div style={{ position: "relative", height: 800 }} className="w-90">
+              <div style={{ position: "relative", height: 478 }} className="w-90">
 
 
 
@@ -103,6 +103,16 @@ function buildingvisualisation({...props}) {
                       />
                     )
                     }   
+
+                    {props.product == "band" && (
+                      <Band
+                        rotation-y={Math.PI * 0}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )
+                    }   
                    
                  
 
@@ -115,14 +125,14 @@ function buildingvisualisation({...props}) {
                   <OrbitControls
                     //minPolarAngle={Math.PI * 0.45}
                     //maxPolarAngle={Math.PI * 0.55}
-                    enableZoom={true}
-                    enablePan={true}
+                    enableZoom={false}
+                    enablePan={false}
                   />
                 </Canvas>
               </div>
             
           </div>
-          
+
 
           {/* parametry */}
           <div className=" fl w-100 w-50-l b--moon-gray ph3">

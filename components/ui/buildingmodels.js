@@ -12,6 +12,7 @@ const state = proxy({
     brush: "#111111",
     green: "#00ff00",
     gasket: "#222222",
+    mauer: "#888888",
     brushbase: "#111111",
     connector: "#8A9FA4",
     kante: "#CCCCCC",
@@ -34,6 +35,44 @@ const farben = getAllColours();
 const rotateRate = 0;
 
 export function Wall({ ...props }) {
+  const group = useRef()
+  const snap = useSnapshot(state);
+  const texPlaster = useTexture("/colors/plaster.png");
+  const texStyrofoamNormal = useTexture("/colors/styrofoam_normal.jpg");
+ 
+
+
+  //material-map={rubberMap}
+  //material-normalMap={rubberNormalMap}
+  //material-roughnessMap={rubberRoughnessMap}
+
+  const { nodes, materials } = useGLTF('/wall.glb')
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <group position={[15.69, -15.58, 16.95]}>
+        <mesh geometry={nodes['il_altbau-mauer'].geometry} material={materials.mauer} />
+        <mesh geometry={nodes['il_altbau-outside'].geometry} material={materials.outside} />
+      </group>
+      <mesh geometry={nodes.alt_spiel.geometry} material={nodes.alt_spiel.material} position={[15.7, 41.59, 5.22]} />
+      <mesh geometry={nodes.neu_spiel_R.geometry} material={nodes.neu_spiel_R.material} position={[15.7, 41.59, -9.35]} />
+      <mesh geometry={nodes.bandmass_dg.geometry} material={nodes.bandmass_dg.material} position={[15.69, 17.1, -28.41]} />
+      <mesh geometry={nodes.bandmass_al.geometry} material={nodes.bandmass_al.material} position={[15.69, 17.1, -11.35]} />
+      <mesh geometry={nodes.bandmass_il.geometry} material={nodes.bandmass_il.material} position={[15.69, -15.58, 13.51]} />
+      <mesh geometry={nodes.dg_neubau.geometry} material={nodes.dg_neubau.material} position={[15.63, 0, -24.55]} 
+      material-color={snap.items.pvc}
+      material-normalMap={texStyrofoamNormal} 
+     />
+      <mesh geometry={nodes.il_neubau.geometry} material={materials.Concrete} position={[15.69, -15.58, 16.95]} />
+      <mesh geometry={nodes.putz.geometry} material={nodes.putz.material} position={[15.69, -15.58, 16.95]} />
+      <mesh geometry={nodes.al_small.geometry} material={nodes.al_small.material} position={[15.63, 0, -10.54]} />
+      <mesh geometry={nodes.al_big.geometry} material={nodes.al_big.material} position={[15.63, 0, -10.54]} />
+    </group>
+  )
+}
+
+
+
+export function Wall3({ ...props }) {
   const group = useRef()
   const snap = useSnapshot(state);
   const textureWall = useTexture("/colors/plaster.png");
@@ -134,6 +173,20 @@ export function Wall({ ...props }) {
    
   ]
 
+}
+
+
+
+
+export function Band({ ...props }) {
+  const group = useRef()
+  const textureWall = useTexture("/bandmass.png");
+  const { nodes, materials } = useGLTF('/band.glb')
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <mesh geometry={nodes.Cube.geometry} material={materials['Mat.3']} position={[0, -40.53, -29.51]} rotation={[Math.PI / 2, 0, 0]} />
+    </group>
+  )
 }
 
 export function Wall1({ ...props }) {
