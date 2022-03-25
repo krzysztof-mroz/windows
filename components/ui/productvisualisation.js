@@ -2,7 +2,7 @@ import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
 import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt} from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture} from "@react-three/drei";
+import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture, Html, useProgress} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
 
 
@@ -16,6 +16,11 @@ function productvisualisation({...props}) {
     const [aluProfile, setAluProfile] = useState(false);
 
     const farben = getAllColours();
+
+    function Loader() {
+      const { progress } = useProgress()
+       return <Html center>{parseInt(progress)} % geladen</Html>
+    }
 
     //console.log(blackGasket)
 
@@ -76,11 +81,11 @@ function productvisualisation({...props}) {
                     castShadow
                   />
 
-                  <Suspense fallback={null}>
+                  <Suspense fallback={<Loader />}>
                     <Background />
                   </Suspense>
 
-                  <Suspense fallback={null}>
+                  <Suspense fallback={<Loader />}>
 
                   {props.product == "livinght" && (
                       <LivingHt

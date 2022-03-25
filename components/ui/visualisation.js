@@ -3,7 +3,7 @@ import ColourStrip from "./colourstrip";
 import {Ct70Classic, Ct70Rondo, Living, K70, K76Ad, K76Md, K88, Pe68, Pe78N, Mb70, Mb86, Aws75, Aws90} from "./models";
 import ProfileStrip from "./profilestrip";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
-import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture} from "@react-three/drei";
+import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture, Html, useProgress} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
 
 
@@ -17,6 +17,11 @@ function visualisation(props) {
     const [aluProfile, setAluProfile] = useState(false);
 
     const farben = getAllColours();
+
+    function Loader() {
+      const { progress } = useProgress()
+       return <Html center>{parseInt(progress)} % geladen</Html>
+    }
 
   var nrKolorkuZew = 0;
   for (const kolorek of farben) {
@@ -75,11 +80,11 @@ function visualisation(props) {
                     castShadow
                   />
 
-                  <Suspense fallback={null}>
+                  <Suspense fallback={<Loader />}>
                     <Background />
                   </Suspense>
 
-                  <Suspense fallback={null}>
+                  <Suspense fallback={<Loader />}>
                     {activeProfile == "Schüco CT 70 Classic" ? (
                       <Ct70Classic
                         rotation-y={Math.PI * 1.33}
