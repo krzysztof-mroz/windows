@@ -28,6 +28,7 @@ const state = proxy({
     kantet: "#D8D6D6",
     steel: "#B0E8F2",
     mauer: "#dddddd",
+    wand: "#879988"
   },
 });
 
@@ -36,6 +37,8 @@ const farben = getAllColours();
 
 const rotateRate = 0;
 
+
+
 export function Wall({ ...props }) {
   const group = useRef()
   const snap = useSnapshot(state);
@@ -43,19 +46,17 @@ export function Wall({ ...props }) {
   const texStyrofoamNormal = useTexture("/colors/styrofoam_normal.jpg");
   const texBeton = useTexture("/colors/beton.jpg");
   const texBand = useTexture("/bandmass.png");
- 
+  const { nodes, materials } = useGLTF('/wall.glb')
+
   function altWall() {
     return (
-      <group position={[15.69, -15.58, 16.95]}>
-        <mesh geometry={nodes['il_altbau-mauer'].geometry} material={materials.mauer} material-color={snap.items.mauer}/>
-        <mesh geometry={nodes['il_altbau-outside'].geometry} material={materials.outside} material-map={texPlaster}/>
-      </group>
+      <mesh geometry={nodes.il_altbau.geometry} material={nodes.il_altbau.material} position={[15.69, -15.58, 16.95]} material-map={texPlaster}/>
     );
   }
 
   function putz() {
     return (
-      <mesh castShadow receiveShadow geometry={nodes.putz.geometry} material={nodes.putz.material} position={[15.69, -15.58, 16.95]} material-map={texPlaster}/>
+      <mesh geometry={nodes.putz.geometry} material={materials.wand} position={[15.69, -15.58, 17.79]}  material-color={snap.items.wand} material-roughness={1}/>
     );
   }
 
@@ -73,7 +74,7 @@ export function Wall({ ...props }) {
 
   function massDg() {
     return (
-      <mesh geometry={nodes.bandmass_dg.geometry} material={nodes.bandmass_dg.material} position={[15.69, 17.1, -28.41]} material-map={texBand}/>
+      <mesh geometry={nodes.bandmass_dg.geometry} material={nodes.bandmass_dg.material} position={[15.69, 17.1, -25.29]} material-map={texBand}/>
     );
   }
 
@@ -91,14 +92,14 @@ export function Wall({ ...props }) {
 
   function dg() {
     return (
-      <mesh geometry={nodes.dg_neubau.geometry} material={nodes.dg_neubau.material} position={[15.63, 0, -24.55]} 
+      <mesh geometry={nodes.dg_neubau.geometry} material={nodes.dg_neubau.material} position={[15.63, 0, -21.43]} 
       material-normalMap={texStyrofoamNormal} />
     );
   }
 
   function neuWall() {
     return (
-      <mesh geometry={nodes.il_neubau.geometry} material={materials.Concrete} position={[15.69, -15.58, 16.95]} material-map={texBeton}/>
+      <mesh geometry={nodes.il_neubau.geometry} material={materials.Concrete} position={[15.69, -15.58, 20.07]}  material-map={texBeton}/>
     );
   }
 
@@ -110,24 +111,23 @@ export function Wall({ ...props }) {
 
   function spielNeu() {
     return (
-      <mesh geometry={nodes.neu_spiel_R.geometry} material={nodes.neu_spiel_R.material} position={[15.7, 41.59, -9.35]} />
+      <mesh geometry={nodes.neu_spiel.geometry} material={nodes.neu_spiel.material} position={[15.7, 41.59, -6.22]} />
     );
   }
 
+  function show() {
+    if (props.bauart === "altbau") {
+     return [altWall(), putz(), massIl()]
+    } else if (props.bauart === "altbau_al") {
+     return [altWall(), putz(), alBig(), massIl(), massAl()]
+    } else if (props.bauart === "neubau") {
+      return [neuWall(), massIl()]
+    } else if (props.bauart === "neubau_dg") {
+      return [neuWall(), massIl(), dg(), massDg()]
+     }  
+  }
 
-   function show() {
-     if (props.ifAltbau === true) {
-      return [altWall(), alBig(), putz(), massIl(), massAl()]
-     } else {
-      return [neuWall(), dg(), massIl(), massDg()]
-     }
-   }
-
-  const { nodes, materials } = useGLTF('/wall.glb')
- 
-    return show();
-   
-  
+  return show();
 }
 
 

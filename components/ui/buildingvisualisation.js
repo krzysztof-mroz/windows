@@ -10,7 +10,7 @@ function buildingvisualisation({...props}) {
    
     const [colorInside, setColorInside] = useState("weiss");
     const [colorOutside, setColorOutside] = useState("weiss");
-    const [altbau, setAltbau] = useState(true)
+    const [bauart, setBauart] = useState("neubau")
     const [blackGasket, setBlackGasket] = useState(false);
     const [aluProfile, setAluProfile] = useState(false);
 
@@ -90,7 +90,7 @@ function buildingvisualisation({...props}) {
                     {props.product == "wall" && (
                       <Wall
                         rotation-y={Math.PI * 0}
-                        ifAltbau = {altbau}
+                        bauart = {bauart}
 
                       />
                     )
@@ -106,7 +106,7 @@ function buildingvisualisation({...props}) {
                   <OrbitControls
                     minPolarAngle={Math.PI * 0.45}
                     maxPolarAngle={Math.PI * 0.55}
-                    enableZoom={true}
+                    enableZoom={false}
                     enablePan={false}
                   />
                 </Canvas>
@@ -124,7 +124,7 @@ function buildingvisualisation({...props}) {
               
             
 
-              {/* nazwa profilu */}
+              {/* tytul Breite messen */}
               <div className="w-90 tc">
                 <h4 id="nazwaProfilu" className="ba b--moon-gray pa2">
                   Breite messen
@@ -133,30 +133,54 @@ function buildingvisualisation({...props}) {
 
              
 
-              {/* przyciski / strony kolorów */}     
+              {/* przyciski */}     
               <button
                 className={
-                  altbau === true
-                    ? "w3-button w3-border w3-border-red w3-deep-orange mv3 mh2"
-                    : "w3-button w3-border w3-border-orange w3-sand mv3 mh2"
+                  bauart === "altbau"
+                    ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 w-80"
+                    : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 w-80"
                 }
-                onMouseDown={() => changeAltbau(true)}
+                onMouseDown={() => changeBauart("altbau")}
               >
-                {" "}
-                Altbau
+                Altbau ohne Außenleibung
               </button>
 
               <button
                 className={
-                  altbau === false
-                    ? "w3-button w3-border w3-border-red w3-deep-orange mv3 mh2"
-                    : "w3-button w3-border w3-border-orange w3-sand mv3 mh2"
+                  bauart === "altbau_al"
+                    ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 w-80"
+                    : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 w-80"
                 }
-                onMouseDown={() => changeAltbau(false)}
+                onMouseDown={() => changeBauart("altbau_al")}
               >
-                {" "}
-                Neubau
+                Altbau mit Außenleibung
               </button>
+
+              <button
+                className={
+                  bauart === "neubau"
+                    ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 w-80"
+                    : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 w-80"
+                }
+                onMouseDown={() => changeBauart("neubau")}
+              >
+                Neubau ohne Dämmung / Klinker
+              </button>
+
+             
+
+              <button
+                className={
+                  bauart === "neubau_dg"
+                    ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 w-80"
+                    : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 w-80"
+                }
+                onMouseDown={() => changeBauart("neubau_dg")}
+              >
+                Neubau mit Dämmung / Klinker
+              </button>
+
+
 
 
             </div>
@@ -164,59 +188,15 @@ function buildingvisualisation({...props}) {
         </div>
         );
 
-        function profileChangeHandler(newProfile) {
-            setActiveProfile(newProfile);
-            if (
-              newProfile == "Ponzio PE 68N" ||
-              newProfile == "Ponzio PE 78N" ||
-              newProfile == "Aluprof MB 70 HI" ||
-              newProfile == "Aluprof MB 86 SI" ||
-              newProfile == "Schüco AWS 75 SI" ||
-              newProfile == "Schüco AWS 90 SI"
-            ) {
-              if (aluProfile === false) {
-                setAluProfile(true);
-                setColorInside("weiss_9016");
-                setColorOutside("weiss_9016");
-              }
-            } else {
-              if (aluProfile === true) {
-                setAluProfile(false);
-                setColorInside("weiss");
-                setColorOutside("weiss");
-                setBlackGasket(false);
-              }
-            }
-          }
         
-          function checkGasket(hasBlackGasket) {
-            if (bothSidesColor === true) {
-              setBlackGasket(hasBlackGasket);
-            } else {
-              setBlackGasket(false);
-            }
-          }
         
-          function changeAltbau(ifAltbau) {
-            setAltbau(ifAltbau)
+         
+          function changeBauart(bauart) {
+            setBauart(bauart)
           }
+      
         
-          function changeColorInside(newColor) {
-            setColorInside(newColor);
-          }
         
-          function changeColor(newColor) {
-            if (bothSidesColor === true) {
-              setColorInside(newColor);
-              setColorOutside(newColor);
-            } else {
-              setColorOutside(newColor);
-              setColorInside("weiss");
-              if (aluProfile == true) {
-                setColorInside("weiss_9016");
-              }
-            }
-          }
 }
 
 export default buildingvisualisation;
