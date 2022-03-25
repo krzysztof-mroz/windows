@@ -8,7 +8,6 @@ import BuildingVisualisation from "../components/ui/buildingvisualisation"
 
 function Aufmass() {
     
-  const side = process.browser ? 'client' : 'server'
   return (
 
 
@@ -24,7 +23,6 @@ function Aufmass() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Wie messe ich meine Fenster?" />
-      <div>currently on {side}  - side</div>
       <BuildingVisualisation product="wall" camera="220,220,220" productName="Aufmass"/>
       
       
