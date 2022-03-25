@@ -3,6 +3,7 @@ import {LivingNt, Wall, Band} from "./buildingmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture, Html, useProgress} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
+import ProgressBar from "@ramonak/react-progress-bar";
 
 
 function buildingvisualisation({...props}) {
@@ -18,7 +19,7 @@ function buildingvisualisation({...props}) {
 
     function Loader() {
       const { progress } = useProgress()
-      return <Html center>{progress} % loaded</Html>
+      return <Html center>{parseInt(progress)} % geladen</Html>
     }
     
   var nrKolorkuZew = 0;
