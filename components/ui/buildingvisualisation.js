@@ -81,7 +81,7 @@ function buildingvisualisation({...props}) {
                     <Background />
                   </Suspense>
 
-                  <Suspense fallback={null}>
+                  <Suspense fallback={<Loader />}>
 
                  
 
