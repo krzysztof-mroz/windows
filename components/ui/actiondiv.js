@@ -14,6 +14,9 @@ function actiondiv() {
   function gotoQuotation(e) {
     router.push("./kontakt/anfrage")
   }
+  function gotoAufmass(e) {
+    router.push("./aufmass")
+  }
 
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3">
@@ -44,6 +47,7 @@ function actiondiv() {
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
+          onMouseDown={gotoAufmass}
         >
           Wie messe ich richtig?
         </button>

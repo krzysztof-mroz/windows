@@ -13,17 +13,24 @@ import {
 import { getAllColours } from "../data/colours";
 
 function buildingvisualisation({ ...props }) {
-  const [colorInside, setColorInside] = useState("weiss");
-  const [colorOutside, setColorOutside] = useState("weiss");
+ 
   const [bauart, setBauart] = useState("neubau");
-  const [blackGasket, setBlackGasket] = useState(false);
-  const [aluProfile, setAluProfile] = useState(false);
   const [fensterBreite, setFensterBreite] = useState(0);
+  const [fensterHoehe, setFensterHoehe] = useState(0);
   const [innenLeibungZeigen, setInnenLeibungZeigen] = useState(false);
   const [innenOeffnungZeigen, setInnenOeffnungZeigen] = useState(false);
+  const [innenHoeheZeigen, setInnenHoeheZeigen] = useState(false);
+  const [innenHoeheAltZeigen, setInnenHoeheAltZeigen] = useState(false);
+  const [innenHoeheAltFussbodenZeigen, setInnenHoeheAltFussbodenZeigen] = useState(false);
+  const [altFussbodenRolloZeigen, setAltFussbodenRolloZeigen] = useState(false);
+  const [altInnenFussbodenRolloZeigen, setAltInnenFussbodenRolloZeigen] = useState(false);
+  const [fussbodenNeuOhneZeigen, setFussbodenNeuOhneZeigen] = useState(false);
+  const [fussbodenNeueMitZeigen, setFussbodenNeuMitZeigen] = useState(false);
   const [kalkuAltbauZeigen, setKalkuAltbauZeigen] = useState(false);
   const [kalkuNeubauZeigen, setKalkuNeubauZeigen] = useState(false);
   const [verbreiterungenSeitlich, setVerbreiterungenSeitlich] = useState(0);
+  const [verbreiterungUnten, setVerbreiterungUnten] = useState(0);
+  const [platzOben, setPlatzOben] = useState(0);
   const [breiteZeigen, setBreiteZeigen] = useState(true);
   const [hoeheZeigen, setHoeheZeigen] = useState(false);
   const [switchButton, setSwitchButton] = useState("Höhe messen");
@@ -33,7 +40,6 @@ function buildingvisualisation({ ...props }) {
   const [rolloH, setRolloH] = useState(false);
   const [ifHSH, setIfHSH] = useState(false);
 
-  const farben = getAllColours();
 
   const breiteNeubauRef = useRef();
   const breiteAltbauRef = useRef();
@@ -41,24 +47,32 @@ function buildingvisualisation({ ...props }) {
   const breiteInnenleibungRef = useRef();
   const breiteAussenoeffnungRef = useRef();
   const breiteInnenoeffnungRef = useRef();
+  const neuBruestungOhneRef = useRef()
+  const altBruestungOhneRef = useRef()
+  const neuBruestungMitRef = useRef()
+  const altBruestungMitRef = useRef()
+  const altAlBruestungMitRef = useRef()
+  const neuBodenOhneOhneRef = useRef()
+  const neuBodenOhneMitRef = useRef()
+  const neuBodenMitOhneRef = useRef()
+  const neuFussbodenMitOhneRef = useRef()
+  const neuBodenMitMitRef = useRef()
+  const neuFussbodenMitMitRef = useRef()
+  const altBodenOhneOhneRef = useRef()
+  const altAlBodenOhneMitRef = useRef()
+  const altBodenOhneMitRef = useRef()
+  const altFussbodenMitOhneRef = useRef()
+  const altBodenMitOhneRef = useRef()
+  const altFussbodenMitMitRef = useRef()
+  const altAlBodenMitMitRef = useRef()
+  const altBodenMitMitRef = useRef()
 
   function Loader() {
     const { progress } = useProgress();
     return <Html center>{parseInt(progress)} % geladen</Html>;
   }
 
-  var nrKolorkuZew = 0;
-  for (const kolorek of farben) {
-    if (kolorek.name == colorOutside) {
-      nrKolorkuZew = farben.indexOf(kolorek);
-    }
-  }
-  var nrKolorkuWew = 0;
-  for (const kolorek of farben) {
-    if (kolorek.name == colorInside) {
-      nrKolorkuWew = farben.indexOf(kolorek);
-    }
-  }
+  
 
   const Background = (props) => {
     const texture = useTexture("/pics/spring_texture.jpg");
@@ -81,10 +95,49 @@ function buildingvisualisation({ ...props }) {
 
   async function showInnenAltbau(event) {
     event.preventDefault();
-    setVerbreiterungenSeitlich(false);
+    setVerbreiterungenSeitlich(0);
     setInnenLeibungZeigen(true);
     setKalkuAltbauZeigen(false);
   }
+
+  async function showInnenAltbauHoehe(event) {
+    event.preventDefault();
+    setInnenHoeheZeigen(true)
+  }
+
+  async function showFussbodenNeuOhne(event) {
+    event.preventDefault();
+    setFussbodenNeuOhneZeigen(true)
+  }
+
+  async function showFussbodenNeuMit(event) {
+    event.preventDefault();
+    setFussbodenNeuMitZeigen(true)
+  }
+
+  async function showInnenAltbauBodenHoehe(event) {
+    event.preventDefault();
+    setInnenHoeheAltZeigen(true)
+  }
+
+  async function showInnenAltbauBodenFussodenHoehe(event) {
+    event.preventDefault();
+    setInnenHoeheAltFussbodenZeigen(true)
+  }
+
+  async function showAltbauFussbodenRolloHoehe(event) {
+    event.preventDefault();
+    setAltFussbodenRolloZeigen(true)
+  }
+
+  async function showInnenAltbauFussbodenRolloHoehe(event) {
+    event.preventDefault();
+    setAltInnenFussbodenRolloZeigen(true)
+  }
+
+  
+
+  
 
   async function showInnenNeubau(event) {
     event.preventDefault();
@@ -129,6 +182,159 @@ function buildingvisualisation({ ...props }) {
     }
   }
 
+  async function kalkuNeuBruestungOhne(event) {
+    event.preventDefault();
+    const hoehe = parseInt(neuBruestungOhneRef.current.value);
+    setFensterHoehe(hoehe-50)
+  }
+
+  async function kalkuAltBruestungOhne(event) {
+    event.preventDefault();
+    const hoehe = parseInt(altBruestungOhneRef.current.value);
+    setFensterHoehe(hoehe-50)
+  }
+
+  async function kalkuNeuBruestungMit(event) {
+    event.preventDefault();
+    const hoehe = parseInt(neuBruestungMitRef.current.value);
+    setFensterHoehe(hoehe-40)
+  }
+
+  async function kalkuAltBruestungMit(event) {
+    event.preventDefault();
+    const hoehe = parseInt(altBruestungMitRef.current.value);
+    const hoeheAl = parseInt(altAlBruestungMitRef.current.value);
+    const difference = hoehe - hoeheAl;
+    if (difference > 219) {
+      setFensterHoehe(hoeheAl-40)
+    } else {
+      setFensterHoehe(hoeheAl-40-(220-difference))
+    }
+    setPlatzOben(difference-10)
+  }
+
+  async function kalkuNeuBodenOhneOhne(event) {
+    event.preventDefault();
+    const hoehe = parseInt(neuBodenOhneOhneRef.current.value);
+    if (ifHSH === false) {
+      setFensterHoehe(hoehe-20)
+    } else {
+      setFensterHoehe(hoehe+30)
+    }   
+  }
+
+  async function kalkuNeuBodenOhneMit(event) {
+    event.preventDefault();
+    const hoehe = parseInt(neuBodenOhneMitRef.current.value);
+    if (ifHSH === false) {
+      setFensterHoehe(hoehe-10)
+    } else {
+      setFensterHoehe(hoehe+40)
+    }   
+  }
+
+  async function kalkuNeuBodenMitOhne(event) {
+    event.preventDefault();
+    const hoehe = parseInt(neuBodenMitOhneRef.current.value);
+    const fussboden = parseInt(neuFussbodenMitOhneRef.current.value);
+
+    if (ifHSH === false) {
+      setFensterHoehe(hoehe-10-fussboden)
+      setVerbreiterungUnten(fussboden-10)
+    } else {
+      setFensterHoehe(hoehe-fussboden+30)
+      setVerbreiterungUnten(fussboden-50)
+      
+    }   
+  }
+
+  async function kalkuNeuBodenMitMit(event) {
+    event.preventDefault();
+    const hoehe = parseInt(neuBodenMitMitRef.current.value);
+    const fussboden = parseInt(neuFussbodenMitMitRef.current.value);
+
+    if (ifHSH === false) {
+      setFensterHoehe(hoehe-fussboden)
+      setVerbreiterungUnten(fussboden-10)
+    } else {
+      setFensterHoehe(hoehe-fussboden+40)
+      setVerbreiterungUnten(fussboden-50)   
+    }   
+  }
+
+  async function kalkuAltBodenOhneOhne(event) {
+    event.preventDefault();
+    const hoehe = parseInt(altBodenOhneOhneRef.current.value);
+    if (ifHSH === false) {
+      setFensterHoehe(hoehe-20)
+    } else {
+      setFensterHoehe(hoehe+30)
+    }   
+  }
+
+  async function kalkuAltBodenOhneMit(event) {
+    event.preventDefault();
+    const hoehe = parseInt(altBodenOhneMitRef.current.value);
+    const hoeheAl = parseInt(altAlBodenOhneMitRef.current.value);
+    const difference = hoehe - hoeheAl;
+    if (ifHSH === false) {
+      if (difference > 219) {
+        setFensterHoehe(hoeheAl-10)
+      } else {
+        setFensterHoehe(hoeheAl-10-(220-difference))
+      }
+      setPlatzOben(difference-10)
+    } else {
+      if (difference > 219) {
+        setFensterHoehe(hoeheAl+30)
+      } else {
+        setFensterHoehe(hoeheAl+30-(220-difference))
+      }
+      setPlatzOben(difference-10)
+    }   
+  }
+
+  async function kalkuAltBodenMitOhne(event) {
+    event.preventDefault();
+    const hoehe = parseInt(altBodenMitOhneRef.current.value);
+    const fussboden = parseInt(altFussbodenMitOhneRef.current.value);
+    if (ifHSH === false) {
+      setFensterHoehe(hoehe-10-fussboden)
+      setVerbreiterungUnten(fussboden-10)
+    } else {
+      setFensterHoehe(hoehe-fussboden+30)
+      setVerbreiterungUnten(fussboden-50)    
+    }   
+  }
+
+  async function kalkuAltBodenMitMit(event) {
+    event.preventDefault();
+    const hoehe = parseInt(altBodenMitMitRef.current.value);
+    const hoeheAl = parseInt(altAlBodenMitMitRef.current.value);
+    const fussboden = parseInt(altFussbodenMitMitRef.current.value);
+    const difference = hoehe - hoeheAl;
+    if (ifHSH === false) {
+      if (difference > 219) {
+        setFensterHoehe(hoeheAl-fussboden)
+        setVerbreiterungUnten(fussboden-10)
+      } else {
+        setFensterHoehe(hoeheAl-(220-difference))
+        setVerbreiterungUnten(fussboden-10)
+      }
+      setPlatzOben(difference-10)
+    } else {
+      if (difference > 219) {
+        setFensterHoehe(hoeheAl+40-fussboden)
+        setVerbreiterungUnten(fussboden-50)
+      } else {
+        setFensterHoehe(hoeheAl+40-(220-difference))
+        setVerbreiterungUnten(fussboden-50)
+      }
+      setPlatzOben(difference-10)
+    }   
+  }
+
+
   function switchBH() {
     return (
       <div className="tc">
@@ -163,6 +369,573 @@ function buildingvisualisation({ ...props }) {
     setSwitchButton("Höhe messen");
   }
 
+  function altBodenMitMit() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Außenleibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante Außensturz.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altAlBodenMitMitRef}
+                onChange={showAltbauFussbodenRolloHoehe}
+              />
+            </div>   
+          </div>                 
+      </div>
+    )
+  }
+
+  function altBodenMitMit2() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Innenleibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz nach Oben Unterkante Innensturz.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altBodenMitMitRef}
+                onChange={showInnenAltbauFussbodenRolloHoehe}
+              />
+            </div>   
+          </div>                 
+      </div>
+    )
+  }
+
+  function altBodenMitMit3() { 
+    return (
+      <div className="mt4">
+        <p>
+        Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altFussbodenMitMitRef}
+                onChange={kalkuAltBodenMitMit}
+              />
+            </div>   
+          </div>   
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 10 mm unten als Montagespiel abgezogen.</p>}
+          {(verbreiterungUnten > 0) && <p> Verbreiterung unten beträgt zusätzlich {verbreiterungUnten} mm.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> </p>}   
+          {(platzOben > 0) && <p>Es bleiben {(platzOben > 210) ? platzOben : 210 } mm übrig für Aufsatz Rollladenkasten. Der Kasten ist 210 mm hoch.</p>}          
+      </div>
+    )
+  }
+
+  function altBodenMitOhne() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Leibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante Sturz.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altBodenMitOhneRef}
+                onChange={showInnenAltbauBodenFussodenHoehe}
+              />
+            </div>   
+          </div>                 
+      </div>
+    )
+  }
+
+  function altBodenMitOhne2() { 
+    return (
+      <div className="mt4">
+        <p>
+        Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altFussbodenMitOhneRef}
+                onChange={kalkuAltBodenMitOhne}
+              />
+            </div>   
+          </div>   
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 20 mm als Montagespiel abgezogen.</p>}
+          {(verbreiterungUnten > 0) && <p> Verbreiterung unten beträgt zusätzlich {verbreiterungUnten} mm.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> </p>}
+      </div>
+    )
+  }
+
+  function altBodenOhneMit() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Außenleibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante Außensturz.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altAlBodenOhneMitRef}
+                onChange={showInnenAltbauBodenHoehe}
+              />
+            </div>   
+          </div>     
+                      
+      </div>
+    )
+  }
+
+  function altBodenOhneMit2() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Innenleibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz Oben Unterkante Innensturz, wie in 3d Abbildung.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altBodenOhneMitRef}
+                onChange={kalkuAltBodenOhneMit}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 10 mm unten als Montagespiel abgezogen.</p>}
+          {(platzOben > 0) && <p>Es bleiben {(platzOben > 210) ? platzOben : 210 } mm übrig für Aufsatz Rollladenkasten. Der Kasten ist 210 mm hoch.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> Denken Sie bitte daran, dass 50 mm Platz für die Schwelle im Fußboden vorbereitet (zB. ausgefräst) werden muss.</p>}
+               
+      </div>
+    )
+  }
+
+  function altBodenOhneOhne() {   
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Leibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altBodenOhneOhneRef}
+                onChange={kalkuAltBodenOhneOhne}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b> Die Höhe beinhaltet Aufsatzrollladen Kasten, falls benötigt.</p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 20 mm als Montagespiel abgezogen.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> Denken Sie bitte daran, dass 50 mm Platz für die Schwelle im Fußboden vorbereitet (zB. ausgefräst) werden muss.</p>}
+               
+      </div>
+    )
+  }
+
+  function neuBodenMitMit() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Rohfußboden bis Unterkante Rollladenkasten.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuBodenMitMitRef}
+                onChange={showFussbodenNeuMit}
+              />
+            </div>
+           
+          </div>
+          
+               
+      </div>
+    )
+  }
+
+  function neuBodenMitMit2() { 
+    return (
+      <div className="mt4 ">
+        <p>
+          Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100 w-60-l">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuFussbodenMitMitRef}
+                onChange={kalkuNeuBodenMitMit}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 10 mm als Montagespiel abgezogen.</p>}
+          {(verbreiterungUnten > 0) && <p> Verbreiterung unten beträgt zusätzlich {verbreiterungUnten} mm.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> </p>}
+               
+      </div>
+    )
+  }
+
+  function neuBodenMitOhne() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Rohfußboden bis Unterkante Sturz.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuBodenMitOhneRef}
+                onChange={showFussbodenNeuOhne}
+              />
+            </div>
+           
+          </div>
+          
+               
+      </div>
+    )
+  }
+
+  function neuBodenMitOhne2() { 
+    return (
+      <div className="mt4 ">
+        <p>
+          Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100 w-60-l">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuFussbodenMitOhneRef}
+                onChange={kalkuNeuBodenMitOhne}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b> Die Höhe beinhaltet Aufsatzrollladen Kasten, falls benötigt.</p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 20 mm als Montagespiel abgezogen.</p>}
+          {(verbreiterungUnten > 0) && <p> Verbreiterung unten beträgt zusätzlich {verbreiterungUnten} mm.</p>}
+
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> </p>}
+               
+      </div>
+    )
+  }
+
+  
+
+
+  function neuBodenOhneMit() { 
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte vom Fußboden bis Unterkante Rollladenkasten.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuBodenOhneMitRef}
+                onChange={kalkuNeuBodenOhneMit}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b> Die Höhe beinhaltet Aufsatzrollladen Kasten, falls benötigt.</p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 10 mm unten als Montagespiel abgezogen.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> Denken Sie bitte daran, dass 50 mm Platz für die Schwelle im Fußboden vorbereitet (zB. ausgefräst) werden muss.</p>}
+               
+      </div>
+    )
+  }
+
+  function neuBodenOhneOhne() {
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuBodenOhneOhneRef}
+                onChange={kalkuNeuBodenOhneOhne}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Fenster (bzw. Tür) Höhe beträgt <b>{fensterHoehe} mm.</b> Die Höhe beinhaltet Aufsatzrollladen Kasten, falls benötigt.</p>}
+          {(fensterHoehe > 0 && ifHSH === false) && <p> Es wurde 20 mm als Montagespiel abgezogen.</p>}
+          {(fensterHoehe > 0 && ifHSH === true) && <p> Hebe Schiebe Anlage soll 40 mm in den Fußboden eingelassen werden. Somit die Höhe von Hebe Schiebe Anlage beträgt <b>{fensterHoehe} mm.</b> Denken Sie bitte daran, dass 50 mm Platz für die Schwelle im Fußboden vorbereitet (zB. ausgefräst) werden muss.</p>}
+               
+      </div>
+    )
+  }
+
+  function neuBruestungOhne() {
+   
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuBruestungOhneRef}
+                onChange={kalkuNeuBruestungOhne}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0) && <p> Fenster Höhe beträgt <b>{fensterHoehe} mm.</b> Die Höhe beinhaltet Aufsatzrollladen Kasten, falls benötigt.</p>}
+          {(fensterHoehe > 0) && <p> Es wurde 50 mm abgezogen (30 mm für Fensterbank Anschluß Leiste und 20 mm als Montagespiel)</p>}
+          {(fensterHoehe > 0) && <p> Falls Sie keine Fensterbank planen, kann die Fensterhöhe maximal {fensterHoehe + 30} mm betragen. </p>}
+       
+      </div>
+    )
+  }
+
+  function altBruestungOhne() {
+    
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Leibung Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung (Unterkante Fensterbank) bis Unterkante Sturz{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altBruestungOhneRef}
+                onChange={kalkuAltBruestungOhne}
+              />
+            </div>
+           
+          </div>
+          {(fensterHoehe > 0) && <p> Fenster Höhe beträgt <b>{fensterHoehe} mm.</b> Die Höhe beinhaltet Aufsatzrollladen Kasten, falls benötigt.</p>}
+          {(fensterHoehe > 0) && <p> Es wurde 50 mm abgezogen (30 mm für Fensterbank Anschluß Leiste und 20 mm als Montagespiel)</p>}
+          {(fensterHoehe > 0) && <p> Falls Sie keine Fensterbank planen, kann die Fensterhöhe maximal {fensterHoehe + 30} mm betragen. </p>}
+       
+      </div>
+    )
+  }
+
+  function neuBruestungMit() {
+   
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung bis Unterkante Rollladenkasten.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={neuBruestungMitRef}
+                onChange={kalkuNeuBruestungMit}
+              />
+            </div>
+            
+          </div>
+          {(fensterHoehe > 0) && <p> Fenster Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
+          {(fensterHoehe > 0) && <p> Es wurde 40 mm abgezogen (30 mm für Fensterbank Anschluß Leiste und 10 mm als Montagespiel)</p>}
+          {(fensterHoehe > 0) && <p> Falls Sie keine Fensterbank planen, kann die Fensterhöhe maximal {fensterHoehe + 30} mm betragen. </p>}
+       
+      </div>
+    )
+  }
+
+  function altBruestungMit() {
+   
+    return (
+      <div className="mt4">
+        <p>
+          Bitte die Leibungshöhe von außen an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung (innen) bis zum Außensturz, wie in der 3d Abbildung von außen. Wenn die Außenbrüstung tiefer liegt als die Innebrüstung messen Sie bitte von der Innenbrüstung.{" "}
+        </p>
+       
+          <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altAlBruestungMitRef}
+                onChange={showInnenAltbauHoehe}
+              />
+            </div>           
+          </div>
+          {(innenHoeheZeigen === true) && <p>  Bitte die Leibungshöhe von innen messen. Von Oberkante Innenbrüstung (bzw. Unterkante Innenfensterbank) bis ganz nach Oben zum Sturz im alten Rollladenkasten. Wie in der 3d Abbildung.</p>}
+          {(innenHoeheZeigen === true) && <div className="flex flex-wrap justify-start tl w-100">
+            <div className="w-30 gray f5 mv2">Höhe in mm:</div>
+            <div className="w-30 gray f6 tl">
+              <input
+                id="name"
+                style={{ width: 100, height: 37 }}
+                className="gray f6 w3-input w3-border w3-sand w3-border-orange"
+                type="text"
+                placeholder="mm"
+                ref={altBruestungMitRef}
+                onChange={kalkuAltBruestungMit}
+              />
+            </div>           
+          </div>}
+
+
+          
+       
+      </div>
+    )
+  }
+
+  function altBruestungMit2() {
+    return (
+      <div className="mt4">
+        {(fensterHoehe > 0) && <p> Fenster Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
+        {(fensterHoehe > 0) && <p> Es wurde unten 40 mm abgezogen (30 mm für Fensterbank Anschluß Leiste und 10 mm als Montagespiel). Falls Sie keine Fensterbank planen, kann die Fensterhöhe maximal {fensterHoehe + 30} mm betragen. </p>}
+        {(platzOben > 0) && <p>Es bleiben {(platzOben > 210) ? platzOben : 210 } mm übrig für Aufsatz Rollladenkasten. Der Kasten ist 170, bzw. 210 mm hoch.</p>}
+        {(platzOben < 210 && fensterHoehe > 0 && fensterHoehe < 1800) && <p>Sie können auch 170 mm Aufsatzollladen Kasten verwenden. Dann beträgt die Fensterhöhe {fensterHoehe + 40} mm.</p>}
+
+      </div>
+    )
+  }
+  
   function neubauOhne() {
     return (
       <div className="mt4">
@@ -694,7 +1467,7 @@ function buildingvisualisation({ ...props }) {
                       }
                       onMouseDown={() => changeHSH(false)}
                     >
-                      Standard Fenster / Tür
+                      Standard
                     </button>
 
                     <button
@@ -709,9 +1482,28 @@ function buildingvisualisation({ ...props }) {
                     </button>
                   </div>}
 
-
+                      
 
                 </div>
+                {(altbauH === false && bodenH === false && rolloH === false) && neuBruestungOhne()}
+                {(altbauH === true && bodenH === false && rolloH === false) && altBruestungOhne()}
+                {(altbauH === false && bodenH === false && rolloH === true) && neuBruestungMit()}
+                {(altbauH === true && bodenH === false && rolloH === true) && altBruestungMit()}
+                {(altbauH === false && bodenH === true  && fussbodenH == false && rolloH === false) && neuBodenOhneOhne()}
+                {(altbauH === false && bodenH === true && fussbodenH == false  && rolloH === true) && neuBodenOhneMit()}
+                {(altbauH === false && bodenH === true && fussbodenH == true  && rolloH === false) && neuBodenMitOhne()}
+                {(altbauH === false && bodenH === true && fussbodenH == true  && rolloH === true) && neuBodenMitMit()}
+                {(altbauH === true && bodenH === true  && fussbodenH == false && rolloH === false) && altBodenOhneOhne()}
+                {(altbauH === true && bodenH === true  && fussbodenH == false && rolloH === true) && altBodenOhneMit()}
+                {(altbauH === true && bodenH === true  && fussbodenH == true && rolloH === false) &&  altBodenMitOhne()}
+                {(altbauH === true && bodenH === true  && fussbodenH == true && rolloH === true) &&  altBodenMitMit()}
+
+                
+
+               
+
+                
+                 
               </div>
 
               <div className="db mb4 flex flex-wrap justify-center mv1 pb3 fl w-100 w-50-l b--moon-gray">
@@ -750,7 +1542,7 @@ function buildingvisualisation({ ...props }) {
                     </Suspense>
 
                     <Suspense fallback={<Loader />}>
-                      <WallH rotation-y={Math.PI * 0} altbauH={altbauH} bodenH={bodenH} fussbodenH={fussbodenH} rolloH={rolloH} ifHSH={ifHSH} />
+                      <WallH rotation-y={Math.PI * 0} altbauH={altbauH} bodenH={bodenH} fussbodenH={fussbodenH} rolloH={rolloH} ifHSH={ifHSH}  bauart={bauart}/>
 
                       <Environment preset="park" />
                       <ambientLight intensity={0.5} />
@@ -766,9 +1558,18 @@ function buildingvisualisation({ ...props }) {
               </div>
 
               <div className="flex flex-wrap justify-around mb3 w-100 ph3">
-                {bauart === "altbau_al" && altbauMit2()}
-                {bauart === "neubau_dg" && neubauMit2()}
-              </div>
+              {(altbauH === true && bodenH===false && rolloH===true) && altBruestungMit2()}
+              {(altbauH === false && bodenH===true && fussbodenH===true && rolloH===false && fussbodenNeuOhneZeigen ===true) && neuBodenMitOhne2()}
+              {(altbauH === false && bodenH===true && fussbodenH===true && rolloH===true && fussbodenNeueMitZeigen ===true) && neuBodenMitMit2()}
+              {(altbauH === true && bodenH===true && fussbodenH===false && rolloH===true && innenHoeheAltZeigen ===true) && altBodenOhneMit2()}
+              {(altbauH === true && bodenH===true && fussbodenH===true && rolloH===false && innenHoeheAltFussbodenZeigen ===true) && altBodenMitOhne2()}
+              {(altbauH === true && bodenH===true && fussbodenH===true && rolloH===true && altFussbodenRolloZeigen ===true) && altBodenMitMit2()}
+              {(altbauH === true && bodenH===true && fussbodenH===true && rolloH===true && altInnenFussbodenRolloZeigen ===true) && altBodenMitMit3()}
+
+
+              
+            
+            </div>
             </div>
           </div>
         )}
@@ -776,7 +1577,7 @@ function buildingvisualisation({ ...props }) {
       {switchBH()}
       <div className="tc ba b--moon-gray pa1 ma2 mb4 mt3">
         <h5>Fenster Maße:</h5>
-        <p>Fenster Breite: {fensterBreite} mm</p>
+        {(fensterBreite > 0) && <p>Fenster Breite: {fensterBreite} mm</p>}
         {verbreiterungenSeitlich > 0 && (
           <p>
             Verbreiterungen seitlich: {verbreiterungenSeitlich} mm, jeweils{" "}
@@ -785,10 +1586,18 @@ function buildingvisualisation({ ...props }) {
         )}
         {verbreiterungenSeitlich > 0 && (
           <p>
-            Fenster inkl. Verbreiterungen:{" "}
+            Fenster Breite inkl. Verbreiterungen:{" "}
             {fensterBreite + verbreiterungenSeitlich} mm
           </p>
         )}
+        {(fensterHoehe > 0 && rolloH == true) && <p>Fenster Höhe: {fensterHoehe} mm</p>}
+        {(fensterHoehe > 0 && rolloH == false) && <p>Fenster Höhe: {fensterHoehe} mm (ggf. inkl. Aufsatzrollladen Kasten)</p>}
+        {(platzOben > 0) && <p>zzgl. Aufsatzrollladen: 210 mm</p>}
+        {(platzOben > 0) && <p>Gesamthöhe inkl. Aufsatz Rollladenkasten beträgt {fensterHoehe + 210} mm.</p>}
+        {(verbreiterungUnten > 0) && <p>zzgl. Verbreiterung unten für Fußboden in der Höhe von {verbreiterungUnten} mm.</p>}
+        {(verbreiterungUnten > 0 && platzOben === 0) && <p>Gesamthöhe inkl. Verbreiterung unten beträgt {fensterHoehe + verbreiterungUnten} mm.</p>}
+        {(verbreiterungUnten > 0 && platzOben > 0) && <p>Gesamthöhe inkl. Verbreiterung unten und Aufsatzrollladen Kasten beträgt {fensterHoehe + verbreiterungUnten +210} mm.</p>}
+
       </div>
     </div>
   );
@@ -800,10 +1609,16 @@ function buildingvisualisation({ ...props }) {
 
   function changeAltbauH(ifAltbau) {
     setAltbauH(ifAltbau);
+    setFensterHoehe(0)
+    setPlatzOben(0)
+    setVerbreiterungUnten(0)
   }
 
   function changeBodenH(ifBoden) {
     setBodenH(ifBoden);
+    setFensterHoehe(0)
+    setPlatzOben(0)
+    setVerbreiterungUnten(0)
     if (ifBoden === false) {
       setFussbodenH(false);
       setIfHSH(false)
@@ -812,14 +1627,23 @@ function buildingvisualisation({ ...props }) {
 
   function changeFussbodenH(ifFussboden) {
     setFussbodenH(ifFussboden);
+    setFensterHoehe(0)
+    setPlatzOben(0)
+    setVerbreiterungUnten(0)
   }
 
   function changeRolloH(ifRollo) {
     setRolloH(ifRollo);
+    setFensterHoehe(0)
+    setPlatzOben(0)
+    setVerbreiterungUnten(0)
   }
   function changeHSH(ifHS) {
     setIfHSH(ifHS);
-  }
+    setFensterHoehe(0)
+    setPlatzOben(0)
+    setVerbreiterungUnten(0) 
+     }
 }
 
 export default buildingvisualisation;

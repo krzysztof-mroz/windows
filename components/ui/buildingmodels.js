@@ -205,8 +205,8 @@ export function WallH({ ...props }) {
   function fussbodenAlt() {
     return (
       <group position={[-34.6, -130.83, 13.6]} rotation={[Math.PI / 2, 0, 0]}>
-      <mesh geometry={nodes['fussboden_alt-estrich'].geometry} material={nodes['fussboden_alt-estrich'].material} material-color={snap.items.estrich}/>
-      <mesh geometry={nodes['fussboden_alt-fliesen'].geometry} material={nodes['fussboden_alt-fliesen'].material} material-color={snap.items.blue}/>
+      <mesh geometry={nodes['fussboden_alt-estrich'].geometry} material={nodes['fussboden_alt-estrich'].material} material-color={snap.items.estrich} material-roughness={1}/>
+      <mesh geometry={nodes['fussboden_alt-fliesen'].geometry} material={nodes['fussboden_alt-fliesen'].material} material-color={snap.items.blue} material-roughness={0.5}/>
     </group>
     );
   }
@@ -214,8 +214,8 @@ export function WallH({ ...props }) {
   function fussbodenNeu() {
     return (
       <group position={[-34.56, -130.83, 13.6]} rotation={[Math.PI / 2, 0, 0]}>
-      <mesh geometry={nodes['fussboden_neu-estrich'].geometry} material={nodes['fussboden_neu-estrich'].material} material-color={snap.items.estrich}/>
-      <mesh geometry={nodes['fussboden_neu-fliesen'].geometry} material={nodes['fussboden_neu-fliesen'].material} material-color={snap.items.blue}/>
+      <mesh geometry={nodes['fussboden_neu-estrich'].geometry} material={nodes['fussboden_neu-estrich'].material} material-color={snap.items.estrich} material-roughness={1}/>
+      <mesh geometry={nodes['fussboden_neu-fliesen'].geometry} material={nodes['fussboden_neu-fliesen'].material} material-color={snap.items.blue} material-roughness={0.5}/>
     </group>
     );
   }
@@ -342,13 +342,13 @@ export function WallH({ ...props }) {
 
   function dgNeuBoden() {
     return (
-      <mesh geometry={nodes.dg_neu_boden.geometry} material={nodes.dg_neu_boden.material} position={[5.42, 0, -21.43]} />
+      <mesh geometry={nodes.dg_neu_boden.geometry} material={nodes.dg_neu_boden.material} position={[5.42, 0, -21.43]} material-normalMap={texStyrofoamNormal}/>
     );
   }
 
   function dgNeuBruestung() {
     return (
-      <mesh geometry={nodes.dg_neu_bruestung.geometry} material={nodes.dg_neu_bruestung.material} position={[5.15, 0, -21.43]} />
+      <mesh geometry={nodes.dg_neu_bruestung.geometry} material={nodes.dg_neu_bruestung.material} position={[5.15, 0, -21.43]} material-normalMap={texStyrofoamNormal}/>
     );
   }
 
@@ -407,9 +407,9 @@ export function WallH({ ...props }) {
     } else if (props.rolloH === true && props.altbauH === true && props.bodenH === false) {
       toReturn = [fenster(), bandmassAltBruestung(), bandmassAltBruestungMit(), ilAltBruestungMit(), alAltBruestung(), altkastenHolz(),  fensterbank()  ]
     } else if (props.rolloH === false && props.altbauH === false && props.bodenH === true) {
-      toReturn = [bandmassNeuBodentiefMit(), mauerNeuBodenOhne(), ]
+      toReturn = [bandmassBodentiefOhne(), mauerNeuBodenOhne(), ]
     } else if (props.rolloH === true && props.altbauH === false && props.bodenH === true) {
-      toReturn = [bandmassNeuBodentiefMit(), mauerNeuBodenMit(), rks()] 
+      toReturn = [bandmassBodentiefOhne(), mauerNeuBodenMit(), rks()] 
     } else if (props.rolloH === false && props.altbauH === false && props.bodenH === false) {
       toReturn = [fenster(), bandmassNeuBruestung(), mauerNeuBruestungOhne(), ]
     } else if (props.rolloH === true && props.altbauH === false && props.bodenH === false) {
@@ -427,6 +427,12 @@ export function WallH({ ...props }) {
       toReturn.push(bandmassFussboden(), fussbodenNeu(), bodenProfilMit(), )
     } else if (props.fussbodenH === false && props.bodenH === true) {
       toReturn.push( bodenProfilOhne())
+    }
+
+    if (props.bauart === "neubau_dg" && props.bodenH === false && props.altbauH === false) {
+      toReturn.push( dgNeuBruestung())
+    } else if (props.bauart === "neubau_dg" && props.bodenH === true && props.altbauH === false) {
+      toReturn.push( dgNeuBoden())
     }
 
 
