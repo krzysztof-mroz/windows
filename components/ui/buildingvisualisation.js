@@ -373,8 +373,8 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Außenleibung Höhe an verschiedenen Stellen (2-3) messen und das
-          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante Außensturz.{" "}
+          Bitte die <b>Außenleibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante <b>Außen</b>sturz.{" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100">
@@ -399,8 +399,8 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Innenleibung Höhe an verschiedenen Stellen (2-3) messen und das
-          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz nach Oben Unterkante Innensturz.{" "}
+          Bitte die <b>Innenleibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz nach Oben Unterkante <b>Innen</b>sturz.{" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100 w-60-l">
@@ -425,7 +425,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
+        Bitte die (ggf. geplante) Höhe des <b>Fußboden</b> Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100 w-60-l">
@@ -455,7 +455,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Leibung Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Leibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante Sturz.{" "}
         </p>
        
@@ -481,7 +481,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
+        Bitte die (ggf. geplante) Höhe des <b>Fußboden </b>Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100">
@@ -510,8 +510,8 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Außenleibung Höhe an verschiedenen Stellen (2-3) messen und das
-          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante Außensturz.{" "}
+          Bitte die <b>Außenleibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis Unterkante <b>Außen</b>sturz.{" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100">
@@ -537,8 +537,8 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Innenleibung Höhe an verschiedenen Stellen (2-3) messen und das
-          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz Oben Unterkante Innensturz, wie in 3d Abbildung.{" "}
+          Bitte die <b>Innenleibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz Oben Unterkante <b>Innen</b>sturz, wie in 3d Abbildung.{" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100">
@@ -569,7 +569,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Leibung Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Leibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen.{" "}
         </p>
        
@@ -600,7 +600,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Maueröffnungs-Höhe</b> an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen. Messen Sie bitte von Rohfußboden bis Unterkante Rollladenkasten.{" "}
         </p>
        
@@ -629,7 +629,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4 ">
         <p>
-        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
+        Bitte die (ggf. geplante) Höhe des <b>Fußboden</b> Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100 w-60-l">
@@ -660,7 +660,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Maueröffnungs-Höhe</b> an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen. Messen Sie bitte von Rohfußboden bis Unterkante Sturz.{" "}
         </p>
        
@@ -689,7 +689,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4 ">
         <p>
-        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
+        Bitte die (ggf. geplante) Höhe des <b>Fußboden</b> Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100 w-60-l">
@@ -724,7 +724,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Maueröffnungs-Höhe</b> an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen. Messen Sie bitte vom Fußboden bis Unterkante Rollladenkasten.{" "}
         </p>
        
@@ -755,7 +755,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Maueröffnungs-Höhe</b> an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen.{" "}
         </p>
        
@@ -787,7 +787,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Maueröffnungs-Höhe</b> an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen.{" "}
         </p>
        
@@ -819,7 +819,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Leibung Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Leibung</b> Höhe an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung (Unterkante Fensterbank) bis Unterkante Sturz{" "}
         </p>
        
@@ -851,7 +851,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Maueröffnungs-Höhe an verschiedenen Stellen (2-3) messen und das
+          Bitte die <b>Maueröffnungs-Höhe</b> an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung bis Unterkante Rollladenkasten.{" "}
         </p>
        
@@ -883,8 +883,8 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          Bitte die Leibungshöhe von außen an verschiedenen Stellen (2-3) messen und das
-          kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung (innen) bis zum Außensturz, wie in der 3d Abbildung von außen. Wenn die Außenbrüstung tiefer liegt als die Innebrüstung messen Sie bitte von der Innenbrüstung.{" "}
+          Bitte die Leibungshöhe von <b>außen</b> an verschiedenen Stellen (2-3) messen und das
+          kleinste Maß nehmen. Messen Sie bitte von Oberkante Brüstung (innen) bis zum <b>Außen</b>sturz, wie in der 3d Abbildung von außen. Wenn die Außenbrüstung tiefer liegt als die Innebrüstung messen Sie bitte von der Innenbrüstung.{" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100">
@@ -901,7 +901,7 @@ function buildingvisualisation({ ...props }) {
               />
             </div>           
           </div>
-          {(innenHoeheZeigen === true) && <p>  Bitte die Leibungshöhe von innen messen. Von Oberkante Innenbrüstung (bzw. Unterkante Innenfensterbank) bis ganz nach Oben zum Sturz im alten Rollladenkasten. Wie in der 3d Abbildung.</p>}
+          {(innenHoeheZeigen === true) && <p>  Bitte die Leibungshöhe von <b>innen</b> messen. Von Oberkante Innenbrüstung (bzw. Unterkante Innenfensterbank) bis ganz nach Oben zum Sturz im alten Rollladenkasten. Wie in der 3d Abbildung.</p>}
           {(innenHoeheZeigen === true) && <div className="flex flex-wrap justify-start tl w-100">
             <div className="w-30 gray f5 mv2">Höhe in mm:</div>
             <div className="w-30 gray f6 tl">
