@@ -90,7 +90,7 @@ function footer() {
           <div className="w-100 w-30-l  ma2 pa3">
             <h5 className="gray">Dienstleistungen</h5>
             <p className="gray f6">
-              <Link href="/">
+              <Link href="/aufmass">
                 <a className="f6 fw4 no-underline db   ph3">Aufmaß</a>
               </Link>
               <Link href="/">

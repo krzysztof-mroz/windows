@@ -403,7 +403,7 @@ function buildingvisualisation({ ...props }) {
           kleinste Maß nehmen. Messen Sie bitte von Fußboden bis ganz nach Oben Unterkante Innensturz.{" "}
         </p>
        
-          <div className="flex flex-wrap justify-start tl w-100">
+          <div className="flex flex-wrap justify-start tl w-100 w-60-l">
             <div className="w-30 gray f5 mv2">Höhe in mm:</div>
             <div className="w-30 gray f6 tl">
               <input
@@ -425,10 +425,10 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-        Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
-          <div className="flex flex-wrap justify-start tl w-100">
+          <div className="flex flex-wrap justify-start tl w-100 w-60-l">
             <div className="w-30 gray f5 mv2">Höhe in mm:</div>
             <div className="w-30 gray f6 tl">
               <input
@@ -481,7 +481,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-        Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100">
@@ -629,7 +629,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4 ">
         <p>
-          Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100 w-60-l">
@@ -689,7 +689,7 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4 ">
         <p>
-          Bitte die Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. {" "}
+        Bitte die (ggf. geplante) Höhe des Fußboden Aufbaus (Estich oder Fußbodenheizung) von Rohfußboden bis Fertigfußboden angeben. Für diesen Bereich sollen als Schutz vor Kältebrücke Verbreiterungen verwendet werden. {" "}
         </p>
        
           <div className="flex flex-wrap justify-start tl w-100 w-60-l">
@@ -926,7 +926,7 @@ function buildingvisualisation({ ...props }) {
 
   function altBruestungMit2() {
     return (
-      <div className="mt4">
+      <div className="flex flex-wrap justify-start tl mt4">
         {(fensterHoehe > 0) && <p> Fenster Höhe beträgt <b>{fensterHoehe} mm.</b></p>}
         {(fensterHoehe > 0) && <p> Es wurde unten 40 mm abgezogen (30 mm für Fensterbank Anschluß Leiste und 10 mm als Montagespiel). Falls Sie keine Fensterbank planen, kann die Fensterhöhe maximal {fensterHoehe + 30} mm betragen. </p>}
         {(platzOben > 0) && <p>Es bleiben {(platzOben > 210) ? platzOben : 210 } mm übrig für Aufsatz Rollladenkasten. Der Kasten ist 170, bzw. 210 mm hoch.</p>}
@@ -975,12 +975,12 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          1) Falls Putz (oder Fliesen) in der Leibung vorhanden sind, bitte (ev.
+          Falls Putz (oder Fliesen) in der Leibung vorhanden sind, bitte (ev.
           teilweise) abtragen und die Breite von Mauer zu Mauer messen. Putz
           soll grundsätzlich bei Fenstertausch in der Leibung abgetragen werden.{" "}
         </p>
         <p>
-          2) Leibungsbreite an verschiedenen Stellen (2-3) messen und das
+          Leibungsbreite an verschiedenen Stellen (2-3) messen und das
           kleinste Maß nehmen.{" "}
         </p>
         <form className="" onSubmit={kalkuBreiteAltbau}>
@@ -1014,16 +1014,16 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          1) Falls Putz (oder Fliesen) in der Leibung vorhanden sind, bitte (ev.
+          Falls Putz (oder Fliesen) in der Leibung vorhanden sind, bitte (ev.
           teilweise) abtragen und die Breite von Mauer zu Mauer messen. Putz
           soll grundsätzlich bei Fenstertausch in der Leibung abgetragen werden.{" "}
         </p>
         <p>
-          2) Es gibt 2 Leibungen, eine kleinere Außenleibung, und eine grössere
+          Es gibt 2 Leibungen, eine kleinere Außenleibung, und eine grössere
           Innenleibung. Identifizieren Sie bitte bei Ihnen die Leibungen
         </p>
         <p>
-          3) Meßen Sie die <b>Außenleibung</b> an verschiedenen Stellen (2-3).
+          Messen Sie die <b>Außenleibung</b> an verschiedenen Stellen (2-3).
           Nehmen Sie bitte das kleinste Maß.
         </p>
         <form className="" onSubmit={showInnenAltbau}>
@@ -1049,16 +1049,16 @@ function buildingvisualisation({ ...props }) {
 
   function altbauMit2() {
     return (
-      <div>
+      <div className="flex flex-wrap justify-start tl">
         {innenLeibungZeigen === true && (
           <p>
             {" "}
-            4) Meßen Sie die <b>Innenleibung</b> an verschiedenen Stellen (2-3).
+            Messen Sie die <b>Innenleibung</b> an verschiedenen Stellen (2-4).
             Nehmen Sie bitte das kleinste Maß.
           </p>
         )}
-        {innenLeibungZeigen === true && (
-          <form className="" onSubmit={kalkuAltbauMit}>
+        
+          
             <div className="flex flex-wrap justify-start tl w-100 w-60-l">
               <div className="w-30 gray f5 mv2">Breite in mm:</div>
               <div className="w-30 gray f6 tl">
@@ -1072,10 +1072,10 @@ function buildingvisualisation({ ...props }) {
                   onChange={kalkuAltbauMit}
                 />
               </div>
-              <div className="w-30"></div>
+              
             </div>
-          </form>
-        )}
+         
+       
         {kalkuAltbauZeigen === true && (
           <p>
             Fensterbreite beträgt <b>{fensterBreite} mm.</b>
@@ -1115,13 +1115,13 @@ function buildingvisualisation({ ...props }) {
     return (
       <div className="mt4">
         <p>
-          2) Es gibt eine gemauerte (ggf. betonierte) Leibung und von Außen
+          Es gibt eine gemauerte (ggf. betonierte) Leibung und von Außen
           kommt eine Dämmung, bzw Klinher. Dämmung / Klinker wird teilweise mit
           der Maueröffnung überlappen. So wird die äußere Maueröffnung kleiner
           als die innere Maueröffnung.
         </p>
         <p>
-          3) Meßen Sie bitte die <b>äußere</b> Maueröffnung in der
+          Messen Sie bitte die <b>äußere</b> Maueröffnung in der
           Dämmungsschicht (bzw. Klinkerschicht). Falls noch nicht vorhanden,
           kalkulieren Sie bitte die Breite nach Abzug der geplanten Überlappung
           mit vorhanderner Maueröffnung.
@@ -1153,13 +1153,13 @@ function buildingvisualisation({ ...props }) {
         {innenOeffnungZeigen === true && (
           <p>
             {" "}
-            4) Meßen Sie jetzt bitte die <b>innere</b> Maueröffnung an
+            Messen Sie jetzt bitte die <b>innere</b> Maueröffnung an
             verschiedenen Stellen (2-3). Nehmen Sie bitte das kleinste Maß.
           </p>
         )}
         {innenOeffnungZeigen === true && (
-          <form className="" onSubmit={kalkuNeubauMit}>
-            <div className="flex flex-wrap justify-start tl w-100 w-60-l">
+          
+            <div className="flex flex-wrap justify-start tl w-100 w-70-l">
               <div className="w-30 gray f5 mv2">Breite in mm:</div>
               <div className="w-30 gray f6 tl">
                 <input
@@ -1172,9 +1172,9 @@ function buildingvisualisation({ ...props }) {
                   onChange={kalkuNeubauMit}
                 />
               </div>
-              <div className="w-30"></div>
+             
             </div>
-          </form>
+          
         )}
         {kalkuNeubauZeigen === true && (
           <p>
@@ -1338,8 +1338,8 @@ function buildingvisualisation({ ...props }) {
                 {bauart === "neubau_dg" && neubauMit()}
               </div>
             </div>
-            <div className="flex flex-wrap justify-around mb3 w-100 ph3">
-              {bauart === "altbau_al" && altbauMit2()}
+            <div className="flex flex-wrap justify-start tl mb3 w-100 ph3">
+              {(bauart === "altbau_al" && innenLeibungZeigen === true) && altbauMit2()}
               {bauart === "neubau_dg" && neubauMit2()}
             </div>
           </div>
@@ -1557,7 +1557,7 @@ function buildingvisualisation({ ...props }) {
                 </div>
               </div>
 
-              <div className="flex flex-wrap justify-around mb3 w-100 ph3">
+              <div className="flex flex-wrap justify-start tl mb3 w-100 ph3">
               {(altbauH === true && bodenH===false && rolloH===true) && altBruestungMit2()}
               {(altbauH === false && bodenH===true && fussbodenH===true && rolloH===false && fussbodenNeuOhneZeigen ===true) && neuBodenMitOhne2()}
               {(altbauH === false && bodenH===true && fussbodenH===true && rolloH===true && fussbodenNeueMitZeigen ===true) && neuBodenMitMit2()}
