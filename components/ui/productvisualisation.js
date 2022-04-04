@@ -1,6 +1,6 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
-import {HsLs,  Ct70Ht, Ct70Nt, LivingHt, LivingNt} from "./productmodels";
+import {HsLs, HsPd,  Ct70Ht, Ct70Nt, LivingHt, LivingNt} from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture, Html, useProgress} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
@@ -128,16 +128,22 @@ function productvisualisation({...props}) {
 
                   {props.product == "hsls" && (
                       <HsLs
-                        rotation-y={Math.PI * 1.33}
+                        rotation-y={Math.PI * 2.33}
                         colorInside={colorInside}
                         colorOutside={colorOutside}
                         blackGasket={blackGasket}
                       />
                     )}
 
-
-                      
-                    
+                  {props.product == "hspd" && (
+                      <HsPd
+                        rotation-y={Math.PI * 2.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}  
+     
                     
                     <Environment preset="park" />
                     <ambientLight intensity={0.5} />
