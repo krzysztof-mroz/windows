@@ -31,15 +31,16 @@ function HsPd() {
         <h5 className="gray">Kömmerling Premidoor 88</h5>
          
         <ul className="gray f6 tl">
-					   <li>Das innovative Hebeschiebesystem Schüco LivIngSlide ist mit einer 82 mm Grundbautiefe des Flügelrahmens auf Basis der Schüco LivIng Systemmaße konstruiert. Die einheitlichen Systemmaße gewährleisten eine einfache, flexible Planung und Ausführung von Anschlusssituationen.</li>
-					   <li>EPDM Dichtungen im Standard, RC2 Ausführung möglich</li>
-					   <li>3 fache Verglasungen bis Ug=0,5 W/m2K möglich</li>
-					   <li>Großelemente mit Flügelgewichten bis 400 kg möglich.</li>
-					    <li>Attraktive Optik. Das flächenbündige Design vermeidet sonst übliche Spaltmaße am Festteil und realisiert eine moderne Linienführung bei gleichzeitig leichter Reinigung. </li>
-					    <li>Zargenbautiefe von 194 mm.</li>
-					    <li>Besonders flache Bodenschwelle für bequemes Herein- und Herausgehen.</li>
+					   <li>PremiDoor 88 ist eine komplett neu konstruierte Hebe-Schiebetür.</li>
+             <li>Höchster Öffnungs- und Schließkomfort, mit exzellenten Dämmwerten und mit einer architektonisch eleganten Ästhetik. Schlagregenschutz, Winddichtigkeit und Schallschutz.</li>
+					   <li>Eine neuartige Dichtungstechnologie, bei der drei Ebenen perfekt zusammenwirken.</li>
+					   <li>Große Bautiefe, die eine hohe Stabilität und exzellente Dämmwerte sowie ein großes Verglasungsspektrum bis 56 mm </li>
+					   <li>Alle Kunststoff-Profile werden im Frischmaterial ausschließlich mit bleifreien Stabilisatoren auf Calcium/Zink-Basis hergestellt.</li>
+					    <li>Erstklassiger Wärmedurchgangskoeffizient von Uf - Mittelwert = 1,3 W/(m²K). </li>
+					    <li>Zargenbautiefe von 207 mm.</li>
+					    <li>Barrierefreier Übergang von innen nach außen - hochdämmende WPC Bodenschwelle.</li>
 					   <li>Verschiedene Farbvarianten.</li>
-             <li>Weitere Informationen gerne auf Anfrage.</li>
+             <li>Sichere Funktion, hoher Bedienungskomfort, schwebend leicht zu öffnen und schließen.</li>
 				  </ul>
         
         
