@@ -473,3 +473,73 @@ export function K88Nt({ ...props }) {
     </group>
   )
 }
+
+export function Ael({ ...props }) {
+  const group = useRef()
+  const snap = useSnapshot(state);
+  const texPlaster = useTexture("/colors/plaster.png");
+  const texStyrofoamNormal = useTexture("/colors/styrofoam_normal.jpg");
+  const texBeton = useTexture("/colors/beton.jpg");
+
+  const { nodes, materials } = useGLTF('/ael.glb')
+
+  function rollo() {
+    return (
+      <group ref={group} {...props} dispose={null}>
+      <group position={[9.74, -8.9, -19.05]}>
+        <group position={[0.6, 4.32, 25.56]} rotation={[0, -1.57, 0]}>
+          <mesh geometry={nodes['profile-gasket'].geometry} material={nodes['profile-gasket'].material} material-color={snap.items.gasketgrey}/>
+          <mesh geometry={nodes['profile-PVC'].geometry} material={nodes['profile-PVC'].material} material-color={snap.items.pvc}/>
+        </group>
+        <mesh geometry={nodes.FBA.geometry} material={nodes.FBA.material} position={[0.6, -53.85, 25.82]} rotation={[0, -1.57, 0]} material-color={snap.items.gasketgrey}/>
+        
+        <mesh geometry={nodes.beschlag.geometry} material={materials.F9} position={[-1.05, 2.31, 18.3]} rotation={[0, -1.57, 0]} material-color={snap.items.aluminium} material-roughness={0.4}/>
+        <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[-2.44, 5.47, 24.99]} rotation={[0, -1.57, 0]} 
+         material-roughness={0.25}
+         material-clearcoat={1}
+         material-reflectivity={1}
+         material-transparent
+         material-opacity={0.92}
+         material-transmission={0}
+        />
+      </group>
+      <group position={[7.39, 36.47, -20.34]} rotation={[0, 1.57, 0]}>
+        <mesh geometry={nodes.Endstab_gasket.geometry} material={materials.rubber} position={[-34.43, -20.98, 2.99]} rotation={[0, -1.57, 0]} material-color={snap.items.gasket}/>
+        <mesh geometry={nodes.Endstab.geometry} material={materials.grey} position={[-34.44, -18.1, 2.99]} rotation={[0, -1.57, 0]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.lamellen.geometry} material={materials.grey} position={[-34.43, 0.46, 2.97]} rotation={[0, -1.57, 0]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.rf.geometry} material={nodes.rf.material} position={[-34.05, -42.4, 3.03]} rotation={[0, -1.57, 0]} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.kasten.geometry} material={nodes.kasten.material} position={[-24.54, 26.28, 3.03]} rotation={[0, -1.57, 0]} material-color={snap.items.pvc}/>
+      </group>
+     
+      <mesh geometry={nodes.wall.geometry} material={materials.Concrete} position={[-10.41, -37.38, -2.69]} rotation={[0, -1.57, 0]} material-map={texBeton}/>
+    </group>
+    );
+  }
+
+  function daemmung() {
+    return (
+      <group ref={group} {...props} dispose={null}>
+    
+     
+      <mesh geometry={nodes.insulation.geometry} material={nodes.insulation.material} position={[-10.38, -37.38, 20.34]} rotation={[0, -1.57, 0]} material-normalMap={texStyrofoamNormal}/>
+     
+    </group>
+    );
+  }
+ 
+
+  function show() {
+
+    let toReturn = [];
+
+  if (props.mitDaemmung === false) {
+    toReturn = [ rollo()]
+   } else {
+    toReturn = [ rollo(), daemmung()]
+   }
+
+    return toReturn;
+  }
+
+  return show()
+}

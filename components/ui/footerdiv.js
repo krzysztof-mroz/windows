@@ -80,6 +80,9 @@ function footer() {
               <Link href="/products/k88ht">
                 <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 Haustür</a>
               </Link>
+              <Link href="/products/ael">
+                <a className="f6 fw4 no-underline  db  ph3">Aufsatzrollladen Aluprof</a>
+              </Link>
               <Link href="/beschattung">
                 <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
               </Link>
