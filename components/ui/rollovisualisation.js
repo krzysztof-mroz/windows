@@ -2,7 +2,8 @@ import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
 import {
   Ael,
-  Sk
+  Sk,
+  Sko
 } from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
@@ -77,14 +78,18 @@ function rollovisualisation({ ...props }) {
                 <Sk rotation-y={Math.PI * 2.33} mode={rolloMode} />
               )}  
 
+            {props.product == "sko" && (
+                <Sko rotation-y={Math.PI * 2.33} mode={rolloMode} />
+              )}  
+
               <Environment preset="park" />
               <ambientLight intensity={0.5} />
             </Suspense>
             <OrbitControls
               minPolarAngle={Math.PI * 0.45}
               maxPolarAngle={Math.PI * 0.55}
-              enableZoom={false}
-              enablePan={false}
+              enableZoom={true}
+              enablePan={true}
             />
           </Canvas>
         </div>
@@ -156,7 +161,7 @@ function rollovisualisation({ ...props }) {
            {/* KONIEC AEL */}
 
              {/* SK */}
-          {props.product === "sk" && (
+          {(props.product === "sk" || props.product === "sko" || props.product === "skp") && (
           <div className="w-90 tc">
             <button
               className={
@@ -229,7 +234,8 @@ function rollovisualisation({ ...props }) {
             )}  
 
             <ul>
-            <li><b>Eckiger Kasten</b></li>
+            {props.product === "sk" && (<li><b>Eckiger Kasten</b></li>)}
+            {props.product === "sko" && (<li><b>Halbrunder Kasten</b></li>)}
             <li><b>Wartungsklappe von außen.</b></li>
               <li>Ausgeschäumte Aluminium Lamellen</li>
               <li>Gurtantrieb, oder Motorenantrieb, zur Wahl.</li>
@@ -238,9 +244,18 @@ function rollovisualisation({ ...props }) {
                 Verschiedene Farben der Kästen, Führunsschienen und Lamellen.
               </li>
               <li>39 mm Lamellen im Standard.</li>
+              
+              {props.product === "sk" && (
               <li>
                 Kastenhöhen: 127,5 mm, 138 mm, 151 mm, 168 mm, 183 mm, 208 mm.{" "}
               </li>
+              )}
+
+            {props.product === "sko" && (
+              <li>
+                Kastenhöhen: 142 mm, 170 mm, 185 mm, 212 mm{" "}
+              </li>
+              )}
               <li><b>Wölbung</b> der Lamellen zeigt <b>nach innen</b>.</li>
                       
             </ul>

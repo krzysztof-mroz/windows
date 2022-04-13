@@ -18,7 +18,7 @@ function Sk() {
 
     <Fragment>
       <Head>
-        <title>Polnische Fenster Aufsatzrollladen</title>
+        <title>Polnische Fenster Vorsatzrollladen SK</title>
         <meta name='description'
               content='Aluprof Vorsatzrollladen SK. 3d Visualisierung'
         />
