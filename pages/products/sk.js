@@ -20,10 +20,10 @@ function Sk() {
       <Head>
         <title>Polnische Fenster Vorsatzrollladen SK</title>
         <meta name='description'
-              content='Aluprof Vorsatzrollladen SK. 3d Visualisierung'
+              content='Aluprof Vorsatzrollladen SK eckig. 3d Visualisierung'
         />
          <meta name='keywords'
-              content='rollladen, vorsatzrollladen aus polen, aluprof, sk'
+              content='rollladen, vorsatzrollladen aus polen, aluprof, sk, eckig'
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -37,7 +37,7 @@ function Sk() {
          
         <Image
         src={skImage}
-        alt="Vorsatzrollladen Aluprof SK"
+        alt="Vorsatzrollladen Aluprof SK eckig"
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided
@@ -49,7 +49,7 @@ function Sk() {
         <div className="w-100 w-50-l mt1 mt5-l pa3">
         <Image
         src={skImage2}
-        alt="Vorsatzrollladen SK"
+        alt="Vorsatzrollladen SK eckig"
         // width={500} automatically provided
         // height={500} automatically provided
         // blurDataURL="data:..." automatically provided

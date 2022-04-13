@@ -3,7 +3,8 @@ import PvcColourStrip from "./pvccolourstrip";
 import {
   Ael,
   Sk,
-  Sko
+  Sko,
+  Skp
 } from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
@@ -80,6 +81,10 @@ function rollovisualisation({ ...props }) {
 
             {props.product == "sko" && (
                 <Sko rotation-y={Math.PI * 2.33} mode={rolloMode} />
+              )}  
+
+            {props.product == "skp" && (
+                <Skp rotation-y={Math.PI * 2.33} mode={rolloMode} />
               )}  
 
               <Environment preset="park" />
@@ -236,6 +241,7 @@ function rollovisualisation({ ...props }) {
             <ul>
             {props.product === "sk" && (<li><b>Eckiger Kasten</b></li>)}
             {props.product === "sko" && (<li><b>Halbrunder Kasten</b></li>)}
+            {props.product === "skp" && (<li><b>Viertelrunder Kasten</b></li>)}
             <li><b>Wartungsklappe von außen.</b></li>
               <li>Ausgeschäumte Aluminium Lamellen</li>
               <li>Gurtantrieb, oder Motorenantrieb, zur Wahl.</li>
@@ -254,6 +260,12 @@ function rollovisualisation({ ...props }) {
             {props.product === "sko" && (
               <li>
                 Kastenhöhen: 142 mm, 170 mm, 185 mm, 212 mm{" "}
+              </li>
+              )}
+
+            {props.product === "skp" && (
+              <li>
+                Kastenhöhen: 138 mm, 151 mm, 166 mm, 181 mm, 206 mm.{" "}
               </li>
               )}
               <li><b>Wölbung</b> der Lamellen zeigt <b>nach innen</b>.</li>
