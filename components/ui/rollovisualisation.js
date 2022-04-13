@@ -1,15 +1,8 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
 import {
-  HsLs,
-  HsPd,
-  Ct70Ht,
-  Ct70Nt,
-  LivingHt,
-  LivingNt,
-  K88Ht,
-  K88Nt,
   Ael,
+  Sk
 } from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
@@ -24,7 +17,8 @@ import {
 import { getAllColours } from "../data/colours";
 
 function rollovisualisation({ ...props }) {
-  const [mitDaemmung, setMitDaemmung] = useState(false);
+  const [rolloMode, setRolloMode] = useState("verb");
+  const [mitDaemmung, setMitDaemmung] = useState(false)
 
   function Loader() {
     const { progress } = useProgress();
@@ -74,9 +68,14 @@ function rollovisualisation({ ...props }) {
             </Suspense>
 
             <Suspense fallback={<Loader />}>
+
               {props.product == "ael" && (
                 <Ael rotation-y={Math.PI * 2.33} mitDaemmung={mitDaemmung} />
               )}
+
+            {props.product == "sk" && (
+                <Sk rotation-y={Math.PI * 2.33} mode={rolloMode} />
+              )}  
 
               <Environment preset="park" />
               <ambientLight intensity={0.5} />
@@ -102,8 +101,9 @@ function rollovisualisation({ ...props }) {
             </h4>
           </div>
 
-          {/* nazwa koloru */}
-          <div className="w-90 tc">
+          {/* AEL */}
+          {props.product === "ael" && (
+          <div className="w-90 tc mt4">
             <button
               className={
                 mitDaemmung === false
@@ -125,8 +125,8 @@ function rollovisualisation({ ...props }) {
             >
               Mit Dämmung
             </button>
-            {props.product == "ael" && (
-            <div className="silver f5 tl mt4">
+           
+            <div className="f5 tl mt4">
             <ul>
               <li>
                 Rollladenkasten wird{" "}
@@ -147,13 +147,106 @@ function rollovisualisation({ ...props }) {
                 Verschiedene Farben der Kästen, Führunsschienen und Lamellen.
               </li>
               <li>Kastenhöhen: 170 mm, 210 mm, 240mm. </li>
-              <li>Wölbung der Lamellen zeigt nach außen.</li>
-              
-             
+              <li><b>Wölbung</b> der Lamellen zeigt <b>nach außen</b>.</li>
+                      
             </ul>
             </div>
-            )}
           </div>
+          )}
+           {/* KONIEC AEL */}
+
+             {/* SK */}
+          {props.product === "sk" && (
+          <div className="w-90 tc">
+            <button
+              className={
+                rolloMode === "ohne"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("ohne")}
+            >
+              Montage direkt am Fenster
+            </button>
+
+            <button
+              className={
+                rolloMode === "verb"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("verb")}
+            >
+              Montage am Fenster mit Verbreiterung
+            </button>
+
+            <button
+              className={
+                rolloMode === "wand_rahmen"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("wand_rahmen")}
+            >
+              Montage mit Kasten an der Wand
+            </button>
+
+            <button
+              className={
+                rolloMode === "wand_wand"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("wand_wand")}
+            >
+              Montage komplett an der Wand
+            </button>
+           
+            <div className="f5 tl mt4">
+
+            {rolloMode === "ohne" && (
+              <div className="red">
+                <p >Diese Montageart wird nicht empfohlen. Der Rollladenkasten ist von innen sichtbar. Um das zu vermeiden verwenden Sie bitte Verbreiterung oben am Fenster. (Taste "Montage am Fenster mit Verbreiterung")</p>
+              </div>
+            )}
+
+            {rolloMode === "verb" && (
+              <div>
+                <p >Oben am Fensterblendrahmen wird eine Rahmenverbreiterung verwendet. Das Fenster wird um soviel kleiner. An der Verbreiterung wird der Kasten befestigt. Der Vorteil liegt in der Optik. Man vermeidet den von innen sichtbaren Rollladenkasten.</p>
+              </div>
+            )}
+
+            {rolloMode === "wand_rahmen" && (
+              <div>
+                <p >Das Fenster selbst wird bündig mit der Außenwand montiert. Der Rollladenkasten kommt dann an die Wand und die Führungsschienen an den Fenster Blendrahmen. Vorteil: Mehr Fensterfläche. Nachteil: Kasten ragt von der Fassade aus. </p>
+              </div>
+            )}
+
+            {rolloMode === "wand_wand" && (
+              <div>
+                <p>Rollladen Kasten und Führungsschienen werden an der Wand befestigt. Fenster kann dann in der Leibung nach innen rücken (zB. bei der Außenleibung im Altbau), muss nicht außen bündig montiert werden. Vorteile: Flexibel, Mehr Fensterfläche. Nachteil: Kasten ragt von der Fassade aus. </p>
+              </div>
+            )}  
+
+            <ul>
+            <li><b>Wartungsklappe von außen.</b></li>
+              <li>Ausgeschäumte Aluminium Lamellen</li>
+              <li>Gurtantrieb, oder Motorenantrieb, zur Wahl.</li>
+              <li>Möglichkeit der Verwendung von Insektengitter.</li>
+              <li>
+                Verschiedene Farben der Kästen, Führunsschienen und Lamellen.
+              </li>
+              <li>39 mm Lamellen im Standard.</li>
+              <li>
+                Kastenhöhen: 127,5 mm, 138 mm, 151 mm, 168 mm, 183 mm, 208 mm.{" "}
+              </li>
+              <li><b>Wölbung</b> der Lamellen zeigt <b>nach innen</b>.</li>
+                      
+            </ul>
+            </div>
+          </div>
+          )}
+           {/* KONIEC SK */}
 
           {/* przyciski / strony kolorów */}
         </div>
@@ -161,9 +254,13 @@ function rollovisualisation({ ...props }) {
     </div>
   );
 
-  function toggleInsulation(withInsulation) {
-      setMitDaemmung(withInsulation)
+  function changeRolloMode(mode) {
+      setRolloMode(mode)
   }
+
+  function toggleInsulation(mode) {
+    setMitDaemmung(mode)
+}
 }
 
 export default rollovisualisation;
