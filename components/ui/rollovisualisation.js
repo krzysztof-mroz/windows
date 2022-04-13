@@ -229,6 +229,7 @@ function rollovisualisation({ ...props }) {
             )}  
 
             <ul>
+            <li><b>Eckiger Kasten</b></li>
             <li><b>Wartungsklappe von außen.</b></li>
               <li>Ausgeschäumte Aluminium Lamellen</li>
               <li>Gurtantrieb, oder Motorenantrieb, zur Wahl.</li>
