@@ -1124,3 +1124,140 @@ if (props.mode === "ohne") {
 return show()
 }
 
+export function Sp({ ...props }) {
+  const group = useRef()
+  const snap = useSnapshot(state);
+  const texPlaster = useTexture("/colors/plaster.png");
+  const texStyrofoamNormal = useTexture("/colors/styrofoam_normal.jpg");
+  const texBeton = useTexture("/colors/beton.jpg");
+  const { nodes, materials } = useGLTF('/sp.glb')
+
+
+  function wall() {
+    return (
+      <group ref={group} {...props} dispose={null}>
+       <mesh geometry={nodes.wall.geometry} material={materials.Concrete} position={[-20.38, -16.63, -3]} rotation={[0, -1.57, 0]}   material-map={texBeton}/>
+      </group>
+      )    
+    }
+    function rollo1() {
+      return (
+      <group ref={group} {...props} dispose={null}> 
+       <group position={[20.67, 83.22, -16]}>
+        <group position={[-20.54, -39.39, 41.8]}>
+          <mesh geometry={nodes['v1alu-PVC'].geometry} material={nodes['v1alu-PVC'].material} material-color={snap.items.pvc}/>
+          <mesh geometry={nodes['v1alu-Iron'].geometry} material={nodes['v1alu-Iron'].material} material-color={snap.items.aluminium} material-roughness={0.4}/>
+        </group>
+        <mesh geometry={nodes.v1lamellen.geometry} material={materials.Mat} position={[-20.44, -4.03, 33.75]} material-color={snap.items.gasketgrey}/>
+      </group>
+      </group>
+      )      
+    }
+
+    function rollo2() {
+      return (
+      <group ref={group} {...props} dispose={null}> 
+       <group position={[20.67, 65.12, -33.34]}>
+        <group position={[-20.54, -39.39, 41.8]}>
+          <mesh geometry={nodes['v2alu-PVC'].geometry} material={nodes['v2alu-PVC'].material} material-color={snap.items.pvc}/>
+          <mesh geometry={nodes['v2alu-Iron'].geometry} material={nodes['v2alu-Iron'].material} material-color={snap.items.pvc}/>
+        </group>
+        <mesh geometry={nodes.v2lamellen.geometry} material={materials.Mat} position={[-20.44, -4.03, 33.75]} material-color={snap.items.gasketgrey}/>
+      </group>
+      </group>
+      )      
+    }
+
+    function verb() {
+      return (
+       <group ref={group} {...props} dispose={null}> 
+          <group position={[-4.34, 25.39, -19.06]}>
+        <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[4.51, 62.41, 11.79]} rotation={[Math.PI, -1.57, 0]} material-color={snap.items.steel}/>
+        <mesh geometry={nodes.verb_1.geometry} material={nodes.verb_1.material} position={[4.51, 62.76, 13]} rotation={[Math.PI, -1.57, 0]} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[4.55, 56.78, 12.64]} rotation={[Math.PI, -1.57, 0]} material-color={snap.items.gasketgrey}/>
+      </group>
+      </group>
+      )      
+    }
+
+    function window1() {
+      return (
+       <group ref={group} {...props} dispose={null}> 
+        <group position={[16.65, 26.99, -19.2]}>
+        <group position={[-16.49, -6.18, 12.14]}>
+          <mesh geometry={nodes['w1profile-gasket'].geometry} material={nodes['w1profile-gasket'].material} material-color={snap.items.gasketgrey}/>
+          <mesh geometry={nodes['w1profile-PVC'].geometry} material={nodes['w1profile-PVC'].material} material-color={snap.items.pvc}/>
+        </group>
+        <mesh geometry={nodes.w1FBA.geometry} material={nodes.w1FBA.material} position={[-16.49, -69, 12.4]} rotation={[0, 1.57, 0]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.w1glas.geometry} material={nodes.w1glas.material} position={[-19.53, -5.03, 11.56]} rotation={[0, 1.57, 0]} 
+        material-roughness={0.25}
+         material-clearcoat={1}
+         material-reflectivity={1}
+         material-transparent
+         material-opacity={0.92}
+         material-transmission={0}/>
+        <mesh geometry={nodes.w1beschlag.geometry} material={materials.F9} position={[-18.14, -8.19, 4.88]} material-color={snap.items.aluminium} material-roughness={0.4}/>
+      </group>
+      </group>
+      )      
+    }
+
+    function window2() {
+      return (
+       <group ref={group} {...props} dispose={null}> 
+       <group position={[15.11, 19.66, -2.44]}>
+        <group position={[-14.84, 7.5, 12.63]}>
+          <mesh geometry={nodes['w2profile-gasket'].geometry} material={nodes['w2profile-gasket'].material} material-color={snap.items.gasketgrey}/>
+          <mesh geometry={nodes['w2profile-PVC'].geometry} material={nodes['w2profile-PVC'].material} material-color={snap.items.pvc}/>
+        </group>
+        <mesh geometry={nodes.w2FBA.geometry} material={nodes.w2FBA.material} position={[-14.83, -61.67, 12.89]} rotation={[0, 1.57, 0]} material-color={snap.items.gasketgrey}/>
+        <mesh geometry={nodes.w2glas.geometry} material={nodes.w2glas.material} position={[-17.88, 8.64, 12.06]} rotation={[0, 1.57, 0]} 
+        material-roughness={0.25}
+        material-clearcoat={1}
+        material-reflectivity={1}
+        material-transparent
+        material-opacity={0.92}
+        material-transmission={0}/>
+        <mesh geometry={nodes.w2beschlag.geometry} material={materials.F9} position={[-16.49, 5.49, 5.37]} material-color={snap.items.aluminium} material-roughness={0.4}/>
+      </group>
+      </group>
+      )      
+    }
+
+    function dg1() {
+      return (
+        <group ref={group} {...props} dispose={null}> 
+          <mesh geometry={nodes.insulation1.geometry} material={nodes.insulation1.material} position={[0.28, 104.01, 33.34]} rotation={[-Math.PI, 0, -Math.PI]} material-normalMap={texStyrofoamNormal}/>
+          <mesh geometry={nodes.dg1.geometry} material={nodes.dg1.material} position={[-20.39, -16.44, 26.08]} rotation={[0, -1.57, 0]} material-normalMap={texStyrofoamNormal}/>
+       </group>
+
+      )
+    }
+
+    function dg2() {
+      return (
+        <group ref={group} {...props} dispose={null}> 
+          <mesh geometry={nodes.insulation2.geometry} material={nodes.insulation2.material} position={[0.19, 85.87, 16.16]} rotation={[-Math.PI, 0, -Math.PI]} material-normalMap={texStyrofoamNormal}/>
+          <mesh geometry={nodes.dg2.geometry} material={nodes.dg2.material} position={[-20.67, -16.67, 21]} rotation={[0, -1.57, 0]} material-normalMap={texStyrofoamNormal}/>
+       </group>
+
+      )
+    }
+
+  function show() {
+
+    let toReturn = [];
+  
+  if (props.mode === "verb") { 
+    toReturn = [dg2(), window1(), wall(), rollo2(), verb()]
+   } else if (props.mode === "wand") {
+    toReturn = [rollo1(), dg1(), wall(),  window2()  ]
+   } 
+  
+    return toReturn
+   
+  }
+  
+  return show()
+}
+
