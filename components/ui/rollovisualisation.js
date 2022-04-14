@@ -5,7 +5,8 @@ import {
   Sk,
   Sko,
   Skp,
-  Sp
+  Sp,
+  Raf
 } from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
@@ -91,6 +92,10 @@ function rollovisualisation({ ...props }) {
             {props.product == "sp" && (
                 <Sp rotation-y={Math.PI * 2.33} mode={rolloMode} />
               )}  
+
+            {props.product == "raf" && (
+                <Raf rotation-y={Math.PI * 2.33} mode={rolloMode} />
+              )}          
 
               <Environment preset="park" />
               <ambientLight intensity={0.5} />
