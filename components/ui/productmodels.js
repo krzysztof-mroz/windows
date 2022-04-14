@@ -942,7 +942,7 @@ export function Skp({ ...props }) {
   function wall() {
     return (
       <group ref={group} {...props} dispose={null}>
-        <mesh geometry={nodes.wall.geometry} material={materials.Concrete} position={[-22.74, -8.7, -5.39]} rotation={[0, -1.57, 0]}  material-map={texBeton}/>
+        <mesh geometry={nodes.wall.geometry} material={materials.Concrete} position={[-22.74, -8.7, -5.39]} rotation={[0, -1.57, 0]}   material-map={texBeton}/>
       </group>
       )    
     }
@@ -956,10 +956,7 @@ export function Skp({ ...props }) {
           <mesh geometry={nodes['v1lamellen-Mat'].geometry} material={materials.Mat} material-color={snap.items.gasketgrey}/>
         </group>
        
-        <group position={[-19.66, -15.24, 25.6]}>
-          <mesh geometry={nodes['v1skp_alu-PVC'].geometry} material={nodes['v1skp_alu-PVC'].material} material-color={snap.items.pvc}/>
-          <mesh geometry={nodes['v1skp_alu-weiss'].geometry} material={nodes['v1skp_alu-weiss'].material}  material-color={snap.items.pvc}/>
-        </group>
+        <mesh geometry={nodes.v1skp_alu.geometry} material={nodes.v1skp_alu.material} position={[-18.19, -15.24, 25.6]} material-color={snap.items.pvc}/>
       </group>
       </group>
       )      
@@ -968,15 +965,13 @@ export function Skp({ ...props }) {
     function rollo1b() {
       return (
        <group ref={group} {...props} dispose={null}> 
-           <group position={[16.08, 48.82, -20.48]}>
+        <group position={[16.08, 48.82, -20.48]}>
+        
         <group position={[-19.58, 39.48, 19.44]}>
           <mesh geometry={nodes.v1lamellen2_1.geometry} material={materials['default']} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['v1lamellen2-Mat'].geometry} material={materials.Mat} material-color={snap.items.gasketgrey}/>
         </group>
-        <group position={[-19.66, -15.24, 25.6]}>
-          <mesh geometry={nodes['v1skp_alu-PVC'].geometry} material={nodes['v1skp_alu-PVC'].material} material-color={snap.items.pvc}/>
-          <mesh geometry={nodes['v1skp_alu-weiss'].geometry} material={nodes['v1skp_alu-weiss'].material} material-color={snap.items.pvc}/>
-        </group>
+        <mesh geometry={nodes.v1skp_alu.geometry} material={nodes.v1skp_alu.material} position={[-18.19, -15.24, 25.6]} material-color={snap.items.pvc}/>
       </group>
       </group>
       )      
@@ -985,15 +980,12 @@ export function Skp({ ...props }) {
     function rollo2() {
       return (
        <group ref={group} {...props} dispose={null}> 
-          <group position={[16.08, 56.15, -4.34]}>
+         <group position={[17.58, 56.15, -4.34]}>
         <group position={[-19.58, 32.57, 19.49]}>
           <mesh geometry={nodes.v2lamellen_1.geometry} material={materials['default']} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['v2lamellen-Mat'].geometry} material={materials.Mat} material-color={snap.items.gasketgrey}/>
         </group>
-        <group position={[-19.72, -13.78, 24.81]}>
-          <mesh geometry={nodes['v2skp_alu-PVC'].geometry} material={nodes['v2skp_alu-PVC'].material} material-color={snap.items.pvc}/>
-          <mesh geometry={nodes['v2skp_alu-weiss'].geometry} material={nodes['v2skp_alu-weiss'].material} material-color={snap.items.pvc}/>
-        </group>
+        <mesh geometry={nodes.v2skp_alu.geometry} material={nodes.v2skp_alu.material} position={[-19.72, -13.78, 24.81]} material-color={snap.items.pvc}/>
       </group>
       </group>
       )      
@@ -1002,15 +994,12 @@ export function Skp({ ...props }) {
     function rollo3() {
       return (
        <group ref={group} {...props} dispose={null}> 
-           <group position={[16.08, 48.82, -5]}>
+          <group position={[16.08, 48.82, -5]}>
         <group position={[-17.91, 39.9, 20.15]}>
           <mesh geometry={nodes.v3lamellen_1.geometry} material={materials['default']} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['v3lamellen-Mat'].geometry} material={materials.Mat} material-color={snap.items.gasketgrey}/>
         </group>
-        <group position={[-18.06, -6.45, 25.48]}>
-          <mesh geometry={nodes['v3skp_alu-PVC'].geometry} material={nodes['v3skp_alu-PVC'].material} material-color={snap.items.pvc}/>
-          <mesh geometry={nodes['v3skp_alu-weiss'].geometry} material={nodes['v3skp_alu-weiss'].material} material-color={snap.items.pvc}/>
-        </group>
+        <mesh geometry={nodes.v3skp_alu.geometry} material={nodes.v3skp_alu.material} position={[-18.06, -6.45, 25.48]} material-color={snap.items.pvc}/>
       </group>
       </group>
       )      
@@ -1019,7 +1008,7 @@ export function Skp({ ...props }) {
     function verb() {
       return (
        <group ref={group} {...props} dispose={null}> 
-         <group position={[-4.92, 54.3, -19.49]}>
+        <group position={[-3.45, 54.3, -19.49]}>
         <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[1.18, 41.42, 11.79]} rotation={[Math.PI, -1.57, 0]} material-color={snap.items.steel}/>
         <mesh geometry={nodes.verb_1.geometry} material={nodes.verb_1.material} position={[1.18, 41.77, 13]} rotation={[Math.PI, -1.57, 0]} material-color={snap.items.pvc}/>
         <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[1.22, 35.8, 12.64]} rotation={[Math.PI, -1.57, 0]} material-color={snap.items.gasketgrey}/>
@@ -1031,20 +1020,19 @@ export function Skp({ ...props }) {
     function window1() {
       return (
        <group ref={group} {...props} dispose={null}> 
-            <group position={[16.08, 55.91, -19.64]}>
+        <group position={[17.54, 55.91, -19.64]}>
         <group position={[-19.82, -27.16, 12.14]}>
           <mesh geometry={nodes['w1profile-gasket'].geometry} material={nodes['w1profile-gasket'].material} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['w1profile-PVC'].geometry} material={nodes['w1profile-PVC'].material} material-color={snap.items.pvc}/>
         </group>
         <mesh geometry={nodes.w1FBA.geometry} material={nodes.w1FBA.material} position={[-19.82, -89.99, 12.4]} rotation={[0, 1.57, 0]} material-color={snap.items.gasketgrey}/>
         <mesh geometry={nodes.w1glas.geometry} material={nodes.w1glas.material} position={[-22.86, -26.02, 11.56]} rotation={[0, 1.57, 0]} 
-        material-roughness={0.25}
-        material-clearcoat={1}
-        material-reflectivity={1}
-        material-transparent
-        material-opacity={0.92}
-        material-transmission={0}
-        />
+         material-roughness={0.25}
+         material-clearcoat={1}
+         material-reflectivity={1}
+         material-transparent
+         material-opacity={0.92}
+         material-transmission={0}/>
         <mesh geometry={nodes.w1beschlag.geometry} material={materials.F9} position={[-21.47, -29.17, 4.88]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       </group>
       </group>
@@ -1054,19 +1042,19 @@ export function Skp({ ...props }) {
     function window2a() {
       return (
        <group ref={group} {...props} dispose={null}> 
-          <group position={[16.08, 48.58, -20.3]}>
+         <group position={[17.54, 48.58, -20.3]}>
         <group position={[-19.82, -13.91, 12.8]}>
           <mesh geometry={nodes['w2profile-gasket'].geometry} material={nodes['w2profile-gasket'].material} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['w2profile-PVC'].geometry} material={nodes['w2profile-PVC'].material} material-color={snap.items.pvc}/>
         </group>
         <mesh geometry={nodes.w2FBA.geometry} material={nodes.w2FBA.material} position={[-19.82, -82.66, 13.06]} rotation={[0, 1.57, 0]} material-color={snap.items.gasketgrey}/>
         <mesh geometry={nodes.w2glas.geometry} material={nodes.w2glas.material} position={[-22.86, -12.77, 12.23]} rotation={[0, 1.57, 0]} 
-        material-roughness={0.25}
-        material-clearcoat={1}
-        material-reflectivity={1}
-        material-transparent
-        material-opacity={0.92}
-        material-transmission={0}/>
+         material-roughness={0.25}
+         material-clearcoat={1}
+         material-reflectivity={1}
+         material-transparent
+         material-opacity={0.92}
+         material-transmission={0}/>
         <mesh geometry={nodes.w2beschlag.geometry} material={materials.F9} position={[-21.47, -15.92, 5.54]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       </group>
       </group>
@@ -1076,16 +1064,16 @@ export function Skp({ ...props }) {
     function window2b() {
       return (
        <group ref={group} {...props} dispose={null}> 
-          <group position={[16.08, 48.58, -20.3]}>
+          <group position={[17.54, 48.58, -20.3]}>
         <group position={[-19.82, -13.91, 12.8]}>
           <mesh geometry={nodes['w2profile-gasket'].geometry} material={nodes['w2profile-gasket'].material} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['w2profile-PVC'].geometry} material={nodes['w2profile-PVC'].material} material-color={snap.items.pvc}/>
         </group>
         <mesh geometry={nodes.w2FBA.geometry} material={nodes.w2FBA.material} position={[-19.82, -82.66, 13.06]} rotation={[0, 1.57, 0]} material-color={snap.items.gasketgrey}/>
         <mesh geometry={nodes.w2glas.geometry} material={nodes.w2glas.material} position={[-22.86, -12.77, 12.23]} rotation={[0, 1.57, 0]} 
-        material-roughness={0.25}
-        material-clearcoat={0}
-        material-transmission={0.1}/>
+          material-roughness={0.25}
+          material-clearcoat={0}
+          material-transmission={0.1}/>
         <mesh geometry={nodes.w2beschlag.geometry} material={materials.F9} position={[-21.47, -15.92, 5.54]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       </group>
       </group>
@@ -1096,19 +1084,19 @@ export function Skp({ ...props }) {
   function window3() {
   return (
     <group ref={group} {...props} dispose={null}>  
-      <group position={[16.08, 48.58, -4.82]}>
+       <group position={[16.08, 48.58, -4.82]}>
         <group position={[-18.17, -13.49, 12.63]}>
           <mesh geometry={nodes['w3profile-gasket'].geometry} material={nodes['w3profile-gasket'].material} material-color={snap.items.gasketgrey}/>
           <mesh geometry={nodes['w3profile-PVC'].geometry} material={nodes['w3profile-PVC'].material} material-color={snap.items.pvc}/>
         </group>
         <mesh geometry={nodes.w3FBA.geometry} material={nodes.w3FBA.material} position={[-18.16, -82.66, 12.89]} rotation={[0, 1.57, 0]} material-color={snap.items.gasketgrey}/>
         <mesh geometry={nodes.w3glas.geometry} material={nodes.w3glas.material} position={[-21.21, -12.34, 12.06]} rotation={[0, 1.57, 0]} 
-         material-roughness={0.25}
-         material-clearcoat={1}
-         material-reflectivity={1}
-         material-transparent
-         material-opacity={0.92}
-         material-transmission={0}/>
+        material-roughness={0.25}
+        material-clearcoat={1}
+        material-reflectivity={1}
+        material-transparent
+        material-opacity={0.92}
+        material-transmission={0}/>
         <mesh geometry={nodes.w3beschlag.geometry} material={materials.F9} position={[-19.82, -15.5, 5.37]} material-color={snap.items.aluminium} material-roughness={0.4}/>
       </group>
     </group>
@@ -1135,3 +1123,4 @@ if (props.mode === "ohne") {
 
 return show()
 }
+
