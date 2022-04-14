@@ -6,6 +6,7 @@ import rafImage2 from "../../public/raf2.jpg";
 import rafImage3 from "../../public/raf3.jpg";
 import rafImage4 from "../../public/raf_c80.jpg";
 import rafImage5 from "../../public/raf_z90.jpg";
+import rafImage6 from "../../public/raf_z90_2.jpg";
 import HeaderDiv from "../../components/ui/headerdiv";
 import Rollovisualisation from "../../components/ui/rollovisualisation";
 import { SkinnedMesh } from "three";
@@ -88,7 +89,14 @@ function Raf() {
           />
         </div>
         <div className="w-100 w-50-l mt1 mt5-l pa3">
-          
+        <Image
+            src={rafImage6}
+            alt="Raffstore"
+            // width={500} automatically provided
+            // height={500} automatically provided
+            // blurDataURL="data:..." automatically provided
+            // placeholder="blur" // Optional blur-up while loading
+          />
         </div>
       </div>
     </Fragment>

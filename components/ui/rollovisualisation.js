@@ -238,6 +238,80 @@ function rollovisualisation({ ...props }) {
           )}
            {/* KONIEC SP */}
 
+            {/* RAF */}
+          {props.product === "raf" && (
+          <div className="w-90 tc mt4">
+            <button
+              className={
+                rolloMode === "wand"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("wand")}
+            >
+              Montage an der Wand ohne Dämmung, Lamellen C80
+            </button>
+
+            <button
+              className={
+                rolloMode === "wand_z"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("wand_z")}
+            >
+              Montage an der Wand mit Dämmung, Lamellen Z90
+            </button>
+
+            <button
+              className={
+                rolloMode === "verb"
+                  ? "w3-button w3-border w3-border-red w3-deep-orange mv1 mh2 "
+                  : "w3-button w3-border w3-border-orange w3-sand mv1 mh2 "
+              }
+              onMouseDown={() => changeRolloMode("verb")}
+            >
+              Montage am Fenster mit Verbreiterung, Lamellen C80
+            </button>
+           
+            <div className="f5 tl mt4">
+
+            {rolloMode === "verb" && (
+              <div>
+                <p >Oben am Fensterblendrahmen wird eine Rahmenverbreiterung verwendet. Das Fenster wird um soviel kleiner. An der Verbreiterung wird der Kasten befestigt. Man vermeidet dadurch den von innen sichtbaren Rollladenkasten. Von Außen wird an den Kasten Dämmung angebracht.</p>
+              </div>
+            )}
+            
+            {rolloMode === "wand" && (
+              <div>
+                <p >Das Fenster wird mit der Außenwand bündig montiert. Der Kasten wird an der Wand befestigt, die Führungsschienen an dem Fensterblendrahmen. Man erreicht dadurch mehr Fensterfläche. Der Kasten wird dann in der Dämmung "versteckt". Entsprechende Dämmungsschicht wird benötigt.</p>
+              </div>
+            )}
+            <ul>
+            <li><b>Verputzbarer Kasten.</b></li>
+            <li><b>Wartungsklappe von außen unten.</b></li>
+              <li>Ausgeschäumte Aluminium Lamellen</li>
+              <li>Gurtantrieb, oder Motorenantrieb, zur Wahl.</li>
+              <li>Möglichkeit der Verwendung von Insektengitter.</li>
+              <li>
+                Verschiedene Farben der Kästen, Führunsschienen und Lamellen.
+              </li>
+              <li>39 mm Lamellen im Standard.</li>
+              
+             
+              <li>
+                Kastenhöhen: 138 mm, 166 mm, 151 mm, 181 mm, 207 mm.{" "}
+              </li>
+            
+
+              <li><b>Wölbung</b> der Lamellen zeigt <b>nach innen</b>.</li>
+                      
+            </ul>
+            </div>
+          </div>
+          )}
+           {/* KONIEC RAF */}
+
 
              {/* SK SKO SKP */}
           {(props.product === "sk" || props.product === "sko" || props.product === "skp") && (
