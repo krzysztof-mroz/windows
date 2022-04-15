@@ -92,6 +92,12 @@ function footer() {
               <Link href="/products/skp">
                 <a className="f6 fw4 no-underline  db  ph3">Vorsatzrollladen viertelrund SKP</a>     
               </Link>
+              <Link href="/products/sp">
+                <a className="f6 fw4 no-underline  db  ph3">Vorsatzrollladen unterputz SP</a>     
+              </Link>
+              <Link href="/products/raf">
+                <a className="f6 fw4 no-underline  db  ph3">Vorsatzraffstoren</a>     
+              </Link>
               <Link href="/beschattung">
                 <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
               </Link>

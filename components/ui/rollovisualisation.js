@@ -278,35 +278,30 @@ function rollovisualisation({ ...props }) {
 
             {rolloMode === "verb" && (
               <div>
-                <p >Oben am Fensterblendrahmen wird eine Rahmenverbreiterung verwendet. Das Fenster wird um soviel kleiner. An der Verbreiterung wird der Kasten befestigt. Man vermeidet dadurch den von innen sichtbaren Rollladenkasten. Von Außen wird an den Kasten Dämmung angebracht.</p>
+                <p >Oben am Fensterblendrahmen wird eine Rahmenverbreiterung verwendet. Das Fenster wird um soviel kleiner. An der Verbreiterung wird der Kasten befestigt. Von Außen wird an den Kasten Dämmung angebracht. Es ist eine sinnvolle <b>Alternative zu den Aufsatzraffstoren.</b></p>
               </div>
             )}
             
             {rolloMode === "wand" && (
               <div>
-                <p >Das Fenster wird mit der Außenwand bündig montiert. Der Kasten wird an der Wand befestigt, die Führungsschienen an dem Fensterblendrahmen. Man erreicht dadurch mehr Fensterfläche. Der Kasten wird dann in der Dämmung "versteckt". Entsprechende Dämmungsschicht wird benötigt.</p>
+                <p >Das Fenster wird mit der Außenwand bündig montiert. Der Kasten wird an der Wand befestigt, die Führungsschienen an dem Fensterblendrahmen. Man erreicht dadurch mehr Fensterfläche. Blende bleibt außen sichtbatr in dieser Variante.</p>
               </div>
             )}
-            <ul>
-            <li><b>Verputzbarer Kasten.</b></li>
-            <li><b>Wartungsklappe von außen unten.</b></li>
-              <li>Ausgeschäumte Aluminium Lamellen</li>
-              <li>Gurtantrieb, oder Motorenantrieb, zur Wahl.</li>
-              <li>Möglichkeit der Verwendung von Insektengitter.</li>
-              <li>
-                Verschiedene Farben der Kästen, Führunsschienen und Lamellen.
-              </li>
-              <li>39 mm Lamellen im Standard.</li>
-              
-             
-              <li>
-                Kastenhöhen: 138 mm, 166 mm, 151 mm, 181 mm, 207 mm.{" "}
-              </li>
-            
-
-              <li><b>Wölbung</b> der Lamellen zeigt <b>nach innen</b>.</li>
-                      
-            </ul>
+            {rolloMode === "wand_z" && (
+              <div>
+                <p >Das Fenster wird mit der Außenwand bündig montiert. Der Kasten wird an der Wand befestigt, Zusätzliche Dämmung ist möglich. Die Führungsschienen kommen an den Fensterblendrahmen. Man erreicht dadurch mehr Fensterfläche. Blende "versteckt" man dann in der Dämmungsschicht.</p>
+              </div>
+            )}
+            <ul> 
+					   <li>Moderner Schutz gegen Sonnenstrahlen.</li>
+					   <li>Verschiedene Farben.</li>
+					   <li><b>Stufenlose Regulierung des Tageslichtes im Raum.</b></li>
+					   <li>Einfache Montage.</li>
+					   <li>Motorsteuerung im Standard, Gruppensteuerungen möglich.</li>
+					   <li>C80 oder Z90 Aluminiumlamellen. <b>Z90 für die volle Beschattung</b>.</li>
+             <li>Verfügbare Höhen: 190 mm, 240 mm, 290 mm, 340 mm, 390 mm, 440 mm.</li>
+             <li>Maximale Breite 4000 mm ohne Teilung.</li>
+				  </ul>
             </div>
           </div>
           )}
