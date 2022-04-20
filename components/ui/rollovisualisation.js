@@ -249,7 +249,7 @@ function rollovisualisation({ ...props }) {
               }
               onMouseDown={() => changeRolloMode("wand")}
             >
-              Montage an der Wand ohne Dämmung, Lamellen C80
+              Wandmontage ohne Dämmung, Lamellen C80
             </button>
 
             <button
@@ -260,7 +260,7 @@ function rollovisualisation({ ...props }) {
               }
               onMouseDown={() => changeRolloMode("wand_z")}
             >
-              Montage an der Wand mit Dämmung, Lamellen Z90
+              Wandmontage mit Dämmung, Lamellen Z90
             </button>
 
             <button
@@ -271,7 +271,7 @@ function rollovisualisation({ ...props }) {
               }
               onMouseDown={() => changeRolloMode("verb")}
             >
-              Montage am Fenster mit Verbreiterung, Lamellen C80
+              Montage mit Verbreiterung, Lamellen C80
             </button>
            
             <div className="f5 tl mt4">

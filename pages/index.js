@@ -7,6 +7,7 @@ import HeaderDiv from "../components/ui/headerdiv";
 import WarumDiv from "../components/ui/warumdiv";
 import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
+import ProductLink from "../components/ui/blocks/productlink";
 
 
 function StartPage() {
@@ -28,6 +29,12 @@ function StartPage() {
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
       <Visualisation />
+      <div className="w-100 flex flex-wrap justify-around">
+       
+        
+
+
+      </div>
       <Description />
       <WarumDiv />
       <ActionDiv />
