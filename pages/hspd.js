@@ -14,7 +14,7 @@ function HsPd() {
 
     <Fragment>
       <Head>
-        <title>Polnische Fenster Schüco Living Slide</title>
+        <title>Polnische Fenster Kömmerling Premidoor 88</title>
         <meta name='description'
               content='Kömmerling Hebe Schiebe Premidoor 88 visualisierung. 3d Visualisierung'
         />
