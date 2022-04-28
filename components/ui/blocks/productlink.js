@@ -1,7 +1,24 @@
 function ProductLink() {
   return (
-    <div className="">
-      <div className="flex flex-wrap justify-around fl w-100 b--moon-gray pa2">
+    
+
+      <div className=" fl b--moon-gray ba pa2 mh2">
+     
+          <div className="">
+             <img src="/pics/producticons/ct70_ht.png"></img>
+          </div>
+          
+           
+       
+      </div>
+    
+  );
+}
+
+export default ProductLink;
+
+{/**  
+<div className="flex flex-wrap justify-around fl w-100 b--moon-gray pa2">
       <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
           type="submit"
@@ -16,8 +33,5 @@ function ProductLink() {
         </button>
        
       </div>
-    </div>
-  );
-}
 
-export default ProductLink;
+**/}

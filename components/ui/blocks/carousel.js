@@ -64,7 +64,7 @@ const Carousel = (props) => {
                 &lt;
               </button>}
                 <div className={styles.carouselContentWrapper} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-                    <div className={styles.carouselContent}  style={{ transform: `translateX(-${currentIndex * (100)}%)`,  width: `calc(100% / ${show})` }}>
+                    <div className={styles.carouselContent}  style={{ transform: `translateX(-${currentIndex * (100 )}%)`,  width: `calc(100% / ${show})` }}>
 
                         {children}
                     </div>
