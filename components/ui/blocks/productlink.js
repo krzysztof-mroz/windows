@@ -1,13 +1,12 @@
 function ProductLink() {
   return (
-    <div className="w-10 ma2">
+    <div className=" ma2">
       <div className="flex flex-wrap justify-around fl w-100 b--moon-gray pa2">
       <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
           type="submit"
           data-toggle="tooltip"
           data-placement="top"
-          title="Nachricht abschicken"
           onMouseDown={() => {}}
         >
              <div className="w-100">
