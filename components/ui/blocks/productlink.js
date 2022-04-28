@@ -2,7 +2,7 @@ function ProductLink() {
   return (
     
 
-      <div className=" fl b--moon-gray ba pa2 mh2">
+      
      
           <div className="">
              <img src="/pics/producticons/ct70_ht.png"></img>
@@ -10,7 +10,7 @@ function ProductLink() {
           
            
        
-      </div>
+     
     
   );
 }
