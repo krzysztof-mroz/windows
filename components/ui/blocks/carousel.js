@@ -3,7 +3,7 @@ import styles from './carousel.module.css'
 import { useState, useEffect } from "react";
 
 const Carousel = (props) => {
-    const {children} = props
+    const {children, show} = props
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const [length, setLength] = useState(children.length)
@@ -64,7 +64,7 @@ const Carousel = (props) => {
                 &lt;
               </button>}
                 <div className={styles.carouselContentWrapper} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove}>
-                    <div className={styles.carouselContent} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+                    <div className={styles.carouselContent}  style={{ transform: `translateX(-${currentIndex * (100)}%)`,  width: `calc(100% / ${show})` }}>
 
                         {children}
                     </div>
