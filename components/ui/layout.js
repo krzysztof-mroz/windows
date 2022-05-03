@@ -7,11 +7,11 @@ import FooterDiv from "./footerdiv";
 function Layout(props) {
   return (
     <Fragment>
-      <div className="flex flex-wrap justify-center w-100">
+      <div className="ph2">
         <NaviBar />
 
         <div
-          className="flex flex-wrap justify-center mh2 mh6-l mw9"
+         
           style={{ marginTop: "70px" }}
         >
           <main>{props.children}</main>
