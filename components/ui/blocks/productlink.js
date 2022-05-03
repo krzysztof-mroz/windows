@@ -2,7 +2,7 @@ import styles from './productlink.module.css'
 import Link from "next/link";
 
 
-function ProductLink() {
+function ProductLink(props) {
   return (
     
 
@@ -12,7 +12,7 @@ function ProductLink() {
     <p>estiamted groan turbo mobile</p>
     <Link href="/tueren">
             <a className="f6 fw4 dim no-underline   db dib-l pv2 ph3">
-              Haustüren
+              {props.tekscior}
             </a>
           </Link>  
   </div>
