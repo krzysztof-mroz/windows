@@ -45,7 +45,7 @@ function StartPage() {
             <ProductLink />
             <ProductLink />
             <ProductLink />
-            <ProductLink />
+           
        
            
         </Carousel>

@@ -6,10 +6,10 @@ function ProductLink() {
     
 
       
-     <div className="flex flex-wrap justify-around fl w-100 b--moon-gray ba ma2">
+     <div className="flex flex-wrap justify-around fl w-100 b--moon-gray ba ma2 pa2">
          
        <img src="/pics/producticons/ct70_ht.png"></img>
-       <p className="gray f6">Schüco<br/>CT 70<br/>Haustür</p>
+       <p className="gray f6">Schüco Schüco Schüco Schüco Schüco Schüco Schüco Schüco Schüco Schüco<br/>CT 70<br/>Haustür</p>
       
   </div>
        
@@ -32,7 +32,7 @@ export default ProductLink;
              <div className="w-100">
              <img src="/pics/producticons/ct70_ht.png"></img>
              </div>
-             <p className="gray f6">Schüco<br/>CT 70<br/>Haustür</p>
+             <p className="gray f6">Schüco Schüco Schüco Schüco Schüco Schüco Schüco Schüco Schüco Schüco<br/>CT 70<br/>Haustür</p>
         </button>
        
       </div>
