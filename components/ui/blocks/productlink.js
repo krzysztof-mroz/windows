@@ -1,14 +1,17 @@
+import styles from './productlink.module.css' 
+
+
 function ProductLink() {
   return (
     
 
       
-     
-          <div className="">
-             <img src="/pics/producticons/ct70_ht.png"></img>
-          </div>
-          
-           
+     <div className="flex flex-wrap justify-around fl w-100 b--moon-gray ba ma2">
+         
+       <img src="/pics/producticons/ct70_ht.png"></img>
+       <p className="gray f6">Schüco<br/>CT 70<br/>Haustür</p>
+      
+  </div>
        
      
     

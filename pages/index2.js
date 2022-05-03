@@ -26,27 +26,19 @@ function StartPage() {
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
       <Visualisation />
-      <div className="flex flex-wrap justify-around mb1 w-100 ph3">
-      <Carousel show={4}>
+      <div className="ph3">
+      <Carousel show={3}>
             <ProductLink />
             <ProductLink />
             <ProductLink />
             <ProductLink />
             <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
-            <ProductLink />
+            
+            
+           
+           
            
             
-         
-           
            
 
 
