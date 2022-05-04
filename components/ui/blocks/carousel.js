@@ -44,7 +44,7 @@ const Carousel = (props) => {
     }, [children])
 
     const next = () => {
-        if (currentIndex < (length - show)) {
+        if (currentIndex < (length - show +2)) {
             setCurrentIndex(prevState => prevState + 1)
         }
     }
