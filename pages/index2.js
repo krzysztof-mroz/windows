@@ -94,7 +94,7 @@ const aehnliche = [
 
      
 
-      <Carousel show={Math.floor((size.width-50)/186) === 1 ? 2 : Math.floor((size.width-50)/186)}>
+      <Carousel show={Math.floor((size.width-50)/186)}>
            
             
           {aehnliche}
