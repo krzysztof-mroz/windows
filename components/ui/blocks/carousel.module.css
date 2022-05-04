@@ -54,10 +54,10 @@
     right: 24px;
 }
 
-/**
+
 @media (hover: none) and (pointer: coarse) {
     .leftArrow, .rightArrow {
         display: none;
     }
 }
-**/
+
