@@ -10,11 +10,11 @@ function ProductLink(props) {
 
       
     <div className="flex flex-column tc justify-around fl b--moon-gray ba ma2 pa2 w3-border w3-border-orange w3-sand" style={{width: 170}}>
-    <img src="/pics/producticons/ct70_ht.png"></img>
-    <p>estiamted groan turbo mobile</p>
-    <Link href="/tueren">
+    <img src={props.pic}></img>
+    <p className='f5 fw4'>{props.opis}</p>
+    <Link href={props.href}>
             <a className="f6 fw4 dim no-underline   db dib-l pv2 ph3">
-              {props.tekscior}
+              {props.linktext}
             </a>
           </Link>  
   </div>

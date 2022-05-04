@@ -53,26 +53,20 @@ function useWindowSize() {
 }
 
 const aehnliche = [
-  <ProductLink tekscior="item 1" />,
-  <ProductLink tekscior="item 2" />,
-  <ProductLink tekscior="item 3" />,
-  <ProductLink tekscior="item 4" />  ,
-  <ProductLink tekscior="item 5" />,
-  <ProductLink tekscior="item 3" />,
-  <ProductLink tekscior="item 4" />  ,
-  <ProductLink tekscior="item 5" />,
-  <ProductLink tekscior="item 3" />,
-  <ProductLink tekscior="item 4" />  ,
-  <ProductLink tekscior="item 5" />,
-  <ProductLink tekscior="item 3" />,
-  <ProductLink tekscior="item 4" />  ,
-  <ProductLink tekscior="item 5" />,
-  <ProductLink tekscior="item 3" />,
-  <ProductLink tekscior="item 4" />  ,
-  <ProductLink tekscior="item 5" />,
-  <ProductLink tekscior="item 3" />,
-  <ProductLink tekscior="item 4" />  ,
-  <ProductLink tekscior="item 5" />
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+ 
+ 
 ]
  
   return (
@@ -94,15 +88,20 @@ const aehnliche = [
 
      
 
-      <Carousel show={Math.floor((size.width-50)/186)}>
-           
-            
-          {aehnliche}
-        </Carousel>
+    
        
        
   
   <Description />
+
+  <Carousel show={Math.floor((size.width-50)/186)} title="Ähnliche Produkte:">      
+          {aehnliche}
+      </Carousel>
+
+      <Carousel show={Math.floor((size.width-50)/186)} title="Kaufen Sie zusätzlich:">      
+          {aehnliche}
+      </Carousel>
+      
       <WarumDiv />
       <ActionDiv />
     </Fragment>

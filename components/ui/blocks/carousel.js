@@ -57,8 +57,8 @@ const Carousel = (props) => {
 
 
     return (
-        <div className="flex tl flex-wrap justify-around mb1 w-100 ph4">
-        <h4 className="justify-start">Ähnliche Produkte:</h4>
+        <div className="flex tl flex-wrap tl justify-start mb1 w-100 ph4">
+        <h4 className="mh2">{props.title}</h4>
         <div className={styles.carouselContainer}>
             <div className={styles.carouselWrapper}>
             { currentIndex > 0 &&
