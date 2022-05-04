@@ -2,12 +2,14 @@ import styles from './productlink.module.css'
 import Link from "next/link";
 
 
+
+
 function ProductLink(props) {
   return (
     
 
       
-    <div className="flex flex-column tc justify-around fl b--moon-gray ba ma2 pa2" style={{width: 130}}>
+    <div className="flex flex-column tc justify-around fl b--moon-gray ba ma2 pa2 w3-border w3-border-orange w3-sand" style={{width: 170}}>
     <img src="/pics/producticons/ct70_ht.png"></img>
     <p>estiamted groan turbo mobile</p>
     <Link href="/tueren">

@@ -7,7 +7,7 @@ import FooterDiv from "./footerdiv";
 function Layout(props) {
   return (
     <Fragment>
-      <div className="ph2">
+      <div className="ph2 mw9" style={{margin: "auto"}}>
         <NaviBar />
 
         <div
