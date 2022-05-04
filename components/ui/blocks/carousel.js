@@ -57,7 +57,7 @@ const Carousel = (props) => {
 
 
     return (
-        <div className="flex tl flex-wrap tl justify-start mb1 w-100 ph4">
+        <div className="flex tl flex-wrap tl justify-start mb1 w-100 ph2">
         <h4 className="mh2">{props.title}</h4>
         <div className={styles.carouselContainer}>
             <div className={styles.carouselWrapper}>
