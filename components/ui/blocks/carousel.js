@@ -44,7 +44,7 @@ const Carousel = (props) => {
     }, [children])
 
     const next = () => {
-        if (currentIndex < (length - 1)) {
+        if (currentIndex < (length - show - 1)) {
             setCurrentIndex(prevState => prevState + 1)
         }
     }
@@ -71,7 +71,7 @@ const Carousel = (props) => {
                         {children}
                     </div>
                 </div>
-                {currentIndex < (length - show + 1) &&
+                {currentIndex < (length - show -1) &&
                 <button onClick={next} className={styles.rightArrow}>
                 &gt;
               </button>}
