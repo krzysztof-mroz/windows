@@ -53,19 +53,14 @@ function useWindowSize() {
 }
 
 const aehnliche = [
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
- 
+  
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_nt.png"/>,
+  <ProductLink linktext="Schüco CT 70 Haustür" href="/products/ct70ht" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco Living Nebeneingangstür" href="/products/livingnt" opis="Kunststoff 7 Kammer, 82 mm Einbautiefe" pic="/pics/producticons/living_nt.png"/>,
+  <ProductLink linktext="Schüco Living Haustür" href="/products/livinght" opis="Kunststoff 7 Kammer, 82 mm Einbautiefe" pic="/pics/producticons/living_ht.png"/>,
+  <ProductLink linktext="Kömmerling 88 Nebeneingangstür" href="/products/k88nt" opis="Kunststoff 7 Kammer, 88 mm Einbautiefe" pic="/pics/producticons/k88_nt.png"/>,
+  <ProductLink linktext="Kömmerling 88 Haustür" href="/products/k88ht" opis="Kunststoff 7 Kammer, 88 mm Einbautiefe" pic="/pics/producticons/k88_ht.png"/>,
+
  
 ]
  

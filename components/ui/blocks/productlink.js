@@ -11,9 +11,9 @@ function ProductLink(props) {
       
     <div className="flex flex-column tc justify-around fl b--moon-gray ba ma2 pa2 w3-border w3-border-orange w3-sand" style={{width: 170}}>
     <img src={props.pic}></img>
-    <p className='f5 fw4'>{props.opis}</p>
+    <p className='f6 fw4'>{props.opis}</p>
     <Link href={props.href}>
-            <a className="f6 fw4 dim no-underline   db dib-l pv2 ph3">
+            <a className="f6 fw4 dim underline   db dib-l pv2 ph3">
               {props.linktext}
             </a>
           </Link>  

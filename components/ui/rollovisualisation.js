@@ -226,7 +226,7 @@ function rollovisualisation({ ...props }) {
               
              
               <li>
-                Kastenhöhen: 138 mm, 166 mm, 151 mm, 181 mm, 207 mm.{" "}
+                Kastenhöhen: 138 mm, 166 mm, 181 mm, 207 mm.{" "}
               </li>
             
 
