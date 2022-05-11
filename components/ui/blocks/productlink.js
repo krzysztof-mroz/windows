@@ -14,7 +14,7 @@ function ProductLink(props) {
     <p className='f6 fw4'>{props.opis}</p>
     <Link href={props.href}>
             <a className="f6 fw4 dim underline   db dib-l pv2 ph3">
-              {props.linktext}
+              <b>{props.linktext}</b>
             </a>
           </Link>  
   </div>

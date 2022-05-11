@@ -52,16 +52,29 @@ function useWindowSize() {
   return windowSize;
 }
 
-const aehnliche = [
+const similar = [
   
-  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_nt.png"/>,
-  <ProductLink linktext="Schüco CT 70 Haustür" href="/products/ct70ht" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
-  <ProductLink linktext="Schüco Living Nebeneingangstür" href="/products/livingnt" opis="Kunststoff 7 Kammer, 82 mm Einbautiefe" pic="/pics/producticons/living_nt.png"/>,
-  <ProductLink linktext="Schüco Living Haustür" href="/products/livinght" opis="Kunststoff 7 Kammer, 82 mm Einbautiefe" pic="/pics/producticons/living_ht.png"/>,
-  <ProductLink linktext="Kömmerling 88 Nebeneingangstür" href="/products/k88nt" opis="Kunststoff 7 Kammer, 88 mm Einbautiefe" pic="/pics/producticons/k88_nt.png"/>,
-  <ProductLink linktext="Kömmerling 88 Haustür" href="/products/k88ht" opis="Kunststoff 7 Kammer, 88 mm Einbautiefe" pic="/pics/producticons/k88_ht.png"/>,
+  <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="Kunststoff Tür, 70 mm Einbautiefe" pic="/pics/producticons/ct70_nt.png"/>,
+  <ProductLink linktext="Schüco CT 70 Haustür" href="/products/ct70ht" opis="Kunststoff Haustür, 70 mm Einbautiefe" pic="/pics/producticons/ct70_ht.png"/>,
+  <ProductLink linktext="Schüco Living Nebeneingangstür" href="/products/livingnt" opis="Kunststoff Tür, 82 mm Einbautiefe" pic="/pics/producticons/living_nt.png"/>,
+  <ProductLink linktext="Schüco Living Haustür" href="/products/livinght" opis="Kunststoff Haustür, 82 mm Einbautiefe" pic="/pics/producticons/living_ht.png"/>,
+  <ProductLink linktext="Kömmerling 88 Nebeneingangstür" href="/products/k88nt" opis="Kunststoff Tür, 88 mm Einbautiefe" pic="/pics/producticons/k88_nt.png"/>,
+  <ProductLink linktext="Kömmerling 88 Haustür" href="/products/k88ht" opis="Kunststoff Haustür, 88 mm Einbautiefe" pic="/pics/producticons/k88_ht.png"/>,
+  <ProductLink linktext="Schüco LivingSlide" href="/hs" opis="Hebe Schiebe, flache Schwelle" pic="/pics/producticons/hs_ls_weiss.png"/>,
+  <ProductLink linktext="Kömmerling Premidoor 88" href="/hspd" opis="Hebe Schiebe, flache Schwelle" pic="/pics/producticons/hs_pd.png"/>,
 
  
+]
+
+const together = [
+  
+  
+  <ProductLink linktext="Vorsatz Raffstoren" href="/products/raf" opis="C80 oder Z90, Unterputz, Überputz" pic="/pics/producticons/raf.png"/>,
+  <ProductLink linktext="Aufsatz Rollläden" href="/products/ael" opis="Aluminium Lamellen, Motorsteuerung" pic="/pics/producticons/ael.png"/>,
+  <ProductLink linktext="Vorsatz Rollläden SK" href="/products/sk" opis="Aluminium Lamellen, eckiger Kasten" pic="/pics/producticons/vsr_sk.png"/>,
+  <ProductLink linktext="Vorsatz Rollläden SKP" href="/products/skp" opis="Aluminium Lamellen, viertelrunder Kasten" pic="/pics/producticons/vsr_skp.png"/>,
+  <ProductLink linktext="Vorsatz Rollläden SKO" href="/products/sko" opis="Aluminium Lamellen, halbrunder Kasten" pic="/pics/producticons/vsr_sko.png"/>,
+  <ProductLink linktext="Vorsatz Rollläden SP" href="/products/sp" opis="Aluminium Lamellen, Unterputz Kasten" pic="/pics/producticons/vsr_sp.png"/>,
 ]
  
   return (
@@ -90,11 +103,11 @@ const aehnliche = [
   <Description />
 
   <Carousel show={Math.floor((size.width-50)/186)} title="Ähnliche Produkte:">      
-          {aehnliche}
+          {similar}
       </Carousel>
 
-      <Carousel show={Math.floor((size.width-50)/186)} title="Kaufen Sie zusätzlich:">      
-          {aehnliche}
+      <Carousel show={Math.floor((size.width-50)/186)} title="Dazu wird bestellt:">      
+          {together}
       </Carousel>
       
       <WarumDiv />

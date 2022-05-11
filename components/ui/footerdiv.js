@@ -54,28 +54,34 @@ function footer() {
                 <a className="f6 fw4 no-underline db   ph3">Schüco Aluminium Fenster</a>
               </Link>
               <Link href="/hs">
-                <a className="f6 fw4 no-underline db   ph3">Schüco Hebe Schiebe Tür</a>
+                <a className="f6 fw4 no-underline db   ph3">Schüco Hebe Schiebe</a>
               </Link>
               <Link href="/hspd">
-                <a className="f6 fw4 no-underline db   ph3">Kömmerling Hebe Schiebe Tür</a>
+                <a className="f6 fw4 no-underline db   ph3">Kömmerling Hebe Schiebe</a>
               </Link>
               <Link href="/tueren">
                 <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
               </Link>
               <Link href="/products/ct70nt">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Nebeneingangstür</a>
+                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Nebentür</a>
               </Link>
               <Link href="/products/ct70ht">
                 <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Haustür</a>
               </Link>
               <Link href="/products/livingnt">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco Living Nebeneingangstür</a>
+                <a className="f6 fw4 no-underline  db  ph3">Schüco Living Nebentür</a>
               </Link>
               <Link href="/products/livinght">
                 <a className="f6 fw4 no-underline  db  ph3">Schüco Living Haustür</a>
               </Link>
+              <Link href="/products/k76nt">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 Nebentür</a>
+              </Link>
+              <Link href="/products/k76ht">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 Haustür</a>
+              </Link>
               <Link href="/products/k88nt">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 Nebeneingangstür</a>
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 Nebentür</a>
               </Link>
               <Link href="/products/k88ht">
                 <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 Haustür</a>

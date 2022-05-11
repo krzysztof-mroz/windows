@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from 'next/head';
-
+import Image from 'next/image'
+import livingntImage from "../../public/living_nt_anthr.jpg"
 import HeaderDiv from "../../components/ui/headerdiv";
 import ProductVisualisation from "../../components/ui/productvisualisation"
 
@@ -15,7 +16,7 @@ function LivingNt() {
       <Head>
         <title>Polnische Fenster Schüco Living Nebeneingangstür</title>
         <meta name='description'
-              content='Schüco Living Nebeneingangstür flache Schwelle visualisierung. 3d Visualisierung'
+              content='Schüco Living Nebeneingangstür flache Schwelle Visualisierung. 3d Visualisierung'
         />
          <meta name='keywords'
               content='tür, nebentür, nebeneingangstür aus polen, schüco, living, kunststoff nebentür, tür aus polen'
@@ -27,7 +28,7 @@ function LivingNt() {
    
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
-        <div className="w-100 w-33-l mt1 mt5-l">
+        <div className="w-100 w-40-l mt1 mt5-l">
         <h5 className="gray">Schüco Living Nebeneingangstür</h5>
          
         <ul className="gray f6 tl">
@@ -40,8 +41,11 @@ function LivingNt() {
         
         
         </div>
-        <div className="w-100 w-60-l b--moon-gray pa2 silver">
-          <img  src="/living_nt_anthr.jpg"></img>
+        <div className="w-100 w-50-l b--moon-gray pa2 silver">
+        <Image
+        src={livingntImage}
+        alt="Schüco Living Nebeneingangstür"
+      />
         </div>
       </div>
 

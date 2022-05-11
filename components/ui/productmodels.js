@@ -423,6 +423,110 @@ export function K88Ht({ ...props }) {
   )
 }
 
+export function K76Ht({ ...props }) {
+  const group = useRef()
+  const snap = useSnapshot(state);
+
+  var nrKolorkuZew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == props.colorOutside) {
+      nrKolorkuZew = farben.indexOf(kolorek);
+    }
+  }
+  var nrKolorkuWew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == props.colorInside) {
+      nrKolorkuWew = farben.indexOf(kolorek);
+    }
+  }
+  const textureInside = useTexture(farben[nrKolorkuWew].texture);
+  const textureOutside = useTexture(farben[nrKolorkuZew].texture);
+
+  useFrame((state) => {
+    group.current.rotation.y += rotateRate;
+  });
+  const { nodes, materials } = useGLTF('/k76_ht.glb')
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <group position={[4.81, -5.86, 0]}>
+        <mesh geometry={nodes['pvc-PVC'].geometry} material={nodes['pvc-PVC'].material} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes['pvc-outside_color'].geometry} material={nodes['pvc-outside_color'].material} material-map={textureOutside}/>
+        <mesh geometry={nodes['pvc-inside_color'].geometry} material={nodes['pvc-inside_color'].material} material-map={textureInside}/>
+      </group>
+      <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[5.56, -9.38, 0]} material-color={snap.items.hardware}/>
+      <mesh geometry={nodes.tits.geometry} material={materials['Rubber - Black']} position={[-5.56, -12.5, 0]} material-color={snap.items.gasket}/>
+      <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[-5.26, -13.19, 0]} material-color={snap.items.aluminium} material-roughness={0.4}/>
+      <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[5.13, 2.19, 0]} 
+      material-roughness={0.25}
+      material-clearcoat={1}
+      material-reflectivity={1}
+      material-transparent
+      material-opacity={0.92}
+      material-transmission={0}/>
+       <mesh geometry={nodes.kantet.geometry} material={nodes.kantet.material} position={[-0.59, -0.17, 0]} material-color={snap.items.gasketgrey}/>
+      <mesh geometry={nodes.kanteb.geometry} material={nodes.kanteb.material} position={[5.13, -0.5, 0]} material-color={snap.items.gasket}/>
+      <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[4.94, -1.3, 0]} material-color={snap.items.red}/>
+      <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[4.96, -5.27, 0]} 
+      material-color={
+        props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey
+      }/>
+      <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[5.14, -6.69, 0]} material-color={snap.items.steel}/>
+    </group>
+  )
+}
+
+export function K76Nt({ ...props }) {
+  const group = useRef()
+  const snap = useSnapshot(state);
+
+  var nrKolorkuZew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == props.colorOutside) {
+      nrKolorkuZew = farben.indexOf(kolorek);
+    }
+  }
+  var nrKolorkuWew = 0;
+  for (const kolorek of farben) {
+    if (kolorek.name == props.colorInside) {
+      nrKolorkuWew = farben.indexOf(kolorek);
+    }
+  }
+  const textureInside = useTexture(farben[nrKolorkuWew].texture);
+  const textureOutside = useTexture(farben[nrKolorkuZew].texture);
+
+  useFrame((state) => {
+    group.current.rotation.y += rotateRate;
+  });
+  const { nodes, materials } = useGLTF('/k76_nt.glb')
+  return (
+    <group ref={group} {...props} dispose={null}>
+      <group position={[-4.81, -6.71, 0]} rotation={[-Math.PI, 0, -Math.PI]}>
+        <mesh geometry={nodes['pvc-PVC'].geometry} material={nodes['pvc-PVC'].material} material-color={snap.items.pvc}/>
+        <mesh geometry={nodes['pvc-outside_color'].geometry} material={nodes['pvc-outside_color'].material}  material-map={textureOutside}/>
+        <mesh geometry={nodes['pvc-inside_color'].geometry} material={nodes['pvc-inside_color'].material}  material-map={textureInside}/>
+      </group>
+      <mesh geometry={nodes.hardware.geometry} material={nodes.hardware.material} position={[-5.56, -9.5, 0]} material-color={snap.items.hardware}/>
+      <mesh geometry={nodes.alu.geometry} material={nodes.alu.material} position={[5.25, -12.36, 0]} rotation={[-Math.PI, 0, -Math.PI]} material-color={snap.items.aluminium} material-roughness={0.4}/>
+      <mesh geometry={nodes.gasket.geometry} material={nodes.gasket.material} position={[-4.95, -6.15, 0]} rotation={[-Math.PI, 0, -Math.PI]} 
+      material-color={
+        props.blackGasket === true ? snap.items.gasket : snap.items.gasketgrey
+      }/>
+      <mesh geometry={nodes.steel.geometry} material={nodes.steel.material} position={[-5.38, -7.57, 0]} rotation={[-Math.PI, 0, -Math.PI]} material-color={snap.items.steel}/>
+      <mesh geometry={nodes.glas.geometry} material={nodes.glas.material} position={[-5.15, 1.36, 0]} rotation={[-Math.PI, 0, -Math.PI]} 
+      material-roughness={0.25}
+      material-clearcoat={1}
+      material-reflectivity={1}
+      material-transparent
+      material-opacity={0.92}
+      material-transmission={0}/>
+      <mesh geometry={nodes.kantet.geometry} material={nodes.kantet.material} position={[-5.15, -1.84, 0]} rotation={[-Math.PI, 0, -Math.PI]} material-color={snap.items.gasketgrey}/>
+      <mesh geometry={nodes.kanteb.geometry} material={nodes.kanteb.material} position={[-5.14, -2.17, 0]} rotation={[-Math.PI, 0, -Math.PI]} material-color={snap.items.gasket}/>
+      <mesh geometry={nodes.block.geometry} material={nodes.block.material} position={[-4.95, -2.96, 0]} rotation={[-Math.PI, 0, -Math.PI]} material-color={snap.items.red}/>
+      <mesh geometry={nodes.tits.geometry} material={materials['Rubber - Black']} position={[5.56, -11.69, 0]} rotation={[-Math.PI, 0, -Math.PI]} material-color={snap.items.gasket}/>
+    </group>
+  )
+}
+
 export function K88Nt({ ...props }) {
   const group = useRef()
   const snap = useSnapshot(state);

@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from 'next/head';
-
+import Image from 'next/image'
+import k88htImage from "../../public/k88_ht_anthr.jpg"
 import HeaderDiv from "../../components/ui/headerdiv";
 import ProductVisualisation from "../../components/ui/productvisualisation"
 
@@ -15,7 +16,7 @@ function K88Ht() {
       <Head>
         <title>Polnische Fenster Kömmerling 88 Haustür</title>
         <meta name='description'
-              content='Kömmerling 88 Haustür Schwelle visualisierung. 3d Visualisierung'
+              content='Kömmerling 88 Haustür Schwelle Visualisierung. 3d Visualisierung'
         />
          <meta name='keywords'
               content='tür, haustür, haustür aus polen, kömmerling, kömmerling 88, kunststoff haustür, tür aus polen'
@@ -27,7 +28,7 @@ function K88Ht() {
    
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
-        <div className="w-100 w-33-l mt1 mt5-l">
+        <div className="w-100 w-40-l mt1 mt5-l">
         <h5 className="gray">Kömmerling 88 Haustür</h5>
          
         <ul className="gray f6 tl">
@@ -39,8 +40,11 @@ function K88Ht() {
         
         
         </div>
-        <div className="w-100 w-60-l  b--moon-gray pa2 silver">
-          <img  src="/k88_ht_anthr.jpg"></img>
+        <div className="w-100 w-50-l  b--moon-gray pa2 silver">
+        <Image
+        src={k88htImage}
+        alt="Kömmerling 88 Haustür"
+      />
         </div>
       </div>
 

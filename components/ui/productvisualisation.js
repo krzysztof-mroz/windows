@@ -1,6 +1,6 @@
 import { Suspense, useRef, useState, useEffect } from "react";
 import PvcColourStrip from "./pvccolourstrip";
-import {HsLs, HsPd,  Ct70Ht, Ct70Nt, LivingHt, LivingNt, K88Ht, K88Nt, Ael} from "./productmodels";
+import {HsLs, HsPd,  Ct70Ht, Ct70Nt, LivingHt, LivingNt, K88Ht, K88Nt, K76Nt, K76Ht, Ael} from "./productmodels";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {ContactShadows, Environment, useGLTF, OrbitControls, useTexture, Html, useProgress} from "@react-three/drei";
 import { getAllColours } from "../data/colours";
@@ -137,6 +137,22 @@ function productvisualisation({...props}) {
 
                     {props.product == "k88nt" && (
                       <K88Nt
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}   
+                    {props.product == "k76nt" && (
+                      <K76Nt
+                        rotation-y={Math.PI * 1.33}
+                        colorInside={colorInside}
+                        colorOutside={colorOutside}
+                        blackGasket={blackGasket}
+                      />
+                    )}        
+                    {props.product == "k76ht" && (
+                      <K76Ht
                         rotation-y={Math.PI * 1.33}
                         colorInside={colorInside}
                         colorOutside={colorOutside}

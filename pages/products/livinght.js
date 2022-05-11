@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from 'next/head';
-
+import Image from 'next/image'
+import livinghtImage from "../../public/living_ht_black.jpg"
 import HeaderDiv from "../../components/ui/headerdiv";
 import ProductVisualisation from "../../components/ui/productvisualisation"
 
@@ -15,7 +16,7 @@ function LivingHt() {
       <Head>
         <title>Polnische Fenster Schüco Living Haustür</title>
         <meta name='description'
-              content='Schüco Living Haustür Schwelle visualisierung. 3d Visualisierung'
+              content='Schüco Living Haustür Schwelle Visualisierung. 3d Visualisierung'
         />
          <meta name='keywords'
               content='tür, haustür, haustür aus polen, schüco, living, kunststoff haustür, tür aus polen'
@@ -27,7 +28,7 @@ function LivingHt() {
    
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
-        <div className="w-100 w-33-l mt1 mt5-l">
+        <div className="w-100 w-40-l mt1 mt5-l">
         <h5 className="gray">Schüco Living Haustür</h5>
          
         <ul className="gray f6 tl">
@@ -40,8 +41,11 @@ function LivingHt() {
         
         
         </div>
-        <div className="w-100 w-60-l  b--moon-gray pa2 silver">
-          <img  src="/living_ht_black.jpg"></img>
+        <div className="w-100 w-50-l  b--moon-gray pa2 silver">
+        <Image
+        src={livinghtImage}
+        alt="Schüco Living Haustür"
+      />
         </div>
       </div>
 
