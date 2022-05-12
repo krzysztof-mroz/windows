@@ -74,6 +74,9 @@ function footer() {
               <Link href="/products/livinght">
                 <a className="f6 fw4 no-underline  db  ph3">Schüco Living Haustür</a>
               </Link>
+              <Link href="/products/k70nt">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 70 Nebentür</a>
+              </Link>
               <Link href="/products/k76nt">
                 <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 Nebentür</a>
               </Link>
