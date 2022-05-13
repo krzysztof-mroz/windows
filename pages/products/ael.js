@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import Head from 'next/head';
 import Image from 'next/image'
-import aelImagey from "../../public/ael3_big.jpg"
+import aelImage from "../../public/ael3_big.jpg"
 import aelImage2 from "../../public/ael1.jpg"
 import HeaderDiv from "../../components/ui/headerdiv";
 import Rollovisualisation from "../../components/ui/rollovisualisation";
