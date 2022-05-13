@@ -107,6 +107,7 @@ function footer() {
               <Link href="/products/raf">
                 <a className="f6 fw4 no-underline  db  ph3">Vorsatzraffstoren</a>     
               </Link>
+              
               <Link href="/beschattung">
                 <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
               </Link>
