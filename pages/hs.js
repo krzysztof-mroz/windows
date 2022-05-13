@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from 'next/head';
-
+import Image from 'next/image'
+import hsImage from "../public/HS_LS_concrete_goldenoak_logo.jpg"
 import HeaderDiv from "../components/ui/headerdiv";
 
 import ProductVisualisation from "../components/ui/productvisualisation"
@@ -45,7 +46,10 @@ function Hs() {
         
         </div>
         <div className="w-100 w-40-l b--moon-gray pa2 silver">
-          <img  src="/HS_LS_concrete_goldenoak_logo_500.jpg"></img>
+        <Image
+        src={hsImage}
+        alt="Schüco Living Slide Hebe Schiebe"
+      />
         </div>
       </div>
 

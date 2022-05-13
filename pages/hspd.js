@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import Head from 'next/head';
-
+import Image from 'next/image'
+import hsImage from "../public/HS_PD_concrete_db703_logo.jpg"
 import HeaderDiv from "../components/ui/headerdiv";
 
 import ProductVisualisation from "../components/ui/productvisualisation"
@@ -46,7 +47,10 @@ function HsPd() {
         
         </div>
         <div className="w-100 w-40-l b--moon-gray pa2 silver">
-          <img  src="/HS_PD_concrete_anth_logo.jpg"></img>
+        <Image
+        src={hsImage}
+        alt="Kömmerling Premidoor 88 Hebe Schiebe"
+      />
         </div>
       </div>
 
