@@ -33,7 +33,7 @@ function footer() {
           </div>
 
           <div className="w-100 w-30-l  ma2 pa3">
-            <h5 className="gray">Produkte</h5>
+            <h5 className="gray">Fenster und Hebe Schiebe</h5>
             <p className="gray f6">
               <Link href="/fenster">
                 <a className="f6 fw4 no-underline db   ph3">Fenster</a>
@@ -53,13 +53,61 @@ function footer() {
               <Link href="/schuecoalu">
                 <a className="f6 fw4 no-underline db   ph3">Schüco Aluminium Fenster</a>
               </Link>
+              <Link href="/products/ct70">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Classic</a>
+              </Link>
+              <Link href="/products/ct70rondo">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Rondo</a>
+              </Link>
+              <Link href="/products/living">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco Living MD</a>
+              </Link>
+              <Link href="/products/k70">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 70 AD</a>
+              </Link>
+              <Link href="/products/k76ad">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 AD</a>
+              </Link>
+              <Link href="/products/k76md">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 MD</a>
+              </Link>
+              <Link href="/products/k88">
+                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 MD</a>
+              </Link>
+              <Link href="/products/pe68">
+                <a className="f6 fw4 no-underline  db  ph3">Ponzio PE 68 N</a>
+              </Link>
+              <Link href="/products/pe78">
+                <a className="f6 fw4 no-underline  db  ph3">Ponzio PE 78 N</a>
+              </Link>
+              <Link href="/products/mb70">
+                <a className="f6 fw4 no-underline  db  ph3">Aluprof MB 70 HI</a>
+              </Link>
+              <Link href="/products/mb86">
+                <a className="f6 fw4 no-underline  db  ph3">Aluprof MB 86 SI</a>
+              </Link>
+              <Link href="/products/aws75">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco AWS 75 SI</a>
+              </Link>
+              <Link href="/products/aws90">
+                <a className="f6 fw4 no-underline  db  ph3">Schüco AWS 90 SI</a>
+              </Link>
               <Link href="/hs">
                 <a className="f6 fw4 no-underline db   ph3">Schüco Hebe Schiebe</a>
               </Link>
               <Link href="/hspd">
                 <a className="f6 fw4 no-underline db   ph3">Kömmerling Hebe Schiebe</a>
               </Link>
-              <Link href="/tueren">
+
+            </p>
+          </div>
+
+          <div className="w-100 w-30-l  ma2 pa3">
+            <h5 className="gray">Türen und Beschattung</h5>
+            <p className="gray f6">
+
+
+            <Link href="/tueren">
                 <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
               </Link>
               <Link href="/products/ct70nt">
@@ -121,15 +169,30 @@ function footer() {
               <Link href="/screenrolls">
                 <a className="f6 fw4 no-underline  db  ph3">Screen Rolls</a>
               </Link>
+
+
+
+              
             </p>
           </div>
 
 
           <div className="w-100 w-30-l  ma2 pa3">
-            <h5 className="gray">Dienstleistungen</h5>
+            <h5 className="gray">Sonstiges</h5>
             <p className="gray f6">
               <Link href="/aufmass">
                 <a className="f6 fw4 no-underline db   ph3">Aufmaß</a>
+              </Link>
+              <Link href="/">
+                <a className="f6 fw4 no-underline db   ph3">
+                  Wie funktioniert es?
+                </a>
+              </Link>
+              <Link href="/">
+                <a className="f6 fw4 no-underline  db  ph3">Über die Firma</a>
+              </Link>
+              <Link href="/kontakt">
+                <a className="f6 fw4 no-underline  db  ph3">Kontakt</a>
               </Link>
               <Link href="/">
                 <a className="f6 fw4 no-underline  db  ph3">Beratung</a>
@@ -143,24 +206,9 @@ function footer() {
             </p>
           </div>
 
-          <div className="w-100 w-30-l  ma2 pa3">
-            <h5 className="gray">Über uns</h5>
-            <p className="gray f6">
-              <Link href="/">
-                <a className="f6 fw4 no-underline db   ph3">
-                  Wie funktioniert es?
-                </a>
-              </Link>
-              <Link href="/">
-                <a className="f6 fw4 no-underline  db  ph3">Über die Firma</a>
-              </Link>
-              <Link href="/kontakt">
-                <a className="f6 fw4 no-underline  db  ph3">Kontakt</a>
-              </Link>
-            </p>
-          </div>
+       
           <div className="tl w-100">
-            <p className="gray f7">© 2022. Alle Abbildungen, Texte, Filme und 3d Modelle sind urheberrechtlich geschützt. Unberechtigte Benutztng ist nicht erlaubt. Bei Interesse für die Benutzng der 3d Modelle und Abbildungen bitten wir um Kontakt. </p>
+            <p className="gray f7">© 2022. Alle Abbildungen, Texte, Filme und 3d Modelle sind urheberrechtlich geschützt. Bei Interesse für die Benutzng bitten wir um Kontakt. </p>
           </div>
         </div>
         );

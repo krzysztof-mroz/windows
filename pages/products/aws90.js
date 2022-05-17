@@ -1,5 +1,4 @@
-import { Fragment } from "react";
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import image1 from "../../public/aws90_rust.jpg";
@@ -14,6 +13,7 @@ import Carousel from "../../components/ui/blocks/carousel";
 import ProductLink from "../../components/ui/blocks/productlink";
 
 function Aws90() {
+  
   const size = useWindowSize();
 
   function useWindowSize() {
