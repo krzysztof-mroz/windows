@@ -7,7 +7,7 @@ function koemmerlingdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Kömmerling 70 AD, 5 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>moderne Optik,</li>
               <li>2 versteckte Dichtungen und 70 mm Einbautiefe.</li>
@@ -29,7 +29,7 @@ function koemmerlingdiv() {
               <li>Pilzkopfverriegelungen, Fehlbedienungssperre im Standard,</li>   
               <li>Mehrfachspaltlüftung und Flügelheber im Standard,</li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -52,7 +52,7 @@ function koemmerlingdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Kömmerling 76 AD, 5 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 76mm,</li>
               <li>2 umlaufende EPDM Dichtungen im AD System, </li>
@@ -72,7 +72,7 @@ function koemmerlingdiv() {
               <li>Mehrfachspaltlüftung und Flügelheber im Standard,</li>
               <li>mittige Griffposition für bessere Ästhetik.</li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -95,7 +95,7 @@ function koemmerlingdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Kömmerling 76 MD, 6 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 76mm,</li>
               <li>3 umlaufende EPDM Dichtungen im MD System, </li>
@@ -119,7 +119,7 @@ function koemmerlingdiv() {
                 <b>AluClip Ausführung mit Aluminium Schale möglich</b>
               </li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -142,7 +142,7 @@ function koemmerlingdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Kömmerling 88 MD, 7 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 88 mm,</li>
               <li>3 umlaufende EPDM Dichtungen im MD System, </li>
@@ -166,7 +166,7 @@ function koemmerlingdiv() {
                 <b>AluClip Ausführung mit Aluminium Schale möglich</b>
               </li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">

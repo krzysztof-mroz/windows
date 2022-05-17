@@ -1,5 +1,6 @@
 import Schnellkontakt from "./schnellkontakt";
 
+
 function description() {
     return (
 
@@ -15,12 +16,15 @@ function description() {
       klassische Optik. Fenster Uw ab 0,8 W/(m²·K), Glas Ug ab 0,5
       W/(m²·K).
     </p>
-    <img
+    
+    
+    {/**<img
       // style={{maxWidth: 350, maxHeight: 350 }}
       
       id="sectionPic"
       src="./pics/sections/k88.png"
     ></img>
+    **/}
   </div>
 
   {/* szybki kontakt */}

@@ -71,7 +71,7 @@ function Schnellkontakt(props) {
           </p>
         </div>
       </form>
-      <hr className="w-90"></hr>
+     {/** <hr className="w-90"></hr>
       <div>
         <p>Kostenlose* Hotline:</p>
       </div>
@@ -81,7 +81,7 @@ function Schnellkontakt(props) {
         </h4>
       </div>
       <small className="gray f7">*kostenlos vom Festnetz und Mobilfunk.</small>
-      <hr className="w-90"></hr>
+      <hr className="w-90"></hr> **/ }
     </div>
   );
   function $id(id) {

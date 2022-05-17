@@ -9,14 +9,20 @@ import { getAllColours } from "../data/colours";
 
 function visualisation(props) {
 
-    const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
+    const [activeProfile, setActiveProfile] = useState(props.profil);
     const [colorInside, setColorInside] = useState("weiss");
     const [colorOutside, setColorOutside] = useState("weiss");
     const [bothSidesColor, setBothSidesColor] = useState(true);
     const [blackGasket, setBlackGasket] = useState(false);
     const [aluProfile, setAluProfile] = useState(false);
 
+
     const farben = getAllColours();
+
+    useEffect(() => {
+      profileChangeHandler(props.profil)
+    });
+  
 
     function Loader() {
       const { progress } = useProgress()
@@ -37,11 +43,12 @@ function visualisation(props) {
   }
 
   const Background = (props) => {
-    const texture = useTexture("./pics/spring_texture.jpg");
+    const texture = useTexture("/pics/spring_texture.jpg");
     return <primitive attach="background" object={texture} />;
   };
 
-
+  
+  
     return (
 
         
@@ -211,15 +218,16 @@ function visualisation(props) {
               
               {/* hint */}
               <p className=" ba b--moon-gray pa2 silver">
-                Profil- und Farbauswahl
+              {props.showProfiles === "yes" ? ' Profil- und Farbauswahl' : 'Farbauswahl'}
+               
               </p>
 
-              <ProfileStrip onProfileChange={profileChangeHandler} />
+              {props.showProfiles === "yes" && <ProfileStrip onProfileChange={profileChangeHandler} />}
 
               {/* nazwa profilu */}
               <div className="w-90 tc">
                 <h4 id="nazwaProfilu" className="ba b--moon-gray pa2">
-                  Kömmerling 88 MD
+                  {props.profil}
                 </h4>
               </div>
 

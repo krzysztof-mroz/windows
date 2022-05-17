@@ -7,7 +7,7 @@ function schuecoaludiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Schüco AWS 75 SI</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
           <ul>
 					   <li>Einbautiefe von 75 mm</li>
 					   <li>Hochwärmegedämmtes Aluminium-Fenstersystem mit umfangreichen Lösungsvarianten</li>
@@ -22,7 +22,7 @@ function schuecoaludiv() {
 					   <li>Leichtgängigkeit</li>
 					   <li>Alle RAL Farben vefügbar</li>	   
 				  </ul> 
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -45,7 +45,7 @@ function schuecoaludiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Schüco AWS 90 SI</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
           
           <ul>
 					   <li>Einbautiefe von 90 mm</li>
@@ -61,7 +61,7 @@ function schuecoaludiv() {
 					   <li>Leichtgängigkeit</li>
 					   <li>Alle RAL Farben vefügbar</li>	   
 				  </ul> 
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">

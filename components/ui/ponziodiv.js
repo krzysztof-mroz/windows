@@ -42,7 +42,7 @@ function ponziodiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Ponzio PE 78N</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
           <ul>
             
             
@@ -59,7 +59,7 @@ function ponziodiv() {
             <li>Ganze RAL Farbpalette verfügbar</li>
        
         </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">

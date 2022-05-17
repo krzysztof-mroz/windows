@@ -1,7 +1,9 @@
 import { Fragment } from "react";
 import { useState, useEffect } from 'react';
 import Head from "next/head";
-
+import Image from "next/image";
+import image1 from "/public/living_black_2.jpg";
+import image2 from "/public/aws90_rust.jpg";
 import Description from "../components/ui/description";
 import HeaderDiv from "../components/ui/headerdiv";
 import WarumDiv from "../components/ui/warumdiv";
@@ -52,6 +54,23 @@ function useWindowSize() {
   return windowSize;
 }
 
+const fenster = [
+  <ProductLink linktext="Schüco CT 70 Classic" href="/products/ct70" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_classic.png"/>,
+  <ProductLink linktext="Schüco CT 70 Rondo" href="/products/ct70rondo" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/ct70_rondo.png"/>,
+  <ProductLink linktext="Schüco Living MD" href="/products/living" opis="Kunststoff 7 Kammer, 82 mm Einbautiefe" pic="/pics/producticons/living.png"/>,
+  <ProductLink linktext="Kömmerling 70 AD" href="/products/k70" opis="Kunststoff 5 Kammer, 70 mm Einbautiefe" pic="/pics/producticons/k70.png"/>,
+  <ProductLink linktext="Kömmerling 76 AD" href="/products/k76ad" opis="Kunststoff 5 Kammer, 76 mm Einbautiefe" pic="/pics/producticons/k76_ad.png"/>,
+  <ProductLink linktext="Kömmerling 76 MD" href="/products/k76md" opis="Kunststoff 6 Kammer, 76 mm Einbautiefe" pic="/pics/producticons/k76_md.png"/>,
+  <ProductLink linktext="Kömmerling 88 MD" href="/products/k88" opis="Kunststoff 7 Kammer, 88 mm Einbautiefe" pic="/pics/producticons/k88.png"/>,
+  <ProductLink linktext="Ponzio PE 68N" href="/products/pe68" opis="Aluminium Ponzio PE 68" pic="/pics/producticons/pe68.png"/>,
+  <ProductLink linktext="Ponzio PE 78N" href="/products/pe78" opis="Aluminium Ponzio PE 78" pic="/pics/producticons/pe78.png"/>,
+  <ProductLink linktext="Aluprof MB 70 HI" href="/products/mb70" opis="Aluminium Aluprof MB 70" pic="/pics/producticons/mb70.png"/>,
+  <ProductLink linktext="Aluprof MB 86 SI" href="/products/mb86" opis="Aluminium Aluprof MB 86" pic="/pics/producticons/mb86.png"/>,
+  <ProductLink linktext="Schüco AWS 75 SI" href="/products/aws75" opis="Aluminium Schüco AWS 75" pic="/pics/producticons/aws75.png"/>,
+  <ProductLink linktext="Schüco AWS 90 SI" href="/products/aws90" opis="Aluminium Schüco AWS 90" pic="/pics/producticons/aws90.png"/>,
+  
+]
+
 const tueren = [
   <ProductLink linktext="Schüco CT 70 Nebeneingangstür" href="/products/ct70nt" opis="Kunststoff Tür, 70 mm Einbautiefe" pic="/pics/producticons/ct70_nt.png"/>,
   <ProductLink linktext="Schüco Living Nebeneingangstür" href="/products/livingnt" opis="Kunststoff Tür, 82 mm Einbautiefe" pic="/pics/producticons/living_nt.png"/>,
@@ -99,7 +118,7 @@ const hebeschiebe = [
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
-      <Visualisation />
+      <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />
 
      
 
@@ -108,6 +127,19 @@ const hebeschiebe = [
        
   
   <Description />
+
+  <div className="flex flex-wrap justify-around mb3 w-100 tc">
+        <div className="w-100 w-40-l ma2 mt5-l">
+          <Image src={image1} alt="Schüco CT 70 Classic" />
+        </div>
+        <div className="w-100 w-40-l ma2 mt5-l">
+          <Image src={image2} alt="Schüco CT 70 Classic" />
+        </div>
+      </div>
+
+  <Carousel show={Math.floor((size.width-50)/186)} title="Fenster:">      
+          {fenster}
+      </Carousel>
 
   <Carousel show={Math.floor((size.width-50)/186)} title="Türen und Hebe Schiebe:">      
           {tueren}

@@ -622,7 +622,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
 
 
@@ -638,7 +638,7 @@ const FARBEN = [
     light_outside: 0.3,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
  
 
@@ -653,7 +653,7 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
  
 
@@ -669,7 +669,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a3",
@@ -681,7 +681,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness2.jpg",
+    roughness: "/colors/alu_roughness2.jpg",
     texture: "/colors/white.jpg",
   
 
@@ -697,7 +697,7 @@ const FARBEN = [
     light_outside: 0.8,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a4", 
@@ -709,7 +709,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
 
   },
@@ -723,7 +723,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness.jpg",
+    roughness: "/colors/alu_roughness.jpg",
     texture: "/colors/white.jpg",
   
   },
@@ -737,7 +737,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
  
 
@@ -752,7 +752,7 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
 
@@ -767,7 +767,7 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
 
@@ -782,7 +782,7 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
 
@@ -797,7 +797,7 @@ const FARBEN = [
     light_outside: 0.3,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
 
@@ -812,7 +812,7 @@ const FARBEN = [
     light_outside: 1.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
 
@@ -827,7 +827,7 @@ const FARBEN = [
     light_outside: 1.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
   },
@@ -841,7 +841,7 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
     
 
@@ -856,7 +856,7 @@ const FARBEN = [
     light_outside: 1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
     texture: "/colors/white.jpg",
   },
   {
@@ -870,7 +870,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a102",
@@ -883,7 +883,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a103",
@@ -896,7 +896,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a103b",
@@ -909,7 +909,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a103a",
@@ -922,7 +922,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a104",
@@ -935,7 +935,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a105",
@@ -948,7 +948,7 @@ const FARBEN = [
     light_outside: 0.05,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a106",
@@ -961,7 +961,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a107",
@@ -974,7 +974,7 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a108",
@@ -987,7 +987,7 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a109",
@@ -1000,7 +1000,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a110",
@@ -1013,7 +1013,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a111",
@@ -1026,7 +1026,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a112",
@@ -1039,7 +1039,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a113",
@@ -1052,7 +1052,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a114",
@@ -1065,7 +1065,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a115",
@@ -1078,7 +1078,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a121",
@@ -1091,7 +1091,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a121a",
@@ -1104,7 +1104,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a121b",
@@ -1117,7 +1117,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a121c",
@@ -1130,7 +1130,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a116",
@@ -1143,7 +1143,7 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a117",
@@ -1156,7 +1156,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a118",
@@ -1169,7 +1169,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a118a",
@@ -1182,7 +1182,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a119",
@@ -1195,7 +1195,7 @@ const FARBEN = [
     light_outside: 0.3,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   
   {
@@ -1209,7 +1209,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a123",
@@ -1222,7 +1222,7 @@ const FARBEN = [
     light_outside: 0.8,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a124",
@@ -1235,7 +1235,7 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a125",
@@ -1248,7 +1248,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a126",
@@ -1261,7 +1261,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a127",
@@ -1274,7 +1274,7 @@ const FARBEN = [
     light_outside: 0.15,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a128",
@@ -1287,7 +1287,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a129",
@@ -1300,7 +1300,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a130",
@@ -1313,7 +1313,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a131",
@@ -1326,7 +1326,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a132",
@@ -1339,7 +1339,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a133",
@@ -1352,7 +1352,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a134",
@@ -1365,7 +1365,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a135",
@@ -1378,7 +1378,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a136",
@@ -1391,7 +1391,7 @@ const FARBEN = [
     light_outside: 0.4,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a137",
@@ -1404,7 +1404,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a138",
@@ -1417,7 +1417,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a139",
@@ -1430,7 +1430,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a140",
@@ -1443,7 +1443,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a149",
@@ -1456,7 +1456,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a141",
@@ -1469,7 +1469,7 @@ const FARBEN = [
     light_outside: 0.3,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a142",
@@ -1482,7 +1482,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a143",
@@ -1495,7 +1495,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   
   {
@@ -1509,7 +1509,7 @@ const FARBEN = [
     light_outside: 0.1,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a146",
@@ -1522,7 +1522,7 @@ const FARBEN = [
     light_outside: 0.6,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a147",
@@ -1535,7 +1535,7 @@ const FARBEN = [
     light_outside: 0.3,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   {
     id: "a148",
@@ -1548,7 +1548,7 @@ const FARBEN = [
     light_outside: 0.5,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
   
   {
@@ -1562,7 +1562,7 @@ const FARBEN = [
     light_outside: 0.2,
     blackGasket: true,
     materialAlu: true,
-    roughness: "./colors/alu_roughness3.jpg",
+    roughness: "/colors/alu_roughness3.jpg",
   },
 
 ];

@@ -7,7 +7,7 @@ function schuecopvcdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Schüco Corona CT 70 Classic, 5 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 70mm,</li>
               <li>versetzte, klasische Optik,</li>
@@ -29,7 +29,7 @@ function schuecopvcdiv() {
               </li>
               <li>mittige Griffposition für bessere Ästhetik.</li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -52,7 +52,7 @@ function schuecopvcdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Schüco Corona CT 70 Rondo, 5 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 70mm,</li>
               <li>Flügelrahmentiefe 78mm,</li>
@@ -77,7 +77,7 @@ function schuecopvcdiv() {
               </li>
               <li>mittige Griffposition für bessere Ästhetik.</li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -100,7 +100,7 @@ function schuecopvcdiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Schüco Living MD, 7 Kammer</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
             <ul>
               <li>Blendrahmen Einbautiefe 82mm,</li>
               <li>versetzte, klasische Optik,</li>
@@ -122,7 +122,7 @@ function schuecopvcdiv() {
               </li>
               <li>mittige Griffposition für bessere Ästhetik.</li>
             </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">

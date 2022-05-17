@@ -9,7 +9,7 @@ function ProductLink(props) {
     
 
       
-    <div className="flex flex-column tc justify-around fl b--moon-gray ba ma2 pa2 w3-border w3-border-orange w3-sand" style={{width: 170}}>
+    <div className="flex flex-column tc justify-around fl b--moon-gray ba ma2 pa2 w3-border-orange w3-sand" style={{width: 170}}>
     <img src={props.pic}></img>
     <p className='f6 fw4'>{props.opis}</p>
     <Link href={props.href}>

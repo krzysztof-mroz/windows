@@ -91,7 +91,7 @@ function back (ev) {
     $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
     $id("tekstProfilu").innerText = ev.target.alt;
     $id("komoryProfilu").innerText = profiles[nrprofila].desc;
-    $id("sectionPic").src = profiles[nrprofila].section;
+   // $id("sectionPic").src = profiles[nrprofila].section;
     props.onProfileChange(ev.target.alt);
     //changeVideo (profiles[nrprofila].movie, props.mWindow);
   }
