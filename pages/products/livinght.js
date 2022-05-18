@@ -94,10 +94,16 @@ function LivingHt() {
         <h5 className="gray">Schüco Living Haustür</h5>
          
         <ul className="gray f6 tl">
-        <li>Text</li>
-					   <li>Text</li>
-             <li>Text</li>
-             <li>Text</li>
+            <li>Flügelhöhe 125 mm,</li>
+            <li>7-Kammer-System mit der Einbautiefe von 82 mm,</li>
+            <li>Wärmedämmung mit Uf = 1,1 - 1,3 W/(m2K),</li>
+             <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
+             <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>
+             <li>Zahlreiche Farbvarianten sind möglich,</li>
+             <li>Hochwertige Dichtungen aus EPDM-Kautschuk,</li>
+             <li>Produktion der Profile in Deutschland,</li>
+             <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
+             <li>Individuelle Gestaltungsmöglichkeiten durch verschiedene Griffgarnituren, Beschläge und Füllungen.</li>
 					 
 				  </ul>
         

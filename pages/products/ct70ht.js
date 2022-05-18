@@ -98,7 +98,7 @@ function Ct70Ht() {
         <ul className="gray f6 tl">
             <li>Flügelhöhe 120 mm,</li>
             <li>Einbautiefe 70 mm,</li>
-					   <li>Gute Wärmedämmeigenschaften mit Uf Werten bis zu 1,1 W/m2K,</li>
+					   <li>Gute Wärmedämmung mit Uf = 1,4 - 1,5 W/(m2K),</li>
              <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
              <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>
              <li>Zahlreiche Farbvarianten sind möglich,</li>
