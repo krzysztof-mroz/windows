@@ -95,7 +95,7 @@ function K88Nt() {
         <ul className="gray f6 tl">
             <li>Flügelhöhe 110 mm,</li>
             <li>Premium-Nebeneingangstürsystem mit zeitgemäßer Bautiefe von 88 mm.</li>
-					   <li>Zukunftsweisende 6-Kammer- Konstruktion mit maximal dimensionierter Stahlverstärkung und Schweißeckverbinder für höhere Statik.</li>
+					   <li>Zukunftsweisende 7-Kammer- Konstruktion mit maximal dimensionierter Stahlverstärkung und Schweißeckverbinder für höhere Statik.</li>
              <li>Hohe Dichtheit durch doppelte Abdichtung zur thermisch getrennten, barrierefreien Haustürschwelle.</li>
             <li>Hohe Wärmedämmung und Einbruchschutz bis RC2.</li>
             <li>Zusätzlicher Schlagregenschutz durch Aluminium-Wetterschenkel und Falzpad-Set.</li>
