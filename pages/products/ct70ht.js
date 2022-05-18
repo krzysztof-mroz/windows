@@ -2,6 +2,8 @@ import { Fragment, useState, useEffect } from "react";
 import Head from 'next/head';
 import Image from 'next/image'
 import ct70htImage from "../../public/ct70_ht_db703.jpg"
+import ct70htImage1 from "../../public/ct_70_tuer.jpg"
+import ct70htImage2 from "../../public/ct70_tuer3.jpg"
 import HeaderDiv from "../../components/ui/headerdiv";
 import ProductVisualisation from "../../components/ui/productvisualisation"
 import Carousel from "../../components/ui/blocks/carousel";
@@ -103,7 +105,7 @@ function Ct70Ht() {
              <li>Hochwertige Dichtungen aus EPDM-Kautschuk,</li>
              <li>Produktion der Profile in Deutschland,</li>
              <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
-             <li>Individuelle Gestaltungsmöglichkeiten durch verschiedene Griffgarnituren, Beschläge und Füllungen.</li>
+             <li>Individuelle Gestaltungsmöglichkeiten durch <b>verschiedene Griffgarnituren, Beschläge und Füllungen.</b></li>
 				  </ul>
         
         
@@ -113,6 +115,15 @@ function Ct70Ht() {
         src={ct70htImage}
         alt="Schüco CT 70 Haustür"
       />
+        </div>
+      </div>
+
+      <div className="flex flex-wrap justify-around mb3 w-100 tc">
+        <div className="w-100 w-40-l ma2 mt5-l">
+          <Image src={ct70htImage1} alt="Schüco CT 70 Haustür" />
+        </div>
+        <div className="w-100 w-40-l ma2 mt5-l">
+          <Image src={ct70htImage2} alt="Schüco CT 70 Haustür" />
         </div>
       </div>
 
