@@ -94,10 +94,16 @@ function Ct70Nt() {
         <h5 className="gray">Schüco CT 70 Nebeneingangstür</h5>
          
         <ul className="gray f6 tl">
-        <li>Text</li>
-					   <li>Text</li>
-             <li>Text</li>
-             <li>Text</li>
+            <li>Flügelhöhe 103 mm,</li>
+            <li>Einbautiefe 70 mm,</li>
+            <li>Gute Wärmedämmeigenschaften mit Uf Werten bis zu 1,1 W/m2K,</li>
+             <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
+             <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>
+             <li>Zahlreiche Farbvarianten sind möglich,</li>
+             <li>Hochwertige Dichtungen aus EPDM-Kautschuk,</li>
+             <li>Produktion der Profile in Deutschland,</li>
+             <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
+             <li>Individuelle Gestaltungsmöglichkeiten durch verschiedene Griffgarnituren, Beschläge und Füllungen.</li>
 					 
 				  </ul>
         
