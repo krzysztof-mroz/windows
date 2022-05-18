@@ -95,10 +95,17 @@ function K76Ht() {
         <h5 className="gray">Kömmerling 76 Haustür</h5>
          
         <ul className="gray f6 tl">
-        <li>Text</li>
-					   <li>Text</li>
-             <li>Text</li>
-             <li>Text</li>
+        <li>Flügelhöhe 126 mm,</li>
+					   <li>Hochdämmendes Haustürsystem mit 76 mm Bautiefe – Uf-Mittelwert = 1,2 W/(m2K).</li>
+             <li>5-Kammer-Konstruktion mit maximal dimensionierter Stahlverstärkung und Schweißeckverbinder für höhere Statik.</li>
+             <li>Hohe Dichtheit durch doppelte Abdichtung zur thermisch getrennten, barrierefreien Schwelle.</li>
+             <li>Schwellenverbinder für passgenauen Sitz und Abdichtung zwischen Rahmen und Schwelle.</li>
+             <li>Hoher Einbruchschutz – bis Widerstandsklasse RC 2 (WK 2).</li>
+             <li>Maximale Flügelgrößen: Haustür einflügelig 1200 x 2400 mm, Haustür Stulpflügel 1000 x 2400 m </li>
+             <li>Zahlreiche Farbvarianten sind möglich,</li>
+             <li>Hochwertige Dichtungen aus EPDM,</li>
+             <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
+             <li>Individuelle Gestaltungsmöglichkeiten durch <b>verschiedene Griffgarnituren, Beschläge und Füllungen.</b></li>
 				  </ul>
         
         

@@ -94,8 +94,10 @@ function LivingNt() {
         <h5 className="gray">Schüco Living Nebeneingangstür</h5>
          
         <ul className="gray f6 tl">
+            
             <li>Flügelhöhe 110 mm,</li>
             <li>7-Kammer-System mit der Einbautiefe von 82 mm,</li>
+            <li><b>Empfohlen für breite Balkontüren, mit flacher Schwelle, oder ohne.</b></li>
             <li>Wärmedämmung mit Uf = 1,1 - 1,3 W/(m2K),</li>
              <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
              <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>

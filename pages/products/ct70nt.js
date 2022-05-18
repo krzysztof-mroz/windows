@@ -96,6 +96,7 @@ function Ct70Nt() {
         <ul className="gray f6 tl">
             <li>Flügelhöhe 103 mm,</li>
             <li>Einbautiefe 70 mm,</li>
+            <li><b>Empfohlen für breite Balkontüren, mit flacher Schwelle, oder ohne.</b></li>
             <li>Gute Wärmedämmung mit Uf = 1,4 - 1,5 W/(m2K),</li>
              <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
              <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>

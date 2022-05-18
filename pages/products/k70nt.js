@@ -93,10 +93,17 @@ function K70Nt() {
         <h5 className="gray">Kömmerling 70 Nebeneingangstür</h5>
          
         <ul className="gray f6 tl">
-        <li>Text</li>
-					   <li>Text</li>
-             <li>Text</li>
-             <li>Text</li>
+          <li>Flügelhöhe 110 mm,</li>
+            <li>Einbautiefe von 70 mm,</li>
+            <li><b>Empfohlen für breite Balkontüren, mit flacher Schwelle, oder ohne.</b></li>
+            <li>Wärmedämmung mit Uf = 1,2 - 1,3 W/(m2K),</li>
+            <li>2 versteckte Dichtungen</li>
+            <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
+             <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>
+             <li>Zahlreiche Farbvarianten sind möglich,</li>
+             <li>Hochwertige Dichtungen aus EPDM,</li>
+             <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
+             <li>Individuelle Gestaltungsmöglichkeiten durch verschiedene Griffgarnituren, Beschläge und Füllungen.</li>
 				  </ul>
         
         

@@ -93,10 +93,19 @@ function K88Ht() {
         <h5 className="gray">Kömmerling 88 Haustür</h5>
          
         <ul className="gray f6 tl">
-        <li>Text</li>
-					   <li>Text</li>
-             <li>Text</li>
-             <li>Text</li>
+        <li>Flügelhöhe 126 mm,</li>
+            <li>Premium-Haustürsystem mit zeitgemäßer Bautiefe von 88 mm.</li>
+            <li>Zukunftsweisende 6-Kammer- Konstruktion mit maximal dimensionierter Stahlverstärkung und Schweißeckverbinder für höhere Statik.</li>
+            <li>Hohe Dichtheit durch doppelte Abdichtung zur thermisch getrennten, barrierefreien Haustürschwelle.</li>
+            <li>Hohe Wärmedämmung und Einbruchschutz bis RC2.</li>
+            <li>Zusätzlicher Schlagregenschutz durch Aluminium-Wetterschenkel und Falzpad-Set.</li>
+            <li>Schwellenverbinder für passgenauen Sitz und Abdichtung zur Schwelle </li>
+            <li>Tiefer Glasfalz für moderne 3-fach Verglasungen, spezielle Funktionsgläser oder Haustürfüllungen bis 58 mm Dicke.</li>
+            <li>Maximale Flügelgrößen: Haustür einflügelig 1200 x 2400 mm Haustür Stulpflügel 1000 x 2400 mm</li>
+            <li>Zahlreiche Farbvarianten sind möglich,</li>
+             <li>Hochwertige Dichtungen aus EPDM,</li>
+             <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
+             <li>Individuelle Gestaltungsmöglichkeiten durch <b>verschiedene Griffgarnituren, Beschläge und Füllungen.</b></li>
 				  </ul>
         
         
