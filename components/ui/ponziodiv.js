@@ -1,4 +1,60 @@
+import {useState, useEffect } from "react";
+import Carousel from "./blocks/carousel";
+import ProductLink from "./blocks/productlink";
+
 function ponziodiv() {
+
+  const size = useWindowSize();
+
+  function useWindowSize() {
+    const [windowSize, setWindowSize] = useState({
+      width: undefined,
+      height: undefined,
+    });
+    useEffect(() => {
+      // only execute all the code below in client side
+      if (typeof window !== "undefined") {
+        // Handler to call on window resize
+        function handleResize() {
+          // Set window width/height to state
+          setWindowSize({
+            width: 1536 > window.innerWidth ? window.innerWidth : 1536,
+            height: window.innerHeight,
+          });
+        }
+
+        // Add event listener
+        window.addEventListener("resize", handleResize);
+
+        // Call handler right away so state gets updated with initial window size
+        handleResize();
+
+        // Remove event listener on cleanup
+        return () => window.removeEventListener("resize", handleResize);
+      }
+    }, []); // Empty array ensures that effect is only run on mount
+    return windowSize;
+  }
+
+  const familyPE68 = [
+    <ProductLink linktext="Ponzio PE 68N" href="/products/pe68" opis="Aluminium Ponzio PE 68" pic="/pics/producticons/pe68.png"/>,
+    <ProductLink linktext="Ponzio PE 78N" href="/products/pe78" opis="Aluminium Ponzio PE 78" pic="/pics/producticons/pe78.png"/>,
+  <ProductLink linktext="Aluprof MB 70 HI" href="/products/mb70" opis="Aluminium Aluprof MB 70" pic="/pics/producticons/mb70.png"/>,
+  <ProductLink linktext="Aluprof MB 86 SI" href="/products/mb86" opis="Aluminium Aluprof MB 86" pic="/pics/producticons/mb86.png"/>,
+  <ProductLink linktext="Schüco AWS 75 SI" href="/products/aws75" opis="Aluminium Schüco AWS 75" pic="/pics/producticons/aws75.png"/>,
+  <ProductLink linktext="Schüco AWS 90 SI" href="/products/aws90" opis="Aluminium Schüco AWS 90" pic="/pics/producticons/aws90.png"/>,
+  ];
+
+  const familyPE78 = [
+    <ProductLink linktext="Ponzio PE 78N" href="/products/pe78" opis="Aluminium Ponzio PE 78" pic="/pics/producticons/pe78.png"/>,
+    <ProductLink linktext="Ponzio PE 68N" href="/products/pe68" opis="Aluminium Ponzio PE 68" pic="/pics/producticons/pe68.png"/>,
+    <ProductLink linktext="Aluprof MB 70 HI" href="/products/mb70" opis="Aluminium Aluprof MB 70" pic="/pics/producticons/mb70.png"/>,
+  <ProductLink linktext="Aluprof MB 86 SI" href="/products/mb86" opis="Aluminium Aluprof MB 86" pic="/pics/producticons/mb86.png"/>,
+  <ProductLink linktext="Schüco AWS 75 SI" href="/products/aws75" opis="Aluminium Schüco AWS 75" pic="/pics/producticons/aws75.png"/>,
+  <ProductLink linktext="Schüco AWS 90 SI" href="/products/aws90" opis="Aluminium Schüco AWS 90" pic="/pics/producticons/aws90.png"/>,
+  ];
+
+
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
       <div className="flex flex-wrap justify-around w-100 ba b--moon-gray ma2 pa3">
@@ -7,7 +63,7 @@ function ponziodiv() {
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Ponzio PE 68 N</h5>
-          <p className="gray f6 tl">
+          <div className="gray f6 tl">
           <ul>   
             <li>Dreikammerprofilsystem mit der Euro-Nut und Beschlagnut.</li>
             <li>Einbautiefe Rahmen beträgt 68 mm und Flügel 76 mm.</li>
@@ -19,7 +75,7 @@ function ponziodiv() {
             <li>Glasstärke 18-59 mm</li>
             <li>Ganze RAL Farbpalette verfügbar</li>
          </ul>
-          </p>
+          </div>
         </div>
 
         <div className="w-100 w-50-l ma1 pa2">
@@ -34,6 +90,12 @@ function ponziodiv() {
             src="./pics/sections/pe68.png"
           ></img>
         </div>
+        <Carousel
+        show={Math.floor((size.width - 50) / 186)}
+        title="Produktfamilie und Alternativen:"
+      >
+        {familyPE68}
+      </Carousel>
       </div>
 
       <div className="flex flex-wrap justify-around w-100 ba b--moon-gray ma2 pa3">
@@ -74,6 +136,12 @@ function ponziodiv() {
             src="./pics/sections/pe78.png"
           ></img>
         </div>
+        <Carousel
+        show={Math.floor((size.width - 50) / 186)}
+        title="Produktfamilie und Alternativen:"
+      >
+        {familyPE78}
+      </Carousel>
       </div>
 
     </div>
