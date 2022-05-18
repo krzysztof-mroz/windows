@@ -197,7 +197,7 @@ function rollovisualisation({ ...props }) {
               }
               onMouseDown={() => changeRolloMode("verb")}
             >
-              Montage am Fenster mit Verbreiterung
+              Montage mit Verbreiterung
             </button>
            
             <div className="f5 tl mt4">
@@ -330,7 +330,7 @@ function rollovisualisation({ ...props }) {
               }
               onMouseDown={() => changeRolloMode("verb")}
             >
-              Montage am Fenster mit Verbreiterung
+              Montage mit Verbreiterung
             </button>
 
             <button
