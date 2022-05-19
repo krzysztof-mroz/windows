@@ -183,24 +183,24 @@ function footer() {
               <Link href="/aufmass">
                 <a className="f6 fw4 no-underline db   ph3">Aufmaß</a>
               </Link>
-              <Link href="/">
+              <Link href="/howworking">
                 <a className="f6 fw4 no-underline db   ph3">
                   Wie funktioniert es?
                 </a>
               </Link>
-              <Link href="/">
-                <a className="f6 fw4 no-underline  db  ph3">Über die Firma</a>
+              <Link href="/aboutus">
+                <a className="f6 fw4 no-underline  db  ph3">Über uns</a>
               </Link>
               <Link href="/kontakt">
                 <a className="f6 fw4 no-underline  db  ph3">Kontakt</a>
               </Link>
-              <Link href="/">
+              <Link href="/beratung">
                 <a className="f6 fw4 no-underline  db  ph3">Beratung</a>
               </Link>
-              <Link href="/">
+              <Link href="/vermittlung">
                 <a className="f6 fw4 no-underline  db  ph3">Vermittlung</a>
               </Link>
-              <Link href="/">
+              <Link href="/montage">
                 <a className="f6 fw4 no-underline  db  ph3">Montage</a>
               </Link>
             </p>
