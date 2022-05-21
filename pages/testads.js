@@ -131,18 +131,7 @@ const hebeschiebe = [
         </div>
       </div>
 
-      <Carousel show={Math.floor((size.width-50)/186)} title="Fenster:">      
-          {fenster}
-      </Carousel>
-
-  <Carousel show={Math.floor((size.width-50)/186)} title="Türen und Hebe Schiebe:">      
-          {tueren}
-      </Carousel>
-
-      <Carousel show={Math.floor((size.width-50)/186)} title="Beschattung:">      
-          {together}
-      </Carousel>
-
+     
      
       <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3">
      {/* <div className="w-100 ba b--moon-gray mb4">
