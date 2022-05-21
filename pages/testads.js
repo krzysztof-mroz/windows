@@ -143,7 +143,7 @@ const hebeschiebe = [
           {together}
       </Carousel>
 
-      <ActionDiv />
+     
 
     
      
