@@ -2,13 +2,15 @@ import Link from "next/link";
 
 function navibar() {
   return (
-    <div className="fw9 pv1 tl dt w-100">
+    <div className="fw9 pv1 tl dt w-100" >
       <div
         className="dtc v-mid tc pa1"
         style={{
           overflow: "hidden",
           position: "fixed",
           top: 0,
+          left: 0,
+          textAlign: "center",
           width: "100%",
           marginBottom: "70px",
           zIndex: 999,
