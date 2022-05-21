@@ -120,7 +120,7 @@ function Ct70Rondo() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Schüco CT 70 Rondo Fenster" />
-      <Visualisation profil="Schüco CT 70 Rondo" showProfiles="no" />
+      <Visualisation profil="Schüco CT 70 Rondo" showProfiles="yes" />
 
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
         <div className="w-100 w-40-l mt1 mt5-l">
