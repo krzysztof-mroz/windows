@@ -144,7 +144,7 @@ const hebeschiebe = [
       </Carousel>
 
       <WarumDiv />
-      <ActionDiv />
+
     
      
     </Fragment>
