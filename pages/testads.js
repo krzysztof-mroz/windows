@@ -131,7 +131,9 @@ const hebeschiebe = [
         </div>
       </div>
 
-     
+      <Carousel show={Math.floor((size.width-50)/186)} title="Fenster:">      
+          {fenster}
+      </Carousel>
      
       <WarumDiv />
       <ActionDiv /> 
