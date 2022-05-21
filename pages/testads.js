@@ -143,6 +143,20 @@ const hebeschiebe = [
           {together}
       </Carousel>
 
+      <Carousel show={Math.floor((size.width-50)/186)} title="Fenster:">      
+          {fenster}
+      </Carousel>
+
+  <Carousel show={Math.floor((size.width-50)/186)} title="Türen und Hebe Schiebe:">      
+          {tueren}
+      </Carousel>
+
+    
+
+      <Carousel show={Math.floor((size.width-50)/186)} title="Beschattung:">      
+          {together}
+      </Carousel>
+
      
 
     
