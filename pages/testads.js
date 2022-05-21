@@ -123,36 +123,7 @@ const hebeschiebe = [
      
 
     
-       
-       
-  
-  <Description />
-
-  <div className="flex flex-wrap justify-around mb3 w-100 tc">
-        <div className="w-100 w-40-l ma2 mt5-l">
-          <Image src={image1} alt="Schüco CT 70 Classic" />
-        </div>
-        <div className="w-100 w-40-l ma2 mt5-l">
-          <Image src={image2} alt="Schüco CT 70 Classic" />
-        </div>
-      </div>
-
-  <Carousel show={Math.floor((size.width-50)/186)} title="Fenster:">      
-          {fenster}
-      </Carousel>
-
-  <Carousel show={Math.floor((size.width-50)/186)} title="Türen und Hebe Schiebe:">      
-          {tueren}
-      </Carousel>
-
-    
-
-      <Carousel show={Math.floor((size.width-50)/186)} title="Beschattung:">      
-          {together}
-      </Carousel>
-      
-      <WarumDiv />
-      <ActionDiv />
+     
     </Fragment>
   );
 }
