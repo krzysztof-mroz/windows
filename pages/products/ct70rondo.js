@@ -108,7 +108,7 @@ function Ct70Rondo() {
   return (
     <Fragment>
       <Head>
-        <title>Polnische Fenster Schüco CT 70 Classic</title>
+        <title>Polnische Fenster Schüco CT 70 Rondo</title>
         <meta
           name="description"
           content="Schüco CT 70 Rondo Kunststoff Fenster. 3d Visualisierung"
@@ -119,7 +119,7 @@ function Ct70Rondo() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Schüco CT 70 Kunststofffenster" />
+      <HeaderDiv title="Schüco CT 70 Rondo Fenster" />
       <Visualisation profil="Schüco CT 70 Rondo" showProfiles="no" />
 
       <div className="flex flex-wrap justify-around mb3 w-100 tc">

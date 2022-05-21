@@ -118,7 +118,7 @@ const hebeschiebe = [
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
-      <Visualisation profil = "Kömmerling 88 MD" showProfiles = "no" />
+      <Visualisation profil = "Schüco CT 70 Rondo" showProfiles = "no" />
 
      
 
