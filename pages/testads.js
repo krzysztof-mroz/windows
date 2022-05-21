@@ -139,6 +139,10 @@ const hebeschiebe = [
           {tueren}
       </Carousel>
 
+      <Carousel show={Math.floor((size.width-50)/186)} title="Beschattung:">      
+          {together}
+      </Carousel>
+
     
      
     </Fragment>
