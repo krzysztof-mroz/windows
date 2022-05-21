@@ -6,7 +6,7 @@ function warumdiv() {
   </div>*/}
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/ikona_markenware.png"></img>
+        <img src="/pics/ikona_markenware.png"></img>
         <h5>Nur Markenware</h5>
         <p className="gray f6">
           Profile von Schüco, Profine und Ponzio, Beschläge von Winkhaus mit
@@ -16,7 +16,7 @@ function warumdiv() {
       </div>
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/ikona_idea.png"></img>
+        <img src="/pics/ikona_idea.png"></img>
         <h5>Kompetente Beratung</h5>
         <p className="gray f6">
           Wir beraten Sie gerne im Bereich der neuen Fenster, sowie Beschattung.
@@ -25,7 +25,7 @@ function warumdiv() {
         </p>
       </div>
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/ikona_aufmass.png"></img>
+        <img src="/pics/ikona_aufmass.png"></img>
         <h5>Aufmaß vor Ort</h5>
         <p className="gray f6">
           Kein Fensterprofi? Was für ein Zufall. Wir übernehmen Aufmaß vor Ort
@@ -34,7 +34,7 @@ function warumdiv() {
         </p>
       </div>
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/ikona_transport.png"></img>
+        <img src="/pics/ikona_transport.png"></img>
         <h5>Schnelle Lieferung</h5>
         <p className="gray f6">
           Kurze Lieferzeiten. Anlieferung zu Ihrer Tür oder auf die Baustelle,
@@ -43,7 +43,7 @@ function warumdiv() {
         </p>
       </div>
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/ikona_montage.png"></img>
+        <img src="/pics/ikona_montage.png"></img>
         <h5>Montage nach RAL</h5>
         <p className="gray f6">
           Für unsere Kunden übernehmen wir den Einbau nach RAL im Altbau (mit
@@ -52,7 +52,7 @@ function warumdiv() {
         </p>
       </div>
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/ikona_garantie.png"></img>
+        <img src="/pics/ikona_garantie.png"></img>
         <h5>5 Jahre Garantie</h5>
         <p className="gray f6">
           Sie bekommen Garantie für unsere Fenster für 5 Jahre. Es gilt auch für

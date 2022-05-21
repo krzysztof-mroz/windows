@@ -10,6 +10,8 @@ import HeaderDiv from "../../components/ui/headerdiv";
 import Visualisation from "../../components/ui/visualisation";
 import Carousel from "../../components/ui/blocks/carousel";
 import ProductLink from "../../components/ui/blocks/productlink";
+import WarumDiv from "../../components/ui/warumdiv";
+import ActionDiv from "../../components/ui/actiondiv";
 
 function Ct70Rondo() {
   const size = useWindowSize();
@@ -192,6 +194,9 @@ function Ct70Rondo() {
       >
         {together}
       </Carousel>
+
+      <WarumDiv />
+      <ActionDiv />
 
     </Fragment>
   );

@@ -25,7 +25,7 @@ function actiondiv() {
     </div>*/}
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/laptop.png"></img>
+        <img src="/pics/laptop.png"></img>
 
         <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
@@ -40,7 +40,7 @@ function actiondiv() {
       </div>
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/messband.png"></img>
+        <img src="/pics/messband.png"></img>
 
         <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
@@ -54,7 +54,7 @@ function actiondiv() {
       </div>
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/toolbox.png"></img>
+        <img src="/pics/toolbox.png"></img>
 
         <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
@@ -66,7 +66,7 @@ function actiondiv() {
         </button>
       </div>
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/door.png"></img>
+        <img src="/pics/door.png"></img>
 
         <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
@@ -81,7 +81,7 @@ function actiondiv() {
       </div>
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/rollladen.png"></img>
+        <img src="/pics/rollladen.png"></img>
 
         <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
@@ -95,7 +95,7 @@ function actiondiv() {
       </div>
 
       <div className="w-100 w-30-l  b--moon-gray ma2 pa3 ba">
-        <img src="./pics/raffstore.png"></img>
+        <img src="/pics/raffstore.png"></img>
 
         <button
           className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5"
