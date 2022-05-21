@@ -151,8 +151,8 @@ const hebeschiebe = [
           {together}
       </Carousel>
       
-      <WarumDiv />
-      <ActionDiv />
+     {/** <WarumDiv />
+      <ActionDiv /> **/ }
     </Fragment>
   );
 }
