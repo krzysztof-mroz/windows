@@ -19,7 +19,12 @@ function visualisation(props) {
 
     const farben = getAllColours();
 
-    
+    useEffect(() => {
+      if (props.showProfiles != "yes" ) {
+        profileChangeHandler(props.profil)
+      }
+      
+    });
   
 
     function Loader() {
