@@ -19,9 +19,7 @@ function visualisation(props) {
 
     const farben = getAllColours();
 
-    useEffect(() => {
-      profileChangeHandler(props.profil)
-    });
+    
   
 
     function Loader() {

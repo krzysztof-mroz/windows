@@ -130,7 +130,7 @@ const hebeschiebe = [
           <Image src={image1} alt="Schüco CT 70 Classic" />
         </div>
         <div className="w-100 w-40-l ma2 mt5-l">
-          <Image src={image2} alt="Schüco CT 70 Classic" />
+          <Image src={image2} alt="Schüco AWS" />
         </div>
       </div>
 
