@@ -15,8 +15,7 @@ function visualisation(props) {
     const [bothSidesColor, setBothSidesColor] = useState(true);
     const [blackGasket, setBlackGasket] = useState(false);
     const [aluProfile, setAluProfile] = useState(false);
-
-
+    
     const farben = getAllColours();
 
     useEffect(() => {
