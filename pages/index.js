@@ -119,8 +119,6 @@ const hebeschiebe = [
 
      
 
-    
-       
        
   
   <Description />
