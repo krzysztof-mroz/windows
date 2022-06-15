@@ -7,17 +7,14 @@ function Tueren() {
     return (
         <Fragment>
       <Head>
-        <title>Haustüren aus Kunststoff und Aluminium</title>
+        <title>Sie finden bestimmt passende Haustür bei uns. Größte Auswahl an Haustüren, egal ob mit Stoßgriff, E-Öffner oder Selbstschliesser. Alles aus einer Hand.</title>
         <meta
           name="description"
-          content="Haustüren Schüco, Kömmerling, Ponzio und Aluprof aus Polen"
+          content="Sie finden bestimmt passende Haustür bei uns. "
         />
-        <meta
-          name="keywords"
-          content="türen, kunststoff, haustüren aus polen, schüco, kömmerling, ponzio, aluprof, türen konfigurator"
-        />
+      
       </Head>
-      <HeaderDiv title="Haustüren aus Kunststoff und Aluminium"/>
+      <HeaderDiv title="Eingangstüren aus Kunststoff und Aluminium"/>
       <TuerenDiv />
     </Fragment>
     )

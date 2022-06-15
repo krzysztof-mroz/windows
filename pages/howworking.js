@@ -7,17 +7,14 @@ function HowWorking() {
     return (
         <Fragment>
         <Head>
-          <title>Wie funktioniert es?</title>
+          <title>Wie kaufe ich meine Fenster?</title>
           <meta
             name="description"
-            content="Fenster aus Polen. Beste Kaufmöglichkeiten."
+            content="Der schnellste und einfachste Weg, wie Sie Ihre neuen Fenster kaufen und dabei bis 30% des Wertes sparen. Garantierte KfW Förderung."
           />
-          <meta
-            name="keywords"
-            content="fenster, haustür, rollladen, raffstore, polnische fenster"
-          />
+         
         </Head>
-        <HeaderDiv title="12 Schritte noch zu Ihren Fenstern"/>
+        <HeaderDiv title="Fensterkauf in 12 Schritten"/>
         <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
            
             <HowWorkingDiv />

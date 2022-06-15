@@ -10,11 +10,11 @@ function Beschattung() {
         <title>Beschattung mit Rollläden, Raffstoren oder Screens</title>
         <meta
           name="description"
-          content="Rollläden, Raffstoren und Screens aus Polen. Die Beste Fenster Beschattung."
+          content="Sie beschatten Ihre Innenräume am einfachsten mit unseren Rollläden, Raffstoren oder Screens. Lichteinfallreduktion, Schallschutz und Einbruchschutz."
         />
-        <meta name="keywords" content="rollladen, raffstore, screen" />
+       
       </Head>
-      <HeaderDiv title="Beschattung der Fenster" />
+      <HeaderDiv title="Rollos, Screens und Raffstoren" />
       <BeschattungDiv />
     </Fragment>
   );
