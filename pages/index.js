@@ -105,13 +105,11 @@ const hebeschiebe = [
 
     <Fragment>
       <Head>
-        <title>Fenster aus Polen Kunststoff und Aluminium</title>
+        <title>Schüco / Kömmerling Fenster aus Polen kaufen, Kunststoff und Alu</title>
         <meta name='description'
-              content='Schüco, Kömmerling, Ponzio und Aluprof Fenster aus Polen mit Montage. 3d Visualisierung'
+              content='Erreichen Sie garantiert bis 70% bessere Wärmedämmung mit Schüco, Kömmerling, Ponzio und Aluprof Fenster / Türen aus Polen, mit Montage. Schöne 3d Modelle.'
         />
-         <meta name='keywords'
-              content='fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator'
-        />
+         
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
