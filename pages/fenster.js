@@ -7,15 +7,12 @@ function Fenster() {
   return (
     <Fragment>
       <Head>
-        <title>Polnische Fenster Kunststoff und Aluminium</title>
+        <title>Fenster Schüco, Kömmerling, Ponzio, Aluprof. Kunststoff und Alu.</title>
         <meta
           name="description"
-          content="Fenster Schüco, Kömmerling, Ponzio und Aluprof aus Polen"
+          content="Sie kaufen garantiert passende Fenster bei uns. Sie erreichen Wärmedämmungswerte für KfW Förderung. Mit Montage und bester vor Ort Beratung."
         />
-        <meta
-          name="keywords"
-          content="fenster, kunststofffenster, fenster aus polen, schüco, kömmerling, ponzio, aluprof, fenster konfigurator"
-        />
+       
       </Head>
       <HeaderDiv title="Fenster aus Kunststoff und Aluminium"/>
       <FensterDiv />
