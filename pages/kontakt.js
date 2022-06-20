@@ -11,7 +11,6 @@ function Kontakt() {
         <meta name='description'
               content='Schneller Kontakt zu uns. Sie bekommen hier die beste Beratung, telefonisch oder vor Ort. Nutzen Sie die Gelegenheit jetzt!'
         />
-        
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeaderDiv title="Kontakt für Ihre Fenster"/>
