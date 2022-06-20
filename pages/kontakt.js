@@ -21,5 +21,4 @@ function Kontakt() {
     </Fragment>
   );
 }
-
 export default Kontakt;
