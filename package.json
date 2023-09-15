@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "18": "^0.0.0",
     "-": "^0.0.1",
     "@ramonak/react-progress-bar": "^4.4.0",
     "@react-three/drei": "^7.22.4",
