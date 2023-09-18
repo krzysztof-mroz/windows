@@ -98,7 +98,7 @@ function header(props) {
             />
           </div>
         </div>
-        <div className="w-33 mv1">
+        <div className="w-33 ">
           <div className="contact-icon" onClick={() => setActive("email")}>
             <img
               className="dib mr2"
@@ -107,7 +107,7 @@ function header(props) {
             />
           </div>
         </div>
-        <div className="w-33 mv1">
+        <div className="w-33 ">
           <div className="contact-icon" onClick={() => setActive("whatsapp")}>
             <img
               className="dib mr2"
