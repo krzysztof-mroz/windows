@@ -57,7 +57,7 @@ function visualisation(props) {
       <div className="flex flex-wrap justify-around mb3 w-100">
 
            {/* wizualizacja */}
-          <div className="db mb4 flex flex-wrap justify-center mv1 pb3 fl w-100 w-50-l  b--moon-gray">     
+          <div className="db mb4 flex flex-wrap justify-center mv1-l pb3 fl w-100 w-50-l  b--moon-gray">     
 
               {/* hint */}
               <p className="ba b--moon-gray pa2 silver">
