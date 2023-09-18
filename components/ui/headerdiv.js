@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Link from "next/link";
 
 function header(props) {
   const { title } = props;
@@ -116,13 +117,29 @@ function header(props) {
             />
           </div>
         </div>
-
-       
       </div>
       {renderContactData()}
-      <div className="db dn-l tc w-100">
-        <p>Schüco - Kömmerling - Ponzio - Aluprof</p>
+
+      <div className="flex justify-center">
+        {" "}
+        {/* Center the row horizontally */}
+        <div className="db dn-l tc w-100 flex b--moon-gray">
+        <p className="gray f6 flex">
+          <Link href="/schuecopvc">
+            <a className="f6 fw4 no-underline  db  ph3">Schüco</a>
+          </Link>
+          <Link href="/koemmerling">
+            <a className="f6 fw4 no-underline  db  ph3">Kömmerling</a>
+          </Link>
+          <Link href="/ponzio">
+            <a className="f6 fw4 no-underline  db  ph3">Ponzio</a>
+          </Link>
+          <Link href="/aluprof">
+            <a className="f6 fw4 no-underline  db  ph3">Aluprof</a>
+          </Link>
+          </p>
         </div>
+      </div>
     </div>
   );
 }
