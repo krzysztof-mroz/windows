@@ -34,7 +34,7 @@ function Schnellkontakt(props) {
       <form className="" name="Kurzformular" onSubmit={submitFormHandler}>
         <div className="">
           <p>
-            <b>Schnellkontakt jetzt:</b>
+            <b>Schnellkontakt:</b>
           </p>
         </div>
 
