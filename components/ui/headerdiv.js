@@ -13,14 +13,16 @@ function header(props) {
 
          {/* IKONKI I TYTUL STRONY */}
         <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
-          <img className="mt4 mr1 " src="/pics/ikonki_rund.png"></img>
+          <div className="dn-m">
+            <img className="mt4 mr1 " src="/pics/ikonki_rund.png"></img>
+          </div>
           <h1 className="fl f3 ma1 mt3 w-100 tc">
             { title }
           </h1>
         </div>
 
         {/* DANE KONTAKTOWE */}
-        <div className="w-100 w-25-l fl tc tl-l mt3  f5 w3-text-orange ">
+        <div className="w-100 w-25-l fl tc tl-l mt3 mt1-m f5 w3-text-orange ">
           <div className="w-100 mv1">
             <img
               className="dib mr2"
