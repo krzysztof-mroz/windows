@@ -120,6 +120,9 @@ function header(props) {
        
       </div>
       {renderContactData()}
+      <div className="db dn-l tc w-100">
+        <p>Schüco - Kömmerling - Ponzio - Aluprof</p>
+        </div>
     </div>
   );
 }
