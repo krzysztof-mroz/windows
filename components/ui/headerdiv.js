@@ -7,13 +7,13 @@ function header(props) {
         <div className="flex flex-wrap justify-around mb2 w-100">
 
         {/* LOGO */}
-        <div className="dn-m dn-s w-100 w-20-l tc mv1">
+        <div className="dn db-l w-100 w-20-l tc mv1">
           <img className="mt1 dib" src="/pics/logo_PF.png"></img>
         </div>
 
          {/* IKONKI I TYTUL STRONY */}
         <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
-          <div className="dn-m">
+          <div className="dn db-l">
             <img className="mt4 mr1 " src="/pics/ikonki_rund.png"></img>
           </div>
           <h1 className="fl f3 ma1 mt3 w-100 tc">
