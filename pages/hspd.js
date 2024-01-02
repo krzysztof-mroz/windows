@@ -85,7 +85,7 @@ function HsPd() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Kömmerling Hebe Schiebe Türen" />
+      <HeaderDiv title="Kömmerling Hebe Schiebe Türen" subtitle="Türsysteme, die Zugänglichkeit und Eleganz vereinen"/>
       <ProductVisualisation product="hspd" camera="48,48,48" productName="HS Kömmerling Preimdoor 88"/>
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">

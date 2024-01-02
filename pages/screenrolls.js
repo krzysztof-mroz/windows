@@ -64,7 +64,7 @@ function Screenrolls() {
           content="screen roll, rollläden, material rollläden"
         />
       </Head>
-      <HeaderDiv title="Screen Roll Rollläden"/>
+      <HeaderDiv title="Screen Roll Rollläden" subtitle="Effektive Beschattung für mehr Privatsphäre"/>
       <ScreenDiv />
       <Carousel
         show={Math.floor((size.width - 50) / 186)}

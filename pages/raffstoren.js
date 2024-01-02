@@ -64,7 +64,7 @@ function Raffstoren() {
           content="raffstoren, c80, z90"
         />
       </Head>
-      <HeaderDiv title="Raffstoren mit Aluminium Lamellen"/>
+      <HeaderDiv title="Raffstoren mit Aluminium Lamellen" subtitle="Komfortable Lichtregulierung in jedem Raum"/>
       <RaffstoreDiv />
       <Carousel
         show={Math.floor((size.width - 50) / 186)}

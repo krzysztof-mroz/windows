@@ -17,7 +17,7 @@ function Aluprof() {
           content="fenster, aluminiumfenster, fenster aus polen, alufenster, aluprof, fenster konfigurator"
         />
       </Head>
-      <HeaderDiv title="Aluprof Aluminium Fenster"/>
+      <HeaderDiv title="Aluprof Aluminium Fenster" subtitle="Ein Hauch von Eleganz für Ihr Heim"/>
 
       <AluprofDiv />
 

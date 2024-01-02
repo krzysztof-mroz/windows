@@ -13,7 +13,7 @@ function Kontakt() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Kontakt für Ihre Fenster"/>
+      <HeaderDiv title="Kontakt für Ihre Fenster" subtitle="Ihre Fragen und Anliegen sind uns wichtig"/>
       <div className="flex flex-wrap justify-around mv1 tc fl w-100 ba b--moon-gray pa4">
         <Schnellkontakt />
         <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 center"  >

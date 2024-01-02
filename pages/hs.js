@@ -85,7 +85,7 @@ function Hs() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Schüco Hebe Schiebe Türen" />
+      <HeaderDiv title="Schüco Hebe Schiebe Türen" subtitle="Robuste Schiebe-Türlösungen für barrierefreie Übergänge"/>
       <ProductVisualisation product="hsls" camera="48,48,48" productName="HS Schüco Living Slide"/>
       
       <div className="flex flex-wrap justify-around mb3 w-100 tc">

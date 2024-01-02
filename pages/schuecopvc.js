@@ -17,7 +17,7 @@ function SchuecoPvc() {
           content="fenster, kunststofffenster, fenster aus polen, schüco, fenster konfigurator"
         />
       </Head>
-      <HeaderDiv title="Schüco Kunststoff Fenster"/>
+      <HeaderDiv title="Schüco Kunststoff Fenster" subtitle="Kunststofffenster für höchsten Komfort und Sicherheit"/>
 
       <SchuecoPvcDiv />
 

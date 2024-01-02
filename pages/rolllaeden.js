@@ -64,7 +64,7 @@ function Rolllaeden() {
           content="rollladen, aufsatzrolllaeden, vorsatzrolllaeden"
         />
       </Head>
-      <HeaderDiv title="Aufsatzrollläden und Vorsatzrollläden."/>
+      <HeaderDiv title="Aufsatzrollläden und Vorsatzrollläden" subtitle="Diskrete Lösungen für Ihre Wohnbedürfnisse"/>
       <RolllaedenDiv />
 
       <Carousel

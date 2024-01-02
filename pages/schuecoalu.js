@@ -17,7 +17,7 @@ function SchuecoAlu() {
           content="fenster, kunststofffenster, fenster aus polen, schüco, aluminium fenster, fenster konfigurator"
         />
       </Head>
-      <HeaderDiv title="Schüco Aluminium Fenster"/>
+      <HeaderDiv title="Schüco Aluminium Fenster" subtitle="Die perfekte Verbindung von Design und Leistung"/>
 
       <SchuecoAluDiv />
 

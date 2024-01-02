@@ -17,7 +17,7 @@ function Kontakt() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Über uns"/>
+      <HeaderDiv title="Über uns" subtitle="Unsere Leidenschaft: Ihre Wohnraumgestaltung"/>
       <div className="ph4 ph5-l mv4 w-100 ">
        <p>Wir beraten Sie gerne im Bereich Fenster, Rollläden, Raffstoren und Hasustüren. Unsere langjährige Erfahrung in diesem Bereich erlaubt uns, ein optimales Angebot für alle Ihre Anforderungen zu erstellen. Wir haben mehrere Partner als Hersteller, Transportunternehmen und Monteure. Nutzen Sie es und vergleichen Sie bitte unseres Angebot mit dem Wettbewerb. </p>
        <p>Wir finden den richtigen Vertragspartner für Sie, egal ob es ein deutsches Unternehmen, oder direkt der polnische Hersteller ist. Alles bleibt unter einem Dach und wir übernehmen die Verantwortung. Wir messen auf, beraten Sie gerne telefonisch, per Email, WhatsApp oder vor Ort auf der Baustelle. 

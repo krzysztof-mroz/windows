@@ -14,7 +14,7 @@ function Fenster() {
         />
        
       </Head>
-      <HeaderDiv title="Fenster aus Kunststoff und Aluminium"/>
+      <HeaderDiv title="Fenster aus Kunststoff und Aluminium" subtitle="Modernste Fenstertechnik für mehr Lebensqualität"/>
       <FensterDiv />
     </Fragment>
   );

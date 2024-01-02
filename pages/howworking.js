@@ -14,7 +14,7 @@ function HowWorking() {
           />
          
         </Head>
-        <HeaderDiv title="Fensterkauf in 12 Schritten"/>
+        <HeaderDiv title="Fensterkauf in 12 Schritten" subtitle="Schritt für Schritt zum perfekten Fensteraustausch"/>
         <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
            
             <HowWorkingDiv />

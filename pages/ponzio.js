@@ -17,7 +17,7 @@ function Ponzio() {
           content="fenster, alumiiumfenster, fenster aus polen, alufenster, ponzio, fenster konfigurator"
         />
       </Head>
-      <HeaderDiv title="Ponzio Aluminium Fenster"/>
+      <HeaderDiv title="Ponzio Aluminium Fenster" subtitle="Qualität ohne Kompromisse: Unsere Lösungen"/>
 
       <PonzioDiv />
 

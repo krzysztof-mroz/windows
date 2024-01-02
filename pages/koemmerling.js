@@ -17,7 +17,7 @@ function Koemmerling() {
           content="fenster, kunststofffenster, fenster aus polen, profine, kömmerling, fenster konfigurator"
         />
       </Head>
-      <HeaderDiv title="Kömmerling Kunststoff Fenster"/>
+      <HeaderDiv title="Kömmerling Kunststoff Fenster" subtitle="Innovation und Tradition in einem Produkt"/>
 
       <KoemmerlingDiv />
 

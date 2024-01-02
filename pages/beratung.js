@@ -17,7 +17,7 @@ function Kontakt() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Beratung"/>
+      <HeaderDiv title="Beratung" subtitle="Professionelle Unterstützung für Ihre Entscheidungen"/>
       <div className="ph4 ph5-l mv4 w-100 ">
        <p>Beratung für Ihre Baustelle oder Renovierung ist unsere Kernkompetenz. Es gibt eine Reihe von Abhängigkeiten, die bei der Fensterbestellung berücksichtigt werden sollen. Niemand kennt alles, deswegen müssen Sie als Bauherr oder Bauleiter selbstverständlich auch nicht alles wissen. Nehmen Sie bitte mit uns Kontakt auf, wir beraten Sie gerne, analysieren die Baupläne und machen Ihnen einen passenden Vorschlag. Dabei stellen wir auf offene Kommunikation und gegenseitiges Vertrauen. 
 </p>

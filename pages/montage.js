@@ -17,7 +17,7 @@ function Kontakt() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Fenstermontage nach RAL"/>
+      <HeaderDiv title="Fenstermontage nach RAL" subtitle="Exzellente Arbeit, die den Test der Zeit besteht"/>
       <div className="ph4 ph5-l mv4 w-100 ">
        <p>Unsere Montageteams sind jede Woche in verschiedenen Ecken in Deutschlands unterwegs. Wir bauen Ihre Fenster ein, egal ob es sich um Neubau oder Altbau handelt. 
 </p>

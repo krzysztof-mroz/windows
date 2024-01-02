@@ -14,7 +14,7 @@ function Beschattung() {
         />
        
       </Head>
-      <HeaderDiv title="Rollos, Screens und Raffstoren" />
+      <HeaderDiv title="Rollos, Screens und Raffstoren" subtitle="Raffinierte Beschattungslösungen für Ihr Wohlbefinden"/>
       <BeschattungDiv />
     </Fragment>
   );

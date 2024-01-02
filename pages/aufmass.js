@@ -22,7 +22,7 @@ function Aufmass() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HeaderDiv title="Wie messe ich meine Fenster?" />
+      <HeaderDiv title="Wie messe ich meine Fenster?" subtitle="Professionelle Anleitung für exakte Messungen" />
       <BuildingVisualisation product="wall" camera="220,220,220" productName="Aufmass"/>
       
       

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 function header(props) {
-  const { title } = props;
+  const { title, subtitle } = props;
 
   // Use state to track which contact data is active
   const [activeContact, setActiveContact] = useState("phone"); // 'phone' is the default
@@ -59,6 +59,7 @@ function header(props) {
           <img className="mt4 mr1 " src="/pics/alu_sala_add.jpg"></img>
         </div>
         <h1 className="fl f3 ma1 mt3-l w-100 tc">{title}</h1>
+        <h2 className="fl f5 ma1 mt3-l w-100 tc">{subtitle}</h2>
       </div>
 
       {/* DANE KONTAKTOWE DUZY EKRAN */}

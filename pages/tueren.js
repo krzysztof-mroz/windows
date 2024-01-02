@@ -14,7 +14,7 @@ function Tueren() {
         />
       
       </Head>
-      <HeaderDiv title="Eingangstüren aus Kunststoff und Aluminium"/>
+      <HeaderDiv title="Eingangstüren aus Kunststoff und Aluminium" subtitle="Die beste Wahl für sichere und ansprechende Türen"/>
       <TuerenDiv />
     </Fragment>
     )
