@@ -85,7 +85,6 @@ function anfragediv() {
       <form className="" name="Anfrageformular" onSubmit={submitFormHandler}>
       <div className="flex flex-wrap justify-around  w-100 tl pa2 mt3 ">
       
-      
       <div className="w-100">
             <div className="w-100 ml4">
                 <p className="w-40 gray f6 mv2"><b>Liste der Positionen</b></p>
@@ -93,13 +92,21 @@ function anfragediv() {
             <div className="w-90 ml4 mr4">
             <textarea id="liste" className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" rows="15" placeholder="Breite mm x Höhe mm, Öffnungsart, Bemerkungen, ANZAHL" ref={messageRef}></textarea>
             <button type="submit" className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5" title="Anfrage abschicken"><b>Senden</b></button>
-            
+            <p className="f5 gray" id="sendResponse">
+            Wir freuen uns auf Ihre Anfrage.
+          </p>
             </div>
         </div>
-
-
-        <h2 className="fl f5 ma1  w-100 tc orange b">Sie können uns gerne auch eine <a href={`mailto:info@polnische-fenster.com`}>Email</a> oder <a href={`https://wa.me/+4915737448021`} target="_blank">WhatsApp</a> schicken!</h2>
      
+      <h2 class="fl f5 ma1 w-100 tc orange b">
+                                Sie können uns gerne auch eine 
+                                <a href="mailto:info@polnische-fenster.com">Email</a>
+                                 oder 
+                                <a href="https://wa.me/+4915737448021" target="_blank">WhatsApp</a>
+                                 schicken!
+                            </h2>
+
+
         <div className="flex flex-wrap justify-around w-100 w-50-l b--moon-gray tl pa4">
             <div className="w-40 gray f6 mv2">Gewünschtes Profil:</div>
             <div  className="w-60 gray f6 tl">
@@ -393,9 +400,12 @@ function anfragediv() {
             <div  className="w-60 gray f6 tl">
                 <input id="email" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Email" ref={emailRef}/>
             </div> 
-         
+            
         </div>
 
+        <button type="submit" className="w3-button w3-border w3-border-orange w3-sand mv3 w-100 mt5" title="Anfrage abschicken"><b>Senden</b></button>
+
+        
 
        
       </div>
