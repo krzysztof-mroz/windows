@@ -7,6 +7,7 @@ import Head from 'next/head';
 
 
 
+
 function Raffstoren() { 
 
   const size = useWindowSize();

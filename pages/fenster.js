@@ -3,6 +3,7 @@ import FensterDiv from "../components/ui/fensterdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
 
+
 function Fenster() {
   return (
     <Fragment>

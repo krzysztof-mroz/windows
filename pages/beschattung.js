@@ -3,6 +3,7 @@ import BeschattungDiv from "../components/ui/beschattungdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from "next/head";
 
+
 function Beschattung() {
   return (
     <Fragment>

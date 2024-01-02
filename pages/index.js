@@ -14,6 +14,7 @@ import Carousel from "../components/ui/blocks/carousel"
 
 
 
+
 import "react-multi-carousel/lib/styles.css";
 
 
@@ -112,7 +113,9 @@ const hebeschiebe = [
          
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      
       <HeaderDiv title="Kunststoff und Alu Fenster" subtitle="Fensterlösungen nach Maß für jeden Bedarf" />
+      
       <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />
 
      

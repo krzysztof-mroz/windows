@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Link from "next/link";
+import CTAButton from "./CTAButton";
 
 function header(props) {
   const { title, subtitle } = props;
@@ -147,6 +148,7 @@ function header(props) {
           </p>
         </div>
       </div>
+      <CTAButton />
     </div>
   );
 }

@@ -1,9 +1,8 @@
 import { Fragment } from "react";
 import Head from 'next/head';
-
 import HeaderDiv from "../components/ui/headerdiv";
-
 import BuildingVisualisation from "../components/ui/buildingvisualisation"
+
 
 
 function Aufmass() {

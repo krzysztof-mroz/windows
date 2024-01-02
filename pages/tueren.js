@@ -3,6 +3,7 @@ import TuerenDiv from "../components/ui/tuerendiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
 
+
 function Tueren() {
     return (
         <Fragment>
