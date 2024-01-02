@@ -5,6 +5,7 @@ import WarumDiv from "../../components/ui/warumdiv"
 import Head from "next/head";
 
 function anfrage() {
+
   return (
     <Fragment>
       <Head>
@@ -15,7 +16,8 @@ function anfrage() {
         />
         <meta name="keywords" content="fenster, kunststofffenster, alufenster, anfrage, fensteranfrage" />
       </Head>
-      <HeaderDiv title="Anfrage für Ihre Fenster" />
+      <HeaderDiv title="Anfrage für Ihre Fenster" subtitle="Sagen Sie uns, was Sie brauchen – wir kümmern uns um den Rest" ifAnfrage="yes" />
+    
 
           
       <AnfrageDiv />

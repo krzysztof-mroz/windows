@@ -3,7 +3,7 @@ import Link from "next/link";
 import CTAButton from "./CTAButton";
 
 function header(props) {
-  const { title, subtitle } = props;
+  const { title, subtitle,ifAnfrage } = props;
 
   // Use state to track which contact data is active
   const [activeContact, setActiveContact] = useState("phone"); // 'phone' is the default
@@ -148,7 +148,8 @@ function header(props) {
           </p>
         </div>
       </div>
-      <CTAButton />
+      {ifAnfrage != "yes" && <CTAButton />}
+      
     </div>
   );
 }
