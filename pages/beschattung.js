@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import BeschattungDiv from "../components/ui/beschattungdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from "next/head";
+import FruehbucherRabatt from "../components/ui/FruehbucherRabatt";
 
 
 function Beschattung() {
@@ -46,6 +47,7 @@ const RolladenInfo = () => {
       </Head>
       <HeaderDiv title="Rollos, Screens und Raffstoren" subtitle="Raffinierte Beschattungslösungen für Ihr Wohlbefinden"/>
       <BeschattungDiv />
+      <FruehbucherRabatt />
       <RolladenInfo />
     </Fragment>
   );

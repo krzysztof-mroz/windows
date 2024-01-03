@@ -3,6 +3,7 @@ import HeaderDiv from "../../components/ui/headerdiv";
 import AnfrageDiv from "../../components/ui/kontakt/anfragediv";
 import WarumDiv from "../../components/ui/warumdiv"
 import Head from "next/head";
+import FruehbucherRabatt from "../../components/ui/FruehbucherRabatt";
 
 function anfrage() {
 
@@ -21,6 +22,7 @@ function anfrage() {
 
           
       <AnfrageDiv />
+      <FruehbucherRabatt />
     </Fragment>
   );
 }

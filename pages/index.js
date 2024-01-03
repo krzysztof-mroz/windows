@@ -11,6 +11,7 @@ import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
 import ProductLink from "../components/ui/blocks/productlink";
 import Carousel from "../components/ui/blocks/carousel"
+import FruehbucherRabatt from "../components/ui/FruehbucherRabatt";
 
 
 
@@ -146,8 +147,10 @@ const WindowInfo = () => {
       <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />    
   
   <Description />
-
+  <FruehbucherRabatt />
   <WindowInfo />
+
+
 
   <div className="flex flex-wrap justify-around mb3 w-100 tc">
         <div className="w-100 w-40-l ma2 mt5-l">
