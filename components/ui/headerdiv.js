@@ -27,12 +27,12 @@ function header(props) {
         {activeContact === "phone" && <p>{contactData.phone}</p>}
         {activeContact === "email" && (
           <p>
-            <a href={`mailto:${contactData.email}`}>{contactData.email}</a>
+            <a className="blue" href={`mailto:${contactData.email}`}>{contactData.email}</a>
           </p>
         )}
         {activeContact === "whatsapp" && (
           <p>
-            <a href={`https://wa.me/${contactData.whatsapp}`} target="_blank">
+            <a className="green" href={`https://wa.me/${contactData.whatsapp}`} target="_blank">
               {contactData.whatsapp}
             </a>
           </p>
@@ -80,7 +80,7 @@ function header(props) {
             style={{ position: "relative", width: 25, height: 25 }}
             src="/pics/svg/briefumschlag.svg"
           />
-          <a href="mailto: info@polnische-fenster.com">
+          <a className="blue" href="mailto: info@polnische-fenster.com">
             info@polnische-fenster.com
           </a>
         </div>
@@ -90,7 +90,7 @@ function header(props) {
             style={{ position: "relative", width: 25, height: 25 }}
             src="/pics/svg/whatsapp.svg"
           />
-          <a href="https://wa.me/4915737448021" target="_blank">
+          <a className="green" href="https://wa.me/4915737448021" target="_blank">
             +4915737448021
           </a>
         </div>
