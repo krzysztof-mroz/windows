@@ -99,12 +99,7 @@ function anfragediv() {
         </div>
      
       <h2 class="fl f5 ma1 w-100 tc orange b">
-                                Sie können uns gerne auch eine 
-                                <a href="mailto:info@polnische-fenster.com">Email</a>
-                                 oder 
-                                <a href="https://wa.me/+4915737448021" target="_blank">WhatsApp</a>
-                                 schicken!
-                            </h2>
+                                Sie können uns gerne auch eine <a className="blue" href="mailto:info@polnische-fenster.com"> Email </a> oder <a className="green" href="https://wa.me/+4915737448021" target="_blank"> WhatsApp </a> schicken! </h2>
 
 
         <div className="flex flex-wrap justify-around w-100 w-50-l b--moon-gray tl pa4">
