@@ -100,6 +100,33 @@ const hebeschiebe = [
   
 
 ]
+
+// components/WindowInfo.js
+const WindowInfo = () => {
+  return (
+    <div className="flex flex-wrap">
+      <div className="w-100 w-50-l pa2">
+        <p className="lh-copy">
+          Unsere <span className="b">Kunststoff- und Aluminiumfenster</span> zählen zu den gefragtesten auf dem Markt. Sie überzeugen durch exzellente <span className="b">Wärmedämmung</span>, erkennbar an niedrigen U-Werten, sowie durch ihre <span className="b">Langlebigkeit</span> und <span className="b">Wartungsfreiheit</span>. Bei uns finden Sie genau das, was Sie benötigen – ob Sie nun alte Fenster ersetzen oder ein Energiesparhaus errichten möchten. Mit unserer Unterstützung sichern Sie sich garantiert die <span className="b">KfW-Förderung</span>.
+        </p>
+        <p className="lh-copy">
+          Zusätzlich zu Fenstern führen wir verschiedene <span className="b">Haustüren</span> aus Kunststoff und Aluminium. Wählen Sie aus <span className="b">Eingangstüren, Nebeneingangstüren</span>, Doppelflügeltüren, Haustüren mit Seitenteil, die nach innen oder außen öffnen, sowie Kellertüren oder Schiebetüren für die Terrasse. Unsere <span className="b">Hebeschiebe- und PSK-Türen</span>, inklusive Aufmaß und Montage vor Ort, werden Sie begeistern.
+        </p>
+      </div>
+      <div className="w-100 w-50-l pa2">
+        <p className="lh-copy">
+          Unser Sortiment umfasst hochwertige <span className="b">Schüco</span> und <span className="b">Kömmerling Fenster</span> von Profine in Kunststoffausführung sowie <span className="b">Ponzio, Aluprof</span> und <span className="b">Schüco</span> in Aluminium. Ob bodentiefe Fenster, Fenster mit Sprossen, Kellerfenster oder Schiebefenster – bei uns werden Sie fündig. Wir bieten eine Vielzahl an Sichtschutzgläsern und Farboptionen, wie Anthrazit, DB 703, Mahagoni und viele mehr.
+        </p>
+        <p className="lh-copy">
+          Entdecken Sie auch unsere günstigen <span className="b">Fenster aus Polen</span>. Informieren Sie sich über unsere Auswahl an Fenster- und Türgriffen, flachen Türschwellen, auch für Schiebetüren, sowie über <span className="b">einbruchsichere Fenster und Türen</span>. Wir übernehmen gerne den Einbau, das Abdichten und das Einstellen Ihrer Fenster. Begleiten Sie uns auf dieser wundervollen Reise durch die Welt der Fenster und Türen.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+
+
  
   return (
 
@@ -116,13 +143,11 @@ const hebeschiebe = [
       
       <HeaderDiv title="Kunststoff und Alu Fenster" subtitle="Fensterlösungen nach Maß für jeden Bedarf" />
       
-      <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />
-
-     
-
-       
+      <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />    
   
   <Description />
+
+  <WindowInfo />
 
   <div className="flex flex-wrap justify-around mb3 w-100 tc">
         <div className="w-100 w-40-l ma2 mt5-l">
