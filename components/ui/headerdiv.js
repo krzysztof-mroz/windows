@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import CTAButton from "./CTAButton";
+import FruehbucherRabatt from "./FruehbucherRabatt";
 
 function header(props) {
   const { title, subtitle,ifAnfrage } = props;
@@ -149,6 +150,7 @@ function header(props) {
         </div>
       </div>
       {ifAnfrage != "yes" && <CTAButton />}
+      <FruehbucherRabatt />
       
     </div>
   );

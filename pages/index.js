@@ -11,7 +11,7 @@ import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
 import ProductLink from "../components/ui/blocks/productlink";
 import Carousel from "../components/ui/blocks/carousel"
-import FruehbucherRabatt from "../components/ui/FruehbucherRabatt";
+
 
 
 
@@ -143,11 +143,12 @@ const WindowInfo = () => {
       </Head>
       
       <HeaderDiv title="Kunststoff und Alu Fenster" subtitle="Fensterlösungen nach Maß für jeden Bedarf" />
+     
       
       <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />    
   
   <Description />
-  <FruehbucherRabatt />
+ 
   <WindowInfo />
 
 

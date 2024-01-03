@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import TuerenDiv from "../components/ui/tuerendiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
-import FruehbucherRabatt from "../components/ui/FruehbucherRabatt";
+
 
 
 function Tueren() {
@@ -45,8 +45,10 @@ const HouseDoorsInfo = () => {
       
       </Head>
       <HeaderDiv title="Eingangstüren aus Kunststoff und Aluminium" subtitle="Die beste Wahl für sichere und ansprechende Türen"/>
+      
+      
       <TuerenDiv />
-      <FruehbucherRabatt />
+      
       <HouseDoorsInfo />
     </Fragment>
     )

@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import FensterDiv from "../components/ui/fensterdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
-import FruehbucherRabatt from "../components/ui/FruehbucherRabatt";
+
 
 
 function Fenster() {
@@ -63,8 +63,9 @@ const WindowBrandsInfo = () => {
        
       </Head>
       <HeaderDiv title="Fenster aus Kunststoff und Aluminium" subtitle="Modernste Fenstertechnik für mehr Lebensqualität"/>
+    
       <FensterDiv />
-      <FruehbucherRabatt />
+      
       <WindowBrandsInfo />
     </Fragment>
   );
