@@ -1,10 +1,4 @@
 // components/FruehbucherRabatt.js
-
-// <source media="(min-width: 768px)" srcSet="pics/aws_75_3d.jpg" />
-// <source media="(max-width: 767px)" srcSet="pics/aws_75_3d.jpg" />
-// Bestellen Sie bis Ende Januar und erhalten Sie <span className="b">20% Sonderrabatt</span> auf Lieferungen und Installationen vom März bis Mai.
-
-// components/FruehbucherRabatt.js
 const FruehbucherRabatt = () => {
     return (
       <div className="ba b--solid bw1" style={{ backgroundColor: '#f5f5dc' }}> {/* Beige Hintergrund */}

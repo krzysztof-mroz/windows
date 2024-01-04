@@ -11,7 +11,7 @@ import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
 import ProductLink from "../components/ui/blocks/productlink";
 import Carousel from "../components/ui/blocks/carousel"
-
+import CustomerReview from "../components/ui/referenz";
 
 
 
@@ -150,6 +150,7 @@ const WindowInfo = () => {
   <Description />
  
   <WindowInfo />
+  <CustomerReview />
 
 
 

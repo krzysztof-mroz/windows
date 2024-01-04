@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import TuerenDiv from "../components/ui/tuerendiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
-
+import CustomerReview from "../components/ui/referenz";
 
 
 function Tueren() {
@@ -50,6 +50,7 @@ const HouseDoorsInfo = () => {
       <TuerenDiv />
       
       <HouseDoorsInfo />
+      <CustomerReview />
     </Fragment>
     )
         

@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import BeschattungDiv from "../components/ui/beschattungdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from "next/head";
-
+import CustomerReview from "../components/ui/referenz";
 
 
 function Beschattung() {
@@ -50,6 +50,7 @@ const RolladenInfo = () => {
       <BeschattungDiv />
       
       <RolladenInfo />
+      <CustomerReview />
     </Fragment>
   );
 }

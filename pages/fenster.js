@@ -2,6 +2,7 @@ import { Fragment } from "react";
 import FensterDiv from "../components/ui/fensterdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
+import CustomerReview from "../components/ui/referenz";
 
 
 
@@ -67,6 +68,7 @@ const WindowBrandsInfo = () => {
       <FensterDiv />
       
       <WindowBrandsInfo />
+      <CustomerReview />
     </Fragment>
   );
 }
