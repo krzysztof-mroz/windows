@@ -222,6 +222,7 @@ const Layout = () => {
                 "Kombination",
               ].map((buttonName) => (
                 <button
+                  style={{ width: '150px' }}
                   key={buttonName}
                   className={getButtonClasses(buttonName)}
                   onClick={() => handleButtonClick(buttonName)}
