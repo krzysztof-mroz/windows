@@ -4,7 +4,7 @@ import Head from "next/head";
 import HeaderDiv from "../components/ui/headerdiv";
 
 const Layout = () => {
-  const [activeButton, setActiveButton] = useState("Fenster");
+  const [activeMode, setActiveMode] = useState("Fenster");
   const [inputWidth, setInputWidth] = useState("1000");
   const [inputHeight, setInputHeight] = useState("1000");
   const [clickX, setClickX] = useState(null);
@@ -149,27 +149,34 @@ const Layout = () => {
               (x - posX - cumulatedWidth) / scaleFactor
             );
             let newWidth2 = deletedEinheit.width - newWidth1;
-            if (newWidth1 >= 300 && newWidth2 >= 300) {
+            if (newWidth1 >= 300 && newWidth2 >= 300 && matrixOfEinheitObjects.length === 1) {
               const einheit1 = new Einheit(newWidth1, deletedEinheit.height);
               const einheit2 = new Einheit(newWidth2, deletedEinheit.height);
               updatedArray.splice(index, 1, einheit1, einheit2);
               updatedMatrix[rowIndex] = updatedArray;
             }
-          } else {
+          } else if (divisionMode === "vertical") {
             let newHeight1 = Math.ceil(
               (y - posY - cumulatedHeight) / scaleFactor
             );
             let newHeight2 = deletedEinheit.height - newHeight1;
-            if (newHeight1 >= 300 && newHeight2 >= 300) {
+            if (newHeight1 >= 300 && newHeight2 >= 300 && row.length === 1) {
                 const einheit1 = new Einheit(deletedEinheit.width, newHeight1);
                 const einheit2 = new Einheit(deletedEinheit.width, newHeight2);
                 updatedArray.splice(index, 1, einheit1);
                 updatedMatrix[rowIndex] = updatedArray;
-                //updatedMatrix.push([einheit2]);
-                //updatedMatrix.splice(rowIndex, 0, [einheit2]);
-                updatedMatrix.splice(rowIndex, 1, [einheit1], [einheit2]);
-
+                updatedMatrix.splice(rowIndex, 1, updatedArray, [einheit2]);
                 shouldBreak = true;
+            }
+          } else if (divisionMode === "Abschneiden") {
+            let newHeight1 = Math.ceil(
+              (y - posY) / scaleFactor
+            );
+            if (newHeight1 >= 300 && matrixOfEinheitObjects.length === 1 ) {
+              const einheit1 = new Einheit(deletedEinheit.width, newHeight1);
+              updatedArray.splice(index, 1, einheit1);
+              updatedMatrix[rowIndex] = updatedArray;
+              shouldBreak = true;
             }
           }
         }
@@ -191,13 +198,17 @@ const Layout = () => {
     setInputHeight(Math.max(e.target.value, 0)); // Prevent negative values
   };
 
-  const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
+  const getModeButtonClasses = (buttonName) => {
+    return `w-40-m mv3 mh2 w3-button w3-border ${
+      activeMode === buttonName
+        ? "w3-border-blue w3-blue" // Active state
+        : "w3-border-red w3-deep-orange hover-w3-border-orange hover-w3-sand" // Default state
+    }`;
   };
 
-  const getButtonClasses = (buttonName) => {
+  const getDivisionButtonClasses = (buttonName) => {
     return `w-40-m mv3 mh2 w3-button w3-border ${
-      activeButton === buttonName
+      divisionMode === buttonName
         ? "w3-border-blue w3-blue" // Active state
         : "w3-border-red w3-deep-orange hover-w3-border-orange hover-w3-sand" // Default state
     }`;
@@ -224,8 +235,8 @@ const Layout = () => {
                 <button
                   style={{ width: '150px' }}
                   key={buttonName}
-                  className={getButtonClasses(buttonName)}
-                  onClick={() => handleButtonClick(buttonName)}
+                  className={getModeButtonClasses(buttonName)}
+                  onClick={() => setActiveMode(buttonName)}
                 >
                   {buttonName}
                 </button>
@@ -300,7 +311,26 @@ const Layout = () => {
         {/* Third Row */}
         <div className="w-100 flex flex-wrap justify-between">
           <div className="w-100 w-40-l ma3 pa3 ba" style={{ height: "550px" }}>
-            Box 5
+          <div className="flex flex-wrap justify-around items-center">
+              {/* Buttons */}
+              {[
+                "horizontal",
+                "vertical",
+                "Abschneiden",
+                "Kopplung",
+                "Statikkopplung",
+                "Verbreiterung",
+              ].map((buttonName) => (
+                <button
+                  style={{ width: '150px' }}
+                  key={buttonName}
+                  className={getDivisionButtonClasses(buttonName)}
+                  onClick={() => setDivisionMode(buttonName)}
+                >
+                  {buttonName}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div
