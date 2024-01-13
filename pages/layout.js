@@ -207,7 +207,7 @@ const Layout = () => {
     <Fragment>
       <Head />
 
-      <div className="pa4">
+      <div className="pa4-l">
         {/* Box 1 */}
         <div className="w-100 flex flex-wrap justify-between">
           <div className="w-100 ma3 ba">
