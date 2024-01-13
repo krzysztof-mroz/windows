@@ -3,91 +3,133 @@ import React, { Fragment, useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import HeaderDiv from "../components/ui/headerdiv";
 
+// define the Einheit (Fenster, Rahmen) class
+class Einheit {
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
+
+  drawEinheit(posX, posY, canvas, scaleFactor) {
+    const ctx = canvas.getContext("2d");
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Calculate scaling factor
+    let realWidth = this.width * scaleFactor;
+    let realHeight = this.height * scaleFactor;
+
+    // Draw the first (white) rectangle
+    ctx.fillStyle = "white";
+    ctx.fillRect(posX, posY, realWidth, realHeight);
+    ctx.strokeRect(posX, posY, realWidth, realHeight);
+
+    // Calculate dimensions for the second (blue) rectangle
+    let innerWidth = Math.max(0, realWidth - 140 * scaleFactor);
+    let innerHeight = Math.max(0, realHeight - 140 * scaleFactor);
+    let innerPosX = posX + 70 * scaleFactor;
+    let innerPosY = posY + 70 * scaleFactor;
+
+    // Draw the second (blue) rectangle
+    ctx.fillStyle = "blue";
+    ctx.fillRect(innerPosX, innerPosY, innerWidth, innerHeight);
+    ctx.strokeRect(innerPosX, innerPosY, innerWidth, innerHeight);
+  }
+}
+
 const Layout = () => {
+
   const [activeMode, setActiveMode] = useState("Fenster");
-  const [inputWidth, setInputWidth] = useState("1000");
-  const [inputHeight, setInputHeight] = useState("1000");
+  const [inputWidth, setInputWidth] = useState(1000);
+  const [inputHeight, setInputHeight] = useState(1000);
   const [clickX, setClickX] = useState(null);
   const [clickY, setClickY] = useState(null);
   const [clickedEinheit, setClickedEinheit] = useState(null);
   const [scaleFactor, setScaleFactor] = useState(1);
-  const [matrixOfEinheitObjects, setMatrixOfEinheitObjects] = useState([[]]);
   const [divisionMode, setDivisionMode] = useState("horizontal");
-
-  // define the Einheit (Fenster, Rahmen) class
-  class Einheit {
-    constructor(width, height) {
-      this.width = width;
-      this.height = height;
-    }
-
-    drawEinheit(posX, posY, canvas, scaleFactor) {
-      const ctx = canvas.getContext("2d");
-      //ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Calculate scaling factor
-      let realWidth = this.width * scaleFactor;
-      let realHeight = this.height * scaleFactor;
-
-      // Draw the first (white) rectangle
-      ctx.fillStyle = "white";
-      ctx.fillRect(posX, posY, realWidth, realHeight);
-      ctx.strokeRect(posX, posY, realWidth, realHeight);
-
-      // Calculate dimensions for the second (blue) rectangle
-      let innerWidth = Math.max(0, realWidth - 140 * scaleFactor);
-      let innerHeight = Math.max(0, realHeight - 140 * scaleFactor);
-      let innerPosX = posX + 70 * scaleFactor;
-      let innerPosY = posY + 70 * scaleFactor;
-
-      // Draw the second (blue) rectangle
-      ctx.fillStyle = "blue";
-      ctx.fillRect(innerPosX, innerPosY, innerWidth, innerHeight);
-      ctx.strokeRect(innerPosX, innerPosY, innerWidth, innerHeight);
-    }
-  }
+  const [matrixOfEinheitObjects, setMatrixOfEinheitObjects] = useState([   [new Einheit(1000, 1000)] ]);
 
   const canvasRef = useRef(null);
   const divRef = useRef(null);
 
+  const resizeAndDraw = () => {
+    if (divRef.current && canvasRef.current) {
+      canvasRef.current.width = divRef.current.offsetWidth - 40;
+      canvasRef.current.height = divRef.current.offsetHeight - 40;
+    }
+    const canvas = canvasRef.current;
+    const scaleFactor = Math.min(
+      canvas.width / inputWidth,
+      canvas.height / inputHeight
+    );
+    const einheit1 = new Einheit(inputWidth, inputHeight);
+    setMatrixOfEinheitObjects([[einheit1]]);
+    let realWidth = inputWidth * scaleFactor;
+    let realHeight = inputHeight * scaleFactor;
+    let posX = (canvas.width - realWidth) / 2; // Center horizontally
+    let posY = (canvas.height - realHeight) / 2; // Center vertically
+    einheit1.drawEinheit(posX, posY, canvas, scaleFactor);
+    setScaleFactor(scaleFactor);
+  };
+
   // Initial draw, rescale and if outer dimensions change
   useEffect(() => {
-    const resizeAndDraw = () => {
-      if (divRef.current && canvasRef.current) {
-        canvasRef.current.width = divRef.current.offsetWidth - 40;
-        canvasRef.current.height = divRef.current.offsetHeight - 40;
-      }
-      const canvas = canvasRef.current;
+    if (divRef.current && canvasRef.current) {
+      canvasRef.current.width = divRef.current.offsetWidth - 40;
+      canvasRef.current.height = divRef.current.offsetHeight - 40;
+    }     
+    //resizeAndDraw()
+    updateCanvas(matrixOfEinheitObjects)
+    window.addEventListener("resize", () => updateCanvas(matrixOfEinheitObjects));
+    
+    return () => {
+      window.removeEventListener("resize", () => updateCanvas(matrixOfEinheitObjects));
+    };
+  }, [matrixOfEinheitObjects]);
+
+  useEffect(() => {
+   
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const scaleFactor = Math.min(
+      canvas.width / inputWidth,
+      canvas.height / inputHeight
+    );
+
+    const einheit1 = new Einheit(inputWidth, inputHeight);
+    setMatrixOfEinheitObjects([[einheit1]]);
+    let realWidth = inputWidth * scaleFactor;
+    let realHeight = inputHeight * scaleFactor;
+    let posX = (canvas.width - realWidth) / 2; // Center horizontally
+    let posY = (canvas.height - realHeight) / 2; // Center vertically
+    einheit1.drawEinheit(posX, posY, canvas, scaleFactor);
+    setScaleFactor(scaleFactor);
+    
+  }, [inputWidth, inputHeight]);
+
+
+
+  // UPDATE DRAWING OF THE NEW ELEMENTS
+  const updateCanvas = (matrixOfWindows) => {
+
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (divRef.current && canvasRef.current) {
+      canvasRef.current.width = divRef.current.offsetWidth - 40;
+      canvasRef.current.height = divRef.current.offsetHeight - 40;
+    }
       const scaleFactor = Math.min(
         canvas.width / inputWidth,
         canvas.height / inputHeight
       );
-      const einheit1 = new Einheit(inputWidth, inputHeight);
-      setMatrixOfEinheitObjects([[einheit1]]);
-      let realWidth = inputWidth * scaleFactor;
-      let realHeight = inputHeight * scaleFactor;
-      let posX = (canvas.width - realWidth) / 2; // Center horizontally
-      let posY = (canvas.height - realHeight) / 2; // Center vertically
-      einheit1.drawEinheit(posX, posY, canvas, scaleFactor);
-      setScaleFactor(scaleFactor);
-    };
-    resizeAndDraw();
-    window.addEventListener("resize", resizeAndDraw);
-    resizeAndDraw(); // Call once initially to set the size and draw
+      setScaleFactor(scaleFactor)
 
-    return () => {
-      window.removeEventListener("resize", resizeAndDraw);
-    };
-  }, [inputWidth, inputHeight]);
-
-  // UPDATE DRAWING OF THE NEW ELEMENTS
-  const updateCanvas = (matrixOfWindows) => {
-    console.log(matrixOfWindows);
-    const canvas = canvasRef.current;
     let cumulatedHeight = 0;
     matrixOfWindows.forEach((row, rowindex) => {
       let cumulatedWidth = 0;
-
       row.forEach((einheit, index) => {
         let realWidth = inputWidth * scaleFactor;
         let realHeight = inputHeight * scaleFactor;
