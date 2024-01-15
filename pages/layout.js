@@ -240,9 +240,9 @@ const Layout = () => {
             clickedSide = 'left';
           } else if ((y - posY - cumulatedHeight) / scaleFactor <= 100 ) {
             clickedSide = 'up';
-          } else if ((posX + cumulatedWidth + realWidth - x) / scaleFactor < 100) {
-            clickedSide = 'right';
-          } else if ((posY + cumulatedHeight + realHeight - y) / scaleFactor < 100) {
+          } else if ((posX + cumulatedWidth + realWidth - x) / scaleFactor <= 100) {
+            clickedSide = 'right'; 
+          } else if ((posY + cumulatedHeight + realHeight - y) / scaleFactor <= 100) {
             clickedSide = 'down';
           }
           console.log(matrixOfEinheitObjects)
@@ -315,8 +315,9 @@ const Layout = () => {
       }
         }
         cumulatedWidth += realWidth;
-        cumulatedHeight += realHeight;
+        
       });
+      cumulatedHeight += realHeight;
     });
     setClickX(x);
     setClickY(y);
