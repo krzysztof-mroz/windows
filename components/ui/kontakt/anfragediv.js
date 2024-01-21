@@ -105,66 +105,66 @@ function anfragediv() {
         <div className="flex flex-wrap justify-around w-100 w-50-l b--moon-gray tl pa4">
             <div className="w-third gray f6 mv2">Profil:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={profilRef} defaultValue="Kunststoff Salamander BluEvolution 92">
-                    <option value="Kunststoff Aluplast Ideal 4000 Softline">Kunststoff Aluplast Ideal 4000 Softline </option>
-                    <option value="Kunststoff Aluplast Ideal 5000">Kunststoff Aluplast Ideal 5000 </option>
-                    <option value="Kunststoff Aluplast Ideal 7000">Kunststoff Aluplast Ideal 7000 </option>
-                    <option value="Kunststoff Aluplast Ideal 8000">Kunststoff Aluplast Ideal 8000 </option>
-                    <option value="Kunststoff Aluplast Ideal NEO">Kunststoff Aluplast Ideal NEO </option>
-                    <option value="Kunststoff Aluplast Ideal NEO ENERGETO">Kunststoff Aluplast Ideal NEO ENERGETO</option>
-                    <option value="Kunststoff Salamander GreenEvo 76 2D">Kunststoff Salamander GreenEvo 76 2D </option>
-                    <option value="Kunststoff Salamander GreenEvo 76 3D">Kunststoff Salamander GreenEvo 76 3D </option>
-                    <option value="Kunststoff Salamander BluEvolution 82">Kunststoff Salamander BluEvolution 82 </option>
-                    <option value="Kunststoff Salamander BluEvolution 92">Kunststoff Salamander BluEvolution 92 </option>
-                    <option value="Kunststoff Gealan S8000">Kunststoff Gealan S8000 </option>
-                    <option value="Kunststoff Gealan S9000">Kunststoff Gealan S9000 </option>
-                    <option value="Kunststoff Schüco CT 70 Classic">Kunststoff Schüco CT 70 Classic</option>
-                    <option value="Kunststoff Schüco CT 70 Rondo">Kunststoff Schüco CT 70 Rondo</option>
-                    <option value="Kunststoff Schüco Living MD">Kunststoff Schüco Living MD</option>
-                    <option value="Kunststoff Kömmerling 70 AD">Kunststoff Kömmerling 70 AD </option>
-                    <option value="Kunststoff Kömmerling 76 AD">Kunststoff Kömmerling 76 AD </option>
-                    <option value="Kunststoff Kömmerling 76 MD">Kunststoff Kömmerling 76 MD </option>
-                    <option value="Kunststoff Kömmerling 88 MD">Kunststoff Kömmerling 88 MD </option>
-                    <option value="Aluminium Aliplast IMPERIAL"> Aluminium Aliplast IMPERIAL </option>
-                    <option value="Aluminium Aliplast SUPERIAL"> Aluminium Aliplast SUPERIAL </option>
-                    <option value="Aluminium Aliplast GENESIS"> Aluminium Aliplast GENESIS </option>
-                    <option value="Aluminium Aliplast MaxLight"> Aluminium Aliplast MaxLight </option>
-                    <option value="Aluminium Aluprof MB 70 HI"> Aluminium Aluprof MB 70 HI </option>
-                    <option value="Aluminium Aluprof MB 86 SI"> Aluminium Aluprof MB 86 SI </option>
-                    <option value="Aluminium Schüco AWS 75 SI"> Aluminium Schüco AWS 75 SI </option>
-                    <option value="Aluminium Schüco AWS 90 SI"> Aluminium Schüco AWS 90 SI </option> 
-                    <option value="Aluminium Deceuninck 88"> Aluminium Deceuninck 88 </option> 
-                    <option value="Aluminium Deceuninck 94"> Aluminium Deceuninck 94 </option> 
-                    <option value="Aluminium Deceuninck 110"> Aluminium Deceuninck 110 </option> 
-                    <option value="Aluminium Cortizo Cor Casement"> Aluminium Cortizo Cor Casement </option> 
-                    <option value="Aluminium Reynaers Masterline 8"> Aluminium Reynaers Masterline 8 </option> 
-                    <option value="Aluminium Reynaers Masterline 10"> Aluminium Reynaers Masterline 10 </option>
-                    <option value="Aluminium Reynaers Slimline 38"> Aluminium Reynaers Slimline 38 </option>
-                    <option value="Aluminium Reynaers CS 77"> Aluminium Reynaers CS 77 </option>
-                    <option value="Aluminium Ponzio PE 68N"> Aluminium Ponzio PE 68N </option>
-                    <option value="Aluminium Ponzio PE 78N"> Aluminium Ponzio PE 78N </option>
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={profilRef} defaultValue="PVC Salamander BluEvolution 92">
+                    <option value="PVC Aluplast Ideal 4000 Softline">PVC Aluplast Ideal 4000 Softline </option>
+                    <option value="PVC Aluplast Ideal 5000">PVC Aluplast Ideal 5000 </option>
+                    <option value="PVC Aluplast Ideal 7000">PVC Aluplast Ideal 7000 </option>
+                    <option value="PVC Aluplast Ideal 8000">PVC Aluplast Ideal 8000 </option>
+                    <option value="PVC Aluplast Ideal NEO">PVC Aluplast Ideal NEO </option>
+                    <option value="PVC Aluplast Ideal NEO ENERGETO">PVC Aluplast Ideal NEO ENERGETO</option>
+                    <option value="PVC Salamander GreenEvo 76 2D">PVC Salamander GreenEvo 76 2D </option>
+                    <option value="PVC Salamander GreenEvo 76 3D">PVC Salamander GreenEvo 76 3D </option>
+                    <option value="PVC Salamander BluEvolution 82">PVC Salamander BluEvolution 82 </option>
+                    <option value="PVC Salamander BluEvolution 92">PVC Salamander BluEvolution 92 </option>
+                    <option value="PVC Gealan S8000">PVC Gealan S8000 </option>
+                    <option value="PVC Gealan S9000">PVC Gealan S9000 </option>
+                    <option value="PVC Schüco CT 70 Classic">PVC Schüco CT 70 Classic</option>
+                    <option value="PVC Schüco CT 70 Rondo">PVC Schüco CT 70 Rondo</option>
+                    <option value="PVC Schüco Living MD">PVC Schüco Living MD</option>
+                    <option value="PVC Kömmerling 70 AD">PVC Kömmerling 70 AD </option>
+                    <option value="PVC Kömmerling 76 AD">PVC Kömmerling 76 AD </option>
+                    <option value="PVC Kömmerling 76 MD">PVC Kömmerling 76 MD </option>
+                    <option value="PVC Kömmerling 88 MD">PVC Kömmerling 88 MD </option>
+                    <option value="Alu Aliplast IMPERIAL"> Alu Aliplast IMPERIAL </option>
+                    <option value="Alu Aliplast SUPERIAL"> Alu Aliplast SUPERIAL </option>
+                    <option value="Alu Aliplast GENESIS"> Alu Aliplast GENESIS </option>
+                    <option value="Alu Aliplast MaxLight"> Alu Aliplast MaxLight </option>
+                    <option value="Alu Aluprof MB 70 HI"> Alu Aluprof MB 70 HI </option>
+                    <option value="Alu Aluprof MB 86 SI"> Alu Aluprof MB 86 SI </option>
+                    <option value="Alu Schüco AWS 75 SI"> Alu Schüco AWS 75 SI </option>
+                    <option value="Alu Schüco AWS 90 SI"> Alu Schüco AWS 90 SI </option> 
+                    <option value="Alu Deceuninck 88"> Alu Deceuninck 88 </option> 
+                    <option value="Alu Deceuninck 94"> Alu Deceuninck 94 </option> 
+                    <option value="Alu Deceuninck 110"> Alu Deceuninck 110 </option> 
+                    <option value="Alu Cortizo Cor Casement"> Alu Cortizo Cor Casement </option> 
+                    <option value="Alu Reynaers Masterline 8"> Alu Reynaers Masterline 8 </option> 
+                    <option value="Alu Reynaers Masterline 10"> Alu Reynaers Masterline 10 </option>
+                    <option value="Alu Reynaers Slimline 38"> Alu Reynaers Slimline 38 </option>
+                    <option value="Alu Reynaers CS 77"> Alu Reynaers CS 77 </option>
+                    <option value="Alu Ponzio PE 68N"> Alu Ponzio PE 68N </option>
+                    <option value="Alu Ponzio PE 78N"> Alu Ponzio PE 78N </option>
                     <option value="Holz 68 mm"> Holz 68 mm </option>
                     <option value="Holz 80 mm"> Holz 80 mm </option>
                     <option value="Holz 92 mm"> Holz 92 mm </option>
-                    <option value="Holz 76 mit Aluminium Schale"> Holz 76 mit Aluminium Schale </option>
+                    <option value="Holz 76 mit Alu Schale"> Holz 76 mit Alu Schale </option>
 				</select>
             </div> 
 
             <div className="w-third gray f6 mv2">Wärmedämmung:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={insulationRef} defaultValue="maximal 0,95 W/m2K">  
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={insulationRef} defaultValue="max 0,95 W/m2K">  
                     <option value="ohne Bedeutung">ohne Bedeutung</option>
-                    <option value="ca. 1,3 W/m2K">ca. 1,3 W/m2K 2 fach Verglasung</option>
-                    <option value="ca. 1,0 W/m2K">ca. 1,0 W/m2K 3 fach Verglasung</option>
-                    <option value="maximal 0,95 W/m2K">maximal 0,95 W/m2K 3 fach Verglasung</option>
-                    <option value="maximal 0,9 W/m2K">maximal 0,9 W/m2K 3 fach Verglasung</option>    
-                    <option value="maximal 0,8 W/m2K">maximal 0,8 W/m2K 3 fach Verglasung</option>     
+                    <option value="1,3 W/m2K">1,3 W/m2K 2 fach Verglasung</option>
+                    <option value="1,0 W/m2K">1,0 W/m2K 3 fach Verglasung</option>
+                    <option value="max 0,95 W/m2K">max 0,95 W/m2K 3 fach Verglasung</option>
+                    <option value="max 0,9 W/m2K">max 0,9 W/m2K 3 fach Verglasung</option>    
+                    <option value="max 0,8 W/m2K">max 0,8 W/m2K 3 fach Verglasung</option>     
 				</select>
             </div> 
 
             <div className="w-third gray f6 mv2">Beschlag:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschlagRef} defaultValue="Winkhaus activPilot Standard">  
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschlagRef} defaultValue="Winkhaus activPilot Standard">  
                   <option value="Standard">Standard</option>
 				  <option value="RC1">RC1</option>
 				  <option value="RC2" >RC2</option>
@@ -176,7 +176,7 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Verglasung:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={glasRef} defaultValue="Standard Verglasung">  
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={glasRef} defaultValue="Standard Verglasung">  
                  <option value="Standard Verglasung">Standard Verglasung</option>
 				  <option value="VSG Verglasung außen">VSG Verglasung außen</option>
 				  <option value="VSG Verglasung innen">VSG Verglasung innen</option>	
@@ -192,17 +192,17 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Schwellen:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={schwelleRef} defaultValue="Standardschwellen von 70 mm">  
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={schwelleRef} defaultValue="Standardschwellen von 70 mm">  
                  <option value="Standardschwellen von 70 mm">Standardschwellen von 70 mm</option>
 				  <option value="Standardschwellen von 70 mm mit Trittschutz">Standardschwellen von 70 mm mit Trittschutz</option>
-				  <option value="Flache Aluminium Schwellen">Flache Aluminium Schwellen</option>
+				  <option value="Flache Alu Schwellen">Flache Alu Schwellen</option>
                   <option value="Unterschiedlich pro Position">Unterschiedlich pro Position</option>
 				</select>
             </div> 
 
             <div className="w-third gray f6 mv2">Farbe außen:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeARef} defaultValue="weiß">  
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeARef} defaultValue="weiß">  
                  <option value="weiß"> weiß</option>
                   <option value="anthrazitgrau" > anthrazitgrau</option>
                   <option value="basaltgrau" > basaltgrau</option>
@@ -210,7 +210,7 @@ function anfragediv() {
 				   <option value="betongrau" > betongrau</option>
 				  <option value="seidengrau" > seidengrau</option>
 				  <option value="kieselgrau" > kieselgrau</option>
-				  <option value="Alu gebürstet" > Aluminium gebürstet</option>
+				  <option value="Alu gebürstet" > Alu gebürstet</option>
 				  <option value="Metallic silber" > Metallic silber</option>
 				  <option value="achatgrau" > achatgrau</option>
 				  <option value="signalgrau" > signalgrau</option>
@@ -250,7 +250,7 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Farbe innen:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeIRef} defaultValue="weiß">  
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeIRef} defaultValue="weiß">  
                  <option value="weiß"> weiß</option>
                   <option value="anthrazitgrau" > anthrazitgrau</option>
                   <option value="basaltgrau" > basaltgrau</option>
@@ -258,7 +258,7 @@ function anfragediv() {
 				   <option value="betongrau" > betongrau</option>
 				  <option value="seidengrau" > seidengrau</option>
 				  <option value="kieselgrau" > kieselgrau</option>
-				  <option value="Alu gebürstet" > Aluminium gebürstet</option>
+				  <option value="Alu gebürstet" > Alu gebürstet</option>
 				  <option value="Metallic silber" > Metallic silber</option>
 				  <option value="achatgrau" > achatgrau</option>
 				  <option value="signalgrau" > signalgrau</option>
@@ -298,7 +298,7 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Beschattung:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschattungRef} defaultValue="ohne Rollladen">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschattungRef} defaultValue="ohne Rollladen">
                  <option value="ohne Rollladen"> ohne Rollladen</option>
                   <option value="Aufsatzrollladen, Gurt" > Aufsatzrollladen, Gurt</option>
                   <option value="Aufsatzrollladen, Motor" > Aufsatzrollladen, Motor</option>
@@ -328,7 +328,7 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Höhenangaben:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoehenAngabenRef} defaultValue="ohne Rollladenkasten">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoehenAngabenRef} defaultValue="ohne Rollladenkasten">
                  <option value="ohne Rollladenkasten"> ohne Rollladenkasten</option>
 				  <option value="inkl. Rollladenkasten"> inkl. Rollladenkasten</option>
 				  <option value="zzgl. Rollladenkasten"> zzgl. Rollladenkasten</option>
@@ -337,7 +337,7 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Rollladen Montage:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={rolloMontageRef} defaultValue="ohne Rollladen">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={rolloMontageRef} defaultValue="ohne Rollladen">
                  <option value="ohne Rollladen"> ohne Rollladen</option>
 				  <option value="Aufsatzkasten am Fenster"> Aufsatzkasten am Fenster</option>
 				  <option value="Vorsatzrollladen an der Wand"> Vorsatzrollladen an der Wand</option>
@@ -354,12 +354,12 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Fußbodenaufbau:</div>
             <div  className="w-two-thirds gray f6 tl">
-                <input style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="? mm" ref={fussbodenRef} />
+                <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="? mm" ref={fussbodenRef} />
             </div>
 
             <div className="w-third gray f6 mv2">Höhe bodentief:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoeheBeiFussbodenRef} defaultValue="ohne Fußbodenaufbau">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoeheBeiFussbodenRef} defaultValue="ohne Fußbodenaufbau">
                  <option value="ohne Fußbodenaufbau"> ohne Fußbodenaufbau</option>
 				  <option value="inkl. Fußbodenaufbau"> inkl. Fußbodenaufbau</option>
 				  <option value="zzgl. Fußbodenaufbau"> zzgl. Fußbodenaufbau</option>
@@ -368,17 +368,17 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Haustür:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={doorRef} defaultValue="ohne Haustür">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={doorRef} defaultValue="ohne Haustür">
                  <option value="ohne Haustür"> ohne Haustür</option>
-				  <option value="Kunststoff Haustür"> Kunststoff Haustür</option>
-				  <option value="Aluminium Haustür Einsatzfüllung"> Aluminium Haustür Einsatzfüllung</option>
-				  <option value="Aluminium flügelüberdeckend"> Aluminium flügelüberdeckend</option>
+				  <option value="PVC Haustür"> PVC Haustür</option>
+				  <option value="Alu Haustür Einsatzfüllung"> Alu Haustür Einsatzfüllung</option>
+				  <option value="Alu flügelüberdeckend"> Alu flügelüberdeckend</option>
 				</select>
             </div>
 
             <div className="w-third gray f6 mv2">Bauvorhaben:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={bvRef} defaultValue="Neubau, ohne Montage">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={bvRef} defaultValue="Neubau, ohne Montage">
                  <option value="Neubau, ohne Montage"> Neubau, ohne Montage</option>
 				  <option value="Neubau, mit RAL Montage"> Neubau, mit RAL Montage</option>
 				  <option value="Altbau, ohne Montage"> Altbau, ohne Montage</option>
@@ -389,7 +389,7 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Proirität:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={prioRef} defaultValue="Ich bestelle innerhalb von 1 Monat">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={prioRef} defaultValue="Ich bestelle innerhalb von 1 Monat">
                  <option value="Ich möchte nur Preise vergleichen"> Ich möchte nur Preise vergleichen</option>
 				  <option value="Ich bestelle innerhalb von 12 Monaten"> Ich bestelle innerhalb von 12 Monaten</option>
 				  <option value="Ich bestelle innerhalb von 6 Monaten"> Ich bestelle innerhalb von 6 Monaten</option>
@@ -402,27 +402,27 @@ function anfragediv() {
 
             <div className="w-third gray f6 mv2">Name:</div>
             <div  className="w-two-thirds gray f6 tl">
-                <input id="name" style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihr Name" ref={nameRef}/>
+                <input id="name" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihr Name" ref={nameRef}/>
             </div>
 
             <div className="w-third gray f6 mv2">Telefon:</div>
             <div  className="w-two-thirds gray f6 tl">
-                <input style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Telefonnummer" ref={telRef}/>
+                <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Telefonnummer" ref={telRef}/>
             </div>
 
             <div className="w-third gray f6 mv2">Straße, Hausnr:</div>
             <div  className="w-two-thirds gray f6 tl">
-                <input style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Straße, Hausnummer" ref={strasseRef}/>
+                <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Straße, Hausnummer" ref={strasseRef}/>
             </div>
 
             <div className="w-third gray f6 mv2">PLZ, Ort:</div>
             <div  className="w-two-thirds gray f6 tl">
-                <input id="ort" style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="PLZ, Ort" ref={ortRef} />
+                <input id="ort" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="PLZ, Ort" ref={ortRef} />
             </div>
 
             <div className="w-third gray f6 mv2">Email:</div>
             <div  className="w-two-thirds gray f6 tl">
-                <input id="email" style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Email" ref={emailRef}/>
+                <input id="email" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Email" ref={emailRef}/>
             </div> 
             
         </div>
