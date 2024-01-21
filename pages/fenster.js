@@ -30,7 +30,7 @@ const WindowBrandsInfo = () => {
       <div className="w-100 w-50-l pa2">
         <h2 className="fl f3 ma1 mt3-l w-100 tc">Entdecken Sie unsere Fenstermarken</h2>
         <p className="lh-copy">
-          Entdecken Sie die Welt der hochwertigen Fensterlösungen mit unserer umfangreichen Auswahl. Wir bieten erstklassige <span className="b">Kunststofffenster</span> von Marken wie <span className="b">Kömmerling</span>, <span className="b">Schüco</span>, <span className="b">Aluplast</span> und <span className="b">Salamander</span>. Jedes dieser Produkte steht für Qualität, Effizienz und Design. 
+          Entdecken Sie die Welt der hochwertigen Fensterlösungen mit unserer umfangreichen Auswahl. Wir bieten erstklassige <span className="b">Kunststofffenster</span> von Marken wie <span className="b">Salamander</span>, <span className="b">Schüco</span>, <span className="b">Gealan</span>, <span className="b">Aluplast</span> und <span className="b">Kömmerling</span>. Jedes dieser Produkte steht für Qualität, Effizienz und Design. 
         </p>
         <p className="lh-copy">
           Neben der Ästhetik liegt unser Fokus auf Funktionalität. Unsere Fenster bieten hervorragende Wärme- und Schalldämmung, Sicherheit und sind einfach zu warten, was sie zur idealen Wahl für jedes Zuhause oder Büro macht. 
@@ -39,7 +39,7 @@ const WindowBrandsInfo = () => {
       <div className="w-100 w-50-l pa2">
         <h2 className="fl f3 ma1 mt3-l w-100 tc">Aluminiumfenster für moderne Architektur</h2>
         <p className="lh-copy">
-          Für Liebhaber moderner Architektur bieten wir eine Auswahl an <span className="b">Aluminiumfenstern</span> von <span className="b">Schüco</span>, <span className="b">Aluprof</span> und <span className="b">Ponzio</span>. Diese Fenster setzen neue Maßstäbe in Sachen Design und Funktionalität.
+          Für Liebhaber moderner Architektur bieten wir eine Auswahl an <span className="b">Aluminiumfenstern</span> von <span className="b">Aluprof</span>, <span className="b">Reynaers</span>, <span className="b">Schüco</span>, <span className="b">Aliplast</span> und <span className="b">Ponzio</span>. Diese Fenster setzen neue Maßstäbe in Sachen Design und Funktionalität.
         </p>
         <p className="lh-copy">
           Für eilige Projekte empfehlen wir unsere <span className="b">Aluplast</span> und <span className="b">Salamander Kunststofffenster</span> mit einer beeindruckenden Lieferzeit von nur <span className="b">3 Wochen</span>. Ideal für schnelle Renovierungsarbeiten oder wenn es auf jede Minute ankommt.
