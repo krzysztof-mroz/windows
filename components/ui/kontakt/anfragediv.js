@@ -165,12 +165,12 @@ function anfragediv() {
             <div className="w-40 gray f6 mv2">Beschlag:</div>
             <div  className="w-60 gray f6 tl">
                  <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschlagRef} defaultValue="Winkhaus activPilot Standard">  
-                  <option value="Winkhaus activPilot Standard">Winkhaus activPilot Standard</option>
-				  <option value="Winkhaus activPilot RC1">Winkhaus activPilot RC1</option>
-				  <option value="Winkhaus activPilot RC2" >Winkhaus activPilot RC2</option>
-				  <option value="activPilot Select (versteckte Scharniere)" >WH activPilot Select (versteckte Scharniere)</option>
-				  <option value="activPilot Select RC1 (versteckte Scharniere)" >WH activPilot Select RC1 (versteckte Scharniere)</option>
-				  <option value="activPilot Select RC2 (versteckte Scharniere)" >WH activPilot Select RC2 (versteckte Scharniere)</option>
+                  <option value="Standard">Standard</option>
+				  <option value="RC1">RC1</option>
+				  <option value="RC2" >RC2</option>
+				  <option value="versteckte Scharniere" >versteckte Scharniere</option>
+				  <option value="RC1 (versteckte Scharniere)" >RC1 (versteckte Scharniere)</option>
+				  <option value="RC2 (versteckte Scharniere)" >RC2 (versteckte Scharniere)</option>
 				</select>
             </div> 
 
