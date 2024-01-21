@@ -6,7 +6,19 @@ function footer() {
         <div className="flex flex-wrap justify-center  w-100 pa2 tc  ">
          
           <div className="w-100 ba b--moon-gray pa2">
+          <img
+              className="mh4 mb4 mv1-l ph3 db dib-l center"
+              src="/pics/logos/logo_aluplast.png"
+            ></img>
             <img
+              className="mh4 mb4 mv1-l ph3 db dib-l center"
+              src="/pics/logos/logo_salamander.png"
+            ></img>
+             <img
+              className="mh4 mb4 mv1-l ph3 db dib-l center"
+              src="/pics/logos/logo_gealan.png"
+            ></img>
+          <img
               className="mh4 mb4 mv1-l ph3 db dib-l center"
               src="/pics/logos/logo_profine.png"
             ></img>
@@ -14,22 +26,16 @@ function footer() {
               className="mh4 mv4 mv1-l ph3 db dib-l center"
               src="/pics/logos/logo_aluprof.png"
             ></img>
+             <img
+              className="mh4 mv4 mv1-l ph3 db dib-l center"
+              src="/pics/logos/logo_aliplast.png"
+            ></img>
             <img
               className="mh4 mv4 mv1-l ph3 db dib-l center"
               src="/pics/logos/logo_ponzio.png"
             ></img>
-            <img
-              className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_winkhaus.png"
-            ></img>
-            <img
-              className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_hoppe.png"
-            ></img>
-            <img
-              className="mh4 mt4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_saint_gobain.png"
-            ></img>
+           
+            
           </div>
 
           <div className="w-100 w-30-l  ma2 pa3">
