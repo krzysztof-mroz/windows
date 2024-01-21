@@ -150,7 +150,7 @@ function header(props) {
         </div>
       </div>
       {ifAnfrage != "yes" && <CTAButton />}
-      <FruehbucherRabatt />
+      
       
     </div>
   );

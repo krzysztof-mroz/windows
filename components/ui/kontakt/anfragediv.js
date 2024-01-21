@@ -105,7 +105,7 @@ function anfragediv() {
         <div className="flex flex-wrap justify-around w-100 w-50-l b--moon-gray tl pa4">
             <div className="w-40 gray f6 mv2">Gewünschtes Profil:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={profilRef} defaultValue="Kunststoff Salamander BluEvolution 92">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={profilRef} defaultValue="Kunststoff Salamander BluEvolution 92">
                     <option value="Kunststoff Aluplast Ideal 4000 Softline">Kunststoff Aluplast Ideal 4000 Softline </option>
                     <option value="Kunststoff Aluplast Ideal 5000">Kunststoff Aluplast Ideal 5000 </option>
                     <option value="Kunststoff Aluplast Ideal 7000">Kunststoff Aluplast Ideal 7000 </option>
@@ -152,7 +152,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Wärmedämmung:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={insulationRef} defaultValue="maximal 0,95 W/m2K">  
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={insulationRef} defaultValue="maximal 0,95 W/m2K">  
                     <option value="ohne Bedeutung">ohne Bedeutung</option>
                     <option value="ca. 1,3 W/m2K">ca. 1,3 W/m2K 2 fach Verglasung</option>
                     <option value="ca. 1,0 W/m2K">ca. 1,0 W/m2K 3 fach Verglasung</option>
@@ -164,7 +164,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Beschlag:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschlagRef} defaultValue="Winkhaus activPilot Standard">  
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschlagRef} defaultValue="Winkhaus activPilot Standard">  
                   <option value="Standard">Standard</option>
 				  <option value="RC1">RC1</option>
 				  <option value="RC2" >RC2</option>
@@ -176,7 +176,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Verglasung:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={glasRef} defaultValue="Standard Verglasung">  
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={glasRef} defaultValue="Standard Verglasung">  
                  <option value="Standard Verglasung">Standard Verglasung</option>
 				  <option value="VSG Verglasung außen">VSG Verglasung außen</option>
 				  <option value="VSG Verglasung innen">VSG Verglasung innen</option>	
@@ -192,7 +192,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Schwellen:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={schwelleRef} defaultValue="Standardschwellen von 70 mm">  
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={schwelleRef} defaultValue="Standardschwellen von 70 mm">  
                  <option value="Standardschwellen von 70 mm">Standardschwellen von 70 mm</option>
 				  <option value="Standardschwellen von 70 mm mit Trittschutz">Standardschwellen von 70 mm mit Trittschutz</option>
 				  <option value="Flache Aluminium Schwellen">Flache Aluminium Schwellen</option>
@@ -202,7 +202,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Farbe außen:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeARef} defaultValue="weiß">  
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeARef} defaultValue="weiß">  
                  <option value="weiß"> weiß</option>
                   <option value="anthrazitgrau" > anthrazitgrau</option>
                   <option value="basaltgrau" > basaltgrau</option>
@@ -250,7 +250,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Farbe innen:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeIRef} defaultValue="weiß">  
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={farbeIRef} defaultValue="weiß">  
                  <option value="weiß"> weiß</option>
                   <option value="anthrazitgrau" > anthrazitgrau</option>
                   <option value="basaltgrau" > basaltgrau</option>
@@ -298,7 +298,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Beschattung:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschattungRef} defaultValue="ohne Rollladen">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={beschattungRef} defaultValue="ohne Rollladen">
                  <option value="ohne Rollladen"> ohne Rollladen</option>
                   <option value="Aufsatzrollladen, Gurt" > Aufsatzrollladen, Gurt</option>
                   <option value="Aufsatzrollladen, Motor" > Aufsatzrollladen, Motor</option>
@@ -328,7 +328,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Höhenangaben sind:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoehenAngabenRef} defaultValue="ohne Rollladenkasten">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoehenAngabenRef} defaultValue="ohne Rollladenkasten">
                  <option value="ohne Rollladenkasten"> ohne Rollladenkasten</option>
 				  <option value="inkl. Rollladenkasten"> inkl. Rollladenkasten</option>
 				  <option value="zzgl. Rollladenkasten"> zzgl. Rollladenkasten</option>
@@ -337,7 +337,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Rollladen Montage:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={rolloMontageRef} defaultValue="ohne Rollladen">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={rolloMontageRef} defaultValue="ohne Rollladen">
                  <option value="ohne Rollladen"> ohne Rollladen</option>
 				  <option value="Aufsatzkasten am Fenster"> Aufsatzkasten am Fenster</option>
 				  <option value="Vorsatzrollladen an der Wand"> Vorsatzrollladen an der Wand</option>
@@ -354,12 +354,12 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Fußbodenaufbau mm:</div>
             <div  className="w-60 gray f6 tl">
-                <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="? mm" ref={fussbodenRef} />
+                <input style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="? mm" ref={fussbodenRef} />
             </div>
 
             <div className="w-40 gray f6 mv2">Höhe bei bodentief:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoeheBeiFussbodenRef} defaultValue="ohne Fußbodenaufbau">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={hoeheBeiFussbodenRef} defaultValue="ohne Fußbodenaufbau">
                  <option value="ohne Fußbodenaufbau"> ohne Fußbodenaufbau</option>
 				  <option value="inkl. Fußbodenaufbau"> inkl. Fußbodenaufbau</option>
 				  <option value="zzgl. Fußbodenaufbau"> zzgl. Fußbodenaufbau</option>
@@ -368,7 +368,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Haustür:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={doorRef} defaultValue="ohne Haustür">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={doorRef} defaultValue="ohne Haustür">
                  <option value="ohne Haustür"> ohne Haustür</option>
 				  <option value="Kunststoff Haustür"> Kunststoff Haustür</option>
 				  <option value="Aluminium Haustür Einsatzfüllung"> Aluminium Haustür Einsatzfüllung</option>
@@ -378,7 +378,7 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Bauvorhaben:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={bvRef} defaultValue="Neubau, ohne Montage">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={bvRef} defaultValue="Neubau, ohne Montage">
                  <option value="Neubau, ohne Montage"> Neubau, ohne Montage</option>
 				  <option value="Neubau, mit RAL Montage"> Neubau, mit RAL Montage</option>
 				  <option value="Altbau, ohne Montage"> Altbau, ohne Montage</option>
@@ -389,39 +389,40 @@ function anfragediv() {
 
             <div className="w-40 gray f6 mv2">Proirität:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={prioRef} defaultValue="Ich möchte nur Preise vergleichen">
+                 <select style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={prioRef} defaultValue="Ich bestelle innerhalb von 1 Monat">
                  <option value="Ich möchte nur Preise vergleichen"> Ich möchte nur Preise vergleichen</option>
 				  <option value="Ich bestelle innerhalb von 12 Monaten"> Ich bestelle innerhalb von 12 Monaten</option>
 				  <option value="Ich bestelle innerhalb von 6 Monaten"> Ich bestelle innerhalb von 6 Monaten</option>
 				  <option value="Ich bestelle innerhalb von 3 Monaten"> Ich bestelle innerhalb von 3 Monaten</option>
-				  <option value="Ich brauche die Fenster innerhalb von 2 Monaten"> Ich brauche die Fenster innerhalb von 2 Monaten</option>
+          <option value="Ich bestelle innerhalb von 1 Monat"> Ich bestelle innerhalb von 1 Monat</option>
+          <option value="Ich bestelle innerhalb von 3 Wochen"> Ich bestelle innerhalb von 3 Wochen</option>
 				  <option value="Ich brauche die Fenster dringend"> Ich brauche die Fenster dringend</option>
 				</select>
             </div>
 
             <div className="w-40 gray f6 mv2">Name:</div>
             <div  className="w-60 gray f6 tl">
-                <input id="name" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihr Name" ref={nameRef}/>
+                <input id="name" style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihr Name" ref={nameRef}/>
             </div>
 
             <div className="w-40 gray f6 mv2">Telefon:</div>
             <div  className="w-60 gray f6 tl">
-                <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Telefonnummer" ref={telRef}/>
+                <input style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Telefonnummer" ref={telRef}/>
             </div>
 
             <div className="w-40 gray f6 mv2">Straße, Hausnr:</div>
             <div  className="w-60 gray f6 tl">
-                <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Straße, Hausnummer" ref={strasseRef}/>
+                <input style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Straße, Hausnummer" ref={strasseRef}/>
             </div>
 
             <div className="w-40 gray f6 mv2">PLZ, Ort:</div>
             <div  className="w-60 gray f6 tl">
-                <input id="ort" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="PLZ, Ort" ref={ortRef} />
+                <input id="ort" style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="PLZ, Ort" ref={ortRef} />
             </div>
 
             <div className="w-40 gray f6 mv2">Email:</div>
             <div  className="w-60 gray f6 tl">
-                <input id="email" style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Email" ref={emailRef}/>
+                <input id="email" style={{width: 300, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="Ihre Email" ref={emailRef}/>
             </div> 
             
         </div>
