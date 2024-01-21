@@ -154,11 +154,11 @@ function anfragediv() {
             <div  className="w-two-thirds gray f6 tl">
                  <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={insulationRef} defaultValue="max 0,95 W/m2K">  
                     <option value="ohne Bedeutung">ohne Bedeutung</option>
-                    <option value="1,3 W/m2K">1,3 W/m2K 2 fach Verglasung</option>
-                    <option value="1,0 W/m2K">1,0 W/m2K 3 fach Verglasung</option>
-                    <option value="max 0,95 W/m2K">max 0,95 W/m2K 3 fach Verglasung</option>
-                    <option value="max 0,9 W/m2K">max 0,9 W/m2K 3 fach Verglasung</option>    
-                    <option value="max 0,8 W/m2K">max 0,8 W/m2K 3 fach Verglasung</option>     
+                    <option value="1,3 W/m2K">1,3 W/m2K 2fach verglast</option>
+                    <option value="1,0 W/m2K">1,0 W/m2K 3fach verglast</option>
+                    <option value="max 0,95 W/m2K">max 0,95 W/m2K 3fach verglast</option>
+                    <option value="max 0,9 W/m2K">max 0,9 W/m2K 3fach verglast</option>    
+                    <option value="max 0,8 W/m2K">max 0,8 W/m2K 3fach verglast</option>     
 				</select>
             </div> 
 
@@ -352,7 +352,7 @@ function anfragediv() {
   
         <div className="flex flex-wrap justify-around w-100 w-50-l b--moon-gray  pa4">
 
-            <div className="w-third gray f6 mv2">Fußbodenaufbau:</div>
+            <div className="w-third gray f6 mv2">Fußboden:</div>
             <div  className="w-two-thirds gray f6 tl">
                 <input style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" type="text"  placeholder="? mm" ref={fussbodenRef} />
             </div>
@@ -387,16 +387,16 @@ function anfragediv() {
 				</select>
             </div>
 
-            <div className="w-third gray f6 mv2">Proirität:</div>
+            <div className="w-third gray f6 mv2">Priorität:</div>
             <div  className="w-two-thirds gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={prioRef} defaultValue="Ich bestelle innerhalb von 1 Monat">
-                 <option value="Ich möchte nur Preise vergleichen"> Ich möchte nur Preise vergleichen</option>
-				  <option value="Ich bestelle innerhalb von 12 Monaten"> Ich bestelle innerhalb von 12 Monaten</option>
-				  <option value="Ich bestelle innerhalb von 6 Monaten"> Ich bestelle innerhalb von 6 Monaten</option>
-				  <option value="Ich bestelle innerhalb von 3 Monaten"> Ich bestelle innerhalb von 3 Monaten</option>
-          <option value="Ich bestelle innerhalb von 1 Monat"> Ich bestelle innerhalb von 1 Monat</option>
-          <option value="Ich bestelle innerhalb von 3 Wochen"> Ich bestelle innerhalb von 3 Wochen</option>
-				  <option value="Ich brauche die Fenster dringend"> Ich brauche die Fenster dringend</option>
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={prioRef} defaultValue="Bedarf innerhalb von 1 Monat">
+                 <option value="Ich möchte Preise vergleichen"> Ich möchte Preise vergleichen</option>
+				  <option value="Bedarf innerhalb von 1 Jahr"> Bedarf innerhalb von 1 Jahr</option>
+				  <option value="Bedarf innerhalb von 6 Monaten"> Bedarf innerhalb von 6 Monaten</option>
+				  <option value="Bedarf innerhalb von 3 Monaten"> Bedarf innerhalb von 3 Monaten</option>
+          <option value="Bedarf innerhalb von 1 Monat"> Bedarf innerhalb von 1 Monat</option>
+          <option value="Bedarf innerhalb von 3 Wochen"> Bedarf innerhalb von 3 Wochen</option>
+				  <option value="Bedarf dringend"> Bedarf dringend</option>
 				</select>
             </div>
 
