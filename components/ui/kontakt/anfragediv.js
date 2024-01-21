@@ -105,7 +105,19 @@ function anfragediv() {
         <div className="flex flex-wrap justify-around w-100 w-50-l b--moon-gray tl pa4">
             <div className="w-40 gray f6 mv2">Gewünschtes Profil:</div>
             <div  className="w-60 gray f6 tl">
-                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={profilRef} defaultValue="Kunststoff Kömmerling 88 MD">
+                 <select style={{width: 250, height:37}} className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" ref={profilRef} defaultValue="Kunststoff Salamander BluEvolution 92">
+                    <option value="Kunststoff Aluplast Ideal 4000 Softline">Kunststoff Aluplast Ideal 4000 Softline </option>
+                    <option value="Kunststoff Aluplast Ideal 5000">Kunststoff Aluplast Ideal 5000 </option>
+                    <option value="Kunststoff Aluplast Ideal 7000">Kunststoff Aluplast Ideal 7000 </option>
+                    <option value="Kunststoff Aluplast Ideal 8000">Kunststoff Aluplast Ideal 8000 </option>
+                    <option value="Kunststoff Aluplast Ideal NEO">Kunststoff Aluplast Ideal NEO </option>
+                    <option value="Kunststoff Aluplast Ideal NEO ENERGETO">Kunststoff Aluplast Ideal NEO ENERGETO</option>
+                    <option value="Kunststoff Salamander GreenEvo 76 2D">Kunststoff Salamander GreenEvo 76 2D </option>
+                    <option value="Kunststoff Salamander GreenEvo 76 3D">Kunststoff Salamander GreenEvo 76 3D </option>
+                    <option value="Kunststoff Salamander BluEvolution 82">Kunststoff Salamander BluEvolution 82 </option>
+                    <option value="Kunststoff Salamander BluEvolution 92">Kunststoff Salamander BluEvolution 92 </option>
+                    <option value="Kunststoff Gealan S8000">Kunststoff Gealan S8000 </option>
+                    <option value="Kunststoff Gealan S9000">Kunststoff Gealan S9000 </option>
                     <option value="Kunststoff Schüco CT 70 Classic">Kunststoff Schüco CT 70 Classic</option>
                     <option value="Kunststoff Schüco CT 70 Rondo">Kunststoff Schüco CT 70 Rondo</option>
                     <option value="Kunststoff Schüco Living MD">Kunststoff Schüco Living MD</option>
@@ -113,12 +125,28 @@ function anfragediv() {
                     <option value="Kunststoff Kömmerling 76 AD">Kunststoff Kömmerling 76 AD </option>
                     <option value="Kunststoff Kömmerling 76 MD">Kunststoff Kömmerling 76 MD </option>
                     <option value="Kunststoff Kömmerling 88 MD">Kunststoff Kömmerling 88 MD </option>
-                    <option value="Aluminium Ponzio PE 68N"> Aluminium Ponzio PE 68N </option>
-                    <option value="Aluminium Ponzio PE 78N"> Aluminium Ponzio PE 78N </option>
+                    <option value="Aluminium Aliplast IMPERIAL"> Aluminium Aliplast IMPERIAL </option>
+                    <option value="Aluminium Aliplast SUPERIAL"> Aluminium Aliplast SUPERIAL </option>
+                    <option value="Aluminium Aliplast GENESIS"> Aluminium Aliplast GENESIS </option>
+                    <option value="Aluminium Aliplast MaxLight"> Aluminium Aliplast MaxLight </option>
                     <option value="Aluminium Aluprof MB 70 HI"> Aluminium Aluprof MB 70 HI </option>
                     <option value="Aluminium Aluprof MB 86 SI"> Aluminium Aluprof MB 86 SI </option>
                     <option value="Aluminium Schüco AWS 75 SI"> Aluminium Schüco AWS 75 SI </option>
                     <option value="Aluminium Schüco AWS 90 SI"> Aluminium Schüco AWS 90 SI </option> 
+                    <option value="Aluminium Deceuninck 88"> Aluminium Deceuninck 88 </option> 
+                    <option value="Aluminium Deceuninck 94"> Aluminium Deceuninck 94 </option> 
+                    <option value="Aluminium Deceuninck 110"> Aluminium Deceuninck 110 </option> 
+                    <option value="Aluminium Cortizo Cor Casement"> Aluminium Cortizo Cor Casement </option> 
+                    <option value="Aluminium Reynaers Masterline 8"> Aluminium Reynaers Masterline 8 </option> 
+                    <option value="Aluminium Reynaers Masterline 10"> Aluminium Reynaers Masterline 10 </option>
+                    <option value="Aluminium Reynaers Slimline 38"> Aluminium Reynaers Slimline 38 </option>
+                    <option value="Aluminium Reynaers CS 77"> Aluminium Reynaers CS 77 </option>
+                    <option value="Aluminium Ponzio PE 68N"> Aluminium Ponzio PE 68N </option>
+                    <option value="Aluminium Ponzio PE 78N"> Aluminium Ponzio PE 78N </option>
+                    <option value="Holz 68 mm"> Holz 68 mm </option>
+                    <option value="Holz 80 mm"> Holz 80 mm </option>
+                    <option value="Holz 92 mm"> Holz 92 mm </option>
+                    <option value="Holz 76 mit Aluminium Schale"> Holz 76 mit Aluminium Schale </option>
 				</select>
             </div> 
 

@@ -34,9 +34,6 @@ class Einheit {
 
   drawEinheit(posX, posY, canvas, scaleFactor) {
 
-    console.log("width" + this.netWidth)
-    console.log("height" + this.netHeight)
-
     const ctx = canvas.getContext("2d");
     //ctx.clearRect(0, 0, canvas.width, canvas.height);
     let actualX = posX;
