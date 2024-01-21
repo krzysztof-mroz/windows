@@ -62,6 +62,18 @@ function fensterdiv() {
   function gotoSchuecoPvc(e) {
     router.push("./schuecopvc")
   }
+
+  function gotoAluplast(e) {
+    router.push("./aluplast")
+  }
+
+  function gotoSalamander(e) {
+    router.push("#")
+  }
+
+  function gotoGealan(e) {
+    router.push("#")
+  }
   function gotoKoemmerling(e) {
     router.push("./koemmerling")
   }
@@ -77,6 +89,30 @@ function fensterdiv() {
 
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
+
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoAluplast}>
+        <img src="./pics/icons/aluplastfeather.png"></img>
+        <h5>Aluplast Kunststoff Fenster</h5>
+        <p className="gray f6">
+          5 Kammer und 6 Kammer Kunststoff Fenster für gute Wärmedämmung. Breite Produktpalette.
+        </p>
+      </div>
+
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoSalamander}>
+        <img src="./pics/icons/salamanderfeather.png"></img>
+        <h5>Salamander Kunststoff Fenster</h5>
+        <p className="gray f6">
+          5 Kammer und 6 Kammer Kunststoff Fenster mit Vision, Innovation & Qualität.
+        </p>
+      </div>
+
+      <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoGealan}>
+        <img src="./pics/icons/gealanfeather.png"></img>
+        <h5>Gealan Kunststoff Fenster</h5>
+        <p className="gray f6">
+          5 Kammer und 6 Kammer Kunststoff Fenster für jedes Budget. Auch für Passivhaus geeignet.
+        </p>
+      </div>
 
       <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 dim" onMouseDown={gotoSchuecoPvc}>
         <img src="./pics/icons/livingfeather.png"></img>
