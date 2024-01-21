@@ -134,9 +134,9 @@ const WindowInfo = () => {
 
     <Fragment>
       <Head>
-        <title>Schüco / Kömmerling Fenster aus Polen kaufen, Kunststoff und Alu</title>
+        <title>Salamander / Aluplast / Schüco / Gealan / Aluprof / Kömmerling Fenster aus Polen kaufen, Kunststoff und Alu</title>
         <meta name='description'
-              content='Erreichen Sie garantiert bis 70% bessere Wärmedämmung mit Schüco, Kömmerling, Ponzio und Aluprof Fenster / Türen aus Polen, mit Montage. Schöne 3d Modelle.'
+              content='Erreichen Sie garantiert bis 70% bessere Wärmedämmung mit Salamander, Aluplast, Schüco, Kömmerling, Ponzio und Aluprof Fenster / Türen aus Polen, mit Montage. Schöne 3d Modelle.'
         />
          
         <link rel="icon" href="/favicon.ico" />
