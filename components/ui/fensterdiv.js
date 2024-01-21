@@ -68,7 +68,7 @@ function fensterdiv() {
   }
 
   function gotoSalamander(e) {
-    router.push("#")
+    router.push("./salamander")
   }
 
   function gotoGealan(e) {
