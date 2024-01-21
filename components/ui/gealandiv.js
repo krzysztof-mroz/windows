@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Carousel from "./blocks/carousel";
 import ProductLink from "./blocks/productlink";
 
-function salamanderdiv() {
+function gealandiv() {
   const size = useWindowSize();
 
   function useWindowSize() {
@@ -42,35 +42,34 @@ function salamanderdiv() {
 
       <div className="flex flex-wrap justify-around w-100 ba b--moon-gray ma2 pa3">
         <div className="w-100 w-50-l ma1 pa2">
-          <img src="./pics/profiles/bluevolution_82.png"></img>
+          <img src="./pics/profiles/gealan_s8000.png"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5 className="gray">Salamander BluEvolution 82, 6 Kammer, Mitteldichtung</h5>
+          <h5 className="gray">Gealan S8000, 6 Kammer</h5>
           <div className="gray f6 tl">
             <ul>
-              <li>Bautiefe 82 mm</li>
+              <li>Bautiefe 74 mm</li>
               <li>6-Kammer-Profil</li>
-              <li>
-              bis zu Uw = 0,73 W/(m²K)
-              </li>
-              <li>Verglasung: bis 52mm</li>
-              <li>Schallreduzierung um bis zu 47 dB</li>
+             
+              <li>Verglasung: bis 48mm</li>
+           
               <li>hervorragende Energieeinsparung und innovative Dichtungstechnologie</li>
-              <li>umlaufendes Mitteldichtungssystem</li>
+             <li>Große Hauptkammer für die Aufnahme großer Stahlaussteifungen</li>
               <li>
               Einbruchhemmung: bis RC 2
               </li>
+              <li>In zahlreichen Farben verfügbar</li>
             </ul>
           </div>
         </div>
         <div className="w-100 w-50-l ma1 pa2">
-          <img src="./pics/profiles/bluevolution_82_tuer.png"></img>
+          <img src="./pics/profiles/gealan_s8000_tuer.png"></img>
         </div>
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
             style={{ maxWidth: 450, maxHeight: 550 }}
-            src="./pics/sections/bluevolution82.png"
+            src="./pics/sections/s8000.png"
           ></img>
         </div>
       </div>
@@ -79,35 +78,33 @@ function salamanderdiv() {
 
       <div className="flex flex-wrap justify-around w-100 ba b--moon-gray ma2 pa3">
         <div className="w-100 w-50-l ma1 pa2">
-          <img src="./pics/profiles/bluevolution_92.png"></img>
+          <img src="./pics/profiles/gealan_s9000.png"></img>
         </div>
         <div className="w-100 w-40-l ma1 pa2 tl">
-          <h5 className="gray">Salamander BluEvolution 92, 6 Kammer, Mitteldichtung</h5>
+          <h5 className="gray">Gealan S9000, 6 Kammer, Mitteldichtung</h5>
           <div className="gray f6 tl">
             <ul>
-              <li>Bautiefe 92 mm</li>
+              <li>Bautiefe 82,5 mm</li>
               <li>6-Kammer-Profil</li>
-              <li>
-              bis zu Uw = 0,70 W/(m²K)
-              </li>
-              <li>Verglasung: bis 60mm</li>
-              <li>Schallreduzierung um bis zu 47 dB</li>
-              <li>hervorragende Energieeinsparung und innovative Dichtungstechnologie</li>
+              
+              <li>Verglasung: bis 54mm</li>
+              <li>Schallreduzierung um bis zu 46 dB</li>
               <li>umlaufendes Mitteldichtungssystem</li>
               <li>
-              Einbruchhemmung: bis RC 3
+              Einbruchhemmung: bis RC 2
               </li>
+              <li>Schmale sichtbare Breite</li>
             </ul>
           </div>
         </div>
         <div className="w-100 w-50-l ma1 pa2">
-          <img src="./pics/profiles/bluevolution_92_tuer.png"></img>
+          <img src="./pics/profiles/gealan_s9000_tuer.png"></img>
         </div>
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
             style={{ maxWidth: 450, maxHeight: 550 }}
-            src="./pics/sections/bluevolution92.png"
+            src="./pics/sections/s9000.png"
           ></img>
         </div>
       </div>
@@ -123,4 +120,4 @@ function salamanderdiv() {
   );
 }
 
-export default salamanderdiv;
+export default gealandiv;

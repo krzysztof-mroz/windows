@@ -72,7 +72,7 @@ function fensterdiv() {
   }
 
   function gotoGealan(e) {
-    router.push("#")
+    router.push("./gealan")
   }
   function gotoKoemmerling(e) {
     router.push("./koemmerling")
