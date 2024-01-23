@@ -35,6 +35,17 @@ function salamanderdiv() {
     return windowSize;
   }
 
+  const beschattung = [
+   
+    <ProductLink linktext="Vorsatz Raffstoren" href="/products/raf" opis="C80 oder Z90, Unterputz, Überputz" pic="/pics/producticons/raf.png"/>,
+    <ProductLink linktext="Aufsatz Rollläden" href="/products/ael" opis="Aluminium Lamellen, Motorsteuerung" pic="/pics/producticons/ael.png"/>,
+    <ProductLink linktext="Vorsatz Rollläden SK" href="/products/sk" opis="Aluminium Lamellen, eckiger Kasten" pic="/pics/producticons/vsr_sk.png"/>,
+    <ProductLink linktext="Vorsatz Rollläden SKP" href="/products/skp" opis="Aluminium Lamellen, viertelrunder Kasten" pic="/pics/producticons/vsr_skp.png"/>,
+    <ProductLink linktext="Vorsatz Rollläden SKO" href="/products/sko" opis="Aluminium Lamellen, halbrunder Kasten" pic="/pics/producticons/vsr_sko.png"/>,
+    <ProductLink linktext="Vorsatz Rollläden SP" href="/products/sp" opis="Aluminium Lamellen, Unterputz Kasten" pic="/pics/producticons/vsr_sp.png"/>,
+  
+  ];
+
   return (
     <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
 
@@ -73,6 +84,12 @@ function salamanderdiv() {
             src="./pics/sections/bluevolution82.png"
           ></img>
         </div>
+        <Carousel
+          show={Math.floor((size.width - 50) / 186)}
+          title="Beschattung:"
+        >
+          {beschattung}
+        </Carousel>
       </div>
 
 
@@ -110,6 +127,12 @@ function salamanderdiv() {
             src="./pics/sections/bluevolution92.png"
           ></img>
         </div>
+        <Carousel
+          show={Math.floor((size.width - 50) / 186)}
+          title="Beschattung:"
+        >
+          {beschattung}
+        </Carousel>
       </div>
 
 

@@ -2,9 +2,11 @@ import { useState } from "react";
 import Link from "next/link";
 import CTAButton from "./CTAButton";
 import FruehbucherRabatt from "./FruehbucherRabatt";
+import { useRouter } from 'next/router';
 
 function header(props) {
   const { title, subtitle,ifAnfrage } = props;
+  const router = useRouter();
 
   // Use state to track which contact data is active
   const [activeContact, setActiveContact] = useState("phone"); // 'phone' is the default
@@ -42,6 +44,12 @@ function header(props) {
     );
   };
 
+  
+  
+    const handleClick = () => {
+      router.push('/kontakt/anfrage');
+    };
+
   return (
     <div className="flex flex-wrap justify-around mb2 w-100">
       {/* LOGO */}
@@ -51,14 +59,24 @@ function header(props) {
 
       {/* IKONKI I TYTUL STRONY */}
       <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
-        <div className="dn db-l">
+        <div className="dn db-l hover-w3-border-orange">
           {/* <img className="mt1 mr1 " src="/pics/ikonki_rund.png"></img> */}
-          <img className=" mr1 " src="/pics/3_wochen_lieferzeit.png"></img>
+          <img 
+          className=" mr1 grow shadow-hover" 
+          src="/pics/3_wochen_lieferzeit.png"
+          onClick={handleClick}
+          alt="3 Wochen Lieferzeit"
+          ></img>
         </div>
 
-        <div className="db dn-l">
+        <div className="db dn-l hover-w3-border-orange">
           {/* <img className="mt1 mr1 " src="/pics/ikonki_rund.png"></img> */}
-          <img className=" mr1 " src="/pics/3_wochen_lieferzeit.png"></img>
+          <img 
+          className=" mr1 grow shadow-hover" 
+          src="/pics/3_wochen_lieferzeit.png"
+          onClick={handleClick}
+          alt="3 Wochen Lieferzeit"
+          ></img>
         </div>
         <h1 className="fl f2 ma1 mt3-l w-100 tc">{title}</h1>
         <h2 className="fl f4 ma1  w-100 tc">{subtitle}</h2>
@@ -66,7 +84,7 @@ function header(props) {
 
       {/* DANE KONTAKTOWE DUZY EKRAN */}
 
-      <div className="dn db-l w-100 w-25-l fl tc tl-l mt3 mt1-m f5 w3-text-orange ">
+      <div className="dn db-l w-100 w-25-l fl tc tl-l mt4 mt1-m f5 w3-text-orange ">
         <div className="w-100 mv1">
           <img
             className="dib mr2"
@@ -134,14 +152,14 @@ function header(props) {
         {/* Center the row horizontally */}
         <div className="db dn-l tc w-100 flex b--moon-gray">
         <p className="gray f6 flex">
-          <Link href="/schuecopvc">
-            <a className="f6 fw4 no-underline  db  ph3">Schüco</a>
+          <Link href="/aluplast">
+            <a className="f6 fw4 no-underline  db  ph3">Aluplast</a>
           </Link>
           <Link href="/koemmerling">
             <a className="f6 fw4 no-underline  db  ph3">Kömmerling</a>
           </Link>
-          <Link href="/ponzio">
-            <a className="f6 fw4 no-underline  db  ph3">Ponzio</a>
+          <Link href="/salamander">
+            <a className="f6 fw4 no-underline  db  ph3">Salamander</a>
           </Link>
           <Link href="/aluprof">
             <a className="f6 fw4 no-underline  db  ph3">Aluprof</a>

@@ -1,9 +1,8 @@
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Carousel from "./blocks/carousel";
 import ProductLink from "./blocks/productlink";
 
 function aluprofdiv() {
-
   const size = useWindowSize();
 
   function useWindowSize() {
@@ -37,21 +36,81 @@ function aluprofdiv() {
   }
 
   const family1 = [
-    <ProductLink linktext="Aluprof MB 70 HI" href="/products/mb70" opis="Aluminium Aluprof MB 70" pic="/pics/producticons/mb70.png"/>,
-  <ProductLink linktext="Aluprof MB 86 SI" href="/products/mb86" opis="Aluminium Aluprof MB 86" pic="/pics/producticons/mb86.png"/>,
-    <ProductLink linktext="Ponzio PE 68N" href="/products/pe68" opis="Aluminium Ponzio PE 68" pic="/pics/producticons/pe68.png"/>,
-    <ProductLink linktext="Ponzio PE 78N" href="/products/pe78" opis="Aluminium Ponzio PE 78" pic="/pics/producticons/pe78.png"/>,
-  <ProductLink linktext="Schüco AWS 75 SI" href="/products/aws75" opis="Aluminium Schüco AWS 75" pic="/pics/producticons/aws75.png"/>,
-  <ProductLink linktext="Schüco AWS 90 SI" href="/products/aws90" opis="Aluminium Schüco AWS 90" pic="/pics/producticons/aws90.png"/>,
+    <ProductLink
+      linktext="Aluprof MB 70 HI"
+      href="/products/mb70"
+      opis="Aluminium Aluprof MB 70"
+      pic="/pics/producticons/mb70.png"
+    />,
+    <ProductLink
+      linktext="Aluprof MB 86 SI"
+      href="/products/mb86"
+      opis="Aluminium Aluprof MB 86"
+      pic="/pics/producticons/mb86.png"
+    />,
+    <ProductLink
+      linktext="Ponzio PE 68N"
+      href="/products/pe68"
+      opis="Aluminium Ponzio PE 68"
+      pic="/pics/producticons/pe68.png"
+    />,
+    <ProductLink
+      linktext="Ponzio PE 78N"
+      href="/products/pe78"
+      opis="Aluminium Ponzio PE 78"
+      pic="/pics/producticons/pe78.png"
+    />,
+    <ProductLink
+      linktext="Schüco AWS 75 SI"
+      href="/products/aws75"
+      opis="Aluminium Schüco AWS 75"
+      pic="/pics/producticons/aws75.png"
+    />,
+    <ProductLink
+      linktext="Schüco AWS 90 SI"
+      href="/products/aws90"
+      opis="Aluminium Schüco AWS 90"
+      pic="/pics/producticons/aws90.png"
+    />,
   ];
 
   const family2 = [
-    <ProductLink linktext="Aluprof MB 86 SI" href="/products/mb86" opis="Aluminium Aluprof MB 86" pic="/pics/producticons/mb86.png"/>,
-    <ProductLink linktext="Aluprof MB 70 HI" href="/products/mb70" opis="Aluminium Aluprof MB 70" pic="/pics/producticons/mb70.png"/>,
-    <ProductLink linktext="Ponzio PE 78N" href="/products/pe78" opis="Aluminium Ponzio PE 78" pic="/pics/producticons/pe78.png"/>,
-    <ProductLink linktext="Ponzio PE 68N" href="/products/pe68" opis="Aluminium Ponzio PE 68" pic="/pics/producticons/pe68.png"/>,
-  <ProductLink linktext="Schüco AWS 75 SI" href="/products/aws75" opis="Aluminium Schüco AWS 75" pic="/pics/producticons/aws75.png"/>,
-  <ProductLink linktext="Schüco AWS 90 SI" href="/products/aws90" opis="Aluminium Schüco AWS 90" pic="/pics/producticons/aws90.png"/>,
+    <ProductLink
+      linktext="Aluprof MB 86 SI"
+      href="/products/mb86"
+      opis="Aluminium Aluprof MB 86"
+      pic="/pics/producticons/mb86.png"
+    />,
+    <ProductLink
+      linktext="Aluprof MB 70 HI"
+      href="/products/mb70"
+      opis="Aluminium Aluprof MB 70"
+      pic="/pics/producticons/mb70.png"
+    />,
+    <ProductLink
+      linktext="Ponzio PE 78N"
+      href="/products/pe78"
+      opis="Aluminium Ponzio PE 78"
+      pic="/pics/producticons/pe78.png"
+    />,
+    <ProductLink
+      linktext="Ponzio PE 68N"
+      href="/products/pe68"
+      opis="Aluminium Ponzio PE 68"
+      pic="/pics/producticons/pe68.png"
+    />,
+    <ProductLink
+      linktext="Schüco AWS 75 SI"
+      href="/products/aws75"
+      opis="Aluminium Schüco AWS 75"
+      pic="/pics/producticons/aws75.png"
+    />,
+    <ProductLink
+      linktext="Schüco AWS 90 SI"
+      href="/products/aws90"
+      opis="Aluminium Schüco AWS 90"
+      pic="/pics/producticons/aws90.png"
+    />,
   ];
 
   return (
@@ -63,17 +122,26 @@ function aluprofdiv() {
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Aluprof MB 70 HI</h5>
           <div className="gray f6 tl">
-          <ul>
-            <li>Wärmedämmung UW von 1,5 W(m2K)</li>
-            <li>Dreikammerprofil System</li>
-            <li>Einbautiefe beträgt 70 mm (Blendrahmen) und 79 mm (Flügel) </li>
-            <li>profilierte Isolierstege in Omegaform mit der Breite von 34 mm aus dem mit Glasfasern verstärkten Polyamid</li>
-            <li>Einsatz der Verglasung mit der Dicke von 21 mm bis 57 mm möglich</li>
-            <li>Breite Farbpalette mit Standard-Farbtönen</li>
-            <li>Dichtungen aus dem 2K-Kunstkautschuk EPDM hergestellt</li>
-            <li>Für Fenster, Türen, Windfänge, Schaufenster und 3D-Konstruktionen gut geeignet.</li>
-            <li>Eindruck einer einheitlichen Oberfläche von außen</li>
-           
+            <ul>
+              <li>Wärmedämmung UW von 1,5 W(m2K)</li>
+              <li>Dreikammerprofil System</li>
+              <li>
+                Einbautiefe beträgt 70 mm (Blendrahmen) und 79 mm (Flügel){" "}
+              </li>
+              <li>
+                profilierte Isolierstege in Omegaform mit der Breite von 34 mm
+                aus dem mit Glasfasern verstärkten Polyamid
+              </li>
+              <li>
+                Einsatz der Verglasung mit der Dicke von 21 mm bis 57 mm möglich
+              </li>
+              <li>Breite Farbpalette mit Standard-Farbtönen</li>
+              <li>Dichtungen aus dem 2K-Kunstkautschuk EPDM hergestellt</li>
+              <li>
+                Für Fenster, Türen, Windfänge, Schaufenster und
+                3D-Konstruktionen gut geeignet.
+              </li>
+              <li>Eindruck einer einheitlichen Oberfläche von außen</li>
             </ul>
           </div>
         </div>
@@ -91,11 +159,11 @@ function aluprofdiv() {
           ></img>
         </div>
         <Carousel
-        show={Math.floor((size.width - 50) / 186)}
-        title="Produktfamilie und Alternativen:"
-      >
-        {family1}
-      </Carousel>
+          show={Math.floor((size.width - 50) / 186)}
+          title="Produktfamilie und Alternativen:"
+        >
+          {family1}
+        </Carousel>
       </div>
 
       <div className="flex flex-wrap justify-around w-100 ba b--moon-gray ma2 pa3">
@@ -105,19 +173,24 @@ function aluprofdiv() {
         <div className="w-100 w-40-l ma1 pa2 tl">
           <h5 className="gray">Aluprof MB 86 SI</h5>
           <div className="gray f6 tl">
-
             <ul>
-            <li>Wärmedämmung UW von 0,72 W(m2K)</li>
-            <li>Bestens geeignet für energiesparenderen Konstruktionen</li>
-            <li>In den Varianten ST, SI und AERO vefügbar</li>
-            <li>Verwendet Kombination aus Silica-Aerogel und nicht gewobener Glasfaserfüllung</li>
-            <li>Außergewöhnlich hohe Steifigkeit</li>
-            <li>Größere und schwerere Fenster möglich.</li>
-            <li>Neu geformte, hoch wärmedämmende thermische Trennungen.</li>
-            <li>Mitteldichtung aus mehreren Komponenten</li>
-            <li>Verglasung bis zu 67,5 mm Stärke.</li>
-            <li>Geeignet für eine Vielzahl von Beschlägen, einschließlich verdeckt liegender Bänder.</li>
-            <li>Schalldämmung: Klasse C5</li>
+              <li>Wärmedämmung UW von 0,72 W(m2K)</li>
+              <li>Bestens geeignet für energiesparenderen Konstruktionen</li>
+              <li>In den Varianten ST, SI und AERO vefügbar</li>
+              <li>
+                Verwendet Kombination aus Silica-Aerogel und nicht gewobener
+                Glasfaserfüllung
+              </li>
+              <li>Außergewöhnlich hohe Steifigkeit</li>
+              <li>Größere und schwerere Fenster möglich.</li>
+              <li>Neu geformte, hoch wärmedämmende thermische Trennungen.</li>
+              <li>Mitteldichtung aus mehreren Komponenten</li>
+              <li>Verglasung bis zu 67,5 mm Stärke.</li>
+              <li>
+                Geeignet für eine Vielzahl von Beschlägen, einschließlich
+                verdeckt liegender Bänder.
+              </li>
+              <li>Schalldämmung: Klasse C5</li>
             </ul>
           </div>
         </div>
@@ -135,13 +208,12 @@ function aluprofdiv() {
           ></img>
         </div>
         <Carousel
-        show={Math.floor((size.width - 50) / 186)}
-        title="Produktfamilie und Alternativen:"
-      >
-        {family2}
-      </Carousel>
+          show={Math.floor((size.width - 50) / 186)}
+          title="Produktfamilie und Alternativen:"
+        >
+          {family2}
+        </Carousel>
       </div>
-
     </div>
   );
 }
