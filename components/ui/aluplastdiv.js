@@ -89,7 +89,7 @@ function aluplastdiv() {
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
-            style={{ maxWidth: 450, maxHeight: 550 }}
+             style={{ maxWidth: 350, maxHeight: 350 }}
             src="./pics/sections/aluplast4000.png"
           ></img>
         </div>
@@ -130,7 +130,7 @@ function aluplastdiv() {
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
-            style={{ maxWidth: 450, maxHeight: 550 }}
+             style={{ maxWidth: 350, maxHeight: 350 }}
             src="./pics/sections/aluplast4000.png"
           ></img>
         </div>
@@ -174,7 +174,7 @@ function aluplastdiv() {
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
-            style={{ maxWidth: 450, maxHeight: 550 }}
+             style={{ maxWidth: 350, maxHeight: 350 }}
             src="./pics/sections/aluplast7000.png"
           ></img>
         </div>
@@ -215,7 +215,7 @@ function aluplastdiv() {
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
-            style={{ maxWidth: 450, maxHeight: 550 }}
+             style={{ maxWidth: 350, maxHeight: 350 }}
             src="./pics/sections/aluplast8000.png"
           ></img>
         </div>
