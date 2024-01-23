@@ -52,13 +52,13 @@ function header(props) {
       {/* IKONKI I TYTUL STRONY */}
       <div className="w-100 w-50-l  fl  tc mv1 mh1 ">
         <div className="dn db-l">
-          {/* <img className="mt4 mr1 " src="/pics/ikonki_rund.png"></img> */}
-          <img className="mt4 mr1 " src="/pics/alu_sala_add2.jpg"></img>
+          {/* <img className="mt1 mr1 " src="/pics/ikonki_rund.png"></img> */}
+          <img className=" mr1 " src="/pics/3_wochen_lieferzeit.png"></img>
         </div>
 
         <div className="db dn-l">
-          {/* <img className="mt4 mr1 " src="/pics/ikonki_rund.png"></img> */}
-          <img className="mt4 mr1 " src="/pics/alu_sala_add.jpg"></img>
+          {/* <img className="mt1 mr1 " src="/pics/ikonki_rund.png"></img> */}
+          <img className=" mr1 " src="/pics/3_wochen_lieferzeit.png"></img>
         </div>
         <h1 className="fl f2 ma1 mt3-l w-100 tc">{title}</h1>
         <h2 className="fl f4 ma1  w-100 tc">{subtitle}</h2>
