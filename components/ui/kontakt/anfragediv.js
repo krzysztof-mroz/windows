@@ -87,7 +87,7 @@ function anfragediv() {
       
       <div className="w-100">
             <div className="w-100 ml4">
-                <p className="w-third gray f6 mv2"><b>Liste der Positionen</b></p>
+                <p className="w-100 w-third-l gray f6 mv2"><b>Liste der Positionen</b></p>
             </div>
             <div className="w-90 ml4 mr4">
             <textarea id="liste" className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange" rows="15" placeholder="Breite mm x Höhe mm, Öffnungsart, Bemerkungen, ANZAHL" ref={messageRef}></textarea>
