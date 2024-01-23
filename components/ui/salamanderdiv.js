@@ -80,7 +80,7 @@ function salamanderdiv() {
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
-            style={{ maxWidth: 450, maxHeight: 550 }}
+             style={{ maxWidth: 350, maxHeight: 350 }}
             src="./pics/sections/bluevolution82.png"
           ></img>
         </div>
@@ -123,7 +123,7 @@ function salamanderdiv() {
 
         <div className="w-100 w-40-l ma1 pa2">
           <img
-            style={{ maxWidth: 450, maxHeight: 550 }}
+             style={{ maxWidth: 350, maxHeight: 350 }}
             src="./pics/sections/bluevolution92.png"
           ></img>
         </div>
