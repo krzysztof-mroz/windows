@@ -158,7 +158,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Profil:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={profilRef} 
               defaultValue="PVC Salamander BluEvolution 92"
@@ -282,7 +282,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Wärmedämmung:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={insulationRef}
               defaultValue="max 0,95 W/m2K"
@@ -306,7 +306,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Beschlag:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={beschlagRef}
               defaultValue="Winkhaus activPilot Standard"
@@ -330,7 +330,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Verglasung:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={glasRef}
               defaultValue="Standard Verglasung"
@@ -364,7 +364,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Schwellen:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={schwelleRef}
               defaultValue="Standardschwellen von 70 mm"
@@ -386,7 +386,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Farbe außen:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={farbeARef}
               defaultValue="weiß"
@@ -440,7 +440,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Farbe innen:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={farbeIRef}
               defaultValue="weiß"
@@ -494,7 +494,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Beschattung:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={beschattungRef}
               defaultValue="ohne Rollladen"
@@ -598,7 +598,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Höhenangaben:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={hoehenAngabenRef}
               defaultValue="ohne Rollladenkasten"
@@ -622,7 +622,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Rollladen Montage:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={rolloMontageRef}
               defaultValue="ohne Rollladen"
@@ -653,7 +653,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Fußboden:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <input
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               type="text"
               placeholder="? mm"
@@ -665,7 +665,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Höhe bodentief:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={hoeheBeiFussbodenRef}
               defaultValue="ohne Fußbodenaufbau"
@@ -686,7 +686,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Haustür:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={doorRef}
               defaultValue="ohne Haustür"
@@ -708,7 +708,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Bauvorhaben:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={bvRef}
               defaultValue="Neubau, ohne Montage"
@@ -740,7 +740,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Priorität:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <select
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               ref={prioRef}
               defaultValue="Bedarf innerhalb von 1 Monat"
@@ -778,7 +778,7 @@ function anfragediv() {
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <input
               id="name"
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               type="text"
               placeholder="Ihr Name"
@@ -790,7 +790,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Telefon:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <input
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               type="text"
               placeholder="Ihre Telefonnummer"
@@ -802,7 +802,7 @@ function anfragediv() {
           <div className="w-100 w-third-l gray f6 mv2">Straße, Hausnr:</div>
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <input
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               type="text"
               placeholder="Straße, Hausnummer"
@@ -815,7 +815,7 @@ function anfragediv() {
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <input
               id="ort"
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               type="text"
               placeholder="PLZ, Ort"
@@ -828,7 +828,7 @@ function anfragediv() {
           <div className="w-100  w-two-thirds-l gray f6 flex justify-center">
             <input
               id="email"
-              style={{ width: 300, height: 37 }}
+              style={{ width: 350, height: 37 }}
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
               type="text"
               placeholder="Ihre Email"
