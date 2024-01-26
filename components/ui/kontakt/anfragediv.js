@@ -115,7 +115,7 @@ function anfragediv() {
               <b>Liste der Positionen</b>
             </p>
           </div>
-          <div className="w-90 ml2 mr2 ml4-l mr4-l">
+          <div className="w-100 w-90-l mh2 mh4-l">
             <textarea
               id="liste"
               className="gray f6 w3-input w3-border mv2 w3-sand w3-border-orange"
