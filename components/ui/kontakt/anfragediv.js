@@ -110,7 +110,7 @@ function anfragediv() {
     <form className="" name="Anfrageformular" onSubmit={submitFormHandler}>
       <div className="flex flex-wrap justify-around  w-100 tl pa2 mt3 ">
         <div className="w-100">
-          <div className="w-100 ml4">
+          <div className="w-100">
             <p className="w-100 w-100 w-third-l-l gray f6 mv2">
               <b>Liste der Positionen</b>
             </p>
