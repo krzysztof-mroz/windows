@@ -22,7 +22,7 @@ const useResizeCanvas = (canvasRef, divRef, updateFunctions) => {
     return () => {
       window.removeEventListener("resize", resizeCanvas);
     };
-  }, [canvasRef, divRef, updateFunctions]); // Depend on refs and update functions
+  }, [canvasRef, divRef]); // Depend on refs and update functions
 };
 
 export default useResizeCanvas;
