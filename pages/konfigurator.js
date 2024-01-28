@@ -88,8 +88,8 @@ const Konfigurator = () => {
     }));
   }
 
-  useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
-  useResizeCanvas(optionCanvasRef, optionDivRef, [updateOptionCanvas]);
+ //useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
+  //useResizeCanvas(optionCanvasRef, optionDivRef, [updateOptionCanvas]);
 
   
   // USE EFFECT DRAW NEW IF CHANGE WIDTH OR HEIGTH
