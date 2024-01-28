@@ -21,6 +21,7 @@ const Konfigurator = () => {
   const [activeMode, setActiveMode] = useState("Fenster");
   const [clickX, setClickX] = useState(null);
   const [clickY, setClickY] = useState(null);
+  const [clickedEinheit, setClickedEinheit] = useState(null);
   const [divisionMode, setDivisionMode] = useState("horizontal");
   const [matrixOfEinheitObjects, setMatrixOfEinheitObjects] = useState([
     [prototypeEinheit],
@@ -45,6 +46,13 @@ const Konfigurator = () => {
 
 
   // FUNCTIONS
+  const drawCanvas = (canvasRef, { width, height, scaleFactor, posX, posY }) => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    prototypeEinheit.drawEinheit(posX, posY, canvas, scaleFactor);
+  };
+  
 
   
 
@@ -130,7 +138,30 @@ const Konfigurator = () => {
       optionScaleFactor: optionScaleFactor 
     }));
 
-  }, [dimensions.width, dimensions.height]);
+  }, [dimensions.width, dimensions.height]);  
+
+  /* useEffect(() => {
+    const { width, height } = dimensions;
+    const mainScaleFactor = Math.min(canvasRef.current.width / width, canvasRef.current.height / height);
+    const optionScaleFactor = Math.min(optionCanvasRef.current.width / 5 / width, optionCanvasRef.current.height / 5 / height);
+    console.log(mainScaleFactor)
+    console.log(optionScaleFactor)
+    drawCanvas(canvasRef, { width, height, scaleFactor: mainScaleFactor, posX: (canvasRef.current.width - width * mainScaleFactor) / 2, posY: (canvasRef.current.height - height * mainScaleFactor) / 2 });
+    drawCanvas(optionCanvasRef, { width, height, scaleFactor: optionScaleFactor, posX: 10, posY: 10 });
+  
+    // Update state only if scale factors change
+    if (dimensions.scaleFactor !== mainScaleFactor || dimensions.optionScaleFactor !== optionScaleFactor) {
+       
+
+      setDimensions(currentDimensions => ({
+        ...currentDimensions,
+        optionScaleFactor: optionScaleFactor,
+        scaleFactor: mainScaleFactor
+      }));
+
+    }
+  }, [dimensions.width, dimensions.height]);  */
+  
 
   // FUNCTION UPDATE DRAWING OF THE NEW ELEMENTS
   const updateCanvas = (matrixOfWindows) => {
