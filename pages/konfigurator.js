@@ -4,10 +4,10 @@
 import React, { Fragment, useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import HeaderDiv from "../components/ui/headerdiv";
-import Einheit from "./models/Einheit";
+import Einheit from "../components/models/Einheit";
 import ButtonGroup from "../components/ui/ButtonGroup";
-import { detectClickedSide } from "./utils/canvasHelpers";
-//import useResizeCanvas from "./hooks/useResizeCanvas";
+import { detectClickedSide } from "../components/utils/canvasHelpers";
+import useResizeCanvas from "../components/hooks/useResizeCanvas";
 
 
 // STARTING MODULE
@@ -81,8 +81,8 @@ const Konfigurator = () => {
     }));
   }
 
- //useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
-  //useResizeCanvas(optionCanvasRef, optionDivRef, [updateOptionCanvas]);
+ useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
+  useResizeCanvas(optionCanvasRef, optionDivRef, [updateOptionCanvas]);
 
   
   // USE EFFECT DRAW NEW IF CHANGE WIDTH OR HEIGTH
