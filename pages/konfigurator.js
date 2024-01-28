@@ -46,13 +46,6 @@ const Konfigurator = () => {
 
   // FUNCTIONS
 
-  // DRAW CANVAS
-  const drawCanvas = (canvasRef, { width, height, scaleFactor, posX, posY }) => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    prototypeEinheit.drawEinheit(posX, posY, canvas, scaleFactor);
-  };
   
 
   // UPDATE MAIN CANVAS
