@@ -7,7 +7,7 @@ import HeaderDiv from "../components/ui/headerdiv";
 import Einheit from "./models/Einheit";
 import ButtonGroup from "../components/ui/ButtonGroup";
 import { detectClickedSide } from "./utils/canvasHelpers";
-import useResizeCanvas from "./hooks/useResizeCanvas";
+//import useResizeCanvas from "./hooks/useResizeCanvas";
 
 
 // STARTING MODULE

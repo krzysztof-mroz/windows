@@ -136,7 +136,7 @@ function anfragediv() {
           </div>
         </div>
 
-        <h2 class="fl f5 ma1 w-100 tc orange b">
+        <h2 className="fl f5 ma1 w-100 tc orange b">
           Sie können uns gerne auch eine{" "}
           <a className="blue" href="mailto:info@polnische-fenster.com">
             {" "}
