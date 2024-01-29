@@ -4,7 +4,7 @@ import HeaderDiv from "../components/ui/headerdiv";
 import Einheit from "../components/models/Einheit";
 import ButtonGroup from "../components/ui/ButtonGroup";
 import { detectClickedSide } from "../components/utils/canvasHelpers";
-import useResizeCanvas from "../components/hooks/useResizeCanvas";
+
 
 const Konfi = () => {
   
@@ -54,6 +54,12 @@ const Konfi = () => {
       return [mainScaleFactor, optionScaleFactor];
    }
 
+   const updateAllCanvas = (matrixOfWindows) => {
+    updateOptionCanvas()
+    updateCanvas(matrixOfWindows)
+
+   }
+
    const updateOptionCanvas = () => {
     startCanvas(optionCanvasRef);
     optionCanvasRef.current.width = optionDivRef.current.offsetWidth - 40;
@@ -61,15 +67,8 @@ const Konfi = () => {
     const [scaleFactor, optionScaleFactor] = setScale();
     prototypeEinheit.drawEinheit(10, 10, optionCanvasRef, optionScaleFactor, false);
     prototypeEinheit.drawEinheit(120, 10, optionCanvasRef, optionScaleFactor, false);
-    prototypeEinheit.drawEinheit(230, 10, optionCanvasRef, optionScaleFactor, false);
    }
 
-   // UPDATE MAIN CANVAS
-  const updateMainCanvas = () => {
-    updateCanvas(matrixOfEinheitObjects);
-    //handleCanvasClick({clientX:0, clientY:0})
-    // Other logic specific to the main canvas...
-  };
 
   const updateCanvas = (matrixOfWindows) => {
     startCanvas(canvasRef);
@@ -84,29 +83,42 @@ const Konfi = () => {
         let realHeight = dimensions.height * scaleFactor;
         let posX = (canvasRef.current.width - realWidth) / 2 + cumulatedWidth; // position horizontally
         let posY = (canvasRef.current.height - realHeight) / 2 + cumulatedHeight; // Center vertically
-        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, false);
+        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, false); 
         cumulatedWidth += einheit.width * scaleFactor;
       });
       cumulatedHeight += row[0].height * scaleFactor;
     });
   }
   
+  useEffect(() => {
+    if (divRef.current && canvasRef.current) {
+      canvasRef.current.width = divRef.current.offsetWidth - 40;
+      canvasRef.current.height = divRef.current.offsetHeight - 40;
+      optionCanvasRef.current.width = optionDivRef.current.offsetWidth - 40;
+      optionCanvasRef.current.height = optionDivRef.current.offsetHeight - 40;
+    }     
+    //resizeAndDraw()
+    updateCanvas(matrixOfEinheitObjects)
+    updateOptionCanvas()
 
-   useResizeCanvas(optionCanvasRef, optionDivRef, [updateOptionCanvas]);
-   useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
+    window.addEventListener("resize", () => updateAllCanvas(matrixOfEinheitObjects));
+    
+    return () => {
+      window.removeEventListener("resize", () => updateAllCanvas(matrixOfEinheitObjects));
+    };
+  }, [matrixOfEinheitObjects]);
+
 
     useEffect(() => {
     startCanvas(canvasRef);
-    const [scaleFactor, optionScaleFactor] = setScale();
+    setScale();
     const currentEinheit = new Einheit({ ...prototypeEinheit }) 
     currentEinheit.width = dimensions.width;
     currentEinheit.height = dimensions.height;
     setMatrixOfEinheitObjects([[currentEinheit]]);
-    //currentEinheit.drawEinheit((canvasRef.current.width - currentEinheit.width * scaleFactor) / 2, (canvasRef.current.height - currentEinheit.height * scaleFactor) / 2, canvasRef, scaleFactor, false)
     updateCanvas([
         [currentEinheit],
       ]);
-      //handleCanvasClick({clientX:0, clientY:0})
 }, [dimensions.width, dimensions.height]);    
 
 
