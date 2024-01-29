@@ -46,14 +46,6 @@ const Konfigurator = () => {
 
 
   // FUNCTIONS
-  const drawCanvas = (canvasRef, { width, height, scaleFactor, posX, posY }) => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d");
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    prototypeEinheit.drawEinheit(posX, posY, canvas, scaleFactor);
-  };
-  
-
   
 
   // UPDATE MAIN CANVAS
@@ -82,19 +74,19 @@ const Konfigurator = () => {
 
     let optionPosX = 10
     let optionPosY = 10
-    prototypeEinheit.drawEinheit(optionPosX, optionPosY, optionCanvas, optionScaleFactor);
+    prototypeEinheit.drawEinheit(optionPosX, optionPosY, optionCanvasRef, optionScaleFactor, true);
     setDimensions(currentDimensions => ({
       ...currentDimensions,
       optionScaleFactor: optionScaleFactor 
     }));
   }
 
- useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
+  useResizeCanvas(canvasRef, divRef, [updateMainCanvas]);
   useResizeCanvas(optionCanvasRef, optionDivRef, [updateOptionCanvas]);
 
-  
+
   // USE EFFECT DRAW NEW IF CHANGE WIDTH OR HEIGTH
-  useEffect(() => {
+ /*  useEffect(() => {
     
     // MAIN CANVAS
     const canvas = canvasRef.current;
@@ -112,7 +104,7 @@ const Konfigurator = () => {
     let realHeight = dimensions.height * scaleFactor;
     let posX = (canvas.width - realWidth) / 2; // Center horizontally
     let posY = (canvas.height - realHeight) / 2; // Center vertically
-    prototypeEinheit.drawEinheit(posX, posY, canvas, scaleFactor);
+    prototypeEinheit.drawEinheit(posX, posY, canvas, scaleFactor, true);
     
     setDimensions(currentDimensions => ({
       ...currentDimensions,
@@ -132,22 +124,30 @@ const Konfigurator = () => {
     // IN LOOP
     let optionPosX = 10
     let optionPosY = 10
-    prototypeEinheit.drawEinheit(optionPosX, optionPosY, optionCanvas, optionScaleFactor);
+    prototypeEinheit.drawEinheit(optionPosX, optionPosY, optionCanvas, optionScaleFactor, true);
     setDimensions(currentDimensions => ({
       ...currentDimensions,
       optionScaleFactor: optionScaleFactor 
     }));
 
-  }, [dimensions.width, dimensions.height]);  
+  }, [dimensions.width, dimensions.height]); */
 
-  /* useEffect(() => {
+  
+  // USE EFFECT WHEN CHANGING WIDTH OR HEIGTH
+   useEffect(() => {
     const { width, height } = dimensions;
+    console.log(width)
+    console.log(height)
     const mainScaleFactor = Math.min(canvasRef.current.width / width, canvasRef.current.height / height);
-    const optionScaleFactor = Math.min(optionCanvasRef.current.width / 5 / width, optionCanvasRef.current.height / 5 / height);
-    console.log(mainScaleFactor)
-    console.log(optionScaleFactor)
-    drawCanvas(canvasRef, { width, height, scaleFactor: mainScaleFactor, posX: (canvasRef.current.width - width * mainScaleFactor) / 2, posY: (canvasRef.current.height - height * mainScaleFactor) / 2 });
-    drawCanvas(optionCanvasRef, { width, height, scaleFactor: optionScaleFactor, posX: 10, posY: 10 });
+    const optionScaleFactor = Math.min(optionCanvasRef.current.width / 5 / prototypeEinheit.width, optionCanvasRef.current.height / 5 / prototypeEinheit.height);
+    const currentEinheit = new Einheit({ ...prototypeEinheit }) 
+    setMatrixOfEinheitObjects([[currentEinheit]]);
+    currentEinheit.width = width;
+    currentEinheit.height = height;
+    
+    currentEinheit.drawEinheit((canvasRef.current.width - width * mainScaleFactor) / 2, (canvasRef.current.height - height * mainScaleFactor) / 2, canvasRef, mainScaleFactor, true)
+    
+    prototypeEinheit.drawEinheit(10, 10, optionCanvasRef, optionScaleFactor, true);
   
     // Update state only if scale factors change
     if (dimensions.scaleFactor !== mainScaleFactor || dimensions.optionScaleFactor !== optionScaleFactor) {
@@ -155,12 +155,14 @@ const Konfigurator = () => {
 
       setDimensions(currentDimensions => ({
         ...currentDimensions,
+        width: width,
+        height: height,
         optionScaleFactor: optionScaleFactor,
         scaleFactor: mainScaleFactor
       }));
 
     }
-  }, [dimensions.width, dimensions.height]);  */
+  }, [dimensions.width, dimensions.height]);   
   
 
   // FUNCTION UPDATE DRAWING OF THE NEW ELEMENTS
@@ -191,7 +193,7 @@ const Konfigurator = () => {
         let realHeight = dimensions.height * scaleFactor;
         let posX = (canvas.width - realWidth) / 2 + cumulatedWidth; // position horizontally
         let posY = (canvas.height - realHeight) / 2 + cumulatedHeight; // Center vertically
-        einheit.drawEinheit(posX, posY, canvas, scaleFactor);
+        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, rowindex === 0 && index === 0);
         cumulatedWidth += einheit.width * scaleFactor;
       });
       cumulatedHeight += row[0].height * scaleFactor;
