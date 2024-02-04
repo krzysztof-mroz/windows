@@ -2,16 +2,38 @@ import React, { Fragment, useState, useEffect, useRef } from "react";
 import Head from "next/head";
 import HeaderDiv from "../components/ui/headerdiv";
 import Einheit from "../components/models/Einheit";
+import Profil from "../components/models/Profil";
 import ButtonGroup from "../components/ui/ButtonGroup";
 import { detectClickedSide } from "../components/utils/canvasHelpers";
 
 
 const Konfi = () => {
   
-    // PROTOTYPE DEFINITIONS
-    const prototypeEinheit = new Einheit(1000, 1000, [], [], [], []);
+  // PROTOTYPE DEFINITIONS
+  const prototypeProfil = new Profil('BE82', 'F', 82, 73, 83, 123, 20, 25, 70, 90)
+  const prototypeEinheit = new Einheit(1000, 1000, 'POS', true,  [], [], [], [], prototypeProfil);
+  const typesArray = [
+    new Einheit(830, 830, 'POS', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'FB', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'FF', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DL', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DL', true, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DR', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DR', true, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DKL', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DKL', true, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DKR', false, [], [], [], [], prototypeProfil),
+    new Einheit(830, 830, 'DKR', true, [], [], [], [], prototypeProfil),
+    new Einheit(1250, 830, 'DSDK', false, [], [], [], [], prototypeProfil),
+    new Einheit(1250, 830, 'DSDK', true, [], [], [], [], prototypeProfil),
+    new Einheit(1250, 830, 'DKDS', false, [], [], [], [], prototypeProfil),
+    new Einheit(1250, 830, 'DKDS', true, [], [], [], [], prototypeProfil),
+    new Einheit(1250, 830, 'DKDK', false, [], [], [], [], prototypeProfil),
+    new Einheit(1250, 830, 'DKDK', true, [], [], [], [], prototypeProfil),
+  ];
+  
 
-    // STATE VARIABLES
+  // STATE VARIABLES
   const [activeMode, setActiveMode] = useState("Fenster");
   const [divisionMode, setDivisionMode] = useState("horizontal");
   const [dimensions, setDimensions] = useState({
@@ -23,6 +45,8 @@ const Konfi = () => {
   const [matrixOfEinheitObjects, setMatrixOfEinheitObjects] = useState([
     [prototypeEinheit],
   ]);
+  const [chosenOpening, setChosenOpening] = useState('POS');
+  const [flacheSchwelle, setFlacheSchwelle] = useState(false);
 
   const [verbreiterungWidth, setVerbreiterungWidth] = useState(60);
   const [kopplungWidth, setKopplungWidth] = useState(20);
@@ -36,6 +60,8 @@ const Konfi = () => {
 
 
    // FUNCTIONS
+
+   // starting and returning canvas
    const startCanvas = (canvasRef) => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -43,6 +69,7 @@ const Konfi = () => {
     return(canvas)
    }
 
+   // setting and returning array of scale factors, setting dimensions state variable. 
    const setScale = () => {
     const mainScaleFactor = Math.min(canvasRef.current.width / dimensions.width, canvasRef.current.height / dimensions.height);
     const optionScaleFactor = Math.min(optionCanvasRef.current.width / 5 / prototypeEinheit.width, optionCanvasRef.current.height / 5 / prototypeEinheit.height);
@@ -54,42 +81,73 @@ const Konfi = () => {
       return [mainScaleFactor, optionScaleFactor];
    }
 
+   // updating all canvas
    const updateAllCanvas = (matrixOfWindows) => {
     updateOptionCanvas()
-    updateCanvas(matrixOfWindows)
-
+    updateMainCanvas(matrixOfWindows)
    }
 
-   const updateOptionCanvas = () => {
-    startCanvas(optionCanvasRef);
+   // updating option canvas
+   const updateOptionCanvas = (chosen, chosenSchwelle) => {
+    const canvas = startCanvas(optionCanvasRef);
     optionCanvasRef.current.width = optionDivRef.current.offsetWidth - 40;
     optionCanvasRef.current.height = optionDivRef.current.offsetHeight - 40;
     const [scaleFactor, optionScaleFactor] = setScale();
-    prototypeEinheit.drawEinheit(10, 10, optionCanvasRef, optionScaleFactor, false);
-    prototypeEinheit.drawEinheit(120, 10, optionCanvasRef, optionScaleFactor, false);
+  
+    let posX = 10; // Start 10px from the left edge
+  let posY = 10; // Start 10px from the top edge
+  const padding = 10; // Distance between each Einheit
+  const rowHeight = 830 * optionScaleFactor + padding; // Assuming each Einheit has a height of 1000 before scaling
+
+  typesArray.forEach((einheit, index) => {
+    // Draw the Einheit
+    einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
+
+    if (einheit.type === chosen && einheit.schwelle === chosenSchwelle) {
+        const ctx = optionCanvasRef.current.getContext('2d');
+        ctx.strokeStyle = 'red';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(posX, posY, einheit.width * optionScaleFactor, einheit.height * optionScaleFactor);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = 1;
+      }
+
+    // Move posX to the right for the next Einheit
+    posX += einheit.width * optionScaleFactor + padding;
+
+    // Check if the next Einheit will exceed the canvas width
+    if (posX + einheit.width * optionScaleFactor > canvas.width) {
+      posX = 10; // Reset posX to the start of the next row
+      posY += rowHeight; // Move posY down to the next row
+    }
+  });
    }
 
-
-  const updateCanvas = (matrixOfWindows) => {
+   // updating main canvas
+   const updateMainCanvas = (matrixOfWindows) => {
     startCanvas(canvasRef);
     canvasRef.current.width = divRef.current.offsetWidth - 40;
     canvasRef.current.height = divRef.current.offsetHeight - 40;
     const [scaleFactor, optionScaleFactor] = setScale();
     let cumulatedHeight = 0;
     matrixOfWindows.forEach((row, rowindex) => {
-      let cumulatedWidth = 0;
-      row.forEach((einheit, index) => {
-        let realWidth = dimensions.width * scaleFactor;
-        let realHeight = dimensions.height * scaleFactor;
-        let posX = (canvasRef.current.width - realWidth) / 2 + cumulatedWidth; // position horizontally
-        let posY = (canvasRef.current.height - realHeight) / 2 + cumulatedHeight; // Center vertically
-        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, false); 
-        cumulatedWidth += einheit.width * scaleFactor;
-      });
-      cumulatedHeight += row[0].height * scaleFactor;
+        let cumulatedWidth = 0;
+        row.forEach((einheit, index) => {
+            let posX = (canvasRef.current.width - dimensions.width * scaleFactor) / 2 + cumulatedWidth; // position horizontally
+            let posY = (canvasRef.current.height - dimensions.height * scaleFactor) / 2 + cumulatedHeight; // position vertically
+            einheit.drawEinheit(posX, posY, canvasRef, scaleFactor); 
+            cumulatedWidth += einheit.width * scaleFactor;
+        });
+        cumulatedHeight += row[0].height * scaleFactor;
     });
-  }
+    
+    
+   }
   
+  
+  // USEEFFECTS
+  
+  //resizing canvas after window resize
   useEffect(() => {
     if (divRef.current && canvasRef.current) {
       canvasRef.current.width = divRef.current.offsetWidth - 40;
@@ -97,33 +155,32 @@ const Konfi = () => {
       optionCanvasRef.current.width = optionDivRef.current.offsetWidth - 40;
       optionCanvasRef.current.height = optionDivRef.current.offsetHeight - 40;
     }     
-    //resizeAndDraw()
-    updateCanvas(matrixOfEinheitObjects)
-    updateOptionCanvas()
+    if (matrixOfEinheitObjects.length > 0) {
 
+    }
+    updateMainCanvas(matrixOfEinheitObjects)
+    updateOptionCanvas()
     window.addEventListener("resize", () => updateAllCanvas(matrixOfEinheitObjects));
-    
     return () => {
       window.removeEventListener("resize", () => updateAllCanvas(matrixOfEinheitObjects));
     };
   }, [matrixOfEinheitObjects]);
 
 
-    useEffect(() => {
+  // drawing new canvas after changing width or height
+  useEffect(() => {
     startCanvas(canvasRef);
     setScale();
-    const currentEinheit = new Einheit({ ...prototypeEinheit }) 
-    currentEinheit.width = dimensions.width;
-    currentEinheit.height = dimensions.height;
+    const currentEinheit = new Einheit(dimensions.width, dimensions.height, prototypeEinheit.type, prototypeEinheit.schwelle, [...prototypeEinheit.up], [...prototypeEinheit.down], [...prototypeEinheit.left], [...prototypeEinheit.right], prototypeProfil);
     setMatrixOfEinheitObjects([[currentEinheit]]);
-    updateCanvas([
-        [currentEinheit],
-      ]);
+    updateMainCanvas([[currentEinheit]])
 }, [dimensions.width, dimensions.height]);    
 
 
 
-   // HANDLE CANVAS CLICK
+  // HANDLERS 
+
+  // HANDLE CANVAS CLICK
   const handleCanvasClick = (event) => {
     const rect = canvasRef.current.getBoundingClientRect();
     const x = event.clientX - rect.left;
@@ -179,18 +236,14 @@ const Konfi = () => {
               const einheit1 = new Einheit(
                 newWidth1,
                 deletedEinheit.height,
-                [],
-                [],
-                [],
-                []
+                'POS', false,
+                [],[],[], [], prototypeProfil
               );
               const einheit2 = new Einheit(
                 newWidth2,
                 deletedEinheit.height,
-                [],
-                [],
-                [],
-                []
+                'POS', false,
+                [],[],[], [], prototypeProfil
               );
               updatedArray.splice(index, 1, einheit1, einheit2);
               updatedMatrix[rowIndex] = updatedArray;
@@ -204,18 +257,14 @@ const Konfi = () => {
               const einheit1 = new Einheit(
                 deletedEinheit.width,
                 newHeight1,
-                [],
-                [],
-                [],
-                []
+                'POS', false,
+                [],[],[], [], prototypeProfil
               );
               const einheit2 = new Einheit(
                 deletedEinheit.width,
                 newHeight2,
-                [],
-                [],
-                [],
-                []
+                'POS', false,
+                [],[],[], [], prototypeProfil
               );
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
@@ -228,10 +277,8 @@ const Konfi = () => {
               const einheit1 = new Einheit(
                 deletedEinheit.width,
                 newHeight1,
-                [],
-                [],
-                [],
-                []
+                'POS', false,
+                [],[],[], [], prototypeProfil
               );
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
@@ -251,29 +298,71 @@ const Konfi = () => {
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
           }
+          else if (divisionMode === "Öffnungsart") {
+            const einheit1 = deletedEinheit;
+        
+            einheit1.type=chosenOpening;
+            einheit1.schwelle=flacheSchwelle;
+            updatedArray.splice(index, 1, einheit1);
+            updatedMatrix[rowIndex] = updatedArray;
+            shouldBreak = true;
+          }
         }
         cumulatedWidth += realWidth;
       });
       cumulatedHeight += realHeight;
     });
-    updateCanvas(updatedMatrix);
+    updateMainCanvas(updatedMatrix);
     setMatrixOfEinheitObjects(updatedMatrix);
   };
 
+  // HANDLE OPTION CANVAS CLICK
   const handleOptionCanvasClick = (event) => {
+    const rect = optionCanvasRef.current.getBoundingClientRect();
+    const x = event.clientX - rect.left; // x position within the canvas
+    const y = event.clientY - rect.top; // y position within the canvas
+  
+    let posX = 10; // Initial X position, should match the drawing logic
+    let posY = 10; // Initial Y position, should match the drawing logic
+    const padding = 10; // Distance between each Einheit, should match the drawing logic
+    const rowHeight = 1000 * dimensions.optionScaleFactor + padding; // Assuming each Einheit has a height of 1000 before scaling, should match the drawing logic
+  
+    // Iterate over each Einheit to find the one that was clicked
+    for (let einheit of typesArray) {
+      const einheitWidth = einheit.width * dimensions.optionScaleFactor;
+      const einheitHeight = einheit.height * dimensions.optionScaleFactor;
+  
+      // Check if the click is within the bounds of this Einheit
+      if (x >= posX && x <= posX + einheitWidth && y >= posY && y <= posY + einheitHeight) {
+        // Click is inside this Einheit, update chosenOpening
+        setChosenOpening(einheit.type);
+        setFlacheSchwelle(einheit.schwelle)
+        updateOptionCanvas(einheit.type, einheit.schwelle); // Redraw the canvas to show the selection
+        return;
+      }
+  
+      // Move posX to the right for the next Einheit
+      posX += einheitWidth + padding;
+  
+      // Check if the next Einheit will exceed the canvas width
+      if (posX + einheitWidth > optionCanvasRef.current.width) {
+        posX = 10; // Reset posX to the start of the next row
+        posY += rowHeight; // Move posY down to the next row
+      }
+    }
+  };
+  
 
-  }
-
+  // HANDLE WIDTH CHANGE
   const handleWidthChange = (e) => {
-    //setInputWidth(Math.max(e.target.value, 0)); // Prevent negative values
     setDimensions(currentDimensions => ({
       ...currentDimensions,
       width: Math.max(e.target.value, 0)
     }));
   };
 
+  // HANDLE HEIGHT CHANGE
   const handleHeightChange = (e) => {
-    //setInputHeight(Math.max(e.target.value, 0)); // Prevent negative values
     setDimensions(currentDimensions => ({
       ...currentDimensions,
       height: Math.max(e.target.value, 0)
@@ -379,7 +468,8 @@ const Konfi = () => {
                   "Abschneiden",
                   "Kopplung",
                   "Verbreiterung",
-                  "Gap",
+                  "Öffnungsart",
+                  
                 ]}
                 activeButton={divisionMode}
                 setActiveButton={setDivisionMode}

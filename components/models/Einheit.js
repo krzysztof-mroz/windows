@@ -1,15 +1,34 @@
 import React from 'react';
-import { drawRectangle } from '../utils/drawingUtils';
+import { drawRectangle, drawWindow } from '../utils/drawingUtils';
+import Profil from './Profil';
+
+// starting and returning canvas
+const startCanvas = (canvasRef) => {
+  const canvas = canvasRef.current;
+  const ctx = canvas.getContext("2d");
+  return([ctx, canvas])
+ }
+
+ 
+
+ 
+
+
+
+
 
 // define the Einheit (Fenster, Rahmen) class
 class Einheit {
-    constructor(width, height, up = [], down = [], left = [], right = []) {
+    constructor(width, height, type, schwelle, up = [], down = [], left = [], right = [], profil) {
       this.width = width;
       this.height = height;
+      this.type = type;
+      this.schwelle = schwelle;
       this.up = Array.isArray(up) ? up : [];
       this.down = Array.isArray(down) ? down : [];
       this.left = Array.isArray(left) ? left : [];
       this.right = Array.isArray(right) ? right : [];
+      this.profil = profil
     }
   
     get netWidth() {
@@ -24,19 +43,12 @@ class Einheit {
   
     
   
-    drawEinheit(posX, posY, canvasRef, scaleFactor, clear) {
-      const canvas = canvasRef.current;
-      const ctx = canvas.getContext("2d");
-      clear && ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawEinheit(posX, posY, canvasRef, scaleFactor) {
+      const [ctx, canvas] = startCanvas(canvasRef);
+      
       let actualX = posX;
       let actualY = posY;
-    
-     
-        // Calculate scaling factor
-        let realWidth = this.width * scaleFactor;
-        let realHeight = this.height * scaleFactor;
-        let realNetWidth = this.netWidth * scaleFactor;
-        let realNetHeight = this.netHeight * scaleFactor;
+
         
         // upper objects draw
         this.up.forEach(obj => {
@@ -52,31 +64,22 @@ class Einheit {
   
   
         // Draw window
-        ctx.fillStyle = "white";
-        ctx.fillRect(actualX, actualY, realNetWidth, realNetHeight);
-        ctx.strokeRect(actualX, actualY, realNetWidth, realNetHeight);
+        drawWindow(ctx, this.profil, this.type, this.schwelle, actualX, actualY, this.netWidth, this.netHeight, scaleFactor);
+        //drawRectangle(ctx, actualX, actualY, this.netWidth, this.netHeight, scaleFactor, "white");
+        //drawRectangle(ctx, actualX+70*scaleFactor, actualY+70*scaleFactor, this.netWidth- 140, this.netHeight - 140, scaleFactor, "blue")      
   
-        // Calculate dimensions for the second (blue) rectangle
-        let innerWidth = Math.max(0, realNetWidth - 140 * scaleFactor);
-        let innerHeight = Math.max(0, realNetHeight - 140 * scaleFactor);
-        let innerPosX = actualX + 70 * scaleFactor;
-        let innerPosY = actualY + 70 * scaleFactor;
-  
-        // Draw the second (blue) rectangle
-        ctx.fillStyle = "blue";
-        ctx.fillRect(innerPosX, innerPosY, innerWidth, innerHeight);
-        ctx.strokeRect(innerPosX, innerPosY, innerWidth, innerHeight);
         
         actualX += this.netWidth * scaleFactor
         
-  
+        // right objects draw: 
         this.right.forEach(obj => {
           drawRectangle(ctx, actualX, actualY, obj.width, this.netHeight, scaleFactor, "white");
           actualX += obj.width * scaleFactor
         });  
   
         actualY += this.netHeight * scaleFactor
-  
+        
+        // down objects draw: 
         this.down.forEach(obj => {
           drawRectangle(ctx, posX, actualY, this.width, obj.height, scaleFactor, "white");
           actualY += obj.height * scaleFactor
