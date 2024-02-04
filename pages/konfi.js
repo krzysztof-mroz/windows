@@ -325,7 +325,7 @@ const Konfi = () => {
     let posX = 10; // Initial X position, should match the drawing logic
     let posY = 10; // Initial Y position, should match the drawing logic
     const padding = 10; // Distance between each Einheit, should match the drawing logic
-    const rowHeight = 1000 * dimensions.optionScaleFactor + padding; // Assuming each Einheit has a height of 1000 before scaling, should match the drawing logic
+    const rowHeight = 830 * dimensions.optionScaleFactor + padding; // Assuming each Einheit has a height of 1000 before scaling, should match the drawing logic
   
     // Iterate over each Einheit to find the one that was clicked
     for (let einheit of typesArray) {
