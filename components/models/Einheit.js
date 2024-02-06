@@ -11,19 +11,15 @@ const startCanvas = (canvasRef) => {
 
  
 
- 
-
-
-
-
 
 // define the Einheit (Fenster, Rahmen) class
 class Einheit {
-    constructor(width, height, type, schwelle, up = [], down = [], left = [], right = [], profil) {
+    constructor(width, height, type, schwelle, division=[], up = [], down = [], left = [], right = [], profil) {
       this.width = width;
       this.height = height;
       this.type = type;
       this.schwelle = schwelle;
+      this.division = division;
       this.up = Array.isArray(up) ? up : [];
       this.down = Array.isArray(down) ? down : [];
       this.left = Array.isArray(left) ? left : [];
@@ -64,7 +60,7 @@ class Einheit {
   
   
         // Draw window
-        drawWindow(ctx, this.profil, this.type, this.schwelle, actualX, actualY, this.netWidth, this.netHeight, scaleFactor);
+        drawWindow(ctx, this.profil, this.type, this.schwelle, this.division, actualX, actualY, this.netWidth, this.netHeight, scaleFactor);
         //drawRectangle(ctx, actualX, actualY, this.netWidth, this.netHeight, scaleFactor, "white");
         //drawRectangle(ctx, actualX+70*scaleFactor, actualY+70*scaleFactor, this.netWidth- 140, this.netHeight - 140, scaleFactor, "blue")      
   

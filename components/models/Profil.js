@@ -1,6 +1,6 @@
 // define the Profil class
 class Profil {
-  constructor(symbol, type, bautiefe, rahmen, fluegel, gesamtbreite, schwelle, glasleiste, stulp, pfosten) {
+  constructor(symbol, type, bautiefe, rahmen, fluegel, gesamtbreite, schwelle, visibleSchwelle, glasleiste, stulp, pfosten) {
     this.symbol = symbol;
     this.type = type;
     this.bautiefe = bautiefe;
@@ -8,6 +8,7 @@ class Profil {
     this.fluegel = fluegel;
     this.gesamtbreite = gesamtbreite;
     this.schwelle = schwelle;
+    this.visibleSchwelle = visibleSchwelle;
     this.glasleiste = glasleiste;
     this.stulp = stulp;
     this.pfosten = pfosten;
@@ -25,12 +26,8 @@ class Profil {
     return this.gesamtbreite - this.fluegel;
   }
 
-  get visibleSchwelle() {
-    return 20;
-  }
-
   get schwelleSchift() {
-    return this.gesamtbreite - this.fluegel - 20
+    return this.gesamtbreite - this.fluegel - this.visibleSchwelle
   }
   get gesamtNetto() {
     return this.gesamtbreite-this.glasleiste;
