@@ -26,7 +26,7 @@ const Konfi = () => {
     2000,
     "IND",
     false,
-    [[{ type: "IND", width: 2000, height: 2000, heightDivision: [2000] }]],
+    [[{ type: "IND", width: 2000, height: 2000, heightDivision: [{height: 2000, type: "FB"}] }]],
     [],
     [],
     [],
@@ -51,6 +51,7 @@ const Konfi = () => {
     new Einheit(1250, 830, "DKDS", true, [], [], [], [], [], prototypeProfil),
     new Einheit(1250, 830, "DKDK", false, [], [], [], [], [], prototypeProfil),
     new Einheit(1250, 830, "DKDK", true, [], [], [], [], [], prototypeProfil),
+    new Einheit(1000, 1000, "IND", false,  [[{ type: "IND", width: 1000, height: 1000, heightDivision: [{height: 1000, type: "IND"} ] }]], [], [], [], [], prototypeProfil),
   ];
 
   // STATE VARIABLES
@@ -208,7 +209,7 @@ const Konfi = () => {
       dimensions.height,
       prototypeEinheit.type,
       prototypeEinheit.schwelle,
-      [[{ type: "POS", width: dimensions.width, height: dimensions.height, heightDivision: [dimensions.height] }]],
+      [[{ type: "POS", width: dimensions.width, height: dimensions.height, heightDivision: [{height: dimensions.height, type: "POS"}] }]],
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
       [...prototypeEinheit.left],
@@ -299,7 +300,7 @@ const Konfi = () => {
                 deletedEinheit.height,
                 "POS",
                 false,
-                [[{ type: "POS", width: newWidth1, height: deletedEinheit.height, heightDivision: [deletedEinheit.height] }]],
+                [[{ type: "POS", width: newWidth1, height: deletedEinheit.height, heightDivision: [{height: deletedEinheit.height, type: "POS"}] }]],
                 [],
                 [],
                 [],
@@ -311,7 +312,7 @@ const Konfi = () => {
                 deletedEinheit.height,
                 "POS",
                 false,
-                [[{ type: "POS", width: newWidth2, height: deletedEinheit.height, heightDivision: [deletedEinheit.height] }]],
+                [[{ type: "POS", width: newWidth2, height: deletedEinheit.height, heightDivision: [{height: deletedEinheit.height, type: "POS"}] }]],
                 [],
                 [],
                 [],
@@ -332,7 +333,7 @@ const Konfi = () => {
                 newHeight1,
                 "POS",
                 false,
-                [[{ type: "POS", width: deletedEinheit.width, height: newHeight1, heightDivision: [newHeight1] }]],
+                [[{ type: "POS", width: deletedEinheit.width, height: newHeight1, heightDivision: [{height: newHeight1, type: "POS"}] }]],
                 [],
                 [],
                 [],
@@ -344,7 +345,7 @@ const Konfi = () => {
                 newHeight2,
                 "POS",
                 false,
-                [[{ type: "POS", width: deletedEinheit.width, height: newHeight2, heightDivision: [newHeight2] }]],
+                [[{ type: "POS", width: deletedEinheit.width, height: newHeight2, heightDivision: [{height: newHeight2, type: "POS"}] }]],
                 [],
                 [],
                 [],
@@ -364,7 +365,7 @@ const Konfi = () => {
                 newHeight1,
                 "POS",
                 false,
-                [[{ type: "POS", width: deletedEinheit.width, height: newHeight1, heightDivision: [newHeight1] }]],
+                [[{ type: "POS", width: deletedEinheit.width, height: newHeight1, heightDivision: [{height: newHeight1, type: "POS"}] }]],
                 [],
                 [],
                 [],
@@ -430,12 +431,12 @@ const Konfi = () => {
                       if (height1 >= 250 && height2 >= 250) {
                           const updatedRow1 = {
                             ...fieldRow[0],
-                            heightDivision: [height1],
+                            heightDivision: [{height: height1, type: "FB"}],
                           };
                           updatedRow1.height = height1;
                           let updatedRow2 = {
                             ...fieldRow[0],
-                            heightDivision: [height2],
+                            heightDivision: [{height: height2, type: "FB"}],
                           };
                           updatedRow2.height = height2;
                           einheit1.division.splice(
@@ -452,27 +453,48 @@ const Konfi = () => {
 
                       const cumulatedParts=0;
                       field.heightDivision.forEach((part,partIndex) => {
+
+                        
                         if ( 
                           x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
                           x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
                           y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
-                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part * dimensions.scaleFactor
+                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * dimensions.scaleFactor
                         ) {
 
                           let height1 = Math.ceil(
                             (y - posY - cumulatedHeight - cumulatedFieldHeight - profilesUpHeight - cumulatedParts) /
                               dimensions.scaleFactor
                           );
-                          let height2 = part - height1;
+                          let height2 = part.height - height1;
 
-                    
+                          console.log("Height1 " + height1)
+                          console.log("Height2 " + height2)
+
+                          
 
                           // field.heightDivision.splice(partIndex, 1, height1, height2);
                          
                             if (height1 >= 250 && height2 >= 250) {
+
                               const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
+
+                                  // Create two new objects with the split heights and the same type
+                                  const newParts = [
+                                    { height: height1, type: fieldToUpdate.heightDivision[partIndex].type },
+                                    { height: height2, type: fieldToUpdate.heightDivision[partIndex].type }
+                                  ];
+
+                                  // Replace the original part with the two new parts
+                                  fieldToUpdate.heightDivision.splice(partIndex, 1, ...newParts);
+                                 
+                                  // Update the original division array with the updated field
+                                  einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
+
+
+                             /*  const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
                               fieldToUpdate.heightDivision.splice(partIndex, 1, height1, height2);
-                              einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
+                              einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate; */
                               //einheit1.division[fieldRowIndex][fieldIndex].heightDivision.splice(partIndex, 1, height1, height2);
                             }
                           
@@ -480,7 +502,7 @@ const Konfi = () => {
                         }
                         
 
-                      cumulatedParts+=part*dimensions.scaleFactor  
+                      cumulatedParts+=part.height*dimensions.scaleFactor  
                       });
                      
                      
