@@ -22,11 +22,11 @@ const Konfi = () => {
     90
   );
   const prototypeEinheit = new Einheit(
-    1000,
-    1000,
-    "POS",
-    true,
-    [[{ type: "POS", width: 1000, height: 1000, heightDivision: [1000] }]],
+    2000,
+    2000,
+    "IND",
+    false,
+    [[{ type: "IND", width: 2000, height: 2000, heightDivision: [2000] }]],
     [],
     [],
     [],
@@ -208,7 +208,7 @@ const Konfi = () => {
       dimensions.height,
       prototypeEinheit.type,
       prototypeEinheit.schwelle,
-      prototypeEinheit.division,
+      [[{ type: "POS", width: dimensions.width, height: dimensions.height, heightDivision: [dimensions.height] }]],
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
       [...prototypeEinheit.left],
@@ -272,6 +272,17 @@ const Konfi = () => {
           );
 
           let deletedEinheit = row[index];
+
+          
+          // Calculate cumulated profile width left and height up
+          let profilesLeftWidth = deletedEinheit.left.reduce((accumulator, currentObject) => {
+            return accumulator + currentObject.width;
+          }, 0) * dimensions.scaleFactor; // The 0 initializes the accumulator value
+
+          let profilesUpHeight = deletedEinheit.up.reduce((accumulator, currentObject) => {
+            return accumulator + currentObject.height;
+          }, 0) * dimensions.scaleFactor; // The 0 initializes the accumulator value
+
 
           if (divisionMode === "horizontal") {
             let newWidth1 = Math.ceil(
@@ -367,12 +378,12 @@ const Konfi = () => {
           } else if (divisionMode === "Verbreiterung") {
             const einheit1 = deletedEinheit;
             einheit1.addProfile("V", clickedSide, verbreiterungWidth);
+            console.log(einheit1)
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
           } else if (divisionMode === "Kopplung") {
             const einheit1 = deletedEinheit;
-
             einheit1.addProfile("K", clickedSide, kopplungWidth);
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
@@ -399,31 +410,32 @@ const Konfi = () => {
               fieldRow.forEach((field, fieldIndex) => {
                 
                 if (
-                  x >= posX + cumulatedWidth + cumulatedFieldWidth &&
-                  x <= posX + cumulatedWidth + cumulatedFieldWidth + field.width * dimensions.scaleFactor &&
-                  y >= posY + cumulatedHeight + cumulatedFieldHeight &&
-                  y <= posY + cumulatedHeight + cumulatedFieldHeight + field.height * dimensions.scaleFactor
+                  x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                  x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
+                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
+                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.height * dimensions.scaleFactor
                 ) {
                   
                   if (divisionMode === "Querbalken") {
                     
+                    if (fieldRow.length === 1 && Array.isArray(fieldRow)) {
                       let height1 = Math.ceil(
-                        (y - posY - cumulatedHeight - cumulatedFieldHeight) /
+                        (y - posY - cumulatedHeight - cumulatedFieldHeight - profilesUpHeight) /
                           dimensions.scaleFactor
                       );
                       let height2 = field.height - height1;
 
-                      if (fieldRow.length === 1 && Array.isArray(fieldRow)) {
+                      
                       // MINIMUM DIMENSIONS
                       if (height1 >= 250 && height2 >= 250) {
                           const updatedRow1 = {
                             ...fieldRow[0],
-                            heightDivision: [...fieldRow[0].heightDivision],
+                            heightDivision: [height1],
                           };
                           updatedRow1.height = height1;
                           let updatedRow2 = {
                             ...fieldRow[0],
-                            heightDivision: [...fieldRow[0].heightDivision],
+                            heightDivision: [height2],
                           };
                           updatedRow2.height = height2;
                           einheit1.division.splice(
@@ -432,53 +444,67 @@ const Konfi = () => {
                             [updatedRow1],
                             [updatedRow2]
                           );
-                          console.log(einheit1);
+                         
                       } 
-                    } else if (fieldRow.length > 1 && height1 >= 250 && height2 >= 250) {
+                    } else if (fieldRow.length > 1) {
+
+                      
+
                       const cumulatedParts=0;
                       field.heightDivision.forEach((part,partIndex) => {
                         if ( 
-                          x >= posX + cumulatedWidth + cumulatedFieldWidth &&
-                          x <= posX + cumulatedWidth + cumulatedFieldWidth + field.width * dimensions.scaleFactor &&
-                          y >= posY + cumulatedHeight + cumulatedFieldHeight + cumulatedParts &&
-                          y <= posY + cumulatedHeight + cumulatedFieldHeight + cumulatedParts + part * dimensions.scaleFactor
+                          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
+                          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
+                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part * dimensions.scaleFactor
                         ) {
-                          console.log('field ' + fieldIndex)
+
+                          let height1 = Math.ceil(
+                            (y - posY - cumulatedHeight - cumulatedFieldHeight - profilesUpHeight - cumulatedParts) /
+                              dimensions.scaleFactor
+                          );
+                          let height2 = part - height1;
+
+                    
+
                           // field.heightDivision.splice(partIndex, 1, height1, height2);
                          
-
-                          const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
-                          fieldToUpdate.heightDivision.splice(partIndex, 1, height1, height2);
-                          einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
-                          //einheit1.division[fieldRowIndex][fieldIndex].heightDivision.splice(partIndex, 1, height1, height2);
+                            if (height1 >= 250 && height2 >= 250) {
+                              const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
+                              fieldToUpdate.heightDivision.splice(partIndex, 1, height1, height2);
+                              einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
+                              //einheit1.division[fieldRowIndex][fieldIndex].heightDivision.splice(partIndex, 1, height1, height2);
+                            }
+                          
                          
                         }
                         
 
                       cumulatedParts+=part*dimensions.scaleFactor  
                       });
-                      console.log(einheit1);
+                     
                      
 
                     }
                   } else if (divisionMode === "Pfosten") {
+
+                    
                     let width1 = Math.ceil(
-                        (x - posX - cumulatedWidth - cumulatedFieldWidth) /
+                        (x - posX - cumulatedWidth - cumulatedFieldWidth - profilesLeftWidth) /
                           dimensions.scaleFactor
                       );
+                     
                       let width2 = field.width - width1;
                       // MINIMUM DIMENSIONS
                       if (width1 >= 250 && width2 >= 250 && field.heightDivision.length === 1) {
-                          console.log('width ' + field.width)
-                          console.log('width1 ' + width1)
-                          console.log('width2 ' + width2)
+                          
 
                           const baseObject = einheit1.division[fieldRowIndex][fieldIndex];
                           const newObject1 = { ...baseObject, width: width1 };
                           const newObject2 = { ...baseObject, width: width2 };
                           einheit1.division[fieldRowIndex].splice(fieldIndex, 1, newObject1, newObject2);
                           
-                          console.log(einheit1);
+                          
                       }
                   }
                 }

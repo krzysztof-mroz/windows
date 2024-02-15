@@ -35,6 +35,9 @@ class Profil {
   get fluegelNetto() {
     return this.fluegel-this.glasleiste;
   }
+  get pfostenNetto() {
+    return this.pfosten-this.glasleiste * 2;
+  }
 
 }
 

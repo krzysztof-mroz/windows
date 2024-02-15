@@ -272,22 +272,155 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
           break;
          case 'IND':
 
+         
+         // Draw Rahmen
          drawRectangle(ctx, posX, posY, width, height, scaleFactor, "white");
-         if (division.length >= 1) {
-          let cumulatedHeight=0;
-          
+         !schwelle && drawGehrung(ctx, posX, posY, width*scaleFactor, height*scaleFactor, profil.rahmenNetto*scaleFactor)  
+         schwelle && drawGehrungSchwelle(ctx, posX, posY, width*scaleFactor, height*scaleFactor, profil.rahmenNetto*scaleFactor)  
+         drawRectangle(ctx, posX+profil.rahmenNetto*scaleFactor, posY+profil.rahmenNetto*scaleFactor, width- profil.rahmenNetto*2, height - profil.rahmenNetto*2 + schwelleSchift, scaleFactor, "white") 
+         schwelle && drawRectangle(ctx, posX+(profil.rahmenNetto)*scaleFactor, posY+(height-profil.visibleSchwelle) * scaleFactor, width- profil.rahmenNetto*2, profil.visibleSchwelle, scaleFactor, "#C0C0C0")    
+         
+         
+        /*  if (division.length === 1 && division[0].length === 1) {
+          drawGehrung(ctx, posX + profil.rahmenNetto * scaleFactor, posY + profil.rahmenNetto * scaleFactor, (width- profil.rahmenNetto*2)*scaleFactor, (height - profil.rahmenNetto*2)*scaleFactor, profil.glasleiste*scaleFactor)  
+          drawRectangle(ctx, posX+profil.rahmen*scaleFactor, posY+profil.rahmen*scaleFactor, width- profil.rahmen*2, height - profil.rahmen*2 + schwelleSchift, scaleFactor, '#ADD8E6') 
+         }  */
+         
+         
+         // Draw Pfosten and Querbalken
+         if (division.length > 1 || division[0].length > 1) {
+          let cumulatedHeight=0; 
           division.forEach((row, rowIndex) => {
             let currentHeight = row[0].height
-            
             let cumulatedWidth=0;
-            row.forEach(field => {
-              drawLine(ctx, posX + (cumulatedWidth + field.width)*scaleFactor, posY + (cumulatedHeight) * scaleFactor, posX + (cumulatedWidth + field.width)*scaleFactor, posY + (cumulatedHeight + field.height) * scaleFactor)
+            row.forEach((field, fieldIndex) => {
+              
+              
+              
+              // calculate the Pfosten height and width reduction
+                let heightReduction = 0
+                let widthReduction = 0
+                
+                if (division.length === 1) {
+                  heightReduction = profil.rahmenNetto*2
+                }
+
+                if (division.length === 1 && division[0].length === 1) {
+                  widthReduction = profil.rahmenNetto*2
+                }
+
+                if (rowIndex === 0 && rowIndex < division.length-1) {
+                  heightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+                }
+
+                if (rowIndex > 0 && rowIndex < division.length-1) {
+                  heightReduction = profil.pfostenNetto
+                }
+
+                if (rowIndex >= 1 && rowIndex === division.length-1) {
+                  heightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+                }
+
+                if (fieldIndex === 0 && fieldIndex === row.length -1) {
+                  widthReduction = profil.rahmenNetto*2
+                }
+
+                if (fieldIndex === 0 && fieldIndex < row.length -1) {
+                  widthReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+                }
+
+                if (fieldIndex > 0 && fieldIndex < row.length -1) {
+                  widthReduction = profil.pfostenNetto
+                }
+
+                if (fieldIndex >= 1 && fieldIndex === row.length -1) {
+                  widthReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+                }
+
+                // calculate the Pfosten and Querbalken shift
+                let pfostenShift = 0
+                let querbalkenShift = 0
+
+                if (rowIndex === 0) {
+                  pfostenShift = profil.rahmenNetto
+                }
+
+                if (fieldIndex === 0) {
+                  querbalkenShift = profil.rahmenNetto
+                }
+
+                if (fieldIndex > 0) {
+                  querbalkenShift = profil.pfostenNetto/2
+                }
+
+                if (rowIndex > 0) {
+                  pfostenShift = profil.pfostenNetto/2
+                }
+
+
+
+
+
+              if (fieldIndex != row.length-1) { // if not the last field         
+                drawRectangle(ctx, posX + (cumulatedWidth + field.width - profil.pfostenNetto/2)*scaleFactor, posY + (cumulatedHeight + pfostenShift) * scaleFactor, profil.pfostenNetto,  field.height-heightReduction, scaleFactor, "white") // draw Pfosten
+              }
+
+                // For FB
+                      
+                /* drawRectangle(ctx, posX + (cumulatedWidth + querbalkenShift + profil.glasleiste) * scaleFactor, posY + (cumulatedHeight + pfostenShift + profil.glasleiste) * scaleFactor, field.width - widthReduction - profil.glasleiste*2, field.height - heightReduction - profil.glasleiste*2, scaleFactor, '#ADD8E6') // draw glasleiste
+                drawGehrung(ctx, posX + (cumulatedWidth + querbalkenShift) * scaleFactor, posY + (cumulatedHeight + pfostenShift)*scaleFactor, (field.width - widthReduction) * scaleFactor, (field.height - heightReduction)*scaleFactor, profil.glasleiste*scaleFactor) // draw Gehrung glasleiste
+ */             
+                let cumulatedPartHeight = 0
+                field.heightDivision.forEach ((part, partIndex) => {
+                  let heightShift = 0
+                  let partHeightReduction = 0
+                  if (partIndex > 0 && rowIndex === 0) {
+                    heightShift = profil.pfostenNetto/2 - profil.rahmenNetto
+                  }
+                  if (field.heightDivision.length === 1) {
+                    partHeightReduction = heightReduction
+                  } else if ((rowIndex === 0 && partIndex === 0) || (rowIndex === division.length -1) && partIndex === field.heightDivision.length -1) {
+                    partHeightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+                  } else if ((rowIndex === 0 && partIndex > 0 && partIndex < field.heightDivision.length -1) || (rowIndex < division.length -1 && partIndex > 0) || (rowIndex > 0 && partIndex < field.heightDivision.length -1))  {
+                    partHeightReduction = profil.pfostenNetto
+                  }
+                  
+                  
+                  /* else if (field.heightDivision.length > 1 && partIndex === 0) {
+                    partHeightReduction = heightReduction + profil.pfostenNetto/2 - profil.rahmenNetto;
+                  } else if(field.heightDivision.length > 1 && partIndex > 0 && partIndex === field.heightDivision.length-1) {
+                    partHeightReduction = heightReduction + profil.pfostenNetto/2 + profil.glasleiste - profil.rahmen ;
+                  } else if (field.heightDivision.length > 1 && partIndex > 0 && partIndex < field.heightDivision.length-1) {
+                    partHeightReduction = heightReduction - profil.rahmenNetto
+                  } */
+                  
+                  drawGehrung (ctx, posX + (cumulatedWidth + querbalkenShift) * scaleFactor, posY + (cumulatedHeight + cumulatedPartHeight + pfostenShift + heightShift) * scaleFactor, (field.width - widthReduction ) * scaleFactor, (part - partHeightReduction ) * scaleFactor, profil.glasleiste)
+                  drawRectangle(ctx, posX + (cumulatedWidth + querbalkenShift + profil.glasleiste) * scaleFactor, posY + (cumulatedHeight + cumulatedPartHeight + pfostenShift + profil.glasleiste + heightShift) * scaleFactor, field.width - widthReduction - profil.glasleiste*2, part - partHeightReduction - profil.glasleiste*2, scaleFactor, '#ADD8E6') // draw glasleiste, blue inside
+                  
+                  cumulatedPartHeight += part;
+                })
+             
+              if(field.heightDivision.length > 1) {
+                let cumulatedPartsHeight = 0;
+                field.heightDivision.forEach((partHeight, partHeightIndex) => { 
+                  if (partHeightIndex != field.heightDivision.length-1) {       // if not the last field
+                    drawRectangle(ctx, posX + (cumulatedWidth + querbalkenShift)*scaleFactor, posY+(cumulatedHeight+cumulatedPartsHeight+partHeight - profil.pfostenNetto/2)*scaleFactor, field.width-widthReduction, profil.pfostenNetto,  scaleFactor, "white") // draw Querbalken in field
+                  }  
+                  cumulatedPartsHeight+=partHeight
+                });
+              }
               cumulatedWidth+=field.width
             })
-            drawLine(ctx, posX, posY+cumulatedHeight*scaleFactor, posX + width*scaleFactor, posY+cumulatedHeight*scaleFactor)
+            if (rowIndex != division.length-1) {// if not the last field
+              drawRectangle(ctx, posX + profil.rahmenNetto * scaleFactor, posY+(cumulatedHeight + currentHeight - profil.pfostenNetto/2)*scaleFactor, width - profil.rahmenNetto * 2, profil.pfostenNetto, scaleFactor, "white") // draw main Querbalken
+            }
             cumulatedHeight+=currentHeight
           });
          }
+         
+         
+
+
 
 
 
