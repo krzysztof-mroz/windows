@@ -17,7 +17,6 @@ const minFbSize = 300;
 // define the Einheit (Fenster, Rahmen) class
 class Einheit {
   constructor(
-    width,
     schwelle,
     division = [],
     up = [],
@@ -26,22 +25,54 @@ class Einheit {
     right = [],
     profil
   ) {
-    this.width = width;
     this.schwelle = schwelle;
-    this.division = this.addHeightGetters(division);
+    this._division = this.addHeightGetters(division);
     this.up = Array.isArray(up) ? up : [];
     this.down = Array.isArray(down) ? down : [];
     this.left = Array.isArray(left) ? left : [];
     this.right = Array.isArray(right) ? right : [];
-    this.profil = profil;
-
-   
+    this.profil = profil;   
   }
+
+  get division() {
+    return this._division;
+  }
+
+  set division(value) {
+    this._division = this.addHeightGetters(value);
+  }
+
+  get width() {
+    let totalWidth = 0;
+  
+    // Sum up the widths of all objects in the first sub-array of division
+    if (this.division.length > 0 && this.division[0].length > 0) {
+      totalWidth += this.division[0].reduce((sum, obj) => sum + obj.width, 0);
+    }
+  
+    // Add widths from all objects in the left array
+    this.left.forEach(item => {
+      if (item.width) {
+        totalWidth += item.width;
+      }
+    });
+  
+    // Add widths from all objects in the right array
+    this.right.forEach(item => {
+      if (item.width) {
+        totalWidth += item.width;
+      }
+    });
+  
+    return totalWidth; // Return the total width, including division, left, and right arrays
+  }
+  
+
 
   addHeightGetters(division) {
     return division.map(subArray =>
       subArray.map(obj => {
-        // Define a new property 'height' with a getter on the original object
+        // Define a new property 'fieldHeight' with a getter on the original object
         Object.defineProperty(obj, 'fieldHeight', {
           get: function() {
             let sumaWysokosci = 0
@@ -65,20 +96,32 @@ class Einheit {
   get height() {
     let totalHeight = 0;
   
-    // Ensure this.division is an array before proceeding
+    // Sum heights from the first object's heightDivision in each subArray of division
     if (Array.isArray(this.division)) {
-      
-      
       this.division.forEach(subArray => {
         if (subArray.length > 0 && subArray[0].heightDivision && subArray[0].heightDivision.length > 0) {
           totalHeight += subArray[0].fieldHeight;
         }
       });
-      
+    }
+  
+    // Add heights from all objects in the up array
+    this.up.forEach(item => {
+      if (item.height) {
+        totalHeight += item.height;
       }
+    });
+  
+    // Add heights from all objects in the down array
+    this.down.forEach(item => {
+      if (item.height) {
+        totalHeight += item.height;
+      }
+    });
   
     return totalHeight;
   }
+  
 
 
   get netWidth() {
@@ -94,6 +137,29 @@ class Einheit {
       .reduce((sum, { height = 0 }) => sum + height, 0);
     return this.height - totalHeightReduction;
   }
+
+
+  
+  
+    // Method to manually update 'fieldHeight' properties
+    updateFieldHeights() {
+      this._division.forEach(subArray => {
+        subArray.forEach(obj => {
+          // Calculate the new field height based on current heightDivision values
+          const newFieldHeight = obj.heightDivision.reduce((sum, part) => sum + part.height, 0);
+  
+          // Update the object with the new fieldHeight value
+          Object.defineProperty(obj, 'fieldHeight', {
+            value: newFieldHeight,
+            enumerable: true,
+            configurable: true
+          });
+        });
+      });
+    }
+  
+   
+  
 
   drawEinheit(posX, posY, canvasRef, scaleFactor) {
     const [ctx, canvas] = startCanvas(canvasRef);
@@ -193,6 +259,7 @@ class Einheit {
         if (field.fieldHeight - width < minFbSize || field.heightDivision[0] - width < minFbSize || !allFieldsOk) {
           return field; // Return the original field if the condition is not met
         }
+        
         // Return a new field object with the updated values
         return {
           ...field,
@@ -201,7 +268,9 @@ class Einheit {
       });
      
       if (allFieldsOk) {
-        
+        this.updateFieldHeights();
+        console.log("total.height " + this.height)
+        console.log(this)
         this.up.push({ type: type, height: width });
       }
 
@@ -216,7 +285,7 @@ class Einheit {
         if (row[0].width - width < minFbSize ||  !allFieldsOk) {
           return row; // Return the original field if the condition is not met
         }
-        
+        console.log(this)
         const updatedRow = [...row]; // Copy the row to avoid direct mutation
         updatedRow[0] = { ...updatedRow[0], width: updatedRow[0].width - width }; // Update the width of the first element
   
@@ -224,6 +293,8 @@ class Einheit {
       })
       if (allFieldsOk) {
         this.left.push({ type: type, width: width })
+        console.log(this)
+        console.log("total.width " + this.width)
       }
 
      
@@ -279,6 +350,7 @@ class Einheit {
       });
 
       if (allFieldsOk) {
+        this.updateFieldHeights();
         this.down.push({ type: type, height: width });
       }
       

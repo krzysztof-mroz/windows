@@ -111,7 +111,7 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
     //console.log(division)
     //console.log("height  " + height)
     let schwelleSchift = schwelle ? profil.schwelleSchift : 0
-    let schwelleSchiftPfosten = schwelle ? profil.rahmen - profil.schwelle : 0
+    let schwelleSchiftPfosten = schwelle ? profil.rahmenNetto - profil.schwelle : 0
 
     // draw rahmen with gehrung, Schwelle if schwelle
     drawRectangle(ctx, posX, posY, width, height, scaleFactor, "white");
@@ -191,11 +191,9 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
             }
 
 
-
-
-
           if (fieldIndex != row.length-1) { // if not the last field         
             drawRectangle(ctx, posX + (cumulatedWidth + field.width - profil.pfostenNetto/2)*scaleFactor, posY + (cumulatedHeight + pfostenShift) * scaleFactor, profil.pfostenNetto,  field.fieldHeight-heightReduction+schwelleSchiftPfosten, scaleFactor, "white") // draw Pfosten
+            console.log(schwelleSchiftPfosten)
           }
             let cumulatedPartHeight = 0
             field.heightDivision.forEach ((part, partIndex) => {

@@ -22,9 +22,8 @@ const Konfi = () => {
     90
   );
   const prototypeEinheit = new Einheit(
-    1000,
-    false,
-    [[{width: 1000, heightDivision: [{height: 1000, type: "FB"}] }]],
+    true,
+    [[{width: 1000, heightDivision: [{height: 1000, type: "FF"}] }]],
     [],
     [],
     [],
@@ -32,24 +31,24 @@ const Konfi = () => {
     prototypeProfil
   );
   const typesArray = [
-    new Einheit(830, false, [[{width: 830, heightDivision: [{height: 830, type: "POS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, true, [[{width: 830,  heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, true, [[{width: 830,  heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, true, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false, [[{width: 830, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, true, [[{width: 830,  heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(1250, false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(1250, true, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(1250, false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(1250, true, [[{width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(1250, false, [[{width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(1250, true, [[{ width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625,heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(830, false,  [[{width: 830,  heightDivision: [{height: 830, type: "FB"} ] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "POS"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{ width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625,heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false,  [[{width: 830,  heightDivision: [{height: 830, type: "FB"} ] }]], [], [], [], [], prototypeProfil),
   ];
 
   // STATE VARIABLES
@@ -203,10 +202,9 @@ const Konfi = () => {
     startCanvas(canvasRef);
     setScale();
     const currentEinheit = new Einheit(
-      dimensions.width,
       prototypeEinheit.schwelle,
-      //[[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "FF"}] }]],
-      prototypeEinheit.division,
+      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "POS"}] }]],
+      //prototypeEinheit.division,
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
       [...prototypeEinheit.left],
@@ -295,7 +293,6 @@ const Konfi = () => {
               matrixOfEinheitObjects.length === 1
             ) {
               const einheit1 = new Einheit(
-                newWidth1,
                 false,
                 [[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],
                 [],
@@ -305,7 +302,6 @@ const Konfi = () => {
                 prototypeProfil
               );
               const einheit2 = new Einheit(
-                newWidth2,
                 false,
                 [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],
                 [],
@@ -324,7 +320,6 @@ const Konfi = () => {
             let newHeight2 = deletedEinheit.height - newHeight1;
             if (newHeight1 >= 300 && newHeight2 >= 300 && row.length === 1) {
               const einheit1 = new Einheit(
-                deletedEinheit.width,
                 false,
                 [[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]],
                 [],
@@ -334,7 +329,6 @@ const Konfi = () => {
                 prototypeProfil
               );
               const einheit2 = new Einheit(
-                deletedEinheit.width,
                 false,
                 [[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "FB"}] }]],
                 [],
@@ -352,7 +346,6 @@ const Konfi = () => {
             let newHeight1 = Math.ceil((y - posY) / dimensions.scaleFactor);
             if (newHeight1 >= 300 && matrixOfEinheitObjects.length === 1) {
               const einheit1 = new Einheit(
-                deletedEinheit.width,
                 false,
                 [[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]],
                 [],
@@ -419,12 +412,10 @@ const Konfi = () => {
                           const updatedRow1 = {
                             ...fieldRow[0],
                             heightDivision: [{height: height1, type: "FF"}],
-                            fieldHeight: height1
                           };
                           let updatedRow2 = {
                             ...fieldRow[0],
                             heightDivision: [{height: height2, type: "FF"}],
-                            fieldHeight: height2
                           };
                           einheit1.division.splice(
                             fieldRowIndex,
@@ -432,6 +423,7 @@ const Konfi = () => {
                             [updatedRow1],
                             [updatedRow2]
                           );
+                          einheit1.updateFieldHeights()
                       } 
                     } else if (fieldRow.length > 1) {
 
