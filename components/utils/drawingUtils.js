@@ -106,9 +106,292 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
     ctx.stroke();
    }
 
+   function drawWindowUnited (ctx, profil, schwelle, division, posX, posY, width, height, scaleFactor) {
+    //console.log("division")
+    //console.log(division)
+    //console.log("height  " + height)
+    let schwelleSchift = schwelle ? profil.schwelleSchift : 0
+    let schwelleSchiftPfosten = schwelle ? profil.rahmen - profil.schwelle : 0
+
+    // draw rahmen with gehrung, Schwelle if schwelle
+    drawRectangle(ctx, posX, posY, width, height, scaleFactor, "white");
+    !schwelle && drawGehrung(ctx, posX, posY, width*scaleFactor, height*scaleFactor, profil.rahmenNetto*scaleFactor)  
+    schwelle && drawGehrungSchwelle(ctx, posX, posY, width*scaleFactor, height*scaleFactor, profil.rahmenNetto*scaleFactor)  
+    drawRectangle(ctx, posX+profil.rahmenNetto*scaleFactor, posY+profil.rahmenNetto*scaleFactor, width- profil.rahmenNetto*2, height - profil.rahmenNetto*2 + schwelleSchift, scaleFactor, "white") 
+    schwelle && drawRectangle(ctx, posX+(profil.rahmenNetto)*scaleFactor, posY+(height-profil.visibleSchwelle) * scaleFactor, width- profil.rahmenNetto*2, profil.visibleSchwelle, scaleFactor, "#C0C0C0")    
+
+     // Draw Pfosten and Querbalken
+    //if (division.length > 1 || division[0].length > 1) {
+      if (division.length > 0) { 
+      let cumulatedHeight=0; 
+      division.forEach((row, rowIndex) => {
+        let currentHeight = row[0].fieldHeight
+        let cumulatedWidth=0;
+        row.forEach((field, fieldIndex) => {
+
+          
+          // calculate the Pfosten height width reduction and shifts
+            let heightReduction = 0
+            let widthReduction = 0
+            
+            if (division.length === 1) {
+              heightReduction = profil.rahmenNetto*2
+            }
+
+            if (division.length === 1 && division[0].length === 1) {
+              widthReduction = profil.rahmenNetto*2
+            }
+
+            if (rowIndex === 0 && rowIndex < division.length-1) {
+              heightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            if (rowIndex > 0 && rowIndex < division.length-1) {
+              heightReduction = profil.pfostenNetto
+            }
+
+            if (rowIndex >= 1 && rowIndex === division.length-1) {
+              heightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            if (fieldIndex === 0 && fieldIndex === row.length -1) {
+              widthReduction = profil.rahmenNetto*2
+            }
+
+            if (fieldIndex === 0 && fieldIndex < row.length -1) {
+              widthReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            if (fieldIndex > 0 && fieldIndex < row.length -1) {
+              widthReduction = profil.pfostenNetto
+            }
+
+            if (fieldIndex >= 1 && fieldIndex === row.length -1) {
+              widthReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            // calculate the Pfosten and Querbalken shift
+            let pfostenShift = 0
+            let querbalkenShift = 0
+
+            if (rowIndex === 0) {
+              pfostenShift = profil.rahmenNetto
+            }
+
+            if (fieldIndex === 0) {
+              querbalkenShift = profil.rahmenNetto
+            }
+
+            if (fieldIndex > 0) {
+              querbalkenShift = profil.pfostenNetto/2
+            }
+
+            if (rowIndex > 0) {
+              pfostenShift = profil.pfostenNetto/2
+            }
+
+
+
+
+
+          if (fieldIndex != row.length-1) { // if not the last field         
+            drawRectangle(ctx, posX + (cumulatedWidth + field.width - profil.pfostenNetto/2)*scaleFactor, posY + (cumulatedHeight + pfostenShift) * scaleFactor, profil.pfostenNetto,  field.fieldHeight-heightReduction+schwelleSchiftPfosten, scaleFactor, "white") // draw Pfosten
+          }
+            let cumulatedPartHeight = 0
+            field.heightDivision.forEach ((part, partIndex) => {
+              let heightShift = 0
+              let partHeightReduction = 0
+              if (partIndex > 0 && rowIndex === 0) {
+                heightShift = profil.pfostenNetto/2 - profil.rahmenNetto
+              }
+              if (field.heightDivision.length === 1) {
+                partHeightReduction = heightReduction
+              } else if ((rowIndex === 0 && partIndex === 0) || (rowIndex === division.length -1) && partIndex === field.heightDivision.length -1) {
+                partHeightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+              } else if ((rowIndex === 0 && partIndex > 0 && partIndex < field.heightDivision.length -1) || (rowIndex < division.length -1 && partIndex > 0) || (rowIndex > 0 && partIndex < field.heightDivision.length -1))  {
+                partHeightReduction = profil.pfostenNetto
+              }
+              cumulatedPartHeight += part;
+            })
+         
+          if(field.heightDivision.length > 1) {
+            let cumulatedPartsHeight = 0;
+            field.heightDivision.forEach((partHeight, partHeightIndex) => { 
+              if (partHeightIndex != field.heightDivision.length-1) {       // if not the last field
+                drawRectangle(ctx, posX + (cumulatedWidth + querbalkenShift)*scaleFactor, posY+(cumulatedHeight+cumulatedPartsHeight+partHeight.height - profil.pfostenNetto/2)*scaleFactor, field.width-widthReduction, profil.pfostenNetto,  scaleFactor, "white") // draw Querbalken in field
+              }  
+              cumulatedPartsHeight+=partHeight.height
+            });
+          }
+          cumulatedWidth+=field.width
+        })
+        if (rowIndex != division.length-1) {// if not the last field
+          drawRectangle(ctx, posX + profil.rahmenNetto * scaleFactor, posY+(cumulatedHeight + currentHeight - profil.pfostenNetto/2)*scaleFactor, width - profil.rahmenNetto * 2, profil.pfostenNetto, scaleFactor, "white") // draw main Querbalken
+        }
+        cumulatedHeight+=currentHeight
+      });
+     }
+
+     // Draw fields
+    // if (division.length > 1 || division[0].length > 1) {
+      if (division.length>0) {
+      let cumulatedHeight=0; 
+      division.forEach((row, rowIndex) => {
+        let currentHeight = row[0].fieldHeight
+        let cumulatedWidth=0;
+        row.forEach((field, fieldIndex) => {
+          
+          
+          
+          // calculate the Pfosten height and width reduction and shift again
+            let heightReduction = 0
+            let widthReduction = 0
+            
+            if (division.length === 1) {
+              heightReduction = profil.rahmenNetto*2
+            }
+
+            if (division.length === 1 && division[0].length === 1) {
+              widthReduction = profil.rahmenNetto*2
+            }
+
+            if (rowIndex === 0 && rowIndex < division.length-1) {
+              heightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            if (rowIndex > 0 && rowIndex < division.length-1) {
+              heightReduction = profil.pfostenNetto
+            }
+
+            if (rowIndex >= 1 && rowIndex === division.length-1) {
+              heightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            if (fieldIndex === 0 && fieldIndex === row.length -1) {
+              widthReduction = profil.rahmenNetto*2
+            }
+
+            if (fieldIndex === 0 && fieldIndex < row.length -1) {
+              widthReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            if (fieldIndex > 0 && fieldIndex < row.length -1) {
+              widthReduction = profil.pfostenNetto
+            }
+
+            if (fieldIndex >= 1 && fieldIndex === row.length -1) {
+              widthReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+            }
+
+            // calculate the Pfosten and Querbalken shift
+            let pfostenShift = 0
+            let querbalkenShift = 0
+
+            if (rowIndex === 0) {
+              pfostenShift = profil.rahmenNetto
+            }
+
+            if (fieldIndex === 0) {
+              querbalkenShift = profil.rahmenNetto
+            }
+
+            if (fieldIndex > 0) {
+              querbalkenShift = profil.pfostenNetto/2
+            }
+
+            if (rowIndex > 0) {
+              pfostenShift = profil.pfostenNetto/2
+            }
+
+
+
+
+
+      
+            let cumulatedPartHeight = 0
+            field.heightDivision.forEach ((part, partIndex) => {
+              let heightShift = 0
+              let partHeightReduction = 0
+              if (partIndex > 0 && rowIndex === 0) {
+                heightShift = profil.pfostenNetto/2 - profil.rahmenNetto
+              }
+              if (field.heightDivision.length === 1) {
+                partHeightReduction = heightReduction
+              } else if ((rowIndex === 0 && partIndex === 0) || (rowIndex === division.length -1) && partIndex === field.heightDivision.length -1) {
+                partHeightReduction = profil.pfostenNetto/2 + profil.rahmenNetto
+              } else if ((rowIndex === 0 && partIndex > 0 && partIndex < field.heightDivision.length -1) || (rowIndex < division.length -1 && partIndex > 0) || (rowIndex > 0 && partIndex < field.heightDivision.length -1))  {
+                partHeightReduction = profil.pfostenNetto
+              }
+               
+
+              let baseHoleScaled = {
+                x: posX + (cumulatedWidth + querbalkenShift) * scaleFactor,
+                y: posY + (cumulatedHeight + cumulatedPartHeight + pfostenShift + heightShift) * scaleFactor,
+                b: (field.width - widthReduction ) * scaleFactor,
+                h: (rowIndex === division.length -1 && partIndex === field.heightDivision.length -1) ? (part.height - partHeightReduction + schwelleSchift ) * scaleFactor : (part.height - partHeightReduction ) * scaleFactor
+              }
+
+              let baseHole = {
+                x: posX + (cumulatedWidth + querbalkenShift) ,
+                y: posY + (cumulatedHeight + cumulatedPartHeight + pfostenShift + heightShift),
+                b: (field.width - widthReduction ) ,
+                h: (rowIndex === division.length -1 && partIndex === field.heightDivision.length -1) ? (part.height - partHeightReduction + schwelleSchift ) : (part.height - partHeightReduction )
+              }
+
+              
+              switch (part.type) {
+                  case 'FB':
+                    drawGehrung(ctx, baseHoleScaled.x, baseHoleScaled.y, baseHoleScaled.b, baseHoleScaled.h, profil.glasleiste) // FB Gehrunhg
+                    drawRectangle(ctx, baseHoleScaled.x + profil.glasleiste*scaleFactor, baseHoleScaled.y + profil.glasleiste*scaleFactor, baseHole.b - profil.glasleiste*2, baseHole.h - profil.glasleiste * 2, scaleFactor, '#ADD8E6') // FB, also Glasleiste
+  
+                  break;
+
+                  case 'FF':
+                    drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
+                    drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
+                    drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
+                    drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
+                    drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
+  
+                  break;
+
+                  default:
+                    // drawRectangle(ctx, posX, posY, width, height, scaleFactor, "white");
+                   
+                }
+
+              // draw FB
+              //drawGehrung(ctx, baseHoleScaled.x, baseHoleScaled.y, baseHoleScaled.b, baseHoleScaled.h, profil.glasleiste) // FB Gehrunhg
+              //drawRectangle(ctx, baseHoleScaled.x + profil.glasleiste*scaleFactor, baseHoleScaled.y + profil.glasleiste*scaleFactor, baseHole.b - profil.glasleiste*2, baseHole.h - profil.glasleiste * 2, scaleFactor, '#ADD8E6') // FB, also Glasleiste
+
+             
+              // draw FF
+              /* drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
+              drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
+              drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
+              drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
+              drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
+
+
+*/
+              cumulatedPartHeight += part.height;
+              
+              
+            })
+         
+          
+          cumulatedWidth+=field.width
+        })
+        
+        cumulatedHeight+=currentHeight
+      });
+     }
+
+   }
+
   
   
-  
+   export {drawWindowUnited}
   
     function drawWindow(ctx, profil, windowType, schwelle, division, posX, posY, width, height, scaleFactor) {
       
@@ -270,6 +553,9 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
             drawDrehRechts(ctx, posX + (pfostenPosition + profil.pfosten/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, (width - pfostenPosition - profil.pfosten/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift)*scaleFactor)
             drawKipp(ctx, posX + (pfostenPosition + profil.pfosten/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, (width - pfostenPosition - profil.pfosten/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift)*scaleFactor)
           break;
+
+
+        
          case 'IND':
 
          
@@ -287,7 +573,7 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
          if (division.length > 1 || division[0].length > 1) {
           let cumulatedHeight=0; 
           division.forEach((row, rowIndex) => {
-            let currentHeight = row[0].height
+            let currentHeight = row[0].fieldHeight
             let cumulatedWidth=0;
             row.forEach((field, fieldIndex) => {
 
@@ -395,7 +681,8 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
          }
 
          // Draw fields
-         if (division.length > 1 || division[0].length > 1) {
+         //if (division.length > 1 || division[0].length > 1) {
+          if (division.length > 0) {
           let cumulatedHeight=0; 
           division.forEach((row, rowIndex) => {
             let currentHeight = row[0].height
@@ -499,11 +786,21 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
                     h: (rowIndex === division.length -1 && partIndex === field.heightDivision.length -1) ? (part.height - partHeightReduction + schwelleSchift ) : (part.height - partHeightReduction )
                   }
 
-                  switch (windowType) {
-                    case 'FB':
-                      //drawRectangle(ctx, posX, posY, width, height, scaleFactor, "white");
-                     
-                    
+                  
+                  switch (part.type) {
+                      case 'FB':
+                        drawGehrung(ctx, baseHoleScaled.x, baseHoleScaled.y, baseHoleScaled.b, baseHoleScaled.h, profil.glasleiste) // FB Gehrunhg
+                        drawRectangle(ctx, baseHoleScaled.x + profil.glasleiste*scaleFactor, baseHoleScaled.y + profil.glasleiste*scaleFactor, baseHole.b - profil.glasleiste*2, baseHole.h - profil.glasleiste * 2, scaleFactor, '#ADD8E6') // FB, also Glasleiste
+      
+                      break;
+
+                      case 'FF':
+                        drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
+                        drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
+                        drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
+                        drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
+                        drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
+      
                       break;
 
                       default:
@@ -517,14 +814,14 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
 
                  
                   // draw FF
-                  drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
+                  /* drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
                   drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
                   drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
                   drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
                   drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
 
 
-
+ */
                   cumulatedPartHeight += part.height;
                   
                   

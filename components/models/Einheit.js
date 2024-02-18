@@ -1,6 +1,9 @@
 import React from "react";
-import { drawRectangle, drawWindow } from "../utils/drawingUtils";
+import { drawRectangle, drawWindowUnited } from "../utils/drawingUtils";
 import Profil from "./Profil";
+
+
+
 
 // starting and returning canvas
 const startCanvas = (canvasRef) => {
@@ -15,8 +18,6 @@ const minFbSize = 300;
 class Einheit {
   constructor(
     width,
-    height,
-    type,
     schwelle,
     division = [],
     up = [],
@@ -26,16 +27,59 @@ class Einheit {
     profil
   ) {
     this.width = width;
-    this.height = height;
-    this.type = type;
     this.schwelle = schwelle;
-    this.division = division;
+    this.division = this.addHeightGetters(division);
     this.up = Array.isArray(up) ? up : [];
     this.down = Array.isArray(down) ? down : [];
     this.left = Array.isArray(left) ? left : [];
     this.right = Array.isArray(right) ? right : [];
     this.profil = profil;
+
+   
   }
+
+  addHeightGetters(division) {
+    return division.map(subArray =>
+      subArray.map(obj => {
+        // Define a new property 'height' with a getter on the original object
+        Object.defineProperty(obj, 'fieldHeight', {
+          get: function() {
+            let sumaWysokosci = 0
+            obj.heightDivision.forEach(part => {
+              sumaWysokosci += part.height
+            }) 
+            return sumaWysokosci
+            //return this.heightDivision.reduce((sum, current) => sum + current.height, 0);
+           
+          },
+          enumerable: true, // This makes the 'height' property appear during object enumeration (e.g., console.log, for...in loop)
+          configurable: true // This allows the property to be deleted or modified later if needed
+          
+        });
+        
+        return obj;
+      })
+    );
+  }
+
+  get height() {
+    let totalHeight = 0;
+  
+    // Ensure this.division is an array before proceeding
+    if (Array.isArray(this.division)) {
+      
+      
+      this.division.forEach(subArray => {
+        if (subArray.length > 0 && subArray[0].heightDivision && subArray[0].heightDivision.length > 0) {
+          totalHeight += subArray[0].fieldHeight;
+        }
+      });
+      
+      }
+  
+    return totalHeight;
+  }
+
 
   get netWidth() {
     const totalWidthReduction = this.left
@@ -53,6 +97,10 @@ class Einheit {
 
   drawEinheit(posX, posY, canvasRef, scaleFactor) {
     const [ctx, canvas] = startCanvas(canvasRef);
+    //console.log(this)
+    //console.log("height " + this.height)
+    //console.log("height 1 " + this.division[0][0].fieldHeight)
+    //console.log("height " + this.height)
 
     let actualX = posX;
     let actualY = posY;
@@ -86,10 +134,9 @@ class Einheit {
     });
 
     // Draw window
-    drawWindow(
+    drawWindowUnited(
       ctx,
       this.profil,
-      this.type,
       this.schwelle,
       this.division,
       actualX,
@@ -137,23 +184,24 @@ class Einheit {
   addProfile(type, side, width) {
     if (side === "up") {
       
-    
       const allFieldsOk = this.division[0].every(field => 
-        field.height - width >= minFbSize && field.heightDivision[0] - width >= minFbSize
+        field.fieldHeight - width >= minFbSize && field.heightDivision[0].height - width >= minFbSize
       );
 
+      
       this.division[0] = this.division[0].map(field => {
-        if (field.height - width < minFbSize || field.heightDivision[0] - width < minFbSize || !allFieldsOk) {
+        if (field.fieldHeight - width < minFbSize || field.heightDivision[0] - width < minFbSize || !allFieldsOk) {
           return field; // Return the original field if the condition is not met
         }
         // Return a new field object with the updated values
         return {
           ...field,
-          height: field.height - width,
-          heightDivision: [field.heightDivision[0] - width, ...field.heightDivision.slice(1)]
+          heightDivision: [{height: field.heightDivision[0].height - width, type:field.heightDivision[0].type  }, ...field.heightDivision.slice(1)]
         };
       });
+     
       if (allFieldsOk) {
+        
         this.up.push({ type: type, height: width });
       }
 
@@ -212,20 +260,19 @@ class Einheit {
     else if (side === "down") {
 
       const allFieldsOk = this.division[this.division.length-1].every(field => 
-        field.height - width >= minFbSize && field.heightDivision[field.heightDivision.length-1] - width >= minFbSize
+        field.fieldHeight - width >= minFbSize && field.heightDivision[field.heightDivision.length-1].height - width >= minFbSize
       );
 
       this.division[this.division.length-1] = this.division[this.division.length-1].map(field => {
-        if (field.height - width < minFbSize || field.heightDivision[field.heightDivision.length-1] - width < minFbSize ||!allFieldsOk) {
+        if (field.fieldHeight - width < minFbSize || field.heightDivision[field.heightDivision.length-1].height - width < minFbSize ||!allFieldsOk) {
           return field; // Return the original field if the condition is not met
         }
         // Return a new field object with the updated values
         return {
           ...field,
-          height: field.height - width,
           heightDivision: [
             ...field.heightDivision.slice(0, -1), // All elements except the last
-            field.heightDivision[field.heightDivision.length - 1] - width // Modify the last element
+            {height: field.heightDivision[field.heightDivision.length - 1].height - width, type:field.heightDivision[field.heightDivision.length - 1].type } // Modify the last element
           ]
           
         };
