@@ -336,6 +336,23 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
                 h: (rowIndex === division.length -1 && partIndex === field.heightDivision.length -1) ? (part.height - partHeightReduction + schwelleSchift ) : (part.height - partHeightReduction )
               }
 
+              let glasHoleScaledFF = {
+                x: posX + (cumulatedWidth + querbalkenShift + profil.fluegel - profil.ueberlappung + profil.glasleiste ) * scaleFactor,
+                y: posY + (cumulatedHeight + cumulatedPartHeight + pfostenShift + heightShift + profil.fluegel - profil.ueberlappung + profil.glasleiste) * scaleFactor,
+                b: (field.width - widthReduction - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2) * scaleFactor,
+                h: (rowIndex === division.length -1 && partIndex === field.heightDivision.length -1) ? (part.height - partHeightReduction + schwelleSchift - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2) * scaleFactor : (part.height - partHeightReduction - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2) * scaleFactor
+              }
+
+              
+
+              function drawFF() {
+                drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
+                drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
+                drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
+                drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
+                drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
+              }
+
               
               switch (part.type) {
                   case 'FB':
@@ -345,12 +362,35 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
                   break;
 
                   case 'FF':
-                    drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
-                    drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
-                    drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
-                    drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
-                    drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
+                    drawFF()
   
+                  break;
+
+                  case 'DR':
+                    drawFF()
+                    drawDrehRechts(ctx, glasHoleScaledFF.x, glasHoleScaledFF.y, glasHoleScaledFF.b, glasHoleScaledFF.h)
+                    
+                  break;
+
+                  case 'DL':
+                    drawFF()
+                    drawDrehLinks(ctx, glasHoleScaledFF.x, glasHoleScaledFF.y, glasHoleScaledFF.b, glasHoleScaledFF.h)
+                    
+
+                  break;
+
+                  case 'DKR':
+                    drawFF()
+                    drawDrehRechts(ctx, glasHoleScaledFF.x, glasHoleScaledFF.y, glasHoleScaledFF.b, glasHoleScaledFF.h)
+                    drawKipp(ctx, glasHoleScaledFF.x, glasHoleScaledFF.y, glasHoleScaledFF.b, glasHoleScaledFF.h)
+
+                  break;
+
+                  case 'DKL':
+                    drawFF()
+                    drawDrehLinks(ctx, glasHoleScaledFF.x, glasHoleScaledFF.y, glasHoleScaledFF.b, glasHoleScaledFF.h)
+                    drawKipp(ctx, glasHoleScaledFF.x, glasHoleScaledFF.y, glasHoleScaledFF.b, glasHoleScaledFF.h)
+
                   break;
 
                   default:

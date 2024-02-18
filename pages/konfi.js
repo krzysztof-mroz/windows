@@ -203,7 +203,7 @@ const Konfi = () => {
     setScale();
     const currentEinheit = new Einheit(
       prototypeEinheit.schwelle,
-      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "POS"}] }]],
+      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "FF"}] }]],
       //prototypeEinheit.division,
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
