@@ -33,7 +33,7 @@ const Konfi = () => {
   const typesArray = [
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "POS"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
+   new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
@@ -43,12 +43,11 @@ const Konfi = () => {
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil), 
     new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(true, [[{ width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625,heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false,  [[{width: 830,  heightDivision: [{height: 830, type: "FB"} ] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 625,  heightDivision: [{height: 530, type: "DKL"}] }, { width: 625, heightDivision: [{height: 530, type: "DKR"}] }],[{width: 1250, heightDivision:[{height:300, type:"FB"}]}]], [], [], [], [], prototypeProfil),
   ];
 
   // STATE VARIABLES
@@ -63,7 +62,7 @@ const Konfi = () => {
   const [matrixOfEinheitObjects, setMatrixOfEinheitObjects] = useState([
     [prototypeEinheit],
   ]);
-  const [chosenOpening, setChosenOpening] = useState("POS");
+  const [chosenDivision, setChosenDivision] = useState("POS");
   const [flacheSchwelle, setFlacheSchwelle] = useState(false);
 
   const [verbreiterungWidth, setVerbreiterungWidth] = useState(60);
@@ -125,7 +124,7 @@ const Konfi = () => {
       // Draw the Einheit
       einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
 
-      if (einheit.type === chosen && einheit.schwelle === chosenSchwelle) {
+      if (einheit.division === chosen && einheit.schwelle === chosenSchwelle) {
         const ctx = optionCanvasRef.current.getContext("2d");
         ctx.strokeStyle = "red";
         ctx.lineWidth = 3;
@@ -292,24 +291,8 @@ const Konfi = () => {
               newWidth2 >= 300 &&
               matrixOfEinheitObjects.length === 1
             ) {
-              const einheit1 = new Einheit(
-                false,
-                [[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],
-                [],
-                [],
-                [],
-                [],
-                prototypeProfil
-              );
-              const einheit2 = new Einheit(
-                false,
-                [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],
-                [],
-                [],
-                [],
-                [],
-                prototypeProfil
-              );
+              const einheit1 = new Einheit( false,[[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],[],[],[],[], prototypeProfil);  
+              const einheit2 = new Einheit(false, [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],[],[],[],[],prototypeProfil);
               updatedArray.splice(index, 1, einheit1, einheit2);
               updatedMatrix[rowIndex] = updatedArray;
             }
@@ -319,24 +302,8 @@ const Konfi = () => {
             );
             let newHeight2 = deletedEinheit.height - newHeight1;
             if (newHeight1 >= 300 && newHeight2 >= 300 && row.length === 1) {
-              const einheit1 = new Einheit(
-                false,
-                [[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]],
-                [],
-                [],
-                [],
-                [],
-                prototypeProfil
-              );
-              const einheit2 = new Einheit(
-                false,
-                [[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "FB"}] }]],
-                [],
-                [],
-                [],
-                [],
-                prototypeProfil
-              );
+              const einheit1 = new Einheit(false,[[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]],[],[],[],[],prototypeProfil);
+              const einheit2 = new Einheit(false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "FB"}] }]],[],[],[],[],prototypeProfil);
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
               updatedMatrix.splice(rowIndex, 1, updatedArray, [einheit2]);
@@ -345,15 +312,7 @@ const Konfi = () => {
           } else if (divisionMode === "Abschneiden") {
             let newHeight1 = Math.ceil((y - posY) / dimensions.scaleFactor);
             if (newHeight1 >= 300 && matrixOfEinheitObjects.length === 1) {
-              const einheit1 = new Einheit(
-                false,
-                [[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]],
-                [],
-                [],
-                [],
-                [],
-                prototypeProfil
-              );
+              const einheit1 = new Einheit( false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]], [], [],  [], [],  prototypeProfil );
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
               shouldBreak = true;
@@ -361,7 +320,6 @@ const Konfi = () => {
           } else if (divisionMode === "Verbreiterung") {
             const einheit1 = deletedEinheit;
             einheit1.addProfile("V", clickedSide, verbreiterungWidth);
-            console.log(clickedSide)
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
@@ -371,9 +329,31 @@ const Konfi = () => {
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
-          } else if (divisionMode === "Öffnungsart") {
+          } else if (divisionMode === "Fenstertyp") {
             const einheit1 = deletedEinheit;
             einheit1.schwelle = flacheSchwelle;
+            let division=chosenDivision;
+            // Calculate the rescaleFactor for width
+                const totalDivisionWidth = division[0].reduce((sum, obj) => sum + obj.width, 0);
+                const widthRescaleFactor = einheit1.width / totalDivisionWidth
+
+                // Calculate the rescaleFactor for height
+                const totalDivisionHeight = division.reduce((sum, subArray) => {
+                  return sum + subArray[0].heightDivision.reduce((innerSum, item) => innerSum + item.height, 0);
+                }, 0);
+                const heightRescaleFactor = einheit1.height / totalDivisionHeight
+
+                // Update the division array of einheit1
+                einheit1.division = division.map(subArray => 
+                  subArray.map(obj => ({
+                    ...obj,
+                    width: obj.width * widthRescaleFactor, // Update width
+                    heightDivision: obj.heightDivision.map(part => ({
+                      ...part,
+                      height: part.height * heightRescaleFactor // Update height
+                    }))
+                  }))
+                );
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
@@ -544,9 +524,10 @@ const Konfi = () => {
       ) {
         // Click is inside this Einheit, update chosenOpening
         
-        setChosenOpening(einheit.division[0][0].heightDivision[0].type);
+        //setChosenOpening(einheit.division[0][0].heightDivision[0].type);
+        setChosenDivision(einheit.division)
         setFlacheSchwelle(einheit.schwelle);
-        updateOptionCanvas(einheit.division[0][0].heightDivision[0].type, einheit.schwelle); // Redraw the canvas to show the selection
+        updateOptionCanvas(einheit.division, einheit.schwelle); // Redraw the canvas to show the selection
         return;
       }
 
@@ -677,7 +658,7 @@ const Konfi = () => {
                 "Abschneiden",
                 "Kopplung",
                 "Verbreiterung",
-                "Öffnungsart",
+                "Fenstertyp",
                 "Pfosten",
                 "Querbalken",
               ]}

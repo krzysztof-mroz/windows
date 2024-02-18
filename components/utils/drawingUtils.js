@@ -107,9 +107,8 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
    }
 
    function drawWindowUnited (ctx, profil, schwelle, division, posX, posY, width, height, scaleFactor) {
-    //console.log("division")
-    //console.log(division)
-    //console.log("height  " + height)
+  
+    let stulpPosition = width/2; // DEFAULT STULP POSITION HERE
     let schwelleSchift = schwelle ? profil.schwelleSchift : 0
     let schwelleSchiftPfosten = schwelle ? profil.rahmenNetto - profil.schwelle : 0
 
@@ -193,7 +192,6 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
 
           if (fieldIndex != row.length-1) { // if not the last field         
             drawRectangle(ctx, posX + (cumulatedWidth + field.width - profil.pfostenNetto/2)*scaleFactor, posY + (cumulatedHeight + pfostenShift) * scaleFactor, profil.pfostenNetto,  field.fieldHeight-heightReduction+schwelleSchiftPfosten, scaleFactor, "white") // draw Pfosten
-            console.log(schwelleSchiftPfosten)
           }
             let cumulatedPartHeight = 0
             field.heightDivision.forEach ((part, partIndex) => {
@@ -356,9 +354,9 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
               
               switch (part.type) {
                   case 'FB':
-                    drawGehrung(ctx, baseHoleScaled.x, baseHoleScaled.y, baseHoleScaled.b, baseHoleScaled.h, profil.glasleiste) // FB Gehrunhg
+                    drawGehrung(ctx, baseHoleScaled.x, baseHoleScaled.y, baseHoleScaled.b, baseHoleScaled.h, profil.glasleiste*scaleFactor) // FB Gehrunhg
                     drawRectangle(ctx, baseHoleScaled.x + profil.glasleiste*scaleFactor, baseHoleScaled.y + profil.glasleiste*scaleFactor, baseHole.b - profil.glasleiste*2, baseHole.h - profil.glasleiste * 2, scaleFactor, '#ADD8E6') // FB, also Glasleiste
-  
+
                   break;
 
                   case 'FF':
@@ -393,25 +391,59 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
 
                   break;
 
+                  case 'DSDK': 
+                    drawRectangle(ctx, posX + (stulpPosition-profil.stulp/2) * scaleFactor, baseHoleScaled.y , profil.stulp, baseHole.h, scaleFactor, "white") // draw Stulp Pfosten
+
+                    // Fluegel 1
+                    drawRectangle(ctx, posX + (profil.rahmen - profil.ueberlappung) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung) * scaleFactor, stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen, height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift, scaleFactor, "white"); // fluegel 1 outside frame
+                    drawGehrung(ctx, posX+(profil.rahmen - profil.ueberlappung)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung)*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift)*scaleFactor, profil.fluegelNetto*scaleFactor) 
+                    drawRectangle(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegelNetto) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung + profil.fluegelNetto) * scaleFactor, stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto *2 , height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2+ schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(profil.rahmen - profil.ueberlappung + profil.fluegelNetto)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung + profil.fluegelNetto)*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto *2 )*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2+ schwelleSchift)*scaleFactor, profil.glasleiste*scaleFactor) 
+                    drawRectangle(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel *2 , height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2+ schwelleSchift, scaleFactor, '#ADD8E6');
+                    drawDrehLinks(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, posY+profil.gesamtbreite*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel *2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2+ schwelleSchift)*scaleFactor)
+                    drawStulpRechts(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, posY+profil.gesamtbreite*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel *2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2+ schwelleSchift)*scaleFactor) 
+
+                    // Fluegel 2
+                    drawRectangle(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung) * scaleFactor, width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen, height-profil.rahmen*2+profil.ueberlappung*2+ schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(stulpPosition + profil.stulp/2 - profil.ueberlappung)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung)*scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift)*scaleFactor, profil.fluegelNetto*scaleFactor) 
+                    drawRectangle(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegelNetto) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegelNetto) * scaleFactor, width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto*2, height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2+ schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegelNetto)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung+ profil.fluegelNetto)*scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2+ schwelleSchift)*scaleFactor, profil.glasleiste*scaleFactor) 
+                    drawRectangle(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2, height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2+ schwelleSchift, scaleFactor, '#ADD8E6');
+                    drawDrehRechts(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2+ schwelleSchift)*scaleFactor)
+                    drawKipp(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2+ schwelleSchift)*scaleFactor)
+                  break
+
+                  case 'DKDS':
+                    drawRectangle(ctx, posX + (stulpPosition-profil.stulp/2) * scaleFactor, baseHoleScaled.y , profil.stulp, baseHole.h, scaleFactor, "white") // draw Stulp Pfosten
+
+                    // Fluegel 1
+                    drawRectangle(ctx, posX + (profil.rahmen - profil.ueberlappung) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung) * scaleFactor, stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen, height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(profil.rahmen - profil.ueberlappung)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung)*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift)*scaleFactor, profil.fluegelNetto*scaleFactor) 
+                    drawRectangle(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegelNetto) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung + profil.fluegelNetto) * scaleFactor, stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto *2 , height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2 + schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(profil.rahmen - profil.ueberlappung + profil.fluegelNetto)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung + profil.fluegelNetto)*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto *2 )*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2+ schwelleSchift)*scaleFactor, profil.glasleiste*scaleFactor) 
+                    drawRectangle(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel *2 , height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift, scaleFactor, '#ADD8E6');
+                    drawDrehLinks(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, posY+profil.gesamtbreite*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel *2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift)*scaleFactor)
+                    drawKipp(ctx, posX + (profil.rahmen - profil.ueberlappung + profil.fluegel) * scaleFactor, posY+profil.gesamtbreite*scaleFactor, (stulpPosition-profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel *2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift)*scaleFactor)
+                    // Fluegel 2
+                    drawRectangle(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung) * scaleFactor, width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen, height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(stulpPosition + profil.stulp/2 - profil.ueberlappung)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung)*scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 + schwelleSchift)*scaleFactor, profil.fluegelNetto*scaleFactor) 
+                    drawRectangle(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegelNetto) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegelNetto) * scaleFactor, width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto*2, height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2 + schwelleSchift, scaleFactor, "white");
+                    drawGehrung(ctx, posX+(stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegelNetto)*scaleFactor, posY+(profil.rahmen - profil.ueberlappung+ profil.fluegelNetto)*scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegelNetto*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegelNetto*2+ schwelleSchift)*scaleFactor, profil.glasleiste*scaleFactor) 
+                    drawRectangle(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2, height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift, scaleFactor, '#ADD8E6');
+                    drawDrehRechts(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift)*scaleFactor)
+                    drawStulpLinks(ctx, posX + (stulpPosition + profil.stulp/2 - profil.ueberlappung+ profil.fluegel) * scaleFactor, posY + (profil.rahmen - profil.ueberlappung+ profil.fluegel) * scaleFactor, (width - stulpPosition - profil.stulp/2 + profil.ueberlappung - profil.visibleRahmen - profil.fluegel*2)*scaleFactor, (height-profil.rahmen*2+profil.ueberlappung*2 - profil.fluegel*2 + schwelleSchift)*scaleFactor)
+
+
+                  break;
+
                   default:
                     // drawRectangle(ctx, posX, posY, width, height, scaleFactor, "white");
                    
                 }
 
-              // draw FB
-              //drawGehrung(ctx, baseHoleScaled.x, baseHoleScaled.y, baseHoleScaled.b, baseHoleScaled.h, profil.glasleiste) // FB Gehrunhg
-              //drawRectangle(ctx, baseHoleScaled.x + profil.glasleiste*scaleFactor, baseHoleScaled.y + profil.glasleiste*scaleFactor, baseHole.b - profil.glasleiste*2, baseHole.h - profil.glasleiste * 2, scaleFactor, '#ADD8E6') // FB, also Glasleiste
-
-             
-              // draw FF
-              /* drawRectangle(ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2, scaleFactor, 'white')
-              drawRectangle(ctx, baseHoleScaled.x + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegelNetto - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, 'white')
-              drawGehrung (ctx, baseHoleScaled.x -(profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, (baseHole.b + (profil.ueberlappung - profil.glasleiste)*2)*scaleFactor, (baseHole.h + (profil.ueberlappung - profil.glasleiste) * 2) * scaleFactor, profil.fluegelNetto * scaleFactor)
-              drawRectangle(ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung + profil.glasleiste)*scaleFactor, baseHole.b - (profil.fluegel - profil.ueberlappung + profil.glasleiste)*2, baseHole.h - (profil.fluegel - profil.ueberlappung + profil.glasleiste) * 2, scaleFactor, '#ADD8E6')
-              drawGehrung (ctx, baseHoleScaled.x + (profil.fluegel - profil.ueberlappung)*scaleFactor, baseHoleScaled.y + (profil.fluegel - profil.ueberlappung)*scaleFactor, (baseHole.b - (profil.fluegel - profil.ueberlappung)*2)*scaleFactor, (baseHole.h - (profil.fluegel - profil.ueberlappung ) * 2) * scaleFactor, profil.glasleiste * scaleFactor)
+      
 
 
-*/
               cumulatedPartHeight += part.height;
               
               

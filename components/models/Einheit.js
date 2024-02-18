@@ -163,11 +163,6 @@ class Einheit {
 
   drawEinheit(posX, posY, canvasRef, scaleFactor) {
     const [ctx, canvas] = startCanvas(canvasRef);
-    //console.log(this)
-    //console.log("height " + this.height)
-    //console.log("height 1 " + this.division[0][0].fieldHeight)
-    //console.log("height " + this.height)
-
     let actualX = posX;
     let actualY = posY;
 
@@ -269,8 +264,6 @@ class Einheit {
      
       if (allFieldsOk) {
         this.updateFieldHeights();
-        console.log("total.height " + this.height)
-        console.log(this)
         this.up.push({ type: type, height: width });
       }
 
@@ -285,7 +278,7 @@ class Einheit {
         if (row[0].width - width < minFbSize ||  !allFieldsOk) {
           return row; // Return the original field if the condition is not met
         }
-        console.log(this)
+       
         const updatedRow = [...row]; // Copy the row to avoid direct mutation
         updatedRow[0] = { ...updatedRow[0], width: updatedRow[0].width - width }; // Update the width of the first element
   
@@ -293,8 +286,6 @@ class Einheit {
       })
       if (allFieldsOk) {
         this.left.push({ type: type, width: width })
-        console.log(this)
-        console.log("total.width " + this.width)
       }
 
      
