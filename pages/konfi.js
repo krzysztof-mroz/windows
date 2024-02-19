@@ -23,7 +23,7 @@ const Konfi = () => {
   );
   const prototypeEinheit = new Einheit(
     false,
-    [[{width: 1000, heightDivision: [{height: 1000, type: "FF"}] }]],
+    [[{width: 1000, heightDivision: [{height: 1000, type: "FB"}] }]],
     [],
     [],
     [],
@@ -75,11 +75,15 @@ const Konfi = () => {
   const [matrixOfEinheitObjects, setMatrixOfEinheitObjects] = useState([
     [prototypeEinheit],
   ]);
-  const [chosenDivision, setChosenDivision] = useState("POS");
+  const [chosenDivision, setChosenDivision] = useState([[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]]);
   const [flacheSchwelle, setFlacheSchwelle] = useState(false);
 
   const [verbreiterungWidth, setVerbreiterungWidth] = useState(60);
   const [kopplungWidth, setKopplungWidth] = useState(20);
+
+  // GLOBAL VARIABLES
+
+  let chosenPart = [99,99,99]
 
   // REFERENCES
   const canvasRef = useRef(null);
@@ -217,7 +221,7 @@ const Konfi = () => {
         let posY =
           (canvasRef.current.height - dimensions.height * scaleFactor) / 2 +
           cumulatedHeight; // position vertically
-        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor);
+        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart);
         cumulatedWidth += einheit.width * scaleFactor;
       });
       cumulatedHeight += row[0].height * scaleFactor;
@@ -254,7 +258,7 @@ const Konfi = () => {
     setScale();
     const currentEinheit = new Einheit(
       prototypeEinheit.schwelle,
-      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "FF"}] }]],
+      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "FB"}] }]],
       //prototypeEinheit.division,
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
@@ -414,6 +418,7 @@ const Konfi = () => {
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
+
           } else if (divisionMode === "Öffnungsart") {
             const einheit1 = deletedEinheit;
             let division=chosenDivision;
@@ -439,10 +444,9 @@ const Konfi = () => {
                           y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * dimensions.scaleFactor
                         ) {
 
-                          console.log(einheit1.division[fieldRowIndex])
-
-
-
+                          chosenPart = [fieldRowIndex, fieldIndex, partIndex]
+                          
+                         
                      // Access the object you want to modify
                       let targetObject = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex]));
                          
@@ -453,43 +457,13 @@ const Konfi = () => {
                         ...targetObject, // Spread operator to copy properties
                         type: chosenDivision[0][0].heightDivision[0].type // Update the 'type' property
                       };
-                      
-                      console.log(updatedObject)
+                  
                       
                       // Replace the original object in the array with the updated object
                       einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex] = JSON.parse(JSON.stringify(updatedObject));
                   
 
-                         
-
-
-                         // einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex].type = chosenDivision[0][0].heightDivision[0].type
-
-                         /*  console.log(einheit1.division[fieldRowIndex][fieldIndex])
-
-                          const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
-
-
-
-
-                  
-                          const newTypePart = [
-                            { height: part.height, type: chosenDivision[0][0].heightDivision[0].type }
-                          ];
-
-                          // Replace the original part with the new type part
-                          fieldToUpdate.heightDivision.splice(partIndex, 1, newTypePart);
-
-                          console.log("fieldToUpdate  " + fieldToUpdate)
-                          console.log(fieldToUpdate)
-                         
-                          // Update the original division array with the updated field
-                          einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
-
-                          console.log(einheit1.division[fieldRowIndex][fieldIndex])
- */
-                          //einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex].type = chosenDivision[0][0].heightDivision[0].type
-
+                       
                         }
                         cumulatedParts+=part.height*dimensions.scaleFactor
                       });

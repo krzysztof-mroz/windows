@@ -75,12 +75,8 @@ class Einheit {
         // Define a new property 'fieldHeight' with a getter on the original object
         Object.defineProperty(obj, 'fieldHeight', {
           get: function() {
-            let sumaWysokosci = 0
-            obj.heightDivision.forEach(part => {
-              sumaWysokosci += part.height
-            }) 
-            return sumaWysokosci
-            //return this.heightDivision.reduce((sum, current) => sum + current.height, 0);
+            
+            return this.heightDivision.reduce((sum, current) => sum + current.height, 0);
            
           },
           enumerable: true, // This makes the 'height' property appear during object enumeration (e.g., console.log, for...in loop)
@@ -161,7 +157,7 @@ class Einheit {
    
   
 
-  drawEinheit(posX, posY, canvasRef, scaleFactor) {
+  drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart) {
     const [ctx, canvas] = startCanvas(canvasRef);
     let actualX = posX;
     let actualY = posY;
@@ -193,7 +189,7 @@ class Einheit {
       );
       actualX += obj.width * scaleFactor;
     });
-
+    
     // Draw window
     drawWindowUnited(
       ctx,
@@ -204,10 +200,10 @@ class Einheit {
       actualY,
       this.netWidth,
       this.netHeight,
-      scaleFactor
+      scaleFactor,
+      chosenPart
     );
-    //drawRectangle(ctx, actualX, actualY, this.netWidth, this.netHeight, scaleFactor, "white");
-    //drawRectangle(ctx, actualX+70*scaleFactor, actualY+70*scaleFactor, this.netWidth- 140, this.netHeight - 140, scaleFactor, "blue")
+   
 
     actualX += this.netWidth * scaleFactor;
 
