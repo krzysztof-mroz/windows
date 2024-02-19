@@ -26,6 +26,10 @@ class Profil {
     return this.gesamtbreite - this.fluegel;
   }
 
+  get visiblePfosten() {
+    return this.pfosten/2 - this.ueberlappung;
+  }
+
   get schwelleSchift() {
     return this.gesamtbreite - this.fluegel - this.visibleSchwelle
   }

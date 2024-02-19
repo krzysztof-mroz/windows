@@ -22,7 +22,7 @@ const Konfi = () => {
     90
   );
   const prototypeEinheit = new Einheit(
-    true,
+    false,
     [[{width: 1000, heightDivision: [{height: 1000, type: "FF"}] }]],
     [],
     [],
@@ -33,7 +33,7 @@ const Konfi = () => {
   const typesArray = [
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "POS"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
-   new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
@@ -48,6 +48,19 @@ const Konfi = () => {
     new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(true, [[{ width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625,heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
     new Einheit(false, [[{width: 625,  heightDivision: [{height: 530, type: "DKL"}] }, { width: 625, heightDivision: [{height: 530, type: "DKR"}] }],[{width: 1250, heightDivision:[{height:300, type:"FB"}]}]], [], [], [], [], prototypeProfil),
+  ];
+
+  const openingsArray = [
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "K"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
+    
   ];
 
   // STATE VARIABLES
@@ -109,45 +122,84 @@ const Konfi = () => {
   };
 
   // updating option canvas
-  const updateOptionCanvas = (chosen, chosenSchwelle) => {
-    const canvas = startCanvas(optionCanvasRef);
-    optionCanvasRef.current.width = optionDivRef.current.offsetWidth - 40;
-    optionCanvasRef.current.height = optionDivRef.current.offsetHeight - 40;
-    const [scaleFactor, optionScaleFactor] = setScale();
 
-    let posX = 10; // Start 10px from the left edge
-    let posY = 10; // Start 10px from the top edge
-    const padding = 10; // Distance between each Einheit
-    const rowHeight = 830 * optionScaleFactor + padding; // Assuming each Einheit has a height of 1000 before scaling
+    const updateOptionCanvas = (chosen, chosenSchwelle) => {
+      
+      const canvas = startCanvas(optionCanvasRef);
+      optionCanvasRef.current.width = optionDivRef.current.offsetWidth - 40;
+      optionCanvasRef.current.height = optionDivRef.current.offsetHeight - 40;
+      const [scaleFactor, optionScaleFactor] = setScale();
+  
+      let posX = 10; // Start 10px from the left edge
+      let posY = 10; // Start 10px from the top edge
+      const padding = 10; // Distance between each Einheit
+      const rowHeight = 830 * optionScaleFactor + padding; // Assuming each Einheit has a height of 830 before scaling
+      if (divisionMode === "Fenstertyp") {
+      typesArray.forEach((einheit, index) => {
+        // Draw the Einheit
+        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
+  
+        if (einheit.division === chosen && einheit.schwelle === chosenSchwelle) {
+          const ctx = optionCanvasRef.current.getContext("2d");
+          ctx.strokeStyle = "red";
+          ctx.lineWidth = 3;
+          ctx.strokeRect(
+            posX,
+            posY,
+            einheit.width * optionScaleFactor,
+            einheit.height * optionScaleFactor
+          );
+          ctx.strokeStyle = "black";
+          ctx.lineWidth = 1;
+        }
+  
+        // Move posX to the right for the next Einheit
+        posX += einheit.width * optionScaleFactor + padding;
+  
+        // Check if the next Einheit will exceed the canvas width
+        if (posX + einheit.width * optionScaleFactor > canvas.width) {
+          posX = 10; // Reset posX to the start of the next row
+          posY += rowHeight; // Move posY down to the next row
+        }
+      });
+    } else if (divisionMode === "Öffnungsart") {
+      
+      openingsArray.forEach((einheit, index) => {
+        // Draw the Einheit
+        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
+        //console.log(chosen)
+        if (einheit.division === chosen) {
+          
+          const ctx = optionCanvasRef.current.getContext("2d");
+          ctx.strokeStyle = "red";
+          ctx.lineWidth = 3;
+          ctx.strokeRect(
+            posX,
+            posY,
+            einheit.width * optionScaleFactor,
+            einheit.height * optionScaleFactor
+          );
+          ctx.strokeStyle = "black";
+          ctx.lineWidth = 1;
+        }
+  
+        // Move posX to the right for the next Einheit
+        posX += einheit.width * optionScaleFactor + padding;
+  
+        // Check if the next Einheit will exceed the canvas width
+        if (posX + einheit.width * optionScaleFactor > canvas.width) {
+          posX = 10; // Reset posX to the start of the next row
+          posY += rowHeight; // Move posY down to the next row
+        }
+      });
+      
 
-    typesArray.forEach((einheit, index) => {
-      // Draw the Einheit
-      einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
+    }
 
-      if (einheit.division === chosen && einheit.schwelle === chosenSchwelle) {
-        const ctx = optionCanvasRef.current.getContext("2d");
-        ctx.strokeStyle = "red";
-        ctx.lineWidth = 3;
-        ctx.strokeRect(
-          posX,
-          posY,
-          einheit.width * optionScaleFactor,
-          einheit.height * optionScaleFactor
-        );
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = 1;
-      }
+    };
 
-      // Move posX to the right for the next Einheit
-      posX += einheit.width * optionScaleFactor + padding;
-
-      // Check if the next Einheit will exceed the canvas width
-      if (posX + einheit.width * optionScaleFactor > canvas.width) {
-        posX = 10; // Reset posX to the start of the next row
-        posY += rowHeight; // Move posY down to the next row
-      }
-    });
-  };
+  
+  
 
   // updating main canvas
   const updateMainCanvas = (matrixOfWindows) => {
@@ -215,6 +267,11 @@ const Konfi = () => {
     setMatrixOfEinheitObjects([[currentEinheit]]);
     updateMainCanvas([[currentEinheit]]);
   }, [dimensions.width, dimensions.height]);
+
+  // updating Option Canvas when division mode changed
+  useEffect(() => {
+    updateOptionCanvas()
+  }, [divisionMode]);
 
   // HANDLERS
 
@@ -357,6 +414,93 @@ const Konfi = () => {
             updatedArray.splice(index, 1, einheit1);
             updatedMatrix[rowIndex] = updatedArray;
             shouldBreak = true;
+          } else if (divisionMode === "Öffnungsart") {
+            const einheit1 = deletedEinheit;
+            let division=chosenDivision;
+            let cumulatedFieldHeight = 0;
+            deletedEinheit.division.forEach((fieldRow, fieldRowIndex) => {
+              let cumulatedFieldWidth = 0;
+              let realFieldHeight = fieldRow[0].fieldHeight * dimensions.scaleFactor;
+              fieldRow.forEach((field, fieldIndex) => {
+                if (
+                  x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                  x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
+                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
+                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * dimensions.scaleFactor
+                ) {
+                  const cumulatedParts=0;
+                      field.heightDivision.forEach((part,partIndex) => {
+
+                        
+                        if ( 
+                          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
+                          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
+                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * dimensions.scaleFactor
+                        ) {
+
+                          console.log(einheit1.division[fieldRowIndex])
+
+
+
+                     // Access the object you want to modify
+                      let targetObject = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex]));
+                         
+                      
+
+                      // Manually create a new object with the same properties as the target object
+                      let updatedObject = {
+                        ...targetObject, // Spread operator to copy properties
+                        type: chosenDivision[0][0].heightDivision[0].type // Update the 'type' property
+                      };
+                      
+                      console.log(updatedObject)
+                      
+                      // Replace the original object in the array with the updated object
+                      einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex] = JSON.parse(JSON.stringify(updatedObject));
+                  
+
+                         
+
+
+                         // einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex].type = chosenDivision[0][0].heightDivision[0].type
+
+                         /*  console.log(einheit1.division[fieldRowIndex][fieldIndex])
+
+                          const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
+
+
+
+
+                  
+                          const newTypePart = [
+                            { height: part.height, type: chosenDivision[0][0].heightDivision[0].type }
+                          ];
+
+                          // Replace the original part with the new type part
+                          fieldToUpdate.heightDivision.splice(partIndex, 1, newTypePart);
+
+                          console.log("fieldToUpdate  " + fieldToUpdate)
+                          console.log(fieldToUpdate)
+                         
+                          // Update the original division array with the updated field
+                          einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
+
+                          console.log(einheit1.division[fieldRowIndex][fieldIndex])
+ */
+                          //einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex].type = chosenDivision[0][0].heightDivision[0].type
+
+                        }
+                        cumulatedParts+=part.height*dimensions.scaleFactor
+                      });
+                  
+
+                }
+                cumulatedFieldWidth += field.width * dimensions.scaleFactor;
+              });
+              cumulatedFieldHeight += realFieldHeight;
+            });
+
           } else if (
             divisionMode === "Pfosten" ||
             divisionMode === "Querbalken"
@@ -471,9 +615,8 @@ const Konfi = () => {
                       if (width1 >= 250 && width2 >= 250 && field.heightDivision.length === 1) {
                           
 
-                          const baseObject = einheit1.division[fieldRowIndex][fieldIndex];
-                          const newObject1 = { ...baseObject, width: width1 };
-                          const newObject2 = { ...baseObject, width: width2 };
+                          const newObject1 = { ...JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex])), width: width1 };
+                          const newObject2 = { ...JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex])), width: width2 };
                           einheit1.division[fieldRowIndex].splice(fieldIndex, 1, newObject1, newObject2);
                           
                           
@@ -510,7 +653,10 @@ const Konfi = () => {
     const rowHeight = 830 * dimensions.optionScaleFactor + padding; // Assuming each Einheit has a height of 1000 before scaling, should match the drawing logic
 
     // Iterate over each Einheit to find the one that was clicked
-    for (let einheit of typesArray) {
+    
+    let actualArray = divisionMode === "Fenstertyp" ? typesArray : openingsArray // choose if we are in Fenstertyp mode or Oeffnungsart mode
+
+    for (let einheit of actualArray) {
       
       const einheitWidth = einheit.width * dimensions.optionScaleFactor;
       const einheitHeight = einheit.height * dimensions.optionScaleFactor;
@@ -523,7 +669,8 @@ const Konfi = () => {
         y <= posY + einheitHeight
       ) {
         // Click is inside this Einheit, update chosenOpening
-        
+
+
         //setChosenOpening(einheit.division[0][0].heightDivision[0].type);
         setChosenDivision(einheit.division)
         setFlacheSchwelle(einheit.schwelle);
@@ -659,6 +806,7 @@ const Konfi = () => {
                 "Kopplung",
                 "Verbreiterung",
                 "Fenstertyp",
+                "Öffnungsart",
                 "Pfosten",
                 "Querbalken",
               ]}
