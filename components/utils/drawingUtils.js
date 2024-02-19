@@ -504,7 +504,7 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
                 //console.log(chosenPart)
                 if(arraysAreEqual(chosenPart, [rowIndex, fieldIndex, partIndex])) {
                   ctx.globalAlpha = 0.2
-                  drawRectangle(ctx, baseHoleScaled.x - profil.rahmenNetto*scaleFactor, baseHoleScaled.y - profil.rahmenNetto*scaleFactor, field.width, part.height, scaleFactor, "red")
+                  drawRectangle(ctx, baseHoleScaled.x - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, field.width-profil.visibleRahmen, part.height-profil.visibleRahmen, scaleFactor, "red")
                   ctx.globalAlpha = 1
                 }
 
