@@ -141,7 +141,7 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
     ctx.stroke();
    }
 
-   function drawWindowUnited (ctx, profil, schwelle, division, posX, posY, width, height, scaleFactor, chosenPart) {
+   function drawWindowUnited (ctx, profil, schwelle, division, posX, posY, width, height, scaleFactor, chosenPart, actualEinheit) {
   
     
     let schwelleSchift = schwelle ? profil.schwelleSchift : 0
@@ -502,9 +502,9 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
                 }
 
                 //console.log(chosenPart)
-                if(arraysAreEqual(chosenPart, [rowIndex, fieldIndex, partIndex])) {
+                if(arraysAreEqual(chosenPart, [actualEinheit[0], actualEinheit[1], rowIndex, fieldIndex, partIndex])) {
                   ctx.globalAlpha = 0.2
-                  drawRectangle(ctx, baseHoleScaled.x - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, field.width-profil.visibleRahmen, part.height-profil.visibleRahmen, scaleFactor, "red")
+                  drawRectangle(ctx, baseHoleScaled.x - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHoleScaled.y - (profil.ueberlappung - profil.glasleiste)*scaleFactor, baseHole.b + (profil.ueberlappung - profil.glasleiste)*2, baseHole.h + (profil.ueberlappung - profil.glasleiste)*2, scaleFactor, "red")
                   ctx.globalAlpha = 1
                 }
 

@@ -83,7 +83,7 @@ const Konfi = () => {
 
   // GLOBAL VARIABLES
 
-  let chosenPart = [99,99,99]
+  let chosenPart = [99, 99,99,99]
 
   // REFERENCES
   const canvasRef = useRef(null);
@@ -141,7 +141,7 @@ const Konfi = () => {
       if (divisionMode === "Fenstertyp") {
       typesArray.forEach((einheit, index) => {
         // Draw the Einheit
-        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
+        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99]);
   
         if (einheit.division === chosen && einheit.schwelle === chosenSchwelle) {
           const ctx = optionCanvasRef.current.getContext("2d");
@@ -170,7 +170,7 @@ const Konfi = () => {
       
       openingsArray.forEach((einheit, index) => {
         // Draw the Einheit
-        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor);
+        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99]);
         //console.log(chosen)
         if (einheit.division === chosen) {
           
@@ -221,7 +221,8 @@ const Konfi = () => {
         let posY =
           (canvasRef.current.height - dimensions.height * scaleFactor) / 2 +
           cumulatedHeight; // position vertically
-        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart);
+          let actualEinheit = [rowindex, index]
+        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart, actualEinheit);
         cumulatedWidth += einheit.width * scaleFactor;
       });
       cumulatedHeight += row[0].height * scaleFactor;
@@ -444,7 +445,7 @@ const Konfi = () => {
                           y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * dimensions.scaleFactor
                         ) {
 
-                          chosenPart = [fieldRowIndex, fieldIndex, partIndex]
+                          chosenPart = [rowIndex, index, fieldRowIndex, fieldIndex, partIndex]
                           
                          
                      // Access the object you want to modify

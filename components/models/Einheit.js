@@ -157,7 +157,7 @@ class Einheit {
    
   
 
-  drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart) {
+  drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart, actualEinheit) {
     const [ctx, canvas] = startCanvas(canvasRef);
     let actualX = posX;
     let actualY = posY;
@@ -201,7 +201,8 @@ class Einheit {
       this.netWidth,
       this.netHeight,
       scaleFactor,
-      chosenPart
+      chosenPart, 
+      actualEinheit
     );
    
 
