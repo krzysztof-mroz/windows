@@ -46,37 +46,70 @@ const detectClickedSide = (x, y, posX, posY, cumulatedWidth, cumulatedHeight, sc
 
   export {detectClickedPart};
 
-  const detectClickedPartMatrix = (einheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, scaleFactor) => {
-    let cumulatedFieldHeight = 0;
-    einheit.division.forEach((fieldRow, fieldRowIndex) => {
-      let cumulatedFieldWidth = 0;
-      let realFieldHeight = fieldRow[0].fieldHeight * scaleFactor;
-      fieldRow.forEach((field, fieldIndex) => {
+  const detectClickedPartMatrix = (matrix, x, y, posX, posY, scaleFactor) => {
+
+    let chosenPart;
+    let cumulatedHeight = 0;
+    let realWidth;
+    let realHeight;
+
+    matrix.forEach((row, rowIndex) => {
+      let cumulatedWidth = 0;
+      row.forEach((einheit, index) => {
+        realWidth = einheit.width * scaleFactor;
+        realHeight = einheit.height * scaleFactor;
+
         if (
-          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
-          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
-          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
-          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * scaleFactor
+          x >= posX + cumulatedWidth &&
+          x <= posX + cumulatedWidth + realWidth &&
+          y >= posY + cumulatedHeight &&
+          y <= posY + cumulatedHeight + realHeight
         ) {
-          const cumulatedParts=0;
-              field.heightDivision.forEach((part,partIndex) => {     
-                if ( 
+          let einheit = row[index];
+           // Calculate cumulated profile width left and height up
+           let profilesLeftWidth = einheit.left.reduce((accumulator, currentObject) => {
+            return accumulator + currentObject.width;
+          }, 0) * scaleFactor; // The 0 initializes the accumulator value
+
+          let profilesUpHeight = einheit.up.reduce((accumulator, currentObject) => {
+            return accumulator + currentObject.height;
+          }, 0) * scaleFactor; // The 0 initializes the accumulator value
+            let cumulatedFieldHeight = 0;
+            einheit.division.forEach((fieldRow, fieldRowIndex) => {
+              let cumulatedFieldWidth = 0;
+              let realFieldHeight = fieldRow[0].fieldHeight * scaleFactor;
+              fieldRow.forEach((field, fieldIndex) => {
+                if (
                   x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
                   x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
-                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
-                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * scaleFactor
+                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
+                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * scaleFactor
                 ) {
-
-                  chosenPart = [rowIndex, index, fieldRowIndex, fieldIndex, partIndex]
-                  return (chosenPart)
+                  const cumulatedParts=0;
+                      field.heightDivision.forEach((part,partIndex) => {     
+                        if ( 
+                          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
+                          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
+                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * scaleFactor
+                        ) {
+                          chosenPart = [rowIndex, index, fieldRowIndex, fieldIndex, partIndex]
+                        }
+                        cumulatedParts+=part.height*scaleFactor
+                      });
                 }
-                cumulatedParts+=part.height*scaleFactor
+                cumulatedFieldWidth += field.width * scaleFactor;
               });
+              cumulatedFieldHeight += realFieldHeight;
+            });
+            
         }
-        cumulatedFieldWidth += field.width * scaleFactor;
+        cumulatedWidth += realWidth;
       });
-      cumulatedFieldHeight += realFieldHeight;
+      cumulatedHeight += realHeight;
     });
+    return (chosenPart)
+    
 }
 
 export {detectClickedPartMatrix};

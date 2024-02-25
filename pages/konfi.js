@@ -4,7 +4,7 @@ import HeaderDiv from "../components/ui/headerdiv";
 import Einheit from "../components/models/Einheit";
 import Profil from "../components/models/Profil";
 import ButtonGroup from "../components/ui/ButtonGroup";
-import { detectClickedSide, detectClickedPart } from "../components/utils/canvasHelpers";
+import { detectClickedSide, detectClickedPart, detectClickedPartMatrix } from "../components/utils/canvasHelpers";
 
 const Konfi = () => {
   // PROTOTYPE DEFINITIONS
@@ -416,7 +416,9 @@ const Konfi = () => {
 
           } else if (divisionMode === "Öffnungsart") {
 
-            chosenPart = [rowIndex, index, ...detectClickedPart(deletedEinheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, dimensions.scaleFactor)]
+            //chosenPart = [rowIndex, index, ...detectClickedPart(deletedEinheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, dimensions.scaleFactor)]
+            chosenPart = detectClickedPartMatrix(matrixOfEinheitObjects, x, y, posX, posY, dimensions.scaleFactor)
+            
             // Access the object you want to modify
             let targetObject = JSON.parse(JSON.stringify(deletedEinheit.division[chosenPart[2]][chosenPart[3]].heightDivision[chosenPart[4]]));
 
@@ -425,7 +427,8 @@ const Konfi = () => {
               type: chosenDivision[0][0].heightDivision[0].type // Update the 'type' property
             };
             deletedEinheit.division[chosenPart[2]][chosenPart[3]].heightDivision[chosenPart[4]] = JSON.parse(JSON.stringify(updatedObject)); 
-            
+
+            shouldBreak = true;
 
           } else if (
             divisionMode === "Pfosten" ||
