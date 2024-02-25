@@ -9,3 +9,74 @@ const detectClickedSide = (x, y, posX, posY, cumulatedWidth, cumulatedHeight, sc
   
   export { detectClickedSide };
   
+
+
+  const detectClickedPart = (einheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, scaleFactor) => {
+            let chosenPart
+            let cumulatedFieldHeight = 0;
+            einheit.division.forEach((fieldRow, fieldRowIndex) => {
+              let cumulatedFieldWidth = 0;
+              let realFieldHeight = fieldRow[0].fieldHeight * scaleFactor;
+              fieldRow.forEach((field, fieldIndex) => {
+                if (
+                  x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                  x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
+                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
+                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * scaleFactor
+                ) {
+                  const cumulatedParts=0;
+                      field.heightDivision.forEach((part,partIndex) => {     
+                        if ( 
+                          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
+                          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
+                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * scaleFactor
+                        ) {
+                          chosenPart = [fieldRowIndex, fieldIndex, partIndex]
+                        }
+                        cumulatedParts+=part.height*scaleFactor
+                      });
+                }
+                cumulatedFieldWidth += field.width * scaleFactor;
+              });
+              cumulatedFieldHeight += realFieldHeight;
+            });
+            return (chosenPart)
+  }
+
+  export {detectClickedPart};
+
+  const detectClickedPartMatrix = (einheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, scaleFactor) => {
+    let cumulatedFieldHeight = 0;
+    einheit.division.forEach((fieldRow, fieldRowIndex) => {
+      let cumulatedFieldWidth = 0;
+      let realFieldHeight = fieldRow[0].fieldHeight * scaleFactor;
+      fieldRow.forEach((field, fieldIndex) => {
+        if (
+          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
+          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
+          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * scaleFactor
+        ) {
+          const cumulatedParts=0;
+              field.heightDivision.forEach((part,partIndex) => {     
+                if ( 
+                  x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
+                  x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * scaleFactor &&
+                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
+                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * scaleFactor
+                ) {
+
+                  chosenPart = [rowIndex, index, fieldRowIndex, fieldIndex, partIndex]
+                  return (chosenPart)
+                }
+                cumulatedParts+=part.height*scaleFactor
+              });
+        }
+        cumulatedFieldWidth += field.width * scaleFactor;
+      });
+      cumulatedFieldHeight += realFieldHeight;
+    });
+}
+
+export {detectClickedPartMatrix};

@@ -4,7 +4,7 @@ import HeaderDiv from "../components/ui/headerdiv";
 import Einheit from "../components/models/Einheit";
 import Profil from "../components/models/Profil";
 import ButtonGroup from "../components/ui/ButtonGroup";
-import { detectClickedSide } from "../components/utils/canvasHelpers";
+import { detectClickedSide, detectClickedPart } from "../components/utils/canvasHelpers";
 
 const Konfi = () => {
   // PROTOTYPE DEFINITIONS
@@ -138,6 +138,7 @@ const Konfi = () => {
       let posY = 10; // Start 10px from the top edge
       const padding = 10; // Distance between each Einheit
       const rowHeight = 830 * optionScaleFactor + padding; // Assuming each Einheit has a height of 830 before scaling
+      
       if (divisionMode === "Fenstertyp") {
       typesArray.forEach((einheit, index) => {
         // Draw the Einheit
@@ -196,14 +197,9 @@ const Konfi = () => {
           posY += rowHeight; // Move posY down to the next row
         }
       });
-      
-
     }
-
     };
 
-  
-  
 
   // updating main canvas
   const updateMainCanvas = (matrixOfWindows) => {
@@ -266,9 +262,7 @@ const Konfi = () => {
       [...prototypeEinheit.left],
       [...prototypeEinheit.right],
       prototypeProfil
-    );
-    
-    
+    ); 
     setMatrixOfEinheitObjects([[currentEinheit]]);
     updateMainCanvas([[currentEinheit]]);
   }, [dimensions.width, dimensions.height]);
@@ -421,60 +415,17 @@ const Konfi = () => {
             shouldBreak = true;
 
           } else if (divisionMode === "Öffnungsart") {
-            const einheit1 = deletedEinheit;
-            let division=chosenDivision;
-            let cumulatedFieldHeight = 0;
-            deletedEinheit.division.forEach((fieldRow, fieldRowIndex) => {
-              let cumulatedFieldWidth = 0;
-              let realFieldHeight = fieldRow[0].fieldHeight * dimensions.scaleFactor;
-              fieldRow.forEach((field, fieldIndex) => {
-                if (
-                  x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
-                  x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
-                  y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight &&
-                  y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * dimensions.scaleFactor
-                ) {
-                  const cumulatedParts=0;
-                      field.heightDivision.forEach((part,partIndex) => {
 
-                        
-                        if ( 
-                          x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
-                          x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
-                          y >= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts &&
-                          y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + cumulatedParts + part.height * dimensions.scaleFactor
-                        ) {
+            chosenPart = [rowIndex, index, ...detectClickedPart(deletedEinheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, dimensions.scaleFactor)]
+            // Access the object you want to modify
+            let targetObject = JSON.parse(JSON.stringify(deletedEinheit.division[chosenPart[2]][chosenPart[3]].heightDivision[chosenPart[4]]));
 
-                          chosenPart = [rowIndex, index, fieldRowIndex, fieldIndex, partIndex]
-                          
-                         
-                     // Access the object you want to modify
-                      let targetObject = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex]));
-                         
-                      
-
-                      // Manually create a new object with the same properties as the target object
-                      let updatedObject = {
-                        ...targetObject, // Spread operator to copy properties
-                        type: chosenDivision[0][0].heightDivision[0].type // Update the 'type' property
-                      };
-                  
-                      
-                      // Replace the original object in the array with the updated object
-                      einheit1.division[fieldRowIndex][fieldIndex].heightDivision[partIndex] = JSON.parse(JSON.stringify(updatedObject));
-                  
-
-                       
-                        }
-                        cumulatedParts+=part.height*dimensions.scaleFactor
-                      });
-                  
-
-                }
-                cumulatedFieldWidth += field.width * dimensions.scaleFactor;
-              });
-              cumulatedFieldHeight += realFieldHeight;
-            });
+             let updatedObject = {
+              ...targetObject, // Spread operator to copy properties
+              type: chosenDivision[0][0].heightDivision[0].type // Update the 'type' property
+            };
+            deletedEinheit.division[chosenPart[2]][chosenPart[3]].heightDivision[chosenPart[4]] = JSON.parse(JSON.stringify(updatedObject)); 
+            
 
           } else if (
             divisionMode === "Pfosten" ||
@@ -496,16 +447,14 @@ const Konfi = () => {
                   y <= posY + cumulatedHeight + cumulatedFieldHeight + profilesUpHeight + field.fieldHeight * dimensions.scaleFactor
                 ) {
                   
-                  if (divisionMode === "Querbalken") {
-                    
+                  if (divisionMode === "Querbalken") {       
                     if (fieldRow.length === 1 && Array.isArray(fieldRow)) {
                       let height1 = Math.ceil(
                         (y - posY - cumulatedHeight - cumulatedFieldHeight - profilesUpHeight) /
                           dimensions.scaleFactor
                       );
                       let height2 = field.fieldHeight - height1;
-
-                      
+            
                       // MINIMUM DIMENSIONS
                       if (height1 >= 250 && height2 >= 250) {
                           const updatedRow1 = {
@@ -525,13 +474,8 @@ const Konfi = () => {
                           einheit1.updateFieldHeights()
                       } 
                     } else if (fieldRow.length > 1) {
-
-                      
-
                       const cumulatedParts=0;
-                      field.heightDivision.forEach((part,partIndex) => {
-
-                        
+                      field.heightDivision.forEach((part,partIndex) => {                     
                         if ( 
                           x >= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth &&
                           x <= posX + cumulatedWidth + cumulatedFieldWidth + profilesLeftWidth + field.width * dimensions.scaleFactor &&
@@ -544,14 +488,8 @@ const Konfi = () => {
                               dimensions.scaleFactor
                           );
                           let height2 = part.height - height1;
-
-
-                          // field.heightDivision.splice(partIndex, 1, height1, height2);
-                         
                             if (height1 >= 250 && height2 >= 250) {
-
                               const fieldToUpdate = JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex]));
-
                                   // Create two new objects with the split heights and the same type
                                   const newParts = [
                                     { height: height1, type: fieldToUpdate.heightDivision[partIndex].type },
@@ -562,39 +500,22 @@ const Konfi = () => {
                                   fieldToUpdate.heightDivision.splice(partIndex, 1, ...newParts);
                                  
                                   // Update the original division array with the updated field
-                                  einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;
-                                  
-
-                         
+                                  einheit1.division[fieldRowIndex][fieldIndex] = fieldToUpdate;       
                             }
-                          
-                         
-                        }
-                        
+                        }    
                       cumulatedParts+=part.height*dimensions.scaleFactor  
-                      });
-                     
-                     
-
+                      });       
                     }
                   } else if (divisionMode === "Pfosten") {
-
-                    
-                    let width1 = Math.ceil(
-                        (x - posX - cumulatedWidth - cumulatedFieldWidth - profilesLeftWidth) /
-                          dimensions.scaleFactor
-                      );
-                     
-                      let width2 = field.width - width1;
+                        let width1 = Math.ceil( (x - posX - cumulatedWidth - cumulatedFieldWidth - profilesLeftWidth) /   dimensions.scaleFactor  );
+                        let width2 = field.width - width1;
                       // MINIMUM DIMENSIONS
                       if (width1 >= 250 && width2 >= 250 && field.heightDivision.length === 1) {
-                          
-
+                        
                           const newObject1 = { ...JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex])), width: width1 };
                           const newObject2 = { ...JSON.parse(JSON.stringify(einheit1.division[fieldRowIndex][fieldIndex])), width: width2 };
                           einheit1.division[fieldRowIndex].splice(fieldIndex, 1, newObject1, newObject2);
-                          
-                          
+                                     
                       }
                   }
                 }
@@ -805,8 +726,3 @@ const Konfi = () => {
 
 export default Konfi;
 
-
-/* 
-[[{ width: 625,  heightDivision: [{height: 430, type: "DKL"}, {height: 400, type: "DKL"},{height: 350, type: "DKL"} ] }, { width: 625,heightDivision: [{height: 430, type: "DKR"}, {height: 400, type: "DKR"},{height: 350, type: "DKR"} ] }],
-[{ width: 625,  heightDivision: [{height: 430, type: "DKL"}, {height: 400, type: "DKL"},{height: 350, type: "DKL"} ] }, { width: 625,heightDivision: [{height: 430, type: "DKR"}, {height: 400, type: "DKR"},{height: 350, type: "DKR"} ] }],
-[{ width: 625,  heightDivision: [{height: 430, type: "DKL"}, {height: 400, type: "DKL"},{height: 350, type: "DKL"} ] }, { width: 625,heightDivision: [{height: 430, type: "DKR"}, {height: 400, type: "DKR"},{height: 350, type: "DKR"} ] }]] */
