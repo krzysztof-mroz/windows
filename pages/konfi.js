@@ -5,6 +5,7 @@ import Einheit from "../components/models/Einheit";
 import Profil from "../components/models/Profil";
 import ButtonGroup from "../components/ui/ButtonGroup";
 import { detectClickedSide, detectClickedPart, detectClickedPartMatrix } from "../components/utils/canvasHelpers";
+import { drawLine, drawArrow } from "../components/utils/drawingUtils";
 
 const Konfi = () => {
   // PROTOTYPE DEFINITIONS
@@ -23,7 +24,7 @@ const Konfi = () => {
   );
   const prototypeEinheit = new Einheit(
     false,
-    [[{width: 1000, heightDivision: [{height: 1000, type: "FB"}] }]],
+    [[{width: 1000, heightDivision: [{height: 1000, type: "POS"}] }]],
     [],
     [],
     [],
@@ -104,8 +105,8 @@ const Konfi = () => {
   // setting and returning array of scale factors, setting dimensions state variable.
   const setScale = () => {
     const mainScaleFactor = Math.min(
-      canvasRef.current.width / dimensions.width,
-      canvasRef.current.height / dimensions.height
+      canvasRef.current.width / (dimensions.width*1.3),
+      canvasRef.current.height / (dimensions.height*1.3)
     );
     const optionScaleFactor = Math.min(
       optionCanvasRef.current.width / 5 / prototypeEinheit.width,
@@ -142,7 +143,7 @@ const Konfi = () => {
       if (divisionMode === "Fenstertyp") {
       typesArray.forEach((einheit, index) => {
         // Draw the Einheit
-        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99]);
+        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99], false);
   
         if (einheit.division === chosen && einheit.schwelle === chosenSchwelle) {
           const ctx = optionCanvasRef.current.getContext("2d");
@@ -171,7 +172,7 @@ const Konfi = () => {
       
       openingsArray.forEach((einheit, index) => {
         // Draw the Einheit
-        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99]);
+        einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99], false);
         //console.log(chosen)
         if (einheit.division === chosen) {
           
@@ -207,18 +208,28 @@ const Konfi = () => {
     canvasRef.current.width = divRef.current.offsetWidth - 40;
     canvasRef.current.height = divRef.current.offsetHeight - 40;
     const [scaleFactor, optionScaleFactor] = setScale();
+    const ctx = canvasRef.current.getContext("2d");
+
+    let posAbsX = (canvasRef.current.width - dimensions.width * scaleFactor) / 2;
+    let posAbsY = (canvasRef.current.height - dimensions.height * scaleFactor) / 2;
+
+    if (matrixOfEinheitObjects.length > 1) {
+      drawLine(ctx, posAbsX + dimensions.width*scaleFactor+20, posAbsY, posAbsX + dimensions.width*scaleFactor+40, posAbsY);
+      drawLine(ctx, posAbsX + dimensions.width*scaleFactor+20, posAbsY+dimensions.height*scaleFactor, posAbsX + dimensions.width*scaleFactor+40, posAbsY+dimensions.height*scaleFactor);
+      drawArrow(ctx, posAbsX + dimensions.width*scaleFactor+37, posAbsY, posAbsX + dimensions.width*scaleFactor+37, posAbsY+dimensions.height*scaleFactor, dimensions.height )
+    }
+
+
+
     let cumulatedHeight = 0;
     matrixOfWindows.forEach((row, rowindex) => {
       let cumulatedWidth = 0;
       row.forEach((einheit, index) => {
-        let posX =
-          (canvasRef.current.width - dimensions.width * scaleFactor) / 2 +
-          cumulatedWidth; // position horizontally
-        let posY =
-          (canvasRef.current.height - dimensions.height * scaleFactor) / 2 +
-          cumulatedHeight; // position vertically
+        let posX = posAbsX + cumulatedWidth; // position horizontally
+        let posY = posAbsY + cumulatedHeight; // position vertically
+          
           let actualEinheit = [rowindex, index]
-        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart, actualEinheit);
+        einheit.drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart, actualEinheit, true);
         cumulatedWidth += einheit.width * scaleFactor;
       });
       cumulatedHeight += row[0].height * scaleFactor;
@@ -255,7 +266,7 @@ const Konfi = () => {
     setScale();
     const currentEinheit = new Einheit(
       prototypeEinheit.schwelle,
-      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "FB"}] }]],
+      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "POS"}] }]],
       //prototypeEinheit.division,
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
@@ -347,8 +358,8 @@ const Konfi = () => {
               newWidth2 >= 300 &&
               matrixOfEinheitObjects.length === 1
             ) {
-              const einheit1 = new Einheit( false,[[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],[],[],[],[], prototypeProfil);  
-              const einheit2 = new Einheit(false, [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "FB"}] }]],[],[],[],[],prototypeProfil);
+              const einheit1 = new Einheit( false,[[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "POS"}] }]],[],[],[],[], prototypeProfil);  
+              const einheit2 = new Einheit(false, [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "POS"}] }]],[],[],[],[],prototypeProfil);
               updatedArray.splice(index, 1, einheit1, einheit2);
               updatedMatrix[rowIndex] = updatedArray;
             }
@@ -358,8 +369,8 @@ const Konfi = () => {
             );
             let newHeight2 = deletedEinheit.height - newHeight1;
             if (newHeight1 >= 300 && newHeight2 >= 300 && row.length === 1) {
-              const einheit1 = new Einheit(false,[[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]],[],[],[],[],prototypeProfil);
-              const einheit2 = new Einheit(false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "FB"}] }]],[],[],[],[],prototypeProfil);
+              const einheit1 = new Einheit(false,[[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "POS"}] }]],[],[],[],[],prototypeProfil);
+              const einheit2 = new Einheit(false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "POS"}] }]],[],[],[],[],prototypeProfil);
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
               updatedMatrix.splice(rowIndex, 1, updatedArray, [einheit2]);
@@ -368,7 +379,7 @@ const Konfi = () => {
           } else if (divisionMode === "Abschneiden") {
             let newHeight1 = Math.ceil((y - posY) / dimensions.scaleFactor);
             if (newHeight1 >= 300 && matrixOfEinheitObjects.length === 1) {
-              const einheit1 = new Einheit( false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "FB"}] }]], [], [],  [], [],  prototypeProfil );
+              const einheit1 = new Einheit( false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "POS"}] }]], [], [],  [], [],  prototypeProfil );
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
               shouldBreak = true;
@@ -418,7 +429,7 @@ const Konfi = () => {
 
             //chosenPart = [rowIndex, index, ...detectClickedPart(deletedEinheit, x, y, posX, posY, cumulatedWidth, cumulatedHeight, profilesLeftWidth, profilesUpHeight, dimensions.scaleFactor)]
             chosenPart = detectClickedPartMatrix(matrixOfEinheitObjects, x, y, posX, posY, dimensions.scaleFactor)
-            
+
             // Access the object you want to modify
             let targetObject = JSON.parse(JSON.stringify(deletedEinheit.division[chosenPart[2]][chosenPart[3]].heightDivision[chosenPart[4]]));
 
@@ -462,11 +473,11 @@ const Konfi = () => {
                       if (height1 >= 250 && height2 >= 250) {
                           const updatedRow1 = {
                             ...fieldRow[0],
-                            heightDivision: [{height: height1, type: "FF"}],
+                            heightDivision: [{height: height1, type: "POS"}],
                           };
                           let updatedRow2 = {
                             ...fieldRow[0],
-                            heightDivision: [{height: height2, type: "FF"}],
+                            heightDivision: [{height: height2, type: "POS"}],
                           };
                           einheit1.division.splice(
                             fieldRowIndex,

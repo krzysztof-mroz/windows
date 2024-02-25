@@ -58,6 +58,67 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
     ctx.lineWidth = 1
     ctx.stroke();
    }
+
+   export { drawLine };
+
+   function drawArrow(ctx, x, y, x1, y1, length) {
+    // Calculate the angle of the line
+    var angle = Math.atan2(y1 - y, x1 - x);
+
+    // Set the length of the arrowheads
+    var headLength = 7;
+
+    // Draw the line
+    ctx.beginPath();
+    ctx.moveTo(x + headLength * Math.cos(angle), y + headLength * Math.sin(angle)); // Offset the start point
+    ctx.lineTo(x1 - headLength * Math.cos(angle), y1 - headLength * Math.sin(angle)); // Offset the end point
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+    // Draw the first arrowhead at (x, y) pointing towards (x, y)
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + headLength * Math.cos(angle - Math.PI / 6), y + headLength * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(x + headLength * Math.cos(angle + Math.PI / 6), y + headLength * Math.sin(angle + Math.PI / 6));
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+    // Draw the second arrowhead at (x1, y1) pointing away from (x1, y1)
+    ctx.beginPath();
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x1 - headLength * Math.cos(angle - Math.PI / 6), y1 - headLength * Math.sin(angle - Math.PI / 6));
+    ctx.lineTo(x1 - headLength * Math.cos(angle + Math.PI / 6), y1 - headLength * Math.sin(angle + Math.PI / 6));
+    ctx.closePath();
+    ctx.fillStyle = "black";
+    ctx.fill();
+
+     // Set the text style
+     ctx.fillStyle = 'black';
+     ctx.font = 'normal 14px Arial';
+     ctx.textAlign = 'center';
+     ctx.textBaseline = 'bottom'
+ 
+     // Calculate the midpoint for the text
+     var midX = (x + x1) / 2;
+     var midY = (y + y1) / 2;
+ 
+     // Check if the line is vertical
+     if (x === x1) {
+         // Rotate text for vertical line
+         ctx.save(); // Save the current state
+         ctx.translate(midX, midY);
+         ctx.rotate(-Math.PI / 2); // Rotate the context
+         ctx.fillText(length, 0,0); // Place text 2px to the left of the line
+         ctx.restore(); // Restore the state
+     } else {
+         // Offset the text by 2 pixels above for horizontal line
+         ctx.fillText(length, midX, midY );
+     }
+}
+
+
+  export { drawArrow };  
  
    function drawDrehRechts(ctx, x,y,b,h) {
     ctx.beginPath();
