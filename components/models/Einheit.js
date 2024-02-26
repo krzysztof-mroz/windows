@@ -161,13 +161,13 @@ class Einheit {
     const [ctx, canvas] = startCanvas(canvasRef);
     
     if (measures) {
-      drawLine(ctx, posX, posY-3, posX, posY-20);
-      drawLine(ctx, posX+this.width*scaleFactor, posY-3, posX+this.width*scaleFactor, posY-20)
-      drawArrow(ctx, posX, posY-8, posX + this.width*scaleFactor, posY-8, this.width )
+      //drawLine(ctx, posX, posY-3, posX, posY-20);
+      //drawLine(ctx, posX+this.width*scaleFactor, posY-3, posX+this.width*scaleFactor, posY-20)
+      //drawArrow(ctx, posX, posY-8, posX + this.width*scaleFactor, posY-8, this.width )
 
-      drawLine(ctx, posX + this.width*scaleFactor+3, posY, posX + this.width*scaleFactor+20, posY);
-      drawLine(ctx, posX + this.width*scaleFactor+3, posY+this.height*scaleFactor, posX + this.width*scaleFactor+20, posY+this.height*scaleFactor);
-      drawArrow(ctx, posX + this.width*scaleFactor+17, posY, posX + this.width*scaleFactor+17, posY+this.height*scaleFactor, this.height )
+      //drawLine(ctx, posX + this.width*scaleFactor+3, posY, posX + this.width*scaleFactor+20, posY);
+      //drawLine(ctx, posX + this.width*scaleFactor+3, posY+this.height*scaleFactor, posX + this.width*scaleFactor+20, posY+this.height*scaleFactor);
+      //drawArrow(ctx, posX + this.width*scaleFactor+17, posY, posX + this.width*scaleFactor+17, posY+this.height*scaleFactor, this.height )
 
     }
    

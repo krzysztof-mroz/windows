@@ -6,6 +6,7 @@ import Profil from "../components/models/Profil";
 import ButtonGroup from "../components/ui/ButtonGroup";
 import { detectClickedSide, detectClickedPart, detectClickedPartMatrix } from "../components/utils/canvasHelpers";
 import { drawLine, drawArrow } from "../components/utils/drawingUtils";
+import { countMeasures } from "../components/utils/helperFunctions";
 
 const Konfi = () => {
   // PROTOTYPE DEFINITIONS
@@ -105,8 +106,9 @@ const Konfi = () => {
   // setting and returning array of scale factors, setting dimensions state variable.
   const setScale = () => {
     const mainScaleFactor = Math.min(
-      canvasRef.current.width / (dimensions.width*1.3),
-      canvasRef.current.height / (dimensions.height*1.3)
+
+      canvasRef.current.width / (dimensions.width*1.33),
+      canvasRef.current.height / (dimensions.height*1.33)
     );
     const optionScaleFactor = Math.min(
       optionCanvasRef.current.width / 5 / prototypeEinheit.width,
@@ -213,11 +215,33 @@ const Konfi = () => {
     let posAbsX = (canvasRef.current.width - dimensions.width * scaleFactor) / 2;
     let posAbsY = (canvasRef.current.height - dimensions.height * scaleFactor) / 2;
 
-    if (matrixOfEinheitObjects.length > 1) {
+    /* if (matrixOfEinheitObjects.length > 1) {
       drawLine(ctx, posAbsX + dimensions.width*scaleFactor+20, posAbsY, posAbsX + dimensions.width*scaleFactor+40, posAbsY);
       drawLine(ctx, posAbsX + dimensions.width*scaleFactor+20, posAbsY+dimensions.height*scaleFactor, posAbsX + dimensions.width*scaleFactor+40, posAbsY+dimensions.height*scaleFactor);
       drawArrow(ctx, posAbsX + dimensions.width*scaleFactor+37, posAbsY, posAbsX + dimensions.width*scaleFactor+37, posAbsY+dimensions.height*scaleFactor, dimensions.height )
-    }
+    } */
+
+    let measure = countMeasures(matrixOfEinheitObjects, dimensions.width, dimensions.height)
+
+    let measureY = measure.top.length * 10
+    measure.top.forEach(measureRow => {
+      let measureRowWidthCumulated = 0
+      measureRow.forEach(measureRowDimension => {
+        drawArrow(ctx, posAbsX + measureRowWidthCumulated*dimensions.scaleFactor, posAbsY - measureY, posAbsX + (measureRowWidthCumulated+measureRowDimension)*dimensions.scaleFactor, posAbsY - measureY, measureRowDimension)
+        measureRowWidthCumulated+=measureRowDimension
+      });
+      measureY -= 15  
+    });
+
+    let measureX = measure.right.length * 10 + 17
+    measure.right.forEach(measureRow => {
+      let measureRowwHeightCumulated = 0
+      measureRow.forEach(measureRowDimension => {
+        drawArrow(ctx, posAbsX + dimensions.width*scaleFactor + measureX, posAbsY + measureRowwHeightCumulated*dimensions.scaleFactor, posAbsX + dimensions.width*scaleFactor + measureX, posAbsY + (measureRowwHeightCumulated + measureRowDimension)*dimensions.scaleFactor, measureRowDimension)    
+        measureRowwHeightCumulated +=measureRowDimension;  
+      })
+      measureX -= 15
+    });
 
 
 
@@ -402,13 +426,13 @@ const Konfi = () => {
             let division=chosenDivision;
             // Calculate the rescaleFactor for width
                 const totalDivisionWidth = division[0].reduce((sum, obj) => sum + obj.width, 0);
-                const widthRescaleFactor = einheit1.width / totalDivisionWidth
+                const widthRescaleFactor = einheit1.netWidth/ totalDivisionWidth
 
                 // Calculate the rescaleFactor for height
                 const totalDivisionHeight = division.reduce((sum, subArray) => {
                   return sum + subArray[0].heightDivision.reduce((innerSum, item) => innerSum + item.height, 0);
                 }, 0);
-                const heightRescaleFactor = einheit1.height / totalDivisionHeight
+                const heightRescaleFactor = einheit1.netHeight / totalDivisionHeight
 
                 // Update the division array of einheit1
                 einheit1.division = division.map(subArray => 

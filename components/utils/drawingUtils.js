@@ -62,6 +62,14 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
    export { drawLine };
 
    function drawArrow(ctx, x, y, x1, y1, length) {
+
+   if (x === x1) {
+    drawLine(ctx, x-5, y, x+5, y)
+    drawLine(ctx, x1-5, y1, x1+5, y1)
+   } else {
+    drawLine(ctx, x, y-5, x, y+5)
+    drawLine(ctx, x1, y1-5, x1, y1+5)
+   }
     // Calculate the angle of the line
     var angle = Math.atan2(y1 - y, x1 - x);
 
@@ -95,7 +103,7 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
 
      // Set the text style
      ctx.fillStyle = 'black';
-     ctx.font = 'normal 14px Arial';
+     ctx.font = 'normal 12px Arial';
      ctx.textAlign = 'center';
      ctx.textBaseline = 'bottom'
  
@@ -109,11 +117,11 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
          ctx.save(); // Save the current state
          ctx.translate(midX, midY);
          ctx.rotate(-Math.PI / 2); // Rotate the context
-         ctx.fillText(length, 0,0); // Place text 2px to the left of the line
+         ctx.fillText(length, 0,2); // Place text 2px to the left of the line
          ctx.restore(); // Restore the state
      } else {
          // Offset the text by 2 pixels above for horizontal line
-         ctx.fillText(length, midX, midY );
+         ctx.fillText(length, midX, midY +2 );
      }
 }
 
