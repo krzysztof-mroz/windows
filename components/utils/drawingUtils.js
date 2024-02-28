@@ -63,6 +63,8 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
 
    function drawArrow(ctx, x, y, x1, y1, length) {
 
+    ctx.lineWidth = 0.5
+
    if (x === x1) {
     drawLine(ctx, x-5, y, x+5, y)
     drawLine(ctx, x1-5, y1, x1+5, y1)
@@ -74,32 +76,37 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
     var angle = Math.atan2(y1 - y, x1 - x);
 
     // Set the length of the arrowheads
-    var headLength = 7;
+    var headLength = 0;
 
     // Draw the line
     ctx.beginPath();
     ctx.moveTo(x + headLength * Math.cos(angle), y + headLength * Math.sin(angle)); // Offset the start point
     ctx.lineTo(x1 - headLength * Math.cos(angle), y1 - headLength * Math.sin(angle)); // Offset the end point
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 0.5;
     ctx.stroke();
 
-    // Draw the first arrowhead at (x, y) pointing towards (x, y)
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + headLength * Math.cos(angle - Math.PI / 6), y + headLength * Math.sin(angle - Math.PI / 6));
-    ctx.lineTo(x + headLength * Math.cos(angle + Math.PI / 6), y + headLength * Math.sin(angle + Math.PI / 6));
-    ctx.closePath();
-    ctx.fillStyle = "black";
-    ctx.fill();
+    
+    if (length > 30) {
+      // Draw the first arrowhead at (x, y) pointing towards (x, y)
+      ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + headLength * Math.cos(angle - Math.PI / 6), y + headLength * Math.sin(angle - Math.PI / 6));
+        ctx.lineTo(x + headLength * Math.cos(angle + Math.PI / 6), y + headLength * Math.sin(angle + Math.PI / 6));
+        ctx.closePath();
+        ctx.fillStyle = "black";
+        ctx.fill();
 
-    // Draw the second arrowhead at (x1, y1) pointing away from (x1, y1)
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x1 - headLength * Math.cos(angle - Math.PI / 6), y1 - headLength * Math.sin(angle - Math.PI / 6));
-    ctx.lineTo(x1 - headLength * Math.cos(angle + Math.PI / 6), y1 - headLength * Math.sin(angle + Math.PI / 6));
-    ctx.closePath();
-    ctx.fillStyle = "black";
-    ctx.fill();
+        // Draw the second arrowhead at (x1, y1) pointing away from (x1, y1)
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x1 - headLength * Math.cos(angle - Math.PI / 6), y1 - headLength * Math.sin(angle - Math.PI / 6));
+        ctx.lineTo(x1 - headLength * Math.cos(angle + Math.PI / 6), y1 - headLength * Math.sin(angle + Math.PI / 6));
+        ctx.closePath();
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+    }
+    
 
      // Set the text style
      ctx.fillStyle = 'black';
@@ -123,6 +130,7 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
          // Offset the text by 2 pixels above for horizontal line
          ctx.fillText(length, midX, midY +2 );
      }
+     ctx.lineWidth = 1
 }
 
 

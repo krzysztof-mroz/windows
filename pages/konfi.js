@@ -81,7 +81,7 @@ const Konfi = () => {
   const [flacheSchwelle, setFlacheSchwelle] = useState(false);
 
   const [verbreiterungWidth, setVerbreiterungWidth] = useState(60);
-  const [kopplungWidth, setKopplungWidth] = useState(20);
+  const [kopplungWidth, setKopplungWidth] = useState(5);
 
   // GLOBAL VARIABLES
 
@@ -105,10 +105,15 @@ const Konfi = () => {
 
   // setting and returning array of scale factors, setting dimensions state variable.
   const setScale = () => {
+   
+    let measure = countMeasures(matrixOfEinheitObjects, dimensions.width, dimensions.height)
+    const measureLines = Math.max(measure.left.length + measure.right.length,  measure.top.length + measure.bottom.length) 
+    let dimensionsScaleHelper = 1 + measureLines / 10
+
     const mainScaleFactor = Math.min(
 
-      canvasRef.current.width / (dimensions.width*1.33),
-      canvasRef.current.height / (dimensions.height*1.33)
+      canvasRef.current.width / (dimensions.width*dimensionsScaleHelper),
+      canvasRef.current.height / (dimensions.height*dimensionsScaleHelper)
     );
     const optionScaleFactor = Math.min(
       optionCanvasRef.current.width / 5 / prototypeEinheit.width,
@@ -215,35 +220,51 @@ const Konfi = () => {
     let posAbsX = (canvasRef.current.width - dimensions.width * scaleFactor) / 2;
     let posAbsY = (canvasRef.current.height - dimensions.height * scaleFactor) / 2;
 
-    /* if (matrixOfEinheitObjects.length > 1) {
-      drawLine(ctx, posAbsX + dimensions.width*scaleFactor+20, posAbsY, posAbsX + dimensions.width*scaleFactor+40, posAbsY);
-      drawLine(ctx, posAbsX + dimensions.width*scaleFactor+20, posAbsY+dimensions.height*scaleFactor, posAbsX + dimensions.width*scaleFactor+40, posAbsY+dimensions.height*scaleFactor);
-      drawArrow(ctx, posAbsX + dimensions.width*scaleFactor+37, posAbsY, posAbsX + dimensions.width*scaleFactor+37, posAbsY+dimensions.height*scaleFactor, dimensions.height )
-    } */
-
+    
     let measure = countMeasures(matrixOfEinheitObjects, dimensions.width, dimensions.height)
-
+    
     let measureY = measure.top.length * 10
     measure.top.forEach(measureRow => {
       let measureRowWidthCumulated = 0
       measureRow.forEach(measureRowDimension => {
-        drawArrow(ctx, posAbsX + measureRowWidthCumulated*dimensions.scaleFactor, posAbsY - measureY, posAbsX + (measureRowWidthCumulated+measureRowDimension)*dimensions.scaleFactor, posAbsY - measureY, measureRowDimension)
+        drawArrow(ctx, posAbsX + measureRowWidthCumulated*scaleFactor, posAbsY - measureY, posAbsX + (measureRowWidthCumulated+measureRowDimension)*scaleFactor, posAbsY - measureY, measureRowDimension)
         measureRowWidthCumulated+=measureRowDimension
       });
       measureY -= 15  
     });
 
-    let measureX = measure.right.length * 10 + 17
+    let measureX = measure.right.length * 10 + 12
     measure.right.forEach(measureRow => {
       let measureRowwHeightCumulated = 0
       measureRow.forEach(measureRowDimension => {
-        drawArrow(ctx, posAbsX + dimensions.width*scaleFactor + measureX, posAbsY + measureRowwHeightCumulated*dimensions.scaleFactor, posAbsX + dimensions.width*scaleFactor + measureX, posAbsY + (measureRowwHeightCumulated + measureRowDimension)*dimensions.scaleFactor, measureRowDimension)    
+        drawArrow(ctx, posAbsX + dimensions.width*scaleFactor + measureX, posAbsY + measureRowwHeightCumulated*scaleFactor, posAbsX + dimensions.width*scaleFactor + measureX, posAbsY + (measureRowwHeightCumulated + measureRowDimension)*scaleFactor, measureRowDimension)    
         measureRowwHeightCumulated +=measureRowDimension;  
       })
       measureX -= 15
     });
 
+    let measureYBottom = 8
+    measure.bottom.forEach(measureRow => {
+      let measureRowWidthCumulated = 0
+      measureRow.forEach(measureRowDimension => {
+        drawArrow(ctx, posAbsX + measureRowWidthCumulated*scaleFactor, posAbsY + dimensions.height*scaleFactor + measureYBottom, posAbsX + (measureRowWidthCumulated+measureRowDimension)*scaleFactor, posAbsY + dimensions.height*scaleFactor + measureYBottom, measureRowDimension)
+        measureRowWidthCumulated+=measureRowDimension
+      });
+      measureYBottom += 15  
+    });
 
+    let measureXLeft = measure.left.length * 10 + 7
+    measure.left.forEach(measureRow => {
+      let measureRowwHeightCumulated = 0
+      measureRow.forEach(measureRowDimension => {
+        drawArrow(ctx, posAbsX - measureXLeft, posAbsY + measureRowwHeightCumulated*scaleFactor, posAbsX - measureXLeft, posAbsY + (measureRowwHeightCumulated + measureRowDimension)*scaleFactor, measureRowDimension)    
+        measureRowwHeightCumulated +=measureRowDimension;  
+      })
+      measureXLeft -= 15
+    });
+
+
+    
 
     let cumulatedHeight = 0;
     matrixOfWindows.forEach((row, rowindex) => {
@@ -311,6 +332,7 @@ const Konfi = () => {
 
   // HANDLE CANVAS CLICK
   const handleCanvasClick = (event) => {
+    setScale();
     const rect = canvasRef.current.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
@@ -573,6 +595,7 @@ const Konfi = () => {
     });
     updateMainCanvas(updatedMatrix);
     setMatrixOfEinheitObjects(updatedMatrix);
+    setScale();
   };
 
   // HANDLE OPTION CANVAS CLICK
