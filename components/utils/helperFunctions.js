@@ -99,6 +99,9 @@ const countMeasures = (matrix, width, height) => {
         // Count the total number of indexes across all fieldRow's with more than one division (fields with Querbalken zwischen Pfosten)
         let totalCount = indexArrays.reduce((acc, indexes) => acc + indexes.length, 0);
 
+        // Count all the objects in einheit.division (fields)
+        let totalObjectsCount = einheit.division.reduce((acc, fieldRow) => acc + fieldRow.length, 0);
+
         let fieldsMatrix = [];
 
         if (totalCount === 0) {
@@ -110,7 +113,7 @@ const countMeasures = (matrix, width, height) => {
         } else {
             
             // create fields arrays, as many as the fields with division
-            for (let i = 0; i < totalCount; i++) {
+            for (let i = 0; i < totalObjectsCount; i++) {
                 fieldsMatrix.push([]);  
             } 
             
@@ -118,7 +121,7 @@ const countMeasures = (matrix, width, height) => {
             // for every row
             indexArrays.forEach((fieldRowIndexes, rowIndex) => {
                 if (fieldRowIndexes.length === 0) {        // if the row has no fields with division
-                    for (let i = 0; i < totalCount; i++) {
+                    for (let i = 0; i < totalObjectsCount; i++) {
                         fieldsMatrix[i].push(einheit.division[rowIndex][0].heightDivision[0].height);  // just add the first height of the first field
                     } 
                 } else if (fieldRowIndexes.length > 0){ // if the row has fields with division
@@ -135,7 +138,7 @@ const countMeasures = (matrix, width, height) => {
                         currentFieldWithDivision += 1
                         
                     }) 
-                    for (let i = 0; i < totalCount; i++) {
+                    for (let i = 0; i < totalObjectsCount; i++) {
                         if (fieldsMatrix[i].reduce((accumulator, currentValue) => accumulator + currentValue, 0) < fieldsMatrix[lastIndexWithDivision].reduce((accumulator, currentValue) => accumulator + currentValue, 0)) {
                             fieldsMatrix[i].push(partsTogether);
                         }
@@ -148,7 +151,6 @@ const countMeasures = (matrix, width, height) => {
             
         }
         
-        console.log(fieldsMatrix)
         
 
 
