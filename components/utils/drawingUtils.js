@@ -124,11 +124,11 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
          ctx.save(); // Save the current state
          ctx.translate(midX, midY);
          ctx.rotate(-Math.PI / 2); // Rotate the context
-         ctx.fillText(length, 0,2); // Place text 2px to the left of the line
+         ctx.fillText(Math.round(length), 0,2); // Place text 2px to the left of the line
          ctx.restore(); // Restore the state
      } else {
          // Offset the text by 2 pixels above for horizontal line
-         ctx.fillText(length, midX, midY +2 );
+         ctx.fillText(Math.round(length), midX, midY +2 );
      }
      ctx.lineWidth = 1
 }
@@ -418,11 +418,12 @@ function drawRectangle(ctx, posX, posY, width, height, scaleFactor, color) {
 
 
 
-            let stulpPosition = field.width/2; // DEFAULT STULP POSITION HERE
+            
 
       
             let cumulatedPartHeight = 0
             field.heightDivision.forEach ((part, partIndex) => {
+              let stulpPosition = part.stulp; // DEFAULT STULP POSITION HERE
               let heightShift = 0
               let partHeightReduction = 0
               if (partIndex > 0 && rowIndex === 0) {

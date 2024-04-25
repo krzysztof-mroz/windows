@@ -160,17 +160,7 @@ class Einheit {
   drawEinheit(posX, posY, canvasRef, scaleFactor, chosenPart, actualEinheit, measures) {
     const [ctx, canvas] = startCanvas(canvasRef);
     
-    if (measures) {
-      //drawLine(ctx, posX, posY-3, posX, posY-20);
-      //drawLine(ctx, posX+this.width*scaleFactor, posY-3, posX+this.width*scaleFactor, posY-20)
-      //drawArrow(ctx, posX, posY-8, posX + this.width*scaleFactor, posY-8, this.width )
-
-      //drawLine(ctx, posX + this.width*scaleFactor+3, posY, posX + this.width*scaleFactor+20, posY);
-      //drawLine(ctx, posX + this.width*scaleFactor+3, posY+this.height*scaleFactor, posX + this.width*scaleFactor+20, posY+this.height*scaleFactor);
-      //drawArrow(ctx, posX + this.width*scaleFactor+17, posY, posX + this.width*scaleFactor+17, posY+this.height*scaleFactor, this.height )
-
-    }
-   
+  
     
     
     
@@ -298,6 +288,11 @@ class Einheit {
        
         const updatedRow = [...row]; // Copy the row to avoid direct mutation
         updatedRow[0] = { ...updatedRow[0], width: updatedRow[0].width - width }; // Update the width of the first element
+        updatedRow[0].heightDivision.forEach (part => {
+          if (part.type === "DSDK" || part.type === "DKDS") {
+            part.stulp = updatedRow[0].width / 2;
+          } 
+        })
   
         return updatedRow; // Return the updated row
       })

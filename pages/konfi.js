@@ -25,7 +25,7 @@ const Konfi = () => {
   );
   const prototypeEinheit = new Einheit(
     false,
-    [[{width: 1000, heightDivision: [{height: 1000, type: "POS"}] }]],
+    [[{width: 1000, heightDivision: [{height: 1000, type: "POS", stulp:0}] }]],
     [],
     [],
     [],
@@ -33,35 +33,35 @@ const Konfi = () => {
     prototypeProfil
   );
   const typesArray = [
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "POS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil), 
-    new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(true, [[{ width: 625,  heightDivision: [{height: 830, type: "DKL"}] }, { width: 625,heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 625,  heightDivision: [{height: 530, type: "DKL"}] }, { width: 625, heightDivision: [{height: 530, type: "DKR"}] }],[{width: 1250, heightDivision:[{height:300, type:"FB"}]}]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "POS", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DL", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DR", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKL", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 830,  heightDivision: [{height: 830, type: "DKR", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK", stulp:625}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK", stulp:625}] }]], [], [], [], [], prototypeProfil), 
+    new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS", stulp:625}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{width: 1250,  heightDivision: [{height: 830, type: "DKDS", stulp:625}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(true, [[{ width: 625,  heightDivision: [{height: 830, type: "DKL", stulp:0}] }, { width: 625,heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 625,  heightDivision: [{height: 530, type: "DKL", stulp:0}] }, { width: 625, heightDivision: [{height: 530, type: "DKR"}] }],[{width: 1250, heightDivision:[{height:300, type:"FB"}]}]], [], [], [], [], prototypeProfil),
   ];
 
   const openingsArray = [
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "K"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK"}] }]], [], [], [], [], prototypeProfil),
-    new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS"}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FB", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "FF", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DL", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DR", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830,  heightDivision: [{height: 830, type: "DKL", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "DKR", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 830, heightDivision: [{height: 830, type: "K", stulp:0}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{width: 1250,  heightDivision: [{height: 830, type: "DSDK", stulp:625}] }]], [], [], [], [], prototypeProfil),
+    new Einheit(false, [[{ width: 1250,  heightDivision: [{height: 830, type: "DKDS", stulp:625}] }]], [], [], [], [], prototypeProfil),
     
   ];
 
@@ -180,7 +180,6 @@ const Konfi = () => {
       openingsArray.forEach((einheit, index) => {
         // Draw the Einheit
         einheit.drawEinheit(posX, posY, optionCanvasRef, optionScaleFactor, chosenPart, [99,99], false);
-        //console.log(chosen)
         if (einheit.division === chosen) {
           
           const ctx = optionCanvasRef.current.getContext("2d");
@@ -243,7 +242,7 @@ const Konfi = () => {
       measureX -= 15
     });
 
-    let measureYBottom = 8
+    let measureYBottom = 11
     measure.bottom.forEach(measureRow => {
       let measureRowWidthCumulated = 0
       measureRow.forEach(measureRowDimension => {
@@ -311,7 +310,7 @@ const Konfi = () => {
     setScale();
     const currentEinheit = new Einheit(
       prototypeEinheit.schwelle,
-      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "POS"}] }]],
+      [[{width: dimensions.width, heightDivision: [{height: dimensions.height, type: "POS", stulp:0}] }]],
       //prototypeEinheit.division,
       [...prototypeEinheit.up],
       [...prototypeEinheit.down],
@@ -404,8 +403,8 @@ const Konfi = () => {
               newWidth2 >= 300 &&
               matrixOfEinheitObjects.length === 1
             ) {
-              const einheit1 = new Einheit( false,[[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "POS"}] }]],[],[],[],[], prototypeProfil);  
-              const einheit2 = new Einheit(false, [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "POS"}] }]],[],[],[],[],prototypeProfil);
+              const einheit1 = new Einheit( false,[[{ width: newWidth1, heightDivision: [{height: deletedEinheit.height, type: "POS", stulp:0}] }]],[],[],[],[], prototypeProfil);  
+              const einheit2 = new Einheit(false, [[{ width: newWidth2, heightDivision: [{height: deletedEinheit.height, type: "POS", stulp:0}] }]],[],[],[],[],prototypeProfil);
               updatedArray.splice(index, 1, einheit1, einheit2);
               updatedMatrix[rowIndex] = updatedArray;
             }
@@ -415,8 +414,8 @@ const Konfi = () => {
             );
             let newHeight2 = deletedEinheit.height - newHeight1;
             if (newHeight1 >= 300 && newHeight2 >= 300 && row.length === 1) {
-              const einheit1 = new Einheit(false,[[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "POS"}] }]],[],[],[],[],prototypeProfil);
-              const einheit2 = new Einheit(false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "POS"}] }]],[],[],[],[],prototypeProfil);
+              const einheit1 = new Einheit(false,[[{ width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "POS", stulp:0}] }]],[],[],[],[],prototypeProfil);
+              const einheit2 = new Einheit(false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight2, type: "POS", stulp:0}] }]],[],[],[],[],prototypeProfil);
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
               updatedMatrix.splice(rowIndex, 1, updatedArray, [einheit2]);
@@ -425,7 +424,7 @@ const Konfi = () => {
           } else if (divisionMode === "Abschneiden") {
             let newHeight1 = Math.ceil((y - posY) / dimensions.scaleFactor);
             if (newHeight1 >= 300 && matrixOfEinheitObjects.length === 1) {
-              const einheit1 = new Einheit( false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "POS"}] }]], [], [],  [], [],  prototypeProfil );
+              const einheit1 = new Einheit( false,[[{  width: deletedEinheit.width, heightDivision: [{height: newHeight1, type: "POS", stulp:0}] }]], [], [],  [], [],  prototypeProfil );
               updatedArray.splice(index, 1, einheit1);
               updatedMatrix[rowIndex] = updatedArray;
               shouldBreak = true;
@@ -463,7 +462,8 @@ const Konfi = () => {
                     width: obj.width * widthRescaleFactor, // Update width
                     heightDivision: obj.heightDivision.map(part => ({
                       ...part,
-                      height: part.height * heightRescaleFactor // Update height
+                      height: part.height * heightRescaleFactor, // Update height
+                      stulp: (part.type === "DSDK" || part.type === "DKDS") ? (obj.width/2) * widthRescaleFactor  : 0
                     }))
                   }))
                 );
@@ -481,10 +481,11 @@ const Konfi = () => {
 
              let updatedObject = {
               ...targetObject, // Spread operator to copy properties
-              type: chosenDivision[0][0].heightDivision[0].type // Update the 'type' property
+              type: chosenDivision[0][0].heightDivision[0].type, // Update the 'type' property
+              stulp: (chosenDivision[0][0].heightDivision[0].type === "DSDK" || chosenDivision[0][0].heightDivision[0].type === "DKDS") ? deletedEinheit.division[chosenPart[2]][chosenPart[3]].width/2 : 0
             };
             deletedEinheit.division[chosenPart[2]][chosenPart[3]].heightDivision[chosenPart[4]] = JSON.parse(JSON.stringify(updatedObject)); 
-
+            
             shouldBreak = true;
 
           } else if (
@@ -533,7 +534,7 @@ const Konfi = () => {
                           );
                           einheit1.updateFieldHeights()
                       } 
-                    } else if (fieldRow.length > 1) {
+                    } else if (fieldRow.length > 1 &&  matrixOfEinheitObjects.length === 1) {
                       const cumulatedParts=0;
                       field.heightDivision.forEach((part,partIndex) => {                     
                         if ( 
