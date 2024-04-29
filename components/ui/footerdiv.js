@@ -217,7 +217,7 @@ function footer() {
 
        
           <div className="tl w-100">
-            <p className="gray f7">© 2022. Alle Abbildungen, Texte, Filme und 3d Modelle sind urheberrechtlich geschützt. Bei Interesse für die Benutzng bitten wir um Kontakt. </p>
+            <p className="gray f7">© 2021 - 2024. Alle Abbildungen, Texte, Filme und 3d Modelle sind urheberrechtlich geschützt. Bei Interesse für die Benutzng bitten wir um Kontakt. </p>
           </div>
         </div>
         );
