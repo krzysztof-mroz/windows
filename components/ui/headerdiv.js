@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import CTAButton from "./CTAButton";
-import FruehbucherRabatt from "./FruehbucherRabatt";
+import AktionRabatt from "./AktionRabatt";
 import { useRouter } from 'next/router';
 
 function header(props) {
@@ -168,7 +168,7 @@ function header(props) {
         </div>
       </div>
       {ifAnfrage != "yes" && <CTAButton />}
-      
+      <AktionRabatt />
       
     </div>
   );
