@@ -17,7 +17,7 @@ function Aluplast() {
           content="fenster, kunststofffenster, fenster aus polen, profine, aluplast, fenster konfigurator"
         />
       </Head>
-      <HeaderDiv title="Aluplast Kunststoff Fenster" subtitle="Versteckte Stäke der Technologie"/>
+      <HeaderDiv title="Aluplast Kunststoff Fenster" subtitle="Versteckte Stärke der Technologie"/>
 
       <Aluplastdiv />
 
