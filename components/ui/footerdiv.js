@@ -44,6 +44,19 @@ function footer() {
               <Link href="/fenster">
                 <a className="f6 fw4 no-underline db   ph3">Fenster</a>
               </Link>
+
+              <Link href="/salamander">
+                <a className="f6 fw4 no-underline db   ph3">Salamander Kunststoff Fenster</a>
+              </Link>
+
+              <Link href="/aluplast">
+                <a className="f6 fw4 no-underline db   ph3">Aluplast Kunststoff Fenster</a>
+              </Link>
+
+              <Link href="/gealan">
+                <a className="f6 fw4 no-underline db   ph3">Gealan Kunststoff Fenster</a>
+              </Link>
+
               <Link href="/schuecopvc">
                 <a className="f6 fw4 no-underline db   ph3">Schüco Kunststoff Fenster</a>
               </Link>
