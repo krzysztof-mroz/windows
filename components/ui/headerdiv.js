@@ -168,7 +168,7 @@ function header(props) {
         </div>
       </div>
       {ifAnfrage != "yes" && <CTAButton />}
-      <AktionRabatt />
+     {/*  <AktionRabatt /> */}
       
     </div>
   );
