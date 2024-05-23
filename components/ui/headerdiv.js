@@ -155,11 +155,11 @@ function header(props) {
           <Link href="/aluplast">
             <a className="f6 fw4 no-underline  db  ph3">Aluplast</a>
           </Link>
-          <Link href="/koemmerling">
-            <a className="f6 fw4 no-underline  db  ph3">Kömmerling</a>
+          <Link href="/schuecopvc">
+            <a className="f6 fw4 no-underline  db  ph3">Schüco</a>
           </Link>
           <Link href="/salamander">
-            <a className="f6 fw4 no-underline  db  ph3">Salamander</a>
+            <a className="f6 fw7 black db ph3">Salamander</a>
           </Link>
           <Link href="/aluprof">
             <a className="f6 fw4 no-underline  db  ph3">Aluprof</a>
