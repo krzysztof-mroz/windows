@@ -18,7 +18,7 @@ function prodnavi() {
         <div className="db">
           
         
-          <Link href="/fenster">
+          {/* <Link href="/fenster">
             <a className="f6 fw8 bold dim no-underline  db dib pv2 ph3">Fenster</a>
           </Link>
           <Link href="/tueren">
@@ -30,7 +30,28 @@ function prodnavi() {
             <a className="f6 fw8 bold dim no-underline  db dib pv2 ph3">
               Beschattung
             </a>
-          </Link>
+          </Link> */}
+
+<Link href="/fenster">
+      <a className="w3-button w3-sand w3-hover-light-yellow  w3-text-black w3-margin">Fenster</a>
+    </Link>
+    <Link href="/tueren">
+      <a className="w3-button w3-sand w3-hover-light-yellow  w3-text-black w3-margin">
+        Haustüren
+      </a>
+    </Link>
+    <Link href="/rolllaeden">
+      <a className="w3-button w3-sand w3-hover-light-yellow  w3-text-black w3-margin">
+        Rollläden
+      </a>
+    </Link>
+
+    <Link href="/raffstoren">
+      <a className="w3-button w3-sand w3-hover-light-yellow  w3-text-black w3-margin">
+        Raffstoren
+      </a>
+    </Link>
+
          
           {/*<Link href="/">
             <a className="f6 fw4 dim no-underline db dib pv2 ph3">Sign Up</a>
