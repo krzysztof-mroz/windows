@@ -20,7 +20,7 @@ function navibar() {
       >
         <div className="dn db-l mt2-l">
           <Link href="/">
-            <a className="f6 fw8 bold dim no-underline db dib-l pv2 ph3">
+            <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">
               Polniche-Fenster.Com
             </a>
           </Link>
@@ -28,15 +28,15 @@ function navibar() {
             <a className="f6 fw4 dim no-underline db dib-l pv2 ph3">Start</a>
           </Link>
           <Link href="/fenster">
-            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">Fenster</a>
+            <a className="f6 fw8 bold dim no-underline  db dib-l pv2 ph3">Fenster</a>
           </Link>
           <Link href="/tueren">
-            <a className="f6 fw4 dim no-underline   db dib-l pv2 ph3">
+            <a className="f6 fw8 bold dim no-underline   db dib-l pv2 ph3">
               Haustüren
             </a>
           </Link>
           <Link href="/beschattung">
-            <a className="f6 fw4 dim no-underline  db dib-l pv2 ph3">
+            <a className="f6 fw8 bold dim no-underline  db dib-l pv2 ph3">
               Beschattung
             </a>
           </Link>
