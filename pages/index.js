@@ -12,7 +12,7 @@ import Visualisation from "../components/ui/visualisation";
 import ProductLink from "../components/ui/blocks/productlink";
 import Carousel from "../components/ui/blocks/carousel"
 import CustomerReview from "../components/ui/referenz";
-
+import Prodnavi from "../components/ui/prodnavi";
 
 
 
@@ -143,6 +143,7 @@ const WindowInfo = () => {
       </Head>
       
       <HeaderDiv title="Kunststoff und Alu Fenster" subtitle="Fensterlösungen nach Maß für jeden Bedarf" />
+      <Prodnavi />
      
       
       <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />    
