@@ -53,7 +53,7 @@ function header(props) {
   return (
     <div className="flex flex-wrap justify-around  w-100">
       {/* LOGO */}
-      <div className="mt4-l dn db-l w-100 w-20-l tc mv1">
+      <div className="mt5-l dn db-l w-100 w-20-l tc mv1">
         <img className="mt1 dib" src="/pics/logo_PF.png"></img>
       </div>
 
@@ -63,7 +63,7 @@ function header(props) {
           {/* <img className="mt1 mr1 " src="/pics/ikonki_rund.png"></img> */}
           <img 
           className=" mr1 grow shadow-hover" 
-          src="/pics/3_wochen_lieferzeit.png"
+          src="/pics/werbung_fensterpreis.jpg"
           onClick={handleClick}
           alt="3 Wochen Lieferzeit"
           ></img>
@@ -73,7 +73,7 @@ function header(props) {
           {/* <img className="mt1 mr1 " src="/pics/ikonki_rund.png"></img> */}
           <img 
           className=" mr1 grow shadow-hover" 
-          src="/pics/3_wochen_lieferzeit.png"
+          src="/pics/werbung_fensterpreis_mobile.jpg"
           onClick={handleClick}
           alt="3 Wochen Lieferzeit"
           ></img>
@@ -84,7 +84,7 @@ function header(props) {
 
       {/* DANE KONTAKTOWE DUZY EKRAN */}
 
-      <div className="dn db-l w-100 w-25-l fl tc tl-l mt4 mt1-m f5 w3-text-orange ">
+      <div className="dn db-l w-100 w-25-l fl tc tl-l mt6 mt1-m f5 w3-text-orange ">
         <div className="w-100 mv1">
           <img
             className="dib mr2"
