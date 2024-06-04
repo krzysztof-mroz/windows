@@ -28,7 +28,7 @@ function Header(props) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 6000); // Change slide every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [slides.length]);
