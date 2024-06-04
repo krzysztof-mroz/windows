@@ -15,14 +15,14 @@ function Header(props) {
     { src: "/pics/werbung_fensterpreis.jpg", alt: "Fenster Preise" },
     { src: "/pics/fenster_eigenschaften.jpg", alt: "Fenster Farben" },
     { src: "/pics/beschattung_werbung.jpg", alt: "Beschattung Rollläden, Raffstoren" },
- //   { src: "/pics/slide4.jpg", alt: "Slide 4" },
+    { src: "/pics/haustuer_werbung.jpg", alt: "Haustür Kunststoff und Alu" },
   ];
 
   const slidesMobile = [
     { src: "/pics/werbung_fensterpreis_mobile.jpg", alt: "Fenster Preise" },
     { src: "/pics/fenster_eigenschaften_mobile.jpg", alt: "Fenster Farben" },
     { src: "/pics/beschattung_werbung_mobile.jpg", alt: "Beschattung Rollläden, Raffstoren" },
-   // { src: "/pics/slide4_mobile.jpg", alt: "Slide 4" },
+    { src: "/pics/haustuer_werbung_mobile.jpg", alt: "Haustür Kunststoff und Alu" },
   ];
 
   useEffect(() => {
