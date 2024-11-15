@@ -10,11 +10,11 @@ import { getAllColours } from "../data/colours";
 function visualisation(props) {
 
     const [activeProfile, setActiveProfile] = useState(props.profil);
-    const [colorInside, setColorInside] = useState("weiss");
-    const [colorOutside, setColorOutside] = useState("weiss");
+    const [colorInside, setColorInside] = useState("grau_alu");
+    const [colorOutside, setColorOutside] = useState("grau_alu");
     const [bothSidesColor, setBothSidesColor] = useState(true);
     const [blackGasket, setBlackGasket] = useState(false);
-    const [aluProfile, setAluProfile] = useState(false);
+    const [aluProfile, setAluProfile] = useState(true);
     
     const farben = getAllColours();
 

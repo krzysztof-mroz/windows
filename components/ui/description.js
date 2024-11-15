@@ -9,12 +9,10 @@ function description() {
   {/* opis profilu */}
   <div className="flex flex-wrap justify-center mv1 fl w-100 w-30-l  b--moon-gray pa4">
     <h2 className="w-100 tc" id="tekstProfilu">
-      Kömmerling 88 MD
+        Aluprof MB 86 SI
     </h2>
     <p className="w-100 tc" id="komoryProfilu">
-      7 Kammer Profil mit 3 Dichtungen, 88 mm Einbautiefe. Versetzte
-      klassische Optik. Fenster Uw ab 0,8 W/(m²·K), Glas Ug ab 0,5
-      W/(m²·K).
+    Aluminium 3 gedämte Kammer, Rahmen 77 mm Einbauiefe. Flügel 86 mm. Mehrkammer-thermische Trennung, Rahmen Uf ab 0,92 W/(m²·K). Fenster Uw ab 0,72 W/(m²·K), Glas Ug ab 0,5 W/(m²·K).
     </p>
     
     

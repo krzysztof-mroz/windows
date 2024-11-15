@@ -59,7 +59,7 @@ const PROFILE = [
         movie: "./movies/living.mp4"
     },
     
-    {
+   /*  {
         id: "pic_profil_koemmerling_70",
         idcolor: "koemmerling_70_color", 
         idcena: "koemmerling_70_cena",
@@ -176,7 +176,7 @@ const PROFILE = [
         last: false,
         section: "./pics/sections/pe78.png",
         movie: "./movies/pe78.mp4"
-    },
+    }, */
 
     {
         id: "pic_profil_mb_70",

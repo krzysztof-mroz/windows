@@ -146,7 +146,7 @@ const WindowInfo = () => {
       <Prodnavi />
      
       
-      <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />    
+      <Visualisation profil = "Aluprof MB 86 SI" showProfiles = "yes" />    
   
   <Description />
  

@@ -3,7 +3,7 @@ import { getAllProfiles } from "../data/profiles";
 
 function profileStrip(props) {
   const profiles = getAllProfiles();
-  const [activeProfile, setActiveProfile] = useState("Kömmerling 88 MD");
+  const [activeProfile, setActiveProfile] = useState("Aluprof MB 86 SI");
 
   return (
     <div className="flex flex-wrap justify-center fl w-100 mb1 mh5 v-mid">
