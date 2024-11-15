@@ -25,13 +25,13 @@ function Header(props) {
     { src: "/pics/haustuer_werbung_mobile.jpg", alt: "Haustür Kunststoff und Alu" },
   ];
 
-  useEffect(() => {
+ useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
     }, 6000); // Change slide every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [slides.length]);
+  }, [slides.length]); 
 
   const handlePrevSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
@@ -84,7 +84,7 @@ function Header(props) {
 
       {/* IKONKI I TYTUL STRONY */}
       <div className="w-100 w-50-l fl tc mv1 mh1 ">
-        <div className="dn db-l hover-w3-border-orange relative">
+     {/*    <div className="dn db-l hover-w3-border-orange relative">
           <img 
             className="mr1 grow shadow-hover" 
             src={slides[currentSlide].src}
@@ -104,7 +104,7 @@ function Header(props) {
           />
           <button onClick={handlePrevSlide} className="arrow left-arrow">&#10094;</button>
           <button onClick={handleNextSlide} className="arrow right-arrow">&#10095;</button>
-        </div>
+        </div> */}
         <h1 className="fl f2 ma1 mt3-l w-100 tc">{title}</h1>
         <h2 className="fl f4 ma1 w-100 tc">{subtitle}</h2>
       </div>
@@ -191,7 +191,7 @@ function Header(props) {
             <a className="f6 fw4 no-underline db ph3">Schüco</a>
           </Link>
           <Link href="/salamander">
-            <a className="f6 fw7 black db ph3">Salamander</a>
+            <a className="f6 fw4 no-underline db ph3">Salamander</a>
           </Link>
           <Link href="/aluprof">
             <a className="f6 fw4 no-underline db ph3">Aluprof</a>
