@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 const CTAButton = () => {
   const [ctaText, setCtaText] = useState('');
+  const [isBlue, setIsBlue] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
@@ -18,22 +19,32 @@ const CTAButton = () => {
       'Genießen Sie Komfort und Stil. Lassen Sie uns Ihnen zeigen, wie – starten Sie hier Ihre Anfrage',
       'Kostenlose Beratung für Ihre Fensteranpassung. Senden Sie uns jetzt Ihre Anfrage!'
     ];
-    // Randomly select one of the CTA texts
     const randomCta = ctaOptions[Math.floor(Math.random() * ctaOptions.length)];
     setCtaText(randomCta);
+
+    const interval = setInterval(() => {
+      setIsBlue((prev) => !prev);
+    }, 6000); // Toggle color every 6 seconds
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleClick = () => {
-    // Logic to navigate to the 'kontakt/anfrage' component
     router.push('/kontakt/anfrage');
   };
 
   return (
-    <div className="flex justify-center pa4">
+    <div className="flex justify-center p-4">
       <button
         onClick={handleClick}
-        className="w3-button w3-border w3-border-red w3-deep-orange mv3 mh2 hover-w3-border-orange hover-w3-sand"
-        style={{ whiteSpace: 'normal' }}
+        className="transition-colors duration-3000 ease-in-out rounded-md text-white w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 py-3"
+        style={{
+          whiteSpace: 'normal',
+          backgroundColor: isBlue ? '#0074D9' : '#FF4136', // Lighter blue and red
+          color: 'white', // Ensure text remains white
+          border: 'none', // No border
+          transition: 'background-color 3s ease-in-out', // Gradual background color change
+        }}
       >
         {ctaText}
       </button>
