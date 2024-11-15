@@ -105,6 +105,18 @@ function Header(props) {
           <button onClick={handlePrevSlide} className="arrow left-arrow">&#10094;</button>
           <button onClick={handleNextSlide} className="arrow right-arrow">&#10095;</button>
         </div> */}
+
+        <video
+        src="./movies/living.mp4" 
+        autoPlay 
+        loop 
+        playsInline 
+        controls={false} 
+        style={{ width: "100%", height: "auto" }}
+        type="video/mp4">
+           
+          </video>
+
         <h1 className="fl f2 ma1 mt3-l w-100 tc">{title}</h1>
         <h2 className="fl f4 ma1 w-100 tc">{subtitle}</h2>
       </div>
