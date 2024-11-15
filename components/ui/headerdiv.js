@@ -82,10 +82,11 @@ function Header(props) {
         <img className="mt1 dib" src="/pics/logo_PF.png" alt="Logo"></img>
       </div>
 
+      
+
       {/* IKONKI I TYTUL STRONY */}
       <div className="w-100 w-50-l fl tc mv1 mh1 ">
-     {/*
-        REKLAMY W SLAJDACH:
+     {/* REKLAMY W SLAJDACH:
         <div className="dn db-l hover-w3-border-orange relative">
           <img 
             className="mr1 grow shadow-hover" 
@@ -107,7 +108,7 @@ function Header(props) {
           <button onClick={handlePrevSlide} className="arrow left-arrow">&#10094;</button>
           <button onClick={handleNextSlide} className="arrow right-arrow">&#10095;</button>
         </div> */}
-
+        <div className={ifAnfrage === 'yes' ? 'dn db-l relative' : ''}>
         <video
         src="./movies/living.mp4" 
         autoPlay 
@@ -117,6 +118,7 @@ function Header(props) {
         controls={false} 
         style={{ width: "100%", height: "auto" }}
         type="video/mp4"/>
+        </div>
            
 
         <h1 className="fl f2 ma1 mt3-l w-100 tc">{title}</h1>
