@@ -37,13 +37,17 @@ const CTAButton = () => {
     <div className="flex justify-center p-4">
       <button
         onClick={handleClick}
-        className="transition-colors duration-3000 ease-in-out rounded-md text-white w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 py-3"
+        className="transition-colors duration-3000 ease-in-out rounded-md text-white w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-1/3 mv3"
         style={{
           whiteSpace: 'normal',
           backgroundColor: isBlue ? '#0074D9' : '#FF4136', // Lighter blue and red
           color: 'white', // Ensure text remains white
           border: 'none', // No border
           transition: 'background-color 3s ease-in-out', // Gradual background color change
+          paddingTop: '1rem', // Custom large vertical padding
+          paddingBottom: '1rem', // Custom large vertical padding
+          paddingLeft: '1rem', // Custom large vertical padding
+          paddingRight: '1rem', // Custom large vertical padding
         }}
       >
         {ctaText}
