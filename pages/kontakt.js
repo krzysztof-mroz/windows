@@ -21,7 +21,7 @@ function Kontakt() {
         <p className="gray f6">Münzstraße 2 </p>
         <p className="gray f6">38100 Braunschweig </p>  
         <p className="gray f6">VAT ID: DE345506278</p>
-        <p className="gray f6">Tel: 0800 4470099</p>
+        <p className="gray f6">Tel: +49 157 3744 8021</p>
         <p className="gray f6">Email: info@polnische-fenster.com</p>
         <p className="gray f6">Handelsregisternummer: HRB 209415</p>
       </div>

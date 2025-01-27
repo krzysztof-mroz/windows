@@ -46,7 +46,7 @@ function Header(props) {
   };
 
   const contactData = {
-    phone: "0800 44 700 99",
+    phone: "+49 157 3744 8021",
     email: "info@polnische-fenster.com",
     whatsapp: "+4915737448021",
   };
@@ -134,7 +134,7 @@ function Header(props) {
             src="/pics/svg/anruf.svg"
             alt="Phone"
           />
-          <p className="dib">0800 44 700 99</p>
+          <p className="dib">+49 157 3744 8021</p>
         </div>
         <div className="w-100 mv1">
           <img
