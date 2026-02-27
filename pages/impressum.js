@@ -21,7 +21,7 @@ function Kontakt() {
         <p className="gray f6">VAT ID: DE345506278</p>
         <p className="gray f6">Tel: +49 157 3744 8021</p>
         <p className="gray f6">Email: info@polnische-fenster.com</p>
-        <p className="gray f6">Handelsregisternummer Braunschweig: HRB 209415</p>
+        <p className="gray f6">Handelsregisternummer: HRB 209415</p>
       </div>
       
     </Fragment>
