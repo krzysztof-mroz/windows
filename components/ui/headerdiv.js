@@ -110,7 +110,7 @@ function Header(props) {
         </div> */}
         <div className={ifAnfrage === 'yes' ? 'dn db-l relative' : ''}>
         <video
-        src="./movies/living.mp4" 
+        src="/movies/living.mp4" 
         autoPlay 
         loop 
         muted
