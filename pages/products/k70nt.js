@@ -84,15 +84,12 @@ function K70Nt() {
           {visible.map((m) => (
             <article key={m.id} className="modelCard ba b--moon-gray br3 overflow-hidden bg-white">
               <div className="imgWrap">
-                <Image
-                  src={m.src}
+              <img
+                  src={m.src}  // "/modelle/modell02.png"
                   alt={`${m.name} Nebeneingangstür`}
-                  width={220}
-                  height={430}
-                  sizes="(max-width: 480px) 50vw, (max-width: 900px) 33vw, 25vw"
-                  style={{ width: "100%", height: "auto" }}
-                  unoptimized
-                  // Next domyślnie lazy-loaduje obrazki poza viewportem
+                  loading="lazy"
+                  decoding="async"
+                  style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
   
