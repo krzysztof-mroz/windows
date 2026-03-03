@@ -75,16 +75,21 @@ function K70Nt() {
 
     <Fragment>
       <Head>
-        <title>Polnische Fenster Kömmerling 76 Nebeneingangstür</title>
+        <title>Nebeneingangstür aus Polen – Kunststoff oder Aluminium | Preise & Modelle</title>
         <meta name='description'
-              content='Kömmerling 70 Nebeneinganstür Schwelle Visualisierung. 3d Visualisierung'
+              content='Nebeneingangstür aus Polen – Verschiedene Modelle, Farben & Extras.'
         />
-         <meta name='keywords'
-              content='tür, nebeneingangstür, nebentür, kömmerling, kömmerling 70, kunststoff haustür, tür aus polen'
-        />
+         
+        <link rel="canonical" href="https://www.polnische-fenster.com/products/k70nt" />
+         {/* Open Graph (lepszy CTR przy share) */}
+        <meta property="og:title" content="Nebeneingangstür aus Polen – Kunststoff" />
+        <meta property="og:description" content="Modelle, Preise, Farben & schnelle Angebotsanfrage." />
+        <meta property="og:url" content="https://www.polnische-fenster.com/products/k70nt" />
+        <meta property="og:type" content="product" />
         <link rel="icon" href="/favicon.ico" />
+        
       </Head>
-      <HeaderDiv title="Kömmerling 70 Nebeneingangstür" />
+      <HeaderDiv title="Nebeneingangstür aus Polen – Kunststoff" />
       <ProductVisualisation product="k70nt" camera="35,35,35" productName="Kömmerling 70 Nebeneingangstür"  />
    
       
@@ -116,19 +121,7 @@ function K70Nt() {
         </div>
       </div>
 
-      <Carousel
-        show={Math.floor((size.width - 50) / 186)}
-        title="Ähnliche Produkte:"
-      >
-        {similar}
-      </Carousel>
-
-      <Carousel
-        show={Math.floor((size.width - 50) / 186)}
-        title="Unsere Fenster:"
-      >
-        {together}
-      </Carousel>
+      
      
     </Fragment>
   );
