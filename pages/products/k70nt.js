@@ -83,13 +83,12 @@ function K70Nt() {
         <div className="modelsGrid mt3">
           {visible.map((m) => (
             <article key={m.id} className="modelCard ba b--moon-gray br3 overflow-hidden bg-white">
-              <div className="imgWrap">
-              <img
-                  src={m.src}  // "/modelle/modell02.png"
+              <div className="imgBox">
+                <img
+                  src={m.src}
                   alt={`${m.name} Nebeneingangstür`}
                   loading="lazy"
                   decoding="async"
-                  style={{ width: "100%", height: "auto", display: "block" }}
                 />
               </div>
   
@@ -98,7 +97,10 @@ function K70Nt() {
                   <p className="ma0 b">{m.name}</p>
                   <p className="ma0 orange b">ab {m.price} €</p>
                 </div>
-                <a className="db mt2 f6 link blue" href="#anfrage">
+                <a
+                    href="https://www.polnische-fenster.com/kontakt/anfrage"
+                    className="db mt2 f6 link blue"
+                  >
                   Angebot anfragen →
                 </a>
               </div>
@@ -119,6 +121,27 @@ function K70Nt() {
         )}
   
         <style jsx>{`
+
+        .imgBox {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 12px 0;
+            background: #fafafa;
+          }
+
+          .imgBox img {
+            width: 120px;        /* 🔥 kluczowe */
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+          }
+
+          @media (hover: hover) {
+            .imgBox img:hover {
+              transform: scale(1.05);
+            }
+          }
           /* Mobile-first: 2 kolumny */
           .modelsGrid {
             display: grid;
@@ -189,36 +212,10 @@ function K70Nt() {
       <HeaderDiv title="Nebeneingangstür aus Polen" subtitle="Unschlagbare Preise und Modellvielfalt"/>
 
       <ModelsGrid initialCount={8} />
-      <ProductVisualisation product="k70nt" camera="35,35,35" productName="Kömmerling 70 Nebeneingangstür"  />
+      
    
       
-      <div className="flex flex-wrap justify-around mb3 w-100 tc">
-        <div className="w-100 w-40-l mt1 mt5-l">
-        <h5 className="gray">Kömmerling 70 Nebeneingangstür</h5>
-         
-        <ul className="gray f6 tl">
-          <li>Flügelhöhe 110 mm,</li>
-            <li>Einbautiefe von 70 mm,</li>
-            <li><b>Empfohlen für breite Balkontüren, mit flacher Schwelle, oder ohne.</b></li>
-            <li>Wärmedämmung mit Uf = 1,2 - 1,3 W/(m2K),</li>
-            <li>2 versteckte Dichtungen</li>
-            <li>Gute Grundsicherheit, Einbruschschutz bis RC2,</li>
-             <li>Stabilität durch umlaufende Stahlverstärkung im Türflügel,</li>
-             <li>Zahlreiche Farbvarianten sind möglich,</li>
-             <li>Hochwertige Dichtungen aus EPDM,</li>
-             <li>Barrierefreie Ausführung mit Schwellenhöhe von 20 mm,</li>
-             <li>Individuelle Gestaltungsmöglichkeiten durch verschiedene Griffgarnituren, Beschläge und Füllungen.</li>
-				  </ul>
-        
-        
-        </div>
-        <div className="w-100 w-50-l  b--moon-gray pa2 silver">
-        <Image
-        src={k70ntImage}
-        alt="Kömmerling 70 Nebeneingangstür"
-      />
-        </div>
-      </div>
+
 
       
      
