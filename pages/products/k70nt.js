@@ -81,7 +81,7 @@ function ModelsGrid({
             className="pointer bg-orange white bn pa3 br2"
             onClick={() => setShowAll(true)}
           >
-            Alle {models.length} Modelle ansehen
+            Alle Modelle ansehen
           </button>
         </div>
       )}
