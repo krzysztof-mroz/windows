@@ -93,7 +93,7 @@ function ModelsGrid({
           display: flex;
           justify-content: center;
           padding: 12px 0;
-          background: #fafafa;
+          background: #ffffff;
         }
 
         .imgBox img {
@@ -132,7 +132,7 @@ function ModelsGrid({
         }
 
         .imgWrap {
-          background: #fafafa;
+          background: #ffffff;
           padding: 10px;
           display: flex;
           justify-content: center;
