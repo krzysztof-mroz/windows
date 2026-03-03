@@ -41,9 +41,9 @@ function K70Nt() {
   }
 
   function ModelsGrid({
-    initialCount = 8,
+    initialCount = 2,
     priceFrom = 835,       // baza do przykładowych cen
-    priceStep = 15         // przykładowa różnica między modelami (podmień na realne dane)
+    priceStep = 2         // przykładowa różnica między modelami (podmień na realne dane)
   }) {
     const [showAll, setShowAll] = useState(false);
   
@@ -91,6 +91,7 @@ function K70Nt() {
                   height={430}
                   sizes="(max-width: 480px) 50vw, (max-width: 900px) 33vw, 25vw"
                   style={{ width: "100%", height: "auto" }}
+                  unoptimized
                   // Next domyślnie lazy-loaduje obrazki poza viewportem
                 />
               </div>
