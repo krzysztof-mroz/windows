@@ -35,9 +35,7 @@ const ICONS = {
 
 export default function NebeneingangLandingSection({
   // Podmień ścieżki na swoje
-  hingeImg = "/assets/hinge-drhahn.png",     // Dr Hahn
-  lockImg = "/assets/gu-secury.png",         // GU Secury
-  drawingImg = "/assets/door-drawing.png",   // rysunek drzwi
+
   minPriceText = "ab 835 €",                 // dynamicznie możesz wstawić z modeli
 }) {
   return (
@@ -54,7 +52,7 @@ export default function NebeneingangLandingSection({
               <li><b>5 Luftkammern</b> für bessere Wärmeisolierung</li>
               <li><b>Ud 1,3 W/(m²K)</b> oder besser</li>
               <li><b>Mehrpunkt-Verriegelung</b> (z.&nbsp;B. GU Secury Automatic)</li>
-              <li><b>Stabile Profile</b> mit 127&nbsp;mm Bautiefe</li>
+              <li><b>Stabile Profile</b> mit 127&nbsp;mm Profilbreite</li>
               <li><b>Flache Aluminium-Bodenschwelle</b></li>
               <li><b>Robuste Scharniere</b> von Dr Hahn</li>
               <li><b>Schutz für Ihr Eigentum</b> – solide Grundsicherheit</li>
@@ -78,41 +76,7 @@ export default function NebeneingangLandingSection({
           </div>
         </div>
 
-        {/* 3 grafiki / karty */}
-        <div className="pfMediaGrid" aria-label="Technik Highlights">
-          <figure className="pfMedia">
-            <div className="pfMediaImg">
-              {/* miejsce na Twoją grafikę */}
-              <img src={hingeImg} alt="Dr Hahn Scharniere" loading="lazy" decoding="async" />
-            </div>
-            <figcaption className="pfMediaCap">
-              <b>DR HAHN</b>
-              <span>Sichere Scharniere</span>
-            </figcaption>
-          </figure>
-
-          <figure className="pfMedia">
-            <div className="pfMediaImg">
-              {/* miejsce na Twoją grafikę */}
-              <img src={lockImg} alt="GU Secury Automatic Mehrpunktverriegelung" loading="lazy" decoding="async" />
-            </div>
-            <figcaption className="pfMediaCap">
-              <b>GU SECURY AUTOMATIC</b>
-              <span>Stabile Mehrpunkt-Verriegelung</span>
-            </figcaption>
-          </figure>
-
-          <figure className="pfMedia">
-            <div className="pfMediaImg">
-              {/* miejsce na Twoją grafikę */}
-              <img src={drawingImg} alt="Maße & Zeichnung" loading="lazy" decoding="async" />
-            </div>
-            <figcaption className="pfMediaCap">
-              <b>MAßE</b>
-              <span>Individuelle Maßanfertigung</span>
-            </figcaption>
-          </figure>
-        </div>
+       
 
         {/* 4 kafelki H2 (wg Twoich nagłówków) */}
         <div className="pfInfoGrid">
