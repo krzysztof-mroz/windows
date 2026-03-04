@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { getModelGrossPrice, formatEUR } from "../data/nebeneingangPrices"; 
+import { getModelGrossPrice, formatEUR } from "./data/nebeneingangPrices";
 // ⬆️ jeśli ModelsGrid jest w /components, a data w /data, to ta ścieżka jest OK.
 // Jeśli masz inaczej, dopasuj: np. "../../data/nebeneingangPrices"
 
