@@ -71,6 +71,18 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
         ))}
       </div>
 
+      {!showAll && models.length > initialCount && (
+        <div className="tc mt3">
+          <button
+            type="button"
+            className="pointer bg-orange white bn pa3 br2"
+            onClick={() => setShowAll(true)}
+          >
+            Alle Modelle ansehen
+          </button>
+        </div>
+      )}
+
       <style jsx>{`
         /* mobile-first */
         .modelsGrid {
