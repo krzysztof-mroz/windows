@@ -1,9 +1,8 @@
 import { Fragment, useState, useEffect, useMemo } from "react";
 import Head from 'next/head';
 import Image from 'next/image'
-import k70ntImage from "../../public/k70_nt_golden_oak.jpg"
 import HeaderDiv from "../../components/ui/headerdiv";
-import ProductVisualisation from "../../components/ui/productvisualisation"
+import NebeneingangLandingSection from "../../components/NebeneingangLandingSection";
 
 
 function ModelsGrid({
@@ -213,6 +212,13 @@ function K70Nt() {
       </Head>
       <HeaderDiv title="Nebeneingangstür aus Polen" subtitle="Unschlagbare Preise und Modellvielfalt"/>
 
+      <NebeneingangLandingSection
+        hingeImg="/drhahn.png"          
+        lockImg="/gusecury.png"         
+        drawingImg="/drawing.png"       
+        minPriceText="ab 835 €"
+      />
+      
       <ModelsGrid initialCount={8} />
       
    
