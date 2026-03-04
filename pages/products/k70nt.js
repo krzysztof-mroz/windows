@@ -3,9 +3,10 @@ import Head from 'next/head';
 import Image from 'next/image'
 import HeaderDiv from "../../components/ui/headerdiv";
 import NebeneingangLandingSection from "../../components/NebeneingangLandingSection";
+import { getMinGrossPrice, formatEUR } from "../../components/data/nebeneingangPrices";
+import ModelsGrid from "../../components/ModelsGrid";
 
-
-function ModelsGrid({
+/* function ModelsGrid({
   initialCount = 2,
   priceFrom = 835,       // baza do przykładowych cen
   priceStep = 2         // przykładowa różnica między modelami (podmień na realne dane)
@@ -96,7 +97,7 @@ function ModelsGrid({
         }
 
         .imgBox img {
-          width: 120px;        /* 🔥 kluczowe */
+          width: 120px;        
           height: auto;
           object-fit: contain;
           transition: transform 0.2s ease;
@@ -107,22 +108,21 @@ function ModelsGrid({
             transform: scale(1.05);
           }
         }
-        /* Mobile-first: 2 kolumny */
+       
         .modelsGrid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 12px;
         }
 
-        /* Tablet: 3 kolumny */
+        
         @media (min-width: 700px) {
           .modelsGrid {
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 14px;
           }
         }
-
-        /* Desktop: 4 kolumny */
+ 
         @media (min-width: 1024px) {
           .modelsGrid {
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -138,7 +138,7 @@ function ModelsGrid({
           align-items: center;
         }
 
-        /* Hover zoom tylko na urządzeniach z hoverem */
+        
         @media (hover: hover) and (pointer: fine) {
           .modelCard :global(img) {
             transition: transform 180ms ease;
@@ -150,7 +150,7 @@ function ModelsGrid({
       `}</style>
     </section>
   );
-}
+} */
 
 function K70Nt() {
     
@@ -218,7 +218,7 @@ function K70Nt() {
         minPriceText="ab 835 €"
       />
       
-      <ModelsGrid initialCount={8} />
+      <ModelsGrid initialCount={8} maxModel={40}/>
       
    
       
