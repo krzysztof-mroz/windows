@@ -32,7 +32,7 @@ function navibar() {
           </Link>
           <Link href="/tueren">
             <a className="f6 fw8 bold dim no-underline   db dib-l pv2 ph3">
-              Haustüren
+              Türen
             </a>
           </Link>
           <Link href="/beschattung">
