@@ -173,6 +173,23 @@ function Tueren() {
         subtitle="Haustüren aus Polen – Nebeneingangstüren und Innentüren"
       />
 
+      <div className="tc pa3 pa4-ns mw7 center">
+        <h2 className="f3">
+          Türen aus Polen – hochwertige Haustüren zum fairen Preis
+        </h2>
+
+        <p className="lh-copy mid-gray">
+          Immer mehr Bauherren entscheiden sich für 
+          <strong> Haustüren aus Polen</strong>, weil sie hochwertige Systeme,
+          moderne Designs und attraktive Preise verbinden.  
+          Bei uns finden Sie <strong>Kunststoff Haustüren</strong>, 
+          <strong> Aluminium Haustüren</strong>, 
+          <strong> Nebeneingangstüren</strong> und 
+          <strong> Innentüren</strong> – alles individuell konfigurierbar 
+          und direkt aus Polen geliefert.
+        </p>
+      </div>
+
       {/* NOWA responsywna siatka (zamiast TuerenDiv) */}
       <section className="pa3 pa4-ns">
         <div className="flex flex-wrap justify-center">
@@ -225,6 +242,43 @@ function Tueren() {
       </section>
 
       <HouseDoorsInfo />
+      <section className="pa4 mw7 center">
+        <h2 className="f3 tc">Häufige Fragen zu Türen aus Polen</h2>
+
+        <details className="mv3">
+          <summary className="pointer b">
+            Warum Haustüren aus Polen kaufen?
+          </summary>
+          <p className="lh-copy">
+            Haustüren aus Polen bieten oft ein sehr gutes Preis-Leistungs-Verhältnis.
+            Viele Hersteller arbeiten mit modernen Profilen und hochwertigen
+            Beschlägen, sodass Sie eine hochwertige Tür zu einem attraktiven Preis
+            erhalten.
+          </p>
+        </details>
+
+        <details className="mv3">
+          <summary className="pointer b">
+            Was ist besser: Kunststoff oder Aluminium Haustür?
+          </summary>
+          <p className="lh-copy">
+            Kunststoff Haustüren bieten eine sehr gute Wärmedämmung und sind meist
+            günstiger. Aluminium Haustüren sind besonders stabil und ermöglichen
+            moderne Designs mit großen Glasflächen.
+          </p>
+        </details>
+
+        <details className="mv3">
+          <summary className="pointer b">
+            Wie lange dauert die Lieferung einer Haustür aus Polen?
+          </summary>
+          <p className="lh-copy">
+            Die Lieferzeit hängt vom Modell und der Ausstattung ab. In der Regel
+            dauert die Produktion wenige Wochen, danach erfolgt die Lieferung
+            direkt zu Ihrer Baustelle.
+          </p>
+        </details>
+      </section>
       <CustomerReview />
     </Fragment>
   );
