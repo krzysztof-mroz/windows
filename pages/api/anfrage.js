@@ -9,6 +9,47 @@ function toInt(v) {
   return Number.isFinite(n) ? Math.round(n) : NaN;
 }
 
+const OPENING_OPTIONS = [
+  "Nach innen öffnend DIN links",
+  "Nach innen öffnend DIN rechts",
+  "Nach außen öffnend DIN links",
+  "Nach außen öffnend DIN rechts",
+];
+
+const COLOR_OPTIONS = [
+  "Weiß",
+  "Anthrazitgrau glatt",
+  "Anthrazitgrau Holzstruktur",
+  "DB 703",
+  "Nußbaum",
+  "Goldene Eiche",
+  "Mahagoni",
+  "Mooreiche",
+  "Bergkiefer",
+  "Silbergrau",
+  "Achatgrau",
+  "Basaltgrau",
+  "Signalgrau",
+  "Quarzgrau",
+  "Schiefergrau",
+  "Dunkelgrün",
+  "Stahlblau",
+  "Weinrot",
+  "Dunkelbraun",
+];
+
+function isOneOf(v, list) {
+  return list.includes(String(v ?? "").trim());
+}
+
+// kompatybilność wsteczna: jeśli gdzieś jeszcze wyślesz "weiß" -> zamień na "Weiß"
+function normalizeColor(v) {
+  const s = String(v || "").trim();
+  if (!s) return "Weiß";
+  if (s.toLowerCase() === "weiß" || s.toLowerCase() === "weiss") return "Weiß";
+  return s;
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
@@ -53,23 +94,46 @@ export default async function handler(req, res) {
       verbreiterung = `${v} mm`;
     }
 
+    // NOWE: otwieranie + kolory + checkboxy
+    const oeffnung = String(b.oeffnung || "Nach innen öffnend DIN rechts").trim();
+    if (!isOneOf(oeffnung, OPENING_OPTIONS)) {
+      return res.status(400).json({ error: "Ungültige Öffnungsrichtung." });
+    }
+
+    const farbeInnen = normalizeColor(b.farbeInnen);
+    const farbeAussen = normalizeColor(b.farbeAussen);
+    if (!isOneOf(farbeInnen, COLOR_OPTIONS)) return res.status(400).json({ error: "Ungültige Farbe innen." });
+    if (!isOneOf(farbeAussen, COLOR_OPTIONS)) return res.status(400).json({ error: "Ungültige Farbe außen." });
+
     const payload = {
       modell,
       anzahl,
-      farbeInnen: String(b.farbeInnen || "weiß"),
-      farbeAussen: String(b.farbeAussen || "weiß"),
+
+      oeffnung,
+
+      farbeInnen,
+      farbeAussen,
+
       breiteMm,
       hoeheMm,
       verbreiterung,
-      aussen: String(b.aussen || "Drücker"),
-      verglasung: String(b.verglasung || "2-fach, Klarglas"),
+
+      aussen: String(b.aussen || "Drücker").trim(),
+      verglasung: String(b.verglasung || "2-fach, Klarglas").trim(),
+
       elektrooeffner: !!b.elektrooeffner,
       tuerschliesser: !!b.tuerschliesser,
+
+      // NOWE:
+      vsgGlas: !!b.vsgGlas,
+      edelstahlDruecker: !!b.edelstahlDruecker,
+
       bemerkung: String(b.bemerkung || "").trim(),
       name,
       plz,
       email,
       telefon,
+
       createdAt: new Date().toISOString(),
       ip: req.headers["x-forwarded-for"] || req.socket?.remoteAddress || "",
       ua: req.headers["user-agent"] || "",
@@ -80,6 +144,7 @@ export default async function handler(req, res) {
       ``,
       `Modell: ${payload.modell}`,
       `Anzahl: ${payload.anzahl}`,
+      `Öffnungsrichtung: ${payload.oeffnung}`,
       `Farbe innen: ${payload.farbeInnen}`,
       `Farbe außen: ${payload.farbeAussen}`,
       `Breite: ${payload.breiteMm} mm`,
@@ -89,6 +154,8 @@ export default async function handler(req, res) {
       `Verglasung: ${payload.verglasung}`,
       `Elektroöffner: ${payload.elektrooeffner ? "JA" : "NEIN"}`,
       `Türschließer: ${payload.tuerschliesser ? "JA" : "NEIN"}`,
+      `VSG Glas: ${payload.vsgGlas ? "JA" : "NEIN"}`,
+      `Edelstahl Drücker: ${payload.edelstahlDruecker ? "JA" : "NEIN"}`,
       ``,
       `Bemerkung:`,
       payload.bemerkung || "-",
@@ -101,7 +168,6 @@ export default async function handler(req, res) {
       `Meta: ${payload.createdAt}`,
     ].join("\n");
 
-    // SMTP z Twojej skrzynki (bezinwestycyjnie)
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT || 587),
@@ -112,7 +178,6 @@ export default async function handler(req, res) {
       },
     });
 
-    // IMPORTANT: "from" zwykle musi być z Twojej domeny/skrzynki
     const from = process.env.MAIL_FROM || "info@polnische-fenster.com";
     const to = "info@polnische-fenster.com";
 
@@ -121,7 +186,7 @@ export default async function handler(req, res) {
     await transporter.sendMail({
       from,
       to,
-      replyTo: payload.email || undefined, // jak poda email, łatwo odpiszesz
+      replyTo: payload.email || undefined,
       subject,
       text,
     });

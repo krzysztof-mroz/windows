@@ -2,8 +2,53 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/router";
 
 const OPTIONS = {
-  aussen: ["Drücker", "einfacher Stoßgriff", "Edelstahl Stoßgriff"],
-  verglasung: ["2-fach, Klarglas", "3-fach, Klarglas", "2-fach, Milchglas", "3-fach, Milchglas"],
+  oeffnung: [
+    "Nach innen öffnend DIN links",
+    "Nach innen öffnend DIN rechts",
+    "Nach außen öffnend DIN links",
+    "Nach außen öffnend DIN rechts",
+  ],
+  farben: [
+    "Weiß",
+    "Anthrazitgrau glatt",
+    "Anthrazitgrau Holzstruktur",
+    "DB 703",
+    "Nußbaum",
+    "Goldene Eiche",
+    "Mahagoni",
+    "Mooreiche",
+    "Bergkiefer",
+    "Silbergrau",
+    "Achatgrau",
+    "Basaltgrau",
+    "Signalgrau",
+    "Quarzgrau",
+    "Schiefergrau",
+    "Dunkelgrün",
+    "Stahlblau",
+    "Weinrot",
+    "Dunkelbraun",
+  ],
+  aussen: [
+    "Drücker",
+    "Knauf",
+    "einfacher Stoßgriff",
+    "Edelstahl Stoßgriff 600 mm",
+    "Edelstahl Stoßgriff 800 mm",
+    "Edelstahl Stoßgriff 1000 mm",
+    "Edelstahl Stoßgriff 1200 mm",
+    "Edelstahl Stoßgriff 1600 mm",
+    "Edelstahl Stoßgriff 1800 mm",
+  ],
+  verglasung: [
+    "2-fach, Klarglas",
+    "2-fach, Milchglas",
+    "3-fach, Klarglas",
+    "3-fach, Milchglas",
+    "2-fach Ornamentglas",
+    "3-fach Ornamentglas",
+    "andere - Bemerkungen",
+  ],
 };
 
 function isEmail(v) {
@@ -12,6 +57,7 @@ function isEmail(v) {
 
 export default function AnfragePage() {
   const router = useRouter();
+
   const modell = useMemo(() => {
     const m = router.query.modell;
     if (!m) return "";
@@ -24,15 +70,27 @@ export default function AnfragePage() {
   const [form, setForm] = useState({
     modell: "",
     anzahl: 1,
-    farbeInnen: "weiß",
-    farbeAussen: "weiß",
+
+    // NOWE:
+    oeffnung: "Nach innen öffnend DIN rechts",
+
+    farbeInnen: "Weiß",
+    farbeAussen: "Weiß",
+
     breiteMm: 1000,
     hoeheMm: 2000,
     verbreiterungMm: "ohne",
+
     aussen: "Drücker",
     verglasung: "2-fach, Klarglas",
+
     elektrooeffner: false,
     tuerschliesser: false,
+
+    // NOWE:
+    vsgGlas: false,
+    edelstahlDruecker: false,
+
     bemerkung: "",
 
     plz: "",
@@ -58,15 +116,12 @@ export default function AnfragePage() {
     const e = {};
 
     if (!form.modell) e.modell = "Bitte Modell wählen (aus dem Link).";
-    if (!form.name.trim()) e.name = "Bitte Vor- und Nachname angeben.";
-    if (!form.plz.trim()) e.plz = "Bitte PLZ angeben.";
+    if (!String(form.name || "").trim()) e.name = "Bitte Vor- und Nachname angeben.";
+    if (!String(form.plz || "").trim()) e.plz = "Bitte PLZ angeben.";
 
-    const email = form.email.trim();
-    const telefon = form.telefon.trim();
-
-    if (!email && !telefon) {
-      e.contact = "Bitte mindestens E-Mail oder Telefon angeben.";
-    }
+    const email = String(form.email || "").trim();
+    const telefon = String(form.telefon || "").trim();
+    if (!email && !telefon) e.contact = "Bitte mindestens E-Mail oder Telefon angeben.";
     if (email && !isEmail(email)) e.email = "Bitte gültige E-Mail eingeben.";
 
     const anzahl = Number(form.anzahl);
@@ -82,6 +137,11 @@ export default function AnfragePage() {
       const v = Number(form.verbreiterungMm);
       if (!Number.isFinite(v) || v < 0 || v > 300) e.verbreiterungMm = "Verbreiterung: 'ohne' oder 0–300 mm";
     }
+
+    // proste walidacje list (żeby user nie wysłał śmieci)
+    if (!OPTIONS.oeffnung.includes(form.oeffnung)) e.oeffnung = "Bitte Öffnungsrichtung wählen.";
+    if (!OPTIONS.farben.includes(form.farbeInnen)) e.farbeInnen = "Bitte Farbe innen wählen.";
+    if (!OPTIONS.farben.includes(form.farbeAussen)) e.farbeAussen = "Bitte Farbe außen wählen.";
 
     setErrors(e);
     return Object.keys(e).length === 0;
@@ -101,13 +161,11 @@ export default function AnfragePage() {
       });
 
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data?.error || "Senden fehlgeschlagen.");
-      }
+      if (!res.ok) throw new Error(data?.error || "Senden fehlgeschlagen.");
 
       router.push(`/kontakt/anfrage/danke?modell=${encodeURIComponent(form.modell)}`);
     } catch (err) {
-      setServerError(err.message || "Senden fehlgeschlagen.");
+      setServerError(err?.message || "Senden fehlgeschlagen.");
     } finally {
       setSubmitting(false);
     }
@@ -148,26 +206,65 @@ export default function AnfragePage() {
 
         <div className="grid2">
           <div className="field">
-            <label>Farbe innen</label>
-            <input
-              value={form.farbeInnen}
-              onChange={(e) => setField("farbeInnen", e.target.value)}
-              className="input"
-              placeholder="weiß"
-            />
-          </div>
-          <div className="field">
-            <label>Farbe außen</label>
-            <input
-              value={form.farbeAussen}
-              onChange={(e) => setField("farbeAussen", e.target.value)}
-              className="input"
-              placeholder="weiß"
-            />
+            <label>Öffnungsrichtung</label>
+            <select
+              value={form.oeffnung}
+              onChange={(e) => setField("oeffnung", e.target.value)}
+              className={`input ${errors.oeffnung ? "err" : ""}`}
+            >
+              {OPTIONS.oeffnung.map((o) => (
+                <option key={o} value={o}>
+                  {o}
+                </option>
+              ))}
+            </select>
+            {errors.oeffnung && <p className="errText">{errors.oeffnung}</p>}
           </div>
 
           <div className="field">
-            <label>Breite (mm)</label>
+            <label>Farbe innen</label>
+            <select
+              value={form.farbeInnen}
+              onChange={(e) => setField("farbeInnen", e.target.value)}
+              className={`input ${errors.farbeInnen ? "err" : ""}`}
+            >
+              {OPTIONS.farben.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+            {errors.farbeInnen && <p className="errText">{errors.farbeInnen}</p>}
+          </div>
+
+          <div className="field">
+            <label>Farbe außen</label>
+            <select
+              value={form.farbeAussen}
+              onChange={(e) => setField("farbeAussen", e.target.value)}
+              className={`input ${errors.farbeAussen ? "err" : ""}`}
+            >
+              {OPTIONS.farben.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+            {errors.farbeAussen && <p className="errText">{errors.farbeAussen}</p>}
+          </div>
+
+          <div className="field">
+            <label className="labelRow">
+              Breite (mm)
+              <a
+                className="miniLink"
+                href="https://www.polnische-fenster.com/aufmass"
+                target="_blank"
+                rel="noreferrer"
+              >
+                wie messe ich richtig
+              </a>
+            </label>
             <input
               type="number"
               value={form.breiteMm}
@@ -204,16 +301,24 @@ export default function AnfragePage() {
             <label>Außen</label>
             <select value={form.aussen} onChange={(e) => setField("aussen", e.target.value)} className="input">
               {OPTIONS.aussen.map((o) => (
-                <option key={o} value={o}>{o}</option>
+                <option key={o} value={o}>
+                  {o}
+                </option>
               ))}
             </select>
           </div>
 
           <div className="field">
             <label>Verglasung</label>
-            <select value={form.verglasung} onChange={(e) => setField("verglasung", e.target.value)} className="input">
+            <select
+              value={form.verglasung}
+              onChange={(e) => setField("verglasung", e.target.value)}
+              className="input"
+            >
               {OPTIONS.verglasung.map((o) => (
-                <option key={o} value={o}>{o}</option>
+                <option key={o} value={o}>
+                  {o}
+                </option>
               ))}
             </select>
           </div>
@@ -236,6 +341,20 @@ export default function AnfragePage() {
               onChange={(e) => setField("tuerschliesser", e.target.checked)}
             />
             <span>Türschließer</span>
+          </label>
+
+          <label className="check">
+            <input type="checkbox" checked={form.vsgGlas} onChange={(e) => setField("vsgGlas", e.target.checked)} />
+            <span>VSG Glas</span>
+          </label>
+
+          <label className="check">
+            <input
+              type="checkbox"
+              checked={form.edelstahlDruecker}
+              onChange={(e) => setField("edelstahlDruecker", e.target.checked)}
+            />
+            <span>Edelstahl Drücker</span>
           </label>
         </div>
 
@@ -311,9 +430,7 @@ export default function AnfragePage() {
           {submitting ? "Senden…" : "Anfrage senden"}
         </button>
 
-        <p className="fine">
-          Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung der Anfrage zu.
-        </p>
+        <p className="fine">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten zur Bearbeitung der Anfrage zu.</p>
       </form>
 
       <style jsx>{`
@@ -322,26 +439,56 @@ export default function AnfragePage() {
           margin: 0 auto;
           padding: 24px 16px;
         }
-        .head { text-align: center; margin-bottom: 14px; }
-        .title { margin: 0; font-size: 28px; line-height: 1.15; }
-        .sub { margin: 10px auto 0; color: #444; max-width: 60ch; }
-
+        .head {
+          text-align: center;
+          margin-bottom: 14px;
+        }
+        .title {
+          margin: 0;
+          font-size: 28px;
+          line-height: 1.15;
+        }
+        .sub {
+          margin: 10px auto 0;
+          color: #444;
+          max-width: 60ch;
+        }
         .card {
           border: 1px solid #e6e6e6;
           border-radius: 16px;
           background: #fff;
           padding: 16px;
         }
-
-        .h2 { margin: 18px 0 10px; font-size: 18px; }
+        .h2 {
+          margin: 18px 0 10px;
+          font-size: 18px;
+        }
         .grid2 {
           display: grid;
           grid-template-columns: 1fr;
           gap: 12px;
         }
-
-        .field label { display: block; font-weight: 600; margin: 0 0 6px; }
-        .input, .textarea, select.input {
+        .field label {
+          display: block;
+          font-weight: 600;
+          margin: 0 0 6px;
+        }
+        .labelRow {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 12px;
+        }
+        .miniLink {
+          font-weight: 500;
+          font-size: 12px;
+          color: #444;
+          text-decoration: underline;
+          white-space: nowrap;
+        }
+        .input,
+        .textarea,
+        select.input {
           width: 100%;
           border: 1px solid #e6e6e6;
           border-radius: 12px;
@@ -350,11 +497,22 @@ export default function AnfragePage() {
           outline: none;
           background: #fff;
         }
-        .textarea { resize: vertical; }
-
-        .hint { margin: 6px 0 0; font-size: 13px; color: #555; }
-        .err { border-color: #d14343; }
-        .errText { margin: 6px 0 0; color: #d14343; font-size: 13px; }
+        .textarea {
+          resize: vertical;
+        }
+        .hint {
+          margin: 6px 0 0;
+          font-size: 13px;
+          color: #555;
+        }
+        .err {
+          border-color: #d14343;
+        }
+        .errText {
+          margin: 6px 0 0;
+          color: #d14343;
+          font-size: 13px;
+        }
         .errBanner {
           margin: 12px 0 0;
           padding: 10px 12px;
@@ -364,7 +522,6 @@ export default function AnfragePage() {
           color: #8b1a1a;
           font-weight: 600;
         }
-
         .checks {
           display: flex;
           flex-wrap: wrap;
@@ -381,8 +538,10 @@ export default function AnfragePage() {
           background: #fff;
           user-select: none;
         }
-        .check input { width: 18px; height: 18px; }
-
+        .check input {
+          width: 18px;
+          height: 18px;
+        }
         .btn {
           width: 100%;
           margin-top: 14px;
@@ -395,10 +554,16 @@ export default function AnfragePage() {
           font-weight: 700;
           cursor: pointer;
         }
-        .btn:disabled { opacity: .7; cursor: not-allowed; }
-
-        .fine { margin: 10px 0 0; font-size: 13px; color: #555; text-align: center; }
-
+        .btn:disabled {
+          opacity: 0.7;
+          cursor: not-allowed;
+        }
+        .fine {
+          margin: 10px 0 0;
+          font-size: 13px;
+          color: #555;
+          text-align: center;
+        }
         /* honeypot hidden */
         .hp {
           position: absolute;
@@ -408,13 +573,26 @@ export default function AnfragePage() {
           height: 1px;
           overflow: hidden;
         }
-
         @media (min-width: 720px) {
-          .wrap { padding: 28px 20px; }
-          .title { font-size: 34px; }
-          .card { padding: 18px; }
-          .grid2 { grid-template-columns: 1fr 1fr; }
-          .btn { width: auto; min-width: 260px; margin-left: auto; margin-right: auto; display: block; }
+          .wrap {
+            padding: 28px 20px;
+          }
+          .title {
+            font-size: 34px;
+          }
+          .card {
+            padding: 18px;
+          }
+          .grid2 {
+            grid-template-columns: 1fr 1fr;
+          }
+          .btn {
+            width: auto;
+            min-width: 260px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+          }
         }
       `}</style>
     </section>
