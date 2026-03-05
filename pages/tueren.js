@@ -169,8 +169,8 @@ function Tueren() {
       </Head>
 
       <HeaderDiv
-        title="Eingangstüren aus Kunststoff und Aluminium"
-        subtitle="Türen aus Polen – die beste Wahl für sichere und ansprechende Türen"
+        title="Türen aus Kunststoff und Aluminium"
+        subtitle="Haustüren aus Polen – Nebeneingangstüren und Innentüren"
       />
 
       {/* NOWA responsywna siatka (zamiast TuerenDiv) */}
