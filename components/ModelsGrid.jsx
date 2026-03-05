@@ -66,7 +66,7 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
 
               <a
                 className="db mt2 f6 link blue"
-                href={`https://www.polnische-fenster.com/kontakt/anfrage?modell=${m.id}`}
+                href={`/kontakt/anfragent?modell=${m.id}`}
               >
                 Angebot anfragen →
               </a>
