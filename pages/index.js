@@ -121,6 +121,10 @@ const WindowInfo = () => {
         <p className="lh-copy">
           Entdecken Sie auch unsere günstigen <span className="b">Fenster aus Polen</span>. Informieren Sie sich über unsere Auswahl an Fenster- und Türgriffen, flachen Türschwellen, auch für Schiebetüren, sowie über <span className="b">einbruchsichere Fenster und Türen</span>. Wir übernehmen gerne den Einbau, das Abdichten und das Einstellen Ihrer Fenster. Begleiten Sie uns auf dieser wundervollen Reise durch die Welt der Fenster und Türen.
         </p>
+        <p className="lh-copy">
+          Mehr Infos: <a href="/fenster" className="link orange">Fenster aus Polen</a> und{" "}
+          <a href="/tueren" className="link orange">Türen aus Polen</a>.
+        </p>
       </div>
     </div>
   );
@@ -134,17 +138,55 @@ const WindowInfo = () => {
 
     <Fragment>
       <Head>
-        <title>Salamander / Aluplast / Schüco / Gealan / Aluprof / Kömmerling Fenster aus Polen kaufen, Kunststoff und Alu</title>
-        <meta name='description'
-              content='Erreichen Sie garantiert bis 70% bessere Wärmedämmung mit Salamander, Aluplast, Schüco, Kömmerling, Ponzio und Aluprof Fenster / Türen aus Polen, mit Montage. Schöne 3d Modelle.'
+      <title>Fenster aus Polen kaufen – Kunststoff & Aluminium | Polnische-Fenster.com</title>
+        <meta
+          name="description"
+          content="Fenster aus Polen & Türen aus Polen: Kunststoff- und Aluminiumfenster (Schüco, Salamander, Aluprof, Aluplast) mit Aufmaß und Montage. Große Auswahl, faire Preise – jetzt Angebot anfragen."
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  name: "Polnische-Fenster.com",
+                  url: "https://www.polnische-fenster.com",
+                  logo: "https://www.polnische-fenster.com/favicon.ico"
+                },
+                {
+                  "@type": "WebSite",
+                  name: "Polnische-Fenster.com",
+                  url: "https://www.polnische-fenster.com",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: "https://www.polnische-fenster.com/suche?q={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+        <link rel="canonical" href="https://www.polnische-fenster.com/" />
          
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <HeaderDiv title="Kunststoff und Alu Fenster" subtitle="mit Aufmaß vor Ort und Montage" />
+      <HeaderDiv title="Fenster aus Polen" subtitle="Kunststoff & Aluminium – mit Aufmaß vor Ort und Montage" />
       <Prodnavi />
      
+      <section className="pa3 pa4-ns mw8 center">
+        <h2 className="f3 tc">Polnische Fenster: Qualität, Preis und Auswahl</h2>
+        <p className="lh-copy mid-gray">
+          <strong>Fenster aus Polen</strong> sind in Deutschland so beliebt, weil sie ein sehr gutes Preis-Leistungs-Verhältnis
+          mit moderner Technik verbinden. Bei Polnische-Fenster.com finden Sie <strong>Kunststofffenster</strong> und
+          <strong> Aluminiumfenster</strong> sowie passende <strong>Türen aus Polen</strong> – konfigurierbar nach Maß,
+          mit vielen Farben, Verglasungen und Sicherheitsoptionen. Auf Wunsch bieten wir <strong>Aufmaß vor Ort</strong>
+          und <strong>Montage</strong>.
+        </p>
+      </section>
       
       <Visualisation profil = "Aluprof MB 86 SI" showProfiles = "yes" />    
   
