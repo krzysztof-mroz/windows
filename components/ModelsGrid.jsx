@@ -55,7 +55,7 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
             <div className="pa2">
             <div className="metaRow">
                 <p className="ma0 b modelName">
-                    <span>Modell</span>
+                    <span>Modell </span>
                     <span className="modelId">{m.id}</span>
                 </p>
 

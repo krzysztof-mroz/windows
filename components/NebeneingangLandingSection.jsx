@@ -195,9 +195,16 @@ export default function NebeneingangLandingSection({
 
         .pfInfoGrid {
           display: grid;
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr)); /* ✅ 2 kolumny na mobile */
           gap: 12px;
           margin-top: 16px;
+        }
+
+        /* ultra małe telefony: wróć do 1 kolumny, żeby nie było “mikro-kafli” */
+        @media (max-width: 360px) {
+          .pfInfoGrid {
+            grid-template-columns: 1fr;
+          }
         }
 
         .pfInfo {
@@ -205,6 +212,9 @@ export default function NebeneingangLandingSection({
           border-radius: 14px;
           background: #fff;
           padding: 14px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
         }
 
         .pfIcon {
@@ -223,6 +233,7 @@ export default function NebeneingangLandingSection({
           margin: 0;
           color: #333;
           line-height: 1.4;
+          margin-top: auto; /* tekst “dopycha” dół — opcjonalnie */
         }
 
         /* >= 720px */
@@ -238,6 +249,14 @@ export default function NebeneingangLandingSection({
         /* >= 1024px */
         @media (min-width: 1024px) {
           .pfInfoGrid { grid-template-columns: repeat(4, 1fr); }
+        }
+
+        @media (max-width: 520px) {
+          .pfInfo { padding: 12px; }
+          .pfInfoTitle { font-size: 16px; line-height: 1.2; }
+          .pfInfoText { font-size: 14px; }
+          .pfIcon { width: 38px; height: 38px; }
+          .pfIcon :global(svg) { width: 38px; height: 38px; }
         }
       `}</style>
     </section>
