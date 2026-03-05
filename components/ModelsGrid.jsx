@@ -53,12 +53,16 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
             </div>
 
             <div className="pa2">
-              <div className="flex items-center justify-between">
-                <p className="ma0 b">{m.name}</p>
-                <p className="ma0 orange b">
-                  ab {formatEUR(m.gross)}
+            <div className="metaRow">
+                <p className="ma0 b modelName">
+                    <span>Modell</span>
+                    <span className="modelId">{m.id}</span>
                 </p>
-              </div>
+
+                <p className="ma0 orange b price">
+                    ab {formatEUR(m.gross)}
+                </p>
+            </div>
 
               <a
                 className="db mt2 f6 link blue"
