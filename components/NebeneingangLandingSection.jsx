@@ -36,7 +36,7 @@ const ICONS = {
 export default function NebeneingangLandingSection({
   // Podmień ścieżki na swoje
 
-  minPriceText = "ab 835 €",                 // dynamicznie możesz wstawić z modeli
+  minPriceText = "ab 785 € inkl. MwSt",                 // dynamicznie możesz wstawić z modeli
 }) {
   return (
     <section className="pfWrap">
@@ -84,7 +84,7 @@ export default function NebeneingangLandingSection({
             <div className="pfIcon">{ICONS.prices}</div>
             <h3 className="pfInfoTitle">Preise</h3>
             <p className="pfInfoText">
-              Transparent & fair – hochwertige Nebeneingangstüren aus Polen, bereits <b>{minPriceText}</b>.
+              Hochwertige Nebeneingangstüren, bereits <b>{minPriceText}</b>.
             </p>
           </article>
 
@@ -92,7 +92,7 @@ export default function NebeneingangLandingSection({
             <div className="pfIcon">{ICONS.models}</div>
             <h3 className="pfInfoTitle">Modelle</h3>
             <p className="pfInfoText">
-              Große Auswahl an Designs – verschiedene Füllungen, Glasoptionen und Farben.
+              Große Auswahl – verschiedene Füllungen, Glasoptionen und Farben.
             </p>
           </article>
 
@@ -100,7 +100,7 @@ export default function NebeneingangLandingSection({
             <div className="pfIcon">{ICONS.delivery}</div>
             <h3 className="pfInfoTitle">Lieferung nach Deutschland</h3>
             <p className="pfInfoText">
-              Zuverlässige Lieferung nach ganz Deutschland. Ab 2.000 € Bestellwert versandkostenfrei.
+              Zuverlässige Lieferung. Ab 2.000 € Bestellwert versandkostenfrei.
             </p>
           </article>
 
@@ -108,7 +108,7 @@ export default function NebeneingangLandingSection({
             <div className="pfIcon">{ICONS.tech}</div>
             <h3 className="pfInfoTitle">Maße & Technik</h3>
             <p className="pfInfoText">
-              Maßfertigung, flache Schwelle, stabile Profile und sichere Beschläge – für langlebige Qualität.
+              Maßfertigung, stabile Profile und sichere Beschläge – für langlebige Qualität.
             </p>
           </article>
         </div>
