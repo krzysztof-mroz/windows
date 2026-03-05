@@ -17,7 +17,7 @@ export default function Danke() {
           Wir melden uns so schnell wie möglich.
         </p>
 
-        <a className="btn" href="/nebeneingangstuer-aus-polen">
+        <a className="btn" href="/products/k70nt">
           Zurück zu den Modellen
         </a>
       </div>
