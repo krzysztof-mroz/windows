@@ -98,7 +98,7 @@ export default function NebeneingangLandingSection({
 
           <article className="pfInfo">
             <div className="pfIcon">{ICONS.delivery}</div>
-            <h3 className="pfInfoTitle">Lieferung nach Deutschland</h3>
+            <h3 className="pfInfoTitle">Lieferung</h3>
             <p className="pfInfoText">
               Zuverlässige Lieferung. Ab 2.000 € Bestellwert versandkostenfrei.
             </p>
