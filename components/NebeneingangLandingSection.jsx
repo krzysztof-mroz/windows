@@ -36,7 +36,7 @@ const ICONS = {
 export default function NebeneingangLandingSection({
   // Podmień ścieżki na swoje
 
-  minPriceText = "ab 785 € inkl. MwSt",                 // dynamicznie możesz wstawić z modeli
+  minPriceText = "ab 785 € inkl. MwSt",               
 }) {
   return (
     <section className="pfWrap">
@@ -84,7 +84,7 @@ export default function NebeneingangLandingSection({
             <div className="pfIcon">{ICONS.prices}</div>
             <h3 className="pfInfoTitle">Preise</h3>
             <p className="pfInfoText">
-              Hochwertige Nebeneingangstüren, bereits <b>{minPriceText}</b>.
+              Hochwertige Nebeneingangstüren, bereits <b>ab 785 € inkl. MwSt</b>.
             </p>
           </article>
 
