@@ -41,7 +41,7 @@ export default function NebeneingangLandingSection({
   return (
     <section className="pfWrap">
       <header className="pfHeader">
-        <h2 className="pfTitle">Unschlagbare Preise und Modellvielfalt</h2>
+        <h2 className="pfTitle">Kunststoff oder Alu? Wir beraten Sie gerne</h2>
 
         <div className="pfTwoCol">
           <div className="pfCard">
