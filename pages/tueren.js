@@ -18,7 +18,7 @@ const categories = [
   {
     title: "Aluminium Haustüren",
     subtitle: "Premium-Optik, hohe Stabilität, moderne Designs.",
-    href: "/tueren/aluminium-haustueren",
+    href: "/products/aluminium-haustueren",
     img: "/images/tueren/Aluminium_Haustuer.png",
     alt: "Aluminium Haustür aus Polen – Beispielmodell",
   },
