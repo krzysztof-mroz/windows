@@ -48,7 +48,6 @@ function KunststoffHaustuerenPage({ models }) {
     </Fragment>
   );
 }
-
 export async function getStaticProps() {
   const dir = path.join(process.cwd(), "public", "ekoline");
 
