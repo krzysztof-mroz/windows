@@ -61,8 +61,8 @@ export default function AnfrageHTPVCPage() {
     hoeheTuerfluegel: "",
     hoeheOberlicht: "",
 
-    aussen: "Stoßgriff",
-    verglasung: "2-fach, Klarglas",
+    aussen: "Edelstahl Stoßgriff",
+    verglasung: "2-fach, Milchglas",
 
     elektrooeffner: false,
     tuerschliesser: false,
@@ -488,6 +488,8 @@ export default function AnfrageHTPVCPage() {
               <div>
                 <label>Außen</label>
                 <select name="aussen" value={form.aussen} onChange={handleChange}>
+                  
+                  <option value="Edelstahl Stoßgriff">Edelstahl Stoßgriff</option>
                   <option value="Stoßgriff">Stoßgriff</option>
                   <option value="Drücker">Drücker</option>
                   <option value="Knauf">Knauf</option>
@@ -499,8 +501,10 @@ export default function AnfrageHTPVCPage() {
                 <select name="verglasung" value={form.verglasung} onChange={handleChange}>
                   <option value="2-fach, Klarglas">2-fach, Klarglas</option>
                   <option value="3-fach, Klarglas">3-fach, Klarglas</option>
-                  <option value="Milchglas">Milchglas</option>
-                  <option value="Ornamentglas">Ornamentglas</option>
+                  <option value="2-fach, Milchglas">2-fach, Milchglas</option>
+                  <option value="3-fach, Milchglas">3-fach, Milchglas</option>
+                  <option value="2-fach, Ornamentglas">2-fach, Ornamentglas</option>
+                  <option value="3-fach, Ornamentglas">3-fach, Ornamentglas</option>
                 </select>
               </div>
             </div>
