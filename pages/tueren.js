@@ -11,7 +11,7 @@ const categories = [
   {
     title: "Kunststoff Haustüren",
     subtitle: "Dämmstark, pflegeleicht, preislich attraktiv.",
-    href: "/tueren/kunststoff-haustueren",
+    href: "/products/kunststoff-haustueren",
     img: "/images/tueren/Kunststoff_Haustuer.png",
     alt: "Kunststoff Haustür aus Polen – Beispielmodell",
   },

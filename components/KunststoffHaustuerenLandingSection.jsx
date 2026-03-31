@@ -1,0 +1,262 @@
+import React from "react";
+
+const ICONS = {
+  design: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 3h12v18H6z" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M9 7h6M9 11h6M9 15h4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  colors: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M12 4v16M4 12h16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+  security: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3l7 3v5c0 4.5-2.8 7.9-7 10-4.2-2.1-7-5.5-7-10V6l7-3Z" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M9.5 12.2l1.7 1.7 3.5-3.7" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  custom: (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  ),
+};
+
+export default function KunststoffHaustuerenLandingSection({
+  minPriceText = "ab 1.999 €",
+}) {
+  return (
+    <section className="pfWrap">
+      <header className="pfHeader">
+        <h2 className="pfTitle">Moderne Kunststoff Haustüren nach Maß</h2>
+
+        <div className="pfTwoCol">
+          <div className="pfCard">
+            <h3 className="pfCardTitle">Vorteile</h3>
+            <ul className="pfList">
+              <li><b>Maßanfertigung</b> statt Standardmaßen</li>
+              <li><b>Sehr gutes Preis-Leistungs-Verhältnis</b></li>
+              <li><b>Moderne Optik</b> für Neubau und Sanierung</li>
+              <li><b>Wärmedämmende Konstruktion</b></li>
+              <li><b>Pflegeleichte Oberfläche</b></li>
+              <li><b>Viele Designvarianten</b> mit oder ohne Verglasung</li>
+              <li><b>Verschiedene Farben</b> innen und außen</li>
+              <li><b>Solide Sicherheit</b> und robuste Beschläge</li>
+            </ul>
+          </div>
+
+          <div className="pfCard">
+            <h3 className="pfCardTitle">Varianten</h3>
+            <ul className="pfList">
+              <li>Klassische und moderne <b>Türfüllungen</b></li>
+              <li>Modelle mit Glas oder geschlossener Füllung</li>
+              <li>Viele Dekore und Farben</li>
+              <li>Optional mit <b>Edelstahlrahmen um die Verglasung</b></li>
+              <li>Seitenteile und Oberlichter auf Anfrage</li>
+              <li>Verschiedene Griffe und Drücker</li>
+              <li>Individuelle Maße für Ihr Bauvorhaben</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="pfInfoGrid">
+          <article className="pfInfo">
+            <div className="pfIcon">{ICONS.design}</div>
+            <h3 className="pfInfoTitle">Modelle</h3>
+            <p className="pfInfoText">
+              Große Auswahl an modernen Kunststoff Haustüren für verschiedene Stilrichtungen.
+            </p>
+          </article>
+
+          <article className="pfInfo">
+            <div className="pfIcon">{ICONS.colors}</div>
+            <h3 className="pfInfoTitle">Farben</h3>
+            <p className="pfInfoText">
+              Viele Farb- und Dekorvarianten für innen und außen.
+            </p>
+          </article>
+
+          <article className="pfInfo">
+            <div className="pfIcon">{ICONS.security}</div>
+            <h3 className="pfInfoTitle">Sicherheit</h3>
+            <p className="pfInfoText">
+              Robuste Konstruktion und zuverlässige Beschläge für den täglichen Einsatz.
+            </p>
+          </article>
+
+          <article className="pfInfo">
+            <div className="pfIcon">{ICONS.custom}</div>
+            <h3 className="pfInfoTitle">Maßanfertigung</h3>
+            <p className="pfInfoText">
+              Individuelle Lösungen passend zu Ihrem Eingang und Bauprojekt.
+            </p>
+          </article>
+        </div>
+
+        <div className="pfPriceBox">
+          <p className="pfPriceText">
+            Kunststoff Haustüren bereits <b>{minPriceText}</b>
+          </p>
+        </div>
+      </header>
+
+      <style jsx>{`
+        .pfWrap {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 24px 16px;
+        }
+
+        .pfTitle {
+          text-align: center;
+          font-size: 28px;
+          line-height: 1.15;
+          margin: 0 0 16px;
+        }
+
+        .pfTwoCol {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 14px;
+          margin-top: 14px;
+        }
+
+        .pfCard {
+          border: 1px solid #e6e6e6;
+          border-radius: 14px;
+          background: #fff;
+          padding: 16px;
+        }
+
+        .pfCardTitle {
+          font-size: 22px;
+          margin: 0 0 10px;
+        }
+
+        .pfList {
+          margin: 0;
+          padding-left: 18px;
+          color: #1a1a1a;
+        }
+
+        .pfList li {
+          margin: 8px 0;
+        }
+
+        .pfInfoGrid {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 12px;
+          margin-top: 16px;
+        }
+
+        @media (max-width: 360px) {
+          .pfInfoGrid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        .pfInfo {
+          border: 1px solid #e6e6e6;
+          border-radius: 14px;
+          background: #fff;
+          padding: 14px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .pfIcon {
+          width: 44px;
+          height: 44px;
+          color: #0f2d44;
+        }
+
+        .pfIcon :global(svg) {
+          width: 44px;
+          height: 44px;
+        }
+
+        .pfInfoTitle {
+          margin: 10px 0 6px;
+          font-size: 18px;
+        }
+
+        .pfInfoText {
+          margin: 0;
+          color: #333;
+          line-height: 1.4;
+        }
+
+        .pfPriceBox {
+          margin-top: 18px;
+          padding: 16px;
+          background: #fff7ed;
+          border: 1px solid #fdba74;
+          border-radius: 14px;
+          text-align: center;
+        }
+
+        .pfPriceText {
+          margin: 0;
+          font-size: 18px;
+          color: #9a3412;
+        }
+
+        @media (min-width: 720px) {
+          .pfWrap {
+            padding: 28px 20px;
+          }
+
+          .pfTitle {
+            font-size: 34px;
+          }
+
+          .pfTwoCol {
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+          }
+
+          .pfInfoGrid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .pfInfoGrid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+
+        @media (max-width: 520px) {
+          .pfInfo {
+            padding: 12px;
+          }
+
+          .pfInfoTitle {
+            font-size: 16px;
+            line-height: 1.2;
+          }
+
+          .pfInfoText {
+            font-size: 14px;
+          }
+
+          .pfIcon {
+            width: 38px;
+            height: 38px;
+          }
+
+          .pfIcon :global(svg) {
+            width: 38px;
+            height: 38px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
