@@ -81,16 +81,9 @@ export default function AluminiumHaustuerenLandingSection({
             <h3 className="pfCardTitle">Vorteile</h3>
             <ul className="pfList">
               <li>
-                <b>77 mm dicke Paneele</b> für eine starke und hochwertige
-                Konstruktion
+                <b>77 mm dicke flügelüberdeckende Paneele</b>, bündig mit dem Türrahmen
               </li>
-              <li>
-                <b>Mehrfachverriegelung als Standard</b> für mehr Sicherheit
-              </li>
-              <li>
-                <b>Paneele aus Aluminiumblech</b> für hohe Stabilität und
-                Langlebigkeit
-              </li>
+              
               <li>
                 <b>Verdeckte Scharniere als Standard</b> für eine elegante Optik
               </li>
@@ -104,9 +97,7 @@ export default function AluminiumHaustuerenLandingSection({
                 Sehr hochwertige Optik und robuste Konstruktion für den
                 täglichen Einsatz
               </li>
-              <li>
-                Geeignet für moderne, energieeffiziente Bauprojekte
-              </li>
+              
             </ul>
           </div>
 
