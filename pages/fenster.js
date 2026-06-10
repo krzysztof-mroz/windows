@@ -63,7 +63,7 @@ const WindowBrandsInfo = () => {
         />
        
       </Head>
-      <HeaderDiv title="Fenster aus Kunststoff und Aluminium" subtitle="Modernste Fenstertechnik für mehr Lebensqualität"/>
+      <HeaderDiv title="Fenster aus Kunststoff und Aluminium" subtitle="Moderne Fenstertechnik für mehr Lebensqualität"/>
     
       <FensterDiv />
       
