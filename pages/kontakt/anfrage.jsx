@@ -247,11 +247,12 @@ export default function AnfrageFensterPage() {
 
   const doorLink = useMemo(() => {
     if (
+      form.door === "Kunststoff und Alu Haustür Einsatzfüllung" ||
       form.door === "PVC Haustür" ||
       form.door === "Alu Haustür Einsatzfüllung"
     ) {
       return {
-        href: "https://www.polnische-fenster.com/products/kunststoff-haustueren",
+        href: "https://www.polnische-fenster.com/products/kunststoff-alu-haustueren",
         label: "Haustür Anfragen",
       };
     }
@@ -690,9 +691,8 @@ export default function AnfrageFensterPage() {
                 <label>Haustür</label>
                 <select name="door" value={form.door} onChange={handleFormChange}>
                   <option value="ohne Haustür">ohne Haustür</option>
-                  <option value="PVC Haustür">PVC Haustür</option>
-                  <option value="Alu Haustür Einsatzfüllung">
-                    Alu Haustür Einsatzfüllung
+                  <option value="Kunststoff und Alu Haustür Einsatzfüllung">
+                    Kunststoff und Alu Haustür Einsatzfüllung
                   </option>
                   <option value="Alu flügelüberdeckend">Alu flügelüberdeckend</option>
                 </select>

@@ -13,7 +13,7 @@ export default function HaustuerenModelsGrid({
   }, [showAll, models, initialCount]);
 
   return (
-    <section aria-label="Modelle Kunststoff Haustüren" className="mw8 center ph3 ph4-l mt4 mb5">
+    <section aria-label="Modelle Kunststoff und Alu Haustüren" className="mw8 center ph3 ph4-l mt4 mb5">
       <div className="flex items-center justify-between flex-wrap">
         <h2 className="f3 ma0">Modelle</h2>
 
@@ -36,7 +36,7 @@ export default function HaustuerenModelsGrid({
             <div className="imgBox">
               <Image
                 src={m.src}
-                alt={`${m.name} Kunststoff Haustür`}
+                alt={`${m.name} Haustür`}
                 width={220}
                 height={220}
                 className="modelImg"
@@ -56,7 +56,7 @@ export default function HaustuerenModelsGrid({
               </div>
 
               <p className="ma0 mt2 dark-gray modelDesc">
-                Moderne Kunststoff Haustür
+                Moderne Haustür
               </p>
 
             <a

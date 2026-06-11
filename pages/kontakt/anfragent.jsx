@@ -60,7 +60,7 @@ export default function AnfragePage() {
 
   const modell = useMemo(() => {
     const m = router.query.modell;
-    if (!m) return "";
+    if (!m) return "Auswahl offen";
     return String(m).padStart(2, "0");
   }, [router.query.modell]);
 
@@ -68,7 +68,7 @@ export default function AnfragePage() {
   const [serverError, setServerError] = useState("");
 
   const [form, setForm] = useState({
-    modell: "",
+    modell: "Auswahl offen",
     anzahl: 1,
 
     // NOWE:
@@ -115,7 +115,7 @@ export default function AnfragePage() {
   function validate() {
     const e = {};
 
-    if (!form.modell) e.modell = "Bitte Modell wählen (aus dem Link).";
+    if (!form.modell) e.modell = "Bitte Modellnummer eintragen oder Auswahl offen lassen.";
     if (!String(form.name || "").trim()) e.name = "Bitte Vor- und Nachname angeben.";
     if (!String(form.plz || "").trim()) e.plz = "Bitte PLZ angeben.";
 
@@ -176,7 +176,8 @@ export default function AnfragePage() {
       <header className="head">
         <h1 className="title">Anfrage – Nebeneingangstür</h1>
         <p className="sub">
-          Modell wird automatisch übernommen. Bitte ergänzen Sie Maße, Optionen und Ihre Kontaktdaten.
+          Modell wird automatisch übernommen oder kann manuell eingetragen werden.
+          Bitte ergänzen Sie Maße, Optionen und Ihre Kontaktdaten.
         </p>
       </header>
 
@@ -184,7 +185,14 @@ export default function AnfragePage() {
         <div className="grid2">
           <div className="field">
             <label>Modell</label>
-            <input value={form.modell} readOnly className={`input ${errors.modell ? "err" : ""}`} />
+            <input
+              type="text"
+              name="modell"
+              value={form.modell}
+              onChange={(event) => setField("modell", event.target.value)}
+              className={`input ${errors.modell ? "err" : ""}`}
+              placeholder="z.B. 07 oder Auswahl offen"
+            />
             {errors.modell && <p className="errText">{errors.modell}</p>}
           </div>
 

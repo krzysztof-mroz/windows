@@ -1,32 +1,41 @@
 import { useRouter } from 'next/router';
 
-const CTAButton = () => {
+const defaultActions = [
+  {
+    label: 'Fenster planen',
+    href: '/fenster',
+    primary: false
+  },
+  {
+    label: 'Türen planen',
+    href: '/tueren',
+    primary: false
+  },
+  {
+    label: 'Anfrage senden',
+    href: '/kontakt/anfrage',
+    primary: true
+  }
+];
+
+const CTAButton = ({ actions = defaultActions }) => {
   const router = useRouter();
 
-  const actions = [
-    {
-      label: 'Fenster planen',
-      href: '/fenster',
-      primary: false
-    },
-    {
-      label: 'Türen planen',
-      href: '/tueren',
-      primary: false
-    },
-    {
-      label: 'Anfrage senden',
-      href: '/kontakt/anfrage',
-      primary: true
+  const handleClick = (href) => {
+    if (href.startsWith('http')) {
+      window.location.href = href;
+      return;
     }
-  ];
+
+    router.push(href);
+  };
 
   return (
     <div className="flex flex-wrap justify-center items-center pv3 ph3">
       {actions.map((action) => (
         <button
           key={action.label}
-          onClick={() => router.push(action.href)}
+          onClick={() => handleClick(action.href)}
           className="mv2 mh2"
           style={{
             minWidth: 160,

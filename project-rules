@@ -1,0 +1,21 @@
+Podstawowe zasady projektu
+
+1. Nie robimy nic, co mogloby pogorszyc ranking strony w Google.
+2. Kazda zmiana moze co najwyzej poprawiac widocznosc, stabilnosc, tresc, techniczne SEO lub doswiadczenie uzytkownika strony.
+3. Szczegolnie chronione sa dwie podstrony:
+   - https://www.polnische-fenster.com/tueren
+   - https://www.polnische-fenster.com/products/k70nt
+4. Obie powyzsze podstrony sa na pierwszej stronie Google dla wyszukiwan zwiazanych z drzwiami w Niemczech.
+5. Nie zmieniamy elementow, ktore moga oslabic ranking tych podstron, w szczegolnosci:
+   - adresow URL,
+   - tytulow SEO i meta description,
+   - naglowkow H1/H2,
+   - tresci glownych,
+   - linkowania wewnetrznego,
+   - danych strukturalnych,
+   - kanonicznych adresow URL,
+   - indeksowania,
+   - szybkosci ladowania i Core Web Vitals,
+   - dostepnosci tresci dla crawlerow Google.
+6. Jesli zmiana dotyka jednej z chronionych podstron albo moze wplynac na SEO calego serwisu, najpierw trzeba wyraznie opisac ryzyko i uzyskac zgode przed wdrozeniem.
+7. Publikacja zmian do katalogu produkcyjnego, GitHub lub Vercel odbywa sie tylko na wyrazna prosbe wlasciciela projektu.

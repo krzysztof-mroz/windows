@@ -17,7 +17,7 @@ export default function AluHaustuerenModelsGrid({
       className="mw8 center ph3 ph4-l mt4 mb5"
     >
       <div className="flex items-center justify-between flex-wrap">
-        <h2 className="f3 ma0">Modelle</h2>
+        <h2 className="f3 ma0">Aluminium Haustür Modelle</h2>
 
         <button
           type="button"
@@ -54,11 +54,11 @@ export default function AluHaustuerenModelsGrid({
               </div>
 
               <p className="ma0 mt2 dark-gray modelDesc">
-                Moderne Aluminium Haustür
+                Flügelüberdeckend, Premium-Optik, moderne Designs.
               </p>
 
               <a
-                className="db mt3 f6 link blue"
+                className="modelLink"
                 href={`/kontakt/anfragehtalu?modell=${encodeURIComponent(
                   m.baseId
                 )}`}
@@ -151,6 +151,19 @@ export default function AluHaustuerenModelsGrid({
         .modelDesc {
           font-size: 14px;
           line-height: 1.4;
+        }
+
+        .modelLink {
+          color: #d57716;
+          display: block;
+          font-size: 14px;
+          font-weight: 700;
+          margin-top: 14px;
+          text-decoration: none;
+        }
+
+        .modelLink:hover {
+          text-decoration: underline;
         }
 
         @media (max-width: 520px) {

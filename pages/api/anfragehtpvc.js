@@ -38,6 +38,8 @@ const COLOR_OPTIONS = [
   "Dunkelbraun",
 ];
 
+const MATERIAL_OPTIONS = ["Kunststoff", "Aluminium"];
+
 function isOneOf(v, list) {
   return list.includes(String(v ?? "").trim());
 }
@@ -62,12 +64,16 @@ export default async function handler(req, res) {
     }
 
     const modell = String(b.modell || "").trim();
+    const material = String(b.material || "Kunststoff").trim();
     const name = String(b.name || "").trim();
     const plz = String(b.plz || "").trim();
     const email = String(b.email || "").trim();
     const telefon = String(b.telefon || "").trim();
 
     if (!modell) return res.status(400).json({ error: "Fehlendes Modell." });
+    if (!isOneOf(material, MATERIAL_OPTIONS)) {
+      return res.status(400).json({ error: "Ungültiges Material." });
+    }
     if (!name) return res.status(400).json({ error: "Name ist erforderlich." });
     if (!plz) return res.status(400).json({ error: "PLZ ist erforderlich." });
 
@@ -182,6 +188,7 @@ export default async function handler(req, res) {
 
     const payload = {
       modell,
+      material,
       edelstahlrahmen: !!b.edelstahlrahmen,
 
       anzahl,
@@ -228,9 +235,10 @@ export default async function handler(req, res) {
     };
 
     const text = [
-      `Neue Anfrage – Kunststoff Haustür`,
+      `Neue Anfrage – Kunststoff und Alu Haustür`,
       ``,
       `Modell: ${payload.modell}`,
+      `Material: ${payload.material}`,
       `Edelstahlrahmen: ${payload.edelstahlrahmen ? "JA" : "NEIN"}`,
       `Anzahl: ${payload.anzahl}`,
       `Öffnungsrichtung: ${payload.oeffnung}`,
@@ -298,7 +306,7 @@ export default async function handler(req, res) {
     const from = process.env.MAIL_FROM || "info@polnische-fenster.com";
     const to = "info@polnische-fenster.com";
 
-    const subject = `Anfrage Kunststoff Haustür – Modell ${payload.modell} – ${payload.plz}`;
+    const subject = `Anfrage Kunststoff und Alu Haustür – Modell ${payload.modell} – ${payload.plz}`;
 
     await transporter.sendMail({
       from,

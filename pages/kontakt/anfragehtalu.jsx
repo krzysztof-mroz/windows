@@ -32,7 +32,7 @@ export default function AnfrageHTALUPage() {
   const { modell } = router.query;
 
   const [form, setForm] = useState({
-    modell: "",
+    modell: "Auswahl offen",
 
     anzahl: 1,
     farbeInnen: "Weiß RAL 9016 Matt",
@@ -83,7 +83,7 @@ export default function AnfrageHTALUPage() {
 
     setForm((prev) => ({
       ...prev,
-      modell: String(modell || ""),
+      modell: String(modell || "Auswahl offen"),
     }));
   }, [router.isReady, modell]);
 
@@ -248,7 +248,13 @@ export default function AnfrageHTALUPage() {
 
             <div>
               <label>Modell</label>
-              <input type="text" name="modell" value={form.modell} readOnly />
+              <input
+                type="text"
+                name="modell"
+                value={form.modell}
+                onChange={handleChange}
+                placeholder="z.B. 23 oder Auswahl offen"
+              />
             </div>
 
             <div className="grid three">

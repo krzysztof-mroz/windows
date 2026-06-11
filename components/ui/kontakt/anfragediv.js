@@ -692,10 +692,9 @@ function anfragediv() {
               defaultValue="ohne Haustür"
             >
               <option value="ohne Haustür"> ohne Haustür</option>
-              <option value="PVC Haustür"> PVC Haustür</option>
-              <option value="Alu Haustür Einsatzfüllung">
+              <option value="Kunststoff und Alu Haustür Einsatzfüllung">
                 {" "}
-                Alu Haustür Einsatzfüllung
+                Kunststoff und Alu Haustür Einsatzfüllung
               </option>
               <option value="Alu flügelüberdeckend">
                 {" "}

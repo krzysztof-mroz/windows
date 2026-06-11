@@ -31,12 +31,15 @@ const OPENING_OPTIONS = [
   "Nach außen öffnend DIN rechts",
 ];
 
+const MATERIAL_OPTIONS = ["Kunststoff", "Aluminium"];
+
 export default function AnfrageHTPVCPage() {
   const router = useRouter();
-  const { modell, edelstahlrahmen } = router.query;
+  const { modell, edelstahlrahmen, material } = router.query;
 
   const [form, setForm] = useState({
-    modell: "",
+    modell: "Auswahl offen",
+    material: "Kunststoff",
     edelstahlrahmen: false,
 
     anzahl: 1,
@@ -90,10 +93,13 @@ export default function AnfrageHTPVCPage() {
 
     setForm((prev) => ({
       ...prev,
-      modell: String(modell || ""),
+      modell: String(modell || "Auswahl offen"),
+      material: MATERIAL_OPTIONS.includes(String(material || ""))
+        ? String(material)
+        : "Kunststoff",
       edelstahlrahmen: String(edelstahlrahmen || "0") === "1",
     }));
-  }, [router.isReady, modell, edelstahlrahmen]);
+  }, [router.isReady, modell, edelstahlrahmen, material]);
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -228,16 +234,16 @@ export default function AnfrageHTPVCPage() {
   return (
     <>
       <Head>
-        <title>Anfrage Kunststoff Haustüren</title>
+        <title>Anfrage Kunststoff und Alu Haustüren</title>
         <meta
           name="description"
-          content="Anfrageformular für Kunststoff Haustüren aus Polen."
+          content="Anfrageformular für Kunststoff und Alu Haustüren aus Polen."
         />
       </Head>
 
       <section className="wrap">
         <div className="card">
-          <h1 className="title">Anfrage Kunststoff Haustür</h1>
+          <h1 className="title">Anfrage Kunststoff und Alu Haustür</h1>
 
           <p className="lead">
             Senden Sie uns Ihre Anfrage. Wir melden uns in der Regel innerhalb von 24 Stunden.
@@ -254,10 +260,27 @@ export default function AnfrageHTPVCPage() {
               className="hp"
             />
 
-            <div className="grid two">
+            <div className="grid three">
               <div>
                 <label>Modell</label>
-                <input type="text" name="modell" value={form.modell} readOnly />
+                <input
+                  type="text"
+                  name="modell"
+                  value={form.modell}
+                  onChange={handleChange}
+                  placeholder="z.B. 23 oder Auswahl offen"
+                />
+              </div>
+
+              <div>
+                <label>Material</label>
+                <select name="material" value={form.material} onChange={handleChange}>
+                  {MATERIAL_OPTIONS.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
               </div>
 
               <div>

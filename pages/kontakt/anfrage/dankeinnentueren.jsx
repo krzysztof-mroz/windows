@@ -1,22 +1,23 @@
 import Link from "next/link";
 
-export default function DankePage() {
+export default function DankeInnentuerenPage() {
   return (
     <section className="wrap">
       <div className="card">
         <h1 className="title">Vielen Dank für Ihre Anfrage!</h1>
 
         <p className="text">
-          Ihre Anfrage wurde erfolgreich gesendet.
-          Wir melden uns in der Regel innerhalb von <strong>24 Stunden</strong>.
+          Ihre Anfrage zu Innentüren wurde erfolgreich gesendet. Wir melden uns
+          in der Regel innerhalb von <strong>24 Stunden</strong>.
         </p>
 
         <p className="text">
-          Wenn Sie noch Fragen haben, können Sie uns jederzeit kontaktieren.
+          Wenn Sie noch Grundrisse, Maße oder Fotos der Räume haben, können Sie
+          diese später einfach in der weiteren Abstimmung ergänzen.
         </p>
 
-        <Link href="/products/kunststoff-alu-haustueren" className="btn">
-          Zurück zu den Haustüren
+        <Link href="/products/innentueren" className="btn">
+          Zurück zu den Innentüren
         </Link>
       </div>
 

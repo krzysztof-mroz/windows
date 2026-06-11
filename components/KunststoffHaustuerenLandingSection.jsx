@@ -32,7 +32,7 @@ export default function KunststoffHaustuerenLandingSection({
   return (
     <section className="pfWrap">
       <header className="pfHeader">
-        <h2 className="pfTitle">Moderne Kunststoff Haustüren nach Maß</h2>
+        <h2 className="pfTitle">Moderne Kunststoff und Alu Haustüren nach Maß</h2>
 
         <div className="pfTwoCol">
           <div className="pfCard">
@@ -68,7 +68,7 @@ export default function KunststoffHaustuerenLandingSection({
             <div className="pfIcon">{ICONS.design}</div>
             <h3 className="pfInfoTitle">Modelle</h3>
             <p className="pfInfoText">
-              Große Auswahl an modernen Kunststoff Haustüren für verschiedene Stilrichtungen.
+              Große Auswahl an modernen Kunststoff und Alu Haustüren für verschiedene Stilrichtungen.
             </p>
           </article>
 
@@ -99,7 +99,7 @@ export default function KunststoffHaustuerenLandingSection({
 
         <div className="pfPriceBox">
           <p className="pfPriceText">
-            Kunststoff Haustüren bereits <b>{minPriceText}</b>
+            Kunststoff und Alu Haustüren bereits <b>{minPriceText}</b>
           </p>
         </div>
       </header>
