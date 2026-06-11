@@ -25,7 +25,7 @@ const heroSlides = [
     caption: "Robuste Konstruktion, starke Paneele und repräsentativer Eingang.",
   },
   {
-    src: "/images/aluminium-haustueren/hero/alutuer-3.jpg",
+    src: "/images/aluminium-haustueren/hero/alutuer-7.png",
     alt: "Aluminium Haustür mit Glasfeldern an heller Fassade",
     tag: "Design nach Maß",
     caption: "Viele Türbilder, Glasvarianten, Farben und Grifflösungen.",
