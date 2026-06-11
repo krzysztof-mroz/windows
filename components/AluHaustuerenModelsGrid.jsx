@@ -1,15 +1,34 @@
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export default function AluHaustuerenModelsGrid({
   initialCount = 12,
   models = [],
 }) {
+  const router = useRouter();
   const [showAll, setShowAll] = useState(false);
 
   const visible = useMemo(() => {
     return showAll ? models : models.slice(0, initialCount);
   }, [showAll, models, initialCount]);
+
+  const handleInquiryClick = (event, href) => {
+    const isPlainLeftClick =
+      !event.defaultPrevented &&
+      !event.metaKey &&
+      !event.ctrlKey &&
+      !event.shiftKey &&
+      !event.altKey &&
+      (typeof event.button !== "number" || event.button === 0);
+
+    if (!isPlainLeftClick) {
+      return;
+    }
+
+    event.preventDefault();
+    router.push(href);
+  };
 
   return (
     <section
@@ -30,7 +49,12 @@ export default function AluHaustuerenModelsGrid({
       </div>
 
       <div className="modelsGrid mt3">
-        {visible.map((m) => (
+        {visible.map((m) => {
+          const inquiryHref = `/kontakt/anfragehtalu?modell=${encodeURIComponent(
+            m.baseId
+          )}`;
+
+          return (
           <article
             key={m.id}
             className="modelCard ba b--moon-gray br3 overflow-hidden bg-white"
@@ -59,15 +83,15 @@ export default function AluHaustuerenModelsGrid({
 
               <a
                 className="modelLink"
-                href={`/kontakt/anfragehtalu?modell=${encodeURIComponent(
-                  m.baseId
-                )}`}
+                href={inquiryHref}
+                onClick={(event) => handleInquiryClick(event, inquiryHref)}
               >
                 Angebot anfragen →
               </a>
             </div>
           </article>
-        ))}
+          );
+        })}
       </div>
 
       {!showAll && models.length > initialCount && (
@@ -109,9 +133,11 @@ export default function AluHaustuerenModelsGrid({
           transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
 
-        .modelCard:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        @media (hover: hover) and (pointer: fine) {
+          .modelCard:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+          }
         }
 
         .imgBox {
@@ -154,12 +180,15 @@ export default function AluHaustuerenModelsGrid({
         }
 
         .modelLink {
+          -webkit-tap-highlight-color: transparent;
           color: #d57716;
           display: block;
           font-size: 14px;
           font-weight: 700;
           margin-top: 14px;
+          position: relative;
           text-decoration: none;
+          touch-action: manipulation;
         }
 
         .modelLink:hover {

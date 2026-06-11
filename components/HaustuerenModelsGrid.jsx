@@ -1,16 +1,34 @@
 import React, { useMemo, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function HaustuerenModelsGrid({
   initialCount = 12,
   models = [],
 }) {
+  const router = useRouter();
   const [showAll, setShowAll] = useState(false);
 
   const visible = useMemo(() => {
     return showAll ? models : models.slice(0, initialCount);
   }, [showAll, models, initialCount]);
+
+  const handleInquiryClick = (event, href) => {
+    const isPlainLeftClick =
+      !event.defaultPrevented &&
+      !event.metaKey &&
+      !event.ctrlKey &&
+      !event.shiftKey &&
+      !event.altKey &&
+      (typeof event.button !== "number" || event.button === 0);
+
+    if (!isPlainLeftClick) {
+      return;
+    }
+
+    event.preventDefault();
+    router.push(href);
+  };
 
   return (
     <section aria-label="Modelle Kunststoff und Alu Haustüren" className="mw8 center ph3 ph4-l mt4 mb5">
@@ -28,46 +46,53 @@ export default function HaustuerenModelsGrid({
       </div>
 
       <div className="modelsGrid mt3">
-        {visible.map((m) => (
-          <article
-            key={m.id}
-            className="modelCard ba b--moon-gray br3 overflow-hidden bg-white"
-          >
-            <div className="imgBox">
-              <Image
-                src={m.src}
-                alt={`${m.name} Haustür`}
-                width={220}
-                height={220}
-                className="modelImg"
-              />
-            </div>
+        {visible.map((m) => {
+          const inquiryHref = `/kontakt/anfragehtpvc?modell=${encodeURIComponent(
+            m.baseId
+          )}&edelstahlrahmen=${m.id.includes("-2") ? "1" : "0"}`;
 
-            <div className="pa2 pa3-l">
-              <div className="metaTop">
-                <p className="ma0 b modelName">
-                  <span>Modell </span>
-                  <span className="modelId">{m.baseId}</span>
-                </p>
-
-                {m.variantLabel && (
-                  <span className="variantBadge">{m.variantLabel}</span>
-                )}
+          return (
+            <article
+              key={m.id}
+              className="modelCard ba b--moon-gray br3 overflow-hidden bg-white"
+            >
+              <div className="imgBox">
+                <Image
+                  src={m.src}
+                  alt={`${m.name} Haustür`}
+                  width={220}
+                  height={220}
+                  className="modelImg"
+                />
               </div>
 
-              <p className="ma0 mt2 dark-gray modelDesc">
-                Moderne Haustür
-              </p>
+              <div className="pa2 pa3-l">
+                <div className="metaTop">
+                  <p className="ma0 b modelName">
+                    <span>Modell </span>
+                    <span className="modelId">{m.baseId}</span>
+                  </p>
 
-            <a
-            className="db mt3 f6 link blue"
-            href={`/kontakt/anfragehtpvc?modell=${encodeURIComponent(m.baseId)}&edelstahlrahmen=${m.id.includes("-2") ? "1" : "0"}`}
-            >
-            Angebot anfragen →
-            </a>
-            </div>
-          </article>
-        ))}
+                  {m.variantLabel && (
+                    <span className="variantBadge">{m.variantLabel}</span>
+                  )}
+                </div>
+
+                <p className="ma0 mt2 dark-gray modelDesc">
+                  Moderne Haustür
+                </p>
+
+                <a
+                  className="modelLink db mt3 f6 link blue"
+                  href={inquiryHref}
+                  onClick={(event) => handleInquiryClick(event, inquiryHref)}
+                >
+                  Angebot anfragen →
+                </a>
+              </div>
+            </article>
+          );
+        })}
       </div>
 
       {!showAll && models.length > initialCount && (
@@ -109,9 +134,11 @@ export default function HaustuerenModelsGrid({
           transition: transform 0.18s ease, box-shadow 0.18s ease;
         }
 
-        .modelCard:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+        @media (hover: hover) and (pointer: fine) {
+          .modelCard:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+          }
         }
 
         .imgBox {
@@ -163,6 +190,12 @@ export default function HaustuerenModelsGrid({
         .modelDesc {
           font-size: 14px;
           line-height: 1.4;
+        }
+
+        .modelLink {
+          -webkit-tap-highlight-color: transparent;
+          position: relative;
+          touch-action: manipulation;
         }
 
         @media (max-width: 520px) {

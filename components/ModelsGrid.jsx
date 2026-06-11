@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from "react";
+import { useRouter } from "next/router";
 import { getModelGrossPrice, formatEUR } from "./data/nebeneingangPrices";
 // ⬆️ jeśli ModelsGrid jest w /components, a data w /data, to ta ścieżka jest OK.
 // Jeśli masz inaczej, dopasuj: np. "../../data/nebeneingangPrices"
 
 export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
+  const router = useRouter();
   const [showAll, setShowAll] = useState(false);
 
   const models = useMemo(() => {
@@ -21,6 +23,23 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
   }, [maxModel]);
 
   const visible = showAll ? models : models.slice(0, initialCount);
+
+  const handleInquiryClick = (event, href) => {
+    const isPlainLeftClick =
+      !event.defaultPrevented &&
+      !event.metaKey &&
+      !event.ctrlKey &&
+      !event.shiftKey &&
+      !event.altKey &&
+      (typeof event.button !== "number" || event.button === 0);
+
+    if (!isPlainLeftClick) {
+      return;
+    }
+
+    event.preventDefault();
+    router.push(href);
+  };
 
   return (
     <section aria-label="Modelle" className="mw8 center ph3 ph4-l mt4">
@@ -65,8 +84,11 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
             </div>
 
               <a
-                className="db mt2 f6 link blue"
+                className="modelLink db mt2 f6 link blue"
                 href={`/kontakt/anfragent?modell=${m.id}`}
+                onClick={(event) =>
+                  handleInquiryClick(event, `/kontakt/anfragent?modell=${m.id}`)
+                }
               >
                 Angebot anfragen →
               </a>
@@ -122,6 +144,12 @@ export default function ModelsGrid({ initialCount = 8, maxModel = 40 }) {
           height: auto;
           object-fit: contain;
           display: block;
+        }
+
+        .modelLink {
+          -webkit-tap-highlight-color: transparent;
+          position: relative;
+          touch-action: manipulation;
         }
       `}</style>
     </section>
