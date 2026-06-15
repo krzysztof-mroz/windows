@@ -118,7 +118,7 @@ const faqs = [
 
 const heroSlides = [
   {
-    image: "/images/home-hero/fenster-1.jpg",
+    image: "/images/home-hero/optimized/fenster-1.webp",
     alt: "Schwarzes Fenster an heller Fassade mit Blick in den Garten",
     tag: "Fenster aus Polen",
     title: "Fenster aus Polen für Ihr Zuhause",
@@ -127,7 +127,7 @@ const heroSlides = [
     cta: "Fenster ansehen",
   },
   {
-    image: "/images/home-hero/fenster-2.jpg",
+    image: "/images/home-hero/optimized/fenster-2.webp",
     alt: "Modernes schwarzes Fenster in heller Küche mit zwei Frauen",
     tag: "Beratung & Aufmaß",
     title: "Passende Fenster mit Beratung",
@@ -136,7 +136,7 @@ const heroSlides = [
     cta: "Angebot anfragen",
   },
   {
-    image: "/images/home-hero/fenster-3.jpg",
+    image: "/images/home-hero/optimized/fenster-3.webp",
     alt: "Moderne Fassade mit schwarzen Fenstern und Haustür",
     tag: "Neubau & Sanierung",
     title: "Moderne Optik für Fassade und Eingang",
@@ -145,7 +145,7 @@ const heroSlides = [
     cta: "Mehr erfahren",
   },
   {
-    image: "/images/home-hero/fenster-4.jpg",
+    image: "/images/home-hero/optimized/fenster-4.webp",
     alt: "Helles Schlafzimmer mit geöffnetem weißen Fenster",
     tag: "Wohnkomfort",
     title: "Mehr Licht, Ruhe und Wärmedämmung",
@@ -154,7 +154,7 @@ const heroSlides = [
     cta: "Mehr erfahren",
   },
   {
-    image: "/images/home-hero/fenster-5.jpg",
+    image: "/images/home-hero/optimized/fenster-5.webp",
     alt: "Schwarzes Fenster bei Regen mit Blick in den Garten",
     tag: "Dicht & langlebig",
     title: "Starke Fenster für jedes Wetter",
@@ -163,7 +163,7 @@ const heroSlides = [
     cta: "Aufmaß machen",
   },
   {
-    image: "/images/home-hero/fenster-6.jpg",
+    image: "/images/home-hero/optimized/fenster-6.webp",
     alt: "Schwarzes Fenster mit Rollladen an einer Hausfassade im Regen",
     tag: "Beschattung",
     title: "Fenster mit Rollläden und Raffstoren",
@@ -172,7 +172,7 @@ const heroSlides = [
     cta: "Beschattung ansehen",
   },
   {
-    image: "/images/home-hero/tuer-1.jpg",
+    image: "/images/home-hero/optimized/tuer-1.webp",
     alt: "Moderne schwarze Haustür mit Paar vor dem Eingang",
     tag: "Haustüren",
     title: "Premium-Aluminium Haustüren",
@@ -181,7 +181,7 @@ const heroSlides = [
     cta: "Türen ansehen",
   },
   {
-    image: "/images/home-hero/tuer-2.jpg",
+    image: "/images/home-hero/optimized/tuer-2.webp",
     alt: "Schwarze Haustür an Holzfassade mit Seniorin vor dem Eingang",
     tag: "Alles aus einer Hand",
     title: "Kunststoff-Alu Haustüren",
@@ -320,7 +320,8 @@ const HomeHero = () => {
                 layout="fill"
                 objectFit="cover"
                 priority={index === 0}
-                sizes="(max-width: 760px) 100vw, 860px"
+                quality={70}
+                sizes="(max-width: 520px) calc(100vw - 24px), (max-width: 760px) calc(100vw - 24px), (max-width: 1200px) calc(100vw - 276px), 868px"
               />
               <div className="homeHeroShade" />
               <div className="homeHeroContent">
@@ -563,10 +564,14 @@ const HomeHero = () => {
 
         .homeHeroSliderFrame {
           background: #111;
-          aspect-ratio: 4 / 3;
+          aspect-ratio: 16 / 9;
+          contain: layout paint;
+          height: clamp(360px, 42vw, 500px);
+          max-height: 500px;
           min-height: 0;
           overflow: hidden;
           position: relative;
+          width: 100%;
         }
 
         .homeHeroTrack {
@@ -579,12 +584,16 @@ const HomeHero = () => {
         .homeHeroSlide {
           flex: 0 0 100%;
           height: 100%;
+          max-height: 500px;
+          min-width: 0;
           overflow: hidden;
           position: relative;
+          width: 100%;
         }
 
         .homeHeroSlide :global(.homeHeroImage) {
           height: 100% !important;
+          max-height: 500px !important;
           object-fit: cover !important;
           object-position: center center;
           width: 100% !important;
@@ -701,7 +710,9 @@ const HomeHero = () => {
           }
 
           .homeHeroSliderFrame {
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 16 / 9;
+            height: clamp(380px, 42vw, 500px);
+            max-height: 500px;
           }
 
           .homeHeroContent {
@@ -748,11 +759,15 @@ const HomeHero = () => {
 
           .homeHeroSliderFrame {
             aspect-ratio: auto;
+            height: clamp(340px, 118vw, 430px);
+            max-height: 430px;
             min-height: 340px;
           }
 
           .homeHeroTrack,
           .homeHeroSlide {
+            height: 100%;
+            max-height: 430px;
             min-height: 340px;
           }
 
