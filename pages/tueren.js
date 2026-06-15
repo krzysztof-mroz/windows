@@ -160,7 +160,7 @@ const doorFaqs = [
   {
     question: "Bieten Sie Aufmaß und Montage in Deutschland an?",
     answer:
-      "Ja. Auf Wunsch können Aufmaß, Lieferung und Montage mitgeplant werden. Dabei werden Maße, Anschlüsse, Öffnungsrichtung, Schwelle und mögliche Seitenteile vorab sauber geklärt.",
+      "Ja. In Deutschland planen wir auf Wunsch Aufmaß, Lieferung und Montage mit. Dabei klären wir Maße, Anschlüsse, Öffnungsrichtung, Schwelle und Seitenteile vorab sauber.",
   },
   {
     question: "Kann ich eine Haustür mit Seitenteil oder niedriger Schwelle bestellen?",
@@ -548,9 +548,9 @@ function buildJsonLd() {
 
 function Tueren() {
   const seoTitle =
-    "Türen aus Polen: Haustüren aus Polen (Kunststoff & Aluminium) | Polnische-Fenster.com";
+    "Türen aus Polen in Deutschland: Haustüren aus Polen (Kunststoff & Aluminium) | Polnische-Fenster.com";
   const seoDescription =
-    "Türen aus Polen: Haustüren aus Kunststoff & Aluminium, Nebeneingangstüren und Innentüren. Große Auswahl, moderne Designs, Optionen wie E-Öffner & Fingerprint. Jetzt anfragen.";
+    "Türen aus Polen in Deutschland: Haustüren aus Kunststoff & Aluminium, Nebeneingangstüren und Innentüren. Große Auswahl, moderne Designs, Optionen wie E-Öffner & Fingerprint, mit Lieferung und Montage auf Wunsch.";
 
   const canonical = `${SITE_URL}/tueren`;
   const { itemList, faq } = buildJsonLd();

@@ -2,10 +2,10 @@ import { Fragment } from "react";
 import { useState, useEffect } from 'react';
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import image1 from "/public/living_black_2.jpg";
 import image2 from "/public/aws90_rust.jpg";
 import Description from "../components/ui/description";
-import HeaderDiv from "../components/ui/headerdiv";
 import WarumDiv from "../components/ui/warumdiv";
 import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
@@ -31,7 +31,7 @@ const trustItems = [
   {
     icon: "/pics/svg/hersteller.svg",
     title: "Markenprofile",
-    text: "Schüco, Kömmerling, Aluprof, Salamander und Aluplast."
+    text: "Aluplast, Salamander, Gealan, Aluprof und andere"
   },
   {
     icon: "/pics/svg/angebot.svg",
@@ -117,9 +117,926 @@ const faqs = [
   }
 ];
 
+const heroSlides = [
+  {
+    image: "/images/home-hero/fenster-1.jpg",
+    alt: "Schwarzes Fenster an heller Fassade mit Blick in den Garten",
+    tag: "Fenster aus Polen",
+    title: "Fenster aus Polen für Ihr Zuhause",
+    text: "Kunststoff- und Aluminiumfenster nach Maß, geplant für Neubau und Sanierung in Deutschland.",
+    href: "/fenster",
+    cta: "Fenster ansehen",
+  },
+  {
+    image: "/images/home-hero/fenster-2.jpg",
+    alt: "Modernes schwarzes Fenster in heller Küche mit zwei Frauen",
+    tag: "Beratung & Aufmaß",
+    title: "Passende Fenster mit Beratung",
+    text: "Wir klären Profile, Glas, Farbe, Maße und Montage, damit die Lösung wirklich zum Projekt passt.",
+    href: "/kontakt/anfrage",
+    cta: "Angebot anfragen",
+  },
+  {
+    image: "/images/home-hero/fenster-3.jpg",
+    alt: "Moderne Fassade mit schwarzen Fenstern und Haustür",
+    tag: "Neubau & Sanierung",
+    title: "Moderne Optik für Fassade und Eingang",
+    text: "Fenster, Haustüren und Beschattung abgestimmt auf Architektur, Dämmung und Budget.",
+    href: "/fenster",
+    cta: "Mehr erfahren",
+  },
+  {
+    image: "/images/home-hero/fenster-4.jpg",
+    alt: "Helles Schlafzimmer mit geöffnetem weißen Fenster",
+    tag: "Wohnkomfort",
+    title: "Mehr Licht, Ruhe und Wärmedämmung",
+    text: "Fensterlösungen für angenehmes Wohnen, gute U-Werte und langlebige Technik.",
+    href: "/fenster",
+    cta: "Mehr erfahren",
+  },
+  {
+    image: "/images/home-hero/fenster-5.jpg",
+    alt: "Schwarzes Fenster bei Regen mit Blick in den Garten",
+    tag: "Dicht & langlebig",
+    title: "Starke Fenster für jedes Wetter",
+    text: "Robuste Systeme mit moderner Verglasung, sauberer Abdichtung und fachgerechter Montage.",
+    href: "/aufmass",
+    cta: "Aufmaß machen",
+  },
+  {
+    image: "/images/home-hero/fenster-6.jpg",
+    alt: "Schwarzes Fenster mit Rollladen an einer Hausfassade im Regen",
+    tag: "Beschattung",
+    title: "Fenster mit Rollläden und Raffstoren",
+    text: "Sichtschutz, Sonnenschutz und Komfortsteuerung passend zu Ihren neuen Fenstern.",
+    href: "/beschattung",
+    cta: "Beschattung ansehen",
+  },
+  {
+    image: "/images/home-hero/tuer-1.jpg",
+    alt: "Moderne schwarze Haustür mit Paar vor dem Eingang",
+    tag: "Haustüren",
+    title: "Premium-Aluminium Haustüren",
+    text: "Flügelüberdeckende Haustüren aus Polen, individuell geplant mit Design und Sicherheit.",
+    href: "/products/aluminium-haustueren",
+    cta: "Türen ansehen",
+  },
+  {
+    image: "/images/home-hero/tuer-2.jpg",
+    alt: "Schwarze Haustür an Holzfassade mit Seniorin vor dem Eingang",
+    tag: "Alles aus einer Hand",
+    title: "Kunststoff-Alu Haustüren",
+    text: "Pflegeleichte Haustüren mit attraktiver Optik, guter Dämmung und fairer Planung.",
+    href: "/products/kunststoff-alu-haustueren",
+    cta: "Türen ansehen",
+  },
+];
+
+const HomeHero = () => {
+  const router = useRouter();
+  const [active, setActive] = useState(0);
+  const [isJumping, setIsJumping] = useState(false);
+  const [whatsappMessage, setWhatsappMessage] = useState("");
+  const sliderSlides = [...heroSlides, heroSlides[0]];
+  const visibleActive = active % heroSlides.length;
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActive((current) => (current >= heroSlides.length ? 1 : current + 1));
+    }, 5200);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const goToSlide = (index) => {
+    setIsJumping(false);
+    setActive(index);
+  };
+  const previousSlide = () => {
+    if (active === 0) {
+      setIsJumping(true);
+      setActive(heroSlides.length);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          setIsJumping(false);
+          setActive(heroSlides.length - 1);
+        });
+      });
+      return;
+    }
+
+    setActive((current) => current - 1);
+  };
+  const nextSlide = () => {
+    setIsJumping(false);
+    setActive((current) => (current >= heroSlides.length ? 1 : current + 1));
+  };
+  const handleHeroTransitionEnd = (event) => {
+    if (event.target !== event.currentTarget) return;
+
+    if (active === heroSlides.length) {
+      setIsJumping(true);
+      setActive(0);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setIsJumping(false));
+      });
+    }
+  };
+  const handleHeroCtaClick = (event, href) => {
+    event.preventDefault();
+    event.stopPropagation();
+    router.push(href);
+  };
+  const handleWhatsappSubmit = (event) => {
+    event.preventDefault();
+    const text = whatsappMessage.trim();
+    const url = text
+      ? `https://wa.me/4915737448021?text=${encodeURIComponent(text)}`
+      : "https://wa.me/4915737448021";
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  return (
+    <section className="homeHeroShell" aria-label="Fenster und Türen aus Polen">
+      <div className="homeHeroBrandWrap" aria-label="Kontakt">
+        <a href="/" className="homeHeroLogo" aria-label="Polnische-Fenster.com Startseite">
+          <img src="/pics/logo_PF.png" alt="Polnische-Fenster.com Logo" />
+        </a>
+        <div className="homeHeroContact" aria-label="Kontakt">
+          <a className="homeHeroMailLink" href="mailto:info@polnische-fenster.com">
+            <img src="/pics/svg/briefumschlag.svg" alt="" />
+            <span>info@polnische-fenster.com</span>
+          </a>
+          <form
+            className="homeHeroWhatsappCta"
+            onSubmit={handleWhatsappSubmit}
+            aria-label="WhatsApp Nachricht starten"
+          >
+            <span className="homeHeroWhatsappText">
+              <span>WhatsApp Chat starten</span>
+            </span>
+            <label className="homeHeroWhatsappInput">
+              <textarea
+                aria-label="WhatsApp Nachricht"
+                value={whatsappMessage}
+                onChange={(event) => setWhatsappMessage(event.target.value)}
+                rows="3"
+                placeholder="Hallo, ich interessiere mich für ..."
+              />
+            </label>
+            <button type="submit" className="homeHeroWhatsappButton">
+              <img
+                className="homeHeroWhatsappButtonIcon"
+                src="/pics/svg/whatsapp.svg"
+                alt=""
+              />
+              WhatsApp öffnen
+            </button>
+            <img
+              className="homeHeroWhatsappMascot"
+              src="/images/mascot/monteur-whatsapp.png"
+              alt=""
+              loading="lazy"
+            />
+          </form>
+        </div>
+      </div>
+
+      <div className="homeHeroSliderFrame">
+        <div
+          className="homeHeroTrack"
+          onTransitionEnd={handleHeroTransitionEnd}
+          style={{
+            transform: `translateX(-${active * 100}%)`,
+            transition: isJumping ? "none" : undefined,
+          }}
+        >
+          {sliderSlides.map((slide, index) => (
+            <article className="homeHeroSlide" key={`${slide.image}-${index}`}>
+              <Image
+                className="homeHeroImage"
+                src={slide.image}
+                alt={slide.alt}
+                layout="fill"
+                objectFit="cover"
+                priority={index === 0}
+                sizes="(max-width: 760px) 100vw, 860px"
+              />
+              <div className="homeHeroShade" />
+              <div className="homeHeroContent">
+                <p className="homeHeroTag">{slide.tag}</p>
+                {index === 0 ? (
+                  <h1>{slide.title}</h1>
+                ) : (
+                  <h2>{slide.title}</h2>
+                )}
+                <p className="homeHeroText">{slide.text}</p>
+                <a
+                  href={slide.href}
+                  className="homeHeroCta"
+                  data-href={slide.href}
+                  onClick={(event) => handleHeroCtaClick(event, slide.href)}
+                >
+                  {slide.cta}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="homeHeroArrow homeHeroPrev"
+          aria-label="Vorheriges Bild"
+          onClick={previousSlide}
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          className="homeHeroArrow homeHeroNext"
+          aria-label="Nächstes Bild"
+          onClick={nextSlide}
+        >
+          ›
+        </button>
+
+        <div className="homeHeroDots" aria-label="Hero Bilder">
+          {heroSlides.map((slide, index) => (
+            <button
+              type="button"
+              key={slide.image}
+              aria-label={`Bild ${index + 1} anzeigen`}
+              aria-current={index === visibleActive ? "true" : undefined}
+              className={`homeHeroDot ${index === visibleActive ? "active" : ""}`}
+              onClick={() => goToSlide(index)}
+            />
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        .homeHeroShell {
+          align-items: stretch;
+          display: grid;
+          gap: 14px;
+          grid-template-columns: 1fr;
+          margin: 0 auto 18px;
+          max-width: 1120px;
+          padding: 0 12px;
+        }
+
+        .homeHeroBrandWrap {
+          align-items: center;
+          background: #fff;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          justify-content: center;
+          overflow: visible;
+          padding: 8px 0 14px;
+        }
+
+        .homeHeroLogo {
+          align-items: center;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          margin: 0 auto;
+          width: 128px;
+        }
+
+        .homeHeroLogo img {
+          display: block;
+          height: auto;
+          width: 100%;
+        }
+
+        .homeHeroContact {
+          display: grid;
+          gap: 12px;
+          justify-items: center;
+          width: 100%;
+        }
+
+        .homeHeroContact a {
+          align-items: center;
+          color: #171717;
+          display: flex;
+          font-weight: 800;
+          gap: 9px;
+          text-decoration: none;
+        }
+
+        .homeHeroMailLink {
+          background: #ffffff;
+          border: 1px solid #e5e5e5;
+          box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+          font-size: 13px;
+          gap: 7px;
+          justify-content: center;
+          max-width: 252px;
+          padding: 9px 8px;
+          text-align: center;
+          width: 100%;
+        }
+
+        .homeHeroMailLink img {
+          flex: 0 0 auto;
+          height: 22px;
+          width: 22px;
+        }
+
+        .homeHeroMailLink span {
+          overflow-wrap: anywhere;
+          white-space: nowrap;
+        }
+
+        .homeHeroWhatsappCta {
+          background: transparent;
+          border: 0;
+          box-shadow: none;
+          display: grid;
+          gap: 12px;
+          justify-items: center;
+          min-height: 218px;
+          overflow: visible;
+          padding: 6px 0 0;
+          position: relative;
+          width: 100%;
+        }
+
+        .homeHeroWhatsappCta::before {
+          background: radial-gradient(circle, rgba(37, 211, 102, 0.24), rgba(37, 211, 102, 0) 70%);
+          content: "";
+          height: 190px;
+          pointer-events: none;
+          position: absolute;
+          right: -34px;
+          top: 44px;
+          width: 190px;
+        }
+
+        .homeHeroWhatsappCta::after {
+          display: none;
+        }
+
+        .homeHeroWhatsappText {
+          display: grid;
+          max-width: 210px;
+          position: relative;
+          text-align: center;
+          z-index: 2;
+        }
+
+        .homeHeroWhatsappText span {
+          font-size: 20px;
+          font-weight: 800;
+          line-height: 1.08;
+        }
+
+        .homeHeroWhatsappInput {
+          display: grid;
+          max-width: 224px;
+          position: relative;
+          width: 100%;
+          z-index: 2;
+        }
+
+        .homeHeroWhatsappInput textarea {
+          background: rgba(255, 255, 255, 0.92);
+          border: 1px solid #d8e6dc;
+          color: #171717;
+          font: inherit;
+          font-size: 12px;
+          line-height: 1.32;
+          min-height: 78px;
+          outline: none;
+          padding: 10px 74px 10px 10px;
+          resize: vertical;
+          width: 100%;
+        }
+
+        .homeHeroWhatsappInput textarea:focus {
+          border-color: #25d366;
+          box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.14);
+        }
+
+        .homeHeroWhatsappButton {
+          align-items: center;
+          background: #25d366;
+          border: 1px solid #25d366;
+          color: #0f2d19;
+          cursor: pointer;
+          display: inline-flex;
+          font-weight: 800;
+          gap: 8px;
+          justify-content: center;
+          justify-self: center;
+          min-width: 206px;
+          padding: 11px 14px;
+          position: relative;
+          z-index: 5;
+        }
+
+        .homeHeroWhatsappButton:hover,
+        .homeHeroWhatsappButton:focus {
+          background: #1fc15c;
+          border-color: #1fc15c;
+        }
+
+        .homeHeroWhatsappButtonIcon {
+          display: block;
+          height: 22px;
+          width: 22px;
+        }
+
+        .homeHeroWhatsappMascot {
+          bottom: 38px;
+          height: auto;
+          pointer-events: none;
+          position: absolute;
+          right: -18px;
+          width: 118px;
+          z-index: 4;
+        }
+
+        .homeHeroSliderFrame {
+          background: #111;
+          aspect-ratio: 4 / 3;
+          min-height: 0;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .homeHeroTrack {
+          display: flex;
+          height: 100%;
+          transition: transform 0.68s ease;
+          will-change: transform;
+        }
+
+        .homeHeroSlide {
+          flex: 0 0 100%;
+          height: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+
+        .homeHeroSlide :global(.homeHeroImage) {
+          height: 100% !important;
+          object-fit: cover !important;
+          object-position: center center;
+          width: 100% !important;
+        }
+
+        .homeHeroShade {
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.22) 48%, rgba(0, 0, 0, 0.1));
+          inset: 0;
+          position: absolute;
+          z-index: 1;
+        }
+
+        .homeHeroContent {
+          color: #fff;
+          max-width: 560px;
+          padding: 84px 22px 76px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .homeHeroTag {
+          background: rgba(213, 119, 22, 0.94);
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 0;
+          margin: 0 0 12px;
+          padding: 8px 10px;
+          text-transform: uppercase;
+        }
+
+        .homeHeroSliderFrame h1,
+        .homeHeroSliderFrame h2 {
+          font-size: 36px;
+          line-height: 1.05;
+          margin: 0;
+          max-width: 12ch;
+        }
+
+        .homeHeroText {
+          font-size: 17px;
+          line-height: 1.5;
+          margin: 14px 0 0;
+          max-width: 520px;
+        }
+
+        .homeHeroCta {
+          background: #fff;
+          color: #171717;
+          display: inline-block;
+          font-weight: 800;
+          margin-top: 22px;
+          padding: 13px 18px;
+          text-decoration: none;
+        }
+
+        .homeHeroArrow {
+          align-items: center;
+          background: rgba(255, 255, 255, 0.9);
+          border: 1px solid rgba(0, 0, 0, 0.14);
+          color: #111;
+          cursor: pointer;
+          display: flex;
+          font-size: 34px;
+          height: 42px;
+          justify-content: center;
+          line-height: 1;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 42px;
+          z-index: 3;
+        }
+
+        .homeHeroPrev {
+          left: 12px;
+        }
+
+        .homeHeroNext {
+          right: 12px;
+        }
+
+        .homeHeroDots {
+          bottom: 16px;
+          display: flex;
+          gap: 8px;
+          justify-content: center;
+          left: 0;
+          position: absolute;
+          right: 0;
+          z-index: 3;
+        }
+
+        .homeHeroDot {
+          background: rgba(255, 255, 255, 0.62);
+          border: 1px solid rgba(0, 0, 0, 0.18);
+          cursor: pointer;
+          height: 8px;
+          padding: 0;
+          transition: background 0.18s ease, width 0.18s ease;
+          width: 20px;
+        }
+
+        .homeHeroDot.active {
+          background: #d57716;
+          border-color: #d57716;
+          width: 34px;
+        }
+
+        @media (min-width: 760px) {
+          .homeHeroShell {
+            grid-template-columns: 252px minmax(0, 1fr);
+            padding: 0;
+          }
+
+          .homeHeroSliderFrame {
+            aspect-ratio: 4 / 3;
+          }
+
+          .homeHeroContent {
+            padding: 124px 56px 96px;
+          }
+
+          .homeHeroLogo {
+            width: 148px;
+          }
+
+          .homeHeroBrandWrap {
+            padding: 10px 0 18px;
+          }
+
+          .homeHeroContact {
+            z-index: 4;
+          }
+
+          .homeHeroWhatsappCta {
+            min-height: 236px;
+            padding-top: 10px;
+          }
+
+          .homeHeroWhatsappMascot {
+            bottom: 38px;
+            right: -44px;
+            width: 138px;
+          }
+
+          .homeHeroSliderFrame h1,
+          .homeHeroSliderFrame h2 {
+            font-size: 50px;
+          }
+
+          .homeHeroText {
+            font-size: 19px;
+          }
+        }
+
+        @media (max-width: 520px) {
+          .homeHeroShell {
+            padding: 0 12px;
+          }
+
+          .homeHeroSliderFrame {
+            aspect-ratio: auto;
+            min-height: 340px;
+          }
+
+          .homeHeroTrack,
+          .homeHeroSlide {
+            min-height: 340px;
+          }
+
+          .homeHeroShade {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.72));
+          }
+
+          .homeHeroContent {
+            padding: 30px 16px 46px;
+          }
+
+          .homeHeroTag {
+            font-size: 11px;
+            margin-bottom: 8px;
+            padding: 7px 9px;
+          }
+
+          .homeHeroLogo {
+            margin: 0 auto;
+            width: 112px;
+          }
+
+          .homeHeroBrandWrap {
+            gap: 12px;
+            padding: 0;
+          }
+
+          .homeHeroContact {
+            gap: 10px;
+          }
+
+          .homeHeroWhatsappCta {
+            min-height: 214px;
+            padding: 4px 0 0;
+          }
+
+          .homeHeroWhatsappText {
+            max-width: 190px;
+          }
+
+          .homeHeroWhatsappInput {
+            max-width: 224px;
+          }
+
+          .homeHeroWhatsappMascot {
+            bottom: 39px;
+            right: -10px;
+            width: 106px;
+          }
+
+          .homeHeroSliderFrame h1,
+          .homeHeroSliderFrame h2 {
+            font-size: 27px;
+            max-width: 14ch;
+          }
+
+          .homeHeroText {
+            font-size: 14px;
+            line-height: 1.36;
+            margin-top: 10px;
+            max-width: 285px;
+          }
+
+          .homeHeroCta {
+            margin-top: 14px;
+            padding: 11px 14px;
+          }
+
+          .homeHeroArrow {
+            bottom: 70px;
+            height: 36px;
+            top: auto;
+            transform: none;
+            width: 36px;
+          }
+
+          .homeHeroPrev {
+            left: auto;
+            right: 60px;
+          }
+
+          .homeHeroNext {
+            right: 18px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+const HomeTopContact = () => {
+  return (
+    <section className="homeTopContact" aria-label="Kontakt">
+      <a href="mailto:info@polnische-fenster.com" className="homeContactItem">
+        <img src="/pics/svg/briefumschlag.svg" alt="" />
+        <span>info@polnische-fenster.com</span>
+      </a>
+      <a
+        href="https://wa.me/4915737448021"
+        className="homeContactItem"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="/pics/svg/whatsapp.svg" alt="" />
+        <span>WhatsApp chat starten</span>
+      </a>
+
+      <style jsx>{`
+        .homeTopContact {
+          align-items: stretch;
+          display: none;
+          gap: 10px;
+          margin: -6px auto 18px;
+          max-width: 1120px;
+          padding: 0 12px;
+        }
+
+        .homeContactItem {
+          align-items: center;
+          background: #fff;
+          border: 1px solid #e4ddd3;
+          border-left: 4px solid #d57716;
+          color: #1b1b1b;
+          display: flex;
+          font-weight: 700;
+          gap: 10px;
+          min-height: 52px;
+          padding: 12px 14px;
+          text-decoration: none;
+        }
+
+        .homeContactItem img {
+          flex: 0 0 auto;
+          height: 24px;
+          width: 24px;
+        }
+
+        .homeContactItem span {
+          overflow-wrap: anywhere;
+        }
+
+        @media (min-width: 640px) {
+          .homeTopContact {
+            display: none;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 0;
+          }
+        }
+      `}</style>
+    </section>
+  );
+};
+
+const HomeVisualisationSection = () => {
+  return (
+    <section className="homeVisualWrap">
+      <div className="homeVisualHead">
+        <h2>Fenster vorab visualisieren</h2>
+        <p>
+          Probieren Sie Profile und Varianten aus, bevor wir Maße, Glas und
+          Montage technisch abstimmen.
+        </p>
+      </div>
+      <Visualisation profil="Aluprof MB 86 SI" showProfiles="yes" />
+
+      <style jsx>{`
+        .homeVisualWrap {
+          margin: 0 auto;
+          max-width: 1120px;
+          padding: 26px 16px 8px;
+        }
+
+        .homeVisualHead {
+          margin: 0 auto 12px;
+          max-width: 680px;
+          text-align: center;
+        }
+
+        .homeVisualHead h2 {
+          font-size: 30px;
+          line-height: 1.15;
+          margin: 0;
+        }
+
+        .homeVisualHead p {
+          color: #555;
+          line-height: 1.5;
+          margin: 8px 0 0;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+const HomeMovieSection = () => {
+  return (
+    <section className="homeMovieWrap" aria-label="Fenster Video">
+      <div className="homeMovieInner">
+        <div className="homeMovieText">
+          <p>3D Film</p>
+          <h2>Fensterprofil in Bewegung ansehen</h2>
+          <span>
+            Ein kurzer Eindruck vom Aufbau und der Optik moderner Fenstersysteme.
+          </span>
+        </div>
+        <div className="homeMovieFrame">
+          <video
+            src="/movies/living.mp4"
+            muted
+            autoPlay
+            loop
+            playsInline
+            preload="metadata"
+          />
+        </div>
+      </div>
+
+      <style jsx>{`
+        .homeMovieWrap {
+          margin: 0 auto;
+          max-width: 1120px;
+          padding: 18px 16px 8px;
+        }
+
+        .homeMovieInner {
+          align-items: center;
+          background: #f6f2ec;
+          display: grid;
+          gap: 18px;
+          padding: 18px;
+        }
+
+        .homeMovieText p {
+          color: #b86411;
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 0;
+          margin: 0 0 6px;
+          text-transform: uppercase;
+        }
+
+        .homeMovieText h2 {
+          font-size: 26px;
+          line-height: 1.15;
+          margin: 0;
+        }
+
+        .homeMovieText span {
+          color: #555;
+          display: block;
+          line-height: 1.5;
+          margin-top: 8px;
+        }
+
+        .homeMovieFrame {
+          background: #111;
+          overflow: hidden;
+        }
+
+        .homeMovieFrame video {
+          display: block;
+          height: auto;
+          width: 100%;
+        }
+
+        @media (min-width: 820px) {
+          .homeMovieInner {
+            grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+            padding: 22px 24px;
+          }
+
+          .homeMovieText h2 {
+            font-size: 32px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+};
+
 const TrustBar = () => {
   return (
-    <section className="mw9 center ph3 pv3">
+    <section className="homePageSection pv3">
       <div className="flex flex-wrap justify-center bg-white ba b--black-10">
         {trustItems.map((item) => (
           <div key={item.title} className="w-100 w-50-m w-25-l pa3 flex items-start">
@@ -137,7 +1054,7 @@ const TrustBar = () => {
 
 const PopularProjects = () => {
   return (
-    <section className="mw9 center ph3 pv4">
+    <section className="homePageSection pv4">
       <div className="tc mb3">
         <h2 className="f3 ma0">Was möchten Sie planen?</h2>
         <p className="mid-gray lh-copy ma0 mt2">
@@ -173,8 +1090,8 @@ const PopularProjects = () => {
 
 const ProcessTimeline = () => {
   return (
-    <section className="bg-light-gray pv4 ph3">
-      <div className="mw9 center">
+    <section className="homePageBand bg-light-gray pv4">
+      <div className="homePageSection">
         <div className="tc mb3">
           <h2 className="f3 ma0">So funktioniert es</h2>
           <p className="mid-gray lh-copy ma0 mt2">
@@ -204,7 +1121,7 @@ const ProcessTimeline = () => {
 
 const HomeFaq = () => {
   return (
-    <section className="mw8 center ph3 pv4">
+    <section className="homePageSection pv4">
       <h2 className="f3 tc ma0 mb3">Häufige Fragen</h2>
       <div>
         {faqs.map((faq) => (
@@ -305,6 +1222,7 @@ const hebeschiebe = [
 // components/WindowInfo.js
 const WindowInfo = () => {
   return (
+    <section className="homePageSection pv3">
     <div className="flex flex-wrap">
       <div className="w-100 w-50-l pa2">
         <p className="lh-copy">
@@ -327,6 +1245,7 @@ const WindowInfo = () => {
         </p>
       </div>
     </div>
+    </section>
   );
 };
 
@@ -338,11 +1257,15 @@ const WindowInfo = () => {
 
     <Fragment>
       <Head>
-      <title>Fenster aus Polen kaufen – Kunststoff & Aluminium | Polnische-Fenster.com</title>
+      <title>Fenster aus Polen in Deutschland kaufen | Polnische-Fenster.com</title>
         <meta
           name="description"
-          content="Fenster aus Polen & Türen aus Polen: Kunststoff- und Aluminiumfenster (Schüco, Salamander, Aluprof, Aluplast) mit Aufmaß und Montage. Große Auswahl, faire Preise – jetzt Angebot anfragen."
+          content="Fenster aus Polen in Deutschland: Kunststoff- und Aluminiumfenster mit Aufmaß, Konfiguration und Montage. Große Auswahl an Schüco, Salamander, Aluprof, Aluplast und vielen Marken – faire Preise und Beratung."
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Fenster aus Polen in Deutschland kaufen | Polnische-Fenster.com" />
+        <meta property="og:description" content="Fenster aus Polen in Deutschland mit Aufmaß, Konfiguration und Montage-Service. Moderne Kunststoff- und Aluminiumfenster zu attraktiven Preisen." />
+        <meta property="og:url" content="https://www.polnische-fenster.com/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -385,11 +1308,13 @@ const WindowInfo = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <HeaderDiv title="Fenster aus Polen" subtitle="Kunststoff & Aluminium – mit Aufmaß vor Ort und Montage" />
+      <HomeHero />
+      <HomeTopContact />
       <TrustBar />
       <PopularProjects />
+      <HomeMovieSection />
      
-      <section className="pa3 pa4-ns mw8 center">
+      <section className="homePageSection pv4">
         <h2 className="f3 tc">Polnische Fenster: Qualität, Preis und Auswahl</h2>
         <p className="lh-copy mid-gray">
           <strong>Fenster aus Polen</strong> sind in Deutschland so beliebt, weil sie ein sehr gutes Preis-Leistungs-Verhältnis
@@ -400,18 +1325,17 @@ const WindowInfo = () => {
         </p>
       </section>
       <ProcessTimeline />
-      
-      <Visualisation profil = "Aluprof MB 86 SI" showProfiles = "yes" />    
   
   <Description />
  
   <WindowInfo />
+  <HomeVisualisationSection />
   <HomeFaq />
   <CustomerReview />
 
 
 
-  <div className="flex flex-wrap justify-around mb3 w-100 tc">
+  <div className="homePageSection flex flex-wrap justify-around mb3 tc">
         <div className="w-100 w-40-l ma2 mt5-l">
           <Image src={image1} alt="Kunststofffenster Schüco Living MD" />
         </div>
@@ -420,12 +1344,42 @@ const WindowInfo = () => {
         </div>
       </div>
 
+      <div className="homePageSection homeProductCarousel">
       <Carousel show={Math.floor((size.width-50)/186)} title="Unsere Produkte:">      
           {fenster}
       </Carousel>
+      </div>
       
-     <WarumDiv />
-      <ActionDiv /> 
+     <div className="homePageSection"><WarumDiv /></div>
+      <div className="homePageSection"><ActionDiv /></div>
+      <style jsx global>{`
+        .homePageSection {
+          box-sizing: border-box;
+          margin-left: auto;
+          margin-right: auto;
+          max-width: 1120px;
+          padding-left: 16px;
+          padding-right: 16px;
+          width: 100%;
+        }
+
+        .homePageBand {
+          box-sizing: border-box;
+          width: 100%;
+        }
+
+        .homeProductCarousel > .flex {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }
+
+        @media (min-width: 760px) {
+          .homePageSection {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      `}</style>
     </Fragment>
   );
 }

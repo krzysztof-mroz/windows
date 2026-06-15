@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import CTAButton from "./CTAButton";
 import { useRouter } from 'next/router';
+import HeaderContactBar from "./headercontactbar";
 
 function Header(props) {
   const { title, subtitle, ifAnfrage, heroSlides = [], heroPlaceholder, ctaActions } = props;
   const router = useRouter();
 
-  const [activeContact, setActiveContact] = useState("whatsapp");
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isSlideTransitionEnabled, setIsSlideTransitionEnabled] = useState(true);
   const hasHeroSlides = Array.isArray(heroSlides) && heroSlides.length > 0;
@@ -72,50 +72,16 @@ function Header(props) {
     setCurrentSlide((prevSlide) => (prevSlide >= slideCount ? slideCount : prevSlide + 1));
   };
 
-  const setActive = (contactName) => {
-    setActiveContact(contactName);
-  };
-
-  const contactData = {
-    email: "info@polnische-fenster.com",
-    whatsapp: "+4915737448021",
-    whatsappLink: "4915737448021",
-  };
-
-  const renderContactData = () => {
-    return (
-      <div className="db dn-l tc w-100 w3-text-orange">
-        {activeContact === "email" && (
-          <p>
-            <a className="blue" href={`mailto:${contactData.email}`}>{contactData.email}</a>
-          </p>
-        )}
-        {activeContact === "whatsapp" && (
-          <p className="tc">
-            <a className="green" href={`https://wa.me/${contactData.whatsappLink}`} target="_blank">
-              {contactData.whatsapp}
-            </a>
-          </p>
-        )}
-      </div>
-    );
-  };
-
   const handleClick = () => {
     router.push('/kontakt/anfrage');
   };
 
   return (
     <div className="flex flex-wrap justify-center w-100">
-      {/* LOGO */}
-      <div className="mt6-l dn db-l w-100 w-25-l tc mv1">
-        <img className="mt1 dib" src="/pics/logo_PF.png" alt="Logo"></img>
-      </div>
-
-      
+      <HeaderContactBar />
 
       {/* IKONKI I TYTUL STRONY */}
-      <div className="w-100 w-50-l fl tc mv1">
+      <div className="headerMainVisual w-100 fl tc mv1">
      {/* REKLAMY W SLAJDACH:
         <div className="dn db-l hover-w3-border-orange relative">
           <img 
@@ -214,57 +180,6 @@ function Header(props) {
         <h2 className="fl f4 ma1 w-100 tc">{subtitle}</h2>
       </div>
 
-      {/* DANE KONTAKTOWE DUZY EKRAN */}
-      <div className="dn db-l w-100 w-25-l fl tc tl-l mt6 mt1-m f5 w3-text-orange pl4-l">
-        <div className="w-100 mv1">
-          <img
-            className="dib mr2"
-            style={{ position: "relative", width: 25, height: 25 }}
-            src="/pics/svg/briefumschlag.svg"
-            alt="Email"
-          />
-          <a className="blue" href="mailto: info@polnische-fenster.com">
-            info@polnische-fenster.com
-          </a>
-        </div>
-        <div className="w-100 mv3">
-          <img
-            className="dib mr2"
-            style={{ position: "relative", width: 25, height: 25 }}
-            src="/pics/svg/whatsapp.svg"
-            alt="WhatsApp"
-          />
-          <a className="green" href={`https://wa.me/${contactData.whatsappLink}`} target="_blank">
-            {contactData.whatsapp}
-          </a>
-        </div>
-      </div>
-
-      {/* DANE KONTAKTOWE MOBIL */}
-      <div className="db dn-l w-50 fl tc f5 w3-text-orange flex">
-        <div className="w-50">
-          <div className="contact-icon" onClick={() => setActive("email")}>
-            <img
-              className="dib mr2"
-              style={{ position: "relative", width: 25, height: 25 }}
-              src="/pics/svg/briefumschlag.svg"
-              alt="Email"
-            />
-          </div>
-        </div>
-        <div className="w-50">
-          <div className="contact-icon" onClick={() => setActive("whatsapp")}>
-            <img
-              className="dib mr2"
-              style={{ position: "relative", width: 25, height: 25 }}
-              src="/pics/svg/whatsapp.svg"
-              alt="WhatsApp"
-            />
-          </div>
-        </div>
-      </div>
-      {renderContactData()}
-
       <div className="flex justify-center w-100">
         {" "}
         {/* Center the row horizontally */}
@@ -288,6 +203,9 @@ function Header(props) {
       {ifAnfrage != "yes" && <CTAButton actions={ctaActions} />}
      {/*  <AktionRabatt /> */}
       <style jsx>{`
+        .headerMainVisual {
+          max-width: 760px;
+        }
         .doorHeroSlider {
           background: #f6f2ec;
           overflow: hidden;

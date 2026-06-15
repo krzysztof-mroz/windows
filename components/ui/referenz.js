@@ -63,7 +63,7 @@ const CustomerReview = () => {
   }, []);
 
   return (
-    <div className="mw8 center ph3 pv4 bg-light-gray">
+    <div className="homePageSection pv4 bg-light-gray">
       <h2 className="f3 ma1 w-100 tc">Unsere Referenz für heute</h2>
       <div className="ba b--black-10 pa3">
         <div className={selectedCustomer.images.length === 1 ? 'center' : 'flex-l flex-wrap'}>

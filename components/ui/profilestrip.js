@@ -49,10 +49,7 @@ function ffd (ev) {
     setActiveProfile(profiles[nrprofila].alt);
 
     //$id("profilDuzy").src = profiles[nrprofila].picSlide;
-    $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
-    $id("tekstProfilu").innerText = profiles[nrprofila].alt;
-    $id("komoryProfilu").innerText = profiles[nrprofila].desc;
-    $id("sectionPic").src = profiles[nrprofila].section;
+    updateProfileDetails(profiles[nrprofila]);
     props.onProfileChange(profiles[nrprofila].alt);
     //if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
 }
@@ -68,36 +65,49 @@ function back (ev) {
     setActiveProfile(profiles[nrprofila].alt);
 
     //$id("profilDuzy").src = profiles[nrprofila].picSlide;
-    $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
-    $id("tekstProfilu").innerText = profiles[nrprofila].alt;
-    $id("komoryProfilu").innerText = profiles[nrprofila].desc;
-    $id("sectionPic").src = profiles[nrprofila].section;
+    updateProfileDetails(profiles[nrprofila]);
     props.onProfileChange(profiles[nrprofila].alt);
     //if (props.mWindow == "film") changeVideo (profiles[nrprofila].movie, props.mWindow);
 }
 
 
   function zmien_profil(ev) {
+    const selectedProfile = ev.currentTarget;
     var nrprofila = 0;
     for (const profilek of profiles) {
-      if (profilek.idSlide == ev.target.name) {
+      if (profilek.idSlide == selectedProfile.name) {
         nrprofila = profiles.indexOf(profilek);
       }
     }
 
-    setActiveProfile(ev.target.alt);
+    setActiveProfile(selectedProfile.alt);
 
     //$id("profilDuzy").src = ev.target.title;
-    $id("nazwaProfilu").innerText = profiles[nrprofila].alt;
-    $id("tekstProfilu").innerText = ev.target.alt;
-    $id("komoryProfilu").innerText = profiles[nrprofila].desc;
+    updateProfileDetails(profiles[nrprofila], selectedProfile.alt);
    // $id("sectionPic").src = profiles[nrprofila].section;
-    props.onProfileChange(ev.target.alt);
+    props.onProfileChange(selectedProfile.alt);
     //changeVideo (profiles[nrprofila].movie, props.mWindow);
   }
 
   function $id(id) {
     return document.getElementById(id);
+  }
+
+  function setTextIfExists(id, text) {
+    const element = $id(id);
+    if (element) element.innerText = text;
+  }
+
+  function setSrcIfExists(id, src) {
+    const element = $id(id);
+    if (element && src) element.src = src;
+  }
+
+  function updateProfileDetails(profile, label = profile.alt) {
+    setTextIfExists("nazwaProfilu", profile.alt);
+    setTextIfExists("tekstProfilu", label);
+    setTextIfExists("komoryProfilu", profile.desc);
+    setSrcIfExists("sectionPic", profile.section);
   }
 
   function changeVideo (movie, mWindow) {
