@@ -3,6 +3,7 @@ import { Fragment } from "react";
 
 import NaviBar from "./navibar";
 import FooterDiv from "./footerdiv";
+import Schnellkontakt from "./schnellkontakt";
 
 function Layout(props) {
   return (
@@ -14,6 +15,10 @@ function Layout(props) {
           className="siteBody"
         >
           <main className="siteMain">{props.children}</main>
+
+          <div className="siteQuickContact">
+            <Schnellkontakt />
+          </div>
 
           <FooterDiv />
         </div>
@@ -29,6 +34,12 @@ function Layout(props) {
 
           .siteBody {
             margin-top: 70px;
+          }
+
+          .siteQuickContact {
+            margin: 34px auto 22px;
+            max-width: 1120px;
+            width: 100%;
           }
 
           .siteMain .mw7,

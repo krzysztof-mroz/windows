@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import HeaderDiv from "../components/ui/headerdiv";
-import Schnellkontakt from "../components/ui/schnellkontakt";
 import Head from "next/head";
 
 function Kontakt() {
@@ -15,7 +14,6 @@ function Kontakt() {
       </Head>
       <HeaderDiv title="Kontakt für Ihre Fenster" subtitle="Ihre Fragen und Anliegen sind uns wichtig"/>
       <div className="flex flex-wrap justify-around mv1 tc fl w-100 ba b--moon-gray pa4">
-        <Schnellkontakt />
         <div className="w-100 w-30-l ba b--moon-gray ma2 pa3 center"  >
         <p className="gray f6">Kugemo UG (haftungsbeschränkt) </p>
         <p className="gray f6">Münzstraße 2 </p>

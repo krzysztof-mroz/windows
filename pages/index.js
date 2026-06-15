@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import image1 from "/public/living_black_2.jpg";
 import image2 from "/public/aws90_rust.jpg";
-import Description from "../components/ui/description";
 import WarumDiv from "../components/ui/warumdiv";
 import ActionDiv from "../components/ui/actiondiv";
 import Visualisation from "../components/ui/visualisation";
@@ -1325,8 +1324,6 @@ const WindowInfo = () => {
         </p>
       </section>
       <ProcessTimeline />
-  
-  <Description />
  
   <WindowInfo />
   <HomeVisualisationSection />

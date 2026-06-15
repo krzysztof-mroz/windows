@@ -5,6 +5,7 @@ import HeaderDiv from "../../components/ui/headerdiv";
 import NebeneingangLandingSection from "../../components/NebeneingangLandingSection";
 import { getMinGrossPrice, formatEUR } from "../../components/data/nebeneingangPrices";
 import ModelsGrid from "../../components/ModelsGrid";
+import DoorCategorySwitchLinks from "../../components/DoorCategorySwitchLinks";
 
 const nebeneingangHeroSlides = [
   {
@@ -67,6 +68,7 @@ const NebeneingangFormCta = () => {
           <a className="nebCtaSecondary" href="#nebeneingang-modelle">
             Modelle ansehen
           </a>
+          <DoorCategorySwitchLinks current="side" />
         </div>
       </div>
 

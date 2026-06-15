@@ -7,6 +7,7 @@ import Link from "next/link";
 import HeaderDiv from "../../components/ui/headerdiv";
 import KunststoffHaustuerenLandingSection from "../../components/KunststoffHaustuerenLandingSection";
 import HaustuerenModelsGrid from "../../components/HaustuerenModelsGrid";
+import DoorCategorySwitchLinks from "../../components/DoorCategorySwitchLinks";
 
 const SITE_URL = "https://www.polnische-fenster.com";
 const FORM_HREF = "/kontakt/anfragehtpvc?modell=Auswahl%20offen";
@@ -113,6 +114,7 @@ function HaustuerFormCta() {
           <Link href="#haustueren-modelle" legacyBehavior>
             <a className="budgetSecondaryLink">Modelle ansehen</a>
           </Link>
+          <DoorCategorySwitchLinks current="budget" />
         </div>
       </div>
       <style jsx>{`

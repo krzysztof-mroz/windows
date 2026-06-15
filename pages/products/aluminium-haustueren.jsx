@@ -8,6 +8,7 @@ import Link from "next/link";
 import HeaderDiv from "../../components/ui/headerdiv";
 import AluminiumHaustuerenLandingSection from "../../components/AluminiumHaustuerenLandingSection";
 import AluHaustuerenModelsGrid from "../../components/AluHaustuerenModelsGrid";
+import DoorCategorySwitchLinks from "../../components/DoorCategorySwitchLinks";
 
 const SITE_URL = "https://www.polnische-fenster.com";
 const FORM_HREF = "/kontakt/anfragehtalu?modell=Auswahl%20offen";
@@ -137,6 +138,7 @@ function AluminiumFormCta() {
           <Link href="#aluminium-modelle" legacyBehavior>
             <a className="aluSecondaryLink">Modelle ansehen</a>
           </Link>
+          <DoorCategorySwitchLinks current="premium" />
         </div>
       </div>
 

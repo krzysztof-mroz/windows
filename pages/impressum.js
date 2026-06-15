@@ -1,6 +1,5 @@
 import { Fragment } from "react";
 import HeaderDiv from "../components/ui/headerdiv";
-import Schnellkontakt from "../components/ui/schnellkontakt";
 import Head from "next/head";
 
 function Kontakt() {

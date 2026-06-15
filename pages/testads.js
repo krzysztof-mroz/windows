@@ -4,7 +4,6 @@ import Head from "next/head";
 import Image from "next/image";
 import image1 from "/public/living_black_2.jpg";
 import image2 from "/public/aws90_rust.jpg";
-import Description from "../components/ui/description";
 import HeaderDiv from "../components/ui/headerdiv";
 import WarumDiv from "../components/ui/warumdiv";
 import ActionDiv from "../components/ui/actiondiv";
@@ -97,8 +96,6 @@ const fenster = [
       </Head>
       <HeaderDiv title="Kunststoff und Aluminium Fenster aus Polen" />
       <Visualisation profil = "Kömmerling 88 MD" showProfiles = "yes" />
-
-      <Description />
 
       <div className="flex flex-wrap justify-around mb3 w-100 tc">
         <div className="w-100 w-40-l ma2 mt5-l">

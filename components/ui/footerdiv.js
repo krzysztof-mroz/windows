@@ -1,239 +1,220 @@
 import Link from "next/link";
 
+const brandLogos = [
+  { src: "/pics/logos/logo_aluplast.png", alt: "Aluplast" },
+  { src: "/pics/logos/logo_salamander.png", alt: "Salamander" },
+  { src: "/pics/logos/logo_gealan.png", alt: "Gealan" },
+  { src: "/pics/logos/logo_aluprof.png", alt: "Aluprof" },
+  { src: "/pics/logos/logo_aliplast.png", alt: "Aliplast" },
+];
+
+const footerSections = [
+  {
+    title: "Fenster",
+    links: [
+      { href: "/fenster", label: "Fenster aus Polen" },
+      { href: "/salamander", label: "Salamander Kunststoff Fenster" },
+      { href: "/aluplast", label: "Aluplast Kunststoff Fenster" },
+      { href: "/gealan", label: "Gealan Kunststoff Fenster" },
+      { href: "/schuecopvc", label: "Schüco Kunststoff Fenster" },
+      { href: "/koemmerling", label: "Kömmerling Kunststoff Fenster" },
+      { href: "/aluprof", label: "Aluprof Aluminium Fenster" },
+      { href: "/schuecoalu", label: "Schüco Aluminium Fenster" },
+      { href: "/ponzio", label: "Ponzio Aluminium Fenster" },
+      { href: "/hs", label: "Schüco Hebe Schiebe" },
+      { href: "/hspd", label: "Kömmerling Hebe Schiebe" },
+    ],
+  },
+  {
+    title: "Fensterprofile",
+    links: [
+      { href: "/products/ct70", label: "Schüco CT 70 Classic" },
+      { href: "/products/ct70rondo", label: "Schüco CT 70 Rondo" },
+      { href: "/products/living", label: "Schüco Living MD" },
+      { href: "/products/k70", label: "Kömmerling 70 AD" },
+      { href: "/products/k76ad", label: "Kömmerling 76 AD" },
+      { href: "/products/k76md", label: "Kömmerling 76 MD" },
+      { href: "/products/k88", label: "Kömmerling 88 MD" },
+      { href: "/products/mb70", label: "Aluprof MB 70 HI" },
+      { href: "/products/mb86", label: "Aluprof MB 86 SI" },
+      { href: "/products/aws75", label: "Schüco AWS 75 SI" },
+      { href: "/products/aws90", label: "Schüco AWS 90 SI" },
+      { href: "/products/pe68", label: "Ponzio PE 68 N" },
+      { href: "/products/pe78", label: "Ponzio PE 78 N" },
+    ],
+  },
+  {
+    title: "Türen",
+    links: [
+      { href: "/tueren", label: "Türen Übersicht" },
+      { href: "/products/aluminium-haustueren", label: "Aluminium Premium Haustüren" },
+      { href: "/products/kunststoff-alu-haustueren", label: "Budgetfreundliche Haustüren" },
+      { href: "/products/k70nt", label: "Nebeneingangstüren" },
+      { href: "/products/innentueren", label: "Innentüren" },
+      { href: "/products/ct70ht", label: "Schüco CT 70 Haustür" },
+      { href: "/products/livinght", label: "Schüco Living Haustür" },
+      { href: "/products/k76ht", label: "Kömmerling 76 Haustür" },
+      { href: "/products/k88ht", label: "Kömmerling 88 Haustür" },
+      { href: "/products/ct70nt", label: "Schüco CT 70 Nebentür" },
+      { href: "/products/livingnt", label: "Schüco Living Nebentür" },
+      { href: "/products/k76nt", label: "Kömmerling 76 Nebentür" },
+      { href: "/products/k88nt", label: "Kömmerling 88 Nebentür" },
+    ],
+  },
+  {
+    title: "Beschattung",
+    links: [
+      { href: "/beschattung", label: "Beschattung" },
+      { href: "/rolllaeden", label: "Rollläden" },
+      { href: "/raffstoren", label: "Raffstoren" },
+      { href: "/screenrolls", label: "Screen Rolls" },
+      { href: "/products/ael", label: "Aufsatzrollladen" },
+      { href: "/products/sk", label: "Vorsatzrollladen SK" },
+      { href: "/products/sko", label: "Vorsatzrollladen SKO" },
+      { href: "/products/skp", label: "Vorsatzrollladen SKP" },
+      { href: "/products/sp", label: "Vorsatzrollladen SP" },
+      { href: "/products/raf", label: "Vorsatzraffstoren" },
+    ],
+  },
+  {
+    title: "Service",
+    links: [
+      { href: "/kontakt/anfrage", label: "Anfrage starten" },
+      { href: "/aufmass", label: "Aufmaß" },
+      { href: "/howworking", label: "Wie funktioniert es?" },
+      { href: "/beratung", label: "Beratung" },
+      { href: "/montage", label: "Montage" },
+      { href: "/vermittlung", label: "Vermittlung" },
+      { href: "/kontakt", label: "Kontakt" },
+      { href: "/aboutus", label: "Über uns" },
+      { href: "/impressum", label: "Impressum" },
+    ],
+  },
+];
+
+function FooterLink({ href, label }) {
+  return (
+    <Link href={href} legacyBehavior>
+      <a className="footerLink">{label}</a>
+    </Link>
+  );
+}
+
 function footer() {
-    return (
-
-        <div className="flex flex-wrap justify-center  w-100 pa2 tc  ">
-         
-          <div className="w-100 ba b--moon-gray pa2">
+  return (
+    <footer className="siteFooter">
+      <div className="footerLogos" aria-label="Ausgewählte Profil- und Systempartner">
+        {brandLogos.map((logo) => (
           <img
-              className="mh4 mb4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_aluplast.png"
-            ></img>
-            <img
-              className="mh4 mb4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_salamander.png"
-            ></img>
-             <img
-              className="mh4 mb4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_gealan.png"
-            ></img>
-          <img
-              className="mh4 mb4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_profine.png"
-            ></img>
-            <img
-              className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_aluprof.png"
-            ></img>
-             <img
-              className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_aliplast.png"
-            ></img>
-            <img
-              className="mh4 mv4 mv1-l ph3 db dib-l center"
-              src="/pics/logos/logo_ponzio.png"
-            ></img>
-           
-            
-          </div>
+            alt={logo.alt}
+            className="footerLogo"
+            key={logo.src}
+            loading="lazy"
+            src={logo.src}
+          />
+        ))}
+      </div>
 
-          <div className="w-100 w-30-l  ma2 pa3">
-            <h5 className="gray">Fenster und Hebe Schiebe</h5>
-            <p className="gray f6">
-              <Link href="/fenster">
-                <a className="f6 fw4 no-underline db   ph3">Fenster</a>
-              </Link>
+      <div className="footerColumns">
+        {footerSections.map((section) => (
+          <nav className="footerColumn" key={section.title} aria-label={section.title}>
+            <h5>{section.title}</h5>
+            {section.links.map((link) => (
+              <FooterLink key={link.href} href={link.href} label={link.label} />
+            ))}
+          </nav>
+        ))}
+      </div>
 
-              <Link href="/salamander">
-                <a className="f6 fw4 no-underline db   ph3">Salamander Kunststoff Fenster</a>
-              </Link>
+      <p className="footerCopyright">
+        © 2021 - 2026. Alle Abbildungen, Texte, Filme und 3d Modelle sind
+        urheberrechtlich geschützt. Bei Interesse für die Benutzung bitten wir
+        um Kontakt.
+      </p>
 
-              <Link href="/aluplast">
-                <a className="f6 fw4 no-underline db   ph3">Aluplast Kunststoff Fenster</a>
-              </Link>
+      <style jsx global>{`
+        .siteFooter {
+          color: #686868;
+          padding: 10px 0 20px;
+          text-align: center;
+          width: 100%;
+        }
 
-              <Link href="/gealan">
-                <a className="f6 fw4 no-underline db   ph3">Gealan Kunststoff Fenster</a>
-              </Link>
+        .footerLogos {
+          align-items: center;
+          border: 1px solid #d7d7d7;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 22px;
+          justify-content: center;
+          margin: 0 auto 22px;
+          padding: 18px 14px;
+          width: 100%;
+        }
 
-              <Link href="/schuecopvc">
-                <a className="f6 fw4 no-underline db   ph3">Schüco Kunststoff Fenster</a>
-              </Link>
-              <Link href="/koemmerling">
-                <a className="f6 fw4 no-underline db   ph3">Kömmerling Kunststoff Fenster</a>
-              </Link>
-              <Link href="/ponzio">
-                <a className="f6 fw4 no-underline db   ph3">Ponzio Aluminium Fenster</a>
-              </Link>
-              <Link href="/aluprof">
-                <a className="f6 fw4 no-underline db   ph3">Aluprof Aluminium Fenster</a>
-              </Link>
-              <Link href="/schuecoalu">
-                <a className="f6 fw4 no-underline db   ph3">Schüco Aluminium Fenster</a>
-              </Link>
-              <Link href="/products/ct70">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Classic</a>
-              </Link>
-              <Link href="/products/ct70rondo">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Rondo</a>
-              </Link>
-              <Link href="/products/living">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco Living MD</a>
-              </Link>
-              <Link href="/products/k70">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 70 AD</a>
-              </Link>
-              <Link href="/products/k76ad">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 AD</a>
-              </Link>
-              <Link href="/products/k76md">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 MD</a>
-              </Link>
-              <Link href="/products/k88">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 MD</a>
-              </Link>
-              <Link href="/products/pe68">
-                <a className="f6 fw4 no-underline  db  ph3">Ponzio PE 68 N</a>
-              </Link>
-              <Link href="/products/pe78">
-                <a className="f6 fw4 no-underline  db  ph3">Ponzio PE 78 N</a>
-              </Link>
-              <Link href="/products/mb70">
-                <a className="f6 fw4 no-underline  db  ph3">Aluprof MB 70 HI</a>
-              </Link>
-              <Link href="/products/mb86">
-                <a className="f6 fw4 no-underline  db  ph3">Aluprof MB 86 SI</a>
-              </Link>
-              <Link href="/products/aws75">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco AWS 75 SI</a>
-              </Link>
-              <Link href="/products/aws90">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco AWS 90 SI</a>
-              </Link>
-              <Link href="/hs">
-                <a className="f6 fw4 no-underline db   ph3">Schüco Hebe Schiebe</a>
-              </Link>
-              <Link href="/hspd">
-                <a className="f6 fw4 no-underline db   ph3">Kömmerling Hebe Schiebe</a>
-              </Link>
+        .footerLogo {
+          display: block;
+          height: auto;
+          max-height: 44px;
+          max-width: 160px;
+          object-fit: contain;
+        }
 
-            </p>
-          </div>
+        .footerColumns {
+          display: grid;
+          gap: 20px;
+          grid-template-columns: 1fr;
+          margin: 0 auto;
+          width: 100%;
+        }
 
-          <div className="w-100 w-30-l  ma2 pa3">
-            <h5 className="gray">Türen und Beschattung</h5>
-            <p className="gray f6">
+        .footerColumn h5 {
+          color: #737373;
+          font-size: 18px;
+          margin: 0 0 12px;
+        }
 
+        .footerLink {
+          color: #686868;
+          display: block;
+          font-size: 14px;
+          line-height: 1.35;
+          padding: 2px 8px;
+          text-decoration: none;
+        }
 
-            <Link href="/tueren">
-                <a className="f6 fw4 no-underline  db  ph3">Haustüren</a>
-              </Link>
-              <Link href="/products/ct70nt">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Nebentür</a>
-              </Link>
-              <Link href="/products/ct70ht">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco CT 70 Haustür</a>
-              </Link>
-              <Link href="/products/livingnt">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco Living Nebentür</a>
-              </Link>
-              <Link href="/products/livinght">
-                <a className="f6 fw4 no-underline  db  ph3">Schüco Living Haustür</a>
-              </Link>
-              <Link href="/products/k70nt">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 70 Nebentür</a>
-              </Link>
-              <Link href="/products/k76nt">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 Nebentür</a>
-              </Link>
-              <Link href="/products/k76ht">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 76 Haustür</a>
-              </Link>
-              <Link href="/products/k88nt">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 Nebentür</a>
-              </Link>
-              <Link href="/products/k88ht">
-                <a className="f6 fw4 no-underline  db  ph3">Kömmerling 88 Haustür</a>
-              </Link>
-              <Link href="/products/ael">
-                <a className="f6 fw4 no-underline  db  ph3">Aufsatzrollladen Aluprof</a>
-              </Link>
-              <Link href="/products/sk">
-                <a className="f6 fw4 no-underline  db  ph3">Vorsatzrollladen eckig SK</a>     
-              </Link>
-              <Link href="/products/sko">
-                <a className="f6 fw4 no-underline  db  ph3">Vorsatzrollladen halbrund SKO</a>     
-              </Link>
-              <Link href="/products/skp">
-                <a className="f6 fw4 no-underline  db  ph3">Vorsatzrollladen viertelrund SKP</a>     
-              </Link>
-              <Link href="/products/sp">
-                <a className="f6 fw4 no-underline  db  ph3">Vorsatzrollladen unterputz SP</a>     
-              </Link>
-              <Link href="/products/raf">
-                <a className="f6 fw4 no-underline  db  ph3">Vorsatzraffstoren</a>     
-              </Link>
-              
-              <Link href="/beschattung">
-                <a className="f6 fw4 no-underline  db  ph3">Beschattung</a>
-              </Link>
+        .footerLink:hover,
+        .footerLink:focus {
+          color: #d57716;
+          text-decoration: underline;
+        }
 
-              <Link href="/rolllaeden">
-                <a className="f6 fw4 no-underline  db  ph3">Rollläden</a>
-              </Link>
-              <Link href="/raffstoren">
-                <a className="f6 fw4 no-underline  db  ph3">Raffstoren</a>
-              </Link>
-              <Link href="/screenrolls">
-                <a className="f6 fw4 no-underline  db  ph3">Screen Rolls</a>
-              </Link>
+        .footerCopyright {
+          color: #777;
+          font-size: 12px;
+          line-height: 1.5;
+          margin: 24px 0 0;
+          text-align: left;
+        }
 
+        @media (min-width: 640px) {
+          .footerColumns {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+          }
+        }
 
+        @media (min-width: 980px) {
+          .footerColumns {
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+          }
 
-              
-            </p>
-          </div>
-
-
-          <div className="w-100 w-30-l  ma2 pa3">
-            <h5 className="gray">Sonstiges</h5>
-            <p className="gray f6">
-              <Link href="/aufmass">
-                <a className="f6 fw4 no-underline db   ph3">Aufmaß</a>
-              </Link>
-              <Link href="/howworking">
-                <a className="f6 fw4 no-underline db   ph3">
-                  Wie funktioniert es?
-                </a>
-              </Link>
-              <Link href="/aboutus">
-                <a className="f6 fw4 no-underline  db  ph3">Über uns</a>
-              </Link>
-              <Link href="/kontakt">
-                <a className="f6 fw4 no-underline  db  ph3">Kontakt</a>
-              </Link>
-              <Link href="/impressum">
-                <a className="f6 fw4 no-underline  db  ph3">Impressum</a>
-              </Link>
-              <Link href="/beratung">
-                <a className="f6 fw4 no-underline  db  ph3">Beratung</a>
-              </Link>
-              <Link href="/vermittlung">
-                <a className="f6 fw4 no-underline  db  ph3">Vermittlung</a>
-              </Link>
-              <Link href="/montage">
-                <a className="f6 fw4 no-underline  db  ph3">Montage</a>
-              </Link>
-            </p>
-          </div>
-
-       
-          <div className="tl w-100">
-            <p className="gray f7">© 2021 - 2024. Alle Abbildungen, Texte, Filme und 3d Modelle sind urheberrechtlich geschützt. Bei Interesse für die Benutzng bitten wir um Kontakt. </p>
-          </div>
-        </div>
-        );
+          .footerColumn h5 {
+            min-height: 22px;
+          }
+        }
+      `}</style>
+    </footer>
+  );
 }
 
 export default footer;
