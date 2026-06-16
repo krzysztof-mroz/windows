@@ -1,8 +1,10 @@
 import { Fragment } from "react";
+import Link from "next/link";
 import FensterDiv from "../components/ui/fensterdiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
 import CustomerReview from "../components/ui/referenz";
+import WindowFeatureGraphic from "../components/WindowFeatureGraphic";
 
 const SITE_URL = "https://www.polnische-fenster.com";
 
@@ -64,6 +66,206 @@ function FenstertitleIntro() {
         von hochwertigen Kunststofffenstern bis zu schlanken Aluminiumfenstern mit klaren Linien.
         Alle Lösungen werden auf Maß, Nutzungsart und Ihre baulichen Gegebenheiten abgestimmt.
       </p>
+    </section>
+  );
+}
+
+function FensterPanelCta() {
+  return (
+    <section className="fensterCtaWrap">
+      <div className="fensterCta">
+        <div>
+          <p className="fensterEyebrow">Fensterprojekt vorbereiten</p>
+          <h2>Fenster, Türen und Beschattung zusammen planen</h2>
+          <p>
+            Starten Sie direkt mit einer Anfrage oder springen Sie zu den
+            passenden Bereichen für Haustüren und Sonnenschutz.
+          </p>
+        </div>
+        <div className="fensterCtaActions">
+          <Link href="/kontakt/anfrage" legacyBehavior>
+            <a className="fensterPrimaryLink">Anfrage vorbereiten</a>
+          </Link>
+          <Link href="/tueren" legacyBehavior>
+            <a className="fensterSecondaryLink">zu den Haustüren</a>
+          </Link>
+          <Link href="/beschattung" legacyBehavior>
+            <a className="fensterSecondaryLink">zur Beschattung</a>
+          </Link>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .fensterCtaWrap {
+          margin: 0 auto;
+          max-width: 1120px;
+          padding: 10px 16px 12px;
+        }
+
+        .fensterCta {
+          align-items: center;
+          background: #f6f2ec;
+          border-left: 6px solid #d57716;
+          display: grid;
+          gap: 16px;
+          padding: 18px;
+        }
+
+        .fensterCta h2 {
+          color: #171717;
+          font-size: 25px;
+          line-height: 1.15;
+          margin: 0;
+        }
+
+        .fensterCta p {
+          color: #555;
+          line-height: 1.5;
+          margin: 8px 0 0;
+        }
+
+        .fensterEyebrow {
+          color: #b86411;
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 0;
+          margin: 0 0 6px;
+          text-transform: uppercase;
+        }
+
+        .fensterCtaActions {
+          display: grid;
+          gap: 10px;
+        }
+
+        .fensterPrimaryLink,
+        .fensterSecondaryLink {
+          display: inline-block;
+          font-weight: 800;
+          min-width: 190px;
+          padding: 0.85rem 1rem;
+          text-align: center;
+          text-decoration: none;
+        }
+
+        .fensterPrimaryLink {
+          background: #d57716;
+          color: #fff;
+        }
+
+        .fensterSecondaryLink {
+          background: #fff;
+          border: 1px solid #d8d8d8;
+          color: #222;
+        }
+
+        .fensterPrimaryLink:hover,
+        .fensterSecondaryLink:hover,
+        .fensterPrimaryLink:focus,
+        .fensterSecondaryLink:focus {
+          transform: translateY(-1px);
+        }
+
+        @media (min-width: 760px) {
+          .fensterCta {
+            grid-template-columns: minmax(0, 1fr) auto;
+            padding: 22px 24px;
+          }
+
+          .fensterCta h2 {
+            font-size: 31px;
+          }
+
+          .fensterCtaActions {
+            min-width: 220px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
+
+function FensterProfileVideo() {
+  return (
+    <section className="fensterVideoWrap" aria-label="Fensterprofil im Schnitt">
+      <div className="fensterVideoText">
+        <p className="fensterEyebrow">Profiltechnik</p>
+        <h2>Fensterprofil im Schnitt ansehen</h2>
+        <p>
+          Der Film zeigt Aufbau, Luftkammern, Stahlverstärkung und Dichtungsebenen
+          eines modernen Kunststofffensters.
+        </p>
+      </div>
+      <div className="fensterVideoFrame">
+        <video
+          src="/movies/living.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+        />
+      </div>
+
+      <style jsx>{`
+        .fensterVideoWrap {
+          align-items: center;
+          background: #f6f2ec;
+          display: grid;
+          gap: 24px;
+          margin: 22px auto 18px;
+          max-width: 1120px;
+          padding: 24px 16px;
+        }
+
+        .fensterVideoText {
+          max-width: 440px;
+        }
+
+        .fensterEyebrow {
+          color: #b86411;
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 0;
+          margin: 0 0 6px;
+          text-transform: uppercase;
+        }
+
+        .fensterVideoText h2 {
+          color: #171717;
+          font-size: 28px;
+          line-height: 1.12;
+          margin: 0;
+        }
+
+        .fensterVideoText p:last-child {
+          color: #555;
+          line-height: 1.5;
+          margin: 10px 0 0;
+        }
+
+        .fensterVideoFrame {
+          background: #111;
+          overflow: hidden;
+        }
+
+        .fensterVideoFrame video {
+          display: block;
+          height: auto;
+          width: 100%;
+        }
+
+        @media (min-width: 840px) {
+          .fensterVideoWrap {
+            grid-template-columns: minmax(240px, 0.9fr) minmax(420px, 1.4fr);
+            padding: 26px 28px;
+          }
+
+          .fensterVideoText h2 {
+            font-size: 32px;
+          }
+        }
+      `}</style>
     </section>
   );
 }
@@ -140,10 +342,17 @@ const WindowBrandsInfo = () => {
           }}
         />
       </Head>
-      <HeaderDiv title="Fenster aus Kunststoff und Aluminium" subtitle="Moderne Fenstertechnik für mehr Lebensqualität"/>
+      <HeaderDiv
+        title="Fenster aus Kunststoff und Aluminium"
+        subtitle="Moderne Fenstertechnik für mehr Lebensqualität"
+        showDefaultVideo={false}
+      />
 
       <FenstertitleIntro />
+      <WindowFeatureGraphic />
+      <FensterPanelCta />
       <FensterDiv />
+      <FensterProfileVideo />
       
       <WindowBrandsInfo />
       <FensterFaqs />

@@ -5,7 +5,15 @@ import { useRouter } from 'next/router';
 import HeaderContactBar from "./headercontactbar";
 
 function Header(props) {
-  const { title, subtitle, ifAnfrage, heroSlides = [], heroPlaceholder, ctaActions } = props;
+  const {
+    title,
+    subtitle,
+    ifAnfrage,
+    heroSlides = [],
+    heroPlaceholder,
+    ctaActions,
+    showDefaultVideo = true,
+  } = props;
   const router = useRouter();
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -161,7 +169,7 @@ function Header(props) {
               <p>{heroPlaceholder.text || "Herofoto folgt"}</p>
             </div>
           </div>
-        ) : (
+        ) : showDefaultVideo ? (
           <div className={ifAnfrage === 'yes' ? 'dn db-l relative' : ''}>
           <video
           src="/movies/living.mp4" 
@@ -173,7 +181,7 @@ function Header(props) {
           style={{ width: "100%", height: "auto" }}
           type="video/mp4"/>
           </div>
-        )}
+        ) : null}
            
 
         <h1 className="fl f2 ma1 mt3-l w-100 tc">{title}</h1>
