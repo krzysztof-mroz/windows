@@ -4,7 +4,93 @@ import ProductLink from "../components/ui/blocks/productlink";
 import RolllaedenDiv from "../components/ui/rolllaedendiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
+import RollladenFeatureGraphic from "../components/RollladenFeatureGraphic";
 
+
+function RollladenProfileVideo() {
+  return (
+    <section className="rollladenVideoWrap" aria-label="Fensterprofil im Schnitt">
+      <div className="rollladenVideoText">
+        <p className="rollladenEyebrow">Profiltechnik</p>
+        <h2>Fensterprofil im Schnitt ansehen</h2>
+        <p>
+          Der Film bleibt als technische Ergänzung erhalten, steht aber jetzt
+          weiter unten nach den Rollladen- und Beschattungsprofilen.
+        </p>
+      </div>
+      <div className="rollladenVideoFrame">
+        <video
+          src="/movies/living.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          controls={false}
+        />
+      </div>
+
+      <style jsx>{`
+        .rollladenVideoWrap {
+          align-items: center;
+          background: #f6f2ec;
+          display: grid;
+          gap: 24px;
+          margin: 22px auto 18px;
+          max-width: 1120px;
+          padding: 24px 16px;
+        }
+
+        .rollladenVideoText {
+          max-width: 440px;
+        }
+
+        .rollladenEyebrow {
+          color: #b86411;
+          font-size: 13px;
+          font-weight: 800;
+          letter-spacing: 0;
+          margin: 0 0 6px;
+          text-transform: uppercase;
+        }
+
+        .rollladenVideoText h2 {
+          color: #171717;
+          font-size: 28px;
+          line-height: 1.12;
+          margin: 0;
+        }
+
+        .rollladenVideoText p:last-child {
+          color: #555;
+          line-height: 1.5;
+          margin: 10px 0 0;
+        }
+
+        .rollladenVideoFrame {
+          background: #111;
+          overflow: hidden;
+        }
+
+        .rollladenVideoFrame video {
+          display: block;
+          height: auto;
+          width: 100%;
+        }
+
+        @media (min-width: 840px) {
+          .rollladenVideoWrap {
+            grid-template-columns: minmax(240px, 0.9fr) minmax(420px, 1.4fr);
+            padding: 26px 28px;
+          }
+
+          .rollladenVideoText h2 {
+            font-size: 32px;
+          }
+        }
+      `}</style>
+    </section>
+  );
+}
 
 
 
@@ -65,7 +151,12 @@ function Rolllaeden() {
           content="rollladen, aufsatzrolllaeden, vorsatzrolllaeden"
         />
       </Head>
-      <HeaderDiv title="Aufsatzrollläden und Vorsatzrollläden" subtitle="Diskrete Lösungen für Ihre Wohnbedürfnisse"/>
+      <HeaderDiv
+        title="Aufsatzrollläden und Vorsatzrollläden"
+        subtitle="Diskrete Lösungen für Ihre Wohnbedürfnisse"
+        showDefaultVideo={false}
+      />
+      <RollladenFeatureGraphic />
       <RolllaedenDiv />
 
       <Carousel
@@ -74,6 +165,7 @@ function Rolllaeden() {
       >
         {beschattung}
       </Carousel>
+      <RollladenProfileVideo />
     </Fragment>
     )
         
