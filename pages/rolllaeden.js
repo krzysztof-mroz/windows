@@ -1,10 +1,10 @@
 import {useState, useEffect, Fragment } from "react";
 import Carousel from "../components/ui/blocks/carousel";
 import ProductLink from "../components/ui/blocks/productlink";
-import RolllaedenDiv from "../components/ui/rolllaedendiv";
 import HeaderDiv from "../components/ui/headerdiv";
 import Head from 'next/head';
 import RollladenFeatureGraphic from "../components/RollladenFeatureGraphic";
+import RollladenCatalogSections from "../components/RollladenCatalogSections";
 
 
 function RollladenProfileVideo() {
@@ -130,12 +130,12 @@ function Rolllaeden() {
 
   const beschattung = [
    
-    <ProductLink linktext="Vorsatz Raffstoren" href="/products/raf" opis="C80 oder Z90, Unterputz, Überputz" pic="/pics/producticons/raf.png"/>,
-    <ProductLink linktext="Aufsatz Rollläden" href="/products/ael" opis="Aluminium Lamellen, Motorsteuerung" pic="/pics/producticons/ael.png"/>,
-    <ProductLink linktext="Vorsatz Rollläden SK" href="/products/sk" opis="Aluminium Lamellen, eckiger Kasten" pic="/pics/producticons/vsr_sk.png"/>,
-    <ProductLink linktext="Vorsatz Rollläden SKP" href="/products/skp" opis="Aluminium Lamellen, viertelrunder Kasten" pic="/pics/producticons/vsr_skp.png"/>,
-    <ProductLink linktext="Vorsatz Rollläden SKO" href="/products/sko" opis="Aluminium Lamellen, halbrunder Kasten" pic="/pics/producticons/vsr_sko.png"/>,
-    <ProductLink linktext="Vorsatz Rollläden SP" href="/products/sp" opis="Aluminium Lamellen, Unterputz Kasten" pic="/pics/producticons/vsr_sp.png"/>,
+    <ProductLink key="raffstore-raf" linktext="Vorsatz Raffstoren" href="/products/raf" opis="C80 oder Z90, Unterputz, Überputz" pic="/pics/producticons/raf.png"/>,
+    <ProductLink key="rollladen-ael" linktext="Aufsatz Rollläden" href="/products/ael" opis="Aluminium Lamellen, Motorsteuerung" pic="/pics/producticons/ael.png"/>,
+    <ProductLink key="rollladen-sk" linktext="Vorsatz Rollläden SK" href="/products/sk" opis="Aluminium Lamellen, eckiger Kasten" pic="/pics/producticons/vsr_sk.png"/>,
+    <ProductLink key="rollladen-skp" linktext="Vorsatz Rollläden SKP" href="/products/skp" opis="Aluminium Lamellen, viertelrunder Kasten" pic="/pics/producticons/vsr_skp.png"/>,
+    <ProductLink key="rollladen-sko" linktext="Vorsatz Rollläden SKO" href="/products/sko" opis="Aluminium Lamellen, halbrunder Kasten" pic="/pics/producticons/vsr_sko.png"/>,
+    <ProductLink key="rollladen-sp" linktext="Vorsatz Rollläden SP" href="/products/sp" opis="Aluminium Lamellen, Unterputz Kasten" pic="/pics/producticons/vsr_sp.png"/>,
   
   ];
     return (
@@ -157,7 +157,7 @@ function Rolllaeden() {
         showDefaultVideo={false}
       />
       <RollladenFeatureGraphic />
-      <RolllaedenDiv />
+      <RollladenCatalogSections />
 
       <Carousel
         show={Math.floor((size.width - 50) / 186)}

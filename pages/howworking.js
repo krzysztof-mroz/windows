@@ -7,21 +7,19 @@ function HowWorking() {
     return (
         <Fragment>
         <Head>
-          <title>Wie kaufe ich meine Fenster?</title>
+          <title>Fenster kaufen in 10 Schritten</title>
           <meta
             name="description"
-            content="Der schnellste und einfachste Weg, wie Sie Ihre neuen Fenster kaufen und dabei bis 30% des Wertes sparen. Garantierte KfW Förderung."
+            content="So funktioniert der Fensterkauf: Anfrage, Angebot, Aufmaß, Produktion, Lieferung und Montage in 10 klaren Schritten."
           />
          
         </Head>
-        <HeaderDiv title="Fensterkauf in 12 Schritten" subtitle="Schritt für Schritt zum perfekten Fensteraustausch"/>
-        <div className="flex flex-wrap justify-around  w-100  tc mb1 mt3 ">
-           
-            <HowWorkingDiv />
-            <div className="w-100 ba b--moon-gray ma2 pa3 ">
-            <img src="./pics/jugl_lieferung.png"></img>
-            </div>
-        </div>
+        <HeaderDiv
+          title="Fensterkauf in 10 Schritten"
+          subtitle="Ein klarer Ablauf von der ersten Anfrage bis zur Montage"
+          showDefaultVideo={false}
+        />
+        <HowWorkingDiv />
        
       </Fragment>
     )
